@@ -22,9 +22,11 @@ const App: React.FC = () => {
   const [subjectContext, setSubjectContext] = useState<SubjectContext>(() => {
     const saved = localStorage.getItem('subjectContext');
     return saved ? JSON.parse(saved) : {
+      subjectId: '',
       subjectName: '',
       formativePurpose: '',
-      curriculumContent: ''
+      curriculumContent: '',
+      mccemsCategory: ''
     };
   });
 
@@ -49,8 +51,8 @@ const App: React.FC = () => {
         return <Dashboard setView={setView} recentPlansCount={savedPlans.length} />;
       case 'context':
         return (
-          <ContextManager 
-            school={schoolContext} 
+          <ContextManager
+            school={schoolContext}
             setSchool={setSchoolContext}
             subject={subjectContext}
             setSubject={setSubjectContext}
@@ -58,9 +60,9 @@ const App: React.FC = () => {
         );
       case 'generator':
         return (
-          <PlanGenerator 
-            school={schoolContext} 
-            subject={subjectContext} 
+          <PlanGenerator
+            school={schoolContext}
+            subject={subjectContext}
             onSave={handleSavePlan}
           />
         );
@@ -82,17 +84,17 @@ const App: React.FC = () => {
           </div>
           <p className="text-xs text-indigo-300 mt-2 uppercase font-semibold">Bachillerato Oficial</p>
         </div>
-        
+
         <nav className="flex-1 p-4 space-y-2 mt-4">
-          <button 
+          <button
             onClick={() => setView('dashboard')}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${view === 'dashboard' ? 'bg-indigo-800 text-white' : 'hover:bg-indigo-800/50 text-indigo-100'}`}
           >
             <Layout className="w-5 h-5" />
             <span className="font-medium">Dashboard</span>
           </button>
-          
-          <button 
+
+          <button
             onClick={() => setView('context')}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${view === 'context' ? 'bg-indigo-800 text-white' : 'hover:bg-indigo-800/50 text-indigo-100'}`}
           >
@@ -100,7 +102,7 @@ const App: React.FC = () => {
             <span className="font-medium">Contexto Escolar</span>
           </button>
 
-          <button 
+          <button
             onClick={() => setView('generator')}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${view === 'generator' ? 'bg-indigo-800 text-white' : 'hover:bg-indigo-800/50 text-indigo-100'}`}
           >
@@ -108,7 +110,7 @@ const App: React.FC = () => {
             <span className="font-medium">Nueva Planeación</span>
           </button>
 
-          <button 
+          <button
             onClick={() => setView('plans')}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${view === 'plans' ? 'bg-indigo-800 text-white' : 'hover:bg-indigo-800/50 text-indigo-100'}`}
           >
@@ -129,9 +131,9 @@ const App: React.FC = () => {
             {view === 'dashboard' ? 'Bienvenido, Docente' : view.replace('_', ' ')}
           </h2>
           <div className="flex items-center gap-4">
-             <div className="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium border border-indigo-100">
-               {schoolContext.schoolName}
-             </div>
+            <div className="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium border border-indigo-100">
+              {schoolContext.schoolName}
+            </div>
           </div>
         </header>
 
