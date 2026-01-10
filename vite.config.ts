@@ -6,9 +6,15 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
+    // Configuración para GitHub Pages
+    base: mode === 'production' ? '/EDUPLANMX/' : '/',
     server: {
       port: 3000,
       open: false
+    },
+    build: {
+      outDir: 'dist',
+      sourcemap: false
     },
     define: {
       'process.env.VITE_API_KEY': JSON.stringify(env.VITE_API_KEY)

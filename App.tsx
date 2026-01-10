@@ -1,11 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import { Layout, ClipboardList, BookOpen, Settings, PlusCircle, History, BookMarked, GraduationCap } from 'lucide-react';
+import { Layout, ClipboardList, BookOpen, Settings, PlusCircle, History, BookMarked, GraduationCap, Users } from 'lucide-react';
 import { AppView, SchoolContext, SubjectContext, LessonPlan } from './types';
 import ContextManager from './components/ContextManager';
 import PlanGenerator from './components/PlanGenerator';
 import Dashboard from './components/Dashboard';
 import PlansLibrary from './components/PlansLibrary';
+import DiagnosticoDashboard from './components/DiagnosticoDashboard';
 
 const App: React.FC = () => {
   const [view, setView] = useState<AppView>('dashboard');
@@ -68,6 +69,8 @@ const App: React.FC = () => {
         );
       case 'plans':
         return <PlansLibrary plans={savedPlans} />;
+      case 'diagnostico':
+        return <DiagnosticoDashboard />;
       default:
         return <Dashboard setView={setView} recentPlansCount={savedPlans.length} />;
     }
@@ -100,6 +103,14 @@ const App: React.FC = () => {
           >
             <Settings className="w-5 h-5" />
             <span className="font-medium">Contexto Escolar</span>
+          </button>
+
+          <button
+            onClick={() => setView('diagnostico')}
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${view === 'diagnostico' ? 'bg-indigo-800 text-white' : 'hover:bg-indigo-800/50 text-indigo-100'}`}
+          >
+            <Users className="w-5 h-5" />
+            <span className="font-medium">Diagnóstico</span>
           </button>
 
           <button

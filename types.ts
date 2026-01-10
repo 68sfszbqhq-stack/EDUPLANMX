@@ -42,4 +42,4 @@ export interface LessonPlan {
   };
 }
 
-export type AppView = 'dashboard' | 'context' | 'generator' | 'plans';
+export type AppView = 'dashboard' | 'context' | 'generator' | 'plans' | 'diagnostico';
