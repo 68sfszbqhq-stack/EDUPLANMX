@@ -246,25 +246,43 @@ const ProgramaMateria: React.FC = () => {
                                     </button>
 
                                     {mostrarProgresionesOficiales && (
-                                        <div className="mt-4 space-y-3 max-h-96 overflow-y-auto">
+                                        <div className="mt-4 space-y-4 max-h-[600px] overflow-y-auto">
                                             {programaSEP.progresiones.map((prog: any, index: number) => (
-                                                <div key={index} className="bg-slate-50 rounded-lg p-3 border border-slate-200">
-                                                    <div className="flex items-start gap-2">
-                                                        <div className="bg-indigo-100 text-indigo-700 font-bold min-w-[28px] h-7 flex items-center justify-center rounded text-sm">
+                                                <div key={index} className="bg-slate-50 rounded-lg p-4 border border-slate-200 hover:border-indigo-300 transition-colors">
+                                                    <div className="flex items-start gap-3">
+                                                        <div className="bg-indigo-600 text-white font-bold min-w-[32px] h-8 flex items-center justify-center rounded-lg text-sm shadow-sm">
                                                             {prog.id}
                                                         </div>
                                                         <div className="flex-1">
-                                                            <p className="text-slate-700 text-sm leading-relaxed">
+                                                            <p className="text-slate-900 font-medium text-sm leading-relaxed mb-2">
                                                                 {prog.descripcion}
                                                             </p>
+
+                                                            {/* Metas de Aprendizaje */}
                                                             {prog.metas && prog.metas.length > 0 && (
-                                                                <div className="mt-2 pl-3 border-l-2 border-indigo-300">
+                                                                <div className="mt-3 pl-3 border-l-2 border-green-400 bg-green-50/50 rounded-r py-2 pr-2">
+                                                                    <p className="text-xs font-semibold text-green-700 mb-1">🎯 Metas de Aprendizaje:</p>
                                                                     {prog.metas.map((meta: string, idx: number) => (
-                                                                        <div key={idx} className="text-xs text-slate-600 flex items-start gap-1 mt-1">
-                                                                            <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
+                                                                        <div key={idx} className="text-xs text-slate-700 flex items-start gap-1 mt-1">
+                                                                            <CheckCircle className="w-3 h-3 text-green-600 flex-shrink-0 mt-0.5" />
                                                                             <span>{meta}</span>
                                                                         </div>
                                                                     ))}
+                                                                </div>
+                                                            )}
+
+                                                            {/* Temáticas (si existen) */}
+                                                            {prog.tematicas && prog.tematicas.length > 0 && (
+                                                                <div className="mt-3 pl-3 border-l-2 border-blue-400 bg-blue-50/50 rounded-r py-2 pr-2">
+                                                                    <p className="text-xs font-semibold text-blue-700 mb-2">📚 Temáticas a desarrollar:</p>
+                                                                    <ul className="space-y-1">
+                                                                        {prog.tematicas.map((tema: string, idx: number) => (
+                                                                            <li key={idx} className="text-xs text-slate-700 flex items-start gap-2">
+                                                                                <span className="text-blue-500 font-bold">•</span>
+                                                                                <span className="flex-1">{tema}</span>
+                                                                            </li>
+                                                                        ))}
+                                                                    </ul>
                                                                 </div>
                                                             )}
                                                         </div>
