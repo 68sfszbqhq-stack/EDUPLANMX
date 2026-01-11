@@ -1,0 +1,51 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ============================================
+    // REGLAS TEMPORALES PARA DESARROLLO
+    // ============================================
+    // IMPORTANTE: Estas reglas son PERMISIVAS para facilitar el desarrollo
+    // Deberás hacerlas más restrictivas en producción
+    
+    // Colección de usuarios - Permitir lectura y escritura para desarrollo
+    match /usuarios/{userId} {
+      allow read, write: if true;
+    }
+    
+    // Colección de alumnos - Permitir lectura y escritura para desarrollo
+    match /alumnos/{alumnoId} {
+      allow read, write: if true;
+    }
+    
+    // Colección de diagnósticos - Permitir lectura y escritura para desarrollo
+    match /diagnosticos/{diagnosticoId} {
+      allow read, write: if true;
+    }
+    
+    // Colección de planeaciones - Permitir lectura y escritura para desarrollo
+    match /planeaciones/{planeacionId} {
+      allow read, write: if true;
+    }
+    
+    // Colección de instituciones - Permitir lectura y escritura para desarrollo
+    match /instituciones/{institucionId} {
+      allow read, write: if true;
+    }
+    
+    // Colección de grupos - Permitir lectura y escritura para desarrollo
+    match /grupos/{grupoId} {
+      allow read, write: if true;
+    }
+    
+    // Colección de materias - Permitir lectura y escritura para desarrollo
+    match /materias/{materiaId} {
+      allow read, write: if true;
+    }
+    
+    // Colección de asignaciones - Permitir lectura y escritura para desarrollo
+    match /asignaciones/{asignacionId} {
+      allow read, write: if true;
+    }
+  }
+}

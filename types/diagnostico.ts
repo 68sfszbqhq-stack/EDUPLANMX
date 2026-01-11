@@ -6,40 +6,80 @@
 export interface DatosAdministrativos {
   curp: string;
   nombre: string;
+  apellidoPaterno: string;
+  apellidoMaterno: string;
   genero: 'Masculino' | 'Femenino' | 'Otro' | 'Prefiero no decir';
   promedioSecundaria: number;
   tipoSecundaria: 'General' | 'Técnica' | 'Telesecundaria' | 'Particular';
   sostenimiento: 'Público' | 'Privado';
 }
 
-// Batería Sociofamiliar
+// Red de Apoyo y Contactos
+export interface RedApoyo {
+  nombreTutor: string;
+  parentesco: 'Padre' | 'Madre' | 'Hermano' | 'Tío' | 'Abuelo' | 'Otro';
+  telefonoPadre: string;
+  telefonoMadre: string;
+  telefonoTutor: string;
+  telefonoEmergencia: string;
+}
+
+// Batería Sociofamiliar (NEM)
 export interface DatosNEM {
   // Dinámica Familiar
-  tipoFamilia: 'Nuclear' | 'Extensa' | 'Monoparental' | 'Reconstituida' | 'Unipersonal';
-  
+  tipoFamilia: 'Nuclear' | 'Extensa' | 'Monoparental' | 'Compuesta' | 'Homoparental';
+  redApoyo: RedApoyo;
+
   // Nivel Socioeconómico
-  gradoEstudioPadre: string;
-  gradoEstudioMadre: string;
-  ocupacionPadre: string;
-  ocupacionMadre: string;
-  ingresosMensuales: '0-5000' | '5001-10000' | '10001-20000' | '20001-40000' | '40001+';
-  serviciosVivienda: {
-    internet: boolean;
-    luz: boolean;
-    agua: boolean;
-    drenaje: boolean;
-    telefono: boolean;
-  };
-  
-  // Salud y Riesgo
-  enfermedadesCronicas: string[];
-  adiccionesEntorno: string[];
-  alumnoTrabaja: boolean;
+  gradoEstudioPadre: 'Primaria' | 'Secundaria' | 'Preparatoria' | 'Licenciatura' | 'Posgrado' | 'Sin estudios';
+  gradoEstudioMadre: 'Primaria' | 'Secundaria' | 'Preparatoria' | 'Licenciatura' | 'Posgrado' | 'Sin estudios';
+  ocupacionPadre: 'Hogar' | 'Profesionista' | 'Técnico' | 'Obrero' | 'Negocio propio' | 'Comercio' | 'Desempleado';
+  ocupacionMadre: 'Hogar' | 'Profesionista' | 'Técnico' | 'Obrero' | 'Negocio propio' | 'Comercio' | 'Desempleado';
+
+  // Situación del Alumno
+  situacionLaboral: 'Solo estudia' | 'Estudia y trabaja' | 'Trabaja y estudia';
   horasTrabajoSemanal?: number;
-  
-  // Contexto Comunitario
+
+  // Vivienda y Servicios
+  tipoVivienda: 'Propia' | 'Rentada' | 'Prestada';
+  serviciosVivienda: {
+    agua: boolean;
+    luz: boolean;
+    drenaje: boolean;
+    internet: boolean;
+    tvCable: boolean;
+    aireAcondicionado: boolean;
+  };
+
+  // Economía
+  ingresosMensuales: '0-5000' | '5001-10000' | '10001-20000' | '20001-40000' | '40001+';
+  personasAportanIngreso: number;
+  cuentaConBeca: boolean;
+  tipoBeca?: string;
+
+  // Salud
+  institucionSalud: 'IMSS' | 'ISSSTE' | 'Bienestar' | 'Seguro privado' | 'Ninguna';
+  enfermedadesCronicas: string[];
+  tratamientoEnfermedades?: string;
+
+  // Contexto Comunitario (PAEC)
   problemasComunitarios: string[];
-  
+  deficienciasServicios: string[];
+
+  // Factores de Riesgo
+  consumoSustanciasCuadra: string[];
+  consumoSustanciasCasa: string[];
+
+  // Convivencia Social
+  frecuenciaDiscusionesComunidad: 'Nunca' | 'Rara vez' | 'A veces' | 'Frecuente' | 'Muy frecuente';
+  intensidadPeleasComunidad: 'Ninguna' | 'Leve' | 'Moderada' | 'Grave';
+  frecuenciaDiscusionesFamilia: 'Nunca' | 'Rara vez' | 'A veces' | 'Frecuente' | 'Muy frecuente';
+  intensidadPeleasFamilia: 'Ninguna' | 'Leve' | 'Moderada' | 'Grave';
+
+  // Cultura y Valores
+  tradicionesLocales: string[];
+  practicasDiscriminatorias: string[];
+
   // Intereses y Preferencias
   materiasPreferidas: string[];
   actividadesInteres: string[];

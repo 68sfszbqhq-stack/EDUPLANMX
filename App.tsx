@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { Layout, ClipboardList, BookOpen, Settings, PlusCircle, History, BookMarked, GraduationCap, Users } from 'lucide-react';
+import { Layout, ClipboardList, BookOpen, Settings, PlusCircle, History, BookMarked, GraduationCap, Users, LogOut } from 'lucide-react';
+import { useAuth } from './src/contexts/AuthContext';
 import { AppView, SchoolContext, SubjectContext, LessonPlan } from './types';
 import ContextManager from './components/ContextManager';
 import PlanGenerator from './components/PlanGenerator';
@@ -145,6 +146,27 @@ const App: React.FC = () => {
             <div className="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium border border-indigo-100">
               {schoolContext.schoolName}
             </div>
+            {(() => {
+              const { user, logout } = useAuth();
+              return user ? (
+                <>
+                  <div className="text-right">
+                    <div className="text-sm font-semibold text-slate-700">
+                      {user.nombre} {user.apellidoPaterno}
+                    </div>
+                    <div className="text-xs text-slate-500 capitalize">{user.rol}</div>
+                  </div>
+                  <button
+                    onClick={logout}
+                    className="flex items-center gap-2 px-4 py-2 bg-red-50 text-red-700 rounded-xl hover:bg-red-100 transition-colors border border-red-200"
+                    title="Cerrar sesión"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    <span className="text-sm font-medium">Salir</span>
+                  </button>
+                </>
+              ) : null;
+            })()}
           </div>
         </header>
 

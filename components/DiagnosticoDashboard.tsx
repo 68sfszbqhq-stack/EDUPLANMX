@@ -1,33 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import { Users, AlertTriangle, Target, TrendingUp, Wifi, WifiOff, Plus, FileText } from 'lucide-react';
 import type { Alumno, DiagnosticoGrupal } from '../types/diagnostico';
-import { diagnosticoService } from '../services/diagnosticoService';
+// import { diagnosticoService } from '../services/diagnosticoService';
 import FormularioAlumno from './FormularioAlumno';
+import { alumnosService } from '../src/services/alumnosFirebase';
 
 const DiagnosticoDashboard: React.FC = () => {
     const [alumnos, setAlumnos] = useState<Alumno[]>([]);
     const [diagnostico, setDiagnostico] = useState<DiagnosticoGrupal | null>(null);
     const [cargando, setCargando] = useState(false);
+    const [cargandoAlumnos, setCargandoAlumnos] = useState(true);
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
-    // Cargar alumnos desde localStorage
+    // Cargar alumnos desde Firebase
     useEffect(() => {
-        const alumnosGuardados = localStorage.getItem('alumnos');
-        if (alumnosGuardados) {
-            setAlumnos(JSON.parse(alumnosGuardados));
-        }
+        cargarAlumnos();
     }, []);
 
-    // Guardar alumnos en localStorage
-    useEffect(() => {
-        if (alumnos.length > 0) {
-            localStorage.setItem('alumnos', JSON.stringify(alumnos));
+    const cargarAlumnos = async () => {
+        setCargandoAlumnos(true);
+        try {
+            const alumnosFirebase = await alumnosService.obtenerAlumnos();
+            setAlumnos(alumnosFirebase);
+            console.log('✅ Alumnos cargados desde Firebase:', alumnosFirebase.length);
+        } catch (error) {
+            console.error('❌ Error al cargar alumnos desde Firebase:', error);
+            // Fallback a localStorage si Firebase falla
+            const alumnosGuardados = localStorage.getItem('alumnos');
+            if (alumnosGuardados) {
+                setAlumnos(JSON.parse(alumnosGuardados));
+                console.log('⚠️ Usando alumnos de localStorage como fallback');
+            }
+        } finally {
+            setCargandoAlumnos(false);
         }
-    }, [alumnos]);
+    };
 
-    const handleGuardarAlumno = (nuevoAlumno: Alumno) => {
-        setAlumnos([...alumnos, nuevoAlumno]);
-        setMostrarFormulario(false);
+    const handleGuardarAlumno = async (nuevoAlumno: Alumno) => {
+        try {
+            // Guardar en Firebase
+            await alumnosService.guardarAlumno(nuevoAlumno);
+            console.log('✅ Alumno guardado en Firebase');
+
+            // Recargar lista de alumnos
+            await cargarAlumnos();
+
+            setMostrarFormulario(false);
+        } catch (error) {
+            console.error('❌ Error al guardar alumno:', error);
+            alert('Hubo un error al guardar el alumno. Por favor intenta de nuevo.');
+        }
     };
 
     const handleGenerarDiagnostico = async () => {
@@ -36,7 +58,10 @@ const DiagnosticoDashboard: React.FC = () => {
             return;
         }
 
-        setCargando(true);
+        // TODO: Implementar diagnosticoService
+        alert('La generación automática de diagnósticos estará disponible próximamente. Por ahora puedes registrar alumnos.');
+
+        /* setCargando(true);
         try {
             const resultado = await diagnosticoService.procesarDiagnosticoGrupal(alumnos);
             setDiagnostico(resultado);
@@ -45,7 +70,7 @@ const DiagnosticoDashboard: React.FC = () => {
             alert('Hubo un error al generar el diagnóstico. Verifica tu API Key.');
         } finally {
             setCargando(false);
-        }
+        } */
     };
 
     const getNivelRiesgoColor = (nivel: string) => {
@@ -92,8 +117,17 @@ const DiagnosticoDashboard: React.FC = () => {
                             <Users className="w-6 h-6 text-blue-600" />
                         </div>
                         <div>
-                            <div className="text-2xl font-bold text-slate-800">{alumnos.length}</div>
-                            <div className="text-sm text-slate-500">Alumnos Registrados</div>
+                            {cargandoAlumnos ? (
+                                <>
+                                    <div className="text-2xl font-bold text-slate-400">...</div>
+                                    <div className="text-sm text-slate-500">Cargando...</div>
+                                </>
+                            ) : (
+                                <>
+                                    <div className="text-2xl font-bold text-slate-800">{alumnos.length}</div>
+                                    <div className="text-sm text-slate-500">Alumnos Registrados</div>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,74 @@
+// ============================================
+// TIPOS PARA AUTENTICACIÓN Y ROLES
+// ============================================
+
+export type UserRole = 'superadmin' | 'directivo' | 'maestro' | 'alumno';
+
+export interface Usuario {
+    id: string;
+    email: string;
+    nombre: string;
+    apellidoPaterno: string;
+    apellidoMaterno: string;
+    rol: UserRole;
+
+    // Datos específicos por rol
+    institucionId?: string; // Para directivos y maestros
+    gruposAsignados?: string[]; // Solo maestros
+
+    // Metadata
+    activo: boolean;
+    fechaCreacion: string;
+    ultimoAcceso: string;
+    creadoPor?: string;
+}
+
+export interface Institucion {
+    id: string;
+    nombre: string;
+    clave: string;
+    direccion: {
+        calle: string;
+        ciudad: string;
+        estado: string;
+        codigoPostal: string;
+    };
+    directivoId: string;
+    maestros: string[];
+    activa: boolean;
+    fechaCreacion: string;
+}
+
+export interface Grupo {
+    id: string;
+    nombre: string;
+    grado: number;
+    grupo: string;
+    institucionId: string;
+    maestroId: string;
+    alumnos: string[];
+    cicloEscolar: string;
+    activo: boolean;
+}
+
+export interface AuthContextType {
+    user: Usuario | null;
+    loading: boolean;
+    login: (email: string, password: string) => Promise<void>;
+    loginWithGoogle: () => Promise<void>;
+    logout: () => Promise<void>;
+    isAuthenticated: boolean;
+}
+
+export interface LoginCredentials {
+    email: string;
+    password: string;
+}
+
+export interface RegisterData extends LoginCredentials {
+    nombre: string;
+    apellidoPaterno: string;
+    apellidoMaterno: string;
+    rol: UserRole;
+    institucionId?: string;
+}

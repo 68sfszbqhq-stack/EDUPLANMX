@@ -10,7 +10,7 @@ import {
     Timestamp
 } from 'firebase/firestore';
 import { db } from '../config/firebase';
-import type { Alumno } from '../types/diagnostico';
+import type { Alumno } from '../../types/diagnostico';
 
 const COLLECTION_NAME = 'alumnos';
 
