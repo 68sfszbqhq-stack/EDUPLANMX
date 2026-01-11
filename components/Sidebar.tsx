@@ -22,7 +22,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
     ];
 
     if (user?.rol === 'superadmin') {
-        menuItems.push({ id: 'admin-asignacion', label: 'Asignar Materias', icon: Users });
+        menuItems.push({ id: 'admin-asignacion', label: 'Asignar Materias', icon: BookOpen });
+        menuItems.push({ id: 'admin-alumnos', label: 'Gestión de Alumnos', icon: Users });
     }
 
     return (

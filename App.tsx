@@ -11,6 +11,7 @@ import PlansLibrary from './components/PlansLibrary';
 import DiagnosticoDashboard from './components/DiagnosticoDashboard';
 import Sidebar from './components/Sidebar';
 import AsignacionMaterias from './pages/admin/AsignacionMaterias';
+import GestionAlumnos from './pages/admin/GestionAlumnos';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -70,6 +71,8 @@ const App: React.FC = () => {
         return <Dashboard setView={setView} recentPlansCount={savedPlans.length} />;
       case 'admin-asignacion':
         return <AsignacionMaterias />;
+      case 'admin-alumnos':
+        return <GestionAlumnos />;
       case 'context':
         return (
           <ContextManager
