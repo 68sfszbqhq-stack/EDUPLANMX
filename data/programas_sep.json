@@ -1,5 +1,381 @@
 [
     {
+        "materia": "Laboratorio de Investigación",
+        "semestre": 1,
+        "metadata": {
+            "nombre_uac": "LABORATORIO DE INVESTIGACIÓN I",
+            "semestre": 1,
+            "creditos": 6,
+            "horas_semanales": 3
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Metodología de investigación",
+                "Pensamiento crítico",
+                "Indagación científica"
+            ],
+            "subcategorias": [
+                "Planteamiento de problemas",
+                "Búsqueda de información",
+                "Análisis de datos"
+            ],
+            "metas_aprendizaje": [
+                "Aplicar metodología de investigación para resolver problemas",
+                "Desarrollar pensamiento crítico mediante el análisis de información",
+                "Comunicar resultados de investigación de forma clara"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Identifica problemas de su entorno y plantea preguntas de investigación pertinentes",
+                "metas": [
+                    "Meta 1.1: Formular preguntas investigables"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Busca, selecciona y evalúa información de fuentes confiables para fundamentar su investigación",
+                "metas": [
+                    "Meta 2.1: Discriminar fuentes válidas"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/08/Programas-de-Estudio-1er-Semestre.zip",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Pensamiento Matemático I",
+        "semestre": 1,
+        "metadata": {
+            "nombre_uac": "PENSAMIENTO MATEMÁTICO I",
+            "semestre": 1,
+            "creditos": 8,
+            "horas_semanales": 4
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Aritmética",
+                "Algebra básica",
+                "Geometría plana"
+            ],
+            "subcategorias": [
+                "Operaciones fundamentales",
+                "Expresiones algebraicas",
+                "Figuras geométricas"
+            ],
+            "metas_aprendizaje": [
+                "Resolver problemas aritméticos aplicando propiedades de las operaciones",
+                "Traducir situaciones de la vida real a lenguaje algebraico",
+                "Calcular perímetros y áreas de figuras básicas"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Aplica operaciones aritméticas para resolver problemas cuantitativos de su vida cotidiana",
+                "metas": [
+                    "Meta 1.1: Resolver operaciones con números reales"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Representa situaciones mediante expresiones algebraicas y las manipula siguiendo reglas establecidas",
+                "metas": [
+                    "Meta 2.1: Simplificar expresiones algebraicas"
+                ]
+            },
+            {
+                "id": 3,
+                "descripcion": "Analiza propiedades de figuras geométricas planas para resolver problemas de medición",
+                "metas": [
+                    "Meta 3.1: Calcular áreas y perímetros"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/08/Programas-de-Estudio-1er-Semestre.zip",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Lengua y Comunicación I",
+        "semestre": 1,
+        "metadata": {
+            "nombre_uac": "LENGUA Y COMUNICACIÓN I",
+            "semestre": 1,
+            "creditos": 6,
+            "horas_semanales": 3
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Comunicación oral",
+                "Lectura crítica",
+                "Producción de textos"
+            ],
+            "subcategorias": [
+                "Expresión oral",
+                "Comprensión lectora",
+                "Escritura creativa"
+            ],
+            "metas_aprendizaje": [
+                "Expresar ideas de forma oral clara y coherente",
+                "Analizar textos literarios y no literarios de forma crítica",
+                "Producir textos escritos diversos con estructuración adecuada"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Comunica ideas y conocimientos de manera oral con claridad, fluidez y corrección en diversos contextos",
+                "metas": [
+                    "Meta 1.1: Participar en debates formales"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Lee de manera crítica textos literarios y no literarios para comprender, interpretar y evaluar información",
+                "metas": [
+                    "Meta 2.1: Identificar ideas principales",
+                    "Meta 2.2: Inferir significados implícitos"
+                ]
+            },
+            {
+                "id": 3,
+                "descripcion": "Produce textos escritos coherentes y cohesionados para comunicarse en diferentes situaciones",
+                "metas": [
+                    "Meta 3.1: Redactar ensayos argumentativos"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Lengua_y_Comunicacion.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Inglés I",
+        "semestre": 1,
+        "metadata": {
+            "nombre_uac": "INGLÉS I",
+            "semestre": 1,
+            "creditos": 6,
+            "horas_semanales": 3
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Comprensión auditiva",
+                "Expresión oral",
+                "Lectura",
+                "Escritura"
+            ],
+            "subcategorias": [
+                "Vocabulario básico",
+                "Estructuras gramaticales",
+                "Pronunciación"
+            ],
+            "metas_aprendizaje": [
+                "Comprender mensajes orales breves en inglés",
+                "Expresarse oralmente en situaciones cotidianas simples",
+                "Leer y comprender textos sencillos en inglés"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Comprende información básica en textos breves y conversaciones simples en inglés",
+                "metas": [
+                    "Meta 1.1: Identificar información específica en diálogos"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Se comunica en inglés para satisfacer necesidades inmediatas mediante frases y expresiones simples",
+                "metas": [
+                    "Meta 2.1: Presentarse y dar información personal"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/08/Programas-de-Estudio-1er-Semestre.zip",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Cultura Digital I",
+        "semestre": 1,
+        "metadata": {
+            "nombre_uac": "CULTURA DIGITAL I",
+            "semestre": 1,
+            "creditos": 4,
+            "horas_semanales": 2
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Ciudadanía digital",
+                "Manejo de TIC",
+                "Seguridad informática"
+            ],
+            "subcategorias": [
+                "Herramientas digitales",
+                "Navegación segura",
+                "Ética digital"
+            ],
+            "metas_aprendizaje": [
+                "Utilizar herramientas digitales para buscar y procesar información",
+                "Identificar riesgos en el uso de tecnologías digitales",
+                "Aplicar principios éticos en el uso de internet"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Utiliza herramientas digitales para buscar, seleccionar y procesar información de manera efectiva",
+                "metas": [
+                    "Meta 1.1: Usar motores de búsqueda avanzados"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Aplica medidas de seguridad y principios éticos al interactuar en entornos digitales",
+                "metas": [
+                    "Meta 2.1: Proteger información personal"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Cultura_Digital.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "La Materia y sus Interacciones",
+        "semestre": 1,
+        "metadata": {
+            "nombre_uac": "LA MATERIA Y SUS INTERACCIONES",
+            "semestre": 1,
+            "creditos": 8,
+            "horas_semanales": 4
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Estructura de la materia",
+                "Propiedades físicas y químicas",
+                "Cambios de estado"
+            ],
+            "subcategorias": [
+                "Átomos y moléculas",
+                "Estados de agregación",
+                "Reacciones químicas básicas"
+            ],
+            "metas_aprendizaje": [
+                "Explicar la estructura y propiedades de la materia",
+                "Diferenciar cambios físicos de cambios químicos",
+                "Aplicar el modelo cinético molecular"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Explica las propiedades de la materia a partir de su estructura atómica y molecular",
+                "metas": [
+                    "Meta 1.1: Describir el modelo atómico actual"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Diferencia cambios físicos de cambios químicos mediante la observación de fenómenos cotidianos",
+                "metas": [
+                    "Meta 2.1: Identificar evidencias de reacciones químicas"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Ciencias_Naturales.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Ciencias Sociales I",
+        "semestre": 1,
+        "metadata": {
+            "nombre_uac": "CIENCIAS SOCIALES I",
+            "semestre": 1,
+            "creditos": 4,
+            "horas_semanales": 2
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Sociedad y cultura",
+                "Procesos sociales",
+                "Identidad"
+            ],
+            "subcategorias": [
+                "Diversidad cultural",
+                "Instituciones sociales",
+                "Cambio social"
+            ],
+            "metas_aprendizaje": [
+                "Comprender la diversidad cultural de México",
+                "Analizar procesos sociales contemporáneos",
+                "Reconocer la importancia de la identidad cultural"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Analiza la diversidad cultural como característica fundamental de las sociedades humanas",
+                "metas": [
+                    "Meta 1.1: Valorar la interculturalidad"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Comprende los procesos sociales que configuran su entorno inmediato y nacional",
+                "metas": [
+                    "Meta 2.1: Identificar problemas sociales actuales"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Ciencias_Sociales.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Humanidades I",
+        "semestre": 1,
+        "metadata": {
+            "nombre_uac": "HUMANIDADES I",
+            "semestre": 1,
+            "creditos": 6,
+            "horas_semanales": 3
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Ética",
+                "Filosofía",
+                "Valores"
+            ],
+            "subcategorias": [
+                "Dilemas morales",
+                "Pensamiento crítico",
+                "Convivencia"
+            ],
+            "metas_aprendizaje": [
+                "Reflexionar sobre dilemas éticos de la vida cotidiana",
+                "Desarrollar pensamiento filosófico crítico",
+                "Aplicar valores en la convivencia social"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Reflexiona críticamente sobre dilemas éticos y morales de su entorno",
+                "metas": [
+                    "Meta 1.1: Analizar casos éticos"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Desarrolla argumentos filosóficos fundamentados para expresar su postura ante problemas humanos",
+                "metas": [
+                    "Meta 2.1: Construir argumentos lógicos"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Humanidades.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
         "materia": "Pensamiento Matemático II",
         "semestre": 2,
         "metadata": {
@@ -53,47 +429,924 @@
         "fecha_extraccion": "2026-01-11T15:00:00.000Z"
     },
     {
-        "materia": "Lengua y Comunicación I",
-        "semestre": 1,
+        "materia": "Conservación de la energía y su interacción con la materia",
+        "semestre": 2,
         "metadata": {
-            "nombre_uac": "LENGUA Y COMUNICACIÓN I",
-            "semestre": 1,
+            "nombre_uac": "CONSERVACIÓN DE LA ENERGÍA",
+            "semestre": 2,
+            "creditos": 8,
+            "horas_semanales": 4
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Energía y trabajo",
+                "Leyes de la termodinámica",
+                "Transformaciones energéticas"
+            ],
+            "subcategorias": [
+                "Energía cinética y potencial",
+                "Conservación de la energía",
+                "Eficiencia energética"
+            ],
+            "metas_aprendizaje": [
+                "Explicar las transformaciones de energía en fenómenos naturales",
+                "Aplicar el principio de conservación de la energía",
+                "Analizar el impacto del uso de la energía en el ambiente"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Explica fenómenos naturales y cotidianos a partir del principio de conservación de la energía",
+                "metas": [
+                    "Meta 1.1: Calcular energía cinética y potencial"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Analiza las transformaciones energéticas y su eficiencia en sistemas tecnológicos",
+                "metas": [
+                    "Meta 2.1: Evaluar eficiencia energética"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Ciencias_Naturales.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Ciencias Sociales II",
+        "semestre": 2,
+        "metadata": {
+            "nombre_uac": "CIENCIAS SOCIALES II",
+            "semestre": 2,
+            "creditos": 4,
+            "horas_semanales": 2
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Economía",
+                "Política",
+                "Ciudadanía"
+            ],
+            "subcategorias": [
+                "Sistemas económicos",
+                "Democracia",
+                "Derechos humanos"
+            ],
+            "metas_aprendizaje": [
+                "Comprender sistemas económicos y su impacto social",
+                "Analizar procesos políticos democráticos",
+                "Ejercer derechos y responsabilidades ciudadanas"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Analiza las características de los sistemas económicos y su impacto en la sociedad",
+                "metas": [
+                    "Meta 1.1: Identificar modelos económicos"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Comprende los principios democráticos y los aplica en su participación ciudadana",
+                "metas": [
+                    "Meta 2.1: Ejercer derechos cívicos"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Ciencias_Sociales.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Cultura Digital II",
+        "semestre": 2,
+        "metadata": {
+            "nombre_uac": "CULTURA DIGITAL II",
+            "semestre": 2,
+            "creditos": 4,
+            "horas_semanales": 2
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Programación básica",
+                "Pensamiento computacional",
+                "Creatividad digital"
+            ],
+            "subcategorias": [
+                "Algoritmos",
+                "Resolución de problemas",
+                "Diseño digital"
+            ],
+            "metas_aprendizaje": [
+                "Desarrollar pensamiento algorítmico para resolver problemas",
+                "Crear soluciones digitales mediante programación básica",
+                "Producir contenidos digitales creativos"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Aplica pensamiento computacional para resolver problemas mediante algoritmos",
+                "metas": [
+                    "Meta 1.1: Diseñar algoritmos básicos"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Crea productos digitales utilizando herramientas de programación y diseño",
+                "metas": [
+                    "Meta 2.1: Programar soluciones simples"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Cultura_Digital.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Humanidades II",
+        "semestre": 2,
+        "metadata": {
+            "nombre_uac": "HUMANIDADES II",
+            "semestre": 2,
+            "creditos": 6,
+            "horas_semanales": 3
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Filosofía social",
+                "Estética",
+                "Antropología"
+            ],
+            "subcategorias": [
+                "Ser humano y sociedad",
+                "Arte y belleza",
+                "Cultura"
+            ],
+            "metas_aprendizaje": [
+                "Reflexionar sobre la relación entre individuo y sociedad",
+                "Apreciar manifestaciones artísticas desde perspectiva filosófica",
+                "Comprender la diversidad cultural humana"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Analiza la relación entre el ser humano y su entorno social desde perspectivas filosóficas",
+                "metas": [
+                    "Meta 1.1: Reflexionar sobre teorías sociales"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Aprecia y valora el arte como expresión del pensamiento y la cultura humana",
+                "metas": [
+                    "Meta 2.1: Analizar obras artísticas"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Humanidades.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Inglés II",
+        "semestre": 2,
+        "metadata": {
+            "nombre_uac": "INGLÉS II",
+            "semestre": 2,
             "creditos": 6,
             "horas_semanales": 3
         },
         "organizador_curricular": {
             "categorias": [
                 "Comunicación oral",
-                "Lectura crítica",
-                "Producción de textos"
+                "Lectura",
+                "Escritura"
             ],
             "subcategorias": [
-                "Expresión oral",
-                "Comprensión lectora",
-                "Escritura creativa"
+                "Conversaciones",
+                "Textos informativos",
+                "Redacción básica"
             ],
             "metas_aprendizaje": [
-                "Expresar ideas de forma oral clara y coherente",
-                "Analizar textos literarios y no literarios de forma crítica",
-                "Producir textos escritos diversos con estructuración adecuada"
+                "Mantener conversaciones simples en inglés",
+                "Comprender textos informativos breves",
+                "Redactar textos sencillos en inglés"
             ]
         },
         "progresiones": [
             {
                 "id": 1,
-                "descripcion": "Comunica ideas y conocimientos de manera oral con claridad, fluidez y corrección en diversos contextos comunicativos",
-                "metas": []
+                "descripcion": "Participa en conversaciones sobre temas familiares utilizando estructuras gramaticales básicas",
+                "metas": [
+                    "Meta 1.1: Describir rutinas y experiencias"
+                ]
             },
             {
                 "id": 2,
-                "descripcion": "Lee de manera crítica textos literarios y no literarios para comprender, interpretar y evaluar ideas, conceptos e información",
+                "descripcion": "Comprende y produce textos escritos simples en inglés para comunicar información",
                 "metas": [
-                    "Meta 2.1: Identificar ideas principales",
-                    "Meta 2.2: Inferir significados implícitos"
+                    "Meta 2.1: Redactar correos electrónicos básicos"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/08/Programas-de-Estudio-2do-Semestre.zip",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Lengua y Comunicación II",
+        "semestre": 2,
+        "metadata": {
+            "nombre_uac": "LENGUA Y COMUNICACIÓN II",
+            "semestre": 2,
+            "creditos": 6,
+            "horas_semanales": 3
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Argumentación",
+                "Análisis literario",
+                "Producción textual avanzada"
+            ],
+            "subcategorias": [
+                "Texto argumentativo",
+                "Géneros literarios",
+                "Coherencia textual"
+            ],
+            "metas_aprendizaje": [
+                "Construir y evaluar argumentos sólidos",
+                "Analizar obras literarias identificando recursos estilísticos",
+                "Producir textos coherentes y bien estructurados"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Argumenta su punto de vista de manera fundamentada en discusiones orales y escritas",
+                "metas": [
+                    "Meta 1.1: Evaluar argumentos y falacias"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Analiza textos literarios interpretando recursos estilísticos y contexto cultural",
+                "metas": [
+                    "Meta 2.1: Identificar figuras retóricas"
                 ]
             }
         ],
         "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Lengua_y_Comunicacion.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Humanidades III",
+        "semestre": 3,
+        "metadata": {
+            "nombre_uac": "HUMANIDADES III",
+            "semestre": 3,
+            "creditos": 6,
+            "horas_semanales": 3
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Ética aplicada",
+                "Derechos humanos",
+                "Pensamiento crítico"
+            ],
+            "subcategorias": [
+                "Bioética",
+                "Justicia social",
+                "Argumentación filosófica"
+            ],
+            "metas_aprendizaje": [
+                "Analizar dilemas éticos contemporáneos",
+                "Aplicar principios de derechos humanos",
+                "Desarrollar pensamiento crítico autónomo"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Analiza problemas éticos contemporáneos desde múltiples perspectivas filosóficas",
+                "metas": [
+                    "Meta 1.1: Resolver dilemas bioéticos"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Argumenta en favor de los derechos humanos mediante fundamentos filosóficos",
+                "metas": [
+                    "Meta 2.1: Defender derechos fundamentales"
+                ]
+            }
+        },
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Humanidades.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Inglés III",
+        "semestre": 3,
+        "metadata": {
+            "nombre_uac": "INGLÉS III",
+            "semestre": 3,
+            "creditos": 6,
+            "horas_semanales": 3
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Comunicación efectiva",
+                "Lectura comprehensiva",
+                "Escritura académica"
+            ],
+            "subcategorias": [
+                "Presentaciones orales",
+                "Textos académicos",
+                "Ensayos"
+            ],
+            "metas_aprendizaje": [
+                "Realizar presentaciones orales en inglés",
+                "Comprender textos académicos en inglés",
+                "Redactar ensayos básicos"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Se expresa oralmente en inglés con fluidez en situaciones académicas y profesionales",
+                "metas": [
+                    "Meta 1.1: Realizar presentaciones formales"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Comprende y produce textos académicos en inglés con estructura y registro apropiados",
+                "metas": [
+                    "Meta 2.1: Redactar ensayos argumentativos"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/08/Programas-de-Estudio-3er-Semestre.zip",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Ecosistemas: interacciones, energía y dinámica",
+        "semestre": 3,
+        "metadata": {
+            "nombre_uac": "ECOSISTEMAS CNEYT III",
+            "semestre": 3,
+            "creditos": 8,
+            "horas_semanales": 4
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Ecología",
+                "Ciclos biogeoquímicos",
+                "Desarrollo sustentable"
+            ],
+            "subcategorias": [
+                "Cadenas alimenticias",
+                "Ciclo del carbono",
+                "Conservación"
+            ],
+            "metas_aprendizaje": [
+                "Explicar las interacciones en los ecosistemas",
+                "Analizar el flujo de energía y materia",
+                "Proponer acciones sustentables"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Explica las relaciones e interacciones entre los componentes bióticos y abióticos de los ecosistemas",
+                "metas": [
+                    "Meta 1.1: Analizar redes tróficas"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Analiza el flujo de energía y los ciclos biogeoquímicos en los ecosistemas",
+                "metas": [
+                    "Meta 2.1: Explicar ciclos del carbón y nitrógeno"
+                ]
+            },
+            {
+                "id": 3,
+                "descripcion": "Propone soluciones sustentables para problemáticas ambientales locales y globales",
+                "metas": [
+                    "Meta 3.1: Diseñar proyectos de conservación"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Ciencias_Naturales.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Lengua y Comunicación III",
+        "semestre": 3,
+        "metadata": {
+            "nombre_uac": "LENGUA Y COMUNICACIÓN III",
+            "semestre": 3,
+            "creditos": 6,
+            "horas_semanales": 3
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Literatura mexicana",
+                "Comunicación escrita profesional",
+                "Expresión oral avanzada"
+            ],
+            "subcategorias": [
+                "Obras representativas",
+                "Documentos formales",
+                "Oratoria"
+            ],
+            "metas_aprendizaje": [
+                "Analizar obras de la literatura mexicana",
+                "Redactar documentos formales y profesionales",
+                "Dominar técnicas de oratoria"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Analiza obras literarias mexicanas en su contexto histórico y cultural",
+                "metas": [
+                    "Meta 1.1: Interpretar obras del Siglo de Oro"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Produce documentos formales y académicos con estructura y registro apropiados",
+                "metas": [
+                    "Meta 2.1: Redactar informes técnicos"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Lengua_y_Comunicacion.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Pensamiento Matemático III",
+        "semestre": 3,
+        "metadata": {
+            "nombre_uac": "PENSAMIENTO MATEMÁTICO III",
+            "semestre": 3,
+            "creditos": 8,
+            "horas_semanales": 4
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Geometría analítica",
+                "Trigonometría",
+                "Funciones"
+            ],
+            "subcategorias": [
+                "Cónicas",
+                "Razones trigonométricas",
+                "Funciones lineales y cuadráticas"
+            ],
+            "metas_aprendizaje": [
+                "Analizar propiedades de secciones cónicas",
+                "Resolver problemas trigonométricos",
+                "Modelar fenómenos con funciones"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Aplica conceptos de geometría analítica para estudiar propiedades de cónicas",
+                "metas": [
+                    "Meta 1.1: Graficar círculos y parábolas"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Resuelve problemas aplicando razones y funciones trigonométricas",
+                "metas": [
+                    "Meta 2.1: Aplicar seno, coseno y tangente"
+                ]
+            },
+            {
+                "id": 3,
+                "descripcion": "Modela situaciones mediante funciones algebraicas y analiza su comportamiento",
+                "metas": [
+                    "Meta 3.1: Interpretar gráficas de funciones"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Pensamiento_Matematico.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Ciencias Sociales III",
+        "semestre": 3,
+        "metadata": {
+            "nombre_uac": "CIENCIAS SOCIALES III",
+            "semestre": 3,
+            "creditos": 4,
+            "horas_semanales": 2
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Problemas sociales contemporáneos",
+                "Globalización",
+                "Movimientos sociales"
+            ],
+            "subcategorias": [
+                "Desigualdad",
+                "Migración",
+                "Participación ciudadana"
+            ],
+            "metas_aprendizaje": [
+                "Analizar problemáticas sociales actuales",
+                "Comprender efectos de la globalización",
+                "Participar activamente en la comunidad"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Analiza problemas sociales contemporáneos desde perspectivas multidisciplinarias",
+                "metas": [
+                    "Meta 1.1: Investigar causas de desigualdad"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Comprende los procesos de globalización y su impacto en comunidades locales",
+                "metas": [
+                    "Meta 2.1: Evaluar efectos de la globalización"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Ciencias_Sociales.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Conciencia Histórica I",
+        "semestre": 3,
+        "metadata": {
+            "nombre_uac": "CONCIENCIA HISTÓRICA I",
+            "semestre": 3,
+            "creditos": 4,
+            "horas_semanales": 2
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Historia de México I",
+                "Procesos históricos",
+                "Identidad nacional"
+            ],
+            "subcategorias": [
+                "México prehispánico",
+                "Conquista",
+                "Virreinato"
+            ],
+            "metas_aprendizaje": [
+                "Comprender procesos históricos de México",
+                "Analizar fuentes históricas primarias",
+                "Desarrollar conciencia histórica crítica"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Analiza procesos históricos de México desde el periodo prehispánico hasta la independencia",
+                "metas": [
+                    "Meta 1.1: Explicar culturas mesoamericanas"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Desarrolla conciencia histórica mediante el análisis crítico de fuentes y procesos",
+                "metas": [
+                    "Meta 2.1: Evaluar fuentes históricas"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Conciencia_Historica.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Inglés IV",
+        "semestre": 4,
+        "metadata": {
+            "nombre_uac": "INGLÉS IV",
+            "semestre": 4,
+            "creditos": 6,
+            "horas_semanales": 3
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Comunicación profesional",
+                "Inglés académico",
+                "Comprensión avanzada"
+            ],
+            "subcategorias": [
+                "Negocios",
+                "Investigación",
+                "Medios"
+            ],
+            "metas_aprendizaje": [
+                "Comunicarse efectivamente en contextos profesionales",
+                "Comprender textos académicos complejos",
+                "Producir documentos profesionales en inglés"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Se comunica profesionalmente en inglés en diversos contextos laborales y académicos",
+                "metas": [
+                    "Meta 1.1: Participar en reuniones de trabajo"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Comprende y produce textos especializados en inglés con fluidez y precisión",
+                "metas": [
+                    "Meta 2.1: Redactar propuestas profesionales"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/08/Programas-de-Estudio-4to-Semestre.zip",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Reacciones Químicas",
+        "semestre": 4,
+        "metadata": {
+            "nombre_uac": "REACCIONES QUÍMICAS CNEYT IV",
+            "semestre": 4,
+            "creditos": 8,
+            "horas_semanales": 4
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Química",
+                "Estequiometría",
+                "Cinética química"
+            ],
+            "subcategorias": [
+                "Tipos de reacciones",
+                "Balanceo",
+                "Velocidad de reacción"
+            ],
+            "metas_aprendizaje": [
+                "Identificar y clasificar tipos de reacciones químicas",
+                "Aplicar estequiometría en cálculos químicos",
+                "Analizar factores que afectan la velocidad de reacción"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Clasifica reacciones químicas y predice productos mediante el conocimiento de patrones",
+                "metas": [
+                    "Meta 1.1: Balancear ecuaciones químicas"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Aplica cálculos estequiométricos para determinar cantidades de reactivos y productos",
+                "metas": [
+                    "Meta 2.1: Resolver problemas de reactivo limitante"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Ciencias_Naturales.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Conciencia Histórica II",
+        "semestre": 5,
+        "metadata": {
+            "nombre_uac": "CONCIENCIA HISTÓRICA II",
+            "semestre": 5,
+            "creditos": 4,
+            "horas_semanales": 2
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Historia de México II",
+                "Siglo XIX y XX",
+                "México contemporáneo"
+            ],
+            "subcategorias": [
+                "Reforma",
+                "Revolución",
+                "México moderno"
+            ],
+            "metas_aprendizaje": [
+                "Analizar procesos históricos del México independiente",
+                "Comprender la construcción del México contemporáneo",
+                "Reflexionar sobre el presente desde perspectiva histórica"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Analiza los procesos históricos del México independiente hasta el siglo XX",
+                "metas": [
+                    "Meta 1.1: Explicar la Revolución Mexicana"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Comprende problemáticas actuales de México desde una perspectiva histórica",
+                "metas": [
+                    "Meta 2.1: Relacionar pasado y presente"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Conciencia_Historica.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "La Energía",
+        "semestre": 5,
+        "metadata": {
+            "nombre_uac": "LA ENERGÍA CNEYT V",
+            "semestre": 5,
+            "creditos": 8,
+            "horas_semanales": 4
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Electromagnetismo",
+                "Ondas",
+                "Energía nuclear"
+            ],
+            "subcategorias": [
+                "Electricidad",
+                "Magnetismo",
+                "Ondas electromagnéticas"
+            ],
+            "metas_aprendizaje": [
+                "Explicar fenómenos electromagnéticos",
+                "Analizar propiedades de ondas",
+                "Comprender procesos de generación de energía"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Explica fenómenos eléctricos y magnéticos mediante modelos científicos",
+                "metas": [
+                    "Meta 1.1: Aplicar ley de Ohm"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Analiza las propiedades de las ondas electromagnéticas y sus aplicaciones tecnológicas",
+                "metas": [
+                    "Meta 2.1: Identificar tipos de ondas"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Ciencias_Naturales.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Conciencia Histórica III",
+        "semestre": 6,
+        "metadata": {
+            "nombre_uac": "CONCIENCIA HISTÓRICA III",
+            "semestre": 6,
+            "creditos": 4,
+            "horas_semanales": 2
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Historia mundial",
+                "Globalización histórica",
+                "Movimientos sociales"
+            ],
+            "subcategorias": [
+                "Guerras mundiales",
+                "Guerra fría",
+                "Presente global"
+            ],
+            "metas_aprendizaje": [
+                "Comprender procesos históricos globales",
+                "Analizar la configuración del mundo actual",
+                "Desarrollar pensamiento histórico crítico"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Analiza procesos históricos globales del siglo XX y su impacto en el presente",
+                "metas": [
+                    "Meta 1.1: Explicar causas de guerras mundiales"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Desarrolla pensamiento histórico crítico para comprender la complejidad del mundo actual",
+                "metas": [
+                    "Meta 2.1: Analizar problemáticas globales"
+                ]
+            }
+        },
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Conciencia_Historica.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Cultura Digital III",
+        "semestre": 6,
+        "metadata": {
+            "nombre_uac": "CULTURA DIGITAL III",
+            "semestre": 6,
+            "creditos": 4,
+            "horas_semanales": 2
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Inteligencia artificial",
+                "Big data",
+                "Innovación tecnológica"
+            ],
+            "subcategorias": [
+                "IA aplicada",
+                "Análisis de datos",
+                "Tecnología emergente"
+            ],
+            "metas_aprendizaje": [
+                "Comprender fundamentos de inteligencia artificial",
+                "Analizar y usar grandes volúmenes de datos",
+                "Evaluar impacto de tecnologías emergentes"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Comprende los fundamentos y aplicaciones de la inteligencia artificial en la sociedad",
+                "metas": [
+                    "Meta 1.1: Identificar usos éticos de IA"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Analiza grandes volúmenes de datos para tomar decisiones informadas",
+                "metas": [
+                    "Meta 2.1: Interpretar visualizaciones de datos"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Cultura_Digital.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Herencia y Evolución",
+        "semestre": 6,
+        "metadata": {
+            "nombre_uac": "HERENCIA Y EVOLUCIÓN CNEYT VI",
+            "semestre": 6,
+            "creditos": 8,
+            "horas_semanales": 4
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Genética",
+                "Evolución",
+                "Biodiversidad"
+            ],
+            "subcategorias": [
+                "Leyes de Mendel",
+                "Selección natural",
+                "Especiación"
+            ],
+            "metas_aprendizaje": [
+                "Explicar mecanismos de herencia genética",
+                "Comprender teoría de la evolución",
+                "Valorar y conservar la biodiversidad"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Explica los mecanismos de la herencia genética mediante las leyes de Mendel y conceptos modernos",
+                "metas": [
+                    "Meta 1.1: Resolver problemas de genética mendeliana"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Comprende la evolución como proceso que explica la diversidad de la vida",
+                "metas": [
+                    "Meta 2.1: Analizar evidencias evolutivas"
+                ]
+            },
+            {
+                "id": 3,
+                "descripcion": "Valora la biodiversidad y propone acciones para su conservación",
+                "metas": [
+                    "Meta 3.1: Diseñar estrategias de conservación"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Ciencias_Naturales.pdf",
         "fecha_extraccion": "2026-01-11T15:00:00.000Z"
     }
 ]
