@@ -26,7 +26,7 @@ class MateriasService {
     async obtenerTodas(): Promise<Materia[]> {
         try {
             const materiasRef = collection(db, MATERIAS_COLLECTION);
-            const q = query(materiasRef, orderBy('grado', 'asc'), orderBy('nombre', 'asc'));
+            const q = query(materiasRef, orderBy('nombre', 'asc'));
             const snapshot = await getDocs(q);
 
             return snapshot.docs.map(doc => ({

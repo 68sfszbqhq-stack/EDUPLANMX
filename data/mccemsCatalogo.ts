@@ -1,3 +1,12 @@
+/**
+ * Catálogo de Materias MCCEMS - DGB/SEP
+ * Fuente oficial: https://dgb.sep.gob.mx/marco-curricular
+ * Fecha de extracción: 11 de enero de 2026
+ * 
+ * Este catálogo incluye las UAC básicas identificadas en el sitio.
+ * Para el catálogo completo con progresiones detalladas, ejecutar:
+ * scripts/extractor_mccems.py
+ */
 
 import { Materia, Grado, CategoriaMCCEMS } from '../types/materia';
 
