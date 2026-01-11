@@ -2,7 +2,12 @@
 // TIPOS PARA GUÍA CURRICULAR INTERACTIVA
 // ============================================
 
-export type Grado = 1 | 2 | 3;
+export type Grado = 1 | 2 | 3 | 4 | 5 | 6;
+
+export type CategoriaMCCEMS =
+    | 'Recurso Sociocognitivo'
+    | 'Área de Conocimiento'
+    | 'Ámbito de Formación Socioemocional';
 
 // ============================================
 // UNIDADES Y TEMAS
@@ -64,6 +69,10 @@ export interface Materia {
     nombre: string;
     clave: string;
     grado: Grado;
+
+    // Clasificación MCCEMS
+    categoria: CategoriaMCCEMS;
+
     horasSemanales: number;
     totalHoras: number;
 

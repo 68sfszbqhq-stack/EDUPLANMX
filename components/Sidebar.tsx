@@ -9,7 +9,8 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
-    const { logout } = useAuth();
+
+    const { logout, user } = useAuth();
 
     const menuItems = [
         { id: 'dashboard', label: 'Dashboard', icon: Layout },
@@ -19,6 +20,10 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
         { id: 'generator', label: 'Nueva Planeación', icon: PlusCircle },
         { id: 'plans', label: 'Historial', icon: History },
     ];
+
+    if (user?.rol === 'superadmin') {
+        menuItems.push({ id: 'admin-asignacion', label: 'Asignar Materias', icon: Users });
+    }
 
     return (
         <aside className="w-64 bg-indigo-900 text-white flex-shrink-0 flex flex-col hidden md:flex h-screen sticky top-0">
@@ -39,8 +44,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
                             key={item.id}
                             onClick={() => onNavigate(item.id)}
                             className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${isActive
-                                    ? 'bg-indigo-800 text-white shadow-lg shadow-indigo-900/50'
-                                    : 'hover:bg-indigo-800/50 text-indigo-100'
+                                ? 'bg-indigo-800 text-white shadow-lg shadow-indigo-900/50'
+                                : 'hover:bg-indigo-800/50 text-indigo-100'
                                 }`}
                         >
                             <Icon className={`w-5 h-5 ${isActive ? 'text-indigo-300' : ''}`} />

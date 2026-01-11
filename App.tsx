@@ -10,6 +10,7 @@ import Dashboard from './components/Dashboard';
 import PlansLibrary from './components/PlansLibrary';
 import DiagnosticoDashboard from './components/DiagnosticoDashboard';
 import Sidebar from './components/Sidebar';
+import AsignacionMaterias from './pages/admin/AsignacionMaterias';
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -54,6 +55,7 @@ const App: React.FC = () => {
     setSavedPlans(prev => [plan, ...prev]);
   };
 
+
   const handleNavigate = (viewId: string) => {
     if (viewId === 'guia-curricular') {
       navigate('/maestro/guia-curricular');
@@ -66,6 +68,8 @@ const App: React.FC = () => {
     switch (view) {
       case 'dashboard':
         return <Dashboard setView={setView} recentPlansCount={savedPlans.length} />;
+      case 'admin-asignacion':
+        return <AsignacionMaterias />;
       case 'context':
         return (
           <ContextManager
