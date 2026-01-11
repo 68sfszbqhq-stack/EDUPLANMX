@@ -1,154 +1,106 @@
 [
-    {
-        "materia": "Cultura Digital II",
-        "semestre": 2,
-        "metadata": {
-            "nombre_uac": "CULTURA DIGITAL II",
-            "semestre": 2,
-            "creditos": 4,
-            "horas_semanales": 2,
-            "clave": "CD-II-001"
-        },
-        "organizador_curricular": {
-            "categorias": [
-                "Programación y ciudadanía digital",
-                "Pensamiento computacional",
-                "Creatividad digital",
-                "Seguridad y ética digital"
-            ],
-            "subcategorias": [
-                "Algoritmos y lógica de programación",
-                "Resolución de problemas computacionales",
-                "Diseño y producción digital",
-                "Protección de datos personales",
-                "Huella digital y reputación online"
-            ],
-            "metas_aprendizaje": [
-                "Desarrollar pensamiento algorítmico para resolver problemas mediante descomposición y abstracción",
-                "Crear soluciones digitales básicas utilizando herramientas de programación visual y textual",
-                "Producir contenidos digitales creativos (audio, video, animaciones) con responsabilidad ética",
-                "Aplicar medidas de seguridad informática para proteger información personal y evitar ciberataques",
-                "Comprender el impacto social, económico y ambiental de las tecnologías digitales"
-            ]
-        },
-        "progresiones": [
-            {
-                "id": 1,
-                "descripcion": "Aplica pensamiento computacional para resolver problemas mediante algoritmos",
-                "metas": [
-                    "Diseñar algoritmos básicos utilizando pseudocódigo y diagramas de flujo",
-                    "Descomponer problemas complejos en subproblemas más simples",
-                    "Identificar patrones y crear abstracciones para generalizar soluciones"
-                ],
-                "tematicas": [
-                    "Introducción al pensamiento computacional: descomposición, reconocimiento de patrones, abstracción",
-                    "Algoritmos: concepto, características y representación (pseudocódigo, diagramas de flujo)",
-                    "Estructuras de control: secuencia, selección (if-else) y repetición (bucles)",
-                    "Variables y tipos de datos básicos",
-                    "Ejercicios prácticos: algoritmos para la vida cotidiana (recetas, rutas, procesos)"
-                ]
-            },
-            {
-                "id": 2,
-                "descripcion": "Crea productos digitales utilizando herramientas de programación y diseño",
-                "metas": [
-                    "Programar soluciones simples usando lenguajes de programación visual (Scratch, Blockly)",
-                    "Desarrollar proyectos interactivos (juegos, animaciones, historias digitales)",
-                    "Depurar y mejorar programas identificando y corrigiendo errores"
-                ],
-                "tematicas": [
-                    "Introducción a la programación visual: Scratch, App Inventor",
-                    "Eventos, condicionales y bucles en programación visual",
-                    "Sprites, escenarios y animaciones básicas",
-                    "Creación de juegos educativos simples",
-                    "Introducción a la programación textual: Python básico (opcional)",
-                    "Proyecto integrador: Creación de una aplicación o juego interactivo"
-                ]
-            },
-            {
-                "id": 3,
-                "descripcion": "Produce y edita contenidos digitales multimedia con creatividad y responsabilidad",
-                "metas": [
-                    "Editar audio, video e imágenes usando software libre (Audacity, OpenShot, GIMP)",
-                    "Crear presentaciones y material educativo multimedia",
-                    "Respetar derechos de autor y licencias Creative Commons"
-                ],
-                "tematicas": [
-                    "Edición de audio: grabación, corte, efectos y mezcla con Audacity",
-                    "Edición de video: montaje, transiciones, títulos con OpenShot o similares",
-                    "Diseño gráfico básico: retoque de imágenes, creación de carteles con GIMP/Canva",
-                    "Derechos de autor, plagio y licencias Creative Commons",
-                    "Proyecto: Podcast educativo o video tutorial sobre un tema de interés"
-                ]
-            },
-            {
-                "id": 4,
-                "descripcion": "Aplica medidas de seguridad y principios éticos al interactuar en entornos digitales",
-                "metas": [
-                    "Proteger información personal utilizando contraseñas seguras y autenticación de dos factores",
-                    "Identificar y evitar amenazas cibernéticas (phishing, malware, ingeniería social)",
-                    "Practicar ciudadanía digital responsable (netiqueta, combate al ciberbullying)"
-                ],
-                "tematicas": [
-                    "Seguridad informática: contraseñas seguras, gestores de contraseñas, 2FA",
-                    "Amenazas digitales: virus, malware, ransomware, phishing",
-                    "Privacidad en redes sociales: configuración de privacidad, huella digital",
-                    "Ciberbullying y acoso digital: prevención y denuncia",
-                    "Netiqueta: comunicación respetuosa en línea",
-                    "Fake news y desinformación: cómo verificar información",
-                    "Proyecto: Campaña de concientización sobre seguridad digital en la escuela"
-                ]
-            },
-            {
-                "id": 5,
-                "descripcion": "Analiza el impacto social, económico y ambiental de las tecnologías digitales",
-                "metas": [
-                    "Reflexionar sobre la brecha digital y desigualdad en el acceso a tecnología",
-                    "Comprender el impacto ambiental de los dispositivos electrónicos (e-waste)",
-                    "Evaluar críticamente el uso de datos personales por parte de empresas tecnológicas"
-                ],
-                "tematicas": [
-                    "Brecha digital: desigualdad en acceso y habilidades digitales",
-                    "Impacto ambiental de la tecnología: basura electrónica, consumo energético",
-                    "Big Data y privacidad: cómo las empresas usan nuestros datos",
-                    "Inteligencia Artificial: oportunidades y riesgos éticos",
-                    "Tecnología y empleo: automatización y nuevas profesiones digitales",
-                    "Debate: ¿La tecnología nos hace más felices o más dependientes?"
-                ]
-            }
+  {
+    "materia": "Pensamiento Matemático I",
+    "semestre": 1,
+    "metadata": {
+      "nombre_uac": "PENSAMIENTO MATEMÁTICO I",
+      "semestre": 1,
+      "creditos": 8,
+      "horas_semanales": 4
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Número, álgebra y variación",
+        "Forma, espacio y medida",
+        "Análisis de datos"
+      ],
+      "subcategorias": [
+        "Aritmética",
+        "Álgebra básica",
+        "Geometría plana",
+        "Estadística"
+      ],
+      "metas_aprendizaje": [
+        "Resolver problemas aritméticos aplicando propiedades de operaciones",
+        "Traducir situaciones de la vida real a expresiones algebraicas",
+        "Calcular perímetros y áreas de figuras geométricas básicas",
+        "Analizar datos mediante tablas y gráficas"
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Aplica operaciones aritméticas para resolver problemas cuantitativos de su vida cotidiana",
+        "metas": [
+          "Resolver operaciones con números enteros, decimales y fracciones",
+          "Aplicar jerarquía de operaciones",
+          "Usar calculadora científica correctamente"
         ],
-        "recursos_didacticos": [
-            "Plataforma Scratch (scratch.mit.edu) para programación visual",
-            "Code.org - Cursos de introducción a la programación",
-            "Google CS First - Lecciones de ciencias de la computación",
-            "Audacity - Editor de audio gratuito",
-            "OpenShot - Editor de video de código abierto",
-            "GIMP - Software de edición de imágenes",
-            "Canva Educación - Diseño gráfico para estudiantes",
-            "Material audiovisual de la SEP sobre Cultura Digital",
-            "Laboratorio de cómputo con al menos 1 computadora por cada 2 estudiantes",
-            "Proyector y bocinas para presentaciones"
+        "tematicas": [
+          "Números reales: naturales, enteros, racionales e irracionales",
+          "Operaciones básicas: suma, resta, multiplicación, división",
+          "Jerarquía de operaciones y uso de paréntesis",
+          "Fracciones: simplificación, suma, resta, multiplicación y división",
+          "Decimales y porcentajes",
+          "Problemas de aplicación en contextos cotidianos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Representa situaciones mediante expresiones algebraicas y las manipula siguiendo reglas establecidas",
+        "metas": [
+          "Identificar variables y constantes",
+          "Simplificar expresiones algebraicas",
+          "Resolver ecuaciones de primer grado"
         ],
-        "evaluacion": {
-            "criterios": [
-                "Diseño y documentación de algoritmos claros y eficientes",
-                "Funcionalidad y creatividad en proyectos de programación",
-                "Calidad técnica y creatividad en productos multimedia",
-                "Aplicación de medidas de seguridad en actividades digitales",
-                "Reflexión crítica sobre el impacto de la tecnología",
-                "Trabajo colaborativo y retroalimentación entre pares",
-                "Presentación y comunicación de resultados"
-            ],
-            "instrumentos": [
-                "Rúbricas para evaluar proyectos de programación",
-                "Portafolio digital de productos creados",
-                "Autoevaluación y coevaluación",
-                "Pruebas prácticas de habilidades digitales",
-                "Ensayos reflexivos sobre ética digital",
-                "Presentaciones orales de proyectos finales"
-            ]
-        },
-        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Cultura_Digital.pdf",
-        "fecha_extraccion": "2026-01-11T15:30:00.000Z"
-    }
+        "tematicas": [
+          "Lenguaje algebraico: variables, términos, coeficientes",
+          "Expresiones algebraicas: monomios, binomios, polinomios",
+          "Leyes de los exponentes",
+          "Operaciones con expresiones algebraicas: suma, resta, multiplicación",
+          "Ecuaciones lineales de una variable",
+          "Aplicaciones: problemas de edades, mezclas, movimiento uniforme"
+        ]
+      },
+      {
+        "id": 3,
+        "descripcion": "Analiza propiedades de figuras geométricas planas para resolver problemas de medición",
+        "metas": [
+          "Clasificar triángulos y cuadriláteros",
+          "Calcular perímetros y áreas",
+          "Aplicar el Teorema de Pitágoras"
+        ],
+        "tematicas": [
+          "Elementos básicos: punto, recta, plano, ángulo",
+          "Clasificación de ángulos y triángulos",
+          "Cuadriláteros: cuadrado, rectángulo, rombo, trapecio",
+          "Perímetros de figuras planas",
+          "Áreas: triángulos, cuadriláteros, círculos",
+          "Teorema de Pitágoras y aplicaciones",
+          "Problemas de aplicación en la vida real"
+        ]
+      }
+    ],
+    "recursos_didacticos": [
+      "GeoGebra para visualización de conceptos geométricos",
+      "Calculadora científica",
+      "Juego de geometría",
+      "Material manipulable (regletas, geoplano)",
+      "Videos educativos de Khan Academy en español"
+    ],
+    "evaluacion": {
+      "criterios": [
+        "Resolución de problemas",
+        "Razonamiento matemático",
+        "Comunicación de procedimientos"
+      ],
+      "instrumentos": [
+        "Exámenes escritos",
+        "Resolución de problemas en equipo",
+        "Portafolio de evidencias"
+      ]
+    },
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
+    "fecha_extraccion": "2026-01-11T15:30:00.000Z"
+  }
 ]
