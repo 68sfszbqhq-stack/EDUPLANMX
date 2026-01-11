@@ -1,9 +1,10 @@
 
+
 import { GoogleGenAI, Type } from "@google/genai";
 import { SchoolContext, SubjectContext, LessonPlan } from "../types";
 import { getMCCEMSContextString } from "./mccemsService";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY || '' });
 
 export const generateLessonPlan = async (
   prompt: string,
@@ -11,7 +12,7 @@ export const generateLessonPlan = async (
   subject: SubjectContext
 ): Promise<LessonPlan> => {
   const model = 'gemini-3-pro-preview';
-  
+
   const mccemsDocContext = getMCCEMSContextString(subject.subjectId);
 
   const systemInstruction = `
@@ -84,8 +85,8 @@ export const generateLessonPlan = async (
     const plan = JSON.parse(response.text || '{}') as LessonPlan;
     // Aseguramos la URL del documento oficial
     if (plan.mccemsAlignment) {
-      plan.mccemsAlignment.documentUrl = subject.curriculumContent.includes('http') 
-        ? subject.curriculumContent.split(': ')[1] 
+      plan.mccemsAlignment.documentUrl = subject.curriculumContent.includes('http')
+        ? subject.curriculumContent.split(': ')[1]
         : 'https://dgb.sep.gob.mx/marco-curricular';
       plan.mccemsAlignment.validated = true;
     }
