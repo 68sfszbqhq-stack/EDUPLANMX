@@ -4,8 +4,7 @@
  * para validación de planeaciones y generación de contenido educativo
  */
 
-import { readFileSync } from 'fs';
-import { join } from 'path';
+import programasSEPData from '../../data/programas_sep.json';
 
 interface MetasAprendizaje {
     id: number;
@@ -15,7 +14,7 @@ interface MetasAprendizaje {
 
 interface OrganizadorCurricular {
     categorias: string[];
-    subcategorias: string[];
+    subcategorias?: string[];
     metas_aprendizaje: string[];
 }
 
@@ -45,13 +44,11 @@ class ProgramasSEPService {
     }
 
     /**
-     * Carga el archivo JSON de programas SEP
+     * Carga los programas desde el JSON importado
      */
     private cargarProgramas(): void {
         try {
-            const dataPath = join(process.cwd(), 'data', 'programas_sep.json');
-            const data = readFileSync(dataPath, 'utf-8');
-            this.programas = JSON.parse(data);
+            this.programas = programasSEPData as ProgramaSEP[];
             console.log(`✅ Cargados ${this.programas.length} programas MCCEMS`);
         } catch (error) {
             console.error('❌ Error cargando programas SEP:', error);
