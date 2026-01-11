@@ -1,0 +1,99 @@
+[
+    {
+        "materia": "Pensamiento Matemático II",
+        "semestre": 2,
+        "metadata": {
+            "nombre_uac": "PENSAMIENTO MATEMÁTICO II",
+            "semestre": 2,
+            "creditos": 8,
+            "horas_semanales": 4
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Álgebra",
+                "Geometría Analítica",
+                "Estadística"
+            ],
+            "subcategorias": [
+                "Ecuaciones lineales y sistemas",
+                "Rectas y parábolas",
+                "Probabilidad y datos"
+            ],
+            "metas_aprendizaje": [
+                "Resolver problemas que requieran el planteamiento y la solución de ecuaciones de primer grado",
+                "Aplicar conceptos de álgebra en contextos de la vida cotidiana y situaciones académicas",
+                "Interpretar la información de gráficas y tablas para la toma de decisiones"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Aplica el razonamiento algebraico para resolver problemas de la vida cotidiana mediante ecuaciones lineales y sistemas de ecuaciones",
+                "metas": [
+                    "Meta 1.1: Resolver ecuaciones de primer grado mediante operaciones inversas"
+                ]
+            },
+            {
+                "id": 2,
+                "descripcion": "Desarrolla el pensamiento lógico mediante la interpretación y representación de relaciones funcionales en el plano cartesiano",
+                "metas": [
+                    "Meta 2.1: Graficar ecuaciones lineales",
+                    "Meta 2.2: Identificar pendiente e intersecciones"
+                ]
+            },
+            {
+                "id": 3,
+                "descripcion": "Analiza datos estadísticos aplicando medidas de tendencia central y dispersión para interpretar fenómenos sociales y científicos",
+                "metas": [
+                    "Meta 3.1: Calcular media, mediana y moda"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/08/NPMCx1C06u-Pensamiento-Matematico-II.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    },
+    {
+        "materia": "Lengua y Comunicación I",
+        "semestre": 1,
+        "metadata": {
+            "nombre_uac": "LENGUA Y COMUNICACIÓN I",
+            "semestre": 1,
+            "creditos": 6,
+            "horas_semanales": 3
+        },
+        "organizador_curricular": {
+            "categorias": [
+                "Comunicación oral",
+                "Lectura crítica",
+                "Producción de textos"
+            ],
+            "subcategorias": [
+                "Expresión oral",
+                "Comprensión lectora",
+                "Escritura creativa"
+            ],
+            "metas_aprendizaje": [
+                "Expresar ideas de forma oral clara y coherente",
+                "Analizar textos literarios y no literarios de forma crítica",
+                "Producir textos escritos diversos con estructuración adecuada"
+            ]
+        },
+        "progresiones": [
+            {
+                "id": 1,
+                "descripcion": "Comunica ideas y conocimientos de manera oral con claridad, fluidez y corrección en diversos contextos comunicativos",
+                "metas": []
+            },
+            {
+                "id": 2,
+                "descripcion": "Lee de manera crítica textos literarios y no literarios para comprender, interpretar y evaluar ideas, conceptos e información",
+                "metas": [
+                    "Meta 2.1: Identificar ideas principales",
+                    "Meta 2.2: Inferir significados implícitos"
+                ]
+            }
+        ],
+        "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2023/05/29/Lengua_y_Comunicacion.pdf",
+        "fecha_extraccion": "2026-01-11T15:00:00.000Z"
+    }
+]

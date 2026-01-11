@@ -6,6 +6,7 @@ import {
     CheckCircle, FileText, Video, Globe
 } from 'lucide-react';
 import { materiasService } from '../../src/services/materiasService';
+import { programasSEPService } from '../../src/services/programasSEPService';
 import type { Materia, Unidad } from '../../types/materia';
 import Sidebar from '../../components/Sidebar';
 
@@ -15,6 +16,8 @@ const ProgramaMateria: React.FC = () => {
     const [materia, setMateria] = useState<Materia | null>(null);
     const [loading, setLoading] = useState(true);
     const [unidadExpandida, setUnidadExpandida] = useState<number | null>(1);
+    const [programaSEP, setProgramaSEP] = useState<any | null>(null);
+    const [mostrarProgresionesOficiales, setMostrarProgresionesOficiales] = useState(false);
 
     useEffect(() => {
         if (materiaId) {
@@ -27,6 +30,21 @@ const ProgramaMateria: React.FC = () => {
             setLoading(true);
             const data = await materiasService.obtenerPorId(materiaId!);
             setMateria(data);
+
+            // Intentar cargar programa oficial SEP si existe
+            if (data) {
+                try {
+                    const programaOficial = programasSEPService.buscarPorMateriaYSemestre(
+                        data.nombre,
+                        data.grado
+                    );
+                    setProgramaSEP(programaOficial);
+                    console.log('✅ Programa oficial SEP encontrado:', programaOficial);
+                } catch (error) {
+                    console.log('ℹ️ No se encontró programa oficial SEP para esta materia');
+                    setProgramaSEP(null);
+                }
+            }
         } catch (error) {
             console.error('Error al cargar materia:', error);
         } finally {
@@ -153,6 +171,124 @@ const ProgramaMateria: React.FC = () => {
                             ))}
                         </div>
                     </div>
+
+                    {/* Programa Oficial SEP (si existe) */}
+                    {programaSEP && (
+                        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 mb-6 border-2 border-indigo-200 shadow-md">
+                            <div className="flex items-start justify-between mb-4">
+                                <div className="flex items-start gap-3">
+                                    <div className="bg-indigo-600 p-2 rounded-lg">
+                                        <Award className="w-6 h-6 text-white" />
+                                    </div>
+                                    <div>
+                                        <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                                            📘 Programa Oficial DGB/SEP
+                                            <span className="text-xs bg-indigo-600 text-white px-2 py-1 rounded-full">MCCEMS</span>
+                                        </h2>
+                                        <p className="text-sm text-slate-600 mt-1">
+                                            Marco Curricular Común de la Educación Media Superior
+                                        </p>
+                                    </div>
+                                </div>
+                                {programaSEP.url_fuente && (
+                                    <a
+                                        href={programaSEP.url_fuente}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-indigo-600 hover:text-indigo-800 flex items-center gap-1 text-sm font-medium transition-colors"
+                                    >
+                                        <ExternalLink className="w-4 h-4" />
+                                        Ver PDF oficial
+                                    </a>
+                                )}
+                            </div>
+
+                            {/* Metadata del programa oficial */}
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                                {programaSEP.metadata?.creditos && (
+                                    <div className="bg-white/60 rounded-lg p-3">
+                                        <div className="text-xs text-slate-600 font-medium">Créditos</div>
+                                        <div className="text-lg font-bold text-indigo-700">{programaSEP.metadata.creditos}</div>
+                                    </div>
+                                )}
+                                {programaSEP.metadata?.horas_semanales && (
+                                    <div className="bg-white/60 rounded-lg p-3">
+                                        <div className="text-xs text-slate-600 font-medium">Horas/Semana</div>
+                                        <div className="text-lg font-bold text-indigo-700">{programaSEP.metadata.horas_semanales}</div>
+                                    </div>
+                                )}
+                                <div className="bg-white/60 rounded-lg p-3">
+                                    <div className="text-xs text-slate-600 font-medium">Progresiones</div>
+                                    <div className="text-lg font-bold text-indigo-700">{programaSEP.progresiones?.length || 0}</div>
+                                </div>
+                                <div className="bg-white/60 rounded-lg p-3">
+                                    <div className="text-xs text-slate-600 font-medium">Categorías</div>
+                                    <div className="text-lg font-bold text-indigo-700">{programaSEP.organizador_curricular?.categorias?.length || 0}</div>
+                                </div>
+                            </div>
+
+                            {/* Progresiones de Aprendizaje Oficiales */}
+                            {programaSEP.progresiones && programaSEP.progresiones.length > 0 && (
+                                <div className="bg-white/80 rounded-xl p-4">
+                                    <button
+                                        onClick={() => setMostrarProgresionesOficiales(!mostrarProgresionesOficiales)}
+                                        className="w-full flex items-center justify-between text-left font-semibold text-slate-900 hover:text-indigo-700 transition-colors"
+                                    >
+                                        <span className="flex items-center gap-2">
+                                            <TrendingUp className="w-5 h-5 text-indigo-600" />
+                                            Progresiones de Aprendizaje Oficiales ({programaSEP.progresiones.length})
+                                        </span>
+                                        {mostrarProgresionesOficiales ? (
+                                            <ChevronUp className="w-5 h-5" />
+                                        ) : (
+                                            <ChevronDown className="w-5 h-5" />
+                                        )}
+                                    </button>
+
+                                    {mostrarProgresionesOficiales && (
+                                        <div className="mt-4 space-y-3 max-h-96 overflow-y-auto">
+                                            {programaSEP.progresiones.map((prog: any, index: number) => (
+                                                <div key={index} className="bg-slate-50 rounded-lg p-3 border border-slate-200">
+                                                    <div className="flex items-start gap-2">
+                                                        <div className="bg-indigo-100 text-indigo-700 font-bold min-w-[28px] h-7 flex items-center justify-center rounded text-sm">
+                                                            {prog.id}
+                                                        </div>
+                                                        <div className="flex-1">
+                                                            <p className="text-slate-700 text-sm leading-relaxed">
+                                                                {prog.descripcion}
+                                                            </p>
+                                                            {prog.metas && prog.metas.length > 0 && (
+                                                                <div className="mt-2 pl-3 border-l-2 border-indigo-300">
+                                                                    {prog.metas.map((meta: string, idx: number) => (
+                                                                        <div key={idx} className="text-xs text-slate-600 flex items-start gap-1 mt-1">
+                                                                            <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0 mt-0.5" />
+                                                                            <span>{meta}</span>
+                                                                        </div>
+                                                                    ))}
+                                                                </div>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+
+                            {/* Fuente y fecha */}
+                            <div className="mt-4 text-xs text-slate-600 flex items-center justify-between">
+                                <span>
+                                    Fuente: DGB/SEP - Marco Curricular Común
+                                </span>
+                                {programaSEP.fecha_extraccion && (
+                                    <span>
+                                        Extraído: {new Date(programaSEP.fecha_extraccion).toLocaleDateString('es-MX')}
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+                    )}
 
                     {/* Unidades */}
                     <div className="mb-6">
