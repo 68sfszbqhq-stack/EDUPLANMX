@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Users, AlertTriangle, Target, TrendingUp, Wifi, WifiOff, Plus, FileText } from 'lucide-react';
 import type { Alumno, DiagnosticoGrupal } from '../types/diagnostico';
-// import { diagnosticoService } from '../services/diagnosticoService';
+import { diagnosticoService } from '../services/diagnosticoService';
+import PlanFactibleWeb from './PlanFactibleWeb';
+
 import FormularioAlumno from './FormularioAlumno';
 import { alumnosService } from '../src/services/alumnosFirebase';
 
@@ -11,6 +13,7 @@ const DiagnosticoDashboard: React.FC = () => {
     const [cargando, setCargando] = useState(false);
     const [cargandoAlumnos, setCargandoAlumnos] = useState(true);
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
+    const [showPlanFactible, setShowPlanFactible] = useState(false);
 
     // Cargar alumnos desde Firebase
     useEffect(() => {
@@ -20,17 +23,19 @@ const DiagnosticoDashboard: React.FC = () => {
     const cargarAlumnos = async () => {
         setCargandoAlumnos(true);
         try {
+            console.log('🔄 Iniciando carga de alumnos desde Firebase (forzado)...');
             const alumnosFirebase = await alumnosService.obtenerAlumnos();
-            setAlumnos(alumnosFirebase);
-            console.log('✅ Alumnos cargados desde Firebase:', alumnosFirebase.length);
-        } catch (error) {
-            console.error('❌ Error al cargar alumnos desde Firebase:', error);
-            // Fallback a localStorage si Firebase falla
-            const alumnosGuardados = localStorage.getItem('alumnos');
-            if (alumnosGuardados) {
-                setAlumnos(JSON.parse(alumnosGuardados));
-                console.log('⚠️ Usando alumnos de localStorage como fallback');
+
+            if (alumnosFirebase.length > 0) {
+                setAlumnos(alumnosFirebase);
+                console.log(`✅ ÉXITO: Se cargaron ${alumnosFirebase.length} alumnos reales de la base de datos.`);
+            } else {
+                console.warn('⚠️ La colección de alumnos en Firebase está vacía.');
+                setAlumnos([]);
             }
+        } catch (error) {
+            console.error('❌ CRÍTICO: Error al conectar con Firebase:', error);
+            alert('Error de conexión con la base de datos de alumnos.');
         } finally {
             setCargandoAlumnos(false);
         }
@@ -58,19 +63,17 @@ const DiagnosticoDashboard: React.FC = () => {
             return;
         }
 
-        // TODO: Implementar diagnosticoService
-        alert('La generación automática de diagnósticos estará disponible próximamente. Por ahora puedes registrar alumnos.');
-
-        /* setCargando(true);
+        setCargando(true);
         try {
             const resultado = await diagnosticoService.procesarDiagnosticoGrupal(alumnos);
             setDiagnostico(resultado);
+            console.log("Diagnóstico generado:", resultado);
         } catch (error) {
             console.error('Error al generar diagnóstico:', error);
             alert('Hubo un error al generar el diagnóstico. Verifica tu API Key.');
         } finally {
             setCargando(false);
-        } */
+        }
     };
 
     const getNivelRiesgoColor = (nivel: string) => {
@@ -81,6 +84,10 @@ const DiagnosticoDashboard: React.FC = () => {
             default: return 'bg-green-100 text-green-800 border-green-200';
         }
     };
+
+    if (showPlanFactible) {
+        return <PlanFactibleWeb onClose={() => setShowPlanFactible(false)} diagnostico={diagnostico} />;
+    }
 
     return (
         <div className="space-y-6">
@@ -152,23 +159,26 @@ const DiagnosticoDashboard: React.FC = () => {
                                     <AlertTriangle className="w-6 h-6 text-amber-600" />
                                 </div>
                                 <div>
-                                    <div className="text-2xl font-bold text-slate-800">{diagnostico.alertasAbandono.length}</div>
+                                    <div className="text-2xl font-bold text-slate-800">{diagnostico.alertasAbandono?.length || 0}</div>
                                     <div className="text-sm text-slate-500">Alertas de Riesgo</div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                            <div className="flex items-center gap-3">
-                                <div className="bg-purple-100 p-3 rounded-xl">
-                                    <Wifi className="w-6 h-6 text-purple-600" />
-                                </div>
-                                <div>
-                                    <div className="text-2xl font-bold text-slate-800">{diagnostico.contextoDigital.porcentajeConectividad}%</div>
-                                    <div className="text-sm text-slate-500">Con Internet</div>
+                        {/* SAFEGUARD: Only render if data exists */}
+                        {diagnostico.contextoDigital && (
+                            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                                <div className="flex items-center gap-3">
+                                    <div className="bg-purple-100 p-3 rounded-xl">
+                                        <Wifi className="w-6 h-6 text-purple-600" />
+                                    </div>
+                                    <div>
+                                        <div className="text-2xl font-bold text-slate-800">{diagnostico.contextoDigital.porcentajeConectividad || 0}%</div>
+                                        <div className="text-sm text-slate-500">Con Internet</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        )}
                     </>
                 )}
             </div>
@@ -186,7 +196,7 @@ const DiagnosticoDashboard: React.FC = () => {
                             <div>
                                 <h4 className="font-semibold text-slate-700 mb-2">Estilos Dominantes</h4>
                                 <div className="flex flex-wrap gap-2">
-                                    {diagnostico.perfilAprendizaje.estilosDominantes.map((estilo, idx) => (
+                                    {diagnostico.perfilAprendizaje?.estilosDominantes?.map((estilo, idx) => (
                                         <span key={idx} className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm">
                                             {estilo}
                                         </span>
@@ -196,7 +206,7 @@ const DiagnosticoDashboard: React.FC = () => {
                             <div>
                                 <h4 className="font-semibold text-slate-700 mb-2">Ganchos de Interés</h4>
                                 <div className="flex flex-wrap gap-2">
-                                    {diagnostico.perfilAprendizaje.ganchosInteres.map((gancho, idx) => (
+                                    {diagnostico.perfilAprendizaje?.ganchosInteres?.map((gancho, idx) => (
                                         <span key={idx} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">
                                             {gancho}
                                         </span>
@@ -206,7 +216,7 @@ const DiagnosticoDashboard: React.FC = () => {
                             <div className="md:col-span-2">
                                 <h4 className="font-semibold text-slate-700 mb-2">Recomendaciones Didácticas</h4>
                                 <ul className="space-y-2">
-                                    {diagnostico.perfilAprendizaje.recomendacionesDidacticas.map((rec, idx) => (
+                                    {diagnostico.perfilAprendizaje?.recomendacionesDidacticas?.map((rec, idx) => (
                                         <li key={idx} className="flex items-start gap-2 text-sm text-slate-600">
                                             <span className="text-indigo-600 font-bold">•</span>
                                             {rec}
@@ -218,7 +228,7 @@ const DiagnosticoDashboard: React.FC = () => {
                     </div>
 
                     {/* Alertas de Abandono */}
-                    {diagnostico.alertasAbandono.length > 0 && (
+                    {diagnostico.alertasAbandono && diagnostico.alertasAbandono.length > 0 && (
                         <div className="bg-white rounded-2xl border border-slate-200 p-6">
                             <h3 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
                                 <AlertTriangle className="w-6 h-6 text-amber-600" />
@@ -237,12 +247,12 @@ const DiagnosticoDashboard: React.FC = () => {
                                             </span>
                                         </div>
                                         <div className="text-sm mb-2">
-                                            <strong>Factores:</strong> {alerta.factoresRiesgo.join(', ')}
+                                            <strong>Factores:</strong> {alerta.factoresRiesgo?.join(', ')}
                                         </div>
                                         <div className="text-sm">
                                             <strong>Recomendaciones:</strong>
                                             <ul className="mt-1 space-y-1">
-                                                {alerta.recomendaciones.map((rec, i) => (
+                                                {alerta.recomendaciones?.map((rec, i) => (
                                                     <li key={i}>• {rec}</li>
                                                 ))}
                                             </ul>
@@ -260,17 +270,17 @@ const DiagnosticoDashboard: React.FC = () => {
                             <h3 className="text-xl font-bold text-slate-800 mb-4">Problema PAEC Prioritario</h3>
                             <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-200">
                                 <div className="text-3xl font-bold text-amber-900 mb-2">
-                                    {diagnostico.problemaPAEC.problema}
+                                    {diagnostico.problemaPAEC?.problema || 'No detectado'}
                                 </div>
                                 <div className="text-sm text-amber-700">
-                                    Reportado por {diagnostico.problemaPAEC.frecuencia} alumnos ({diagnostico.problemaPAEC.porcentaje}%)
+                                    Reportado por {diagnostico.problemaPAEC?.frecuencia || 0} alumnos ({diagnostico.problemaPAEC?.porcentaje || 0}%)
                                 </div>
                             </div>
-                            {diagnostico.problemasSecundarios.length > 0 && (
+                            {diagnostico.problemasSecundarios?.length > 0 && (
                                 <div className="mt-4">
                                     <h4 className="font-semibold text-slate-700 mb-2 text-sm">Problemas Secundarios</h4>
                                     <div className="space-y-2">
-                                        {diagnostico.problemasSecundarios.map((prob, idx) => (
+                                        {diagnostico.problemasSecundarios?.map((prob, idx) => (
                                             <div key={idx} className="flex justify-between text-sm text-slate-600">
                                                 <span>{prob.problema}</span>
                                                 <span className="font-semibold">{prob.porcentaje}%</span>
@@ -285,7 +295,7 @@ const DiagnosticoDashboard: React.FC = () => {
                         <div className="bg-white rounded-2xl border border-slate-200 p-6">
                             <h3 className="text-xl font-bold text-slate-800 mb-4">Metas PMC Sugeridas</h3>
                             <ul className="space-y-3">
-                                {diagnostico.metasPMC.map((meta, idx) => (
+                                {diagnostico.metasPMC?.map((meta, idx) => (
                                     <li key={idx} className="flex items-start gap-3 p-3 bg-emerald-50 rounded-lg border border-emerald-200">
                                         <span className="bg-emerald-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
                                             {idx + 1}
@@ -297,36 +307,38 @@ const DiagnosticoDashboard: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Contexto Digital */}
-                    <div className="bg-white rounded-2xl border border-slate-200 p-6">
-                        <h3 className="text-xl font-bold text-slate-800 mb-4">Contexto Digital del Grupo</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div className="p-4 bg-green-50 rounded-xl border border-green-200">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <Wifi className="w-5 h-5 text-green-600" />
-                                    <span className="font-semibold text-green-900">Con Internet</span>
+                    {/* Contexto Digital - Solo mostrar si hay datos */}
+                    {diagnostico.contextoDigital && (
+                        <div className="bg-white rounded-2xl border border-slate-200 p-6">
+                            <h3 className="text-xl font-bold text-slate-800 mb-4">Contexto Digital del Grupo</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div className="p-4 bg-green-50 rounded-xl border border-green-200">
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <Wifi className="w-5 h-5 text-green-600" />
+                                        <span className="font-semibold text-green-900">Con Internet</span>
+                                    </div>
+                                    <div className="text-3xl font-bold text-green-900">{diagnostico.contextoDigital?.conInternet || 0}</div>
+                                    <div className="text-sm text-green-700">alumnos ({diagnostico.contextoDigital?.porcentajeConectividad || 0}%)</div>
                                 </div>
-                                <div className="text-3xl font-bold text-green-900">{diagnostico.contextoDigital.conInternet}</div>
-                                <div className="text-sm text-green-700">alumnos ({diagnostico.contextoDigital.porcentajeConectividad}%)</div>
-                            </div>
-                            <div className="p-4 bg-red-50 rounded-xl border border-red-200">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <WifiOff className="w-5 h-5 text-red-600" />
-                                    <span className="font-semibold text-red-900">Sin Internet</span>
+                                <div className="p-4 bg-red-50 rounded-xl border border-red-200">
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <WifiOff className="w-5 h-5 text-red-600" />
+                                        <span className="font-semibold text-red-900">Sin Internet</span>
+                                    </div>
+                                    <div className="text-3xl font-bold text-red-900">{diagnostico.contextoDigital?.sinInternet || 0}</div>
+                                    <div className="text-sm text-red-700">alumnos ({100 - (diagnostico.contextoDigital?.porcentajeConectividad || 0)}%)</div>
                                 </div>
-                                <div className="text-3xl font-bold text-red-900">{diagnostico.contextoDigital.sinInternet}</div>
-                                <div className="text-sm text-red-700">alumnos ({100 - diagnostico.contextoDigital.porcentajeConectividad}%)</div>
-                            </div>
-                            <div className="p-4 bg-blue-50 rounded-xl border border-blue-200">
-                                <div className="font-semibold text-blue-900 mb-2">Recomendación</div>
-                                <div className="text-sm text-blue-700">
-                                    {diagnostico.contextoDigital.porcentajeConectividad >= 70
-                                        ? 'Puedes usar actividades digitales con alternativas offline'
-                                        : 'Prioriza actividades presenciales y sin conexión'}
+                                <div className="p-4 bg-blue-50 rounded-xl border border-blue-200">
+                                    <div className="font-semibold text-blue-900 mb-2">Recomendación</div>
+                                    <div className="text-sm text-blue-700">
+                                        {(diagnostico.contextoDigital?.porcentajeConectividad || 0) >= 70
+                                            ? 'Puedes usar actividades digitales con alternativas offline'
+                                            : 'Prioriza actividades presenciales y sin conexión'}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    )}
                 </div>
             )}
 

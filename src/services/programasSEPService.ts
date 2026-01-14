@@ -6,19 +6,20 @@
 
 import programasSEPData from '../../data/programas_sep.json';
 
-interface MetasAprendizaje {
+export interface MetasAprendizaje {
     id: number;
     descripcion: string;
     metas: string[];
+    tematicas?: string[];
 }
 
-interface OrganizadorCurricular {
+export interface OrganizadorCurricular {
     categorias: string[];
     subcategorias?: string[];
     metas_aprendizaje: string[];
 }
 
-interface ProgramaSEP {
+export interface ProgramaSEP {
     materia: string;
     semestre: number;
     metadata: {
@@ -226,18 +227,18 @@ ${programa.metadata.creditos ? `Créditos: ${programa.metadata.creditos}` : ''}
 ${programa.metadata.horas_semanales ? `Horas semanales: ${programa.metadata.horas_semanales}` : ''}
 
 ORGANIZADOR CURRICULAR:
-Categorías: ${programa.organizador_curricular.categorias.join(', ')}
+Categorías: ${programa.organizador_curricular?.categorias?.join(', ') || 'No definidas'}
 
-PROGRESIONES DE APRENDIZAJE (${programa.progresiones.length} total):
-${programa.progresiones.slice(0, 5).map(p =>
+PROGRESIONES DE APRENDIZAJE (${programa.progresiones?.length || 0} total):
+${programa.progresiones?.slice(0, 5).map(p =>
             `${p.id}. ${p.descripcion.substring(0, 150)}...`
-        ).join('\n')}
+        ).join('\n') || 'Sin progresiones registradas'}
 
 METAS DE APRENDIZAJE:
-${programa.organizador_curricular.metas_aprendizaje.slice(0, 3).join('\n')}
+${programa.organizador_curricular?.metas_aprendizaje?.slice(0, 3).join('\n') || 'Generales del MCCEMS'}
 
-Fuente oficial: ${programa.url_fuente}
-Fecha de extracción: ${new Date(programa.fecha_extraccion).toLocaleDateString('es-MX')}
+Fuente oficial: ${programa.url_fuente || 'DGB-SEP'}
+Fecha de extracción: ${programa.fecha_extraccion ? new Date(programa.fecha_extraccion).toLocaleDateString('es-MX') : 'Reciente'}
         `.trim();
 
         return contexto;

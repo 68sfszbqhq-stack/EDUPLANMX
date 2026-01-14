@@ -83,6 +83,13 @@ export interface DatosNEM {
   // Intereses y Preferencias
   materiasPreferidas: string[];
   actividadesInteres: string[];
+
+  // Nuevos campos para simplificar análisis IA
+  situacionFamiliar?: string; // Resumen ej. "Nuclear estable"
+  estiloAprendizaje?: string; // Visual, Auditivo, Kinestésico
+  barrerasAprendizaje?: string[]; // BAP detectadas
+  accesoInternet?: boolean; // Simplificado
+  intereses?: string[]; // Simplificado
 }
 
 // Alumno Completo

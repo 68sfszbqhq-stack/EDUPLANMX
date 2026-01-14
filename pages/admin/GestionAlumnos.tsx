@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { Users, Search, PlusCircle, Edit, Trash2 } from 'lucide-react';
+import { Users, Search, PlusCircle, Edit, Trash2, Sparkles } from 'lucide-react';
+import { seedAlumnos } from '../../src/studentsSeeder';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../../src/config/firebase';
 
@@ -76,13 +77,29 @@ const GestionAlumnos: React.FC = () => {
                         Administra la base de datos de estudiantes matriculados.
                     </p>
                 </div>
-                <button
-                    className="bg-indigo-600 text-white px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-indigo-700 transition-colors shadow-sm"
-                    onClick={() => alert('Función de agregar alumno pendiente de implementación')}
-                >
-                    <PlusCircle className="w-5 h-5" />
-                    Nuevo Alumno
-                </button>
+                <div className="flex gap-2">
+                    <button
+                        className="bg-white text-indigo-600 border border-indigo-200 px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-indigo-50 transition-colors shadow-sm font-bold text-xs"
+                        onClick={async () => {
+                            if (confirm('¿Generar 60 alumnos de prueba? Esto agregará datos a la base de datos real.')) {
+                                setLoading(true);
+                                await seedAlumnos(60);
+                                await cargarAlumnos();
+                                alert('¡60 Alumnos generados con éxito!');
+                            }
+                        }}
+                    >
+                        <Sparkles className="w-4 h-4" />
+                        Generar 60 (Demo)
+                    </button>
+                    <button
+                        className="bg-indigo-600 text-white px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-indigo-700 transition-colors shadow-sm"
+                        onClick={() => alert('Función de agregar alumno pendiente de implementación')}
+                    >
+                        <PlusCircle className="w-5 h-5" />
+                        Nuevo Alumno
+                    </button>
+                </div>
             </header>
 
             {/* Buscador y Filtros */}

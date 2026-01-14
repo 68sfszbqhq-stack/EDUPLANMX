@@ -36,7 +36,7 @@ const ContextManager: React.FC<ContextManagerProps> = ({ school, setSchool, subj
               <label className="text-sm font-semibold text-slate-700 flex items-center gap-2">
                 <Building2 className="w-4 h-4 text-slate-400" /> Nombre del Plantel
               </label>
-              <input 
+              <input
                 name="schoolName"
                 value={school.schoolName}
                 onChange={handleSchoolChange}
@@ -46,9 +46,63 @@ const ContextManager: React.FC<ContextManagerProps> = ({ school, setSchool, subj
             </div>
             <div className="space-y-2">
               <label className="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                <Target className="w-4 h-4 text-slate-400" /> Clave de Centro de Trabajo (CCT) <span className="text-red-500">*</span>
+              </label>
+              <input
+                name="cct"
+                value={school.cct}
+                onChange={handleSchoolChange}
+                className={`w-full px-4 py-2 rounded-xl border outline-none transition-all uppercase ${!school.cct ? 'border-red-200 bg-red-50' : 'border-slate-200 focus:ring-2 focus:ring-indigo-500'}`}
+                placeholder="Ej. 21EBH0000X"
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="space-y-2">
+              <label className="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                Turno
+              </label>
+              <select
+                name="shift"
+                value={school.shift}
+                // @ts-ignore
+                onChange={handleSchoolChange}
+                className="w-full px-4 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+              >
+                <option value="Matutino">Matutino</option>
+                <option value="Vespertino">Vespertino</option>
+                <option value="Mixto">Mixto</option>
+              </select>
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                Ciclo Escolar
+              </label>
+              <input
+                name="cycle"
+                value={school.cycle}
+                onChange={handleSchoolChange}
+                className="w-full px-4 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                placeholder="Ej. 2024-2025"
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-semibold text-slate-700 flex items-center gap-2">
+                Municipio
+              </label>
+              <input
+                name="municipality"
+                value={school.municipality}
+                onChange={handleSchoolChange}
+                className="w-full px-4 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                placeholder="Ej. Puebla, Tehuacán..."
+              />
+            </div>
+            <div className="space-y-2 md:col-span-2">
+              <label className="text-sm font-semibold text-slate-700 flex items-center gap-2">
                 <Target className="w-4 h-4 text-slate-400" /> Infraestructura
               </label>
-              <input 
+              <input
                 name="infrastructure"
                 value={school.infrastructure}
                 onChange={handleSchoolChange}
@@ -59,7 +113,7 @@ const ContextManager: React.FC<ContextManagerProps> = ({ school, setSchool, subj
           </div>
           <div className="space-y-2">
             <label className="text-sm font-semibold text-slate-700">Visión de Dirección</label>
-            <textarea 
+            <textarea
               name="vision"
               value={school.vision}
               onChange={handleSchoolChange}
@@ -86,7 +140,7 @@ const ContextManager: React.FC<ContextManagerProps> = ({ school, setSchool, subj
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
             <div className="space-y-2">
               <label className="text-xs font-bold text-slate-500 uppercase">Materia / UAC</label>
-              <input 
+              <input
                 name="subjectName"
                 value={subject.subjectName}
                 onChange={handleSubjectChange}
@@ -97,7 +151,7 @@ const ContextManager: React.FC<ContextManagerProps> = ({ school, setSchool, subj
             </div>
             <div className="space-y-2">
               <label className="text-xs font-bold text-slate-500 uppercase">Categoría MCCEMS</label>
-              <input 
+              <input
                 name="mccemsCategory"
                 value={subject.mccemsCategory}
                 className="w-full px-4 py-2 rounded-xl border border-slate-200 bg-slate-50 text-slate-500 capitalize"
@@ -111,7 +165,7 @@ const ContextManager: React.FC<ContextManagerProps> = ({ school, setSchool, subj
               Contenidos Adicionales de la Escuela
               <span className="text-[10px] bg-slate-100 text-slate-400 px-2 py-0.5 rounded-full uppercase">Opcional</span>
             </label>
-            <textarea 
+            <textarea
               name="curriculumContent"
               value={subject.curriculumContent}
               onChange={handleSubjectChange}
@@ -122,7 +176,7 @@ const ContextManager: React.FC<ContextManagerProps> = ({ school, setSchool, subj
           </div>
         </div>
       </section>
-      
+
       <div className="bg-amber-50 p-6 rounded-3xl border border-amber-100 flex items-start gap-4">
         <div className="bg-amber-500 text-white rounded-xl p-2 mt-0.5 shadow-sm">
           <Info className="w-5 h-5" />

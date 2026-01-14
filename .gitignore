@@ -4,3 +4,10 @@ dist
 .env
 .DS_Store
 *.local
+
+# Ignorar archivos grandes en raiz
+/*.pdf
+/*.jpeg
+/*.jpg
+/*.png
+

@@ -13,6 +13,9 @@ import Sidebar from './components/Sidebar';
 import AsignacionMaterias from './pages/admin/AsignacionMaterias';
 import GestionAlumnos from './pages/admin/GestionAlumnos';
 
+import PMCDashboard from './pages/directivo/PMCDashboard';
+import PAECDashboard from './pages/plantel/PAECDashboard';
+
 const App: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,6 +27,10 @@ const App: React.FC = () => {
     const saved = localStorage.getItem('schoolContext');
     return saved ? JSON.parse(saved) : {
       schoolName: 'Bachillerato General Oficial',
+      cct: '',
+      cycle: '2024-2025',
+      shift: 'Matutino',
+      municipality: '',
       vision: '',
       communityGoals: '',
       infrastructure: ''
@@ -65,6 +72,8 @@ const App: React.FC = () => {
     }
   };
 
+  const { user, logout } = useAuth(); // Movido al nivel superior
+
   const renderView = () => {
     switch (view) {
       case 'dashboard':
@@ -73,6 +82,10 @@ const App: React.FC = () => {
         return <AsignacionMaterias />;
       case 'admin-alumnos':
         return <GestionAlumnos />;
+      case 'pmc':
+        return <PMCDashboard />;
+      case 'paec':
+        return <PAECDashboard />;
       case 'context':
         return (
           <ContextManager
@@ -87,6 +100,7 @@ const App: React.FC = () => {
           <PlanGenerator
             school={schoolContext}
             subject={subjectContext}
+            teacherName={user ? `${user.nombre} ${user.apellidoPaterno}` : undefined}
             onSave={handleSavePlan}
           />
         );
@@ -114,7 +128,7 @@ const App: React.FC = () => {
               {schoolContext.schoolName}
             </div>
             {(() => {
-              const { user, logout } = useAuth();
+              // useAuth ya está llamado arriba
               return user ? (
                 <>
                   <div className="text-right">

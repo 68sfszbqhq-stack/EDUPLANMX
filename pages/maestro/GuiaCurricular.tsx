@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { BookOpen, Clock, Target, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { materiasService } from '../../src/services/materiasService';
+import { programasSEPService } from '../../src/services/programasSEPService';
 import type { Materia } from '../../types/materia';
 import Sidebar from '../../components/Sidebar';
+
+import programasSEPData from '../../data/programas_sep.json'; // Fallback directo
 
 const GuiaCurricular: React.FC = () => {
     const navigate = useNavigate();
@@ -17,10 +20,87 @@ const GuiaCurricular: React.FC = () => {
     const cargarMaterias = async () => {
         try {
             setLoading(true);
-            const data = await materiasService.obtenerTodas();
-            setMaterias(data.filter(m => m.activa));
+
+            // 1. Obtener materias del sistema (Firestore) - Intentar, pero no bloquear
+            let dbMateriasActivas: Materia[] = [];
+            try {
+                const dbMaterias = await materiasService.obtenerTodas();
+                dbMateriasActivas = dbMaterias.filter(m => m.activa);
+            } catch (dbError) {
+                console.error('Error cargando materias DB:', dbError);
+            }
+
+            // 2. Obtener materias oficiales
+            // ESTRATEGIA "SI O SI": Usar servicio, si falla, usar JSON directo
+            let rawPrograms: any[] = [];
+            const stats = programasSEPService.obtenerEstadisticas();
+
+            if (stats.totalProgramas > 0) {
+                // El servicio funcionó, recuperamos todo (esto es ineficiente pero seguro)
+                stats.materiasDisponibles.forEach(m => {
+                    rawPrograms.push(...programasSEPService.buscarPorMateria(m));
+                });
+            } else {
+                console.warn('Servicio vacío, usando Fallback JSON directo');
+                rawPrograms = programasSEPData; // Fallback "Hardcore"
+            }
+
+            const materiasOficiales: Materia[] = [];
+
+            rawPrograms.forEach((prog: any) => {
+                // Verificar duplicados en DB
+                const existe = dbMateriasActivas.some(dbm =>
+                    dbm.nombre.toLowerCase().trim() === prog.materia.toLowerCase().trim() &&
+                    dbm.grado === prog.semestre
+                );
+
+                if (!existe) {
+                    // Adaptador Seguro
+                    try {
+                        const nuevaMateriaOficial: Materia = {
+                            id: `sep-${String(prog.materia).replace(/\s+/g, '-')}-${prog.semestre}`,
+                            nombre: prog.materia,
+                            clave: `SEP-${prog.semestre}${String(prog.materia).substring(0, 3).toUpperCase()}`,
+                            grado: prog.semestre as any,
+                            categoria: (prog.organizador_curricular?.categorias?.[0] || 'Unidad de Aprendizaje'),
+                            horasSemanales: prog.metadata?.horas_semanales || 4,
+                            totalHoras: (prog.metadata?.horas_semanales || 4) * 16,
+                            proposito: `Programa oficial del MCCEMS para ${prog.materia}.`,
+                            competencias: prog.organizador_curricular?.metas_aprendizaje || [],
+                            ejesFormativos: prog.organizador_curricular?.categorias || [],
+                            unidades: [],
+                            bibliografiaBasica: [],
+                            bibliografiaComplementaria: [],
+                            recursosDigitales: [],
+                            criteriosEvaluacion: [],
+                            instrumentosEvaluacion: [],
+                            activa: true,
+                            fechaCreacion: new Date().toISOString(),
+                            creadoPor: 'SEP-OFFICIAL'
+                        };
+                        materiasOficiales.push(nuevaMateriaOficial);
+                    } catch (err) {
+                        console.error("Error adaptando programa:", prog.materia, err);
+                    }
+                }
+            });
+
+            // 3. Fusionar listas (DB + Oficiales Faltantes)
+            const listaFinal = [...dbMateriasActivas, ...materiasOficiales].sort((a, b) => {
+                const gradoA = Number(a.grado) || 0;
+                const gradoB = Number(b.grado) || 0;
+                if (gradoA !== gradoB) return gradoA - gradoB;
+                return a.nombre.localeCompare(b.nombre);
+            });
+
+            if (listaFinal.length === 0) {
+                console.error("No se encontraron materias ni en DB ni en Oficiales");
+            }
+
+            setMaterias(listaFinal);
+
         } catch (error) {
-            console.error('Error al cargar materias:', error);
+            console.error('Error crítico al cargar materias:', error);
         } finally {
             setLoading(false);
         }
@@ -120,9 +200,23 @@ const GuiaCurricular: React.FC = () => {
                             <div className="bg-white rounded-2xl p-12 text-center border border-slate-200">
                                 <BookOpen className="w-16 h-16 text-slate-400 mx-auto mb-4" />
                                 <p className="text-slate-600 text-lg">No hay materias disponibles</p>
-                                <p className="text-slate-500 text-sm mt-2">
+                                <p className="text-slate-500 text-sm mt-2 mb-6">
                                     Contacta al administrador para agregar materias
                                 </p>
+
+                                <div className="max-w-md mx-auto bg-slate-100 p-4 rounded-lg text-left text-xs font-mono text-slate-600">
+                                    <p className="font-bold mb-2">Diagnóstico de Sistema:</p>
+                                    <p>• Programas Oficiales (JSON + Index): {programasSEPService.obtenerEstadisticas().totalProgramas}</p>
+                                    <p>• Materias en Base de Datos: {loading ? 'Cargando...' : 'Verificando...'}</p>
+                                    <p className="mt-2 text-[10px] text-slate-400">Si "Programas Oficiales" es 0, hay un error en el archivo de datos local (programas_sep.json).</p>
+                                </div>
+
+                                <button
+                                    onClick={() => window.location.reload()}
+                                    className="mt-6 px-4 py-2 bg-indigo-50 text-indigo-700 rounded-lg hover:bg-indigo-100 transition-colors font-medium text-sm"
+                                >
+                                    Recargar Página
+                                </button>
                             </div>
                         ) : (
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -157,8 +251,30 @@ const GuiaCurricular: React.FC = () => {
                                                 <span>{materia.horasSemanales} hrs/semana • {materia.totalHoras} hrs totales</span>
                                             </div>
                                             <div className="flex items-center gap-2 text-sm text-slate-600">
-                                                <BookOpen className="w-4 h-4 text-indigo-500" />
-                                                <span>{materia.unidades.length} unidades • {materia.unidades.reduce((sum, u) => sum + u.temas.length, 0)} temas</span>
+                                                {materia.unidades && materia.unidades.length > 0 ? (
+                                                    <>
+                                                        <BookOpen className="w-4 h-4 text-indigo-500" />
+                                                        <span>{materia.unidades.length} unidades • {materia.unidades.reduce((sum, u) => sum + u.temas.length, 0)} temas</span>
+                                                    </>
+                                                ) : (
+                                                    (() => {
+                                                        const sepData = programasSEPService.buscarPorMateriaYSemestre(materia.nombre, materia.grado);
+                                                        if (sepData && sepData.progresiones) {
+                                                            return (
+                                                                <>
+                                                                    <Target className="w-4 h-4 text-green-600" />
+                                                                    <span className="font-semibold text-green-700">{sepData.progresiones.length} Progresiones Oficiales</span>
+                                                                </>
+                                                            );
+                                                        }
+                                                        return (
+                                                            <>
+                                                                <BookOpen className="w-4 h-4 text-slate-400" />
+                                                                <span className="text-slate-400">Programa en actualización</span>
+                                                            </>
+                                                        );
+                                                    })()
+                                                )}
                                             </div>
                                         </div>
 

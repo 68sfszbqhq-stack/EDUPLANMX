@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut } from 'lucide-react';
+import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network } from 'lucide-react';
 import { useAuth } from '../src/contexts/AuthContext';
 
 interface SidebarProps {
@@ -19,6 +19,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
         { id: 'diagnostico', label: 'Diagnóstico', icon: Users },
         { id: 'generator', label: 'Nueva Planeación', icon: PlusCircle },
         { id: 'plans', label: 'Historial', icon: History },
+        { id: 'pmc', label: 'PMC Directivo', icon: TrendingUp },
+        { id: 'paec', label: 'Comité PAEC', icon: Network },
     ];
 
     if (user?.rol === 'superadmin') {

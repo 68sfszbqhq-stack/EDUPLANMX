@@ -2,22 +2,33 @@
 import React from 'react';
 import { Plus, BookOpen, Clock, TrendingUp } from 'lucide-react';
 import { AppView } from '../types';
+import { seedAlumnos } from '../src/studentsSeeder';
 
 interface DashboardProps {
   setView: (view: AppView) => void;
   recentPlansCount: number;
 }
 
+import PlanFactibleWeb from './PlanFactibleWeb';
+
+// ... inside component ...
 const Dashboard: React.FC<DashboardProps> = ({ setView, recentPlansCount }) => {
+  const [showPlanFactible, setShowPlanFactible] = React.useState(false);
+
+  if (showPlanFactible) {
+    return <PlanFactibleWeb onClose={() => setShowPlanFactible(false)} />;
+  }
+
   return (
     <div className="space-y-8">
+
       <div className="bg-gradient-to-br from-indigo-600 to-violet-700 rounded-3xl p-8 text-white shadow-xl shadow-indigo-100 relative overflow-hidden">
         <div className="relative z-10">
           <h2 className="text-3xl font-bold mb-2">Ahorra horas administrativas</h2>
           <p className="text-indigo-100 max-w-md">
             Genera planeaciones didácticas alineadas al MCCEMS en segundos. Solo indica qué quieres hacer en clase y nosotros nos encargamos del formato SEP.
           </p>
-          <button 
+          <button
             onClick={() => setView('generator')}
             className="mt-6 bg-white text-indigo-600 px-6 py-3 rounded-xl font-bold hover:bg-indigo-50 transition-colors flex items-center gap-2"
           >
@@ -26,7 +37,7 @@ const Dashboard: React.FC<DashboardProps> = ({ setView, recentPlansCount }) => {
           </button>
         </div>
         <div className="absolute right-[-20px] bottom-[-20px] opacity-10">
-            <BookOpen className="w-64 h-64" />
+          <BookOpen className="w-64 h-64" />
         </div>
       </div>
 
@@ -59,19 +70,41 @@ const Dashboard: React.FC<DashboardProps> = ({ setView, recentPlansCount }) => {
       <div className="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
         <h3 className="text-xl font-bold mb-4 text-slate-800">Acciones Rápidas</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <button 
+          <button
             onClick={() => setView('context')}
             className="p-4 border border-slate-100 rounded-2xl hover:border-indigo-200 hover:bg-indigo-50 transition-all text-left"
           >
             <div className="font-semibold text-slate-800">Actualizar Contexto Escolar</div>
             <div className="text-sm text-slate-500">Define tu escuela, comunidad y metas directivas.</div>
           </button>
-          <button 
+          <button
             onClick={() => setView('plans')}
             className="p-4 border border-slate-100 rounded-2xl hover:border-indigo-200 hover:bg-indigo-50 transition-all text-left"
           >
             <div className="font-semibold text-slate-800">Revisar Historial</div>
             <div className="text-sm text-slate-500">Accede a tus planeaciones anteriores para reutilizarlas.</div>
+          </button>
+
+          {/* ... inside component ... */}
+          <button
+            onClick={async () => {
+              if (confirm('¿Generar 60 alumnos ficticios para pruebas de contexto?')) {
+                await seedAlumnos(60);
+                alert("¡Alumnos generados! Ahora al planear, la IA detectará este contexto.");
+              }
+            }}
+            className="p-4 border border-slate-100 rounded-2xl hover:border-emerald-200 hover:bg-emerald-50 transition-all text-left group"
+          >
+            <div className="font-semibold text-slate-800 group-hover:text-emerald-700">Generar Alumnos Demo</div>
+            <div className="text-sm text-slate-500">Puebla la base de datos con 60 estudiantes para pruebas.</div>
+          </button>
+
+          <button
+            onClick={() => setShowPlanFactible(true)}
+            className="p-4 border border-slate-100 rounded-2xl hover:border-blue-200 hover:bg-blue-50 transition-all text-left"
+          >
+            <div className="font-semibold text-slate-800">Ver Plan Factible (Web)</div>
+            <div className="text-sm text-slate-500">Visualiza el sitio web generado para el proyecto de Salud.</div>
           </button>
         </div>
       </div>
