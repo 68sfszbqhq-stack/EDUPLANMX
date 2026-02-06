@@ -20,6 +20,7 @@
   status = 200
 
 # Headers de seguridad
+# NOTA: No incluimos Cross-Origin-Opener-Policy porque bloquea el popup de Google Auth
 [[headers]]
   for = "/*"
   [headers.values]
@@ -27,6 +28,7 @@
     X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    # Cross-Origin-Opener-Policy removido para permitir Firebase Auth popup
 
 # Cache para assets estáticos
 [[headers]]
