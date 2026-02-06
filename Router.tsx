@@ -31,6 +31,12 @@ const RoleBasedRedirect: React.FC = () => {
         return <Navigate to="/login" replace />;
     }
 
+    // NUEVO: Verificar si necesita completar onboarding
+    if (user.onboardingCompleto === false) {
+        console.log('🚀 Redirigiendo a onboarding...');
+        return <Navigate to="/onboarding" replace />;
+    }
+
     // Redirigir según el rol
     switch (user.rol) {
         case 'superadmin':

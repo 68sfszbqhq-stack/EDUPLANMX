@@ -16,6 +16,12 @@ export interface Usuario {
     institucionId?: string; // Para directivos y maestros
     gruposAsignados?: string[]; // Solo maestros
 
+    // Sistema Multi-Escuela (NUEVO)
+    schoolId?: string; // ID de la escuela
+    schoolName?: string; // Nombre de la escuela (denormalizado)
+    puesto?: string; // Director, Docente, etc.
+    onboardingCompleto?: boolean; // Si completó el onboarding
+
     // Metadata
     activo: boolean;
     fechaCreacion: string;

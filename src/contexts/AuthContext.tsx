@@ -14,9 +14,43 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const unsubscribe = authService.onAuthStateChanged(async (firebaseUser: FirebaseUser | null) => {
             if (firebaseUser) {
                 try {
-                    // Obtener datos completos del usuario desde Firestore
+                    // 1. Obtener datos básicos del usuario desde Firestore
                     const userData = await authService.getUserData(firebaseUser.uid);
-                    setUser(userData);
+
+                    // 2. Importar schoolService dinámicamente
+                    const { schoolService } = await import('../services/schoolService');
+
+                    // 3. Verificar si necesita completar onboarding
+                    const needsOnboarding = await schoolService.needsOnboarding(firebaseUser.uid);
+
+                    if (needsOnboarding) {
+                        // Usuario nuevo o sin onboarding completo
+                        console.log('✋ Usuario necesita completar onboarding');
+                        setUser({
+                            ...userData,
+                            onboardingCompleto: false
+                        } as Usuario);
+                    } else {
+                        // Usuario con onboarding completo - cargar perfil completo
+                        const profile = await schoolService.getUserProfile(firebaseUser.uid);
+
+                        if (profile) {
+                            console.log('✅ Usuario con onboarding completo:', profile.schoolName);
+                            setUser({
+                                ...userData,
+                                schoolId: profile.schoolId,
+                                schoolName: profile.schoolName,
+                                puesto: profile.puesto,
+                                onboardingCompleto: true
+                            } as Usuario);
+                        } else {
+                            // Perfil no encontrado, necesita onboarding
+                            setUser({
+                                ...userData,
+                                onboardingCompleto: false
+                            } as Usuario);
+                        }
+                    }
                 } catch (error) {
                     console.error('Error al cargar datos del usuario:', error);
                     setUser(null);
