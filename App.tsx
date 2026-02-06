@@ -67,6 +67,8 @@ const App: React.FC = () => {
   const handleNavigate = (viewId: string) => {
     if (viewId === 'guia-curricular') {
       navigate('/maestro/guia-curricular');
+    } else if (viewId === 'herramientas') {
+      navigate('/maestro/herramientas');
     } else {
       setView(viewId as AppView);
     }

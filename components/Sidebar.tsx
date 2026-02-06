@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network } from 'lucide-react';
+import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network, Sparkles } from 'lucide-react';
 import { useAuth } from '../src/contexts/AuthContext';
 
 interface SidebarProps {
@@ -15,6 +15,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
     const menuItems = [
         { id: 'dashboard', label: 'Dashboard', icon: Layout },
         { id: 'guia-curricular', label: 'Guía Curricular', icon: BookOpen },
+        { id: 'herramientas', label: 'Herramientas', icon: Sparkles },
         { id: 'context', label: 'Contexto Escolar', icon: Settings },
         { id: 'diagnostico', label: 'Diagnóstico', icon: Users },
         { id: 'generator', label: 'Nueva Planeación', icon: PlusCircle },

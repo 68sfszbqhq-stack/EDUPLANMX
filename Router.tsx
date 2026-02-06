@@ -9,6 +9,7 @@ import AdminDashboard from './pages/admin/Dashboard';
 import UsuariosPage from './pages/admin/Usuarios';
 import GuiaCurricular from './pages/maestro/GuiaCurricular';
 import ProgramaMateria from './pages/maestro/ProgramaMateria';
+import Herramientas from './pages/maestro/Herramientas';
 
 // Componente para redirigir según el rol
 const RoleBasedRedirect: React.FC = () => {
@@ -80,6 +81,15 @@ const Router: React.FC = () => {
                         element={
                             <ProtectedRoute allowedRoles={['maestro', 'superadmin']}>
                                 <ProgramaMateria />
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route
+                        path="/maestro/herramientas"
+                        element={
+                            <ProtectedRoute allowedRoles={['maestro', 'superadmin']}>
+                                <Herramientas />
                             </ProtectedRoute>
                         }
                     />

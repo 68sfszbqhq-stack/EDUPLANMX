@@ -1125,64 +1125,105 @@
     "materia": "Cultura Digital II",
     "semestre": 2,
     "metadata": {
-      "nombre_uac": "CULTURA DIGITAL II",
+      "nombre_uac": "CULTURA DIGITAL II - Aprendizaje individual y colaborativo",
       "semestre": 2,
       "creditos": 4,
       "horas_semanales": 2
     },
+    "organizador_curricular": {
+      "categorias": [
+        "Herramientas digitales innovadoras",
+        "TICCAD para investigación",
+        "Investigación digital",
+        "Software estadístico",
+        "Páginas web"
+      ],
+      "metas_aprendizaje": [
+        "Interactúe con las TICCAD para potenciar su aprendizaje autónomo y colaborativo, de una forma creativa e innovadora, de acuerdo con las características y necesidades de su contexto."
+      ]
+    },
     "progresiones": [
       {
         "id": 1,
-        "descripcion": "Utiliza herramientas de comunicación y colaboración para la solución de problemas.",
+        "descripcion": "Utiliza herramientas digitales de una manera innovadora y eficiente para acceder al conocimiento y la experiencia de aprendizaje de las diferentes asignaturas.",
+        "metas": [
+          "Trabajo colaborativo digital",
+          "Herramientas de trabajo colaborativo digital libre (Cryptpad, Riseup pad, entre otras)"
+        ],
         "tematicas": [
-          "Herramientas colaborativas"
+          "Trabajo colaborativo digital",
+          "Cryptpad",
+          "Riseup pad",
+          "Herramientas colaborativas de libre acceso"
         ]
       },
       {
         "id": 2,
-        "descripcion": "Representa información a través de software de aplicación (Hojas de cálculo avanzadas).",
+        "descripcion": "Utiliza las TICCAD para interactuar y comunicarse con equipos colaborativos de trabajo, e investigar, buscar, discriminar y gestionar información de una situación, fenómeno o problemática personal, social o ambiental.",
+        "metas": [
+          "Tecnologías de Información, Comunicación, Conocimiento y Aprendizajes Digitales de libre acceso (Cryptpad, Riseup pad, entre otras)"
+        ],
         "tematicas": [
-          "Excel intermedio/avanzado"
+          "TICCAD",
+          "Investigación digital",
+          "Gestión de información",
+          "Trabajo colaborativo",
+          "Problemáticas sociales y ambientales"
         ]
       },
       {
         "id": 3,
-        "descripcion": "Crea contenidos digitales y multimedia (edición de video, audio, imagen).",
+        "descripcion": "Aplica técnicas y métodos de investigación digital para buscar, recopilar, extraer, organizar y difundir información de una situación, fenómeno o problemática personal, social o ambiental.",
+        "metas": [
+          "Técnicas y métodos de investigación digital (Ciberetnografía, análisis en línea de contenido, grupo focal, entrevista, observación, entre otros)"
+        ],
         "tematicas": [
-          "Edición multimedia"
+          "Ciberetnografía",
+          "Análisis de contenido en línea",
+          "Grupo focal virtual",
+          "Entrevista digital",
+          "Observación en línea",
+          "Métodos de investigación digital"
         ]
       },
       {
         "id": 4,
-        "descripcion": "Desarrolla estrategias para la gestión de su identidad y reputación digital.",
+        "descripcion": "Procesa datos relacionados con una situación, fenómeno o problemática de índole personal, social o ambiental, utilizando herramientas de software que permitan calcular medidas de tendencia central y dispersión, así como generar representaciones gráficas que contribuyan a su análisis.",
+        "metas": [
+          "Licencias permisivas (Cryptpad, Riseup pad, Libre office, entre otras)",
+          "Software estadístico libre (Jamovi, XLSTAT Free, JASP, entre otros)"
+        ],
         "tematicas": [
-          "Identidad digital"
+          "Software estadístico libre",
+          "Jamovi",
+          "XLSTAT Free",
+          "JASP",
+          "Análisis de datos",
+          "Medidas de tendencia central",
+          "Dispersión",
+          "Gráficas estadísticas",
+          "Licencias permisivas",
+          "LibreOffice"
         ]
       },
       {
         "id": 5,
-        "descripcion": "Aplica el pensamiento computacional y algoritmos para la programación básica.",
+        "descripcion": "Utiliza las páginas web para ayudar a difundir información sobre una situación, fenómeno o problemática personal, social o ambiental relacionada con otras asignaturas.",
+        "metas": [
+          "Páginas web (que impliquen un diseño simple, por ejemplo: Wordpress, Blogspot, entre otras)"
+        ],
         "tematicas": [
-          "Programación",
-          "Coding"
-        ]
-      },
-      {
-        "id": 6,
-        "descripcion": "Conoce los principios de funcionamiento de redes y conectividad.",
-        "tematicas": [
-          "Redes",
-          "Internet"
-        ]
-      },
-      {
-        "id": 7,
-        "descripcion": "Analiza el impacto de la tecnología en el desarrollo humano y social.",
-        "tematicas": [
-          "Tecnología y sociedad"
+          "Creación de páginas web",
+          "WordPress",
+          "Blogspot",
+          "Difusión de información",
+          "Diseño web simple",
+          "Proyectos interdisciplinarios"
         ]
       }
-    ]
+    ],
+    "url_fuente": "https://www.dgb.sep.gob.mx/informacion-academica/programas-de-estudio/cultura-digital-ii.pdf",
+    "fecha_extraccion": "2026-01-29"
   },
   {
     "materia": "Ciencias Sociales II",

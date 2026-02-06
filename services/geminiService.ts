@@ -11,7 +11,7 @@ export const generateLessonPlan = async (
   school: SchoolContext,
   subject: SubjectContext
 ): Promise<LessonPlan> => {
-  const model = 'gemini-2.0-flash-lite-preview-02-05';
+  const model = 'gemini-2.5-flash';
 
   const programasOficiales = programasSEPService.buscarPorMateria(subject.subjectName);
   const programaOficial = programasOficiales.length > 0 ? programasOficiales[0] : null;
