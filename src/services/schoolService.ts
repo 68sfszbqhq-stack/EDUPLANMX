@@ -5,6 +5,7 @@ import {
     getDocs,
     addDoc,
     updateDoc,
+    setDoc,
     query,
     where,
     orderBy,
@@ -238,7 +239,7 @@ class SchoolService {
 
             // Guardar en Firestore con el mismo ID que Auth
             const userDocRef = doc(db, USERS_COLLECTION, userId);
-            await updateDoc(userDocRef, userProfile as any);
+            await setDoc(userDocRef, userProfile as any);
 
             // Actualizar contador de docentes en la escuela
             await this.incrementSchoolDocentes(schoolId);
