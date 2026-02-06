@@ -107,6 +107,7 @@ export interface CrearMateriaData {
     nombre: string;
     clave: string;
     grado: Grado;
+    categoria: CategoriaMCCEMS;
     horasSemanales: number;
     totalHoras: number;
     proposito: string;

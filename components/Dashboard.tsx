@@ -16,7 +16,7 @@ const Dashboard: React.FC<DashboardProps> = ({ setView, recentPlansCount }) => {
   const [showPlanFactible, setShowPlanFactible] = React.useState(false);
 
   if (showPlanFactible) {
-    return <PlanFactibleWeb onClose={() => setShowPlanFactible(false)} />;
+    return <PlanFactibleWeb onClose={() => setShowPlanFactible(false)} diagnostico={null} />;
   }
 
   return (
