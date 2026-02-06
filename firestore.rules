@@ -47,5 +47,29 @@ service cloud.firestore {
     match /asignaciones/{asignacionId} {
       allow read, write: if true;
     }
+    
+    // ============================================
+    // NUEVAS COLECCIONES - SISTEMA MULTI-ESCUELA
+    // ============================================
+    
+    // Colección de usuarios (nuevo sistema)
+    match /users/{userId} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Colección de escuelas
+    match /schools/{schoolId} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Colección de uso de API
+    match /api_usage/{userId} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Colección de cuotas de API
+    match /api_quotas/{quotaId} {
+      allow read, write: if request.auth != null;
+    }
   }
 }
