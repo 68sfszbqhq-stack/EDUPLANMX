@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { programasSEPService, ProgramaSEP } from '../src/services/programasSEPService';
 import { SubjectContext } from '../types';
-import { BookMarked, ExternalLink, ShieldCheck, Loader2 } from 'lucide-react';
+import { BookMarked, ExternalLink, ShieldCheck, Loader2, Star } from 'lucide-react';
+import { useAuth } from '../src/contexts/AuthContext';
 
 interface MCCEMSSelectorProps {
   subject: SubjectContext;
@@ -61,11 +62,32 @@ const MCCEMSSelector: React.FC<MCCEMSSelectorProps> = ({ subject, setSubject }) 
     }
   };
 
-  // Agrupar por semestre para el select
+  const { user } = useAuth();
+
+  // Agrupar por semestre para el select, priorizando materias del usuario
+  const misMaterias: ProgramaSEP[] = [];
   const porSemestre: Record<number, ProgramaSEP[]> = {};
+
   programas.forEach(p => {
-    if (!porSemestre[p.semestre]) porSemestre[p.semestre] = [];
-    porSemestre[p.semestre].push(p);
+    // Normalizar nombres para comparación (por si acaso minusculas/mayusculas)
+    const isMySubject = user?.materias?.some(m => m.toLowerCase() === p.materia.toLowerCase());
+
+    if (isMySubject) {
+      // Evitar duplicados si ya está (aunque logicamente deberia ser unico por materia en este contexto)
+      if (!misMaterias.find(mm => mm.materia === p.materia)) {
+        misMaterias.push(p);
+      }
+    }
+
+    // Agregar a semestre de todas formas, o solo si no es mia? 
+    // Mejor agregar a semestre tambien para mantener catalogo completo, 
+    // pero podriamos filtrarlas de los grupos de semestres para evitar duplicidad visual.
+    // Vamos a dejarlas en ambos o filtrarlas. Filtrarlas limpio es mejor UX.
+
+    if (!isMySubject) {
+      if (!porSemestre[p.semestre]) porSemestre[p.semestre] = [];
+      porSemestre[p.semestre].push(p);
+    }
   });
 
   const selectedProgramInfo = programas.find(p => p.materia === subject.subjectId) ||
@@ -92,6 +114,18 @@ const MCCEMSSelector: React.FC<MCCEMSSelectorProps> = ({ subject, setSubject }) 
             className="w-full px-4 py-3 rounded-xl border border-white bg-white shadow-sm focus:ring-2 focus:ring-indigo-500 outline-none transition-all text-slate-700 font-medium cursor-pointer"
           >
             <option value="">-- Elige una Materia del Catálogo --</option>
+
+            {/* Mis Materias Group */}
+            {misMaterias.length > 0 && (
+              <optgroup label="⭐ Mis Materias Asignadas">
+                {misMaterias.map(prog => (
+                  <option key={`my-${prog.materia}`} value={prog.materia}>
+                    {prog.materia}
+                  </option>
+                ))}
+              </optgroup>
+            )}
+
             {Object.keys(porSemestre).map(semestre => (
               <optgroup key={semestre} label={`Semestre ${semestre}`}>
                 {porSemestre[Number(semestre)].map(prog => (

@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { SchoolContext, SubjectContext } from '../types';
-import { School, BookOpen, Target, Building2, Info } from 'lucide-react';
+import { School, BookOpen, Target, Building2, Info, Loader2 } from 'lucide-react';
 import MCCEMSSelector from './MCCEMSSelector';
+import { useAuth } from '../src/contexts/AuthContext';
+import { schoolService } from '../src/services/schoolService';
+import { useEffect, useState } from 'react';
 
 interface ContextManagerProps {
   school: SchoolContext;
@@ -20,17 +23,69 @@ const ContextManager: React.FC<ContextManagerProps> = ({ school, setSchool, subj
     setSubject(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const { user } = useAuth();
+  const [loadingSchool, setLoadingSchool] = useState(false);
+
+  useEffect(() => {
+    const loadSchoolData = async () => {
+      if (user && user.schoolId) {
+        // Pre-fill basic data from user profile
+        setSchool(prev => ({
+          ...prev,
+          schoolName: user.schoolName || prev.schoolName,
+        }));
+
+        // Fetch detailed school data if available and we don't have CCT yet (or force update)
+        if (!school.cct || school.cct !== user.schoolName /* simple check */) {
+          setLoadingSchool(true);
+          try {
+            const schoolData = await schoolService.getSchoolById(user.schoolId);
+            if (schoolData) {
+              setSchool(prev => ({
+                ...prev,
+                cct: schoolData.cct || prev.cct,
+                municipality: schoolData.municipio || prev.municipality,
+                shift: schoolData.turno !== 'Matutino' ? schoolData.turno : prev.shift, // Keep default or update
+                // schoolData has turno as string, Context expects specific string or string
+              }));
+            }
+          } catch (error) {
+            console.error("Error loading school details:", error);
+          } finally {
+            setLoadingSchool(false);
+          }
+        }
+      }
+    };
+
+    loadSchoolData();
+  }, [user, user?.schoolId]);
+
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-20">
       <section className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
-        <div className="bg-slate-50 p-6 border-b border-slate-200">
-          <div className="flex items-center gap-2 text-indigo-700 font-bold uppercase tracking-wider text-xs">
-            <School className="w-4 h-4" />
-            Contexto Institucional
+        <div className="bg-slate-50 p-6 border-b border-slate-200 flex justify-between items-center">
+          <div>
+            <div className="flex items-center gap-2 text-indigo-700 font-bold uppercase tracking-wider text-xs">
+              <School className="w-4 h-4" />
+              Contexto Institucional
+            </div>
+            <h3 className="text-xl font-bold text-slate-800 mt-1">Identidad de la Escuela</h3>
           </div>
-          <h3 className="text-xl font-bold text-slate-800 mt-1">Identidad de la Escuela</h3>
+          {user && (
+            <div className="text-right hidden md:block">
+              <p className="text-xs text-slate-500 uppercase font-bold">Autocompletado para</p>
+              <p className="text-sm font-medium text-indigo-600">{user.nombre} {user.apellidoPaterno}</p>
+            </div>
+          )}
         </div>
         <div className="p-8 space-y-6">
+          {loadingSchool && (
+            <div className="flex items-center gap-2 text-indigo-600 bg-indigo-50 p-3 rounded-lg mb-4 text-sm">
+              <Loader2 className="w-4 h-4 animate-spin" />
+              Sincronizando datos de tu escuela...
+            </div>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-sm font-semibold text-slate-700 flex items-center gap-2">
@@ -40,7 +95,7 @@ const ContextManager: React.FC<ContextManagerProps> = ({ school, setSchool, subj
                 name="schoolName"
                 value={school.schoolName}
                 onChange={handleSchoolChange}
-                className="w-full px-4 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                className={`w-full px-4 py-2 rounded-xl border outline-none transition-all ${user?.schoolName ? 'bg-indigo-50 border-indigo-200' : 'border-slate-200 focus:ring-2 focus:ring-indigo-500'}`}
                 placeholder="Ej. Bachillerato Gral. Oficial Emiliano Zapata"
               />
             </div>
