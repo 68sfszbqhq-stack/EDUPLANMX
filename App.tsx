@@ -20,6 +20,8 @@ import PAECDashboard from './pages/plantel/PAECDashboard';
 const App: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { user, logout } = useAuth();
+
   const [view, setView] = useState<AppView>(() => {
     // @ts-ignore
     return location.state?.view || 'dashboard';
@@ -58,7 +60,27 @@ const App: React.FC = () => {
     localStorage.setItem('schoolContext', JSON.stringify(schoolContext));
     localStorage.setItem('subjectContext', JSON.stringify(subjectContext));
     localStorage.setItem('savedPlans', JSON.stringify(savedPlans));
+    localStorage.setItem('savedPlans', JSON.stringify(savedPlans));
   }, [schoolContext, subjectContext, savedPlans]);
+
+  // Context Hydration from User Profile
+  useEffect(() => {
+    if (user) {
+      // 1. Hydrate School
+      if (user.schoolName && (!schoolContext.schoolName || schoolContext.schoolName === 'Bachillerato General Oficial')) {
+        setSchoolContext(prev => ({ ...prev, schoolName: user.schoolName! }));
+      }
+
+      // 2. Hydrate Subject (Select first available subject by default)
+      if (!subjectContext.subjectName && user.materias && user.materias.length > 0) {
+        setSubjectContext(prev => ({
+          ...prev,
+          subjectName: user.materias![0],
+          subjectId: user.materias![0]
+        }));
+      }
+    }
+  }, [user]);
 
   const handleSavePlan = (plan: LessonPlan) => {
     setSavedPlans(prev => [plan, ...prev]);
@@ -75,7 +97,7 @@ const App: React.FC = () => {
     }
   };
 
-  const { user, logout } = useAuth(); // Movido al nivel superior
+  // const { user, logout } = useAuth(); // Moved to top
 
   const renderView = () => {
     switch (view) {

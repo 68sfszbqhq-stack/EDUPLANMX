@@ -45,6 +45,7 @@ const ContextManager: React.FC<ContextManagerProps> = ({ school, setSchool, subj
                 ...prev,
                 cct: schoolData.cct || prev.cct,
                 municipality: schoolData.municipio || prev.municipality,
+                // @ts-ignore - schoolData.turno might be string, but Context expects specific union
                 shift: schoolData.turno !== 'Matutino' ? schoolData.turno : prev.shift, // Keep default or update
                 // schoolData has turno as string, Context expects specific string or string
               }));

@@ -22,6 +22,11 @@ export interface Usuario {
     puesto?: string; // Director, Docente, etc.
     onboardingCompleto?: boolean; // Si completó el onboarding
 
+    // Perfil Académico (NUEVO)
+    materias?: string[]; // Materias que imparte
+    grados?: number[]; // Grados/Semestres que atiende (1, 3, 5)
+    telefono?: string;
+
     // Metadata
     activo: boolean;
     fechaCreacion: string;

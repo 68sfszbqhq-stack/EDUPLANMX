@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../../src/contexts/AuthContext';
-import { DashboardHeader } from '../dashboard/DashboardHeader';
-import { StatsCards } from '../dashboard/StatsCards';
-import { QuickActions } from '../dashboard/QuickActions';
-import { RecentPlaneaciones } from '../dashboard/RecentPlaneaciones';
+import { useAuth } from '../src/contexts/AuthContext';
+import { DashboardHeader } from './dashboard/DashboardHeader';
+import { StatsCards } from './dashboard/StatsCards';
+import { QuickActions } from './dashboard/QuickActions';
+import { RecentPlaneaciones } from './dashboard/RecentPlaneaciones';
 import { collection, query, where, getDocs, orderBy, limit } from 'firebase/firestore';
-import { db } from '../../src/config/firebase';
+import { db } from '../src/config/firebase';
 
 interface PersonalizedDashboardProps {
     onNavigate: (view: string) => void;
