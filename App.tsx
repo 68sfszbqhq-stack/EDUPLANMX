@@ -12,6 +12,7 @@ import DiagnosticoDashboard from './components/DiagnosticoDashboard';
 import Sidebar from './components/Sidebar';
 import AsignacionMaterias from './pages/admin/AsignacionMaterias';
 import GestionAlumnos from './pages/admin/GestionAlumnos';
+import { PersonalizedDashboard } from './components/PersonalizedDashboard';
 
 import PMCDashboard from './pages/directivo/PMCDashboard';
 import PAECDashboard from './pages/plantel/PAECDashboard';
@@ -79,7 +80,7 @@ const App: React.FC = () => {
   const renderView = () => {
     switch (view) {
       case 'dashboard':
-        return <Dashboard setView={setView} recentPlansCount={savedPlans.length} />;
+        return <PersonalizedDashboard onNavigate={handleNavigate} />;
       case 'admin-asignacion':
         return <AsignacionMaterias />;
       case 'admin-alumnos':
