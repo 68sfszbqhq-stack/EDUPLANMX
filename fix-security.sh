@@ -39,7 +39,7 @@ echo "3️⃣  ACTUALIZANDO ARCHIVOS..."
 echo "   → Actualizando .env.local..."
 cat > .env.local << EOF
 # Gemini API Key
-VITE_API_KEY=AIzaSyAB8s6ZotqbqqLzHkda76713VrzvdAx4M4
+VITE_API_KEY=YOUR_API_KEY_HERE
 
 # Firebase Configuration
 VITE_FIREBASE_API_KEY=$nueva_clave
@@ -59,7 +59,7 @@ import { getFirestore } from 'firebase/firestore';
 
 // Configuración de Firebase usando variables de entorno
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyBk7iQqIVRcleUkb5WjmR3qhcvwVt0bekM",
+apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "YOUR_FIREBASE_API_KEY_HERE",
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "eduplanmx.firebaseapp.com",
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "eduplanmx",
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "eduplanmx.firebasestorage.app",

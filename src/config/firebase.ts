@@ -6,7 +6,7 @@ import { getAuth } from 'firebase/auth';
 // NOTA: Las API Keys de Firebase son públicas por diseño.
 // La seguridad real viene de Firestore Rules y restricciones de dominio.
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyBk7iQqIVRcleUkb5WjmR3qhcvwVt0bekM",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "eduplanmx.firebaseapp.com",
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "eduplanmx",
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "eduplanmx.firebasestorage.app",

@@ -11,7 +11,7 @@
 Google Cloud detectó que la **API Key de Firebase** está expuesta públicamente en GitHub:
 
 ```
-Clave Comprometida: AIzaSyBk7iQqIVRcleUkb5WjmR3qhcvwVt0bekM
+Clave Comprometida: YOUR_COMPROMISED_KEY
 Proyecto: EDUPLANMX (id: eduplanmx)
 Ubicación: https://github.com/68sfszbqhq-stack/EDUPLANMX/blob/.../assets/index-DbYEh172.js
 ```
