@@ -8,6 +8,7 @@ import RegistroAlumnos from './pages/RegistroAlumnos';
 import AdminDashboard from './pages/admin/Dashboard';
 import SuperAdminDashboard from './pages/admin/SuperAdminDashboard';
 import DirectorDashboard from './pages/director/Dashboard';
+import Students from './pages/director/Students'; // Nuevo componente de alumnos
 import UsuariosPage from './pages/admin/Usuarios';
 import GuiaCurricular from './pages/maestro/GuiaCurricular';
 import ProgramaMateria from './pages/maestro/ProgramaMateria';
@@ -138,6 +139,15 @@ const Router: React.FC = () => {
                         element={
                             <ProtectedRoute allowedRoles={['directivo', 'superadmin']}>
                                 <DirectorDashboard />
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route
+                        path="/directivo/alumnos"
+                        element={
+                            <ProtectedRoute allowedRoles={['directivo', 'superadmin']}>
+                                <Students />
                             </ProtectedRoute>
                         }
                     />
