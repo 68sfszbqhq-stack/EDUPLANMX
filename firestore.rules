@@ -82,21 +82,26 @@ service cloud.firestore {
     // ============================================
     
     match /users/{userId} {
-      // Leer tu propio perfil siempre
-      allow read: if isOwner(userId);
+      // Leer tu propio perfil siempre (incluso si no existe aún)
+      allow read: if isAuthenticated() && request.auth.uid == userId;
       
-      // Leer otros de tu escuela
+      // Leer otros de tu escuela (solo si el documento existe)
       allow read: if isAuthenticated() 
-                  && belongsToSchool(resource.data.schoolId);
+                  && resource != null
+                  && resource.data.schoolId != null
+                  && getUserData().schoolId == resource.data.schoolId;
       
-      // Escribir solo tu perfil (excepto rol y schoolId)
-      allow update: if isOwner(userId)
-                    && request.resource.data.rol == resource.data.rol
-                    && request.resource.data.schoolId == resource.data.schoolId;
-      
-      // Crear: Durante onboarding
-      allow create: if isOwner(userId)
+      // Crear tu propio perfil durante login/onboarding
+      allow create: if isAuthenticated() 
+                    && request.auth.uid == userId
                     && request.resource.data.id == request.auth.uid;
+      
+      // Actualizar solo tu perfil (no puedes cambiar rol ni schoolId después de creado)
+      allow update: if isAuthenticated()
+                    && request.auth.uid == userId
+                    && (!exists(/databases/$(database)/documents/users/$(userId)) 
+                        || (request.resource.data.rol == resource.data.rol
+                            && (resource.data.schoolId == null || request.resource.data.schoolId == resource.data.schoolId)));
       
       // Super admin puede leer/escribir todo
       allow read, write: if isSuperAdmin();
