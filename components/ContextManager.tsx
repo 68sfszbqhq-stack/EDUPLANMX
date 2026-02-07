@@ -127,6 +127,8 @@ const ContextManager: React.FC<ContextManagerProps> = ({ school, setSchool, subj
               >
                 <option value="Matutino">Matutino</option>
                 <option value="Vespertino">Vespertino</option>
+                <option value="Nocturno">Nocturno</option>
+                <option value="Discontinuo">Discontinuo</option>
                 <option value="Mixto">Mixto</option>
               </select>
             </div>

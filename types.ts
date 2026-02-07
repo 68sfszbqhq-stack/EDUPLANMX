@@ -3,7 +3,7 @@ export interface SchoolContext {
   schoolName: string;
   cct: string;
   cycle: string; // Ej. 2024-2025
-  shift: 'Matutino' | 'Vespertino' | 'Mixto';
+  shift: 'Matutino' | 'Vespertino' | 'Nocturno' | 'Discontinuo' | 'Mixto';
   municipality: string;
   vision: string;
   communityGoals: string;
