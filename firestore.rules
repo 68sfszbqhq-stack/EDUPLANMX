@@ -60,12 +60,17 @@ service cloud.firestore {
     // ============================================
     
     match /schools/{schoolId} {
-      // Leer: Solo tu escuela
-      allow read: if isAuthenticated() && belongsToSchool(schoolId);
+      // Leer: Cualquier usuario autenticado puede leer escuelas
+      // (necesario para onboarding y búsqueda de escuelas)
+      allow read: if isAuthenticated();
       
-      // Escribir: Solo directores o super admin
-      allow write: if isAuthenticated() 
-                   && ((belongsToSchool(schoolId) && isDirector()) || isSuperAdmin());
+      // Crear: Cualquier usuario autenticado puede crear escuela durante onboarding
+      // O super admin puede crear
+      allow create: if isAuthenticated();
+      
+      // Actualizar/Eliminar: Solo directores de esa escuela o super admin
+      allow update, delete: if isAuthenticated() 
+                            && ((belongsToSchool(schoolId) && isDirector()) || isSuperAdmin());
     }
     
     // ============================================
