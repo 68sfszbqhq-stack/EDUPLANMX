@@ -1,39 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { Target, Users, TrendingUp, AlertCircle, Save, Plus, Trash2, CheckSquare } from 'lucide-react';
-import { PMCDiagnosis, PMCGoal } from '../../types';
+import { TrendingUp, Save, Plus, Trash2, CheckSquare } from 'lucide-react';
+import { PMCGoal } from '../../types';
+import SchoolIndicators from '../../components/director/SchoolIndicators';
 
 const PMCDashboard: React.FC = () => {
     const [activeTab, setActiveTab] = useState<'diagnostico' | 'metas' | 'seguimiento'>('diagnostico');
     const [lastSaved, setLastSaved] = useState<string | null>(null);
 
-    const [diagnostico, setDiagnostico] = useState<PMCDiagnosis>(() => {
-        const saved = localStorage.getItem('pmc_diagnostico');
-        return saved ? JSON.parse(saved) : {
-            infrastructure: '',
-            totalStudents: 0,
-            academicIndicators: { dropoutRate: 0, failureRate: 0, terminalEfficiency: 0 },
-            strengths: '',
-            areasOfOpportunity: ''
-        };
-    });
-
+    // Mantenemos Metas localmente por ahora
     const [metas, setMetas] = useState<PMCGoal[]>(() => {
         const saved = localStorage.getItem('pmc_metas');
         return saved ? JSON.parse(saved) : [];
     });
 
-    // Auto-save effect
+    // Auto-save effect for goals only
     useEffect(() => {
-        localStorage.setItem('pmc_diagnostico', JSON.stringify(diagnostico));
         localStorage.setItem('pmc_metas', JSON.stringify(metas));
-    }, [diagnostico, metas]);
+    }, [metas]);
 
     const handleManualSave = () => {
-        localStorage.setItem('pmc_diagnostico', JSON.stringify(diagnostico));
+        // Solo guardamos metas manuales, el diagnóstico se guarda en SchoolIndicators (aunque aquí es readOnly)
         localStorage.setItem('pmc_metas', JSON.stringify(metas));
         const time = new Date().toLocaleTimeString();
         setLastSaved(time);
-        alert(`Avances guardados correctamente a las ${time}`);
+        // alert(`Avances guardados correctamente a las ${time}`);
     };
 
     const handleAddGoal = () => {
@@ -75,7 +65,7 @@ const PMCDashboard: React.FC = () => {
                         onClick={handleManualSave}
                         className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
                     >
-                        <Save className="w-4 h-4" /> Guardar Avances
+                        <Save className="w-4 h-4" /> Guardar Metas
                     </button>
                 </div>
             </div>
@@ -106,74 +96,9 @@ const PMCDashboard: React.FC = () => {
             <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
 
                 {activeTab === 'diagnostico' && (
-                    <div className="space-y-8 animate-in fade-in">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className="space-y-4">
-                                <h3 className="font-bold text-lg text-slate-800 flex items-center gap-2">
-                                    <AlertCircle className="w-5 h-5 text-indigo-500" /> Indicadores Académicos
-                                </h3>
-                                <div className="grid grid-cols-3 gap-4">
-                                    <div>
-                                        <label className="block text-xs font-bold text-slate-500 mb-1">Abandonó Escolar (%)</label>
-                                        <input type="number" className="w-full p-2 border border-slate-200 rounded-lg"
-                                            value={diagnostico.academicIndicators.dropoutRate}
-                                            onChange={e => setDiagnostico({ ...diagnostico, academicIndicators: { ...diagnostico.academicIndicators, dropoutRate: Number(e.target.value) } })}
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-xs font-bold text-slate-500 mb-1">Reprobación (%)</label>
-                                        <input type="number" className="w-full p-2 border border-slate-200 rounded-lg"
-                                            value={diagnostico.academicIndicators.failureRate}
-                                            onChange={e => setDiagnostico({ ...diagnostico, academicIndicators: { ...diagnostico.academicIndicators, failureRate: Number(e.target.value) } })}
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-xs font-bold text-slate-500 mb-1">Eficiencia Terminal (%)</label>
-                                        <input type="number" className="w-full p-2 border border-slate-200 rounded-lg"
-                                            value={diagnostico.academicIndicators.terminalEfficiency}
-                                            onChange={e => setDiagnostico({ ...diagnostico, academicIndicators: { ...diagnostico.academicIndicators, terminalEfficiency: Number(e.target.value) } })}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="space-y-4">
-                                <h3 className="font-bold text-lg text-slate-800 flex items-center gap-2">
-                                    <Users className="w-5 h-5 text-indigo-500" /> Matrícula e Infraestructura
-                                </h3>
-                                <div>
-                                    <label className="block text-sm font-bold text-slate-700 mb-1">Matrícula Total</label>
-                                    <input type="number" className="w-full p-2 border border-slate-200 rounded-lg"
-                                        value={diagnostico.totalStudents}
-                                        onChange={e => setDiagnostico({ ...diagnostico, totalStudents: Number(e.target.value) })}
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-bold text-slate-700 mb-1">Diagnóstico de Infraestructura</label>
-                                    <textarea className="w-full p-2 border border-slate-200 rounded-lg h-24 text-sm" placeholder="Estado de aulas, laboratorios, servicios..."
-                                        value={diagnostico.infrastructure}
-                                        onChange={e => setDiagnostico({ ...diagnostico, infrastructure: e.target.value })}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-slate-100">
-                            <div>
-                                <label className="block text-sm font-bold text-emerald-700 mb-2">Principales Fortalezas</label>
-                                <textarea className="w-full p-3 border border-emerald-100 bg-emerald-50/50 rounded-xl h-32 focus:border-emerald-500 transition-colors"
-                                    value={diagnostico.strengths}
-                                    onChange={e => setDiagnostico({ ...diagnostico, strengths: e.target.value })}
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-bold text-amber-700 mb-2">Áreas de Oportunidad</label>
-                                <textarea className="w-full p-3 border border-amber-100 bg-amber-50/50 rounded-xl h-32 focus:border-amber-500 transition-colors"
-                                    value={diagnostico.areasOfOpportunity}
-                                    onChange={e => setDiagnostico({ ...diagnostico, areasOfOpportunity: e.target.value })}
-                                />
-                            </div>
-                        </div>
+                    <div className="animate-in fade-in">
+                        {/* Usamos el componente conectado a Firestore en modo lectura */}
+                        <SchoolIndicators readOnly={true} />
                     </div>
                 )}
 

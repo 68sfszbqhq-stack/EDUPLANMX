@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     Users, GraduationCap, BookOpen, Building2,
-    TrendingUp, LogOut, Home, Calendar, FileText
+    TrendingUp, LogOut, Home, Calendar, FileText, Bug
 } from 'lucide-react';
 import { useAuth } from '../../src/contexts/AuthContext';
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, where, getDocs, limit } from 'firebase/firestore';
 import { db } from '../../src/config/firebase';
 import StatsCard from '../../components/admin/StatsCard';
 import SchoolIndicators from '../../components/director/SchoolIndicators';
@@ -29,6 +29,10 @@ const DirectorDashboard: React.FC = () => {
     });
     const [activeTab, setActiveTab] = useState<'general' | 'pmc' | 'paec'>('general');
     const [loading, setLoading] = useState(true);
+
+    // Debug states
+    const [debugMode, setDebugMode] = useState(false);
+    const [sampleStudent, setSampleStudent] = useState<any>(null);
 
     useEffect(() => {
         if (user?.schoolId) {
@@ -93,6 +97,27 @@ const DirectorDashboard: React.FC = () => {
             navigate('/login');
         } catch (error) {
             console.error('Error al cerrar sesión:', error);
+        }
+    };
+
+    const runDiagnosis = async () => {
+        try {
+            // Obtener un estudiante cualquiera para ver su estructura
+            const q = query(collection(db, 'alumnos'), limit(1));
+            const s = await getDocs(q);
+            if (!s.empty) {
+                setSampleStudent({
+                    id: s.docs[0].id,
+                    data: s.docs[0].data(),
+                    mySchoolId: user?.schoolId,
+                    match: s.docs[0].data().schoolId === user?.schoolId ? 'YES' : 'NO'
+                });
+            } else {
+                setSampleStudent({ message: 'No students found at all in DB' });
+            }
+        } catch (e) {
+            console.error(e);
+            setSampleStudent({ error: JSON.stringify(e) });
         }
     };
 
@@ -283,6 +308,60 @@ const DirectorDashboard: React.FC = () => {
                     </div>
                 </div>
             </main>
+
+            {/* Debug Tool */}
+            <button
+                onClick={() => { setDebugMode(!debugMode); runDiagnosis(); }}
+                className="fixed bottom-4 right-4 bg-slate-800 text-white p-3 rounded-full shadow-lg hover:bg-slate-700 transition-colors z-50 origin-center hover:scale-110"
+                title="Herramienta de Diagnóstico"
+            >
+                <Bug className="w-5 h-5" />
+            </button>
+
+            {debugMode && (
+                <div className="fixed bottom-20 right-4 bg-white p-6 shadow-2xl border border-slate-200 rounded-2xl max-w-md z-50 text-xs font-mono overflow-auto max-h-[80vh] w-full animate-in slide-in-from-bottom-5">
+                    <div className="flex justify-between items-center mb-4 border-b pb-2">
+                        <h4 className="font-bold text-sm text-slate-800">Diagnóstico de Datos</h4>
+                        <button onClick={() => setDebugMode(false)} className="text-slate-400 hover:text-red-500">cerrar</button>
+                    </div>
+
+                    <div className="space-y-4">
+                        <div className="bg-slate-50 p-3 rounded border">
+                            <h5 className="font-bold text-slate-600 mb-1">Mi Usuario (Director)</h5>
+                            <p><strong>Nombre:</strong> {user?.nombre}</p>
+                            <p><strong>School Name:</strong> {user?.schoolName}</p>
+                            <p className="text-blue-600 break-all"><strong>School ID (Firestore):</strong> {user?.schoolId}</p>
+                        </div>
+
+                        <div className="bg-slate-50 p-3 rounded border">
+                            <h5 className="font-bold text-slate-600 mb-1">Estadísticas Actuales</h5>
+                            <p><strong>Alumnos (filtrados por ID):</strong> {stats.alumnos}</p>
+                        </div>
+
+                        {sampleStudent && (
+                            <div className="bg-indigo-50 p-3 rounded border border-indigo-100">
+                                <h5 className="font-bold text-indigo-800 mb-1">Muestra de Alumno (Cualquiera en DB)</h5>
+                                {sampleStudent.message ? (
+                                    <p>{sampleStudent.message}</p>
+                                ) : (
+                                    <>
+                                        <p><strong>ID Alumno:</strong> {sampleStudent.id}</p>
+                                        <p><strong>Nombre:</strong> {sampleStudent.data?.firstName} {sampleStudent.data?.lastName}</p>
+                                        <p className="text-red-600 break-all"><strong>School ID Alumno:</strong> {sampleStudent.data?.schoolId}</p>
+                                        <div className={`mt-2 p-2 rounded text-center font-bold text-white ${sampleStudent.match === 'YES' ? 'bg-green-500' : 'bg-red-500'}`}>
+                                            ¿Coincide con mi ID? {sampleStudent.match}
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                        )}
+
+                        <div className="text-slate-500 italic text-[10px] mt-2">
+                            *Si el ID no coincide, contacta a soporte para migración de datos.
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

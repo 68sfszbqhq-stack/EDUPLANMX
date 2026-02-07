@@ -5,7 +5,11 @@ import { db } from '../../src/config/firebase';
 import { useAuth } from '../../src/contexts/AuthContext';
 import { DatosEscuelaPMC, IndicadoresAcademicos, Infraestructura } from '../../types/pmc';
 
-const SchoolIndicators: React.FC = () => {
+interface Props {
+    readOnly?: boolean;
+}
+
+const SchoolIndicators: React.FC<Props> = ({ readOnly = false }) => {
     const { user } = useAuth();
     const [loading, setLoading] = useState(false);
     const [saving, setSaving] = useState(false);
@@ -114,18 +118,20 @@ const SchoolIndicators: React.FC = () => {
                     <h2 className="text-2xl font-bold text-slate-800">Diagnóstico Escolar (PMC)</h2>
                     <p className="text-slate-600">Indicadores académicos e infraestructura del plantel</p>
                 </div>
-                <button
-                    onClick={handleSave}
-                    disabled={saving}
-                    className="flex items-center gap-2 px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 transition-colors shadow-sm"
-                >
-                    {saving ? 'Guardando...' : (
-                        <>
-                            <Save className="w-4 h-4" />
-                            Guardar Cambios
-                        </>
-                    )}
-                </button>
+                {!readOnly && (
+                    <button
+                        onClick={handleSave}
+                        disabled={saving}
+                        className="flex items-center gap-2 px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 transition-colors shadow-sm"
+                    >
+                        {saving ? 'Guardando...' : (
+                            <>
+                                <Save className="w-4 h-4" />
+                                Guardar Cambios
+                            </>
+                        )}
+                    </button>
+                )}
             </div>
 
             {/* Mensaje de feedback */}
@@ -152,9 +158,10 @@ const SchoolIndicators: React.FC = () => {
                             <TrendingDown className="w-5 h-5 text-red-500" />
                             <input
                                 type="number"
+                                disabled={readOnly}
                                 value={indicadores.abandonoEscolar}
                                 onChange={e => setIndicadores({ ...indicadores, abandonoEscolar: parseFloat(e.target.value) || 0 })}
-                                className="w-full bg-white border border-red-200 rounded-lg px-3 py-2 text-lg font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-500"
+                                className="w-full bg-white border border-red-200 rounded-lg px-3 py-2 text-lg font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-500 disabled:bg-slate-50 disabled:text-slate-500"
                             />
                         </div>
                     </div>
@@ -166,9 +173,10 @@ const SchoolIndicators: React.FC = () => {
                             <AlertCircle className="w-5 h-5 text-orange-500" />
                             <input
                                 type="number"
+                                disabled={readOnly}
                                 value={indicadores.reprobacion}
                                 onChange={e => setIndicadores({ ...indicadores, reprobacion: parseFloat(e.target.value) || 0 })}
-                                className="w-full bg-white border border-orange-200 rounded-lg px-3 py-2 text-lg font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                className="w-full bg-white border border-orange-200 rounded-lg px-3 py-2 text-lg font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-500 disabled:bg-slate-50 disabled:text-slate-500"
                             />
                         </div>
                     </div>
@@ -180,9 +188,10 @@ const SchoolIndicators: React.FC = () => {
                             <TrendingUp className="w-5 h-5 text-green-500" />
                             <input
                                 type="number"
+                                disabled={readOnly}
                                 value={indicadores.eficienciaTerminal}
                                 onChange={e => setIndicadores({ ...indicadores, eficienciaTerminal: parseFloat(e.target.value) || 0 })}
-                                className="w-full bg-white border border-green-200 rounded-lg px-3 py-2 text-lg font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                className="w-full bg-white border border-green-200 rounded-lg px-3 py-2 text-lg font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-green-500 disabled:bg-slate-50 disabled:text-slate-500"
                             />
                         </div>
                     </div>
@@ -191,12 +200,13 @@ const SchoolIndicators: React.FC = () => {
                     <div className="p-4 bg-blue-50 rounded-xl border border-blue-100">
                         <label className="block text-sm font-medium text-blue-700 mb-1">Matrícula Total</label>
                         <div className="flex items-center gap-2">
-                            <Users className="w-5 h-5 text-blue-500" /> {/* Icono corregido minúscula 'users' al importar */}
+                            <Users className="w-5 h-5 text-blue-500" />
                             <input
                                 type="number"
+                                disabled={readOnly}
                                 value={indicadores.matriculaTotal}
                                 onChange={e => setIndicadores({ ...indicadores, matriculaTotal: parseInt(e.target.value) || 0 })}
-                                className="w-full bg-white border border-blue-200 rounded-lg px-3 py-2 text-lg font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full bg-white border border-blue-200 rounded-lg px-3 py-2 text-lg font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-slate-50 disabled:text-slate-500"
                             />
                         </div>
                     </div>
@@ -212,8 +222,8 @@ const SchoolIndicators: React.FC = () => {
 
                 {/* Servicios Básicos (Switches) */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                    <div className={`p-4 rounded-xl border flex items-center justify-between cursor-pointer transition-colors ${infraestructura.aulasConElectricidad ? 'bg-indigo-50 border-indigo-200' : 'bg-slate-50 border-slate-200'}`}
-                        onClick={() => setInfraestructura({ ...infraestructura, aulasConElectricidad: !infraestructura.aulasConElectricidad })}
+                    <div className={`p-4 rounded-xl border flex items-center justify-between transition-colors ${infraestructura.aulasConElectricidad ? 'bg-indigo-50 border-indigo-200' : 'bg-slate-50 border-slate-200'} ${!readOnly ? 'cursor-pointer' : ''}`}
+                        onClick={() => !readOnly && setInfraestructura({ ...infraestructura, aulasConElectricidad: !infraestructura.aulasConElectricidad })}
                     >
                         <div className="flex items-center gap-3">
                             <Zap className={`w-5 h-5 ${infraestructura.aulasConElectricidad ? 'text-indigo-600' : 'text-slate-400'}`} />
@@ -224,8 +234,8 @@ const SchoolIndicators: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className={`p-4 rounded-xl border flex items-center justify-between cursor-pointer transition-colors ${infraestructura.aulasConInternet ? 'bg-indigo-50 border-indigo-200' : 'bg-slate-50 border-slate-200'}`}
-                        onClick={() => setInfraestructura({ ...infraestructura, aulasConInternet: !infraestructura.aulasConInternet })}
+                    <div className={`p-4 rounded-xl border flex items-center justify-between transition-colors ${infraestructura.aulasConInternet ? 'bg-indigo-50 border-indigo-200' : 'bg-slate-50 border-slate-200'} ${!readOnly ? 'cursor-pointer' : ''}`}
+                        onClick={() => !readOnly && setInfraestructura({ ...infraestructura, aulasConInternet: !infraestructura.aulasConInternet })}
                     >
                         <div className="flex items-center gap-3">
                             <Wifi className={`w-5 h-5 ${infraestructura.aulasConInternet ? 'text-indigo-600' : 'text-slate-400'}`} />
@@ -236,8 +246,8 @@ const SchoolIndicators: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className={`p-4 rounded-xl border flex items-center justify-between cursor-pointer transition-colors ${infraestructura.laboratorioComputacion ? 'bg-indigo-50 border-indigo-200' : 'bg-slate-50 border-slate-200'}`}
-                        onClick={() => setInfraestructura({ ...infraestructura, laboratorioComputacion: !infraestructura.laboratorioComputacion })}
+                    <div className={`p-4 rounded-xl border flex items-center justify-between transition-colors ${infraestructura.laboratorioComputacion ? 'bg-indigo-50 border-indigo-200' : 'bg-slate-50 border-slate-200'} ${!readOnly ? 'cursor-pointer' : ''}`}
+                        onClick={() => !readOnly && setInfraestructura({ ...infraestructura, laboratorioComputacion: !infraestructura.laboratorioComputacion })}
                     >
                         <div className="flex items-center gap-3">
                             <Monitor className={`w-5 h-5 ${infraestructura.laboratorioComputacion ? 'text-indigo-600' : 'text-slate-400'}`} />
@@ -248,8 +258,8 @@ const SchoolIndicators: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className={`p-4 rounded-xl border flex items-center justify-between cursor-pointer transition-colors ${infraestructura.instalacionesDeportivas ? 'bg-indigo-50 border-indigo-200' : 'bg-slate-50 border-slate-200'}`}
-                        onClick={() => setInfraestructura({ ...infraestructura, instalacionesDeportivas: !infraestructura.instalacionesDeportivas })}
+                    <div className={`p-4 rounded-xl border flex items-center justify-between transition-colors ${infraestructura.instalacionesDeportivas ? 'bg-indigo-50 border-indigo-200' : 'bg-slate-50 border-slate-200'} ${!readOnly ? 'cursor-pointer' : ''}`}
+                        onClick={() => !readOnly && setInfraestructura({ ...infraestructura, instalacionesDeportivas: !infraestructura.instalacionesDeportivas })}
                     >
                         <div className="flex items-center gap-3">
                             <Dumbbell className={`w-5 h-5 ${infraestructura.instalacionesDeportivas ? 'text-indigo-600' : 'text-slate-400'}`} />
@@ -265,7 +275,8 @@ const SchoolIndicators: React.FC = () => {
                 <div className="mb-6">
                     <label className="block text-sm font-medium text-slate-700 mb-2">Descripción General del Estado del Plantel</label>
                     <textarea
-                        className="w-full border border-slate-300 rounded-xl p-4 h-24 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none text-slate-700"
+                        disabled={readOnly}
+                        className="w-full border border-slate-300 rounded-xl p-4 h-24 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none text-slate-700 disabled:bg-slate-50"
                         placeholder="Ej: Escuela de nueva creación, cuenta con pocas aulas..."
                         value={infraestructura.descripcionGeneral}
                         onChange={e => setInfraestructura({ ...infraestructura, descripcionGeneral: e.target.value })}
@@ -284,26 +295,28 @@ const SchoolIndicators: React.FC = () => {
                             {infraestructura.fortalezas.map((item, index) => (
                                 <div key={index} className="flex justify-between items-center bg-green-50 text-green-800 px-3 py-2 rounded-lg text-sm border border-green-100">
                                     <span>{item}</span>
-                                    <button onClick={() => removeListItem('fortalezas', index)} className="text-green-600 hover:text-green-800 font-bold ml-2">×</button>
+                                    {!readOnly && <button onClick={() => removeListItem('fortalezas', index)} className="text-green-600 hover:text-green-800 font-bold ml-2">×</button>}
                                 </div>
                             ))}
                         </div>
-                        <div className="flex gap-2">
-                            <input
-                                type="text"
-                                className="flex-1 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-                                placeholder="Agregar fortaleza..."
-                                value={newFortaleza}
-                                onChange={e => setNewFortaleza(e.target.value)}
-                                onKeyDown={e => e.key === 'Enter' && addListItem('fortalezas', newFortaleza, setNewFortaleza)}
-                            />
-                            <button
-                                onClick={() => addListItem('fortalezas', newFortaleza, setNewFortaleza)}
-                                className="bg-green-600 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-green-700"
-                            >
-                                Agregar
-                            </button>
-                        </div>
+                        {!readOnly && (
+                            <div className="flex gap-2">
+                                <input
+                                    type="text"
+                                    className="flex-1 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                    placeholder="Agregar fortaleza..."
+                                    value={newFortaleza}
+                                    onChange={e => setNewFortaleza(e.target.value)}
+                                    onKeyDown={e => e.key === 'Enter' && addListItem('fortalezas', newFortaleza, setNewFortaleza)}
+                                />
+                                <button
+                                    onClick={() => addListItem('fortalezas', newFortaleza, setNewFortaleza)}
+                                    className="bg-green-600 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-green-700"
+                                >
+                                    Agregar
+                                </button>
+                            </div>
+                        )}
                     </div>
 
                     {/* Áreas de Oportunidad */}
@@ -316,26 +329,28 @@ const SchoolIndicators: React.FC = () => {
                             {infraestructura.areasOportunidad.map((item, index) => (
                                 <div key={index} className="flex justify-between items-center bg-orange-50 text-orange-800 px-3 py-2 rounded-lg text-sm border border-orange-100">
                                     <span>{item}</span>
-                                    <button onClick={() => removeListItem('areasOportunidad', index)} className="text-orange-600 hover:text-orange-800 font-bold ml-2">×</button>
+                                    {!readOnly && <button onClick={() => removeListItem('areasOportunidad', index)} className="text-orange-600 hover:text-orange-800 font-bold ml-2">×</button>}
                                 </div>
                             ))}
                         </div>
-                        <div className="flex gap-2">
-                            <input
-                                type="text"
-                                className="flex-1 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
-                                placeholder="Agregar área..."
-                                value={newArea}
-                                onChange={e => setNewArea(e.target.value)}
-                                onKeyDown={e => e.key === 'Enter' && addListItem('areasOportunidad', newArea, setNewArea)}
-                            />
-                            <button
-                                onClick={() => addListItem('areasOportunidad', newArea, setNewArea)}
-                                className="bg-orange-600 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-orange-700"
-                            >
-                                Agregar
-                            </button>
-                        </div>
+                        {!readOnly && (
+                            <div className="flex gap-2">
+                                <input
+                                    type="text"
+                                    className="flex-1 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                    placeholder="Agregar área..."
+                                    value={newArea}
+                                    onChange={e => setNewArea(e.target.value)}
+                                    onKeyDown={e => e.key === 'Enter' && addListItem('areasOportunidad', newArea, setNewArea)}
+                                />
+                                <button
+                                    onClick={() => addListItem('areasOportunidad', newArea, setNewArea)}
+                                    className="bg-orange-600 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-orange-700"
+                                >
+                                    Agregar
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

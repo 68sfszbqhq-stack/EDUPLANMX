@@ -5,7 +5,11 @@ import { db } from '../../src/config/firebase';
 import { useAuth } from '../../src/contexts/AuthContext';
 import { DatosEscuelaPMC, ProblematicaPAEC } from '../../types/pmc';
 
-const PAECManager: React.FC = () => {
+interface Props {
+    readOnly?: boolean;
+}
+
+const PAECManager: React.FC<Props> = ({ readOnly = false }) => {
     const { user } = useAuth();
     const [problematicas, setProblematicas] = useState<ProblematicaPAEC[]>([]);
     const [loading, setLoading] = useState(false);
@@ -158,17 +162,19 @@ const PAECManager: React.FC = () => {
                     <h2 className="text-2xl font-bold text-slate-800">Programa Aula Escuela Comunidad (PAEC)</h2>
                     <p className="text-slate-600">Diagnóstico comunitario y selección de problemáticas</p>
                 </div>
-                <button
-                    onClick={() => setIsAdding(!isAdding)}
-                    className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
-                >
-                    <Plus className="w-4 h-4" />
-                    Nueva Problemática
-                </button>
+                {!readOnly && (
+                    <button
+                        onClick={() => setIsAdding(!isAdding)}
+                        className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                    >
+                        <Plus className="w-4 h-4" />
+                        Nueva Problemática
+                    </button>
+                )}
             </div>
 
             {/* Formulario de Nueva Problemática */}
-            {isAdding && (
+            {isAdding && !readOnly && (
                 <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 shadow-sm animate-in fade-in slide-in-from-top-4">
                     <h3 className="font-bold text-slate-800 mb-4">Registrar Nueva Problemática</h3>
 
@@ -323,7 +329,7 @@ const PAECManager: React.FC = () => {
                         <Target className="w-12 h-12 text-slate-300 mx-auto mb-3" />
                         <h3 className="text-lg font-medium text-slate-600">No hay problemáticas registradas</h3>
                         <p className="text-slate-500 text-sm mb-4">Comienza registrando las necesidades de tu comunidad escolar</p>
-                        <button onClick={() => setIsAdding(true)} className="text-indigo-600 font-medium hover:underline">Registrar ahora</button>
+                        {!readOnly && <button onClick={() => setIsAdding(true)} className="text-indigo-600 font-medium hover:underline">Registrar ahora</button>}
                     </div>
                 )}
 
@@ -353,23 +359,25 @@ const PAECManager: React.FC = () => {
                                 </div>
                                 <p className="text-slate-600 text-sm">{problem.descripcion}</p>
                             </div>
-                            <div className="flex items-center gap-2">
-                                {!problem.seleccionada && (
+                            {!readOnly && (
+                                <div className="flex items-center gap-2">
+                                    {!problem.seleccionada && (
+                                        <button
+                                            onClick={() => handleSelectPriority(problem.id)}
+                                            className="text-sm text-slate-500 hover:text-green-600 px-3 py-1 rounded hover:bg-green-50 transition-colors"
+                                            title="Seleccionar como prioridad"
+                                        >
+                                            Seleccionar
+                                        </button>
+                                    )}
                                     <button
-                                        onClick={() => handleSelectPriority(problem.id)}
-                                        className="text-sm text-slate-500 hover:text-green-600 px-3 py-1 rounded hover:bg-green-50 transition-colors"
-                                        title="Seleccionar como prioridad"
+                                        onClick={() => handleDelete(problem.id)}
+                                        className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
                                     >
-                                        Seleccionar
+                                        <Trash2 className="w-4 h-4" />
                                     </button>
-                                )}
-                                <button
-                                    onClick={() => handleDelete(problem.id)}
-                                    className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
-                                >
-                                    <Trash2 className="w-4 h-4" />
-                                </button>
-                            </div>
+                                </div>
+                            )}
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
