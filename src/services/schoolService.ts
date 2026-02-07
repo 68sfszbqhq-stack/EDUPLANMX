@@ -237,9 +237,9 @@ class SchoolService {
                 onboardingCompleto: true
             };
 
-            // Guardar en Firestore con el mismo ID que Auth
+            // Guardar en Firestore con el mismo ID que Auth (usar merge: true para no borrar 'activo')
             const userDocRef = doc(db, USERS_COLLECTION, userId);
-            await setDoc(userDocRef, userProfile as any);
+            await setDoc(userDocRef, userProfile as any, { merge: true });
 
             // Actualizar contador de docentes en la escuela
             await this.incrementSchoolDocentes(schoolId);

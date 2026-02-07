@@ -13,26 +13,34 @@ interface PersonalizedDashboardProps {
 export const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ onNavigate }) => {
     const { user } = useAuth();
     const [planeaciones, setPlaneaciones] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false); // Cambiar a false por defecto
     const [stats, setStats] = useState({
         total: 0,
         promedioSemanal: 0
     });
 
     useEffect(() => {
-        if (user?.id && user?.schoolId) {
+        if (user?.id) {
             loadPlaneaciones();
         }
-    }, [user]);
+    }, [user?.id, user?.schoolId]); // Ejecutar cuando cambie el ID o la escuela
 
     const loadPlaneaciones = async () => {
-        if (!user?.id || !user?.schoolId) return;
+        // Si no hay escuela, no podemos cargar pero debemos detener el loading
+        if (!user?.id || !user?.schoolId) {
+            console.warn('⚠️ No se pueden cargar planeaciones: faltan IDs', { userId: user?.id, schoolId: user?.schoolId });
+            setPlaneaciones([]); // Limpiar historial actual si cambiamos de usuario
+            setLoading(false);
+            return;
+        }
 
         try {
             setLoading(true);
+            console.log('🔍 Cargando planeaciones para:', { userId: user.id, schoolId: user.schoolId });
 
             // Usar el nuevo servicio con aislamiento por schoolId
             const plans = await planeacionesService.getMias(user.id, user.schoolId);
+            console.log('✅ Planeaciones recuperadas:', plans.length);
 
             // Convertir a formato compatible con RecentPlaneaciones
             const plansFormatted = plans.map(p => ({

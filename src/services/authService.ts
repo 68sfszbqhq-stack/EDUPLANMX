@@ -124,7 +124,8 @@ class AuthService {
                 console.log('✅ Nuevo usuario creado desde Google:', userData.email);
             }
 
-            if (!userData.activo) {
+            if (userData.activo === false) {
+                console.error('🚫 Acceso denegado: Usuario inactivo en Firestore', userData);
                 throw new Error('Usuario inactivo. Contacta al administrador.');
             }
 
