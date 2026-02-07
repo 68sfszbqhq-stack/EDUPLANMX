@@ -7,6 +7,7 @@ import App from './App';
 import RegistroAlumnos from './pages/RegistroAlumnos';
 import AdminDashboard from './pages/admin/Dashboard';
 import SuperAdminDashboard from './pages/admin/SuperAdminDashboard';
+import DirectorDashboard from './pages/director/Dashboard';
 import UsuariosPage from './pages/admin/Usuarios';
 import GuiaCurricular from './pages/maestro/GuiaCurricular';
 import ProgramaMateria from './pages/maestro/ProgramaMateria';
@@ -131,15 +132,12 @@ const Router: React.FC = () => {
                         }
                     />
 
-                    {/* Rutas Protegidas - Directivo (futuro) */}
+                    {/* Rutas Protegidas - Directivo */}
                     <Route
                         path="/directivo/dashboard"
                         element={
                             <ProtectedRoute allowedRoles={['directivo', 'superadmin']}>
-                                <div className="p-8">
-                                    <h1 className="text-2xl font-bold">Dashboard Directivo</h1>
-                                    <p className="text-slate-600 mt-2">En construcción...</p>
-                                </div>
+                                <DirectorDashboard />
                             </ProtectedRoute>
                         }
                     />
