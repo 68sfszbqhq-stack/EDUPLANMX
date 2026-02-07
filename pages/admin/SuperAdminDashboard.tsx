@@ -4,6 +4,7 @@ import { School, Users, Database, Upload, GraduationCap, LogOut, Home } from 'lu
 import { useAuth } from '../../src/contexts/AuthContext';
 import { SchoolsManagement } from './SchoolsManagement';
 import { UsersManagement } from './UsersManagement';
+import { CSVImport } from './CSVImport';
 
 type AdminView = 'overview' | 'schools' | 'users' | 'data' | 'import';
 
@@ -156,13 +157,7 @@ const SuperAdminDashboard: React.FC = () => {
                         </div>
                     )}
 
-                    {currentView === 'import' && (
-                        <div className="text-center py-20">
-                            <Upload className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-                            <h2 className="text-2xl font-bold text-slate-800 mb-2">Importar CSV</h2>
-                            <p className="text-slate-600">En desarrollo... (Fase 3)</p>
-                        </div>
-                    )}
+                    {currentView === 'import' && <CSVImport />}
                 </div>
             </div>
         </div>
