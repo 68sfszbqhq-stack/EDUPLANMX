@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import App from './App';
 import RegistroAlumnos from './pages/RegistroAlumnos';
 import AdminDashboard from './pages/admin/Dashboard';
+import SuperAdminDashboard from './pages/admin/SuperAdminDashboard';
 import UsuariosPage from './pages/admin/Usuarios';
 import GuiaCurricular from './pages/maestro/GuiaCurricular';
 import ProgramaMateria from './pages/maestro/ProgramaMateria';
@@ -148,7 +149,7 @@ const Router: React.FC = () => {
                         path="/admin/dashboard"
                         element={
                             <ProtectedRoute allowedRoles={['superadmin']}>
-                                <AdminDashboard />
+                                <SuperAdminDashboard />
                             </ProtectedRoute>
                         }
                     />

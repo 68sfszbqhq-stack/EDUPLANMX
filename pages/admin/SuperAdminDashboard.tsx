@@ -1,399 +1,177 @@
-import React, { useState, useEffect } from 'react';
-import {
-    Shield, Users, School, DollarSign, TrendingUp, AlertTriangle,
-    Lock, Unlock, Search, Filter, Download
-} from 'lucide-react';
-import { adminService } from '../../src/services/adminService';
-import type { SystemStats, UserManagement, SchoolStats } from '../../types/admin';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { School, Users, Database, Upload, GraduationCap, LogOut, Home } from 'lucide-react';
+import { useAuth } from '../../src/contexts/AuthContext';
+import { SchoolsManagement } from './SchoolsManagement';
 
-export const SuperAdminDashboard: React.FC = () => {
-    const [stats, setStats] = useState<SystemStats | null>(null);
-    const [users, setUsers] = useState<UserManagement[]>([]);
-    const [schools, setSchools] = useState<SchoolStats[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [activeTab, setActiveTab] = useState<'overview' | 'users' | 'schools' | 'api'>('overview');
-    const [searchTerm, setSearchTerm] = useState('');
+type AdminView = 'overview' | 'schools' | 'users' | 'data' | 'import';
 
-    useEffect(() => {
-        loadData();
-    }, []);
+const SuperAdminDashboard: React.FC = () => {
+    const navigate = useNavigate();
+    const { logout, user } = useAuth();
+    const [currentView, setCurrentView] = useState<AdminView>('overview');
 
-    const loadData = async () => {
-        setLoading(true);
+    const handleLogout = async () => {
         try {
-            const [systemStats, allUsers, schoolStats] = await Promise.all([
-                adminService.getSystemStats(),
-                adminService.getAllUsers(),
-                adminService.getSchoolStats()
-            ]);
-
-            setStats(systemStats);
-            setUsers(allUsers);
-            setSchools(schoolStats);
+            await logout();
+            navigate('/login');
         } catch (error) {
-            console.error('Error al cargar datos:', error);
-        } finally {
-            setLoading(false);
+            console.error('Error al cerrar sesión:', error);
         }
     };
 
-    const handleBlockUser = async (userId: string, reason: string) => {
-        if (confirm(`¿Bloquear usuario?\nRazón: ${reason}`)) {
-            try {
-                await adminService.blockUser(userId, reason, 'superadmin');
-                await loadData();
-                alert('Usuario bloqueado exitosamente');
-            } catch (error) {
-                alert('Error al bloquear usuario');
-            }
-        }
-    };
-
-    const handleUnblockUser = async (userId: string) => {
-        if (confirm('¿Desbloquear usuario?')) {
-            try {
-                await adminService.unblockUser(userId);
-                await loadData();
-                alert('Usuario desbloqueado exitosamente');
-            } catch (error) {
-                alert('Error al desbloquear usuario');
-            }
-        }
-    };
-
-    const handleBlockSchool = async (schoolId: string, reason: string) => {
-        if (confirm(`¿Bloquear escuela completa?\nRazón: ${reason}`)) {
-            try {
-                await adminService.blockSchool(schoolId, reason, 'superadmin');
-                await loadData();
-                alert('Escuela bloqueada exitosamente');
-            } catch (error) {
-                alert('Error al bloquear escuela');
-            }
-        }
-    };
-
-    const handleUnblockSchool = async (schoolId: string) => {
-        if (confirm('¿Desbloquear escuela?')) {
-            try {
-                await adminService.unblockSchool(schoolId);
-                await loadData();
-                alert('Escuela desbloqueada exitosamente');
-            } catch (error) {
-                alert('Error al desbloquear escuela');
-            }
-        }
-    };
-
-    const filteredUsers = users.filter(user =>
-        user.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        user.schoolName.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    const filteredSchools = schools.filter(school =>
-        school.schoolName.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    if (loading) {
-        return (
-            <div className="min-h-screen flex items-center justify-center">
-                <div className="text-center">
-                    <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-indigo-600 mx-auto mb-4"></div>
-                    <p className="text-lg font-semibold text-gray-700">Cargando panel de administración...</p>
-                </div>
-            </div>
-        );
-    }
+    const menuItems = [
+        { id: 'overview' as AdminView, label: 'Vista General', icon: Home },
+        { id: 'schools' as AdminView, label: 'Escuelas', icon: School },
+        { id: 'users' as AdminView, label: 'Usuarios', icon: Users },
+        { id: 'data' as AdminView, label: 'Base de Datos', icon: Database },
+        { id: 'import' as AdminView, label: 'Importar CSV', icon: Upload },
+    ];
 
     return (
-        <div className="min-h-screen bg-gray-50">
-            {/* Header */}
-            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+            {/* Navbar */}
+            <nav className="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-50">
+                <div className="max-w-7xl mx-auto px-8 py-4">
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                            <Shield className="w-10 h-10 mr-4" />
+                        {/* Logo y título */}
+                        <div className="flex items-center gap-3">
+                            <div className="bg-indigo-600 p-2 rounded-lg">
+                                <GraduationCap className="w-6 h-6 text-white" />
+                            </div>
                             <div>
-                                <h1 className="text-3xl font-bold">Super Admin Panel</h1>
-                                <p className="text-indigo-100">Control total del sistema</p>
+                                <h1 className="text-xl font-bold text-slate-900">EduPlan MX</h1>
+                                <p className="text-xs text-slate-500">Super Admin</p>
                             </div>
                         </div>
-                        <div className="text-right">
-                            <p className="text-sm text-indigo-100">Acceso completo</p>
-                            <p className="text-lg font-semibold">José Mendoza</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            {/* Stats Cards */}
-            {stats && (
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {/* Total Escuelas */}
-                        <div className="bg-white rounded-lg shadow p-6">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <p className="text-sm text-gray-600">Escuelas</p>
-                                    <p className="text-3xl font-bold text-gray-900">{stats.totalSchools}</p>
-                                    <p className="text-xs text-red-600 mt-1">
-                                        {stats.blockedSchools} bloqueadas
+                        {/* Usuario y acciones */}
+                        <div className="flex items-center gap-4">
+                            {user && (
+                                <div className="text-right mr-4">
+                                    <p className="text-sm font-semibold text-slate-900">
+                                        {user.nombre} {user.apellidoPaterno}
                                     </p>
+                                    <p className="text-xs text-slate-500">{user.email}</p>
                                 </div>
-                                <School className="w-12 h-12 text-blue-500" />
-                            </div>
-                        </div>
+                            )}
 
-                        {/* Total Usuarios */}
-                        <div className="bg-white rounded-lg shadow p-6">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <p className="text-sm text-gray-600">Usuarios</p>
-                                    <p className="text-3xl font-bold text-gray-900">{stats.totalUsers}</p>
-                                    <p className="text-xs text-green-600 mt-1">
-                                        {stats.activeUsers} activos
-                                    </p>
-                                </div>
-                                <Users className="w-12 h-12 text-green-500" />
-                            </div>
-                        </div>
-
-                        {/* API Requests */}
-                        <div className="bg-white rounded-lg shadow p-6">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <p className="text-sm text-gray-600">Requests API</p>
-                                    <p className="text-3xl font-bold text-gray-900">
-                                        {stats.totalApiRequests.toLocaleString()}
-                                    </p>
-                                    <p className="text-xs text-gray-500 mt-1">Este mes</p>
-                                </div>
-                                <TrendingUp className="w-12 h-12 text-purple-500" />
-                            </div>
-                        </div>
-
-                        {/* Costo Estimado */}
-                        <div className="bg-white rounded-lg shadow p-6">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <p className="text-sm text-gray-600">Costo Estimado</p>
-                                    <p className="text-3xl font-bold text-gray-900">
-                                        ${stats.totalApiCost.toFixed(2)}
-                                    </p>
-                                    <p className="text-xs text-gray-500 mt-1">USD este mes</p>
-                                </div>
-                                <DollarSign className="w-12 h-12 text-yellow-500" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
-
-            {/* Tabs */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="border-b border-gray-200">
-                    <nav className="-mb-px flex space-x-8">
-                        {[
-                            { id: 'overview', label: 'Resumen' },
-                            { id: 'users', label: 'Usuarios' },
-                            { id: 'schools', label: 'Escuelas' },
-                            { id: 'api', label: 'Uso de API' }
-                        ].map((tab) => (
                             <button
-                                key={tab.id}
-                                onClick={() => setActiveTab(tab.id as any)}
-                                className={`py-4 px-1 border-b-2 font-medium text-sm ${activeTab === tab.id
-                                        ? 'border-indigo-500 text-indigo-600'
-                                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                                    }`}
+                                onClick={handleLogout}
+                                className="flex items-center gap-2 px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors font-medium"
+                                title="Cerrar sesión"
                             >
-                                {tab.label}
+                                <LogOut className="w-4 h-4" />
+                                <span className="hidden sm:inline">Cerrar Sesión</span>
                             </button>
-                        ))}
-                    </nav>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            {/* Menú de Navegación */}
+            <div className="bg-white border-b border-slate-200">
+                <div className="max-w-7xl mx-auto px-8">
+                    <div className="flex gap-2 overflow-x-auto">
+                        {menuItems.map((item) => {
+                            const Icon = item.icon;
+                            const isActive = currentView === item.id;
+                            return (
+                                <button
+                                    key={item.id}
+                                    onClick={() => setCurrentView(item.id)}
+                                    className={`flex items-center gap-2 px-4 py-3 font-medium transition-colors border-b-2 whitespace-nowrap ${isActive
+                                            ? 'border-indigo-600 text-indigo-600'
+                                            : 'border-transparent text-slate-600 hover:text-slate-900 hover:border-slate-300'
+                                        }`}
+                                >
+                                    <Icon className="w-5 h-5" />
+                                    {item.label}
+                                </button>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
 
-            {/* Content */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                {/* Search Bar */}
-                {(activeTab === 'users' || activeTab === 'schools') && (
-                    <div className="mb-6">
-                        <div className="relative">
-                            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                            <input
-                                type="text"
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                placeholder={`Buscar ${activeTab === 'users' ? 'usuarios' : 'escuelas'}...`}
-                                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                            />
-                        </div>
-                    </div>
-                )}
+            {/* Contenido principal */}
+            <div className="p-8">
+                <div className="max-w-7xl mx-auto">
+                    {currentView === 'overview' && (
+                        <div>
+                            <h1 className="text-4xl font-bold text-slate-900 mb-2">
+                                Dashboard Super Admin
+                            </h1>
+                            <p className="text-slate-600 mb-8">
+                                Vista general del sistema EduPlan MX
+                            </p>
 
-                {/* Users Tab */}
-                {activeTab === 'users' && (
-                    <div className="bg-white rounded-lg shadow overflow-hidden">
-                        <table className="min-w-full divide-y divide-gray-200">
-                            <thead className="bg-gray-50">
-                                <tr>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Usuario
-                                    </th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Escuela
-                                    </th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Rol
-                                    </th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        API Uso
-                                    </th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Estado
-                                    </th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Acciones
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody className="bg-white divide-y divide-gray-200">
-                                {filteredUsers.map((user) => (
-                                    <tr key={user.userId} className={user.isBlocked ? 'bg-red-50' : ''}>
-                                        <td className="px-6 py-4 whitespace-nowrap">
-                                            <div>
-                                                <div className="text-sm font-medium text-gray-900">{user.nombre}</div>
-                                                <div className="text-sm text-gray-500">{user.email}</div>
+                            {/* Cards de Bienvenida */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                {menuItems.slice(1).map((item) => {
+                                    const Icon = item.icon;
+                                    return (
+                                        <button
+                                            key={item.id}
+                                            onClick={() => setCurrentView(item.id)}
+                                            className="bg-white p-6 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all text-left group"
+                                        >
+                                            <div className="flex items-center justify-between mb-4">
+                                                <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center group-hover:bg-indigo-200 transition-colors">
+                                                    <Icon className="w-6 h-6 text-indigo-600" />
+                                                </div>
                                             </div>
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {user.schoolName}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap">
-                                            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
-                                                {user.puesto}
-                                            </span>
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {user.apiUsage.requestsThisMonth} / mes
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap">
-                                            {user.isBlocked ? (
-                                                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                                                    Bloqueado
-                                                </span>
-                                            ) : (
-                                                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                    Activo
-                                                </span>
-                                            )}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                            {user.isBlocked ? (
-                                                <button
-                                                    onClick={() => handleUnblockUser(user.userId)}
-                                                    className="text-green-600 hover:text-green-900 flex items-center"
-                                                >
-                                                    <Unlock className="w-4 h-4 mr-1" />
-                                                    Desbloquear
-                                                </button>
-                                            ) : (
-                                                <button
-                                                    onClick={() => handleBlockUser(user.userId, 'Uso excesivo de API')}
-                                                    className="text-red-600 hover:text-red-900 flex items-center"
-                                                >
-                                                    <Lock className="w-4 h-4 mr-1" />
-                                                    Bloquear
-                                                </button>
-                                            )}
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                )}
+                                            <h3 className="text-lg font-bold text-slate-800 mb-1">{item.label}</h3>
+                                            <p className="text-sm text-slate-500">
+                                                {item.id === 'schools' && 'Administra todas las escuelas del sistema'}
+                                                {item.id === 'users' && 'Gestiona usuarios y sus roles'}
+                                                {item.id === 'data' && 'Consulta y exporta datos'}
+                                                {item.id === 'import' && 'Importa datos masivos desde CSV'}
+                                            </p>
+                                        </button>
+                                    );
+                                })}
+                            </div>
 
-                {/* Schools Tab */}
-                {activeTab === 'schools' && (
-                    <div className="bg-white rounded-lg shadow overflow-hidden">
-                        <table className="min-w-full divide-y divide-gray-200">
-                            <thead className="bg-gray-50">
-                                <tr>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Escuela
-                                    </th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Usuarios
-                                    </th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        API Requests
-                                    </th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Costo
-                                    </th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Estado
-                                    </th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Acciones
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody className="bg-white divide-y divide-gray-200">
-                                {filteredSchools.map((school) => (
-                                    <tr key={school.schoolId} className={school.isBlocked ? 'bg-red-50' : ''}>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                            {school.schoolName}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {school.totalUsers}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {school.apiRequestsThisMonth.toLocaleString()}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            ${school.estimatedCost.toFixed(2)}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap">
-                                            {school.isBlocked ? (
-                                                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                                                    Bloqueada
-                                                </span>
-                                            ) : (
-                                                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                    Activa
-                                                </span>
-                                            )}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                            {school.isBlocked ? (
-                                                <button
-                                                    onClick={() => handleUnblockSchool(school.schoolId)}
-                                                    className="text-green-600 hover:text-green-900 flex items-center"
-                                                >
-                                                    <Unlock className="w-4 h-4 mr-1" />
-                                                    Desbloquear
-                                                </button>
-                                            ) : (
-                                                <button
-                                                    onClick={() => handleBlockSchool(school.schoolId, 'Uso excesivo de API')}
-                                                    className="text-red-600 hover:text-red-900 flex items-center"
-                                                >
-                                                    <Lock className="w-4 h-4 mr-1" />
-                                                    Bloquear
-                                                </button>
-                                            )}
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                )}
+                            {/* Información */}
+                            <div className="mt-8 bg-indigo-50 border border-indigo-200 rounded-2xl p-6">
+                                <h3 className="font-bold text-indigo-900 mb-2">🎉 Panel de Administración Completo</h3>
+                                <p className="text-indigo-800 text-sm">
+                                    Desde aquí puedes administrar todo el sistema EduPlan MX. Selecciona una sección del menú superior para comenzar.
+                                </p>
+                            </div>
+                        </div>
+                    )}
+
+                    {currentView === 'schools' && <SchoolsManagement />}
+
+                    {currentView === 'users' && (
+                        <div className="text-center py-20">
+                            <Users className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+                            <h2 className="text-2xl font-bold text-slate-800 mb-2">Gestión de Usuarios</h2>
+                            <p className="text-slate-600">En desarrollo... (Fase 2)</p>
+                        </div>
+                    )}
+
+                    {currentView === 'data' && (
+                        <div className="text-center py-20">
+                            <Database className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+                            <h2 className="text-2xl font-bold text-slate-800 mb-2">Base de Datos</h2>
+                            <p className="text-slate-600">En desarrollo... (Fase 4)</p>
+                        </div>
+                    )}
+
+                    {currentView === 'import' && (
+                        <div className="text-center py-20">
+                            <Upload className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+                            <h2 className="text-2xl font-bold text-slate-800 mb-2">Importar CSV</h2>
+                            <p className="text-slate-600">En desarrollo... (Fase 3)</p>
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );
 };
+
+export default SuperAdminDashboard;
