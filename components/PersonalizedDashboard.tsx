@@ -4,8 +4,7 @@ import { DashboardHeader } from './dashboard/DashboardHeader';
 import { StatsCards } from './dashboard/StatsCards';
 import { QuickActions } from './dashboard/QuickActions';
 import { RecentPlaneaciones } from './dashboard/RecentPlaneaciones';
-import { collection, query, where, getDocs, orderBy, limit } from 'firebase/firestore';
-import { db } from '../src/config/firebase';
+import { planeacionesService } from '../src/services/planeacionesService';
 
 interface PersonalizedDashboardProps {
     onNavigate: (view: string) => void;
@@ -21,32 +20,30 @@ export const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ on
     });
 
     useEffect(() => {
-        if (user?.id) {
+        if (user?.id && user?.schoolId) {
             loadPlaneaciones();
         }
     }, [user]);
 
     const loadPlaneaciones = async () => {
-        if (!user?.id) return;
+        if (!user?.id || !user?.schoolId) return;
 
         try {
             setLoading(true);
 
-            // Cargar planeaciones del usuario
-            const q = query(
-                collection(db, 'planeaciones'),
-                where('userId', '==', user.id),
-                orderBy('createdAt', 'desc'),
-                limit(10)
-            );
+            // Usar el nuevo servicio con aislamiento por schoolId
+            const plans = await planeacionesService.getMias(user.id, user.schoolId);
 
-            const snapshot = await getDocs(q);
-            const plans = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
+            // Convertir a formato compatible con RecentPlaneaciones
+            const plansFormatted = plans.map(p => ({
+                id: p.id!,
+                materia: p.subject,
+                semestre: p.semester || 1,
+                fecha: p.createdAt?.toString() || new Date().toISOString(),
+                titulo: p.title
             }));
 
-            setPlaneaciones(plans);
+            setPlaneaciones(plansFormatted);
 
             // Calcular estadísticas
             const total = plans.length;

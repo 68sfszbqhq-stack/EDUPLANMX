@@ -82,8 +82,21 @@ const App: React.FC = () => {
     }
   }, [user]);
 
-  const handleSavePlan = (plan: LessonPlan) => {
+  const handleSavePlan = async (plan: LessonPlan) => {
+    // Guardar en localStorage (fallback)
     setSavedPlans(prev => [plan, ...prev]);
+
+    // Guardar en Firestore con schoolId
+    if (user?.id && user?.schoolId) {
+      try {
+        const { planeacionesService } = await import('./src/services/planeacionesService');
+        await planeacionesService.crear(plan, user.id, user.schoolId);
+        console.log('✅ Planeación guardada en Firestore');
+      } catch (error) {
+        console.error('❌ Error al guardar en Firestore:', error);
+        // El localStorage ya tiene la copia
+      }
+    }
   };
 
 
