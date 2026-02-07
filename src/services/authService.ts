@@ -17,7 +17,7 @@ import {
 import { auth, db } from '../config/firebase';
 import type { Usuario, LoginCredentials, RegisterData } from '../../types/auth';
 
-const USUARIOS_COLLECTION = 'usuarios';
+const USUARIOS_COLLECTION = 'users';
 
 /**
  * Servicio de Autenticación
