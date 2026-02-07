@@ -2886,5 +2886,2105 @@
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
     "fecha_extraccion": "2026-01-12T12:00:00.000Z"
+  },
+  {
+    "materia": "Formación Socioemocional I",
+    "semestre": 1,
+    "metadata": {
+      "nombre_uac": "FORMACIÓN SOCIOEMOCIONAL I",
+      "semestre": 1,
+      "creditos": 0,
+      "horas_semanales": 2,
+      "enfoque": "Educación Física y Bienestar"
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Responsabilidad Social",
+        "Cuidado Físico Corporal",
+        "Bienestar Emocional Afectivo",
+        "Actividades Físicas y Deportivas"
+      ],
+      "metas_aprendizaje": [
+        "M1: Realiza actividad física e iniciación deportiva como elección para su bienestar físico.",
+        "M2: Valora la importancia de establecer hábitos saludables como parte de un estilo de vida.",
+        "M3: Valora la actividad física como una herramienta que favorece el manejo de sus emociones.",
+        "M4: Distingue los elementos básicos de la actividad física para el cuidado de la salud."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Comprende la importancia de la cultura física como un derecho humano que contribuye al bienestar integral y la salud.",
+        "tematicas": [
+          "Cultura física",
+          "Derecho humano",
+          "Bienestar integral"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Identifica y practica hábitos de higiene, alimentación y descanso para favorecer su desarrollo físico y prevenir enfermedades.",
+        "tematicas": [
+          "Higiene",
+          "Alimentación saludable",
+          "Hábitos de descanso"
+        ]
+      },
+      {
+        "id": 3,
+        "descripcion": "Determina su condición física actual a través de pruebas de valoración diagnóstica para establecer metas de mejora personal.",
+        "tematicas": [
+          "Condición física",
+          "Valoración funcional",
+          "Metas personales"
+        ]
+      },
+      {
+        "id": 4,
+        "descripcion": "Ejecuta actividades de activación física sistemática para fortalecer sus capacidades físicas (fuerza, resistencia, velocidad, flexibilidad).",
+        "tematicas": [
+          "Capacidades físicas",
+          "Activación física",
+          "Entrenamiento básico"
+        ]
+      },
+      {
+        "id": 5,
+        "descripcion": "Reconoce la importancia de practicar deporte y actividad física para la regulación de emociones y reducción del estrés.",
+        "tematicas": [
+          "Regulación emocional",
+          "Manejo de estrés",
+          "Salud mental"
+        ]
+      },
+      {
+        "id": 6,
+        "descripcion": "Participa en juegos y actividades deportivas de conjunto promoviendo la integración, el respeto y la colaboración grupal.",
+        "tematicas": [
+          "Deportes de conjunto",
+          "Valores sociales",
+          "Trabajo en equipo"
+        ]
+      },
+      {
+        "id": 7,
+        "descripcion": "Analiza los riesgos del sedentarismo en la sociedad actual y propone alternativas para una vida activa en su comunidad.",
+        "tematicas": [
+          "Sedentarismo",
+          "Vida saludable",
+          "Propuesta comunitaria"
+        ]
+      },
+      {
+        "id": 8,
+        "descripcion": "Aplica técnicas de respiración y relajación post-ejercicio para favorecer la recuperación física y el equilibrio mental.",
+        "tematicas": [
+          "Técnicas de relajación",
+          "Recuperación física",
+          "Equilibrio mental"
+        ]
+      }
+    ],
+    "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2024/07/V2N8WnBUGb-programa_formacion_socioemocional-19%20080724.pdf"
+  },
+  {
+    "materia": "La materia y sus interacciones CNEYT I",
+    "semestre": 1,
+    "metadata": {
+      "nombre_uac": "LA MATERIA Y SUS INTERACCIONES CNEYT I",
+      "semestre": 1,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Prácticas sugeridas"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar comprensión profunda de los temas curriculares."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Inicio de la exploración de los conceptos base de La materia y sus interacciones CNEYT I.",
+        "tematicas": [
+          "Introducción",
+          "Conceptos básicos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Análisis y aplicación de los principios fundamentales de La materia y sus interacciones CNEYT I en contextos reales.",
+        "tematicas": [
+          "Aplicaciones",
+          "Análisis"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Conservación de la energía y su interacción con la materia CNEYT II",
+    "semestre": 2,
+    "metadata": {
+      "nombre_uac": "CONSERVACIÓN DE LA ENERGÍA Y SU INTERACCIÓN CON LA MATERIA CNEYT II",
+      "semestre": 2,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Prácticas sugeridas"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar comprensión profunda de los temas curriculares."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Inicio de la exploración de los conceptos base de Conservación de la energía y su interacción con la materia CNEYT II.",
+        "tematicas": [
+          "Introducción",
+          "Conceptos básicos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Análisis y aplicación de los principios fundamentales de Conservación de la energía y su interacción con la materia CNEYT II en contextos reales.",
+        "tematicas": [
+          "Aplicaciones",
+          "Análisis"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Ecosistemas, interacciones, energia y dinamica CNEYT III",
+    "semestre": 3,
+    "metadata": {
+      "nombre_uac": "ECOSISTEMAS, INTERACCIONES, ENERGIA Y DINAMICA CNEYT III",
+      "semestre": 3,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Prácticas sugeridas"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar comprensión profunda de los temas curriculares."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Inicio de la exploración de los conceptos base de Ecosistemas, interacciones, energia y dinamica CNEYT III.",
+        "tematicas": [
+          "Introducción",
+          "Conceptos básicos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Análisis y aplicación de los principios fundamentales de Ecosistemas, interacciones, energia y dinamica CNEYT III en contextos reales.",
+        "tematicas": [
+          "Aplicaciones",
+          "Análisis"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Ciencias Sociales III",
+    "semestre": 4,
+    "metadata": {
+      "nombre_uac": "CIENCIAS SOCIALES III",
+      "semestre": 4,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Prácticas sugeridas"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar comprensión profunda de los temas curriculares."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Inicio de la exploración de los conceptos base de Ciencias Sociales III.",
+        "tematicas": [
+          "Introducción",
+          "Conceptos básicos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Análisis y aplicación de los principios fundamentales de Ciencias Sociales III en contextos reales.",
+        "tematicas": [
+          "Aplicaciones",
+          "Análisis"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Conciencia Histórica I",
+    "semestre": 4,
+    "metadata": {
+      "nombre_uac": "CONCIENCIA HISTÓRICA I",
+      "semestre": 4,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Prácticas sugeridas"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar comprensión profunda de los temas curriculares."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Inicio de la exploración de los conceptos base de Conciencia Histórica I.",
+        "tematicas": [
+          "Introducción",
+          "Conceptos básicos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Análisis y aplicación de los principios fundamentales de Conciencia Histórica I en contextos reales.",
+        "tematicas": [
+          "Aplicaciones",
+          "Análisis"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Reacciones químicas conservación de la materia CNEYT IV",
+    "semestre": 4,
+    "metadata": {
+      "nombre_uac": "REACCIONES QUÍMICAS CONSERVACIÓN DE LA MATERIA CNEYT IV",
+      "semestre": 4,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Prácticas sugeridas"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar comprensión profunda de los temas curriculares."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Inicio de la exploración de los conceptos base de Reacciones químicas conservación de la materia CNEYT IV.",
+        "tematicas": [
+          "Introducción",
+          "Conceptos básicos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Análisis y aplicación de los principios fundamentales de Reacciones químicas conservación de la materia CNEYT IV en contextos reales.",
+        "tematicas": [
+          "Aplicaciones",
+          "Análisis"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "La energía en los procesos de la vida diaria CNEYT V",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "LA ENERGÍA EN LOS PROCESOS DE LA VIDA DIARIA CNEYT V",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Prácticas sugeridas"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar comprensión profunda de los temas curriculares."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Inicio de la exploración de los conceptos base de La energía en los procesos de la vida diaria CNEYT V.",
+        "tematicas": [
+          "Introducción",
+          "Conceptos básicos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Análisis y aplicación de los principios fundamentales de La energía en los procesos de la vida diaria CNEYT V en contextos reales.",
+        "tematicas": [
+          "Aplicaciones",
+          "Análisis"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Análisis de Fenómenos Físicos I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "ANÁLISIS DE FENÓMENOS FÍSICOS I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Prácticas sugeridas"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar comprensión profunda de los temas curriculares."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Inicio de la exploración de los conceptos base de Análisis de Fenómenos Físicos I.",
+        "tematicas": [
+          "Introducción",
+          "Conceptos básicos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Análisis y aplicación de los principios fundamentales de Análisis de Fenómenos Físicos I en contextos reales.",
+        "tematicas": [
+          "Aplicaciones",
+          "Análisis"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Derecho y Sociedad I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "DERECHO Y SOCIEDAD I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Prácticas sugeridas"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar comprensión profunda de los temas curriculares."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Inicio de la exploración de los conceptos base de Derecho y Sociedad I.",
+        "tematicas": [
+          "Introducción",
+          "Conceptos básicos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Análisis y aplicación de los principios fundamentales de Derecho y Sociedad I en contextos reales.",
+        "tematicas": [
+          "Aplicaciones",
+          "Análisis"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Fundamentos de Administración I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "FUNDAMENTOS DE ADMINISTRACIÓN I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Prácticas sugeridas"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar comprensión profunda de los temas curriculares."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Inicio de la exploración de los conceptos base de Fundamentos de Administración I.",
+        "tematicas": [
+          "Introducción",
+          "Conceptos básicos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Análisis y aplicación de los principios fundamentales de Fundamentos de Administración I en contextos reales.",
+        "tematicas": [
+          "Aplicaciones",
+          "Análisis"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Organismos, estructuras y procesos CNEYT VI",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "ORGANISMOS, ESTRUCTURAS Y PROCESOS CNEYT VI",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Prácticas sugeridas"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar comprensión profunda de los temas curriculares."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Inicio de la exploración de los conceptos base de Organismos, estructuras y procesos CNEYT VI.",
+        "tematicas": [
+          "Introducción",
+          "Conceptos básicos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Análisis y aplicación de los principios fundamentales de Organismos, estructuras y procesos CNEYT VI en contextos reales.",
+        "tematicas": [
+          "Aplicaciones",
+          "Análisis"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Análisis de Fenómenos Físicos II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "ANÁLISIS DE FENÓMENOS FÍSICOS II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Prácticas sugeridas"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar comprensión profunda de los temas curriculares."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Inicio de la exploración de los conceptos base de Análisis de Fenómenos Físicos II.",
+        "tematicas": [
+          "Introducción",
+          "Conceptos básicos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Análisis y aplicación de los principios fundamentales de Análisis de Fenómenos Físicos II en contextos reales.",
+        "tematicas": [
+          "Aplicaciones",
+          "Análisis"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Derecho y Sociedad II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "DERECHO Y SOCIEDAD II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Prácticas sugeridas"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar comprensión profunda de los temas curriculares."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Inicio de la exploración de los conceptos base de Derecho y Sociedad II.",
+        "tematicas": [
+          "Introducción",
+          "Conceptos básicos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Análisis y aplicación de los principios fundamentales de Derecho y Sociedad II en contextos reales.",
+        "tematicas": [
+          "Aplicaciones",
+          "Análisis"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Raíces etimológicas del español I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "RAÍCES ETIMOLÓGICAS DEL ESPAÑOL I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Raíces etimológicas del español I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Raíces etimológicas del español I.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Raíces etimológicas del español I.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Taller de Probabilidad y Estadística I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "TALLER DE PROBABILIDAD Y ESTADÍSTICA I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Taller de Probabilidad y Estadística I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Taller de Probabilidad y Estadística I.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Taller de Probabilidad y Estadística I.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Comunicación y Sociedad I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "COMUNICACIÓN Y SOCIEDAD I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Comunicación y Sociedad I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Comunicación y Sociedad I.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Comunicación y Sociedad I.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Taller de Pensamiento Variacional I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "TALLER DE PENSAMIENTO VARIACIONAL I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Taller de Pensamiento Variacional I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Taller de Pensamiento Variacional I.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Taller de Pensamiento Variacional I.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Psicología I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "PSICOLOGÍA I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Psicología I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Psicología I.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Psicología I.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Pensamiento Filosófico I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "PENSAMIENTO FILOSÓFICO I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Pensamiento Filosófico I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Pensamiento Filosófico I.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Pensamiento Filosófico I.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Análisis de Fenómenos y Procesos Biológicos",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "ANÁLISIS DE FENÓMENOS Y PROCESOS BIOLÓGICOS",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Análisis de Fenómenos y Procesos Biológicos."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Análisis de Fenómenos y Procesos Biológicos.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Análisis de Fenómenos y Procesos Biológicos.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Pensamiento Matemático Aplicado a las Finanzas I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "PENSAMIENTO MATEMÁTICO APLICADO A LAS FINANZAS I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Pensamiento Matemático Aplicado a las Finanzas I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Pensamiento Matemático Aplicado a las Finanzas I.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Pensamiento Matemático Aplicado a las Finanzas I.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Ingles V",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "INGLES V",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Ingles V."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Ingles V.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Ingles V.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Dibujo Técnico I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "DIBUJO TÉCNICO I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Dibujo Técnico I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Dibujo Técnico I.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Dibujo Técnico I.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Salud Integral I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "SALUD INTEGRAL I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Salud Integral I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Salud Integral I.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Salud Integral I.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Economía I. La función de los agentes económicos en la sociedad",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "ECONOMÍA I. LA FUNCIÓN DE LOS AGENTES ECONÓMICOS EN LA SOCIEDAD",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Economía I. La función de los agentes económicos en la sociedad."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Economía I. La función de los agentes económicos en la sociedad.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Economía I. La función de los agentes económicos en la sociedad.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Procesos ContabIes I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "PROCESOS CONTABIES I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Procesos ContabIes I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Procesos ContabIes I.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Procesos ContabIes I.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Temas Selectos de Ciencias Sociales I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "TEMAS SELECTOS DE CIENCIAS SOCIALES I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Temas Selectos de Ciencias Sociales I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Temas Selectos de Ciencias Sociales I.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Temas Selectos de Ciencias Sociales I.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Arte y Cultura I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "ARTE Y CULTURA I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Arte y Cultura I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Arte y Cultura I.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Arte y Cultura I.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Lógica y Pensamiento Crítico",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "LÓGICA Y PENSAMIENTO CRÍTICO",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Lógica y Pensamiento Crítico."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Lógica y Pensamiento Crítico.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Lógica y Pensamiento Crítico.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Fundamentos de Administración II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "FUNDAMENTOS DE ADMINISTRACIÓN II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Fundamentos de Administración II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Fundamentos de Administración II.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Fundamentos de Administración II.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Organización del flujo de materia y energía en los organismos II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "ORGANIZACIÓN DEL FLUJO DE MATERIA Y ENERGÍA EN LOS ORGANISMOS II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Organización del flujo de materia y energía en los organismos II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Organización del flujo de materia y energía en los organismos II.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Organización del flujo de materia y energía en los organismos II.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Raíces etimológicas del español II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "RAÍCES ETIMOLÓGICAS DEL ESPAÑOL II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Raíces etimológicas del español II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Raíces etimológicas del español II.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Raíces etimológicas del español II.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Taller de Probabilidad y Estadística II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "TALLER DE PROBABILIDAD Y ESTADÍSTICA II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Taller de Probabilidad y Estadística II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Taller de Probabilidad y Estadística II.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Taller de Probabilidad y Estadística II.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Taller de Pensamiento Variacional II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "TALLER DE PENSAMIENTO VARIACIONAL II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Taller de Pensamiento Variacional II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Taller de Pensamiento Variacional II.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Taller de Pensamiento Variacional II.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Comunicación y Sociedad II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "COMUNICACIÓN Y SOCIEDAD II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Comunicación y Sociedad II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Comunicación y Sociedad II.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Comunicación y Sociedad II.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Psicología II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "PSICOLOGÍA II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Psicología II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Psicología II.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Psicología II.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Pensamiento Filosófico II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "PENSAMIENTO FILOSÓFICO II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Pensamiento Filosófico II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Pensamiento Filosófico II.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Pensamiento Filosófico II.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Temas Selectos de Biología",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "TEMAS SELECTOS DE BIOLOGÍA",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Temas Selectos de Biología."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Temas Selectos de Biología.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Temas Selectos de Biología.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Ingles VI",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "INGLES VI",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Ingles VI."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Ingles VI.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Ingles VI.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Dibujo TécnicoII",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "DIBUJO TÉCNICOII",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Dibujo TécnicoII."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Dibujo TécnicoII.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Dibujo TécnicoII.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Pensamiento Matemático Aplicado a las Finanzas-II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "PENSAMIENTO MATEMÁTICO APLICADO A LAS FINANZAS-II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Pensamiento Matemático Aplicado a las Finanzas-II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Pensamiento Matemático Aplicado a las Finanzas-II.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Pensamiento Matemático Aplicado a las Finanzas-II.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Salud Integral II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "SALUD INTEGRAL II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Salud Integral II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Salud Integral II.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Salud Integral II.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Economía II. Política económica y política pública mexicana",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "ECONOMÍA II. POLÍTICA ECONÓMICA Y POLÍTICA PÚBLICA MEXICANA",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Economía II. Política económica y política pública mexicana."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Economía II. Política económica y política pública mexicana.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Economía II. Política económica y política pública mexicana.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Procesos ContabIes II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "PROCESOS CONTABIES II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Procesos ContabIes II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Procesos ContabIes II.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Procesos ContabIes II.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Temas Selectos de Ciencias Sociales II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "TEMAS SELECTOS DE CIENCIAS SOCIALES II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Temas Selectos de Ciencias Sociales II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Temas Selectos de Ciencias Sociales II.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Temas Selectos de Ciencias Sociales II.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Arte y Cultura II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "ARTE Y CULTURA II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Arte y Cultura II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Arte y Cultura II.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Arte y Cultura II.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Experiencia Estética",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "EXPERIENCIA ESTÉTICA",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Experiencia Estética."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Experiencia Estética.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Experiencia Estética.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Tecnologías de la Comunicación y la Información",
+    "semestre": 3,
+    "metadata": {
+      "nombre_uac": "TECNOLOGÍAS DE LA COMUNICACIÓN Y LA INFORMACIÓN",
+      "semestre": 3,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Tecnologías de la Comunicación y la Información."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Tecnologías de la Comunicación y la Información.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Tecnologías de la Comunicación y la Información.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Higiene y Salud Comunitaria",
+    "semestre": 3,
+    "metadata": {
+      "nombre_uac": "HIGIENE Y SALUD COMUNITARIA",
+      "semestre": 3,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Higiene y Salud Comunitaria."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Higiene y Salud Comunitaria.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Higiene y Salud Comunitaria.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Diseño gráfico",
+    "semestre": 3,
+    "metadata": {
+      "nombre_uac": "DISEÑO GRÁFICO",
+      "semestre": 3,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Contenido Central",
+        "Transversalidad"
+      ],
+      "metas_aprendizaje": [
+        "Dominar los aprendizajes fundamentales de Diseño gráfico."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Bases y fundamentos de Diseño gráfico.",
+        "tematicas": [
+          "Fundamentos"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Profundización en los temas clave de Diseño gráfico.",
+        "tematicas": [
+          "Desarrollo"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Pensamiento Literario",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "PENSAMIENTO LITERARIO",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Investigación",
+        "Aplicación"
+      ],
+      "metas_aprendizaje": [
+        "Profundizar en Pensamiento Literario."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Fundamentos avanzados de Pensamiento Literario.",
+        "tematicas": [
+          "Teoría avanzada"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Taller de Cultura Digital",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "TALLER DE CULTURA DIGITAL",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Investigación",
+        "Aplicación"
+      ],
+      "metas_aprendizaje": [
+        "Profundizar en Taller de Cultura Digital."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Fundamentos avanzados de Taller de Cultura Digital.",
+        "tematicas": [
+          "Teoría avanzada"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Temas Selectos de Matemáticas I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "TEMAS SELECTOS DE MATEMÁTICAS I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Investigación",
+        "Aplicación"
+      ],
+      "metas_aprendizaje": [
+        "Profundizar en Temas Selectos de Matemáticas I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Fundamentos avanzados de Temas Selectos de Matemáticas I.",
+        "tematicas": [
+          "Teoría avanzada"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Temas Selectos de Matemáticas II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "TEMAS SELECTOS DE MATEMÁTICAS II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Investigación",
+        "Aplicación"
+      ],
+      "metas_aprendizaje": [
+        "Profundizar en Temas Selectos de Matemáticas II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Fundamentos avanzados de Temas Selectos de Matemáticas II.",
+        "tematicas": [
+          "Teoría avanzada"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Espacio y Sociedad",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "ESPACIO Y SOCIEDAD",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Investigación",
+        "Aplicación"
+      ],
+      "metas_aprendizaje": [
+        "Profundizar en Espacio y Sociedad."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Fundamentos avanzados de Espacio y Sociedad.",
+        "tematicas": [
+          "Teoría avanzada"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Taller de Ciencias I",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "TALLER DE CIENCIAS I",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Investigación",
+        "Aplicación"
+      ],
+      "metas_aprendizaje": [
+        "Profundizar en Taller de Ciencias I."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Fundamentos avanzados de Taller de Ciencias I.",
+        "tematicas": [
+          "Teoría avanzada"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Laboratorio de Investigación",
+    "semestre": 5,
+    "metadata": {
+      "nombre_uac": "LABORATORIO DE INVESTIGACIÓN",
+      "semestre": 5,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Investigación",
+        "Aplicación"
+      ],
+      "metas_aprendizaje": [
+        "Profundizar en Laboratorio de Investigación."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Fundamentos avanzados de Laboratorio de Investigación.",
+        "tematicas": [
+          "Teoría avanzada"
+        ]
+      }
+    ]
+  },
+  {
+    "materia": "Taller de Ciencias II",
+    "semestre": 6,
+    "metadata": {
+      "nombre_uac": "TALLER DE CIENCIAS II",
+      "semestre": 6,
+      "creditos": 4,
+      "horas_semanales": 3
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Investigación",
+        "Aplicación"
+      ],
+      "metas_aprendizaje": [
+        "Profundizar en Taller de Ciencias II."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Fundamentos avanzados de Taller de Ciencias II.",
+        "tematicas": [
+          "Teoría avanzada"
+        ]
+      }
+    ]
   }
 ]
