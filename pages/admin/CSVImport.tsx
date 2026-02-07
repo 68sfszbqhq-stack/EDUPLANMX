@@ -26,9 +26,13 @@ interface ImportResult {
 
 type ImportType = 'alumnos' | 'maestros';
 
-export const CSVImport: React.FC = () => {
+interface CSVImportProps {
+    directorSchoolId?: string;
+}
+
+export const CSVImport: React.FC<CSVImportProps> = ({ directorSchoolId }) => {
     const [importType, setImportType] = useState<ImportType>('alumnos');
-    const [selectedSchool, setSelectedSchool] = useState<string>('');
+    const [selectedSchool, setSelectedSchool] = useState<string>(directorSchoolId || '');
     const [schools, setSchools] = useState<School[]>([]);
     const [file, setFile] = useState<File | null>(null);
     const [importing, setImporting] = useState(false);
@@ -36,8 +40,10 @@ export const CSVImport: React.FC = () => {
     const [showResult, setShowResult] = useState(false);
 
     React.useEffect(() => {
-        loadSchools();
-    }, []);
+        if (!directorSchoolId) {
+            loadSchools();
+        }
+    }, [directorSchoolId]);
 
     const loadSchools = async () => {
         try {
@@ -394,8 +400,8 @@ export const CSVImport: React.FC = () => {
                     <button
                         onClick={() => setImportType('alumnos')}
                         className={`p-6 rounded-xl border-2 transition-all ${importType === 'alumnos'
-                                ? 'border-indigo-600 bg-indigo-50'
-                                : 'border-slate-200 hover:border-indigo-300'
+                            ? 'border-indigo-600 bg-indigo-50'
+                            : 'border-slate-200 hover:border-indigo-300'
                             }`}
                     >
                         <div className="flex items-center gap-3 mb-2">
@@ -410,8 +416,8 @@ export const CSVImport: React.FC = () => {
                     <button
                         onClick={() => setImportType('maestros')}
                         className={`p-6 rounded-xl border-2 transition-all ${importType === 'maestros'
-                                ? 'border-indigo-600 bg-indigo-50'
-                                : 'border-slate-200 hover:border-indigo-300'
+                            ? 'border-indigo-600 bg-indigo-50'
+                            : 'border-slate-200 hover:border-indigo-300'
                             }`}
                     >
                         <div className="flex items-center gap-3 mb-2">
@@ -472,25 +478,27 @@ export const CSVImport: React.FC = () => {
                 </div>
             </div>
 
-            {/* Seleccionar Escuela */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200">
-                <h3 className="text-lg font-bold text-slate-800 mb-4">3. Selecciona la Escuela</h3>
-                <div className="relative">
-                    <School className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                    <select
-                        value={selectedSchool}
-                        onChange={(e) => setSelectedSchool(e.target.value)}
-                        className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none bg-white"
-                    >
-                        <option value="">Selecciona una escuela</option>
-                        {schools.map(school => (
-                            <option key={school.id} value={school.id}>
-                                {school.nombre} ({school.codigo})
-                            </option>
-                        ))}
-                    </select>
+            {/* Seleccionar Escuela (Solo Admin) */}
+            {!directorSchoolId && (
+                <div className="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 className="text-lg font-bold text-slate-800 mb-4">3. Selecciona la Escuela</h3>
+                    <div className="relative">
+                        <School className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                        <select
+                            value={selectedSchool}
+                            onChange={(e) => setSelectedSchool(e.target.value)}
+                            className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none bg-white"
+                        >
+                            <option value="">Selecciona una escuela</option>
+                            {schools.map(school => (
+                                <option key={school.id} value={school.id}>
+                                    {school.nombre} ({school.codigo})
+                                </option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
-            </div>
+            )}
 
             {/* Subir Archivo */}
             <div className="bg-white p-6 rounded-2xl border border-slate-200">
@@ -595,10 +603,10 @@ export const CSVImport: React.FC = () => {
                                         <div
                                             key={index}
                                             className={`p-3 rounded-lg border ${detail.status === 'success'
-                                                    ? 'bg-green-50 border-green-200'
-                                                    : detail.status === 'warning'
-                                                        ? 'bg-amber-50 border-amber-200'
-                                                        : 'bg-red-50 border-red-200'
+                                                ? 'bg-green-50 border-green-200'
+                                                : detail.status === 'warning'
+                                                    ? 'bg-amber-50 border-amber-200'
+                                                    : 'bg-red-50 border-red-200'
                                                 }`}
                                         >
                                             <div className="flex items-start gap-2">
