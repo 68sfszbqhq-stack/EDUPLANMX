@@ -112,9 +112,14 @@ service cloud.firestore {
     // ============================================
     
     match /alumnos/{alumnoId} {
-      // Solo de tu escuela
-      allow read, write: if isAuthenticated()
-                         && belongsToSchool(resource.data.schoolId);
+      // Leer: Solo de tu escuela (o si no existe aún)
+      allow read: if isAuthenticated()
+                  && (resource == null || belongsToSchool(resource.data.schoolId));
+      
+      // Escribir: Solo de tu escuela
+      allow write: if isAuthenticated()
+                   && (resource == null || belongsToSchool(resource.data.schoolId))
+                   && belongsToSchool(request.resource.data.schoolId);
       
       // Crear: Validar schoolId
       allow create: if isAuthenticated()
@@ -182,9 +187,33 @@ service cloud.firestore {
     // ============================================
     
     match /diagnosticos/{diagnosticoId} {
-      // Solo de tu escuela
-      allow read, write: if isAuthenticated()
-                         && belongsToSchool(resource.data.schoolId);
+      // Leer: Solo de tu escuela (o si no existe)
+      allow read: if isAuthenticated()
+                  && (resource == null || belongsToSchool(resource.data.schoolId));
+      
+      // Escribir: Solo de tu escuela
+      allow write: if isAuthenticated()
+                   && (resource == null || belongsToSchool(resource.data.schoolId))
+                   && belongsToSchool(request.resource.data.schoolId);
+      
+      // Crear: Validar schoolId
+      allow create: if isAuthenticated()
+                    && belongsToSchool(request.resource.data.schoolId);
+    }
+    
+    // ============================================
+    // ESTADÍSTICAS DE ESTUDIANTES
+    // ============================================
+    
+    match /student_stats/{statId} {
+      // Leer: Solo de tu escuela (o si no existe)
+      allow read: if isAuthenticated()
+                  && (resource == null || belongsToSchool(resource.data.schoolId));
+      
+      // Escribir: Solo de tu escuela
+      allow write: if isAuthenticated()
+                   && (resource == null || belongsToSchool(resource.data.schoolId))
+                   && belongsToSchool(request.resource.data.schoolId);
       
       // Crear: Validar schoolId
       allow create: if isAuthenticated()
