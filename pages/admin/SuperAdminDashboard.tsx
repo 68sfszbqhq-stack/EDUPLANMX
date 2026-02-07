@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { School, Users, Database, Upload, GraduationCap, LogOut, Home } from 'lucide-react';
 import { useAuth } from '../../src/contexts/AuthContext';
 import { SchoolsManagement } from './SchoolsManagement';
+import { UsersManagement } from './UsersManagement';
 
 type AdminView = 'overview' | 'schools' | 'users' | 'data' | 'import';
 
@@ -81,8 +82,8 @@ const SuperAdminDashboard: React.FC = () => {
                                     key={item.id}
                                     onClick={() => setCurrentView(item.id)}
                                     className={`flex items-center gap-2 px-4 py-3 font-medium transition-colors border-b-2 whitespace-nowrap ${isActive
-                                            ? 'border-indigo-600 text-indigo-600'
-                                            : 'border-transparent text-slate-600 hover:text-slate-900 hover:border-slate-300'
+                                        ? 'border-indigo-600 text-indigo-600'
+                                        : 'border-transparent text-slate-600 hover:text-slate-900 hover:border-slate-300'
                                         }`}
                                 >
                                     <Icon className="w-5 h-5" />
@@ -145,13 +146,7 @@ const SuperAdminDashboard: React.FC = () => {
 
                     {currentView === 'schools' && <SchoolsManagement />}
 
-                    {currentView === 'users' && (
-                        <div className="text-center py-20">
-                            <Users className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-                            <h2 className="text-2xl font-bold text-slate-800 mb-2">Gestión de Usuarios</h2>
-                            <p className="text-slate-600">En desarrollo... (Fase 2)</p>
-                        </div>
-                    )}
+                    {currentView === 'users' && <UsersManagement />}
 
                     {currentView === 'data' && (
                         <div className="text-center py-20">
