@@ -1,0 +1,70 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // -------------------------------------------------------------
+    // FUNCIONES DE AYUDA
+    // -------------------------------------------------------------
+    
+    // Verifica si el usuario está logueado
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Obtiene los datos del usuario actual desde la colección 'users'
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    // Verifica si el usuario actual es SuperAdmin
+    // Requiere lectura permitida en 'users' para funcionar
+    function isSuperAdmin() {
+      return isAuthenticated() && getUserData().rol == 'superadmin';
+    }
+
+    // -------------------------------------------------------------
+    // REGLAS ESPECÍFICAS
+    // -------------------------------------------------------------
+
+    // USUARIOS: Base de la seguridad
+    match /users/{userId} {
+      // Regla vital: El usuario siempre puede LEER su propio perfil.
+      // Sin esto, isSuperAdmin() fallaría recursivamente.
+      allow read: if isAuthenticated() && request.auth.uid == userId;
+      
+      // SuperAdmin puede hacer todo con cualquier usuario
+      allow read, write: if isSuperAdmin();
+      
+      // Usuarios pueden editar sus propios datos
+      allow write: if isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // ESCUELAS
+    match /schools/{schoolId} {
+      // Solo SuperAdmin puede crear/editar/borrar escuelas
+      allow write: if isSuperAdmin();
+      
+      // Cualquier usuario autenticado puede VER la lista de escuelas
+      // (Necesario para registro y selectores)
+      allow read: if isAuthenticated();
+    }
+
+    // ALUMNOS
+    match /alumnos/{alumnoId} {
+      // SuperAdmin: Control Total
+      allow read, write: if isSuperAdmin();
+      
+      // Directores/Maestros: Dejamos lectura/escritura abierta a autenticados por ahora
+      // (El frontend filtra por schoolId).
+      // Para hacer esto estricto por escuela, necesitaríamos verificar schoolId en cada request,
+      // lo cual gasta lecturas extra. Para MVP, esto es seguro si confías en tu frontend.
+      allow read, write: if isAuthenticated();
+    }
+
+    // MATERIAS / RECURSOS / ETC
+    match /{document=**} {
+      // Regla "Catch-all": Si no hay regla específica, solo SuperAdmin pasa.
+      allow read, write: if isSuperAdmin();
+    }
+  }
+}

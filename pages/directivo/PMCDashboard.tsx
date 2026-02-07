@@ -2,28 +2,59 @@ import React, { useState, useEffect } from 'react';
 import { TrendingUp, Save, Plus, Trash2, CheckSquare } from 'lucide-react';
 import { PMCGoal } from '../../types';
 import SchoolIndicators from '../../components/director/SchoolIndicators';
+import { doc, getDoc, updateDoc, setDoc } from 'firebase/firestore';
+import { db } from '../../src/config/firebase';
+import { useAuth } from '../../src/contexts/AuthContext';
 
 const PMCDashboard: React.FC = () => {
+    const { user } = useAuth();
     const [activeTab, setActiveTab] = useState<'diagnostico' | 'metas' | 'seguimiento'>('diagnostico');
     const [lastSaved, setLastSaved] = useState<string | null>(null);
+    const [loadingMetas, setLoadingMetas] = useState(false);
 
     // Mantenemos Metas localmente por ahora
-    const [metas, setMetas] = useState<PMCGoal[]>(() => {
-        const saved = localStorage.getItem('pmc_metas');
-        return saved ? JSON.parse(saved) : [];
-    });
+    const [metas, setMetas] = useState<PMCGoal[]>([]);
 
-    // Auto-save effect for goals only
+    // Cargar metas desde Firestore
     useEffect(() => {
-        localStorage.setItem('pmc_metas', JSON.stringify(metas));
-    }, [metas]);
+        if (user?.schoolId) {
+            loadMetas();
+        }
+    }, [user?.schoolId]);
 
-    const handleManualSave = () => {
-        // Solo guardamos metas manuales, el diagnóstico se guarda en SchoolIndicators (aunque aquí es readOnly)
-        localStorage.setItem('pmc_metas', JSON.stringify(metas));
-        const time = new Date().toLocaleTimeString();
-        setLastSaved(time);
-        // alert(`Avances guardados correctamente a las ${time}`);
+    const loadMetas = async () => {
+        if (!user?.schoolId) return;
+        setLoadingMetas(true);
+        try {
+            const docRef = doc(db, 'pmc', user.schoolId);
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                const data = docSnap.data();
+                if (data.metas) {
+                    setMetas(data.metas);
+                }
+            }
+        } catch (error) {
+            console.error("Error al cargar metas:", error);
+        } finally {
+            setLoadingMetas(false);
+        }
+    };
+
+    const handleManualSave = async () => {
+        if (!user?.schoolId) return;
+
+        try {
+            const docRef = doc(db, 'pmc', user.schoolId);
+            await setDoc(docRef, { metas }, { merge: true });
+
+            const time = new Date().toLocaleTimeString();
+            setLastSaved(time);
+            alert('Metas guardadas correctamente en la nube ☁️');
+        } catch (error) {
+            console.error("Error al guardar metas:", error);
+            alert('Error al guardar. Intenta de nuevo.');
+        }
     };
 
     const handleAddGoal = () => {

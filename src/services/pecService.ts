@@ -1,44 +1,53 @@
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../config/firebase';
 import { PECProject, ProblemPAEC } from '../../types';
 
-// Datos de Ejemplo (Hardcoded por ahora para Fase 1)
-const MOCK_PROBLEMS: ProblemPAEC[] = [
-    {
-        id: 'prob-1',
-        name: "Contaminación del río local",
-        severity: "Alta",
-        affected: ["Estudiantes", "Familias", "Comerciantes"],
-        causes: ["Falta de cultura ambiental", "Basura doméstica"],
-        resources: ["Plantel tiene conocimientos de ciencias", "Hay organizaciones ambientales cercanas"]
-    }
-];
-
-const MOCK_PROJECTS: PECProject[] = [
-    {
-        id: 'pec-atoyac-2024',
-        name: "Rescate del Río Atoyac",
-        problemId: 'prob-1',
-        justification: "El río atraviesa nuestra comunidad y está muy contaminado...",
-        generalObjective: "Sensibilizar a la comunidad sobre el cuidado del río",
-        specificObjectives: ["Jornadas de limpieza", "Campaña digital"],
-        duration: "Ciclo 2024-2025",
-        stages: [
-            { name: "Diagnóstico", period: "Agosto 2024", activities: ["Medición de calidad"] },
-            { name: "Limpieza", period: "Octubre 2024", activities: ["Recolección de basura"] }
-        ],
-        products: ["Videos educativos", "5 toneladas de basura"]
-    }
-];
-
 export const pecService = {
-    // Obtener proyectos activos del plantel
-    getActiveProjects: async (): Promise<PECProject[]> => {
-        // Simular delay de red
-        return new Promise((resolve) => {
-            setTimeout(() => resolve(MOCK_PROJECTS), 500);
-        });
+    // Obtener proyectos activos del plantel (Adaptado para leer PAEC como Proyectos)
+    getActiveProjects: async (schoolId: string): Promise<PECProject[]> => {
+        if (!schoolId) return [];
+
+        try {
+            const docRef = doc(db, 'pmc', schoolId);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                const data = docSnap.data();
+
+                // 1. Si hay proyectos PEC diseñados por el director, devolver esos primero
+                if (data.pecProjects && Array.isArray(data.pecProjects) && data.pecProjects.length > 0) {
+                    return data.pecProjects as PECProject[];
+                }
+
+                // 2. Si NO hay proyectos diseñados, adaptar las problemáticas PAEC como "proyectos sugeridos"
+                // Esto es útil para la fase inicial donde solo hay diagnóstico
+                const problems = (data.paec || []) as ProblemPAEC[];
+
+                return problems.map(prob => {
+                    const p = prob as any;
+                    return {
+                        id: p.id,
+                        name: `Atención a: ${p.name || p.titulo}`, // Adaptar nombre
+                        problemId: p.id,
+                        justification: p.descripcion || 'Sin justificación',
+                        generalObjective: `Contribuir a la solución de: ${p.name || p.titulo}`,
+                        specificObjectives: [],
+                        duration: 'Ciclo Escolar',
+                        stages: [],
+                        products: []
+                    } as PECProject;
+                });
+            }
+
+            return [];
+        } catch (error) {
+            console.error('Error al cargar proyectos PEC:', error);
+            return [];
+        }
     },
 
-    getProjectById: (id: string) => {
-        return MOCK_PROJECTS.find(p => p.id === id);
+    getProjectById: async (schoolId: string, projectId: string): Promise<PECProject | undefined> => {
+        const projects = await pecService.getActiveProjects(schoolId);
+        return projects.find(p => p.id === projectId);
     }
 };

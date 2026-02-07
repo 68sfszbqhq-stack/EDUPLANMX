@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../src/contexts/AuthContext';
 import type { UserRole } from '../types/auth';
 
@@ -10,6 +10,7 @@ interface ProtectedRouteProps {
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowedRoles }) => {
     const { user, loading } = useAuth();
+    const location = useLocation();
 
     // Mostrar loading mientras se verifica la autenticación
     if (loading) {
@@ -41,8 +42,8 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowedRoles 
             !user.apellidoPaterno
         );
 
-    if (needsOnboarding && window.location.pathname !== '/onboarding') {
-        console.log('🚀 ProtectedRoute: Redirigiendo a onboarding - Faltan campos');
+    if (needsOnboarding && location.pathname !== '/onboarding') {
+        console.info('ℹ️ Redirigiendo a onboarding - Completar perfil. Path actual:', location.pathname);
         return <Navigate to="/onboarding" replace />;
     }
 

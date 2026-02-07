@@ -17,6 +17,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
                     // 1. Obtener datos básicos del usuario desde Firestore
                     const userData = await authService.getUserData(firebaseUser.uid);
 
+                    // 🚨 Modificación CRÍTICA para SuperAdmin
+                    if (userData?.rol === 'superadmin') {
+                        console.log('👑 SuperAdmin detectado - Saltando onboarding');
+                        setUser({
+                            ...userData,
+                            onboardingCompleto: true,
+                            schoolId: 'system',
+                            schoolName: 'Sistema Central'
+                        } as Usuario);
+                        setLoading(false);
+                        return; // Salir aquí para evitar lógica de escuelas
+                    }
+
                     // 2. Importar schoolService dinámicamente
                     const { schoolService } = await import('../services/schoolService');
 

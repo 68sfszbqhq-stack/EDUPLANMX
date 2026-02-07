@@ -29,6 +29,10 @@ export const OnboardingContainer: React.FC = () => {
     const user = auth.currentUser;
     const userName = user?.displayName?.split(' ')[0] || 'Usuario';
 
+    React.useEffect(() => {
+        console.log('🏁 OnboardingContainer montado. Paso actual:', currentStep);
+    }, [currentStep]);
+
     // Paso 1: Bienvenida - Elegir unirse o crear
     const handleWelcomeChoice = (choice: 'join' | 'create') => {
         if (choice === 'join') {

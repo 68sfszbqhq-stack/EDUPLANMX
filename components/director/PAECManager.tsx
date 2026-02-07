@@ -205,12 +205,34 @@ const PAECManager: React.FC<Props> = ({ readOnly = false }) => {
                             </div>
                         </div>
 
-                        {/* Descripción */}
+                        {/* Descripción Detallada con Guía PAEC */}
                         <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-1">Descripción Detallada</label>
+                            <div className="flex justify-between items-center mb-1">
+                                <label className="block text-sm font-medium text-slate-700">Descripción y Justificación</label>
+                                <span className="text-xs text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">Formato Sugerido</span>
+                            </div>
+
+                            <div className="mb-3 bg-blue-50 border border-blue-100 rounded-lg p-3 text-xs text-blue-800">
+                                <h4 className="font-bold mb-1">Estructura Recomendada para Rúbrica PAEC:</h4>
+                                <ul className="list-disc pl-4 space-y-1 opacity-90">
+                                    <li><strong>1. El Problema (Precisión):</strong> ¿Qué pasa exactamente? (Conductas observables, riesgos de salud).</li>
+                                    <li><strong>2. El Contexto:</strong> ¿Cómo se ve esto en TU escuela? (Menciona el nombre del plantel y situaciones locales).</li>
+                                    <li><strong>3. La Indagación:</strong> ¿Cómo te diste cuenta? (Observación, encuestas, comentarios).</li>
+                                    <li><strong>4. La Propuesta:</strong> ¿Qué vamos a hacer para transformar esto? (Talleres, actividades formativas).</li>
+                                </ul>
+                            </div>
+
                             <textarea
-                                className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm h-20 resize-none focus:ring-2 focus:ring-indigo-500"
-                                placeholder="Describe el contexto de la problemática..."
+                                className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm h-48 resize-y focus:ring-2 focus:ring-indigo-500 leading-relaxed"
+                                placeholder={`Ejemplo de redacción:
+
+"Los alumnos buscan estar en buen estado físico... sin embargo, no cuentan con orientación profesional... (El Problema).
+
+En el contexto del Bachillerato Gral. [Nombre]... se han identificado comentarios sobre presión estética... (El Contexto).
+
+Esta problemática fue identificada a partir de observaciones en el aula y encuestas breves... (La Indagación).
+
+La propuesta consiste en desarrollar talleres y actividades que fortalezcan conocimientos y actitudes para el cuidado de la salud..." (La Propuesta).`}
                                 value={newProblem.descripcion}
                                 onChange={e => setNewProblem({ ...newProblem, descripcion: e.target.value })}
                             ></textarea>
@@ -337,8 +359,8 @@ const PAECManager: React.FC<Props> = ({ readOnly = false }) => {
                     <div
                         key={problem.id}
                         className={`bg-white rounded-xl border p-6 transition-all ${problem.seleccionada
-                                ? 'border-green-500 shadow-md ring-1 ring-green-500'
-                                : 'border-slate-200 hover:shadow-md'
+                            ? 'border-green-500 shadow-md ring-1 ring-green-500'
+                            : 'border-slate-200 hover:shadow-md'
                             }`}
                     >
                         <div className="flex justify-between items-start mb-4">
@@ -351,8 +373,8 @@ const PAECManager: React.FC<Props> = ({ readOnly = false }) => {
                                         </span>
                                     )}
                                     <span className={`text-xs px-2 py-1 rounded-full font-bold ${problem.prioridad === 'Alta' ? 'bg-red-100 text-red-700' :
-                                            problem.prioridad === 'Media' ? 'bg-orange-100 text-orange-700' :
-                                                'bg-blue-100 text-blue-700'
+                                        problem.prioridad === 'Media' ? 'bg-orange-100 text-orange-700' :
+                                            'bg-blue-100 text-blue-700'
                                         }`}>
                                         {problem.prioridad}
                                     </span>

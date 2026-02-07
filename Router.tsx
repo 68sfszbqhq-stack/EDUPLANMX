@@ -49,13 +49,7 @@ const RoleBasedRedirect: React.FC = () => {
         !user.apellidoPaterno;
 
     if (needsOnboarding) {
-        console.log('🚀 Redirigiendo a onboarding - Faltan campos:', {
-            onboardingCompleto: user.onboardingCompleto,
-            schoolId: user.schoolId,
-            schoolName: user.schoolName,
-            nombre: user.nombre,
-            apellidoPaterno: user.apellidoPaterno
-        });
+        console.info('ℹ️ Redirigiendo a onboarding - Completar perfil');
         return <Navigate to="/onboarding" replace />;
     }
 

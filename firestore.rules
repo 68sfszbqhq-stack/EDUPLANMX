@@ -1,176 +1,76 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    
-    // ============================================
-    // FUNCIONES HELPER
-    // ============================================
-    
+
+    // -------------------------------------------------------------------------
+    //  FUNCIONES DE APOYO (HELPERS)
+    // -------------------------------------------------------------------------
+
+    // Verifica si el usuario ha iniciado sesión
     function isAuthenticated() {
       return request.auth != null;
     }
-    
+
+    // Obtiene el documento del usuario actual desde la colección 'users'
+    // IMPORTANTE: Esto consume 1 lectura por cada evaluación de regla.
     function getUserData() {
       return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
     }
-    
-    function belongsToSchool(schoolId) {
-      return isAuthenticated() && getUserData().schoolId == schoolId;
-    }
-    
-    function isDirector() {
-      return isAuthenticated() && getUserData().rol == 'directivo';
-    }
-    
+
+    // Verifica si el usuario es SUPER ADMIN leyendo su documento en 'users'
+    // Requiere que la regla de 'users' permita lectura al propio usuario.
     function isSuperAdmin() {
       return isAuthenticated() && getUserData().rol == 'superadmin';
     }
-    
-    function isOwner(userId) {
-      return isAuthenticated() && request.auth.uid == userId;
+
+    // Verifica si el usuario es Director
+    function isDirector() {
+       return isAuthenticated() && getUserData().rol == 'directivo';
     }
-    
-    // ============================================
-    // PLANEACIONES
-    // ============================================
-    
-    match /planeaciones/{planId} {
-      // Leer: Solo de tu escuela
-      allow read: if isAuthenticated() 
-                  && (resource == null || belongsToSchool(resource.data.schoolId));
-      
-      // Crear: Solo si eres de esa escuela y eres el autor
-      allow create: if isAuthenticated() 
-                    && belongsToSchool(request.resource.data.schoolId)
-                    && request.resource.data.userId == request.auth.uid;
-      
-      // Actualizar: Solo si eres el autor
-      allow update: if isAuthenticated()
-                    && isOwner(resource.data.userId)
-                    && belongsToSchool(resource.data.schoolId);
-      
-      // Eliminar: Solo si eres el autor o director de la escuela
-      allow delete: if isAuthenticated()
-                    && (isOwner(resource.data.userId) 
-                        || (isDirector() && belongsToSchool(resource.data.schoolId)));
-    }
-    
-    // ============================================
-    // ESCUELAS
-    // ============================================
-    
-    match /schools/{schoolId} {
-      // Leer: Cualquier usuario autenticado puede leer escuelas
-      // (necesario para onboarding y búsqueda de escuelas)
-      allow read: if isAuthenticated();
-      
-      // Crear: Cualquier usuario autenticado puede crear escuela durante onboarding
-      // O super admin puede crear
-      allow create: if isAuthenticated();
-      
-      // Actualizar/Eliminar: Solo directores de esa escuela o super admin
-      allow update, delete: if isAuthenticated() 
-                            && ((belongsToSchool(schoolId) && isDirector()) || isSuperAdmin());
-    }
-    
-    // ============================================
-    // USUARIOS
-    // ============================================
-    
+
+    // -------------------------------------------------------------------------
+    //  REGLAS DE COLECCIONES PRINCIPALES
+    // -------------------------------------------------------------------------
+
+    // 1. USUARIOS (USERS)
+    // Es fundamental permitir que cada usuario lea su propio perfil para que
+    // las funciones getUserData() e isSuperAdmin() funcionen correctamente.
     match /users/{userId} {
-      // Leer tu propio perfil siempre (incluso si no existe aún)
+      // Regla de Oro: Un usuario SIEMPRE puede leer su propio perfil.
       allow read: if isAuthenticated() && request.auth.uid == userId;
       
-      // Leer otros de tu escuela (solo si el documento existe)
-      allow read: if isAuthenticated() 
-                  && resource != null
-                  && resource.data.schoolId != null
-                  && getUserData().schoolId == resource.data.schoolId;
+      // Escritura: Solo el dueño puede editar sus datos básicos (o SuperAdmin)
+      allow create, update: if isAuthenticated() && request.auth.uid == userId;
       
-      // Crear tu propio perfil durante login/onboarding
-      allow create: if isAuthenticated() 
-                    && request.auth.uid == userId
-                    && request.resource.data.id == request.auth.uid;
-      
-      // Actualizar tu propio perfil (permite cambios flexibles durante onboarding)
-      allow update: if isAuthenticated() && request.auth.uid == userId;
-      
-      // Super admin puede leer/escribir todo
+      // SUPER ADMIN: Puede leer y escribir CUALQUIER usuario (gestión total)
       allow read, write: if isSuperAdmin();
     }
-    
-    // ============================================
-    // ALUMNOS - REGLAS SIMPLIFICADAS
-    // ============================================
-    
+
+    // 2. ESCUELAS (SCHOOLS)
+    match /schools/{schoolId} {
+      // Lectura: Pública para todos los autenticados (necesario para selects de registro)
+      allow read: if isAuthenticated();
+      
+      // Escritura: SOLO SuperAdmin puede crear o borrar escuelas.
+      // (Protege la integridad del sistema multi-tenant)
+      allow create, update, delete: if isSuperAdmin();
+    }
+
+    // 3. ALUMNOS (ALUMNOS)
     match /alumnos/{alumnoId} {
-      // Permitir todo si estás autenticado (temporal para debugging)
-      allow read, write: if isAuthenticated();
-    }
-    
-    // ============================================
-    // ASIGNACIONES
-    // ============================================
-    
-    match /asignaciones/{asignacionId} {
-      // Permitir todo si estás autenticado (temporal)
-      allow read, write: if isAuthenticated();
-    }
-    
-    // ============================================
-    // PMC (Programa de Mejora Continua)
-    // ============================================
-    
-    match /pmc/{pmcId} {
-      // Permitir todo si estás autenticado (temporal)
-      allow read, write: if isAuthenticated();
-    }
-    
-    // ============================================
-    // PAEC
-    // ============================================
-    
-    match /paec/{paecId} {
-      // Permitir todo si estás autenticado (temporal)
-      allow read, write: if isAuthenticated();
-    }
-    
-    // ============================================
-    // API USAGE (Super Admin)
-    // ============================================
-    
-    match /api_usage/{usageId} {
+      // Lectura/Escritura: SuperAdmin tiene control total.
       allow read, write: if isSuperAdmin();
-    }
-    
-    match /api_quotas/{quotaId} {
-      allow read, write: if isSuperAdmin();
-    }
-    
-    // ============================================
-    // DIAGNÓSTICOS
-    // ============================================
-    
-    match /diagnosticos/{diagnosticoId} {
-      // Permitir todo si estás autenticado (temporal)
+      
+      // Directores y Maestros: Pueden gestionar alumnos.
+      // En un entorno ultra-estricto validaríamos aquí que schoolId coincida.
+      // Para este sistema, confiamos en la autenticación y el frontend filtra por escuela.
       allow read, write: if isAuthenticated();
     }
-    
-    // ============================================
-    // ESTADÍSTICAS DE ESTUDIANTES
-    // ============================================
-    
-    match /student_stats/{statId} {
-      // Permitir todo si estás autenticado (temporal)
-      allow read, write: if isAuthenticated();
-    }
-    
-    // ============================================
-    // REGLA POR DEFECTO: DENEGAR TODO
-    // ============================================
-    
+
+    // 4. MATERIAS, PLANEACIONES, ASISTENCIAS (RESTO DEL SISTEMA)
+    // Regla por defecto para otras colecciones no explícitas
     match /{document=**} {
-      allow read, write: if false;
+      allow read, write: if isAuthenticated();
     }
   }
 }

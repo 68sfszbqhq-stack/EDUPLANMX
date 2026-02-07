@@ -45,10 +45,33 @@ const ContextManager: React.FC<ContextManagerProps> = ({ school, setSchool, subj
                 ...prev,
                 cct: schoolData.cct || prev.cct,
                 municipality: schoolData.municipio || prev.municipality,
-                // @ts-ignore - schoolData.turno might be string, but Context expects specific union
-                shift: schoolData.turno !== 'Matutino' ? schoolData.turno : prev.shift, // Keep default or update
-                // schoolData has turno as string, Context expects specific string or string
+                // @ts-ignore
+                shift: schoolData.turno !== 'Matutino' ? schoolData.turno : prev.shift,
+                vision: schoolData.vision || prev.vision,
+                infrastructure: schoolData.infraestructura || prev.infrastructure,
               }));
+
+              // Also fetch PMC goals from 'pmc' collection to populate communityGoals
+              try {
+                const { doc, getDoc } = await import('firebase/firestore');
+                const { db } = await import('../src/config/firebase');
+                const pmcRef = doc(db, 'pmc', user.schoolId);
+                const pmcSnap = await getDoc(pmcRef);
+
+                if (pmcSnap.exists()) {
+                  const pmcData = pmcSnap.data();
+                  if (pmcData.metas && Array.isArray(pmcData.metas)) {
+                    // Map PMC goals to a single string for the context view
+                    const goalsText = pmcData.metas.map((m: any) => `• ${m.description || 'Meta sin descripción'} (${m.area})`).join('\n');
+                    setSchool(prev => ({
+                      ...prev,
+                      communityGoals: goalsText
+                    }));
+                  }
+                }
+              } catch (pmcError) {
+                console.error("Error loading PMC goals:", pmcError);
+              }
             }
           } catch (error) {
             console.error("Error loading school details:", error);

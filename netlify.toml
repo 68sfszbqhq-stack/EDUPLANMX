@@ -1,37 +1,14 @@
-# Configuración de Netlify para EDUPLANMX
 [build]
-  # Comando para construir la aplicación
   command = "npm run build"
-  
-  # Directorio donde se generan los archivos estáticos
   publish = "dist"
-  
-  # Variables de entorno para el build
-  # Las claves reales se configuran en el dashboard de Netlify
 
-[build.environment]
-  # Node version
-  NODE_VERSION = "18"
+[dev]
+  command = "npm run dev"
+  port = 3000
+  targetPort = 5173
+  publish = "dist"
 
-# Redirecciones para SPA (Single Page Application)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-# Headers de seguridad
-# NOTA: No incluimos Cross-Origin-Opener-Policy porque bloquea el popup de Google Auth
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    # Cross-Origin-Opener-Policy removido para permitir Firebase Auth popup
-
-# Cache para assets estáticos
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"

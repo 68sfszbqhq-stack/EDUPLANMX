@@ -3,18 +3,23 @@ import { Users, AlertTriangle, CheckCircle2, ChevronRight, Plus, FolderOpen, Tar
 import { pecService } from '../../src/services/pecService';
 import { PECProject, ProblemPAEC } from '../../types';
 import PAECManager from '../../components/director/PAECManager'; // Importamos el componente conectado
+import PECDesignPanel from '../../components/director/PECDesignPanel';
+import { useAuth } from '../../src/contexts/AuthContext';
 
 const PAECDashboard: React.FC = () => {
+    const { user } = useAuth();
     const [activeTab, setActiveTab] = useState<'diagnostico' | 'banco' | 'nuevo'>('diagnostico');
     const [projects, setProjects] = useState<PECProject[]>([]);
 
     useEffect(() => {
         const loadProyectos = async () => {
-            const data = await pecService.getActiveProjects();
-            setProjects(data);
+            if (user?.schoolId) {
+                const data = await pecService.getActiveProjects(user.schoolId);
+                setProjects(data);
+            }
         };
         loadProyectos();
-    }, []);
+    }, [user?.schoolId]);
 
     return (
         <div className="p-8 max-w-7xl mx-auto space-y-8 relative">
@@ -100,17 +105,8 @@ const PAECDashboard: React.FC = () => {
 
                 {/* VISTA: NUEVO PEC */}
                 {activeTab === 'nuevo' && (
-                    <div className="max-w-3xl mx-auto py-8 text-center animate-in fade-in">
-                        <div className="bg-slate-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <FolderOpen className="w-10 h-10 text-slate-400" />
-                        </div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-2">Diseñador de Proyectos Escolares (PEC)</h3>
-                        <p className="text-slate-500 mb-8 max-w-lg mx-auto">
-                            Utiliza esta herramienta para estructurar un nuevo proyecto transversal. Definirás objetivos, cronograma y productos entregables, vinculando las problemáticas del diagnóstico.
-                        </p>
-                        <button className="px-8 py-3 bg-pink-600 text-white rounded-xl font-bold hover:bg-pink-700 transition-colors shadow-lg shadow-pink-200">
-                            Comenzar Diseño Guiado
-                        </button>
+                    <div className="animate-in fade-in">
+                        <PECDesignPanel />
                     </div>
                 )}
 

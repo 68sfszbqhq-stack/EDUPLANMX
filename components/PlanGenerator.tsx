@@ -18,7 +18,10 @@ interface PlanGeneratorProps {
   onSave: (plan: LessonPlan) => void;
 }
 
+import { useAuth } from '../src/contexts/AuthContext';
+
 const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherName, onSave }) => {
+  const { user } = useAuth();
   // Estados del Formulario Guiado
   const [progresionesDisponibles, setProgresionesDisponibles] = useState<{ id: number, descripcion: string }[]>([]);
   const [selectedProgression, setSelectedProgression] = useState<string>('');
@@ -86,11 +89,13 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   // Cargar Proyectos PEC Activos
   useEffect(() => {
     const loadPecs = async () => {
-      const projects = await pecService.getActiveProjects();
-      setActiveProjects(projects);
+      if (user?.schoolId) {
+        const projects = await pecService.getActiveProjects(user.schoolId);
+        setActiveProjects(projects);
+      }
     };
     loadPecs();
-  }, []);
+  }, [user?.schoolId]);
 
   const handleGenerate = async () => {
     // Validación básica

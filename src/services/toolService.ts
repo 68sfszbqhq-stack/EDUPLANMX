@@ -5,6 +5,11 @@ import { getToolById } from '../tools/_shared/ToolRegistry';
 import { GoogleGenAI } from '@google/genai';
 
 const apiKey = import.meta.env.VITE_API_KEY || '';
+
+if (!apiKey) {
+    console.error("VITE_API_KEY no encontrada. Asegúrate de tener un archivo .env con tu API KEY de Gemini.");
+}
+
 const ai = new GoogleGenAI({ apiKey });
 
 /**

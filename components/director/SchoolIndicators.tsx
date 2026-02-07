@@ -271,16 +271,49 @@ const SchoolIndicators: React.FC<Props> = ({ readOnly = false }) => {
                     </div>
                 </div>
 
-                {/* Descripción General */}
+                {/* Descripción General con Guía PAEC */}
                 <div className="mb-6">
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Descripción General del Estado del Plantel</label>
+                    <label className="block text-sm font-bold text-slate-700 mb-2 flex justify-between items-center">
+                        Descripción General y Diagnóstico de Salud
+                        <span className="text-xs font-normal text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full">Requerido para PAEC</span>
+                    </label>
+
+                    {!readOnly && (
+                        <div className="mb-4 bg-blue-50 border border-blue-100 rounded-xl p-4 text-sm text-blue-800">
+                            <h4 className="font-bold flex items-center gap-2 mb-2">
+                                <span className="bg-blue-200 text-blue-800 w-5 h-5 flex items-center justify-center rounded-full text-xs">i</span>
+                                Guía para Alineación con Rúbrica PAEC 2025
+                            </h4>
+                            <ul className="space-y-2 list-disc pl-4 text-blue-700 opacity-90">
+                                <li>
+                                    <strong>Conectar datos con salud:</strong> Relaciona los indicadores (abandono, reprobación) con determinantes de salud (cansancio, alimentación, estrés, trabajo).
+                                </li>
+                                <li>
+                                    <strong>Interés Genuino:</strong> Menciona explícitamente inquietudes del alumnado (ej. <em>"el estudiantado manifestó preocupación por..."</em>).
+                                </li>
+                                <li>
+                                    <strong>Metodología de Indagación:</strong> Cita los instrumentos usados (encuestas, observación) y la guía metodológica.
+                                </li>
+                            </ul>
+                        </div>
+                    )}
+
                     <textarea
                         disabled={readOnly}
-                        className="w-full border border-slate-300 rounded-xl p-4 h-24 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none text-slate-700 disabled:bg-slate-50"
-                        placeholder="Ej: Escuela de nueva creación, cuenta con pocas aulas..."
+                        className="w-full border border-slate-300 rounded-xl p-4 h-48 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-y text-slate-700 disabled:bg-slate-50 leading-relaxed"
+                        placeholder={`Ejemplo de redacción ideal:
+
+"El plantel atiende a 108 estudiantes en turno vespertino... condiciones que impactan en sus hábitos de sueño y alimentación. Se observa cansancio y estrés relacionados con el abandono escolar.
+
+El estudiantado expresó preocupación por la falta de opciones de comida saludable...
+
+Este diagnóstico se elaboró a partir de encuestas breves y observación directa, siguiendo la metodología sugerida en el PAEC 2025..."`}
                         value={infraestructura.descripcionGeneral}
                         onChange={e => setInfraestructura({ ...infraestructura, descripcionGeneral: e.target.value })}
                     ></textarea>
+                    <p className="text-xs text-slate-400 mt-2 text-right">
+                        Esta descripción fundamentará la problemática seleccionada en el PAEC.
+                    </p>
                 </div>
 
                 {/* Fortalezas y Debilidades */}
@@ -304,7 +337,7 @@ const SchoolIndicators: React.FC<Props> = ({ readOnly = false }) => {
                                 <input
                                     type="text"
                                     className="flex-1 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-                                    placeholder="Agregar fortaleza..."
+                                    placeholder="Ej: Docentes comprometidos con la salud, Espacios verdes..."
                                     value={newFortaleza}
                                     onChange={e => setNewFortaleza(e.target.value)}
                                     onKeyDown={e => e.key === 'Enter' && addListItem('fortalezas', newFortaleza, setNewFortaleza)}
@@ -338,7 +371,7 @@ const SchoolIndicators: React.FC<Props> = ({ readOnly = false }) => {
                                 <input
                                     type="text"
                                     className="flex-1 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
-                                    placeholder="Agregar área..."
+                                    placeholder="Ej: Alumnos solicitan mejores opciones alimenticias..."
                                     value={newArea}
                                     onChange={e => setNewArea(e.target.value)}
                                     onKeyDown={e => e.key === 'Enter' && addListItem('areasOportunidad', newArea, setNewArea)}
