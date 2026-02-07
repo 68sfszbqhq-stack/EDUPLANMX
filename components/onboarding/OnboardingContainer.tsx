@@ -115,6 +115,7 @@ export const OnboardingContainer: React.FC = () => {
                 <WelcomeScreen
                     userName={userName}
                     onChoice={handleWelcomeChoice}
+                    onSchoolSelected={handleSchoolSelected}
                 />
             )}
 
