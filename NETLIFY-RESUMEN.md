@@ -22,8 +22,8 @@ https://app.netlify.com/signup
 En "Site settings" → "Environment variables", agregar:
 
 ```
-VITE_API_KEY=AIzaSyDXV7YnJ3iwAeQPICO50y4VMsYHXyfO7WI
-VITE_FIREBASE_API_KEY=AIzaSyBk7iQqIVRcleUkb5WjmR3qhcvwVt0bekM
+VITE_API_KEY=YOUR_API_KEY_HERE
+VITE_FIREBASE_API_KEY=YOUR_FIREBASE_API_KEY_HERE
 VITE_FIREBASE_AUTH_DOMAIN=eduplanmx.firebaseapp.com
 VITE_FIREBASE_PROJECT_ID=eduplanmx
 VITE_FIREBASE_STORAGE_BUCKET=eduplanmx.firebasestorage.app

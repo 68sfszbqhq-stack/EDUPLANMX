@@ -71,13 +71,13 @@ Click en **"Add a variable"** para cada una:
 #### **Variable 1: VITE_API_KEY** (Gemini)
 ```
 Key: VITE_API_KEY
-Value: AIzaSyDXV7YnJ3iwAeQPICO50y4VMsYHXyfO7WI
+Value: YOUR_API_KEY_HERE
 ```
 
 #### **Variable 2: VITE_FIREBASE_API_KEY**
 ```
 Key: VITE_FIREBASE_API_KEY
-Value: AIzaSyBk7iQqIVRcleUkb5WjmR3qhcvwVt0bekM
+Value: YOUR_FIREBASE_API_KEY_HERE
 ```
 
 #### **Variable 3: VITE_FIREBASE_AUTH_DOMAIN**

@@ -33,8 +33,8 @@
 #### **Desarrollo (Local)**
 ```bash
 # .env.local (NO en Git)
-VITE_API_KEY=AIzaSyDXV7YnJ3iwAeQPICO50y4VMsYHXyfO7WI ✅
-VITE_FIREBASE_API_KEY=AIzaSyBk7iQqIVRcleUkb5WjmR3qhcvwVt0bekM ✅
+VITE_API_KEY=YOUR_API_KEY_HERE ✅
+VITE_FIREBASE_API_KEY=YOUR_FIREBASE_Y_KEY_HERE ✅
 ```
 
 #### **Producción (GitHub Pages)**
