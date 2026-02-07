@@ -129,7 +129,7 @@ export const PedagogicalAuditor: React.FC<PedagogicalAuditorProps> = ({ plan, su
                         <div className="space-y-3 text-sm text-indigo-900/80">
                             <p><span className="font-semibold">Programa:</span> {programaOficial.materia}</p>
                             <p><span className="font-semibold">Semestre:</span> {programaOficial.semestre}</p>
-                            <p><span className="font-semibold">Categorías MCC:</span> {programaOficial.organizador_curricular.categorias.join(', ')}</p>
+                            <p><span className="font-semibold">Categorías MCC:</span> {programaOficial.organizador_curricular?.categorias?.join(', ') || 'No definidas'}</p>
                             <div className="pt-2 border-t border-indigo-200 mt-2">
                                 <p className="text-xs text-indigo-700">
                                     Este auditor verifica que los contenidos generados correspondan con el programa oficial vigente de la SEP (2023-2024).

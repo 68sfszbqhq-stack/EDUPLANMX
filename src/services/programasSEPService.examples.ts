@@ -47,7 +47,7 @@ if (programaEspecifico) {
     console.log(`   Créditos: ${programaEspecifico.metadata.creditos}`);
     console.log(`   Horas semanales: ${programaEspecifico.metadata.horas_semanales}`);
     console.log(`   Progresiones: ${programaEspecifico.progresiones.length}`);
-    console.log(`   Categorías: ${programaEspecifico.organizador_curricular.categorias.join(', ')}`);
+    console.log(`   Categorías: ${programaEspecifico.organizador_curricular?.categorias?.join(', ') || 'No definidas'}`);
 }
 
 // ============================================
