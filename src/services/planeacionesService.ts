@@ -110,9 +110,11 @@ export const getMisPlaneaciones = async (
 ): Promise<PlaneacionFirestore[]> => {
     try {
         if (!userId || !schoolId) {
-            throw new Error('userId y schoolId son requeridos');
+            console.warn('⚠️ getMisPlaneaciones: userId o schoolId vacíos', { userId, schoolId });
+            return [];
         }
 
+        // Intentar con orderBy (requiere índice)
         const q = query(
             collection(db, 'planeaciones'),
             where('schoolId', '==', schoolId),
@@ -128,9 +130,42 @@ export const getMisPlaneaciones = async (
 
         console.log(`✅ Cargadas ${planeaciones.length} planeaciones del docente`);
         return planeaciones;
-    } catch (error) {
+    } catch (error: any) {
+        // Si el error es por índice faltante, intentar sin orderBy
+        if (error?.code === 'failed-precondition' || error?.message?.includes('index')) {
+            console.warn('⚠️ Índice faltante en Firestore. Usando consulta sin ordenar...');
+            console.warn('👉 Para solucionarlo, ve a Firebase Console > Firestore > Indexes y crea el índice sugerido');
+
+            try {
+                const fallbackQuery = query(
+                    collection(db, 'planeaciones'),
+                    where('schoolId', '==', schoolId),
+                    where('userId', '==', userId)
+                );
+
+                const snapshot = await getDocs(fallbackQuery);
+                const planeaciones = snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                } as PlaneacionFirestore));
+
+                // Ordenar manualmente
+                planeaciones.sort((a, b) => {
+                    const dateA = a.createdAt instanceof Timestamp ? a.createdAt.toDate() : new Date(a.createdAt);
+                    const dateB = b.createdAt instanceof Timestamp ? b.createdAt.toDate() : new Date(b.createdAt);
+                    return dateB.getTime() - dateA.getTime();
+                });
+
+                console.log(`✅ Cargadas ${planeaciones.length} planeaciones (sin índice)`);
+                return planeaciones;
+            } catch (fallbackError) {
+                console.error('❌ Error en consulta fallback:', fallbackError);
+                return [];
+            }
+        }
+
         console.error('❌ Error al cargar planeaciones del docente:', error);
-        throw error;
+        return []; // Retornar array vacío en lugar de lanzar error para evitar loading infinito
     }
 };
 
