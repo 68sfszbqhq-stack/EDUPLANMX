@@ -143,7 +143,7 @@ const App: React.FC = () => {
           />
         );
       case 'plans':
-        return <PlansLibrary plans={savedPlans} />;
+        return <PlansLibrary />;
       case 'diagnostico':
         return <DiagnosticoDashboard />;
       default:
