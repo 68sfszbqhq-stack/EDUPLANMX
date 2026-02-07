@@ -4,9 +4,10 @@ import { School, Users, Database, Upload, GraduationCap, LogOut, Home } from 'lu
 import { useAuth } from '../../src/contexts/AuthContext';
 import { SchoolsManagement } from './SchoolsManagement';
 import { UsersManagement } from './UsersManagement';
+import { StudentsManagement } from './StudentsManagement';
 import { CSVImport } from './CSVImport';
 
-type AdminView = 'overview' | 'schools' | 'users' | 'data' | 'import';
+type AdminView = 'overview' | 'schools' | 'users' | 'students' | 'data' | 'import';
 
 const SuperAdminDashboard: React.FC = () => {
     const navigate = useNavigate();
@@ -26,6 +27,7 @@ const SuperAdminDashboard: React.FC = () => {
         { id: 'overview' as AdminView, label: 'Vista General', icon: Home },
         { id: 'schools' as AdminView, label: 'Escuelas', icon: School },
         { id: 'users' as AdminView, label: 'Usuarios', icon: Users },
+        { id: 'students' as AdminView, label: 'Alumnos', icon: GraduationCap },
         { id: 'data' as AdminView, label: 'Base de Datos', icon: Database },
         { id: 'import' as AdminView, label: 'Importar CSV', icon: Upload },
     ];
@@ -148,6 +150,8 @@ const SuperAdminDashboard: React.FC = () => {
                     {currentView === 'schools' && <SchoolsManagement />}
 
                     {currentView === 'users' && <UsersManagement />}
+
+                    {currentView === 'students' && <StudentsManagement />}
 
                     {currentView === 'data' && (
                         <div className="text-center py-20">
