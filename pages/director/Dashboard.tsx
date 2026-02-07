@@ -5,7 +5,7 @@ import {
     TrendingUp, LogOut, Home, Calendar, FileText, Bug
 } from 'lucide-react';
 import { useAuth } from '../../src/contexts/AuthContext';
-import { collection, query, where, getDocs, limit } from 'firebase/firestore';
+import { collection, query, where, getDocs, limit, updateDoc, doc } from 'firebase/firestore';
 import { db } from '../../src/config/firebase';
 import StatsCard from '../../components/admin/StatsCard';
 import SchoolIndicators from '../../components/director/SchoolIndicators';
@@ -121,6 +121,45 @@ const DirectorDashboard: React.FC = () => {
         }
     };
 
+    const [migrationStatus, setMigrationStatus] = useState('');
+
+    const migrateStudents = async () => {
+        if (!user?.schoolId || !user?.schoolName) return;
+        if (!confirm(`⚠️ ACCIÓN CRÍTICA ⚠️\n\n¿Estás seguro de asignar TODOS los alumnos existentes en la base de datos a TU escuela actual?\n\nEscuela: ${user.schoolName}\nID: ${user.schoolId}\n\nEsto moverá a todos los alumnos huérfanos a tu panel. Solo haz esto si estás seguro de que, en este sistema, TÚ eres la única escuela activa.`)) return;
+
+        setMigrationStatus('⏳ Migrando alumnos, por favor espera...');
+        try {
+            const q = query(collection(db, 'alumnos'));
+            const snap = await getDocs(q);
+
+            let count = 0;
+
+            const promises = snap.docs.map(async (d) => {
+                const data = d.data();
+                // Si no tiene schoolId o es diferente al mío
+                if (data.schoolId !== user.schoolId) {
+                    count++;
+                    return updateDoc(doc(db, 'alumnos', d.id), {
+                        schoolId: user.schoolId,
+                        schoolName: user.schoolName
+                    });
+                }
+            });
+
+            await Promise.all(promises);
+
+            setMigrationStatus(`✅ ¡Éxito! Se han asociado ${count} alumnos a tu escuela.`);
+            loadStats(); // Recargar estadísticas
+            runDiagnosis(); // Actualizar muestra
+
+        } catch (error) {
+            console.error(error);
+            setMigrationStatus(`❌ Error migrando: ${error}`);
+        }
+    };
+
+
+
     if (loading) {
         return (
             <div className="flex items-center justify-center min-h-screen bg-slate-50">
@@ -159,6 +198,13 @@ const DirectorDashboard: React.FC = () => {
                                 </p>
                                 <p className="text-xs text-slate-500">{user?.email}</p>
                             </div>
+                            <button
+                                onClick={() => { setDebugMode(!debugMode); runDiagnosis(); }}
+                                className="p-2 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
+                                title="Diagnóstico de Datos"
+                            >
+                                <Bug className="w-5 h-5" />
+                            </button>
                             <button
                                 onClick={handleLogout}
                                 className="p-2 text-slate-400 hover:text-red-500 transition-colors rounded-lg hover:bg-red-50"
@@ -346,10 +392,10 @@ const DirectorDashboard: React.FC = () => {
                                 ) : (
                                     <>
                                         <p><strong>ID Alumno:</strong> {sampleStudent.id}</p>
-                                        <p><strong>Nombre:</strong> {sampleStudent.data?.firstName} {sampleStudent.data?.lastName}</p>
-                                        <p className="text-red-600 break-all"><strong>School ID Alumno:</strong> {sampleStudent.data?.schoolId}</p>
-                                        <div className={`mt-2 p-2 rounded text-center font-bold text-white ${sampleStudent.match === 'YES' ? 'bg-green-500' : 'bg-red-500'}`}>
-                                            ¿Coincide con mi ID? {sampleStudent.match}
+                                        <p><strong>Nombre:</strong> {sampleStudent.data?.nombre || sampleStudent.data?.firstName} {sampleStudent.data?.apellidoPaterno || sampleStudent.data?.lastName}</p>
+                                        <p className="text-red-600 break-all text-xs"><strong>School ID Actual:</strong> {sampleStudent.data?.schoolId}</p>
+                                        <div className={`mt-2 p-2 rounded text-center font-bold text-white text-xs ${sampleStudent.match === 'YES' ? 'bg-green-500' : 'bg-red-500'}`}>
+                                            ¿Coincide ID? {sampleStudent.match}
                                         </div>
                                     </>
                                 )}
@@ -358,6 +404,25 @@ const DirectorDashboard: React.FC = () => {
 
                         <div className="text-slate-500 italic text-[10px] mt-2">
                             *Si el ID no coincide, contacta a soporte para migración de datos.
+                        </div>
+
+                        {/* Migration Tool */}
+                        <div className="mt-4 pt-4 border-t border-slate-200">
+                            <h5 className="font-bold text-red-600 mb-2">⚠ Zona de Peligro / Reparación</h5>
+                            <p className="text-xs text-slate-600 mb-3">Si ves 0 alumnos pero sabes que existen, usa este botón para adoptarlos a tu escuela.</p>
+
+                            {migrationStatus && (
+                                <div className={`mb-3 p-2 rounded text-xs font-bold ${migrationStatus.includes('Error') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
+                                    {migrationStatus}
+                                </div>
+                            )}
+
+                            <button
+                                onClick={migrateStudents}
+                                className="w-full bg-red-50 text-red-600 border border-red-200 py-2 rounded font-bold hover:bg-red-100 transition-colors"
+                            >
+                                🔧 Asociar TODOS los alumnos a MÍ ({user?.schoolName})
+                            </button>
                         </div>
                     </div>
                 </div>
