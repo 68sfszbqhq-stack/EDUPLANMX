@@ -31,6 +31,11 @@ const RoleBasedRedirect: React.FC = () => {
         return <Navigate to="/login" replace />;
     }
 
+    // Superadmin NO necesita onboarding (administra el sistema, no una escuela)
+    if (user.rol === 'superadmin') {
+        return <Navigate to="/admin/dashboard" replace />;
+    }
+
     // Verificar si necesita completar onboarding
     // Debe tener TODOS estos campos para considerar el onboarding completo
     const needsOnboarding =

@@ -28,13 +28,18 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowedRoles 
         return <Navigate to="/login" replace />;
     }
 
-    // Verificar si necesita completar onboarding (excepto en la ruta de onboarding)
+    // Superadmin NO necesita onboarding
+    const isSuperAdmin = user.rol === 'superadmin';
+
+    // Verificar si necesita completar onboarding (excepto superadmin y en la ruta de onboarding)
     const needsOnboarding =
-        user.onboardingCompleto === false ||
-        !user.schoolId ||
-        !user.schoolName ||
-        !user.nombre ||
-        !user.apellidoPaterno;
+        !isSuperAdmin && (
+            user.onboardingCompleto === false ||
+            !user.schoolId ||
+            !user.schoolName ||
+            !user.nombre ||
+            !user.apellidoPaterno
+        );
 
     if (needsOnboarding && window.location.pathname !== '/onboarding') {
         console.log('🚀 ProtectedRoute: Redirigiendo a onboarding - Faltan campos');
