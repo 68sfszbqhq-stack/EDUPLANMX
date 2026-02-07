@@ -31,9 +31,23 @@ const RoleBasedRedirect: React.FC = () => {
         return <Navigate to="/login" replace />;
     }
 
-    // NUEVO: Verificar si necesita completar onboarding
-    if (user.onboardingCompleto === false) {
-        console.log('🚀 Redirigiendo a onboarding...');
+    // Verificar si necesita completar onboarding
+    // Debe tener TODOS estos campos para considerar el onboarding completo
+    const needsOnboarding =
+        user.onboardingCompleto === false ||
+        !user.schoolId ||
+        !user.schoolName ||
+        !user.nombre ||
+        !user.apellidoPaterno;
+
+    if (needsOnboarding) {
+        console.log('🚀 Redirigiendo a onboarding - Faltan campos:', {
+            onboardingCompleto: user.onboardingCompleto,
+            schoolId: user.schoolId,
+            schoolName: user.schoolName,
+            nombre: user.nombre,
+            apellidoPaterno: user.apellidoPaterno
+        });
         return <Navigate to="/onboarding" replace />;
     }
 
