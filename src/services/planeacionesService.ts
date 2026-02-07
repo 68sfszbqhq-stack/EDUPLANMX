@@ -76,7 +76,7 @@ export const crearPlaneacion = async (
             title: plan.title || plan.subject || 'Sin título',
             subject: plan.subject || '',
             grade: plan.meta?.gradeGroup,
-            semester: plan.meta?.semester,
+            semester: (plan.meta as any)?.semester,
             content: plan,
             createdAt: Timestamp.now(),
             updatedAt: Timestamp.now(),

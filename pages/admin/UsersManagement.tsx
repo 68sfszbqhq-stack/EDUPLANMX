@@ -97,7 +97,7 @@ export const UsersManagement: React.FC = () => {
         }
 
         // Validar que tenga schoolId si no es superadmin
-        if (formData.rol !== 'superadmin' && !formData.schoolId) {
+        if ((formData.rol as string) !== 'superadmin' && !formData.schoolId) {
             alert('Debes seleccionar una escuela para este usuario');
             return;
         }
@@ -117,7 +117,7 @@ export const UsersManagement: React.FC = () => {
                 schoolName: schoolData?.nombre || null,
                 puesto: formData.puesto || '',
                 activo: formData.activo,
-                onboardingCompleto: formData.rol === 'superadmin' ? true : !!formData.schoolId,
+                onboardingCompleto: (formData.rol as string) === 'superadmin' ? true : !!formData.schoolId,
                 materias: [],
                 grados: [],
                 updatedAt: new Date().toISOString()
@@ -451,8 +451,8 @@ export const UsersManagement: React.FC = () => {
                                                 <button
                                                     onClick={() => handleToggleActive(user)}
                                                     className={`p-2 rounded-lg transition-colors ${user.activo
-                                                            ? 'text-slate-600 hover:bg-slate-100'
-                                                            : 'text-green-600 hover:bg-green-50'
+                                                        ? 'text-slate-600 hover:bg-slate-100'
+                                                        : 'text-green-600 hover:bg-green-50'
                                                         }`}
                                                     title={user.activo ? 'Desactivar' : 'Activar'}
                                                 >
@@ -586,7 +586,7 @@ export const UsersManagement: React.FC = () => {
                                     </select>
                                 </div>
 
-                                {formData.rol !== 'superadmin' && (
+                                {formData.rol as string !== 'superadmin' && (
                                     <div className="md:col-span-2">
                                         <label className="block text-sm font-medium text-slate-700 mb-1">
                                             Escuela *
