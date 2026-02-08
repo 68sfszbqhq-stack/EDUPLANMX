@@ -70,7 +70,7 @@ const RoleBasedRedirect: React.FC = () => {
 
 const Router: React.FC = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
             <AuthProvider>
                 <Routes>
                     {/* Rutas Públicas */}

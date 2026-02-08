@@ -3,26 +3,14 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { SchoolContext, SubjectContext, LessonPlan } from "../types";
 import { programasSEPService } from "../src/services/programasSEPService";
 
-const DEFAULT_API_KEY = import.meta.env.VITE_API_KEY || '';
-// const ai = new GoogleGenAI({ apiKey }); // Eliminamos la instancia global fija
+const apiKey = import.meta.env.VITE_API_KEY || '';
+const ai = new GoogleGenAI({ apiKey });
 
 export const generateLessonPlan = async (
   prompt: string,
   school: SchoolContext,
-  subject: SubjectContext,
-  customApiKey?: string
+  subject: SubjectContext
 ): Promise<LessonPlan> => {
-
-  // 1. Determinar qué API Key usar (la del usuario o la del entorno)
-  const effectiveApiKey = customApiKey?.trim() || DEFAULT_API_KEY;
-
-  if (!effectiveApiKey) {
-    throw new Error("⚠️ No hay API Key de Gemini configurada. Por favor, ingresa tu clave o configurala en el archivo .env");
-  }
-
-  // 2. Inicializar el cliente de IA con la clave correcta
-  const ai = new GoogleGenAI({ apiKey: effectiveApiKey });
-
   const model = 'gemini-2.5-flash';
 
   const programasOficiales = programasSEPService.buscarPorMateria(subject.subjectName);

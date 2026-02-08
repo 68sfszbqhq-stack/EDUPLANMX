@@ -5920,277 +5920,381 @@
     "fecha_extraccion": "2026-02-08T01:33:44.725Z",
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
-{
-  "materia": "Actividades Físicas y Deportivas I 2025",
-  "semestre": 1,
-  "metadata": {
-    "nombre_uac": "ACTIVIDADES FÍSICAS Y DEPORTIVAS I 2025",
+  {
+    "materia": "Actividades Físicas y Deportivas I 2025",
     "semestre": 1,
-    "creditos": 0,
-    "horas_semanales": 2
-  },
-  "organizador_curricular": {
-    "categorias": [
-      "Formación Socioemocional"
+    "metadata": {
+      "nombre_uac": "ACTIVIDADES FÍSICAS Y DEPORTIVAS I 2025",
+      "semestre": 1,
+      "creditos": 0,
+      "horas_semanales": 2
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Vida Saludable",
+        "Cultura Física"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollo físico",
+        "Cuidado de la salud"
+      ],
+      "propositos_formativos": [
+        "Participa en situaciones de juego y actividad física lúdica como una manifestación cultural y expresión de libertad, valorando también el juego como una experiencia formativa y una fuente de disfrute personal que promueve el bienestar y la creatividad.",
+        "Participa en actividades deportivas como un derecho humano fundamental que favorece su desarrollo físico y emocional, y promueve la convivencia respetuosa en la diversidad y otras formas de vinculación y disfrute de su propio cuerpo.",
+        "Explora las emociones y las posibilidades motrices que experimenta en la práctica deportiva, y la identifica como oportunidad para la toma de decisiones saludables, la capacidad de sentir y reconocer emociones y razonar sobre ellas, al tiempo que desarrolla sus potencialidades psicomotrices.",
+        "Identifica y cuestiona las prácticas discriminatorias y de violencia en el deporte por razones de género o corporalidad, para establecer relaciones empáticas, justas y libres de violencia, y desarrolla la capacidad de afiliación y respeto por la dignidad de cada persona.",
+        "Promueve la igualdad de oportunidades y la inclusión de todas las personas en el ámbito deportivo, especialmente de mujeres, diversidades sexogenéricas y personas en situación de discapacidad, cultivando una conciencia crítica que impulse el bienestar colectivo y el ejercicio pleno de sus capacidades humanas."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Participa en situaciones de juego y actividad física lúdica como una manifestación cultural y expresión de libertad, valorando también el juego como una experiencia formativa y una fuente de disfrute personal que promueve el bienestar y la creatividad.",
+        "tematicas": [
+          "El juego como derecho humano",
+          "El deporte y el juego",
+          "Juegos tradicionales"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Participa en actividades deportivas como un derecho humano fundamental que favorece su desarrollo físico y emocional, y promueve la convivencia respetuosa en la diversidad y otras formas de vinculación y disfrute de su propio cuerpo.",
+        "tematicas": [
+          "Derecho a participar en actividades físicas y deportivas",
+          "Beneficios del deporte para la salud y la convivencia",
+          "Diversidad corporal, étnica, cultural y sexogenérica como elementos enriquecedores en el deporte"
+        ]
+      },
+      {
+        "id": 3,
+        "descripcion": "Explora las emociones y las posibilidades motrices que experimenta en la práctica deportiva, y la identifica como oportunidad para la toma de decisiones saludables, la capacidad de sentir y reconocer emociones y razonar sobre ellas, al tiempo que desarrolla sus potencialidades psicomotrices.",
+        "tematicas": [
+          "Emociones que se identifican durante la práctica deportiva",
+          "Importancia de las reglas y el respeto para canalizar emociones",
+          "Uso del deporte para prevenir riesgos y tomar decisiones saludables",
+          "Potencialidades psicomotrices de la corporalidad"
+        ]
+      },
+      {
+        "id": 4,
+        "descripcion": "Identifica y cuestiona las prácticas discriminatorias y de violencia en el deporte por razones de género o corporalidad, para establecer relaciones empáticas, justas y libres de violencia, y desarrolla la capacidad de afiliación y respeto por la dignidad de cada persona.",
+        "tematicas": [
+          "Discriminación en el deporte",
+          "Respeto a las diversidades corporales e identidades sexogenéricas",
+          "Comunicación asertiva para resolver conflictos y crear ambientes inclusivos"
+        ]
+      },
+      {
+        "id": 5,
+        "descripcion": "Promueve la igualdad de oportunidades y la inclusión de todas las personas en el ámbito deportivo, especialmente de mujeres, diversidades sexogenéricas y personas en situación de discapacidad, cultivando una conciencia crítica que impulse el bienestar colectivo y el ejercicio pleno de sus capacidades humanas.",
+        "tematicas": [
+          "Inclusión en el deporte",
+          "Personas de la diversidad sexogenérica o en situación de discapacidad",
+          "Crítica a las normas y estereotipos que limitan la participación",
+          "Prácticas deportivas incluyentes como herramientas de transformación social"
+        ]
+      }
     ],
-    "metas_aprendizaje": [
-      "Desarrolle hábitos conscientes y reflexivos en torno a la actividad física y deportiva, como medio para el desarrollo integral, una conciencia crítica y el compromiso con el bienestar colectivo."
+    "orientaciones_didacticas": [
+      "Asambleas deportivas",
+      "Diarios de reflexión corporal"
     ],
-    "propositos_formativos": [
-      "Participa en situaciones de juego y actividad física lúdica como una manifestación cultural y expresión de libertad...",
-      "Participa en actividades deportivas como un derecho humano fundamental que favorece su desarrollo físico y emocional...",
-      "Explora las emociones y las posibilidades motrices que experimenta en la práctica deportiva...",
-      "Identifica y cuestiona las prácticas discriminatorias y de violencia en el deporte...",
-      "Promueve la igualdad de oportunidades y la inclusión en el ámbito deportivo..."
-    ]
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
-  "progresiones": [],
-  "orientaciones_didacticas": [
-    "Asambleas deportivas",
-    "Diarios de reflexión corporal"
-  ],
-  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
-  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
-},
-{
-  "materia": "Actividades Físicas y Deportivas II 2025",
-  "semestre": 2,
-  "metadata": {
-    "nombre_uac": "ACTIVIDADES FÍSICAS Y DEPORTIVAS II 2025",
+  {
+    "materia": "Actividades Físicas y Deportivas II 2025",
     "semestre": 2,
-    "creditos": 0,
-    "horas_semanales": 2
-  },
-  "organizador_curricular": {
-    "categorias": [
-      "Formación Socioemocional"
+    "metadata": {
+      "nombre_uac": "ACTIVIDADES FÍSICAS Y DEPORTIVAS II 2025",
+      "semestre": 2,
+      "creditos": 0,
+      "horas_semanales": 2
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Vida Saludable",
+        "Integración Social"
+      ],
+      "metas_aprendizaje": [
+        "Convivencia deportiva",
+        "Gestión de torneos"
+      ],
+      "propositos_formativos": [
+        "Participa en situaciones de juego y actividad física lúdica como una manifestación cultural y expresión de libertad, valorando también el juego como una experiencia formativa y una fuente de disfrute personal que promueve el bienestar y la creatividad.",
+        "Participa en actividades deportivas como un derecho humano fundamental que favorece su desarrollo físico y emocional, y promueve la convivencia respetuosa en la diversidad y otras formas de vinculación y disfrute de su propio cuerpo.",
+        "Explora las emociones y las posibilidades motrices que experimenta en la práctica deportiva, y la identifica como oportunidad para la toma de decisiones saludables, la capacidad de sentir y reconocer emociones y razonar sobre ellas, al tiempo que desarrolla sus potencialidades psicomotrices.",
+        "Identifica y cuestiona las prácticas discriminatorias y de violencia en el deporte por razones de género o corporalidad, para establecer relaciones empáticas, justas y libres de violencia, y desarrolla la capacidad de afiliación y respeto por la dignidad de cada persona.",
+        "Promueve la igualdad de oportunidades y la inclusión de todas las personas en el ámbito deportivo, especialmente de mujeres, diversidades sexogenéricas y personas en situación de discapacidad, cultivando una conciencia crítica que impulse el bienestar colectivo y el ejercicio pleno de sus capacidades humanas."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Participa en situaciones de juego y actividad física lúdica como una manifestación cultural y expresión de libertad, valorando también el juego como una experiencia formativa y una fuente de disfrute personal que promueve el bienestar y la creatividad.",
+        "tematicas": [
+          "El juego como derecho humano",
+          "El deporte y el juego",
+          "Juegos tradicionales"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Participa en actividades deportivas como un derecho humano fundamental que favorece su desarrollo físico y emocional, y promueve la convivencia respetuosa en la diversidad y otras formas de vinculación y disfrute de su propio cuerpo.",
+        "tematicas": [
+          "Derecho a participar en actividades físicas y deportivas",
+          "Beneficios del deporte para la salud y la convivencia",
+          "Diversidad corporal, étnica, cultural y sexogenérica como elementos enriquecedores en el deporte"
+        ]
+      },
+      {
+        "id": 3,
+        "descripcion": "Explora las emociones y las posibilidades motrices que experimenta en la práctica deportiva, y la identifica como oportunidad para la toma de decisiones saludables, la capacidad de sentir y reconocer emociones y razonar sobre ellas, al tiempo que desarrolla sus potencialidades psicomotrices.",
+        "tematicas": [
+          "Emociones que se identifican durante la práctica deportiva",
+          "Importancia de las reglas y el respeto para canalizar emociones",
+          "Uso del deporte para prevenir riesgos y tomar decisiones saludables",
+          "Potencialidades psicomotrices de la corporalidad"
+        ]
+      },
+      {
+        "id": 4,
+        "descripcion": "Identifica y cuestiona las prácticas discriminatorias y de violencia en el deporte por razones de género o corporalidad, para establecer relaciones empáticas, justas y libres de violencia, y desarrolla la capacidad de afiliación y respeto por la dignidad de cada persona.",
+        "tematicas": [
+          "Discriminación en el deporte",
+          "Respeto a las diversidades corporales e identidades sexogenéricas",
+          "Comunicación asertiva para resolver conflictos y crear ambientes inclusivos"
+        ]
+      },
+      {
+        "id": 5,
+        "descripcion": "Promueve la igualdad de oportunidades y la inclusión de todas las personas en el ámbito deportivo, especialmente de mujeres, diversidades sexogenéricas y personas en situación de discapacidad, cultivando una conciencia crítica que impulse el bienestar colectivo y el ejercicio pleno de sus capacidades humanas.",
+        "tematicas": [
+          "Inclusión en el deporte",
+          "Personas de la diversidad sexogenérica o en situación de discapacidad",
+          "Crítica a las normas y estereotipos que limitan la participación",
+          "Prácticas deportivas incluyentes como herramientas de transformación social"
+        ]
+      }
     ],
-    "metas_aprendizaje": [
-      "Desarrolle hábitos conscientes y reflexivos..."
-    ],
-    "propositos_formativos": [
-      "Fomentar la cultura física y la integración grupal."
-    ]
+    "orientaciones_didacticas": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
-  "progresiones": [],
-  "orientaciones_didacticas": [],
-  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
-  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
-},
-{
-  "materia": "Práctica y Colaboración Ciudadana I 2025",
-  "semestre": 1,
-  "metadata": {
-    "nombre_uac": "PRÁCTICA Y COLABORACIÓN CIUDADANA I 2025",
+  {
+    "materia": "Práctica y Colaboración Ciudadana I 2025",
     "semestre": 1,
-    "creditos": 0,
-    "horas_semanales": 2
-  },
-  "organizador_curricular": {
-    "categorias": [
-      "Formación Socioemocional"
+    "metadata": {
+      "nombre_uac": "PRÁCTICA Y COLABORACIÓN CIUDADANA I 2025",
+      "semestre": 1,
+      "creditos": 0,
+      "horas_semanales": 2
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Formación Socioemocional"
+      ],
+      "metas_aprendizaje": [
+        "Valore la importancia de la construcción de ciudadanía..."
+      ],
+      "propositos_formativos": [
+        "Reconoce los principales instrumentos que tutelan los derechos humanos...",
+        "Analiza las causas de las situaciones de inseguridad y violencia...",
+        "Reflexiona desde la perspectiva de género...",
+        "Investiga la forma en que los hábitos de consumo...",
+        "Desarrolla las habilidades de diálogo..."
+      ]
+    },
+    "progresiones": [],
+    "orientaciones_didacticas": [
+      "Proyectos sociales"
     ],
-    "metas_aprendizaje": [
-      "Valore la importancia de la construcción de ciudadanía..."
-    ],
-    "propositos_formativos": [
-      "Reconoce los principales instrumentos que tutelan los derechos humanos...",
-      "Analiza las causas de las situaciones de inseguridad y violencia...",
-      "Reflexiona desde la perspectiva de género...",
-      "Investiga la forma en que los hábitos de consumo...",
-      "Desarrolla las habilidades de diálogo..."
-    ]
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
-  "progresiones": [],
-  "orientaciones_didacticas": [
-    "Proyectos sociales"
-  ],
-  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
-  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
-},
-{
-  "materia": "Práctica y Colaboración Ciudadana II 2025",
-  "semestre": 2,
-  "metadata": {
-    "nombre_uac": "PRÁCTICA Y COLABORACIÓN CIUDADANA II 2025",
+  {
+    "materia": "Práctica y Colaboración Ciudadana II 2025",
     "semestre": 2,
-    "creditos": 0,
-    "horas_semanales": 2
+    "metadata": {
+      "nombre_uac": "PRÁCTICA Y COLABORACIÓN CIUDADANA II 2025",
+      "semestre": 2,
+      "creditos": 0,
+      "horas_semanales": 2
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Formación Socioemocional"
+      ],
+      "metas_aprendizaje": [
+        "Valore la importancia de la construcción de ciudadanía..."
+      ],
+      "propositos_formativos": [
+        "Acción ciudadana y democracia participativa."
+      ]
+    },
+    "progresiones": [],
+    "orientaciones_didacticas": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
-  "organizador_curricular": {
-    "categorias": [
-      "Formación Socioemocional"
-    ],
-    "metas_aprendizaje": [
-      "Valore la importancia de la construcción de ciudadanía..."
-    ],
-    "propositos_formativos": [
-      "Acción ciudadana y democracia participativa."
-    ]
-  },
-  "progresiones": [],
-  "orientaciones_didacticas": [],
-  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
-  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
-},
-{
-  "materia": "Educación para la Salud I 2025",
-  "semestre": 1,
-  "metadata": {
-    "nombre_uac": "EDUCACIÓN PARA LA SALUD I 2025",
+  {
+    "materia": "Educación para la Salud I 2025",
     "semestre": 1,
-    "creditos": 0,
-    "horas_semanales": 2
+    "metadata": {
+      "nombre_uac": "EDUCACIÓN PARA LA SALUD I 2025",
+      "semestre": 1,
+      "creditos": 0,
+      "horas_semanales": 2
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Formación Socioemocional"
+      ],
+      "metas_aprendizaje": [
+        "Cuide su salud a partir de la reflexión y transformación de prácticas cotidianas..."
+      ],
+      "propositos_formativos": [
+        "Desarrolla una conciencia crítica sobre los hábitos...",
+        "Discernir y elegir prácticas alimenticias...",
+        "Identifica, analiza y transforma factores de riesgo...",
+        "Impulsa la construcción de relaciones interpersonales..."
+      ]
+    },
+    "progresiones": [],
+    "orientaciones_didacticas": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
-  "organizador_curricular": {
-    "categorias": [
-      "Formación Socioemocional"
-    ],
-    "metas_aprendizaje": [
-      "Cuide su salud a partir de la reflexión y transformación de prácticas cotidianas..."
-    ],
-    "propositos_formativos": [
-      "Desarrolla una conciencia crítica sobre los hábitos...",
-      "Discernir y elegir prácticas alimenticias...",
-      "Identifica, analiza y transforma factores de riesgo...",
-      "Impulsa la construcción de relaciones interpersonales..."
-    ]
-  },
-  "progresiones": [],
-  "orientaciones_didacticas": [],
-  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
-  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
-},
-{
-  "materia": "Educación para la Salud II 2025",
-  "semestre": 2,
-  "metadata": {
-    "nombre_uac": "EDUCACIÓN PARA LA SALUD II 2025",
+  {
+    "materia": "Educación para la Salud II 2025",
     "semestre": 2,
-    "creditos": 0,
-    "horas_semanales": 2
+    "metadata": {
+      "nombre_uac": "EDUCACIÓN PARA LA SALUD II 2025",
+      "semestre": 2,
+      "creditos": 0,
+      "horas_semanales": 2
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Formación Socioemocional"
+      ],
+      "metas_aprendizaje": [
+        "Cuide su salud..."
+      ],
+      "propositos_formativos": [
+        "Bienestar integral y prevención."
+      ]
+    },
+    "progresiones": [],
+    "orientaciones_didacticas": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
-  "organizador_curricular": {
-    "categorias": [
-      "Formación Socioemocional"
-    ],
-    "metas_aprendizaje": [
-      "Cuide su salud..."
-    ],
-    "propositos_formativos": [
-      "Bienestar integral y prevención."
-    ]
-  },
-  "progresiones": [],
-  "orientaciones_didacticas": [],
-  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
-  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
-},
-{
-  "materia": "Educación Integral en Sexualidad y Género I 2025",
-  "semestre": 1,
-  "metadata": {
-    "nombre_uac": "EDUCACIÓN INTEGRAL EN SEXUALIDAD Y GÉNERO I 2025",
+  {
+    "materia": "Educación Integral en Sexualidad y Género I 2025",
     "semestre": 1,
-    "creditos": 0,
-    "horas_semanales": 2
+    "metadata": {
+      "nombre_uac": "EDUCACIÓN INTEGRAL EN SEXUALIDAD Y GÉNERO I 2025",
+      "semestre": 1,
+      "creditos": 0,
+      "horas_semanales": 2
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Formación Socioemocional"
+      ],
+      "metas_aprendizaje": [
+        "Cuide su salud y proteja su integridad..."
+      ],
+      "propositos_formativos": [
+        "Comprende la identidad y orientación sexual...",
+        "Reconoce las dimensiones de la sexualidad...",
+        "Analiza la influencia de los roles de género...",
+        "Desarrolla una conciencia crítica sobre el cuerpo...",
+        "Ejerce una ciudadanía sexual crítica e informada."
+      ]
+    },
+    "progresiones": [],
+    "orientaciones_didacticas": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
-  "organizador_curricular": {
-    "categorias": [
-      "Formación Socioemocional"
-    ],
-    "metas_aprendizaje": [
-      "Cuide su salud y proteja su integridad..."
-    ],
-    "propositos_formativos": [
-      "Comprende la identidad y orientación sexual...",
-      "Reconoce las dimensiones de la sexualidad...",
-      "Analiza la influencia de los roles de género...",
-      "Desarrolla una conciencia crítica sobre el cuerpo...",
-      "Ejerce una ciudadanía sexual crítica e informada."
-    ]
-  },
-  "progresiones": [],
-  "orientaciones_didacticas": [],
-  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
-  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
-},
-{
-  "materia": "Educación Integral en Sexualidad y Género II 2025",
-  "semestre": 2,
-  "metadata": {
-    "nombre_uac": "EDUCACIÓN INTEGRAL EN SEXUALIDAD Y GÉNERO II 2025",
+  {
+    "materia": "Educación Integral en Sexualidad y Género II 2025",
     "semestre": 2,
-    "creditos": 0,
-    "horas_semanales": 2
+    "metadata": {
+      "nombre_uac": "EDUCACIÓN INTEGRAL EN SEXUALIDAD Y GÉNERO II 2025",
+      "semestre": 2,
+      "creditos": 0,
+      "horas_semanales": 2
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Formación Socioemocional"
+      ],
+      "metas_aprendizaje": [
+        "Cuide su salud..."
+      ],
+      "propositos_formativos": [
+        "Derechos y autonomía corporal."
+      ]
+    },
+    "progresiones": [],
+    "orientaciones_didacticas": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
-  "organizador_curricular": {
-    "categorias": [
-      "Formación Socioemocional"
-    ],
-    "metas_aprendizaje": [
-      "Cuide su salud..."
-    ],
-    "propositos_formativos": [
-      "Derechos y autonomía corporal."
-    ]
-  },
-  "progresiones": [],
-  "orientaciones_didacticas": [],
-  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
-  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
-},
-{
-  "materia": "Actividades Artísticas y Culturales I 2025",
-  "semestre": 1,
-  "metadata": {
-    "nombre_uac": "ACTIVIDADES ARTÍSTICAS Y CULTURALES I 2025",
+  {
+    "materia": "Actividades Artísticas y Culturales I 2025",
     "semestre": 1,
-    "creditos": 0,
-    "horas_semanales": 2
+    "metadata": {
+      "nombre_uac": "ACTIVIDADES ARTÍSTICAS Y CULTURALES I 2025",
+      "semestre": 1,
+      "creditos": 0,
+      "horas_semanales": 2
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Formación Socioemocional"
+      ],
+      "metas_aprendizaje": [
+        "Desarrolle sensibilidad estética y ética..."
+      ],
+      "propositos_formativos": [
+        "Participa de diversas expresiones artísticas...",
+        "Genera manifestaciones artísticas variadas...",
+        "Recrea la obra de artistas...",
+        "Experimenta el arte como un espacio para el autodescubrimiento."
+      ]
+    },
+    "progresiones": [],
+    "orientaciones_didacticas": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
-  "organizador_curricular": {
-    "categorias": [
-      "Formación Socioemocional"
-    ],
-    "metas_aprendizaje": [
-      "Desarrolle sensibilidad estética y ética..."
-    ],
-    "propositos_formativos": [
-      "Participa de diversas expresiones artísticas...",
-      "Genera manifestaciones artísticas variadas...",
-      "Recrea la obra de artistas...",
-      "Experimenta el arte como un espacio para el autodescubrimiento."
-    ]
-  },
-  "progresiones": [],
-  "orientaciones_didacticas": [],
-  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
-  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
-},
-{
-  "materia": "Actividades Artísticas y Culturales II 2025",
-  "semestre": 2,
-  "metadata": {
-    "nombre_uac": "ACTIVIDADES ARTÍSTICAS Y CULTURALES II 2025",
+  {
+    "materia": "Actividades Artísticas y Culturales II 2025",
     "semestre": 2,
-    "creditos": 0,
-    "horas_semanales": 2
-  },
-  "organizador_curricular": {
-    "categorias": [
-      "Formación Socioemocional"
-    ],
-    "metas_aprendizaje": [
-      "Desarrolle sensibilidad estética y ética..."
-    ],
-    "propositos_formativos": [
-      "Expresión y goce estético."
-    ]
-  },
-  "progresiones": [],
-  "orientaciones_didacticas": [],
-  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
-  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
-}
+    "metadata": {
+      "nombre_uac": "ACTIVIDADES ARTÍSTICAS Y CULTURALES II 2025",
+      "semestre": 2,
+      "creditos": 0,
+      "horas_semanales": 2
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Formación Socioemocional"
+      ],
+      "metas_aprendizaje": [
+        "Desarrolle sensibilidad estética y ética..."
+      ],
+      "propositos_formativos": [
+        "Expresión y goce estético."
+      ]
+    },
+    "progresiones": [],
+    "orientaciones_didacticas": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
+  }
 ]

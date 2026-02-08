@@ -23,6 +23,8 @@ import { useAuth } from '../src/contexts/AuthContext';
 const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherName, onSave }) => {
   const { user } = useAuth();
   // Estados del Formulario Guiado
+  // Estados del Formulario Guiado
+  const [apiKey, setApiKey] = useState(''); // Estado para la API Key Manual
   const [progresionesDisponibles, setProgresionesDisponibles] = useState<{ id: number, descripcion: string }[]>([]);
   const [selectedProgression, setSelectedProgression] = useState<string>('');
   const [specificTopic, setSpecificTopic] = useState('');
@@ -181,7 +183,8 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     `;
 
     try {
-      const plan = await generateLessonPlan(promptEstructurado, school, subject);
+      // Pasamos la apiKey manual (si existe) al servicio
+      const plan = await generateLessonPlan(promptEstructurado, school, subject, apiKey);
 
       // FORZAR DATOS DEL USUARIO EN LA PLANEACIÓN FINAL
       const finalPlan: LessonPlan = {
@@ -238,7 +241,25 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           Configurador de Clase (Oficial SEP)
         </h3>
 
+        {/* 0. API KEY MANUAL (NUEVO) */}
+        <div className="mb-6 p-4 bg-indigo-50 rounded-xl border border-indigo-100">
+          <label className="text-xs font-bold text-indigo-700 uppercase flex items-center gap-2 mb-2">
+            <Sparkles className="w-3 h-3" /> API Key de Gemini (Opcional - Para mayor velocidad)
+          </label>
+          <input
+            type="password"
+            value={apiKey}
+            onChange={(e) => setApiKey(e.target.value)}
+            placeholder="Pegar Google Gemini API Key aquí..."
+            className="w-full p-2 rounded-lg border border-indigo-200 bg-white text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 font-mono"
+          />
+          <p className="text-[10px] text-indigo-500 mt-1">
+            Usar tu propia clave asegura que no tengas límites de cuota. Si lo dejas vacío, se usará la del sistema.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
 
           {/* 1. Selección de Progresión */}
           <div className="col-span-1 md:col-span-2 space-y-2">

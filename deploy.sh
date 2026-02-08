@@ -3,15 +3,17 @@
 # Script de deploy para GitHub Pages
 echo "🚀 Iniciando deploy a GitHub Pages..."
 
-# 1. Construir la aplicación
+# 1. Construir la aplicación con base path específico
 echo "📦 Construyendo aplicación..."
-npm run build
+GITHUB_PAGES=true npm run build
 
 # 2. Navegar a la carpeta de build
 cd dist
 
 # 3. Crear archivo .nojekyll (importante para GitHub Pages)
 touch .nojekyll
+# IMPORTANTE: Copiar index.html a 404.html para que el ruteo de React funcione al recargar
+cp index.html 404.html
 
 # 4. Inicializar git en dist
 git init

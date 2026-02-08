@@ -8,10 +8,15 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     // Base path: '/' para Netlify, '/EDUPLANMX/' para GitHub Pages
     // Netlify sirve desde la raíz, GitHub Pages desde subdirectorio
-    base: process.env.NETLIFY ? '/' : (mode === 'production' ? '/EDUPLANMX/' : '/'),
+    // Base path: '/EDUPLANMX/' solo para GitHub Pages, '/' para el resto (Netlify, Local, Tunnel, etc.)
+    base: process.env.GITHUB_PAGES === 'true' ? '/EDUPLANMX/' : '/',
     server: {
       port: 3000,
-      open: false
+      open: false,
+      allowedHosts: true
+    },
+    preview: {
+      allowedHosts: true
     },
     build: {
       outDir: 'dist',
