@@ -5920,213 +5920,277 @@
     "fecha_extraccion": "2026-02-08T01:33:44.725Z",
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
-  {
-    "materia": "Actividades Físicas y Deportivas I",
+{
+  "materia": "Actividades Físicas y Deportivas I 2025",
+  "semestre": 1,
+  "metadata": {
+    "nombre_uac": "ACTIVIDADES FÍSICAS Y DEPORTIVAS I 2025",
     "semestre": 1,
-    "metadata": {
-      "nombre_uac": "ACTIVIDADES FÍSICAS Y DEPORTIVAS I",
-      "semestre": 1,
-      "creditos": 0,
-      "horas_semanales": 2
-    },
-    "organizador_curricular": {
-      "categorias": [
-        "Actividades Físicas y Deportivas",
-        "Cuidado Físico Corporal",
-        "Bienestar Emocional Afectivo"
-      ],
-      "metas_aprendizaje": [
-        "Desarrollar hábitos conscientes y reflexivos en torno a la actividad física como medio para el desarrollo integral.",
-        "Reconocer el vínculo entre el cuerpo, el bienestar y el entorno social."
-      ],
-      "propositos_formativos": [
-        "Acercar al estudiantado a la práctica física como una experiencia lúdica, consciente y significativa.",
-        "Reconocer la actividad física como un derecho humano fundamental que favorece su desarrollo físico y emocional.",
-        "Fomentar la convivencia respetuosa en la diversidad y otras formas de vinculación y disfrute de su propio cuerpo.",
-        "Explorar las emociones y las posibilidades motrices que experimenta en la práctica deportiva.",
-        "Promover la igualdad de oportunidades y la inclusión de todas las personas en el ámbito deportivo.",
-        "Identificar factores que afectan el bienestar y reconocer el poder de decisión ante prácticas riesgosas.",
-        "Ejerce una ciudadanía crítica a través del deporte y la cultura física.",
-        "Contribuir a la formación integral bajo el marco del MCCEMS 2025."
-      ]
-    },
-    "progresiones": [
-      {
-        "id": 1,
-        "descripcion": "Comprende la importancia de la cultura física como un derecho humano que contribuye al bienestar integral y la salud.",
-        "tematicas": [
-          "Cultura física y bienestar",
-          "Derechos Humanos y Deporte",
-          "Salud Integral"
-        ]
-      },
-      {
-        "id": 2,
-        "descripcion": "Identifica y practica hábitos de higiene, alimentación y descanso para favorecer su desarrollo físico y prevenir enfermedades.",
-        "tematicas": [
-          "Hábitos Saludables",
-          "Higiene Deportiva",
-          "Nutrición y Rendimiento",
-          "Importancia del Descanso"
-        ]
-      },
-      {
-        "id": 3,
-        "descripcion": "Participa en juegos y actividad física lúdica valorando el juego como una experiencia formativa y fuente de disfrute personal.",
-        "tematicas": [
-          "Juego Lúdico",
-          "Experiencia Formativa",
-          "Disfrute y Creatividad",
-          "Libertad de expresión motriz"
-        ]
-      },
-      {
-        "id": 4,
-        "descripcion": "Explora emociones en la práctica deportiva como oportunidad para la autorregulación y toma de decisiones saludables.",
-        "tematicas": [
-          "Psicomotricidad",
-          "Inteligencia Emocional en el Deporte",
-          "Toma de Decisiones",
-          "Manejo de Estrés"
-        ]
-      },
-      {
-        "id": 5,
-        "descripcion": "Identifica y cuestiona prácticas discriminatorias y de violencia en el deporte por razones de género o corporalidad.",
-        "tematicas": [
-          "Perspectiva de Género en el Deporte",
-          "Cuerpo y Diversidad",
-          "Respeto a la Dignidad",
-          "Inclusión y Equidad"
-        ]
-      }
-    ],
-    "orientaciones_didacticas": [
-      "Circuitos de acción motriz",
-      "Juegos cooperativos y tradicionales",
-      "Asambleas deportivas",
-      "Diarios de reflexión corporal"
-    ],
-    "criterios_evaluacion": [
-      {
-        "aspecto": "Participación Activa",
-        "descripcion": "Involucramiento constante en las prácticas físicas sugeridas.",
-        "porcentaje": 40
-      },
-      {
-        "aspecto": "Colaboración e Inclusión",
-        "descripcion": "Respeto a las reglas y a los compañeros durante el juego.",
-        "porcentaje": 30
-      },
-      {
-        "aspecto": "Reflexión sobre Bienestar",
-        "descripcion": "Capacidad de vincular la práctica física con el estado emocional.",
-        "porcentaje": 30
-      }
-    ],
-    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-02-08T01:33:44.725Z"
+    "creditos": 0,
+    "horas_semanales": 2
   },
-  {
-    "materia": "Actividades Físicas y Deportivas II",
+  "organizador_curricular": {
+    "categorias": [
+      "Formación Socioemocional"
+    ],
+    "metas_aprendizaje": [
+      "Desarrolle hábitos conscientes y reflexivos en torno a la actividad física y deportiva, como medio para el desarrollo integral, una conciencia crítica y el compromiso con el bienestar colectivo."
+    ],
+    "propositos_formativos": [
+      "Participa en situaciones de juego y actividad física lúdica como una manifestación cultural y expresión de libertad...",
+      "Participa en actividades deportivas como un derecho humano fundamental que favorece su desarrollo físico y emocional...",
+      "Explora las emociones y las posibilidades motrices que experimenta en la práctica deportiva...",
+      "Identifica y cuestiona las prácticas discriminatorias y de violencia en el deporte...",
+      "Promueve la igualdad de oportunidades y la inclusión en el ámbito deportivo..."
+    ]
+  },
+  "progresiones": [],
+  "orientaciones_didacticas": [
+    "Asambleas deportivas",
+    "Diarios de reflexión corporal"
+  ],
+  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
+},
+{
+  "materia": "Actividades Físicas y Deportivas II 2025",
+  "semestre": 2,
+  "metadata": {
+    "nombre_uac": "ACTIVIDADES FÍSICAS Y DEPORTIVAS II 2025",
     "semestre": 2,
-    "metadata": {
-      "nombre_uac": "ACTIVIDADES FÍSICAS Y DEPORTIVAS II",
-      "semestre": 2,
-      "creditos": 0,
-      "horas_semanales": 2
-    },
-    "organizador_curricular": {
-      "categorias": [
-        "Actividades Físicas y Deportivas",
-        "Cuidado Físico Corporal",
-        "Bienestar Emocional Afectivo"
-      ],
-      "metas_aprendizaje": [
-        "Desarrollar capacidades psicomotrices y de integración grupal.",
-        "Fomentar la cultura de paz a través de la competencia sana."
-      ],
-      "propositos_formativos": [
-        "Profundizar en la práctica deportiva como forma de vinculación y disfrute.",
-        "Impulsar la construcción de relaciones interpersonales basadas en el respeto.",
-        "Desarrollar la capacidad de afiliación y respeto por la dignidad de cada persona.",
-        "Entender el cuidado de sí mismo como parte del bienestar colectivo.",
-        "Consolidar hábitos de vida activa frente al sedentarismo.",
-        "Contribuir a la formación integral bajo el marco del MCCEMS 2025."
-      ]
-    },
-    "progresiones": [
-      {
-        "id": 1,
-        "descripcion": "Ejecuta actividades de activación física sistemática para fortalecer capacidades físicas (fuerza, resistencia, velocidad).",
-        "tematicas": [
-          "Acondicionamiento Físico",
-          "Capacidades Condicionales",
-          "Fisiología del Ejercicio Básica"
-        ]
-      },
-      {
-        "id": 2,
-        "descripcion": "Participa en actividades deportivas de conjunto promoviendo la integración, el respeto y la colaboración grupal.",
-        "tematicas": [
-          "Deportes Colectivos",
-          "Estrategia y Táctica",
-          "Liderazgo y Trabajo en Equipo",
-          "Cultura de Paz"
-        ]
-      },
-      {
-        "id": 3,
-        "descripcion": "Determina su condición física actual a través de pruebas diagnósticas para establecer metas de mejora personal.",
-        "tematicas": [
-          "Evaluación Funcional",
-          "Test de Valoración Física",
-          "Plan de Mejora Individual"
-        ]
-      },
-      {
-        "id": 4,
-        "descripcion": "Analiza los riesgos del sedentarismo y propone alternativas para una vida activa en su comunidad.",
-        "tematicas": [
-          "Problemáticas de Salud Contemporáneas",
-          "Activación Comunitaria",
-          "Proyectos de Vida Activa"
-        ]
-      },
-      {
-        "id": 5,
-        "descripcion": "Aplica técnicas de respiración y relajación post-ejercicio para favorecer la recuperación física y mental.",
-        "tematicas": [
-          "Técnicas de Recuperación",
-          "Mindfulness y Deporte",
-          "Equilibrio Psicosomático"
-        ]
-      }
+    "creditos": 0,
+    "horas_semanales": 2
+  },
+  "organizador_curricular": {
+    "categorias": [
+      "Formación Socioemocional"
     ],
-    "orientaciones_didacticas": [
-      "Torneos relámpago inclusivos",
-      "Pruebas de valoración física comparativas",
-      "Proyectos de impacto comunitario",
-      "Sesiones de relajación guiada"
+    "metas_aprendizaje": [
+      "Desarrolle hábitos conscientes y reflexivos..."
     ],
-    "criterios_evaluacion": [
-      {
-        "aspecto": "Desempeño Técnico-Motriz",
-        "descripcion": "Ejecución de movimientos y habilidades deportivas básicas.",
-        "porcentaje": 30
-      },
-      {
-        "aspecto": "Trabajo en Equipo",
-        "descripcion": "Colaboración asertiva en actividades grupales.",
-        "porcentaje": 40
-      },
-      {
-        "aspecto": "Compromiso con la Salud",
-        "descripcion": "Seguimiento de metas personales de activación física.",
-        "porcentaje": 30
-      }
+    "propositos_formativos": [
+      "Fomentar la cultura física y la integración grupal."
+    ]
+  },
+  "progresiones": [],
+  "orientaciones_didacticas": [],
+  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
+},
+{
+  "materia": "Práctica y Colaboración Ciudadana I 2025",
+  "semestre": 1,
+  "metadata": {
+    "nombre_uac": "PRÁCTICA Y COLABORACIÓN CIUDADANA I 2025",
+    "semestre": 1,
+    "creditos": 0,
+    "horas_semanales": 2
+  },
+  "organizador_curricular": {
+    "categorias": [
+      "Formación Socioemocional"
     ],
-    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-02-08T01:33:44.725Z"
-  }
+    "metas_aprendizaje": [
+      "Valore la importancia de la construcción de ciudadanía..."
+    ],
+    "propositos_formativos": [
+      "Reconoce los principales instrumentos que tutelan los derechos humanos...",
+      "Analiza las causas de las situaciones de inseguridad y violencia...",
+      "Reflexiona desde la perspectiva de género...",
+      "Investiga la forma en que los hábitos de consumo...",
+      "Desarrolla las habilidades de diálogo..."
+    ]
+  },
+  "progresiones": [],
+  "orientaciones_didacticas": [
+    "Proyectos sociales"
+  ],
+  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
+},
+{
+  "materia": "Práctica y Colaboración Ciudadana II 2025",
+  "semestre": 2,
+  "metadata": {
+    "nombre_uac": "PRÁCTICA Y COLABORACIÓN CIUDADANA II 2025",
+    "semestre": 2,
+    "creditos": 0,
+    "horas_semanales": 2
+  },
+  "organizador_curricular": {
+    "categorias": [
+      "Formación Socioemocional"
+    ],
+    "metas_aprendizaje": [
+      "Valore la importancia de la construcción de ciudadanía..."
+    ],
+    "propositos_formativos": [
+      "Acción ciudadana y democracia participativa."
+    ]
+  },
+  "progresiones": [],
+  "orientaciones_didacticas": [],
+  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
+},
+{
+  "materia": "Educación para la Salud I 2025",
+  "semestre": 1,
+  "metadata": {
+    "nombre_uac": "EDUCACIÓN PARA LA SALUD I 2025",
+    "semestre": 1,
+    "creditos": 0,
+    "horas_semanales": 2
+  },
+  "organizador_curricular": {
+    "categorias": [
+      "Formación Socioemocional"
+    ],
+    "metas_aprendizaje": [
+      "Cuide su salud a partir de la reflexión y transformación de prácticas cotidianas..."
+    ],
+    "propositos_formativos": [
+      "Desarrolla una conciencia crítica sobre los hábitos...",
+      "Discernir y elegir prácticas alimenticias...",
+      "Identifica, analiza y transforma factores de riesgo...",
+      "Impulsa la construcción de relaciones interpersonales..."
+    ]
+  },
+  "progresiones": [],
+  "orientaciones_didacticas": [],
+  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
+},
+{
+  "materia": "Educación para la Salud II 2025",
+  "semestre": 2,
+  "metadata": {
+    "nombre_uac": "EDUCACIÓN PARA LA SALUD II 2025",
+    "semestre": 2,
+    "creditos": 0,
+    "horas_semanales": 2
+  },
+  "organizador_curricular": {
+    "categorias": [
+      "Formación Socioemocional"
+    ],
+    "metas_aprendizaje": [
+      "Cuide su salud..."
+    ],
+    "propositos_formativos": [
+      "Bienestar integral y prevención."
+    ]
+  },
+  "progresiones": [],
+  "orientaciones_didacticas": [],
+  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
+},
+{
+  "materia": "Educación Integral en Sexualidad y Género I 2025",
+  "semestre": 1,
+  "metadata": {
+    "nombre_uac": "EDUCACIÓN INTEGRAL EN SEXUALIDAD Y GÉNERO I 2025",
+    "semestre": 1,
+    "creditos": 0,
+    "horas_semanales": 2
+  },
+  "organizador_curricular": {
+    "categorias": [
+      "Formación Socioemocional"
+    ],
+    "metas_aprendizaje": [
+      "Cuide su salud y proteja su integridad..."
+    ],
+    "propositos_formativos": [
+      "Comprende la identidad y orientación sexual...",
+      "Reconoce las dimensiones de la sexualidad...",
+      "Analiza la influencia de los roles de género...",
+      "Desarrolla una conciencia crítica sobre el cuerpo...",
+      "Ejerce una ciudadanía sexual crítica e informada."
+    ]
+  },
+  "progresiones": [],
+  "orientaciones_didacticas": [],
+  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
+},
+{
+  "materia": "Educación Integral en Sexualidad y Género II 2025",
+  "semestre": 2,
+  "metadata": {
+    "nombre_uac": "EDUCACIÓN INTEGRAL EN SEXUALIDAD Y GÉNERO II 2025",
+    "semestre": 2,
+    "creditos": 0,
+    "horas_semanales": 2
+  },
+  "organizador_curricular": {
+    "categorias": [
+      "Formación Socioemocional"
+    ],
+    "metas_aprendizaje": [
+      "Cuide su salud..."
+    ],
+    "propositos_formativos": [
+      "Derechos y autonomía corporal."
+    ]
+  },
+  "progresiones": [],
+  "orientaciones_didacticas": [],
+  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
+},
+{
+  "materia": "Actividades Artísticas y Culturales I 2025",
+  "semestre": 1,
+  "metadata": {
+    "nombre_uac": "ACTIVIDADES ARTÍSTICAS Y CULTURALES I 2025",
+    "semestre": 1,
+    "creditos": 0,
+    "horas_semanales": 2
+  },
+  "organizador_curricular": {
+    "categorias": [
+      "Formación Socioemocional"
+    ],
+    "metas_aprendizaje": [
+      "Desarrolle sensibilidad estética y ética..."
+    ],
+    "propositos_formativos": [
+      "Participa de diversas expresiones artísticas...",
+      "Genera manifestaciones artísticas variadas...",
+      "Recrea la obra de artistas...",
+      "Experimenta el arte como un espacio para el autodescubrimiento."
+    ]
+  },
+  "progresiones": [],
+  "orientaciones_didacticas": [],
+  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
+},
+{
+  "materia": "Actividades Artísticas y Culturales II 2025",
+  "semestre": 2,
+  "metadata": {
+    "nombre_uac": "ACTIVIDADES ARTÍSTICAS Y CULTURALES II 2025",
+    "semestre": 2,
+    "creditos": 0,
+    "horas_semanales": 2
+  },
+  "organizador_curricular": {
+    "categorias": [
+      "Formación Socioemocional"
+    ],
+    "metas_aprendizaje": [
+      "Desarrolle sensibilidad estética y ética..."
+    ],
+    "propositos_formativos": [
+      "Expresión y goce estético."
+    ]
+  },
+  "progresiones": [],
+  "orientaciones_didacticas": [],
+  "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+  "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
+}
 ]
