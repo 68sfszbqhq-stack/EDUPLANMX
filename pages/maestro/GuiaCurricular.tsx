@@ -65,14 +65,18 @@ const GuiaCurricular: React.FC = () => {
                             categoria: (prog.organizador_curricular?.categorias?.[0] || 'Unidad de Aprendizaje'),
                             horasSemanales: prog.metadata?.horas_semanales || 4,
                             totalHoras: (prog.metadata?.horas_semanales || 4) * 16,
-                            proposito: `Programa oficial del MCCEMS para ${prog.materia}.`,
+                            proposito: prog.organizador_curricular?.propositos_formativos?.[0] || `Programa oficial del MCCEMS para ${prog.materia}.`,
                             competencias: prog.organizador_curricular?.metas_aprendizaje || [],
                             ejesFormativos: prog.organizador_curricular?.categorias || [],
-                            unidades: [],
-                            bibliografiaBasica: [],
+                            unidades: prog.unidades || [],
+                            bibliografiaBasica: prog.bibliografia || [],
                             bibliografiaComplementaria: [],
                             recursosDigitales: [],
-                            criteriosEvaluacion: [],
+                            criteriosEvaluacion: (prog.criterios_evaluacion || []).map((c: any) => ({
+                                aspecto: c.aspecto,
+                                descripcion: c.descripcion,
+                                porcentaje: c.porcentaje
+                            })),
                             instrumentosEvaluacion: [],
                             activa: true,
                             fechaCreacion: new Date().toISOString(),
@@ -231,9 +235,16 @@ const GuiaCurricular: React.FC = () => {
                                             <div className={`w-16 h-16 bg-gradient-to-br ${getMateriaColor(materia.nombre)} rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform`}>
                                                 {getMateriaIcon(materia.nombre)}
                                             </div>
-                                            <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-semibold">
-                                                {materia.grado}° Semestre
-                                            </span>
+                                            <div className="flex flex-col items-end gap-2">
+                                                <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-semibold">
+                                                    {materia.grado}° Semestre
+                                                </span>
+                                                {materia.id.startsWith('sep-') && (
+                                                    <span className="bg-green-100 text-green-700 px-2 py-0.5 rounded-lg text-[10px] font-bold">
+                                                        DGB/SEP 2025
+                                                    </span>
+                                                )}
+                                            </div>
                                         </div>
 
                                         {/* Nombre */}

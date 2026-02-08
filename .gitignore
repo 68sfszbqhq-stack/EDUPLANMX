@@ -2,7 +2,8 @@
 node_modules
 dist
 .env
-.DS_Store
+.env.*
+!.env.example
 *.local
 
 # Ignorar archivos grandes en raiz

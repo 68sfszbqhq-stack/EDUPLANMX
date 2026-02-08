@@ -16,6 +16,10 @@
       "metas_aprendizaje": [
         "M1",
         "M2"
+      ],
+      "propositos_formativos": [
+        "Desarrollar la capacidad de modelar situaciones, resolver problemas y justificar resultados mediante lenguajes y métodos matemáticos.",
+        "Fomentar el pensamiento crítico y la toma de decisiones informadas a través del análisis de datos y patrones."
       ]
     },
     "progresiones": [
@@ -132,7 +136,12 @@
           "Aplicaciones estadísticas"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.720Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Lengua y Comunicación I",
@@ -260,7 +269,28 @@
           "Reflexión lingüística"
         ]
       }
-    ]
+    ],
+    "organizador_curricular": {
+      "propositos_formativos": [
+        "El estudiante sea capaz de utilizar la lengua como herramienta de pensamiento para ampliar sus conocimientos y habilidades de expresión.",
+        "Desarrollar habilidades comunicativas (hablar, escuchar, leer y escribir) en contextos diversos para una participación ciudadana activa."
+      ],
+      "categorias": [
+        "Comunicación",
+        "Pensamiento Crítico"
+      ],
+      "metas_aprendizaje": [
+        "Hablar",
+        "Escuchar",
+        "Leer",
+        "Escribir"
+      ]
+    },
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Cultura Digital I",
@@ -345,7 +375,26 @@
           "Diagramas de flujo"
         ]
       }
-    ]
+    ],
+    "organizador_curricular": {
+      "propositos_formativos": [
+        "Utilizar herramientas digitales de manera innovadora y eficiente para acceder al conocimiento y experiencias de aprendizaje.",
+        "Construir una ciudadanía digital responsable, ética y crítica en el uso de las tecnologías de la información."
+      ],
+      "categorias": [
+        "Ciudadanía Digital",
+        "Pensamiento Computacional"
+      ],
+      "metas_aprendizaje": [
+        "Uso ético de TIC",
+        "Programación básica"
+      ]
+    },
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "La Materia y sus Interacciones",
@@ -467,7 +516,23 @@
           "Impacto ambiental"
         ]
       }
-    ]
+    ],
+    "organizador_curricular": {
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de La Materia y sus Interacciones bajo el marco del MCCEMS 2025."
+      ],
+      "categorias": [
+        "Formación Fundamental"
+      ],
+      "metas_aprendizaje": [
+        "Logro de aprendizajes clave"
+      ]
+    },
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Humanidades I",
@@ -562,7 +627,24 @@
           "Existencialismo"
         ]
       }
-    ]
+    ],
+    "organizador_curricular": {
+      "propositos_formativos": [
+        "Reflexionar sobre la condición humana, la cultura y la sociedad para construir una visión crítica y ética del entorno.",
+        "Desarrollar el pensamiento filosófico para el análisis de problemas existenciales y sociales contemporáneos."
+      ],
+      "categorias": [
+        "Formación Fundamental"
+      ],
+      "metas_aprendizaje": [
+        "Logro de aprendizajes clave"
+      ]
+    },
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Ciencias Sociales I",
@@ -675,7 +757,26 @@
           "Organización"
         ]
       }
-    ]
+    ],
+    "organizador_curricular": {
+      "propositos_formativos": [
+        "Comprender la dinámica de la sociedad y sus instituciones para participar de manera responsable en la vida pública.",
+        "Analizar procesos históricos y sociales para entender el presente y proponer alternativas de futuro."
+      ],
+      "categorias": [
+        "Conciencia Social",
+        "Historia"
+      ],
+      "metas_aprendizaje": [
+        "Interpretación histórica",
+        "Participación ciudadana"
+      ]
+    },
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Inglés I",
@@ -805,7 +906,27 @@
           "Reading comprehension"
         ]
       }
-    ]
+    ],
+    "organizador_curricular": {
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Inglés I bajo el marco del MCCEMS 2025."
+      ],
+      "categorias": [
+        "Comunicación Extranjera",
+        "Interculturalidad"
+      ],
+      "metas_aprendizaje": [
+        "Listening",
+        "Reading",
+        "Speaking",
+        "Writing"
+      ]
+    },
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Pensamiento Matemático II",
@@ -918,7 +1039,26 @@
           "Trigonometría básica"
         ]
       }
-    ]
+    ],
+    "organizador_curricular": {
+      "propositos_formativos": [
+        "Desarrollar la capacidad de modelar situaciones, resolver problemas y justificar resultados mediante lenguajes y métodos matemáticos.",
+        "Fomentar el pensamiento crítico y la toma de decisiones informadas a través del análisis de datos y patrones."
+      ],
+      "categorias": [
+        "Pensamiento Lógico",
+        "Modelación"
+      ],
+      "metas_aprendizaje": [
+        "Resolución de problemas",
+        "Pensamiento algorítmico"
+      ]
+    },
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Lengua y Comunicación II",
@@ -1022,7 +1162,28 @@
           "Ética comunicativa"
         ]
       }
-    ]
+    ],
+    "organizador_curricular": {
+      "propositos_formativos": [
+        "El estudiante sea capaz de utilizar la lengua como herramienta de pensamiento para ampliar sus conocimientos y habilidades de expresión.",
+        "Desarrollar habilidades comunicativas (hablar, escuchar, leer y escribir) en contextos diversos para una participación ciudadana activa."
+      ],
+      "categorias": [
+        "Comunicación",
+        "Pensamiento Crítico"
+      ],
+      "metas_aprendizaje": [
+        "Hablar",
+        "Escuchar",
+        "Leer",
+        "Escribir"
+      ]
+    },
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Conservación de la Energía",
@@ -1119,7 +1280,23 @@
           "Impacto ambiental"
         ]
       }
-    ]
+    ],
+    "organizador_curricular": {
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Conservación de la Energía bajo el marco del MCCEMS 2025."
+      ],
+      "categorias": [
+        "Formación Fundamental"
+      ],
+      "metas_aprendizaje": [
+        "Logro de aprendizajes clave"
+      ]
+    },
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Cultura Digital II",
@@ -1140,6 +1317,10 @@
       ],
       "metas_aprendizaje": [
         "Interactúe con las TICCAD para potenciar su aprendizaje autónomo y colaborativo, de una forma creativa e innovadora, de acuerdo con las características y necesidades de su contexto."
+      ],
+      "propositos_formativos": [
+        "Utilizar herramientas digitales de manera innovadora y eficiente para acceder al conocimiento y experiencias de aprendizaje.",
+        "Construir una ciudadanía digital responsable, ética y crítica en el uso de las tecnologías de la información."
       ]
     },
     "progresiones": [
@@ -1223,7 +1404,10 @@
       }
     ],
     "url_fuente": "https://www.dgb.sep.gob.mx/informacion-academica/programas-de-estudio/cultura-digital-ii.pdf",
-    "fecha_extraccion": "2026-01-29"
+    "fecha_extraccion": "2026-01-29",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Ciencias Sociales II",
@@ -1309,7 +1493,26 @@
           "Movimientos sociales"
         ]
       }
-    ]
+    ],
+    "organizador_curricular": {
+      "propositos_formativos": [
+        "Comprender la dinámica de la sociedad y sus instituciones para participar de manera responsable en la vida pública.",
+        "Analizar procesos históricos y sociales para entender el presente y proponer alternativas de futuro."
+      ],
+      "categorias": [
+        "Conciencia Social",
+        "Historia"
+      ],
+      "metas_aprendizaje": [
+        "Interpretación histórica",
+        "Participación ciudadana"
+      ]
+    },
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Humanidades II",
@@ -1390,7 +1593,24 @@
           "Estética"
         ]
       }
-    ]
+    ],
+    "organizador_curricular": {
+      "propositos_formativos": [
+        "Reflexionar sobre la condición humana, la cultura y la sociedad para construir una visión crítica y ética del entorno.",
+        "Desarrollar el pensamiento filosófico para el análisis de problemas existenciales y sociales contemporáneos."
+      ],
+      "categorias": [
+        "Formación Fundamental"
+      ],
+      "metas_aprendizaje": [
+        "Logro de aprendizajes clave"
+      ]
+    },
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Inglés II",
@@ -1474,7 +1694,27 @@
           "Directions"
         ]
       }
-    ]
+    ],
+    "organizador_curricular": {
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Inglés II bajo el marco del MCCEMS 2025."
+      ],
+      "categorias": [
+        "Comunicación Extranjera",
+        "Interculturalidad"
+      ],
+      "metas_aprendizaje": [
+        "Listening",
+        "Reading",
+        "Speaking",
+        "Writing"
+      ]
+    },
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Laboratorio de Investigación",
@@ -1492,6 +1732,9 @@
       ],
       "metas_aprendizaje": [
         "Desarrolla habilidades de investigación"
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Laboratorio de Investigación bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -1547,7 +1790,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T16:00:00.000Z"
+    "fecha_extraccion": "2026-01-11T16:00:00.000Z",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Taller de Ciencias I",
@@ -1564,6 +1810,9 @@
       ],
       "metas_aprendizaje": [
         "Aplica el método científico"
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Taller de Ciencias I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -1612,7 +1861,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T16:00:00.000Z"
+    "fecha_extraccion": "2026-01-11T16:00:00.000Z",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Pensamiento Matemático III",
@@ -1633,6 +1885,10 @@
         "Resolver problemas",
         "Modelar matemáticamente",
         "Argumentar soluciones"
+      ],
+      "propositos_formativos": [
+        "Desarrollar la capacidad de modelar situaciones, resolver problemas y justificar resultados mediante lenguajes y métodos matemáticos.",
+        "Fomentar el pensamiento crítico y la toma de decisiones informadas a través del análisis de datos y patrones."
       ]
     },
     "progresiones": [
@@ -1683,7 +1939,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761601"
+    "fecha_extraccion": "2026-01-11T15:42:02.761601",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Lengua y Comunicación III",
@@ -1704,6 +1963,10 @@
         "Comunicarse asertivamente",
         "Leer críticamente",
         "Escribir con coherencia"
+      ],
+      "propositos_formativos": [
+        "El estudiante sea capaz de utilizar la lengua como herramienta de pensamiento para ampliar sus conocimientos y habilidades de expresión.",
+        "Desarrollar habilidades comunicativas (hablar, escuchar, leer y escribir) en contextos diversos para una participación ciudadana activa."
       ]
     },
     "progresiones": [
@@ -1754,7 +2017,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761604"
+    "fecha_extraccion": "2026-01-11T15:42:02.761604",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Inglés III",
@@ -1776,6 +2042,9 @@
         "Comprensión auditiva",
         "Expresión oral",
         "Comprensión lectora"
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Inglés III bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -1826,7 +2095,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761607"
+    "fecha_extraccion": "2026-01-11T15:42:02.761607",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Ecosistemas: interacciones, energía y dinámica",
@@ -1847,6 +2119,9 @@
         "Indagación científica",
         "Modelado de fenómenos",
         "Pensamiento crítico"
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Ecosistemas: interacciones, energía y dinámica bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -1897,7 +2172,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761610"
+    "fecha_extraccion": "2026-01-11T15:42:02.761610",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Ciencias Sociales III",
@@ -1918,6 +2196,10 @@
         "Análisis social",
         "Pensamiento crítico",
         "Conciencia histórica"
+      ],
+      "propositos_formativos": [
+        "Comprender la dinámica de la sociedad y sus instituciones para participar de manera responsable en la vida pública.",
+        "Analizar procesos históricos y sociales para entender el presente y proponer alternativas de futuro."
       ]
     },
     "progresiones": [
@@ -1953,7 +2235,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761613"
+    "fecha_extraccion": "2026-01-11T15:42:02.761613",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Humanidades III",
@@ -1974,6 +2259,10 @@
         "Reflexión filosófica",
         "Argumentación ética",
         "Apreciación estética"
+      ],
+      "propositos_formativos": [
+        "Reflexionar sobre la condición humana, la cultura y la sociedad para construir una visión crítica y ética del entorno.",
+        "Desarrollar el pensamiento filosófico para el análisis de problemas existenciales y sociales contemporáneos."
       ]
     },
     "progresiones": [
@@ -2009,7 +2298,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761615"
+    "fecha_extraccion": "2026-01-11T15:42:02.761615",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Conciencia Histórica I",
@@ -2030,6 +2322,9 @@
         "Conciencia histórica",
         "Análisis de fuentes",
         "Identidad"
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Conciencia Histórica I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -2065,7 +2360,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761617"
+    "fecha_extraccion": "2026-01-11T15:42:02.761617",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Inglés IV",
@@ -2087,6 +2385,9 @@
         "Comprensión auditiva",
         "Expresión oral",
         "Comprensión lectora"
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Inglés IV bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -2137,7 +2438,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761620"
+    "fecha_extraccion": "2026-01-11T15:42:02.761620",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Reacciones Químicas",
@@ -2158,6 +2462,9 @@
         "Indagación científica",
         "Modelado de fenómenos",
         "Pensamiento crítico"
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Reacciones Químicas bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -2208,7 +2515,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761622"
+    "fecha_extraccion": "2026-01-11T15:42:02.761622",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Matemáticas IV (Propedéutico)",
@@ -2229,6 +2539,9 @@
         "Resolver problemas",
         "Modelar matemáticamente",
         "Argumentar soluciones"
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Matemáticas IV (Propedéutico) bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -2279,7 +2592,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761625"
+    "fecha_extraccion": "2026-01-11T15:42:02.761625",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Temas de Ciencias Sociales",
@@ -2300,6 +2616,10 @@
         "Análisis social",
         "Pensamiento crítico",
         "Conciencia histórica"
+      ],
+      "propositos_formativos": [
+        "Comprender la dinámica de la sociedad y sus instituciones para participar de manera responsable en la vida pública.",
+        "Analizar procesos históricos y sociales para entender el presente y proponer alternativas de futuro."
       ]
     },
     "progresiones": [
@@ -2335,7 +2655,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761630"
+    "fecha_extraccion": "2026-01-11T15:42:02.761630",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Conciencia Histórica II",
@@ -2356,6 +2679,9 @@
         "Conciencia histórica",
         "Análisis de fuentes",
         "Identidad"
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Conciencia Histórica II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -2391,7 +2717,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761634"
+    "fecha_extraccion": "2026-01-11T15:42:02.761634",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "La Energía",
@@ -2412,6 +2741,9 @@
         "Indagación científica",
         "Modelado de fenómenos",
         "Pensamiento crítico"
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de La Energía bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -2462,7 +2794,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761638"
+    "fecha_extraccion": "2026-01-11T15:42:02.761638",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Temas Selectos de Humanidades",
@@ -2483,6 +2818,10 @@
         "Reflexión filosófica",
         "Argumentación ética",
         "Apreciación estética"
+      ],
+      "propositos_formativos": [
+        "Reflexionar sobre la condición humana, la cultura y la sociedad para construir una visión crítica y ética del entorno.",
+        "Desarrollar el pensamiento filosófico para el análisis de problemas existenciales y sociales contemporáneos."
       ]
     },
     "progresiones": [
@@ -2518,7 +2857,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761640"
+    "fecha_extraccion": "2026-01-11T15:42:02.761640",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Conciencia Histórica III",
@@ -2539,6 +2881,9 @@
         "Conciencia histórica",
         "Análisis de fuentes",
         "Identidad"
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Conciencia Histórica III bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -2574,7 +2919,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761643"
+    "fecha_extraccion": "2026-01-11T15:42:02.761643",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Cultura Digital III",
@@ -2595,6 +2943,10 @@
         "Usar tecnología responsablemente",
         "Resolver problemas con algoritmos",
         "Crear contenido digital"
+      ],
+      "propositos_formativos": [
+        "Utilizar herramientas digitales de manera innovadora y eficiente para acceder al conocimiento y experiencias de aprendizaje.",
+        "Construir una ciudadanía digital responsable, ética y crítica en el uso de las tecnologías de la información."
       ]
     },
     "progresiones": [
@@ -2660,7 +3012,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761646"
+    "fecha_extraccion": "2026-01-11T15:42:02.761646",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Herencia y Evolución",
@@ -2681,6 +3036,9 @@
         "Indagación científica",
         "Modelado de fenómenos",
         "Pensamiento crítico"
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Herencia y Evolución bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -2731,7 +3089,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761648"
+    "fecha_extraccion": "2026-01-11T15:42:02.761648",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Filosofía",
@@ -2752,6 +3113,9 @@
         "Reflexión filosófica",
         "Argumentación ética",
         "Apreciación estética"
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Filosofía bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -2787,7 +3151,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761650"
+    "fecha_extraccion": "2026-01-11T15:42:02.761650",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Cultura Digital III",
@@ -2808,6 +3175,10 @@
         "M1. Utiliza herramientas avanzadas de procesamiento de datos",
         "M2. Desarrolla soluciones mediante algoritmos y programación",
         "M3. Aplica principios de ciudadanía en entornos virtuales complejos"
+      ],
+      "propositos_formativos": [
+        "Utilizar herramientas digitales de manera innovadora y eficiente para acceder al conocimiento y experiencias de aprendizaje.",
+        "Construir una ciudadanía digital responsable, ética y crítica en el uso de las tecnologías de la información."
       ]
     },
     "progresiones": [
@@ -2885,7 +3256,10 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-12T12:00:00.000Z"
+    "fecha_extraccion": "2026-01-12T12:00:00.000Z",
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": []
   },
   {
     "materia": "Formación Socioemocional I",
@@ -2905,10 +3279,36 @@
         "Actividades Físicas y Deportivas"
       ],
       "metas_aprendizaje": [
-        "M1: Realiza actividad física e iniciación deportiva como elección para su bienestar físico.",
-        "M2: Valora la importancia de establecer hábitos saludables como parte de un estilo de vida.",
-        "M3: Valora la actividad física como una herramienta que favorece el manejo de sus emociones.",
-        "M4: Distingue los elementos básicos de la actividad física para el cuidado de la salud."
+        "M1 Práctica y Colaboración Ciudadana: Valore la importancia de la construcción de ciudadanía para involucrarse como agente de transformación social.",
+        "M2 Educación para la Salud: Cuide su salud a partir de la reflexión y transformación de prácticas cotidianas para el bienestar personal y colectivo.",
+        "M3 Actividades Físicas y Deportivas: Desarrolle hábitos conscientes y reflexivos en torno a la actividad física como medio para el desarrollo integral.",
+        "M4 Educación Integral en Sexualidad y Género: Cuide su salud y proteja su integridad al desarrollar relaciones sociales y sexuales constructivas e igualitarias.",
+        "M5 Actividades Artísticas y Culturales: Desarrolle sensibilidad estética y ética mediante el disfrute y el goce del arte como forma de comunicación."
+      ],
+      "propositos_formativos": [
+        "Reconoce los principales instrumentos que tutelan los derechos humanos en general, y específicamente de las infancias, adolescencias y juventudes.",
+        "Analiza las causas de las situaciones de inseguridad y violencia existentes en su entorno familiar, escolar o comunitario y que afectan su bienestar físico, mental, emocional o social, para promover acciones colectivas de autocuidado y una cultura de paz.",
+        "Reflexiona desde la perspectiva de género sobre las dimensiones de la violencia de género contra las mujeres y contra las diversidades sexogenéricas, para promover relaciones de respeto a partir del reconocimiento de los derechos humanos.",
+        "Investiga la forma en que los hábitos de consumo, formas de producción en la comunidad, y prácticas y comportamientos en la vida cotidiana influyen en el medio ambiente, el cambio climático y el bienestar personal y colectivo a nivel local, nacional e internacional.",
+        "Desarrollar las habilidades de diálogo y escucha activa para la construcción de grupos de trabajo colaborativo durante la identificación y solución de problemas de su entorno.",
+        "Desarrolla, junto con la comunidad estudiantil a la que pertenece, una conciencia crítica y reflexiva sobre los hábitos que configuran su existencia, y promueve el cuidado de sí como una práctica ética que articula el bienestar físico, emocional, mental y social.",
+        "Desarrolla la capacidad de discernir y elegir prácticas alimenticias que expresen un cuidado consciente de sí, del cuerpo y del entorno, para fomentar una relación ética con la alimentación que reconozca su dimensión cultural, ecológica y política, y que contribuya a una vida más justa y sostenible.",
+        "Identifica, analiza y transforma los factores que afectan el bienestar, a partir del ejercicio del cuidado de sí —con autoconocimiento, autodominio y libertad ética—, para convertirse en agente activo de la salud que reconoce su poder de decisión ante prácticas riesgosas.",
+        "Impulsa la construcción de las relaciones interpersonales, basadas en el respeto, el diálogo y el reconocimiento de las diferencias entre personas, entediendo que el cuidado de sí, incluye la manera de vincularse con las demás personas, para promover una ética de la convivencia que contribuya al bienestar común y a la transformación de dinámicas violentas.",
+        "Participa en situaciones de juego y actividad física lúdica como una manifestación cultural y expresión de libertad, valorando también el juego como una experiencia formativa y una fuente de disfrute personal que promueve el bienestar y la creatividad.",
+        "Participa en actividades deportivas como un derecho humano fundamental que favorece su desarrollo físico y emocional, y promueve la convivencia respetuosa en la diversidad y otras formas de vinculación y disfrute de su propio cuerpo.",
+        "Explora las emociones y las posibilidades motrices que experimenta en la práctica deportiva, y la identifica como oportunidad para la toma de decisiones saludables, la capacidad de sentir y reconocer emociones y razonar sobre ellas, al tiempo que desarrolla sus potencialidades psicomotrices.",
+        "Identifica y cuestiona las prácticas discriminatorias y de violencia en el deporte por razones de género o corporalidad, para establecer relaciones empáticas, justas y libres de violencia, y desarrolla la capacidad de afiliación y respeto por la dignidad de cada persona.",
+        "Promueve la igualdad de oportunidades y la inclusión de todas las personas en el ámbito deportivo, especialmente de mujeres, diversidades sexogenéricas y personas en situación de discapacidad, cultivando una conciencia crítica que impulse el bienestar colectivo y el ejercicio pleno de sus capacidades humanas.",
+        "Comprende la identidad y orientación sexual, así como la construcción de vínculos afectivos saludables, mediante habilidades de comunicación, diálogo y responsabilidad afectiva en relaciones sociales.",
+        "Reconoce las dimensiones de la sexualidad desde un enfoque de derechos humanos y sexuales, desmitificando creencias, hábitos y estereotipos, y valorando la diversidad sexual como parte de la identidad y expresión colectiva.",
+        "Analiza la influencia de los roles de género en la toma de decisiones sobre la vida sexual y reproductiva, y promueve tanto la prevención de embarazos no planificados como el ejercicio informado y corresponsable de la sexualidad.",
+        "Desarrolla una conciencia crítica sobre le cuerpo, la autonomía y el placer, al cuestionar las normas sociales, culturales y de género que propician la discriminación y la violencia.",
+        "Ejerce una ciudadanía sexual crítica e informada, que integra el cuidado de sí, el acceso a la salud sexual y reproductiva, y la construcción de un proyecto de vida con perspectiva de género, libre de estereotipos, violencias y jerarquías.",
+        "Participa de diversas expresiones artísticas para comunicar emociones, ideas y experiencias personales y del colectivo al que pertenece.",
+        "Genera manifestaciones artísticas variadas como formas de expresión política frente a los problemas que afectan a su comunidad y entorno.",
+        "Recrea la obra de artistas cuyas creaciones buscaron problematizar la realidad y dar cuenta de un posicionamiento político, y formaron parte de procesos colectivos de transformación social.",
+        "Experimenta el arte como un espacio para el autodescubrimiento y el autoconocimiento en el marco de la complejidad de su contexto y momento histórico."
       ]
     },
     "progresiones": [
@@ -2985,7 +3385,70 @@
         ]
       }
     ],
-    "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2024/07/V2N8WnBUGb-programa_formacion_socioemocional-19%20080724.pdf"
+    "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2024/07/V2N8WnBUGb-programa_formacion_socioemocional-19%20080724.pdf",
+    "orientaciones_didacticas": [
+      "Aprendizaje Basado en Proyectos (ABP)",
+      "Círculos deliberativos y diálogos socráticos",
+      "Juegos de roles y sociodramas",
+      "Cartografías sociales y mapeos comunitarios",
+      "Asambleas escolares y deportivas",
+      "Cine-debates y análisis de medios",
+      "Campañas de sensibilización pública",
+      "Teatro y expresiones artísticas colaborativas"
+    ],
+    "criterios_evaluacion": [
+      {
+        "aspecto": "Autoconocimiento",
+        "descripcion": "Capacidad de reconocer emociones y necesidades personales.",
+        "porcentaje": 20
+      },
+      {
+        "aspecto": "Participación Colaborativa",
+        "descripcion": "Integración y respeto en actividades de grupo.",
+        "porcentaje": 30
+      },
+      {
+        "aspecto": "Reflexión Crítica",
+        "descripcion": "Análisis sobre el impacto de hábitos y conductas en el bienestar.",
+        "porcentaje": 25
+      },
+      {
+        "aspecto": "Acción Transformadora",
+        "descripcion": "Propuesta y ejecución de acciones para la mejora del entorno.",
+        "porcentaje": 25
+      }
+    ],
+    "bibliografia": [
+      {
+        "tipo": "libro",
+        "titulo": "Y el cerebro creó al hombre",
+        "autor": "Damasio, A.",
+        "año": 2010,
+        "disponibilidad": "digital"
+      },
+      {
+        "tipo": "libro",
+        "titulo": "Crear capacidades: Propuesta para el desarrollo humano",
+        "autor": "Nussbaum, M.",
+        "año": 2012,
+        "disponibilidad": "biblioteca"
+      },
+      {
+        "tipo": "libro",
+        "titulo": "Homo Ludens",
+        "autor": "Huizinga, J.",
+        "año": 2012,
+        "disponibilidad": "biblioteca"
+      },
+      {
+        "tipo": "manual",
+        "titulo": "Programas de Estudio MCCEMS 2025",
+        "autor": "DGB-SEP",
+        "año": 2025,
+        "disponibilidad": "digital"
+      }
+    ],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z"
   },
   {
     "materia": "La materia y sus interacciones CNEYT I",
@@ -3003,6 +3466,9 @@
       ],
       "metas_aprendizaje": [
         "Desarrollar comprensión profunda de los temas curriculares."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de La materia y sus interacciones CNEYT I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3022,7 +3488,12 @@
           "Análisis"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Conservación de la energía y su interacción con la materia CNEYT II",
@@ -3040,6 +3511,9 @@
       ],
       "metas_aprendizaje": [
         "Desarrollar comprensión profunda de los temas curriculares."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Conservación de la energía y su interacción con la materia CNEYT II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3059,7 +3533,12 @@
           "Análisis"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Ecosistemas, interacciones, energia y dinamica CNEYT III",
@@ -3077,6 +3556,9 @@
       ],
       "metas_aprendizaje": [
         "Desarrollar comprensión profunda de los temas curriculares."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Ecosistemas, interacciones, energia y dinamica CNEYT III bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3096,7 +3578,12 @@
           "Análisis"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Ciencias Sociales III",
@@ -3114,6 +3601,10 @@
       ],
       "metas_aprendizaje": [
         "Desarrollar comprensión profunda de los temas curriculares."
+      ],
+      "propositos_formativos": [
+        "Comprender la dinámica de la sociedad y sus instituciones para participar de manera responsable en la vida pública.",
+        "Analizar procesos históricos y sociales para entender el presente y proponer alternativas de futuro."
       ]
     },
     "progresiones": [
@@ -3133,7 +3624,12 @@
           "Análisis"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Conciencia Histórica I",
@@ -3151,6 +3647,9 @@
       ],
       "metas_aprendizaje": [
         "Desarrollar comprensión profunda de los temas curriculares."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Conciencia Histórica I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3170,7 +3669,12 @@
           "Análisis"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Reacciones químicas conservación de la materia CNEYT IV",
@@ -3188,6 +3692,9 @@
       ],
       "metas_aprendizaje": [
         "Desarrollar comprensión profunda de los temas curriculares."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Reacciones químicas conservación de la materia CNEYT IV bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3207,7 +3714,12 @@
           "Análisis"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "La energía en los procesos de la vida diaria CNEYT V",
@@ -3225,6 +3737,9 @@
       ],
       "metas_aprendizaje": [
         "Desarrollar comprensión profunda de los temas curriculares."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de La energía en los procesos de la vida diaria CNEYT V bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3244,7 +3759,12 @@
           "Análisis"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Análisis de Fenómenos Físicos I",
@@ -3262,6 +3782,9 @@
       ],
       "metas_aprendizaje": [
         "Desarrollar comprensión profunda de los temas curriculares."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Análisis de Fenómenos Físicos I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3281,7 +3804,12 @@
           "Análisis"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Derecho y Sociedad I",
@@ -3299,6 +3827,9 @@
       ],
       "metas_aprendizaje": [
         "Desarrollar comprensión profunda de los temas curriculares."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Derecho y Sociedad I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3318,7 +3849,12 @@
           "Análisis"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Fundamentos de Administración I",
@@ -3336,6 +3872,9 @@
       ],
       "metas_aprendizaje": [
         "Desarrollar comprensión profunda de los temas curriculares."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Fundamentos de Administración I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3355,7 +3894,12 @@
           "Análisis"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Organismos, estructuras y procesos CNEYT VI",
@@ -3373,6 +3917,9 @@
       ],
       "metas_aprendizaje": [
         "Desarrollar comprensión profunda de los temas curriculares."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Organismos, estructuras y procesos CNEYT VI bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3392,7 +3939,12 @@
           "Análisis"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Análisis de Fenómenos Físicos II",
@@ -3410,6 +3962,9 @@
       ],
       "metas_aprendizaje": [
         "Desarrollar comprensión profunda de los temas curriculares."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Análisis de Fenómenos Físicos II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3429,7 +3984,12 @@
           "Análisis"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Derecho y Sociedad II",
@@ -3447,6 +4007,9 @@
       ],
       "metas_aprendizaje": [
         "Desarrollar comprensión profunda de los temas curriculares."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Derecho y Sociedad II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3466,7 +4029,12 @@
           "Análisis"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Raíces etimológicas del español I",
@@ -3484,6 +4052,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Raíces etimológicas del español I."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Raíces etimológicas del español I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3501,7 +4072,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Taller de Probabilidad y Estadística I",
@@ -3519,6 +4095,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Taller de Probabilidad y Estadística I."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Taller de Probabilidad y Estadística I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3536,7 +4115,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Comunicación y Sociedad I",
@@ -3554,6 +4138,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Comunicación y Sociedad I."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Comunicación y Sociedad I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3571,7 +4158,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Taller de Pensamiento Variacional I",
@@ -3589,6 +4181,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Taller de Pensamiento Variacional I."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Taller de Pensamiento Variacional I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3606,7 +4201,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Psicología I",
@@ -3624,6 +4224,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Psicología I."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Psicología I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3641,7 +4244,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Pensamiento Filosófico I",
@@ -3659,6 +4267,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Pensamiento Filosófico I."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Pensamiento Filosófico I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3676,7 +4287,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Análisis de Fenómenos y Procesos Biológicos",
@@ -3694,6 +4310,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Análisis de Fenómenos y Procesos Biológicos."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Análisis de Fenómenos y Procesos Biológicos bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3711,7 +4330,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Pensamiento Matemático Aplicado a las Finanzas I",
@@ -3729,6 +4353,10 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Pensamiento Matemático Aplicado a las Finanzas I."
+      ],
+      "propositos_formativos": [
+        "Desarrollar la capacidad de modelar situaciones, resolver problemas y justificar resultados mediante lenguajes y métodos matemáticos.",
+        "Fomentar el pensamiento crítico y la toma de decisiones informadas a través del análisis de datos y patrones."
       ]
     },
     "progresiones": [
@@ -3746,7 +4374,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Ingles V",
@@ -3764,6 +4397,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Ingles V."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Ingles V bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3781,7 +4417,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Dibujo Técnico I",
@@ -3799,6 +4440,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Dibujo Técnico I."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Dibujo Técnico I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3816,7 +4460,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Salud Integral I",
@@ -3834,6 +4483,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Salud Integral I."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Salud Integral I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3851,7 +4503,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Economía I. La función de los agentes económicos en la sociedad",
@@ -3869,6 +4526,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Economía I. La función de los agentes económicos en la sociedad."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Economía I. La función de los agentes económicos en la sociedad bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3886,7 +4546,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Procesos ContabIes I",
@@ -3904,6 +4569,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Procesos ContabIes I."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Procesos ContabIes I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3921,7 +4589,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Temas Selectos de Ciencias Sociales I",
@@ -3939,6 +4612,10 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Temas Selectos de Ciencias Sociales I."
+      ],
+      "propositos_formativos": [
+        "Comprender la dinámica de la sociedad y sus instituciones para participar de manera responsable en la vida pública.",
+        "Analizar procesos históricos y sociales para entender el presente y proponer alternativas de futuro."
       ]
     },
     "progresiones": [
@@ -3956,7 +4633,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Arte y Cultura I",
@@ -3974,6 +4656,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Arte y Cultura I."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Arte y Cultura I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -3991,7 +4676,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Lógica y Pensamiento Crítico",
@@ -4009,6 +4699,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Lógica y Pensamiento Crítico."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Lógica y Pensamiento Crítico bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4026,7 +4719,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Fundamentos de Administración II",
@@ -4044,6 +4742,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Fundamentos de Administración II."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Fundamentos de Administración II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4061,7 +4762,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Organización del flujo de materia y energía en los organismos II",
@@ -4079,6 +4785,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Organización del flujo de materia y energía en los organismos II."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Organización del flujo de materia y energía en los organismos II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4096,7 +4805,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Raíces etimológicas del español II",
@@ -4114,6 +4828,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Raíces etimológicas del español II."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Raíces etimológicas del español II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4131,7 +4848,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Taller de Probabilidad y Estadística II",
@@ -4149,6 +4871,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Taller de Probabilidad y Estadística II."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Taller de Probabilidad y Estadística II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4166,7 +4891,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Taller de Pensamiento Variacional II",
@@ -4184,6 +4914,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Taller de Pensamiento Variacional II."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Taller de Pensamiento Variacional II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4201,7 +4934,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Comunicación y Sociedad II",
@@ -4219,6 +4957,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Comunicación y Sociedad II."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Comunicación y Sociedad II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4236,7 +4977,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Psicología II",
@@ -4254,6 +5000,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Psicología II."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Psicología II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4271,7 +5020,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Pensamiento Filosófico II",
@@ -4289,6 +5043,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Pensamiento Filosófico II."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Pensamiento Filosófico II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4306,7 +5063,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Temas Selectos de Biología",
@@ -4324,6 +5086,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Temas Selectos de Biología."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Temas Selectos de Biología bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4341,7 +5106,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Ingles VI",
@@ -4359,6 +5129,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Ingles VI."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Ingles VI bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4376,7 +5149,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Dibujo TécnicoII",
@@ -4394,6 +5172,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Dibujo TécnicoII."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Dibujo TécnicoII bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4411,7 +5192,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Pensamiento Matemático Aplicado a las Finanzas-II",
@@ -4429,6 +5215,10 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Pensamiento Matemático Aplicado a las Finanzas-II."
+      ],
+      "propositos_formativos": [
+        "Desarrollar la capacidad de modelar situaciones, resolver problemas y justificar resultados mediante lenguajes y métodos matemáticos.",
+        "Fomentar el pensamiento crítico y la toma de decisiones informadas a través del análisis de datos y patrones."
       ]
     },
     "progresiones": [
@@ -4446,7 +5236,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Salud Integral II",
@@ -4464,6 +5259,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Salud Integral II."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Salud Integral II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4481,7 +5279,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Economía II. Política económica y política pública mexicana",
@@ -4499,6 +5302,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Economía II. Política económica y política pública mexicana."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Economía II. Política económica y política pública mexicana bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4516,7 +5322,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Procesos ContabIes II",
@@ -4534,6 +5345,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Procesos ContabIes II."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Procesos ContabIes II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4551,7 +5365,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Temas Selectos de Ciencias Sociales II",
@@ -4569,6 +5388,10 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Temas Selectos de Ciencias Sociales II."
+      ],
+      "propositos_formativos": [
+        "Comprender la dinámica de la sociedad y sus instituciones para participar de manera responsable en la vida pública.",
+        "Analizar procesos históricos y sociales para entender el presente y proponer alternativas de futuro."
       ]
     },
     "progresiones": [
@@ -4586,7 +5409,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Arte y Cultura II",
@@ -4604,6 +5432,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Arte y Cultura II."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Arte y Cultura II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4621,7 +5452,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Experiencia Estética",
@@ -4639,6 +5475,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Experiencia Estética."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Experiencia Estética bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4656,7 +5495,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Tecnologías de la Comunicación y la Información",
@@ -4674,6 +5518,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Tecnologías de la Comunicación y la Información."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Tecnologías de la Comunicación y la Información bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4691,7 +5538,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Higiene y Salud Comunitaria",
@@ -4709,6 +5561,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Higiene y Salud Comunitaria."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Higiene y Salud Comunitaria bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4726,7 +5581,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Diseño gráfico",
@@ -4744,6 +5604,9 @@
       ],
       "metas_aprendizaje": [
         "Dominar los aprendizajes fundamentales de Diseño gráfico."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Diseño gráfico bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4761,7 +5624,12 @@
           "Desarrollo"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Pensamiento Literario",
@@ -4779,6 +5647,9 @@
       ],
       "metas_aprendizaje": [
         "Profundizar en Pensamiento Literario."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Pensamiento Literario bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4789,7 +5660,12 @@
           "Teoría avanzada"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Taller de Cultura Digital",
@@ -4807,6 +5683,10 @@
       ],
       "metas_aprendizaje": [
         "Profundizar en Taller de Cultura Digital."
+      ],
+      "propositos_formativos": [
+        "Utilizar herramientas digitales de manera innovadora y eficiente para acceder al conocimiento y experiencias de aprendizaje.",
+        "Construir una ciudadanía digital responsable, ética y crítica en el uso de las tecnologías de la información."
       ]
     },
     "progresiones": [
@@ -4817,7 +5697,12 @@
           "Teoría avanzada"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Temas Selectos de Matemáticas I",
@@ -4835,6 +5720,9 @@
       ],
       "metas_aprendizaje": [
         "Profundizar en Temas Selectos de Matemáticas I."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Temas Selectos de Matemáticas I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4845,7 +5733,12 @@
           "Teoría avanzada"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Temas Selectos de Matemáticas II",
@@ -4863,6 +5756,9 @@
       ],
       "metas_aprendizaje": [
         "Profundizar en Temas Selectos de Matemáticas II."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Temas Selectos de Matemáticas II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4873,7 +5769,12 @@
           "Teoría avanzada"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Espacio y Sociedad",
@@ -4891,6 +5792,9 @@
       ],
       "metas_aprendizaje": [
         "Profundizar en Espacio y Sociedad."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Espacio y Sociedad bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4901,7 +5805,12 @@
           "Teoría avanzada"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Taller de Ciencias I",
@@ -4919,6 +5828,9 @@
       ],
       "metas_aprendizaje": [
         "Profundizar en Taller de Ciencias I."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Taller de Ciencias I bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4929,7 +5841,12 @@
           "Teoría avanzada"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Laboratorio de Investigación",
@@ -4947,6 +5864,9 @@
       ],
       "metas_aprendizaje": [
         "Profundizar en Laboratorio de Investigación."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Laboratorio de Investigación bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4957,7 +5877,12 @@
           "Teoría avanzada"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
   },
   {
     "materia": "Taller de Ciencias II",
@@ -4975,6 +5900,9 @@
       ],
       "metas_aprendizaje": [
         "Profundizar en Taller de Ciencias II."
+      ],
+      "propositos_formativos": [
+        "Contribuir a la formación integral del estudiante en el área de Taller de Ciencias II bajo el marco del MCCEMS 2025."
       ]
     },
     "progresiones": [
@@ -4985,6 +5913,220 @@
           "Teoría avanzada"
         ]
       }
-    ]
+    ],
+    "orientaciones_didacticas": [],
+    "criterios_evaluacion": [],
+    "bibliografia": [],
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z",
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular"
+  },
+  {
+    "materia": "Actividades Físicas y Deportivas I",
+    "semestre": 1,
+    "metadata": {
+      "nombre_uac": "ACTIVIDADES FÍSICAS Y DEPORTIVAS I",
+      "semestre": 1,
+      "creditos": 0,
+      "horas_semanales": 2
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Actividades Físicas y Deportivas",
+        "Cuidado Físico Corporal",
+        "Bienestar Emocional Afectivo"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar hábitos conscientes y reflexivos en torno a la actividad física como medio para el desarrollo integral.",
+        "Reconocer el vínculo entre el cuerpo, el bienestar y el entorno social."
+      ],
+      "propositos_formativos": [
+        "Acercar al estudiantado a la práctica física como una experiencia lúdica, consciente y significativa.",
+        "Reconocer la actividad física como un derecho humano fundamental que favorece su desarrollo físico y emocional.",
+        "Fomentar la convivencia respetuosa en la diversidad y otras formas de vinculación y disfrute de su propio cuerpo.",
+        "Explorar las emociones y las posibilidades motrices que experimenta en la práctica deportiva.",
+        "Promover la igualdad de oportunidades y la inclusión de todas las personas en el ámbito deportivo.",
+        "Identificar factores que afectan el bienestar y reconocer el poder de decisión ante prácticas riesgosas.",
+        "Ejerce una ciudadanía crítica a través del deporte y la cultura física.",
+        "Contribuir a la formación integral bajo el marco del MCCEMS 2025."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Comprende la importancia de la cultura física como un derecho humano que contribuye al bienestar integral y la salud.",
+        "tematicas": [
+          "Cultura física y bienestar",
+          "Derechos Humanos y Deporte",
+          "Salud Integral"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Identifica y practica hábitos de higiene, alimentación y descanso para favorecer su desarrollo físico y prevenir enfermedades.",
+        "tematicas": [
+          "Hábitos Saludables",
+          "Higiene Deportiva",
+          "Nutrición y Rendimiento",
+          "Importancia del Descanso"
+        ]
+      },
+      {
+        "id": 3,
+        "descripcion": "Participa en juegos y actividad física lúdica valorando el juego como una experiencia formativa y fuente de disfrute personal.",
+        "tematicas": [
+          "Juego Lúdico",
+          "Experiencia Formativa",
+          "Disfrute y Creatividad",
+          "Libertad de expresión motriz"
+        ]
+      },
+      {
+        "id": 4,
+        "descripcion": "Explora emociones en la práctica deportiva como oportunidad para la autorregulación y toma de decisiones saludables.",
+        "tematicas": [
+          "Psicomotricidad",
+          "Inteligencia Emocional en el Deporte",
+          "Toma de Decisiones",
+          "Manejo de Estrés"
+        ]
+      },
+      {
+        "id": 5,
+        "descripcion": "Identifica y cuestiona prácticas discriminatorias y de violencia en el deporte por razones de género o corporalidad.",
+        "tematicas": [
+          "Perspectiva de Género en el Deporte",
+          "Cuerpo y Diversidad",
+          "Respeto a la Dignidad",
+          "Inclusión y Equidad"
+        ]
+      }
+    ],
+    "orientaciones_didacticas": [
+      "Circuitos de acción motriz",
+      "Juegos cooperativos y tradicionales",
+      "Asambleas deportivas",
+      "Diarios de reflexión corporal"
+    ],
+    "criterios_evaluacion": [
+      {
+        "aspecto": "Participación Activa",
+        "descripcion": "Involucramiento constante en las prácticas físicas sugeridas.",
+        "porcentaje": 40
+      },
+      {
+        "aspecto": "Colaboración e Inclusión",
+        "descripcion": "Respeto a las reglas y a los compañeros durante el juego.",
+        "porcentaje": 30
+      },
+      {
+        "aspecto": "Reflexión sobre Bienestar",
+        "descripcion": "Capacidad de vincular la práctica física con el estado emocional.",
+        "porcentaje": 30
+      }
+    ],
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z"
+  },
+  {
+    "materia": "Actividades Físicas y Deportivas II",
+    "semestre": 2,
+    "metadata": {
+      "nombre_uac": "ACTIVIDADES FÍSICAS Y DEPORTIVAS II",
+      "semestre": 2,
+      "creditos": 0,
+      "horas_semanales": 2
+    },
+    "organizador_curricular": {
+      "categorias": [
+        "Actividades Físicas y Deportivas",
+        "Cuidado Físico Corporal",
+        "Bienestar Emocional Afectivo"
+      ],
+      "metas_aprendizaje": [
+        "Desarrollar capacidades psicomotrices y de integración grupal.",
+        "Fomentar la cultura de paz a través de la competencia sana."
+      ],
+      "propositos_formativos": [
+        "Profundizar en la práctica deportiva como forma de vinculación y disfrute.",
+        "Impulsar la construcción de relaciones interpersonales basadas en el respeto.",
+        "Desarrollar la capacidad de afiliación y respeto por la dignidad de cada persona.",
+        "Entender el cuidado de sí mismo como parte del bienestar colectivo.",
+        "Consolidar hábitos de vida activa frente al sedentarismo.",
+        "Contribuir a la formación integral bajo el marco del MCCEMS 2025."
+      ]
+    },
+    "progresiones": [
+      {
+        "id": 1,
+        "descripcion": "Ejecuta actividades de activación física sistemática para fortalecer capacidades físicas (fuerza, resistencia, velocidad).",
+        "tematicas": [
+          "Acondicionamiento Físico",
+          "Capacidades Condicionales",
+          "Fisiología del Ejercicio Básica"
+        ]
+      },
+      {
+        "id": 2,
+        "descripcion": "Participa en actividades deportivas de conjunto promoviendo la integración, el respeto y la colaboración grupal.",
+        "tematicas": [
+          "Deportes Colectivos",
+          "Estrategia y Táctica",
+          "Liderazgo y Trabajo en Equipo",
+          "Cultura de Paz"
+        ]
+      },
+      {
+        "id": 3,
+        "descripcion": "Determina su condición física actual a través de pruebas diagnósticas para establecer metas de mejora personal.",
+        "tematicas": [
+          "Evaluación Funcional",
+          "Test de Valoración Física",
+          "Plan de Mejora Individual"
+        ]
+      },
+      {
+        "id": 4,
+        "descripcion": "Analiza los riesgos del sedentarismo y propone alternativas para una vida activa en su comunidad.",
+        "tematicas": [
+          "Problemáticas de Salud Contemporáneas",
+          "Activación Comunitaria",
+          "Proyectos de Vida Activa"
+        ]
+      },
+      {
+        "id": 5,
+        "descripcion": "Aplica técnicas de respiración y relajación post-ejercicio para favorecer la recuperación física y mental.",
+        "tematicas": [
+          "Técnicas de Recuperación",
+          "Mindfulness y Deporte",
+          "Equilibrio Psicosomático"
+        ]
+      }
+    ],
+    "orientaciones_didacticas": [
+      "Torneos relámpago inclusivos",
+      "Pruebas de valoración física comparativas",
+      "Proyectos de impacto comunitario",
+      "Sesiones de relajación guiada"
+    ],
+    "criterios_evaluacion": [
+      {
+        "aspecto": "Desempeño Técnico-Motriz",
+        "descripcion": "Ejecución de movimientos y habilidades deportivas básicas.",
+        "porcentaje": 30
+      },
+      {
+        "aspecto": "Trabajo en Equipo",
+        "descripcion": "Colaboración asertiva en actividades grupales.",
+        "porcentaje": 40
+      },
+      {
+        "aspecto": "Compromiso con la Salud",
+        "descripcion": "Seguimiento de metas personales de activación física.",
+        "porcentaje": 30
+      }
+    ],
+    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
+    "fecha_extraccion": "2026-02-08T01:33:44.725Z"
   }
 ]

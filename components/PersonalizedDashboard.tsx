@@ -43,13 +43,24 @@ export const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ on
             console.log('✅ Planeaciones recuperadas:', plans.length);
 
             // Convertir a formato compatible con RecentPlaneaciones
-            const plansFormatted = plans.map(p => ({
-                id: p.id!,
-                materia: p.subject,
-                semestre: p.semester || 1,
-                fecha: p.createdAt?.toString() || new Date().toISOString(),
-                titulo: p.title
-            }));
+            const plansFormatted = plans.map(p => {
+                let fechaStr = new Date().toISOString();
+                if (p.createdAt) {
+                    if (typeof p.createdAt === 'string') {
+                        fechaStr = p.createdAt;
+                    } else if (typeof p.createdAt === 'object' && 'toDate' in p.createdAt) {
+                        fechaStr = p.createdAt.toDate().toISOString();
+                    }
+                }
+
+                return {
+                    id: p.id!,
+                    materia: p.subject,
+                    semestre: p.semester || 1,
+                    fecha: fechaStr,
+                    titulo: p.title
+                };
+            });
 
             setPlaneaciones(plansFormatted);
 
@@ -94,7 +105,7 @@ export const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ on
 
     const handleViewPlaneacion = (id: string) => {
         // Navegar a la vista de la planeación
-        onNavigate('library');
+        onNavigate('plans');
     };
 
     if (!user) {
@@ -124,7 +135,7 @@ export const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ on
                 {/* Acciones Rápidas */}
                 <QuickActions
                     onNewPlaneacion={() => onNavigate('generator')}
-                    onViewPlaneaciones={() => onNavigate('library')}
+                    onViewPlaneaciones={() => onNavigate('plans')}
                     onHerramientas={() => onNavigate('herramientas')}
                     onContexto={() => onNavigate('context')}
                 />
@@ -145,6 +156,8 @@ export const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ on
                     <RecentPlaneaciones
                         planeaciones={planeaciones}
                         onView={handleViewPlaneacion}
+                        onViewAll={() => onNavigate('plans')}
+                        onCreate={() => onNavigate('generator')}
                     />
                 )}
 
