@@ -483,8 +483,6 @@ export const MATERIAS_MCCEMS: Omit<Materia, 'id'>[] = [
         creadoPor: 'sistema'
     },
     {
-
-    {
         nombre: 'Actividades Físicas y Deportivas I 2025',
         clave: 'AFD-1-2025',
         grado: 1,
