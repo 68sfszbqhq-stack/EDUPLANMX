@@ -7,6 +7,22 @@ export const pecService = {
     getActiveProjects: async (schoolId: string): Promise<PECProject[]> => {
         if (!schoolId) return [];
 
+        if (schoolId === 'demo') {
+            return [
+                {
+                    id: 'demo-pec-1',
+                    name: 'Proyecto Demo: Agua Limpia',
+                    problemId: 'Escasez de agua',
+                    generalObjective: 'Cultura del agua eficiente',
+                    specificObjectives: [],
+                    justification: 'Comunidad sin acceso regular',
+                    duration: 'Ciclo 2026',
+                    stages: [],
+                    products: []
+                }
+            ] as unknown as PECProject[];
+        }
+
         try {
             const docRef = doc(db, 'pmc', schoolId);
             const docSnap = await getDoc(docRef);

@@ -39,8 +39,15 @@ export const getStudentContextSummary = async (): Promise<string> => {
         Intereses Principales del Grupo: ${interesesTop}.
         
         IMPORTANTE: Adapta las estrategias didácticas a este perfil específico (ej. si hay muchos kinestésicos, incluye actividades prácticas).`;
-    } catch (e) {
+    } catch (e: any) {
         console.error("Error fetching student stats", e);
-        return "Error al analizar base de datos de alumnos.";
+        // Fallback para modo invitado o error de permisos
+        if (e.code === 'permission-denied' || e.message?.includes('Missing or insufficient permissions')) {
+            return `GRUPO DEMOSTRATIVO (MOCK):
+            Perfil de Aprendizaje: 10 Visuales, 5 Auditivos, 15 Kinestésicos.
+            Contexto: Grupo activo y participativo, intereses en tecnología y deportes.
+            Nivel: Promedio 8.5.`;
+        }
+        return "Grupo estándar (Sin datos específicos).";
     }
 }
