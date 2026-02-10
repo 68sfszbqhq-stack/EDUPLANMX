@@ -635,8 +635,12 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           <div className="space-y-2">
             <label className="text-xs font-bold text-slate-500 uppercase">Evaluación</label>
             <select value={evaluationType} onChange={(e) => setEvaluationType(e.target.value)} className="w-full p-2 border rounded-lg text-sm">
-              <option value="Rúbrica Detallada">Rúbrica</option>
+              <option value="Rúbrica Detallada">Rúbrica Analítica</option>
               <option value="Lista de Cotejo">Lista de Cotejo</option>
+              <option value="Escala Estimativa">Escala Estimativa</option>
+              <option value="Diario de Clase">Diario de Clase</option>
+              <option value="Portafolio de Evidencias">Portafolio de Evidencias</option>
+              <option value="Guía de Observación">Guía de Observación</option>
             </select>
           </div>
         </div>
