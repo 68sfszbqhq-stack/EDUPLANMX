@@ -23,7 +23,7 @@ export const generateLessonPlan = async (
   const ai = new GoogleGenAI({ apiKey: effectiveApiKey });
 
   const model = 'gemini-1.5-flash';
-  console.log('🤖 Usando modelo Gemini:', model);
+  console.log('🤖 Usando modelo Gemini (v1.5 Stable):', model);
 
   const programasOficiales = programasSEPService.buscarPorMateria(subject.subjectName);
   const programaOficial = programasOficiales.length > 0 ? programasOficiales[0] : null;
