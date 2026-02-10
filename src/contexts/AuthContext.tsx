@@ -107,6 +107,22 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             throw error;
         }
     };
+    const loginAsGuest = () => {
+        setUser({
+            id: 'guest',
+            email: 'invitado@eduplan.mx',
+            nombre: 'Maestro',
+            apellidoPaterno: 'Invitado',
+            apellidoMaterno: '',
+            rol: 'guest',
+            activo: true,
+            fechaCreacion: new Date().toISOString(),
+            ultimoAcceso: new Date().toISOString(),
+            onboardingCompleto: true, // Saltamos onboarding
+            schoolName: 'Escuela Demo',
+            schoolId: 'demo'
+        } as Usuario);
+    };
 
     const value: AuthContextType = {
         user,
@@ -114,6 +130,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         login,
         loginWithGoogle,
         logout,
+        loginAsGuest, // Exportamos
         isAuthenticated: !!user
     };
 

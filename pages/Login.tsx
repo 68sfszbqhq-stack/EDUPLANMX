@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LogIn, Mail, Lock, AlertCircle, School } from 'lucide-react';
+import { LogIn, Mail, Lock, AlertCircle, School, Sparkles } from 'lucide-react';
 import { useAuth } from '../src/contexts/AuthContext';
 
 const Login: React.FC = () => {
@@ -9,7 +9,7 @@ const Login: React.FC = () => {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const { login, loginWithGoogle } = useAuth();
+    const { login, loginWithGoogle, loginAsGuest } = useAuth();
     const navigate = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -153,6 +153,19 @@ const Login: React.FC = () => {
                             <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
                         </svg>
                         Continuar con Google
+                    </button>
+
+                    {/* Botón de Invitado */}
+                    <button
+                        onClick={async () => {
+                            await loginAsGuest();
+                            navigate('/maestro/dashboard');
+                        }}
+                        type="button"
+                        className="w-full mt-3 bg-slate-100 text-slate-700 py-3 px-4 rounded-xl font-bold hover:bg-slate-200 transition-all flex items-center justify-center gap-2 border border-slate-200"
+                    >
+                        <Sparkles className="w-4 h-4 text-amber-500" />
+                        Probar Demo como Invitado
                     </button>
 
                     {/* Link de Recuperación (futuro) */}

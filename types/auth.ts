@@ -2,7 +2,7 @@
 // TIPOS PARA AUTENTICACIÓN Y ROLES
 // ============================================
 
-export type UserRole = 'superadmin' | 'directivo' | 'maestro' | 'alumno';
+export type UserRole = 'superadmin' | 'directivo' | 'maestro' | 'alumno' | 'guest';
 
 export interface Usuario {
     id: string;
@@ -69,6 +69,7 @@ export interface AuthContextType {
     loginWithGoogle: () => Promise<void>;
     logout: () => Promise<void>;
     isAuthenticated: boolean;
+    loginAsGuest: () => void; // Nuevo método
 }
 
 export interface LoginCredentials {
