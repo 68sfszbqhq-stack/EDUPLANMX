@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import { Sparkles, Loader2, Save, Send, Copy, Download, CheckCircle2, Calendar, User, BookOpen, Clock, Table as TableIcon, List, Target } from 'lucide-react';
+import { Sparkles, Loader2, Save, Send, Copy, Download, CheckCircle2, Calendar, BookOpen, Clock, List, Target, Brain, Layers, Eye, FileText, User, Table as TableIcon } from 'lucide-react';
 import { useReactToPrint } from 'react-to-print';
 import { generateLessonPlan } from '../services/geminiService';
 import { programasSEPService } from '../src/services/programasSEPService';
@@ -10,6 +9,7 @@ import PlanDocument from './PlanDocument';
 import { PedagogicalAuditor } from './PedagogicalAuditor';
 import { pecService } from '../src/services/pecService';
 import { PECProject } from '../types';
+import { useAuth } from '../src/contexts/AuthContext';
 
 interface PlanGeneratorProps {
   school: SchoolContext;
@@ -18,46 +18,36 @@ interface PlanGeneratorProps {
   onSave: (plan: LessonPlan) => void;
 }
 
-import { useAuth } from '../src/contexts/AuthContext';
-
 const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherName, onSave }) => {
   const { user } = useAuth();
-  // Estados del Formulario Guiado
-  // Estados del Formulario Guiado
-  const [apiKey, setApiKey] = useState(''); // Estado para la API Key Manual
+
+  // --- Estados Originales ---
+  const [apiKey, setApiKey] = useState(''); // Estado para la API Key Manual (PRESERVADO)
   const [progresionesDisponibles, setProgresionesDisponibles] = useState<{ id: number, descripcion: string }[]>([]);
   const [selectedProgression, setSelectedProgression] = useState<string>('');
   const [specificTopic, setSpecificTopic] = useState('');
   const [numSessions, setNumSessions] = useState(1);
   const [evaluationType, setEvaluationType] = useState('Rúbrica');
   const [semestre, setSemestre] = useState<number | null>(null);
-
-  // Nuevos Estados requeridos por Supervisión
   const [hoursPerWeek, setHoursPerWeek] = useState(4);
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-
-  // Nuevos Estados de Mejora
   const [didacticStrategy, setDidacticStrategy] = useState('Aprendizaje Basado en Proyectos (ABP)');
-
-  // Estado PAEC Flexible (Manual o Vinculado)
   const [paecMode, setPaecMode] = useState<'manual' | 'linked'>('manual');
-  const [paecProblem, setPaecProblem] = useState(''); // Modo manual
-
-  // Modo Vinculado (PEC)
+  const [paecProblem, setPaecProblem] = useState('');
   const [activeProjects, setActiveProjects] = useState<PECProject[]>([]);
   const [selectedPecId, setSelectedPecId] = useState('');
   const [pecActivity, setPecActivity] = useState('');
-
   const [studentContextSummary, setStudentContextSummary] = useState<string>('');
-
-  // Estados de carga y resultado
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<LessonPlan | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
-  // Ref para impresión
+  // --- NUEVO: ESTADO PARA LA ACTIVIDAD DEL TALLER (Paso 2 del PDF) ---
+  // Mapeamos: Problema Detectado -> Función Pedagógica
+  const [pedagogicalNeed, setPedagogicalNeed] = useState<string>('structure');
+
   const printRef = useRef<HTMLDivElement>(null);
 
   const handlePrint = useReactToPrint({
@@ -65,7 +55,6 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     documentTitle: `Planeacion-${subject.subjectName}-${new Date().toLocaleDateString()}`,
   });
 
-  // Cargar progresiones oficiales al iniciar o cambiar materia
   useEffect(() => {
     if (subject.subjectName) {
       const programas = programasSEPService.buscarPorMateria(subject.subjectName);
@@ -79,7 +68,6 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     }
   }, [subject.subjectName]);
 
-  // Cargar contexto de estudiantes (estadísticas reales)
   useEffect(() => {
     const loadStudentStats = async () => {
       const stats = await getStudentContextSummary();
@@ -88,7 +76,6 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     loadStudentStats();
   }, []);
 
-  // Cargar Proyectos PEC Activos
   useEffect(() => {
     const loadPecs = async () => {
       if (user?.schoolId) {
@@ -100,7 +87,6 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   }, [user?.schoolId]);
 
   const handleGenerate = async () => {
-    // Validación básica
     if (!selectedProgression && !specificTopic) {
       setError("Por favor selecciona una progresión o escribe un tema.");
       return;
@@ -110,7 +96,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     setError(null);
     setResult(null);
 
-    // Determinar contexto PAEC según modo
+    // --- LÓGICA PAEC/PEC ---
     let paecContext = '';
     let finalPaecData: any = null;
 
@@ -122,83 +108,112 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
         projectTrigger: 'Proyecto integrador'
       } : null;
     } else {
-      // Modo Vinculado
       const pec = activeProjects.find(p => p.id === selectedPecId);
       if (pec) {
         paecContext = `
            VINCULACIÓN AL PROYECTO ESCOLAR COMUNITARIO (PEC):
            - Nombre Proyecto: "${pec.name}"
            - Problemática: "${pec.problemId}"
-           - Justificación: "${pec.justification}"
-           - Objetivo General: "${pec.generalObjective}"
-           - ACTIVIDAD ESPECÍFICA A DESARROLLAR EN ESTA CLASE: "${pecActivity}"
-           
-           INSTRUCCIÓN SOBRE PEC:
-           La planeación DEBE girar en torno a contribuir a este proyecto desde la asignatura de ${subject.subjectName}.
+           - Objetivo: "${pec.generalObjective}"
+           - ACTIVIDAD VINCULADA: "${pecActivity}"
          `;
         finalPaecData = {
           isLinked: true,
-          communityProblem: pec.name, // Usamos el nombre del proyecto como "problema" visible
+          communityProblem: pec.name,
           projectTrigger: pec.generalObjective
         };
       }
     }
 
-    // Construcción del Prompt Estructurado para la IA
-    const promptEstructurado = `
-      Genera una planeación didáctica para la materia "${subject.subjectName}" (Semestre ${semestre || 'General'}).
-      
-      CONTEXTO ESCOLAR:
-      - Escuela: ${school.schoolName}
-      - Turno: ${school.shift || 'Matutino'}
-      - Municipio: ${school.municipality || 'Puebla'}
-      - Visión: ${school.vision}
-      
-      DATOS DEL DOCENTE:
-      - Nombre: ${teacherName || 'Por definir'}
-      
-      CONFIGURACIÓN DE TIEMPO (REQUERIDO):
-      - Sesiones: ${numSessions}
-      - Horas por semana: ${hoursPerWeek}
-      - Periodo: Del ${startDate || 'Inicio'} al ${endDate || 'Fin'}
-      - DURACIÓN POR SESIÓN: 50 MINUTOS (ESTRICTO).
-      
-      DIAGNÓSTICO DEL GRUPO (DATOS REALES):
-      ${studentContextSummary || 'No hay datos de alumnos registrados.'}
+    // --- LÓGICA DEL TALLER: INYECCIÓN DE "PERSONA" IA ---
+    // Esto reemplaza la necesidad de que el docente cambie de app (Diffit, Canva, etc.)
+    // El "Prompt" que pide el PDF se construye aquí dinámicamente.
 
-      CONFIGURACIÓN PEDAGÓGICA:
-      1. PROGRESIÓN OFICIAL: "${selectedProgression || 'No especificada'}"
-      2. TEMA / SITUACIÓN: "${specificTopic}"
-      3. ESTRATEGIA DIDÁCTICA: "${didacticStrategy}"
-      4. ESTRATEGIA DE EVALUACIÓN: "${evaluationType}"
+    let aiPersonaInstruction = "";
+
+    switch (pedagogicalNeed) {
+      case 'structure': // Problema: Secuencias confusas / Actividades poco claras
+        aiPersonaInstruction = `
+          ROL: Actúa como un Diseñador Instruccional experto (Estilo ChatGPT/Teachy).
+          PRIORIDAD: Estructura lógica y claridad en las consignas.
+          INSTRUCCIÓN: Asegúrate de que el Inicio, Desarrollo y Cierre estén perfectamente delimitados.
+          Usa verbos operativos claros (Taxonomía de Bloom).
+        `;
+        break;
+      case 'differentiation': // Problema: Grupos heterogéneos / Neurodivergencia
+        aiPersonaInstruction = `
+          ROL: Actúa como experto en Educación Inclusiva y DUA (Estilo MagicSchool/Diffit).
+          PRIORIDAD: Diferenciación de contenidos.
+          INSTRUCCIÓN: Para la actividad principal, ofrece 3 variantes:
+          1. Nivel Básico (Apoyo visual/guiado).
+          2. Nivel Estándar.
+          3. Nivel Avanzado (Reto autónomo).
+          Incluye notas sobre ajustes razonables para neurodivergencia.
+        `;
+        break;
+      case 'visualization': // Problema: Dificultad para explicar ideas abstractas
+        aiPersonaInstruction = `
+          ROL: Actúa como experto en Visual Thinking (Estilo Canva/Miro).
+          PRIORIDAD: Explicación visual y analogías.
+          INSTRUCCIÓN: En la sección de desarrollo, sugiere específicamente qué organizadores gráficos,
+          diagramas o metáforas visuales debe dibujar el docente en el pizarrón.
+          Describe infografías sugeridas que faciliten la comprensión.
+        `;
+        break;
+      case 'evaluation': // Problema: Evaluar procesos complejos
+        aiPersonaInstruction = `
+          ROL: Actúa como especialista en Evaluación Formativa (Estilo Copilot).
+          PRIORIDAD: Retroalimentación y metacognición.
+          INSTRUCCIÓN: Desarrolla una Rúbrica Analítica detallada.
+          Incluye preguntas detonadoras para la autoevaluación de los alumnos al final de la clase.
+        `;
+        break;
+      default:
+        aiPersonaInstruction = "ROL: Docente experto en NEM.";
+    }
+
+    // Construcción del Prompt Estructurado (El "Buen Prompt" del PDF)
+    const promptEstructurado = `
+      ${aiPersonaInstruction}
+
+      Genera una planeación didáctica para "${subject.subjectName}" (Semestre ${semestre || 'General'}).
+      
+      CONTEXTO Y DIAGNÓSTICO (INPUT HUMANO):
+      - Escuela: ${school.schoolName} (${school.municipality})
+      - Diagnóstico Grupo: ${studentContextSummary || 'Grupo estándar'}
+      
+      CONFIGURACIÓN TÉCNICA:
+      - Sesiones: ${numSessions} (${hoursPerWeek} hrs/sem)
+      - Progresión: "${selectedProgression || 'No especificada'}"
+      - Tema: "${specificTopic}"
+      - Estrategia Base: "${didacticStrategy}"
+      - Evaluación: "${evaluationType}"
       
       ${paecContext}
       
-      INSTRUCCIONES CLAVE:
-      - Usa la Estrategia Didáctica seleccionada como eje de la secuencia.
-      - Si hay Problemática PAEC/PEC, vincula todas las actividades a ella.
-      - Detalla actividad docente vs estudiante.
-      - Incluye tabla de evaluación con criterios específicos.
-      - IMPORTANTE: Ajusta los tiempos de Inicio, Desarrollo y Cierre para que sumen EXACTAMENTE 50 minutos por sesión (Ej. 10min, 30min, 10min).
+      SALIDA ESPERADA:
+      Genera el documento JSON con la estructura de planeación completa.
+      Asegura que incluyas una LISTA DE RECURSOS DIDÁCTICOS (Materiales/Digitales) para cumplir auditoría.
+      Asegura que el campo 'activities' refleje la PRIORIDAD seleccionada arriba.
     `;
 
     try {
-      // Pasamos la apiKey manual (si existe) al servicio
+      // PRESERVADO: Pasamos la apiKey manual (si existe) al servicio
       const plan = await generateLessonPlan(promptEstructurado, school, subject, apiKey);
 
-      // FORZAR DATOS DEL USUARIO EN LA PLANEACIÓN FINAL
       const finalPlan: LessonPlan = {
         ...plan,
         meta: {
           ...plan.meta,
           teacher: teacherName || plan.meta?.teacher || '',
-          cycle: plan.meta?.cycle || '2024-2025',
+          cycle: plan.meta?.cycle || '2025-2026',
           period: plan.meta?.period || 'Semestral',
           gradeGroup: plan.meta?.gradeGroup || 'General',
           totalSessions: numSessions,
           hoursPerWeek: hoursPerWeek,
           startDate: startDate || 'Por definir',
-          endDate: endDate || 'Por definir'
+          endDate: endDate || 'Por definir',
+          methodology: didacticStrategy, // Persistimos la estrategia seleccionada
         },
         paec: finalPaecData || plan.paec,
         pecLinkage: paecMode === 'linked' ? {
@@ -238,10 +253,10 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
       <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm no-print">
         <h3 className="text-xl font-bold mb-6 text-slate-800 flex items-center gap-2">
           <Sparkles className="w-5 h-5 text-amber-500" />
-          Configurador de Clase (Oficial SEP)
+          Generador Inteligente NEM (Actividad Taller IA)
         </h3>
 
-        {/* 0. API KEY MANUAL (NUEVO) */}
+        {/* 0. API KEY MANUAL (PRESERVADO) */}
         <div className="mb-6 p-4 bg-indigo-50 rounded-xl border border-indigo-100">
           <label className="text-xs font-bold text-indigo-700 uppercase flex items-center gap-2 mb-2">
             <Sparkles className="w-3 h-3" /> API Key de Gemini (Opcional - Para mayor velocidad)
@@ -260,43 +275,107 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 
-
-          {/* 1. Selección de Progresión */}
+          {/* 1. SELECCIÓN DE PROGRESIÓN (Igual) */}
           <div className="col-span-1 md:col-span-2 space-y-2">
             <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-indigo-500" />
-              Progresión de Aprendizaje ({progresionesDisponibles.length} disponibles)
+              1. ¿Qué vamos a enseñar? (Contenido Curricular)
             </label>
             <select
               value={selectedProgression}
               onChange={(e) => setSelectedProgression(e.target.value)}
-              className="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-indigo-500 focus:bg-white transition-all text-sm"
+              className="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-indigo-500 text-sm"
             >
-              <option value="">-- Selecciona una progresión oficial --</option>
+              <option value="">-- Selecciona progresión oficial SEP --</option>
               {progresionesDisponibles.map(p => (
                 <option key={p.id} value={p.descripcion}>
                   {p.id}. {p.descripcion.substring(0, 120)}...
                 </option>
               ))}
             </select>
-          </div>
-
-          {/* 2. Tema Específico */}
-          <div className="space-y-2">
-            <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
-              <Target className="w-4 h-4 text-emerald-500" />
-              Tema o Situación Específica
-            </label>
             <input
               type="text"
               value={specificTopic}
               onChange={(e) => setSpecificTopic(e.target.value)}
-              placeholder="Ej. Ciberseguridad y redes sociales..."
-              className="w-full p-3 rounded-xl border border-slate-200 bg-white focus:border-emerald-500 transition-all text-sm"
+              placeholder="O escribe un tema específico..."
+              className="w-full mt-2 p-3 rounded-xl border border-slate-200 text-sm"
             />
           </div>
 
-          {/* 3. Estrategia y Vinculación PEC (Modificado) */}
+          {/* --- NUEVA SECCIÓN: DIAGNÓSTICO DE NECESIDAD (Actividad PDF) --- */}
+          <div className="col-span-1 md:col-span-2 bg-indigo-50 p-5 rounded-2xl border border-indigo-100">
+            <label className="text-sm font-bold text-indigo-900 flex items-center gap-2 mb-3">
+              <Brain className="w-5 h-5" />
+              2. Diagnóstico de Necesidad Docente (Selección de Función IA)
+            </label>
+            <p className="text-xs text-indigo-700 mb-4">
+              Basado en el Taller de IA: ¿En qué parte del diseño didáctico necesitas más apoyo hoy?
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+              {/* Opción 1: Estructura (ChatGPT Style) */}
+              <button
+                onClick={() => setPedagogicalNeed('structure')}
+                className={`p-3 rounded-xl border text-left transition-all flex flex-col gap-2 ${pedagogicalNeed === 'structure'
+                  ? 'bg-white border-indigo-500 ring-2 ring-indigo-200 shadow-md'
+                  : 'bg-white/50 border-indigo-100 hover:bg-white'
+                  }`}
+              >
+                <div className="p-2 bg-blue-100 w-fit rounded-lg"><List className="w-4 h-4 text-blue-600" /></div>
+                <div>
+                  <div className="font-bold text-sm text-slate-800">Estructurar</div>
+                  <div className="text-[10px] text-slate-500">Secuencias claras, inicio-desarrollo-cierre.</div>
+                </div>
+              </button>
+
+              {/* Opción 2: Diferenciación (Diffit Style) */}
+              <button
+                onClick={() => setPedagogicalNeed('differentiation')}
+                className={`p-3 rounded-xl border text-left transition-all flex flex-col gap-2 ${pedagogicalNeed === 'differentiation'
+                  ? 'bg-white border-indigo-500 ring-2 ring-indigo-200 shadow-md'
+                  : 'bg-white/50 border-indigo-100 hover:bg-white'
+                  }`}
+              >
+                <div className="p-2 bg-purple-100 w-fit rounded-lg"><Layers className="w-4 h-4 text-purple-600" /></div>
+                <div>
+                  <div className="font-bold text-sm text-slate-800">Diferenciar (DUA)</div>
+                  <div className="text-[10px] text-slate-500">Adaptar para neurodivergencia o niveles.</div>
+                </div>
+              </button>
+
+              {/* Opción 3: Visualización (Canva Logic) */}
+              <button
+                onClick={() => setPedagogicalNeed('visualization')}
+                className={`p-3 rounded-xl border text-left transition-all flex flex-col gap-2 ${pedagogicalNeed === 'visualization'
+                  ? 'bg-white border-indigo-500 ring-2 ring-indigo-200 shadow-md'
+                  : 'bg-white/50 border-indigo-100 hover:bg-white'
+                  }`}
+              >
+                <div className="p-2 bg-pink-100 w-fit rounded-lg"><Eye className="w-4 h-4 text-pink-600" /></div>
+                <div>
+                  <div className="font-bold text-sm text-slate-800">Visualizar</div>
+                  <div className="text-[10px] text-slate-500">Generar analogías y diagramas explicativos.</div>
+                </div>
+              </button>
+
+              {/* Opción 4: Evaluación (Copilot Logic) */}
+              <button
+                onClick={() => setPedagogicalNeed('evaluation')}
+                className={`p-3 rounded-xl border text-left transition-all flex flex-col gap-2 ${pedagogicalNeed === 'evaluation'
+                  ? 'bg-white border-indigo-500 ring-2 ring-indigo-200 shadow-md'
+                  : 'bg-white/50 border-indigo-100 hover:bg-white'
+                  }`}
+              >
+                <div className="p-2 bg-emerald-100 w-fit rounded-lg"><FileText className="w-4 h-4 text-emerald-600" /></div>
+                <div>
+                  <div className="font-bold text-sm text-slate-800">Evaluar</div>
+                  <div className="text-[10px] text-slate-500">Rúbricas detalladas y retroalimentación.</div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          {/* 3. ESTRATEGIA Y PEC */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
@@ -308,12 +387,11 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
                 onChange={(e) => setDidacticStrategy(e.target.value)}
                 className="w-full p-3 rounded-xl border border-slate-200 bg-white focus:border-orange-500 text-sm"
               >
-                <option value="Aprendizaje Basado en Proyectos (ABP)">Aprendizaje Basado en Proyectos (ABP)</option>
-                <option value="Aprendizaje Basado en Problemas (ABPr)">Aprendizaje Basado en Problemas (ABPr)</option>
+                <option value="Aprendizaje Basado en Proyectos (ABP)">ABP (Proyectos)</option>
+                <option value="Aprendizaje Basado en Problemas (ABPr)">ABPr (Problemas)</option>
                 <option value="Estudio de Casos">Estudio de Casos</option>
-                <option value="Aprendizaje Colaborativo">Aprendizaje Colaborativo</option>
                 <option value="Aula Invertida">Aula Invertida</option>
-                <option value="Indagación (STEAM)">Indagación (STEAM)</option>
+                <option value="Gamificación">Gamificación</option>
               </select>
             </div>
 
@@ -321,19 +399,11 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
               <div className="flex justify-between items-center mb-1">
                 <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
                   <Target className="w-4 h-4 text-pink-500" />
-                  Vinculación PEC
+                  Vinculación PEC (Comunidad)
                 </label>
                 <div className="flex bg-slate-100 rounded-lg p-0.5">
-                  <button
-                    onClick={() => setPaecMode('manual')}
-                    className={`px-2 py-0.5 text-[10px] rounded-md font-bold transition-all ${paecMode === 'manual' ? 'bg-white shadow text-slate-800' : 'text-slate-400'}`}>
-                    Manual
-                  </button>
-                  <button
-                    onClick={() => setPaecMode('linked')}
-                    className={`px-2 py-0.5 text-[10px] rounded-md font-bold transition-all ${paecMode === 'linked' ? 'bg-pink-500 shadow text-white' : 'text-slate-400'}`}>
-                    Proyecto Vinculado
-                  </button>
+                  <button onClick={() => setPaecMode('manual')} className={`px-2 py-0.5 text-[10px] rounded-md font-bold transition-all ${paecMode === 'manual' ? 'bg-white shadow text-slate-800' : 'text-slate-400'}`}>Manual</button>
+                  <button onClick={() => setPaecMode('linked')} className={`px-2 py-0.5 text-[10px] rounded-md font-bold transition-all ${paecMode === 'linked' ? 'bg-pink-500 shadow text-white' : 'text-slate-400'}`}>Vinculado</button>
                 </div>
               </div>
 
@@ -342,15 +412,15 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
                   type="text"
                   value={paecProblem}
                   onChange={(e) => setPaecProblem(e.target.value)}
-                  placeholder="Ej. Falta de agua, Contaminación..."
-                  className="w-full p-3 rounded-xl border border-slate-200 bg-white focus:border-pink-500 text-sm"
+                  placeholder="Ej. Contaminación, Violencia..."
+                  className="w-full p-3 rounded-xl border border-slate-200 text-sm"
                 />
               ) : (
                 <div className="space-y-2">
                   <select
                     value={selectedPecId}
                     onChange={(e) => setSelectedPecId(e.target.value)}
-                    className="w-full p-3 rounded-xl border border-pink-200 bg-pink-50 focus:border-pink-500 text-sm text-pink-900 font-medium"
+                    className="w-full p-3 rounded-xl border border-pink-200 bg-pink-50 focus:border-pink-500 text-sm"
                   >
                     <option value="">-- Selecciona Proyecto Activo --</option>
                     {activeProjects.map(p => (
@@ -362,8 +432,8 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
                       type="text"
                       value={pecActivity}
                       onChange={(e) => setPecActivity(e.target.value)}
-                      placeholder="¿Qué actividad específica del proyecto harás?"
-                      className="w-full p-2 rounded-lg border border-pink-200 bg-white text-xs"
+                      placeholder="Actividad específica del PEC"
+                      className="w-full p-2 rounded-lg border border-pink-200 text-xs"
                     />
                   )}
                 </div>
@@ -371,59 +441,28 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             </div>
           </div>
 
-          {/* 4. Configuración Técnica Detallada */}
+          {/* 4. CONFIGURACIÓN TÉCNICA (Ocultable) */}
           <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-slate-100">
-
-            {/* Sesiones y Horas */}
-            <div className="space-y-4">
-              <div>
-                <label className="text-xs font-bold text-slate-500 uppercase flex items-center gap-2 mb-2">
-                  <Clock className="w-3 h-3" /> Duración
-                </label>
-                <div className="grid grid-cols-2 gap-2">
-                  <select
-                    value={numSessions}
-                    onChange={(e) => setNumSessions(Number(e.target.value))}
-                    className="w-full p-2 rounded-lg border border-slate-200 text-sm"
-                  >
-                    {[1, 2, 3, 4, 5, 6].map(n => <option key={n} value={n}>{n} Sesiones</option>)}
-                  </select>
-                  <select
-                    value={hoursPerWeek}
-                    onChange={(e) => setHoursPerWeek(Number(e.target.value))}
-                    className="w-full p-2 rounded-lg border border-slate-200 text-sm"
-                  >
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map(n => <option key={n} value={n}>{n} Hrs/Sem</option>)}
-                  </select>
-                </div>
+            <div className="space-y-2">
+              <label className="text-xs font-bold text-slate-500 uppercase">Duración</label>
+              <div className="flex gap-2">
+                <select value={numSessions} onChange={(e) => setNumSessions(Number(e.target.value))} className="w-full p-2 border rounded-lg text-sm">
+                  {[1, 2, 3, 4, 5].map(n => <option key={n} value={n}>{n} Sesiones</option>)}
+                </select>
               </div>
             </div>
-
-            {/* Fechas */}
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 uppercase flex items-center gap-2 mb-2">
-                <Calendar className="w-3 h-3" /> Periodo de Aplicación
-              </label>
+              <label className="text-xs font-bold text-slate-500 uppercase">Fechas</label>
               <div className="grid grid-cols-2 gap-2">
-                <input type="date" className="p-2 border border-slate-200 rounded-lg text-xs" value={startDate} onChange={e => setStartDate(e.target.value)} />
-                <input type="date" className="p-2 border border-slate-200 rounded-lg text-xs" value={endDate} onChange={e => setEndDate(e.target.value)} />
+                <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} className="p-2 border rounded-lg text-xs" />
+                <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)} className="p-2 border rounded-lg text-xs" />
               </div>
             </div>
-
-            {/* Evaluación */}
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-500 uppercase flex items-center gap-2 mb-2">
-                <List className="w-3 h-3" /> Tipo de Evaluación
-              </label>
-              <select
-                value={evaluationType}
-                onChange={(e) => setEvaluationType(e.target.value)}
-                className="w-full p-2 rounded-lg border border-slate-200 bg-white focus:border-purple-500 text-sm"
-              >
-                <option value="Rúbrica Detallada">Rúbrica Detallada</option>
+              <label className="text-xs font-bold text-slate-500 uppercase">Evaluación</label>
+              <select value={evaluationType} onChange={(e) => setEvaluationType(e.target.value)} className="w-full p-2 border rounded-lg text-sm">
+                <option value="Rúbrica Detallada">Rúbrica</option>
                 <option value="Lista de Cotejo">Lista de Cotejo</option>
-                <option value="Guía de Observación">Guía de Observación</option>
-                <option value="Proyecto Transversal">Proyecto Transversal</option>
               </select>
             </div>
           </div>
@@ -438,53 +477,35 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             : 'bg-indigo-600 text-white hover:bg-indigo-700 active:scale-95'
             } `}
         >
-          {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
-          {isLoading ? 'Generando Planeación Oficial...' : 'Generar Planeación Completa'}
+          {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Sparkles className="w-5 h-5" />}
+          {isLoading ? 'Aplicando Criterio Pedagógico IA...' : 'Generar Planeación Personalizada'}
         </button>
       </div>
 
       {error && (
-        <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-2xl animate-in zoom-in duration-300">
+        <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-2xl">
           {error}
         </div>
       )}
 
       {result && (
         <div className="animate-in fade-in slide-in-from-top-4 duration-700">
-          {/* Controls - Hidden in print */}
           <div className="flex flex-wrap justify-between items-center mb-6 gap-4 no-print">
             <h4 className="font-bold text-slate-700 uppercase tracking-widest text-xs flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-500" /> Planeación Lista
             </h4>
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={handleSaveToLibrary}
-                className="flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-700 rounded-xl text-sm font-bold hover:bg-indigo-100 transition-colors"
-                title="Guardar en historial"
-              >
+            <div className="flex gap-2">
+              <button onClick={handleSaveToLibrary} className="flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-700 rounded-xl text-sm font-bold hover:bg-indigo-100">
                 <Save className="w-4 h-4" /> Guardar
               </button>
-
-              <button
-                onClick={handleCopyToClipboard}
-                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all ${copied ? 'bg-emerald-500 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
-                title="Copiar texto plano"
-              >
-                {copied ? <CheckCircle2 className="w-4 h-4" /> : <Copy className="w-4 h-4" />}{copied ? 'Copiado' : 'Copiar Texto'}
-              </button>
-
-              <button
-                onClick={() => handlePrint()}
-                className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-xl text-sm font-bold hover:bg-slate-800 transition-shadow shadow-lg shadow-slate-200"
-                title="Imprimir o guardar como PDF"
-              >
-                <Download className="w-4 h-4" /> Exportar a PDF
+              <button onClick={() => handlePrint()} className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-xl text-sm font-bold hover:bg-slate-800">
+                <Download className="w-4 h-4" /> PDF
               </button>
             </div>
           </div>
 
-          {/* Auditoría Pedagógica */}
-          <div className="mb-8 no-print animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+          {/* AUDITORÍA: Cumple con el "Paso 3: Lectura crítica" del PDF */}
+          <div className="mb-8 no-print">
             <PedagogicalAuditor
               plan={result}
               subjectName={subject.subjectName}
@@ -492,7 +513,6 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             />
           </div>
 
-          {/* Printable Document */}
           <div className="overflow-auto border border-slate-100 rounded-3xl shadow-xl print:shadow-none print:border-none print:rounded-none">
             <PlanDocument
               ref={printRef}

@@ -59,6 +59,10 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                         <span className="font-bold text-slate-900">{plan.meta?.gradeGroup}</span>
                     </div>
                     <div className="p-2">
+                        <span className="block font-bold text-slate-500 uppercase text-[9px]">Metodología Activa</span>
+                        <span className="font-bold text-slate-900 bg-orange-50 px-1">{plan.meta?.methodology || 'No definida'}</span>
+                    </div>
+                    <div className="p-2">
                         <span className="block font-bold text-slate-500 uppercase text-[9px]">Periodo de Trabajo</span>
                         <span className="font-bold text-slate-900">
                             {plan.meta?.startDate || 'Inicio'} - {plan.meta?.endDate || 'Fin'}
@@ -160,25 +164,40 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                 </div>
             </div>
 
-            {/* 5. FUNDAMENTACIÓN PEDAGÓGICA */}
+            {/* 5. FUNDAMENTACIÓN Y SOCIOEMOCIONAL (DESGLOSE 2024) */}
             <div className="mb-6 border border-slate-300 rounded-sm">
                 <div className="bg-slate-100 px-3 py-1 border-b border-slate-300 font-bold text-xs uppercase print:bg-slate-200">
-                    V. Fundamentación y Transversalidad
+                    V. Fundamentación y Ámbito Socioemocional
                 </div>
                 <div className="p-3 text-xs space-y-3">
+
+                    {/* Nueva Tabla Socioemocional */}
+                    <div className="border border-indigo-100 bg-indigo-50/50 rounded p-2 mb-2">
+                        <div className="grid grid-cols-2 gap-4">
+                            <div>
+                                <span className="block font-bold text-indigo-900 text-[9px] uppercase">Ámbito Socioemocional</span>
+                                <p className="text-indigo-800">{plan.fundamento?.socioemotionalScope || 'Bienestar socioemocional general'}</p>
+                            </div>
+                            <div>
+                                <span className="block font-bold text-indigo-900 text-[9px] uppercase">Meta Socioemocional</span>
+                                <p className="text-indigo-800">{plan.fundamento?.socioemotionalMeta || 'Fomentar la autorregulación.'}</p>
+                            </div>
+                            <div className="col-span-2 border-t border-indigo-200 pt-1">
+                                <span className="block font-bold text-indigo-900 text-[9px] uppercase">Contenidos Formativos (Socioemocional)</span>
+                                <p className="text-indigo-800 italic">{plan.fundamento?.socioemotionalContent || plan.fundamento?.socioemotionalLink}</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <span className="block font-bold text-slate-600 text-[10px] uppercase">Justificación de Actividades (Dua/Estilos)</span>
+                            <span className="block font-bold text-slate-600 text-[10px] uppercase">Justificación Didáctica</span>
                             <p className="text-justify">{plan.fundamento?.progressionJustification || plan.duaStrategies}</p>
                         </div>
                         <div>
-                            <span className="block font-bold text-slate-600 text-[10px] uppercase">Vinculación Socioemocional</span>
-                            <p className="text-justify">{plan.fundamento?.socioemotionalLink || 'Fomento del bienestar y la colaboración.'}</p>
+                            <span className="block font-bold text-slate-600 text-[10px] uppercase">Transversalidad</span>
+                            <p className="italic text-slate-700">{plan.fundamento?.transversalityLink}</p>
                         </div>
-                    </div>
-                    <div>
-                        <span className="block font-bold text-slate-600 text-[10px] uppercase">Transversalidad con otras áreas</span>
-                        <p className="italic text-slate-700">{plan.fundamento?.transversalityLink || plan.transversality?.relationToOtherSubjects}</p>
                     </div>
                 </div>
             </div>
@@ -318,23 +337,29 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
             </div>
 
             {/* VALIDACIÓN */}
-            <div className="mt-12 flex justify-between items-end pt-8 border-t border-slate-200">
-                <div className="text-center w-1/3">
+            <div className="mt-12 flex justify-between items-end pt-8 border-t border-slate-200 gap-4">
+                <div className="text-center w-1/4">
                     <div className="border-t border-slate-400 w-3/4 mx-auto pt-2">
                         <p className="font-bold text-slate-900 uppercase text-xs">{teacherName || plan.meta?.teacher}</p>
-                        <p className="text-[10px] text-slate-500 uppercase">Docente</p>
+                        <p className="text-[10px] text-slate-500 uppercase">Elaboró</p>
                     </div>
                 </div>
-                <div className="text-center w-1/3">
+                <div className="text-center w-1/4">
                     <div className="border-t border-slate-400 w-3/4 mx-auto pt-2">
-                        <p className="font-bold text-slate-900 uppercase text-xs">Revisión Técnica</p>
-                        <p className="text-[10px] text-slate-500 uppercase">Coordinación Académica</p>
+                        <p className="font-bold text-slate-900 uppercase text-xs">Jefe Disciplinar</p>
+                        <p className="text-[10px] text-slate-500 uppercase">Revisó</p>
                     </div>
                 </div>
-                <div className="text-center w-1/3">
+                <div className="text-center w-1/4">
                     <div className="border-t border-slate-400 w-3/4 mx-auto pt-2">
-                        <p className="font-bold text-slate-900 uppercase text-xs">Vo. Bo.</p>
-                        <p className="text-[10px] text-slate-500 uppercase">Dirección del Plantel</p>
+                        <p className="font-bold text-slate-900 uppercase text-xs">Coordinación</p>
+                        <p className="text-[10px] text-slate-500 uppercase">Autoriza</p>
+                    </div>
+                </div>
+                <div className="text-center w-1/4">
+                    <div className="border-t border-slate-400 w-3/4 mx-auto pt-2">
+                        <p className="font-bold text-slate-900 uppercase text-xs">Director(a)</p>
+                        <p className="text-[10px] text-slate-500 uppercase">Visto Bueno</p>
                     </div>
                 </div>
             </div>
@@ -344,3 +369,5 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
 });
 
 export default PlanDocument;
+
+

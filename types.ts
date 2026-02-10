@@ -41,6 +41,7 @@ export interface LessonPlan {
     hoursPerWeek: number; // NUEVO
     startDate: string;    // NUEVO
     endDate: string;      // NUEVO
+    methodology?: string; // NUEVO: Metodología Activa (ABP, ABPr, etc.)
   };
 
   // 2. Progresiones Detalladas
@@ -69,6 +70,12 @@ export interface LessonPlan {
     sociocognitiveLink: string; // Vinculo con otros recursos (pensamiento crítico, etc)
     socioemotionalLink: string; // Vinculo con recursos socioemocionales
     transversalityLink: string; // Vinculo con otras áreas
+
+    // NUEW: Desglose Socioemocional Detallado (Requerido 2024)
+    socioemotionalScope?: string; // Ámbito (Ej. Vida Saludable)
+    socioemotionalMeta?: string;  // Meta de Aprendizaje SE
+    socioemotionalPurpose?: string; // Propósito específico
+    socioemotionalContent?: string; // Contenido estífico
   };
 
   // 5. Contexto
@@ -93,6 +100,7 @@ export interface LessonPlan {
   independentStudy?: {
     activities: string;
     feedbackLink: string; // Cómo se retroalimenta
+    feedbackStrategy?: string; // NUEVO: Estrategia específica (Individual/Grupal + Momento)
     resources: string;
     estimatedTime: string;
   };
