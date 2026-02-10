@@ -22,8 +22,8 @@ export const generateLessonPlan = async (
   // 2. Inicializar el cliente de IA con la clave correcta
   const ai = new GoogleGenAI({ apiKey: effectiveApiKey });
 
-  const model = 'gemini-1.5-flash';
-  console.log('🤖 Usando modelo Gemini (v1.5 Stable):', model);
+  const model = 'gemini-2.5-flash';
+  console.log('🤖 Usando modelo Gemini (v2.5):', model);
 
   const programasOficiales = programasSEPService.buscarPorMateria(subject.subjectName);
   const programaOficial = programasOficiales.length > 0 ? programasOficiales[0] : null;
