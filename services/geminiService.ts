@@ -36,56 +36,24 @@ export const generateLessonPlan = async (
   }
 
   const systemInstruction = `
-    Eres un experto pedagogo de la DGB/SEP con nivel de Supervisor Escolar.
-    Tu tarea es generar una Planeación Didáctica detallada y rigurosa para Educación Media Superior.
-
-    REQUISITOS OBLIGATORIOS (CRITERIOS DE REVISIÓN):
-
-    1. DATOS GENERALES:
-       - Define un "periodo aproximado" realista para cubrir el contenido.
-       - Calcula las horas totales con base en la carga semanal.
-
-    2. PROGRESIONES (NO PONGAS RESÚMENES):
-       - Usa el TEXTO EXACTO y COMPLETO de la progresión oficial.
-       - Indica el ID de la progresión.
-       
-    3. CATEGORÍAS Y SUBCATEGORÍAS (MCCEMS):
-       - Identifica las CATEGORÍAS centrales y SUBCATEGORÍAS.
-
-    4. VINCULACIÓN PAEC (Programa Aula-Escuela-Comunidad):
-       - Define una problemática comunitaria REAL o SIMULADA.
-       - Propón un proyecto breve que aborde esto.
-
-    5. FUNDAMENTACIÓN PEDAGÓGICA:
-       - Justifica las actividades (Estilo DGB).
-       - Vinculación transversal y socioemocional.
-
-    6. ESTUDIO INDEPENDIENTE:
-       - Actividades fuera del aula (tareas), tiempo y evaluación.
-
-    7. TABLA DE EVALUACIÓN (RIGUROSA):
-       - Desglosa Instrumento, Porcentaje, Agente y Criterios.
-
-    8. RECURSOS DIDÁCTICOS (CRÍTICO - NO OLVIDAR):
-       - Genera una LISTA MAESTRA de todos los materiales, herramientas digitales, lecturas y equipos necesarios.
-       - Debe ser específica (ej. "Proyector", "Hojas de rotafolio", "App de Canva", "Lectura sobre X").
-
-    SECUENCIA DIDÁCTICA:
-    - Separa claramente: Docente (Enseñanza) vs Alumno (Aprendizaje).
+    Eres un experto pedagogo de la DGB/SEP. Genera una Planeación Didáctica para EMS.
     
-    INFORMACIÓN OFICIAL:
-    ${contextoOficial}
+    CRITERIOS CLAVE (SE BREVE Y CONCISO):
+    1. PROGRESIONES: Usa el texto oficial exacto.
+    2. PAEC/PEC: Vinculación simple y directa a una problemática real.
+    3. SECUENCIA: Inicio, Desarrollo, Cierre. Claros y directos.
+    4. RECURSOS: Lista maestra OBLIGATORIA (Materiales y digitales).
+    5. EVALUACIÓN: Instrumentos y ponderación.
 
-    CONTEXTO ESCOLAR:
-    - Escuela: ${school.schoolName}
-    - Misión/Visión: ${school.vision}
-    - Solicitud Usuario: "${prompt}"
+    INFORMACIÓN OFICIAL: ${contextoOficial.substring(0, 1000)}... (Resumido)
+    CONTEXTO: ${school.schoolName}, ${school.vision}.
+    SOLICITUD: "${prompt}"
   `;
 
   try {
     const response = await ai.models.generateContent({
       model,
-      contents: `Genera la planeación completa para ${subject.subjectName} cumpliendo estrictamente los 8 puntos de revisión, especialmente la LISTA DE RECURSOS.`,
+      contents: `Genera la planeación para ${subject.subjectName} (Máx 3 sesiones detalladas). Si piden más, resume.`,
       config: {
         systemInstruction,
         responseMimeType: "application/json",
@@ -96,7 +64,6 @@ export const generateLessonPlan = async (
             title: { type: Type.STRING },
             date: { type: Type.STRING },
             subject: { type: Type.STRING },
-
             meta: {
               type: Type.OBJECT,
               properties: {
@@ -108,10 +75,9 @@ export const generateLessonPlan = async (
                 hoursPerWeek: { type: Type.NUMBER },
                 startDate: { type: Type.STRING },
                 endDate: { type: Type.STRING },
-                methodology: { type: Type.STRING } // Added
+                methodology: { type: Type.STRING }
               }
             },
-
             context: {
               type: Type.OBJECT,
               properties: {
@@ -120,7 +86,6 @@ export const generateLessonPlan = async (
               },
               required: ["diagnosis", "studentProfile"]
             },
-
             curricularElements: {
               type: Type.OBJECT,
               properties: {
@@ -132,7 +97,6 @@ export const generateLessonPlan = async (
               },
               required: ["progression", "learningGoals", "categories"]
             },
-
             paec: {
               type: Type.OBJECT,
               properties: {
@@ -141,33 +105,25 @@ export const generateLessonPlan = async (
                 projectTrigger: { type: Type.STRING }
               }
             },
-
             fundamento: {
               type: Type.OBJECT,
               properties: {
                 progressionJustification: { type: Type.STRING },
                 sociocognitiveLink: { type: Type.STRING },
                 socioemotionalLink: { type: Type.STRING },
-                transversalityLink: { type: Type.STRING },
-                socioemotionalScope: { type: Type.STRING }, // Added
-                socioemotionalMeta: { type: Type.STRING }, // Added
-                socioemotionalPurpose: { type: Type.STRING }, // Added
-                socioemotionalContent: { type: Type.STRING } // Added
+                transversalityLink: { type: Type.STRING }
               },
               required: ["progressionJustification", "sociocognitiveLink"]
             },
-
             independentStudy: {
               type: Type.OBJECT,
               properties: {
                 activities: { type: Type.STRING },
                 feedbackLink: { type: Type.STRING },
-                feedbackStrategy: { type: Type.STRING }, // Added
                 resources: { type: Type.STRING },
                 estimatedTime: { type: Type.STRING }
               }
             },
-
             sessions: {
               type: Type.ARRAY,
               items: {
@@ -179,18 +135,16 @@ export const generateLessonPlan = async (
                   sequence: {
                     type: Type.OBJECT,
                     properties: {
-                      opening: { type: Type.OBJECT, properties: { activity: { type: Type.STRING }, studentActivity: { type: Type.STRING }, time: { type: Type.STRING }, evidence: { type: Type.STRING } }, required: ["activity", "studentActivity", "time", "evidence"] },
-                      development: { type: Type.OBJECT, properties: { activity: { type: Type.STRING }, studentActivity: { type: Type.STRING }, time: { type: Type.STRING }, evidence: { type: Type.STRING } }, required: ["activity", "studentActivity", "time", "evidence"] },
-                      closing: { type: Type.OBJECT, properties: { activity: { type: Type.STRING }, studentActivity: { type: Type.STRING }, time: { type: Type.STRING }, evidence: { type: Type.STRING } }, required: ["activity", "studentActivity", "time", "evidence"] }
+                      opening: { type: Type.OBJECT, properties: { activity: { type: Type.STRING }, studentActivity: { type: Type.STRING }, time: { type: Type.STRING }, evidence: { type: Type.STRING } } },
+                      development: { type: Type.OBJECT, properties: { activity: { type: Type.STRING }, studentActivity: { type: Type.STRING }, time: { type: Type.STRING }, evidence: { type: Type.STRING } } },
+                      closing: { type: Type.OBJECT, properties: { activity: { type: Type.STRING }, studentActivity: { type: Type.STRING }, time: { type: Type.STRING }, evidence: { type: Type.STRING } } }
                     },
                     required: ["opening", "development", "closing"]
                   },
                   resources: { type: Type.ARRAY, items: { type: Type.STRING } }
-                },
-                required: ["sessionNumber", "sequence"]
+                }
               }
             },
-
             evaluationTable: {
               type: Type.ARRAY,
               items: {
@@ -200,39 +154,15 @@ export const generateLessonPlan = async (
                   percentage: { type: Type.NUMBER },
                   agent: { type: Type.STRING },
                   criteria: { type: Type.STRING }
-                },
-                required: ["instrument", "percentage", "agent", "criteria"]
+                }
               }
             },
-
-            teacherReflection: {
-              type: Type.OBJECT,
-              properties: {
-                strengths: { type: Type.STRING },
-                opportunities: { type: Type.STRING },
-                adjustments: { type: Type.STRING }
-              }
-            },
-
-            // RECURSOS AL NIVEL DE TODA LA PLANEACIÓN (Para el Auditor)
             resources: { type: Type.ARRAY, items: { type: Type.STRING } },
-
             duaStrategies: { type: Type.STRING },
             evaluation: { type: Type.STRING },
-            duration: { type: Type.STRING },
-            mccemsAlignment: {
-              type: Type.OBJECT,
-              properties: {
-                documentUrl: { type: Type.STRING },
-                validated: { type: Type.BOOLEAN }
-              }
-            },
-
-            transversality: { type: Type.OBJECT, properties: { paecTopics: { type: Type.ARRAY, items: { type: Type.STRING } }, relationToOtherSubjects: { type: Type.STRING } } },
-            sequence: { type: Type.OBJECT, properties: { opening: { type: Type.STRING }, development: { type: Type.STRING }, closing: { type: Type.STRING } } }
-
+            duration: { type: Type.STRING }
           },
-          required: ["title", "subject", "sessions", "meta", "evaluationTable", "fundamento", "paec", "independentStudy", "curricularElements", "resources"]
+          required: ["title", "subject", "sessions", "meta", "evaluationTable", "fundamento", "paec", "curricularElements", "resources"]
         }
       }
     });
