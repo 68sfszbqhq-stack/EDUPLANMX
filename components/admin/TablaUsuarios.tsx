@@ -20,7 +20,8 @@ const TablaUsuarios: React.FC<TablaUsuariosProps> = ({ usuarios, onEditar, onAct
             superadmin: 'bg-red-100 text-red-800 border-red-200',
             directivo: 'bg-blue-100 text-blue-800 border-blue-200',
             maestro: 'bg-green-100 text-green-800 border-green-200',
-            alumno: 'bg-purple-100 text-purple-800 border-purple-200'
+            alumno: 'bg-purple-100 text-purple-800 border-purple-200',
+            guest: 'bg-gray-100 text-gray-800 border-gray-200'
         };
         return colors[rol] || 'bg-gray-100 text-gray-800 border-gray-200';
     };
@@ -30,7 +31,8 @@ const TablaUsuarios: React.FC<TablaUsuariosProps> = ({ usuarios, onEditar, onAct
             superadmin: 'Super Admin',
             directivo: 'Directivo',
             maestro: 'Maestro',
-            alumno: 'Alumno'
+            alumno: 'Alumno',
+            guest: 'Invitado'
         };
         return nombres[rol] || rol;
     };
