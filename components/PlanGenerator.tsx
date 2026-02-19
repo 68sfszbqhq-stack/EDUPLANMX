@@ -27,6 +27,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   const [selectedProgression, setSelectedProgression] = useState<string>('');
   const [specificTopic, setSpecificTopic] = useState('');
   const [numSessions, setNumSessions] = useState(1);
+  const [sessionDuration, setSessionDuration] = useState(50);
   const [evaluationType, setEvaluationType] = useState('Rúbrica');
   const [semestre, setSemestre] = useState<number | null>(null);
   const [hoursPerWeek, setHoursPerWeek] = useState(4);
@@ -58,6 +59,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     evaluationInstrument: true,
     homework: true,
     transversality: true,
+    bibliography: true,
   });
 
   const [includeContext, setIncludeContext] = useState({
@@ -107,6 +109,11 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   const handleGenerate = async () => {
     if (!selectedProgression && !specificTopic) {
       setError("Por favor selecciona una progresión o escribe un tema.");
+      return;
+    }
+
+    if (sessionDuration > 60) {
+      setError("La duración de la sesión no puede exceder los 60 minutos.");
       return;
     }
 
@@ -220,6 +227,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
       ${includeSections.socioemotional ? '- SOCIOEMOCIONAL: Incluir desglose completo (Ámbito, Meta, Contenidos).' : '- SOCIOEMOCIONAL: Solo mención breve.'}
       ${includeSections.homework ? '- ESTUDIO INDEPENDIENTE: Incluir tarea con tiempo y retroalimentación.' : '- ESTUDIO INDEPENDIENTE: No asignar tarea.'}
       ${includeSections.evaluationInstrument ? '- EVALUACIÓN: Incluir tabla con instrumentos y porcentajes.' : '- EVALUACIÓN: Solo mencionar estrategia general.'}
+      ${includeSections.bibliography ? '- BIBLIOGRAFÍA: Incluir lista de fuentes consultadas (formato APA).' : ''}
     `;
 
     const contextInstructions = `
@@ -240,7 +248,12 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
       ${contextInstructions}
       
       CONFIGURACIÓN TÉCNICA:
-      - Sesiones: ${numSessions} (${hoursPerWeek} hrs/sem)
+      - Sesiones: ${numSessions} (Duración estricta: ${sessionDuration} min por sesión).
+      - TIEMPO TOTAL POR SESIÓN: ${sessionDuration} minutos.
+      - DISTRIBUCIÓN SUGERIDA (Ajustar al contenido, pero respetar total):
+        * Inicio: ~${Math.round(sessionDuration * 0.2)} min
+        * Desarrollo: ~${Math.round(sessionDuration * 0.6)} min
+        * Cierre: ~${Math.round(sessionDuration * 0.2)} min
       - Progresión: "${selectedProgression || 'No especificada'}"
       - Tema: "${specificTopic}"
       - Estrategia Base: "${didacticStrategy}"
@@ -524,6 +537,14 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
                   <input type="checkbox" checked={includeSections.homework} onChange={e => setIncludeSections({ ...includeSections, homework: e.target.checked })} className="rounded text-indigo-600 focus:ring-indigo-500" />
                   Estudio Independiente (Tarea)
                 </label>
+                <label className="flex items-center gap-2 text-sm text-slate-700 cursor-pointer hover:bg-slate-100 p-1 rounded">
+                  <input type="checkbox" checked={includeSections.resourcesList} onChange={e => setIncludeSections({ ...includeSections, resourcesList: e.target.checked })} className="rounded text-indigo-600 focus:ring-indigo-500" />
+                  Lista de Recursos Didácticos
+                </label>
+                <label className="flex items-center gap-2 text-sm text-slate-700 cursor-pointer hover:bg-slate-100 p-1 rounded">
+                  <input type="checkbox" checked={includeSections.bibliography} onChange={e => setIncludeSections({ ...includeSections, bibliography: e.target.checked })} className="rounded text-indigo-600 focus:ring-indigo-500" />
+                  Bibliografía Consultada (APA)
+                </label>
               </div>
             </div>
 
@@ -566,6 +587,13 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
               <option value="Estudio de Casos">Estudio de Casos</option>
               <option value="Aula Invertida">Aula Invertida</option>
               <option value="Gamificación">Gamificación</option>
+              <option value="Aprendizaje Cooperativo">Aprendizaje Cooperativo</option>
+              <option value="Aprendizaje Basado en Indagación (STEAM)">Aprendizaje Basado en Indagación (STEAM)</option>
+              <option value="Aprendizaje Servicio (AS)">Aprendizaje Servicio (AS)</option>
+              <option value="Design Thinking">Design Thinking</option>
+              <option value="Aprendizaje Situado">Aprendizaje Situado</option>
+              <option value="Sociodrama / Role Playing">Sociodrama / Role Playing</option>
+              <option value="Lluvia de Ideas">Lluvia de Ideas</option>
             </select>
           </div>
 
@@ -623,6 +651,20 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
               <select value={numSessions} onChange={(e) => setNumSessions(Number(e.target.value))} className="w-full p-2 border rounded-lg text-sm">
                 {[1, 2, 3, 4, 5].map(n => <option key={n} value={n}>{n} Sesiones</option>)}
               </select>
+              <div className="relative w-full">
+                <span className="absolute right-8 top-2 text-xs text-slate-400">min/sesión</span>
+                <input
+                  type="number"
+                  value={sessionDuration}
+                  onChange={(e) => {
+                    const val = Number(e.target.value);
+                    setSessionDuration(val > 60 ? 60 : val);
+                  }}
+                  min={1}
+                  max={60}
+                  className="w-full p-2 border rounded-lg text-sm pr-10"
+                />
+              </div>
             </div>
           </div>
           <div className="space-y-2">
@@ -636,11 +678,18 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             <label className="text-xs font-bold text-slate-500 uppercase">Evaluación</label>
             <select value={evaluationType} onChange={(e) => setEvaluationType(e.target.value)} className="w-full p-2 border rounded-lg text-sm">
               <option value="Rúbrica Detallada">Rúbrica Analítica</option>
+              <option value="Rúbrica Holística">Rúbrica Holística</option>
               <option value="Lista de Cotejo">Lista de Cotejo</option>
               <option value="Escala Estimativa">Escala Estimativa</option>
               <option value="Diario de Clase">Diario de Clase</option>
               <option value="Portafolio de Evidencias">Portafolio de Evidencias</option>
               <option value="Guía de Observación">Guía de Observación</option>
+              <option value="Registro Anecdótico">Registro Anecdótico</option>
+              <option value="Examen Escrito">Examen Escrito</option>
+              <option value="Debate / Mesa Redonda">Debate / Mesa Redonda</option>
+              <option value="Mapa Mental / Conceptual">Mapa Mental / Conceptual</option>
+              <option value="Ensayo">Ensayo</option>
+              <option value="Proyecto Integrador">Proyecto Integrador</option>
             </select>
           </div>
         </div>
@@ -699,6 +748,8 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
                 ref={printRef}
                 plan={result}
                 teacherName={teacherName}
+                schoolName={school.schoolName}
+                cct={school.cct}
               />
             </div>
           </div>

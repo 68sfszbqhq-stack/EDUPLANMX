@@ -68,7 +68,13 @@ const App: React.FC = () => {
     if (user) {
       // 1. Hydrate School
       if (user.schoolName && (!schoolContext.schoolName || schoolContext.schoolName === 'Bachillerato General Oficial')) {
-        setSchoolContext(prev => ({ ...prev, schoolName: user.schoolName! }));
+        setSchoolContext(prev => ({
+          ...prev,
+          schoolName: user.schoolName!,
+          cct: user.schoolCct || prev.cct
+        }));
+      } else if (user.schoolCct && !schoolContext.cct) {
+        setSchoolContext(prev => ({ ...prev, cct: user.schoolCct! }));
       }
 
       // 2. Hydrate Subject (Select first available subject by default)

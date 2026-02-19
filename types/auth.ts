@@ -19,6 +19,7 @@ export interface Usuario {
     // Sistema Multi-Escuela (NUEVO)
     schoolId?: string; // ID de la escuela
     schoolName?: string; // Nombre de la escuela (denormalizado)
+    schoolCct?: string; // CCT de la escuela
     puesto?: string; // Director, Docente, etc.
     onboardingCompleto?: boolean; // Si completó el onboarding
 

@@ -49,10 +49,23 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
                         if (profile) {
                             console.log('✅ Usuario con onboarding completo:', profile.schoolName);
+
+                            // 4. Intentar obtener el CCT de la escuela
+                            let schoolCct = '';
+                            try {
+                                const schoolData = await schoolService.getSchoolById(profile.schoolId);
+                                if (schoolData) {
+                                    schoolCct = schoolData.cct;
+                                }
+                            } catch (e) {
+                                console.error('Error al obtener datos de la escuela para CCT:', e);
+                            }
+
                             setUser({
                                 ...userData,
                                 schoolId: profile.schoolId,
                                 schoolName: profile.schoolName,
+                                schoolCct: schoolCct, // Nuevo campo
                                 puesto: profile.puesto,
                                 onboardingCompleto: true
                             } as Usuario);

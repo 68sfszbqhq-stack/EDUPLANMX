@@ -36,28 +36,29 @@ export const generateLessonPlan = async (
   }
 
   const systemInstruction = `
-    Eres un experto pedagogo de la DGB/SEP. Genera una Planeación Didáctica para EMS.
+    Eres un experto pedagogo de la DGB/SEP experto en el MCCEMS 2024.
+    Tu objetivo es generar una planeación didáctica PROFESIONAL, pero CONCISA para evitar cortes de texto.
     
-    CRITERIOS CLAVE (SE BREVE Y CONCISO):
-    1. PROGRESIONES: Usa el texto oficial exacto.
-    2. PAEC/PEC: Vinculación simple y directa a una problemática real.
-    3. SECUENCIA: Inicio, Desarrollo, Cierre. Claros y directos.
-    4. RECURSOS: Lista maestra OBLIGATORIA (Materiales y digitales).
-    5. EVALUACIÓN: Instrumentos y ponderación.
+    REGLAS CRÍTICAS:
+    1. BREVEDAD: Describe las actividades de forma directa (máx 2-3 enunciados por celda).
+    2. PROGRESIONES: Usa el texto oficial proporcionado.
+    3. SECUENCIA: Genera EXACTAMENTE el número de sesiones solicitado en el prompt.
+    4. RESPUESTA: Solo devuelve el JSON válido sin texto adicional.
+    5. IDIOMA: Español.
 
-    INFORMACIÓN OFICIAL: ${contextoOficial.substring(0, 1000)}... (Resumido)
-    CONTEXTO: ${school.schoolName}, ${school.vision}.
+    INFORMACIÓN OFICIAL: ${contextoOficial.substring(0, 800)}...
+    CONTEXTO ESCUELA: ${school.schoolName}, ${school.vision}.
     SOLICITUD: "${prompt}"
   `;
 
   try {
     const response = await ai.models.generateContent({
       model,
-      contents: `Genera la planeación para ${subject.subjectName} (Máx 3 sesiones detalladas). Si piden más, resume.`,
+      contents: `Genera la planeación completa para ${subject.subjectName} basándote en el prompt estructurado. Respeta el número de sesiones solicitado.`,
       config: {
         systemInstruction,
         responseMimeType: "application/json",
-        maxOutputTokens: 8192,
+        maxOutputTokens: 16384,
         responseSchema: {
           type: Type.OBJECT,
           properties: {
