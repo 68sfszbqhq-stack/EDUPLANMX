@@ -93,8 +93,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const login = async (email: string, password: string) => {
         setLoading(true);
         try {
-            const userData = await authService.login({ email, password });
-            setUser(userData);
+            await authService.login({ email, password });
+            // onAuthStateChanged se encargará de establecer el usuario y setLoading(false)
         } catch (error) {
             setLoading(false);
             throw error;
@@ -104,8 +104,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const loginWithGoogle = async () => {
         setLoading(true);
         try {
-            const userData = await authService.loginWithGoogle();
-            setUser(userData);
+            await authService.loginWithGoogle();
+            // onAuthStateChanged se encargará de establecer el usuario y setLoading(false)
         } catch (error) {
             setLoading(false);
             throw error;
