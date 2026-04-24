@@ -18,9 +18,9 @@ const Ficha12: React.FC = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            if (!user?.uid) return;
+            if (!user?.id) return;
             try {
-                const q = query(collection(db, 'fichas12'), where('userId', '==', user.uid));
+                const q = query(collection(db, 'fichas12'), where('userId', '==', user.id));
                 const querySnapshot = await getDocs(q);
                 if (!querySnapshot.empty) {
                     const data = querySnapshot.docs[0].data();
@@ -38,11 +38,11 @@ const Ficha12: React.FC = () => {
     }, [user]);
 
     const handleSave = async () => {
-        if (!user?.uid) return;
+        if (!user?.id) return;
         setLoading(true);
         try {
             const dataToSave = {
-                userId: user.uid,
+                userId: user.id,
                 userName: user.nombre || 'Usuario',
                 arbol,
                 huella,
