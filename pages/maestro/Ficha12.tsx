@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../../src/config/firebase';
 import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
 import { useAuth } from '../../src/contexts/AuthContext';
-import { Leaf, Sun, CheckCircle2, User, BookOpen, AlertCircle } from 'lucide-react';
+import { Leaf, Sun, CheckCircle2, User, BookOpen, AlertCircle, Sparkles } from 'lucide-react';
+import { RubricaInteractiva } from '../../components/RubricaInteractiva';
+import { VisualizacionFicha12 } from '../../components/VisualizacionFicha12';
 
 const Ficha12: React.FC = () => {
     const { user } = useAuth();
@@ -78,7 +80,8 @@ const Ficha12: React.FC = () => {
                         { id: 2, title: '2. Huella Docente', icon: User },
                         { id: 3, title: '3. Autoevaluación', icon: CheckCircle2 },
                         { id: 4, title: '4. Texto Reflexivo', icon: BookOpen },
-                        { id: 5, title: 'Final: Mapa de Sol', icon: Sun }
+                        { id: 5, title: '5. Mapa de Sol', icon: Sun },
+                        { id: 6, title: 'Final: Mi Visualización', icon: Sparkles }
                     ].map(tab => (
                         <button
                             key={tab.id}
@@ -153,14 +156,7 @@ const Ficha12: React.FC = () => {
                     {activeTab === 3 && (
                         <div className="space-y-6 animate-in fade-in">
                             <h2 className="text-2xl font-bold text-slate-800">3. Confrontación – Autoevaluación</h2>
-                            <div className="bg-amber-50 p-6 rounded-xl border border-amber-200 mb-6">
-                                <h3 className="font-bold text-amber-800 mb-2">📝 Instrucciones</h3>
-                                <p className="text-amber-700">
-                                    Para esta actividad, utiliza la herramienta de <strong>Video-Análisis de Micro-Enseñanza</strong> que se encuentra disponible en la sección de Herramientas.
-                                    <br/><br/>
-                                    Esa herramienta interactiva te permitirá generar tu lista de cotejo, realizar tu autoevaluación y descargar el PDF de resultados.
-                                </p>
-                            </div>
+                            <RubricaInteractiva />
                         </div>
                     )}
 
@@ -219,6 +215,10 @@ const Ficha12: React.FC = () => {
                                 </div>
                             </div>
                         </div>
+                    )}
+
+                    {activeTab === 6 && (
+                        <VisualizacionFicha12 data={{ arbol, huella, reflexion, mapaSol }} />
                     )}
 
                     <div className="mt-8 pt-6 border-t border-slate-200 flex justify-end">
