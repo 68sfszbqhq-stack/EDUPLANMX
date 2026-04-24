@@ -111,6 +111,8 @@ const App: React.FC = () => {
       navigate('/maestro/guia-curricular');
     } else if (viewId === 'herramientas') {
       navigate('/maestro/herramientas');
+    } else if (viewId === 'ficha12') {
+      navigate('/maestro/ficha12');
     } else {
       setView(viewId as AppView);
     }

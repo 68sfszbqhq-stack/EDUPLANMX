@@ -20,6 +20,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
         { id: 'diagnostico', label: 'Diagnóstico', icon: Users },
         { id: 'generator', label: 'Nueva Planeación', icon: PlusCircle },
         { id: 'plans', label: 'Historial', icon: History },
+        { id: 'ficha12', label: 'Ficha 12 (Taller)', icon: BookOpen },
         { id: 'pmc', label: 'PMC Directivo', icon: TrendingUp },
         { id: 'paec', label: 'Comité PAEC', icon: Network },
     ];
