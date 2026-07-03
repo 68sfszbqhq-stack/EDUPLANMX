@@ -32,6 +32,10 @@ export interface ProgramaSEP {
     progresiones: MetasAprendizaje[];
     url_fuente: string;
     fecha_extraccion: string;
+
+    // Etiquetas de saneamiento (scripts/etiquetar_modelos.cjs)
+    modelo?: '2024' | '2025';       // Plan MCCEMS original vs generación 2025-2028
+    estado?: 'oficial' | 'borrador'; // borrador = progresiones provisionales, NO verificadas con la DGB
 }
 
 class ProgramasSEPService {
@@ -217,6 +221,14 @@ class ProgramasSEPService {
 
         if (!programa) {
             return `No se encontró información oficial para ${nombreMateria} semestre ${semestre}.`;
+        }
+
+        // Un borrador NO debe presentarse a la IA como programa oficial:
+        // sus progresiones son provisionales y generarían contenido curricular inventado.
+        if (programa.estado === 'borrador') {
+            return `No hay programa oficial verificado para ${nombreMateria} semestre ${semestre}. ` +
+                `Usar lineamientos generales del MCCEMS y el tema indicado por el docente. ` +
+                `NO inventar progresiones oficiales ni citarlas como si fueran de la DGB.`;
         }
 
         const contexto = `

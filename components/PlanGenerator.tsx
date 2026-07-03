@@ -125,15 +125,21 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     handlePrintOnly();
   };
 
+  // Info del programa cargado: modelo curricular y si es oficial o borrador
+  const [programaInfo, setProgramaInfo] = useState<{ modelo?: string; estado?: string } | null>(null);
+
   useEffect(() => {
     if (subject.subjectName) {
       const programas = programasSEPService.buscarPorMateria(subject.subjectName);
-      if (programas.length > 0) {
-        const programa = programas[0];
-        setProgresionesDisponibles(programa.progresiones || []);
+      // Preferir siempre el programa oficial; el borrador solo como último recurso
+      const programa = programas.find(p => p.estado !== 'borrador') || programas[0];
+      if (programa) {
+        setProgresionesDisponibles(programa.estado === 'borrador' ? [] : (programa.progresiones || []));
         setSemestre(programa.semestre);
+        setProgramaInfo({ modelo: programa.modelo, estado: programa.estado });
       } else {
         setProgresionesDisponibles([]);
+        setProgramaInfo(null);
       }
     }
   }, [subject.subjectName]);
@@ -426,7 +432,24 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-indigo-500" />
               1. ¿Qué vamos a enseñar? (Contenido Curricular)
+              {programaInfo?.estado === 'oficial' && (
+                <span className={`ml-auto text-[10px] font-bold px-2 py-0.5 rounded-full ${programaInfo.modelo === '2025'
+                  ? 'bg-emerald-100 text-emerald-700 border border-emerald-200'
+                  : 'bg-blue-100 text-blue-700 border border-blue-200'
+                  }`}>
+                  {programaInfo.modelo === '2025' ? '✓ Plan 2025-2028 (nuevo)' : '✓ Plan MCCEMS 2024'}
+                </span>
+              )}
             </label>
+
+            {programaInfo?.estado === 'borrador' && (
+              <div className="p-3 bg-amber-50 border border-amber-300 rounded-xl text-xs text-amber-800 leading-relaxed">
+                <span className="font-bold">⚠️ El programa de esta materia aún no está verificado con el documento oficial de la DGB.</span>
+                {' '}Por eso no te mostramos progresiones (serían provisionales). Escribe abajo tu tema o la progresión
+                tal como aparece en tu programa de estudios impreso — la IA la usará textualmente.
+              </div>
+            )}
+
             <select
               value={selectedProgression}
               onChange={(e) => setSelectedProgression(e.target.value)}

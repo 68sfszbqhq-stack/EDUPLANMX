@@ -26,7 +26,9 @@ export const generateLessonPlan = async (
   console.log('🤖 Usando modelo Gemini (v2.5):', model);
 
   const programasOficiales = programasSEPService.buscarPorMateria(subject.subjectName);
-  const programaOficial = programasOficiales.length > 0 ? programasOficiales[0] : null;
+  // Solo tratamos como "oficial" un programa con progresiones verificadas de la DGB;
+  // los borradores (esqueletos provisionales) no deben alimentar a la IA como currículo real.
+  const programaOficial = programasOficiales.find(p => p.estado !== 'borrador') || null;
 
   let contextoOficial = "";
   if (programaOficial) {
