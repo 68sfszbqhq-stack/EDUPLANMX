@@ -243,6 +243,28 @@ export const generateLessonPlan = async (
 
   } catch (error: any) {
     console.error("Error Gemini:", error);
-    throw new Error(error.message || "Error al generar la planeación. Intenta de nuevo.");
+
+    // Traducir errores técnicos de la API a mensajes que un docente entienda
+    const rawMessage: string = error.message || '';
+
+    if (rawMessage.includes('API_KEY_INVALID') || rawMessage.includes('API key not valid')) {
+      throw new Error(
+        '🔑 La API Key no es válida. Pega tu propia clave de Gemini en el campo de arriba ' +
+        '(usa el botón "Créala GRATIS aquí" para obtenerla en 1 minuto) y vuelve a intentar.'
+      );
+    }
+    if (rawMessage.includes('RESOURCE_EXHAUSTED') || rawMessage.includes('429') || rawMessage.toLowerCase().includes('quota')) {
+      throw new Error(
+        '⏳ Se agotó la cuota gratuita de esta API Key por ahora. Espera un minuto y vuelve a intentar, ' +
+        'o genera una clave nueva en Google AI Studio.'
+      );
+    }
+    if (rawMessage.includes('fetch') || rawMessage.includes('network') || rawMessage.includes('Failed to')) {
+      throw new Error(
+        '📡 No hay conexión con el servicio de IA. Revisa tu internet y vuelve a intentar.'
+      );
+    }
+
+    throw new Error(rawMessage || "Error al generar la planeación. Intenta de nuevo.");
   }
 };

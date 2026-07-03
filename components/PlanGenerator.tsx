@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Sparkles, Loader2, Save, Send, Copy, Download, CheckCircle2, Calendar, BookOpen, Clock, List, Target, Brain, Layers, Eye, FileText, User, Table as TableIcon } from 'lucide-react';
+import { Sparkles, Loader2, Save, Send, Copy, Download, CheckCircle2, Calendar, BookOpen, Clock, List, Target, Brain, Layers, Eye, FileText, User, Table as TableIcon, ExternalLink, ShieldCheck } from 'lucide-react';
 import { useReactToPrint } from 'react-to-print';
 import { generateLessonPlan } from '../services/geminiService';
+import { analyticsService } from '../src/services/analyticsService';
 import { programasSEPService } from '../src/services/programasSEPService';
 import { SchoolContext, SubjectContext, LessonPlan } from '../types';
 import { getStudentContextSummary } from '../src/services/studentStatsService';
@@ -22,7 +23,17 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   const { user } = useAuth();
 
   // --- Estados Originales ---
-  const [apiKey, setApiKey] = useState(''); // Estado para la API Key Manual (PRESERVADO)
+  // API Key Manual: vive SOLO en sessionStorage (se borra al cerrar la pestaña, nunca se guarda en disco ni en Firestore)
+  const [apiKey, setApiKey] = useState(() => sessionStorage.getItem('gemini_api_key') || '');
+
+  const handleApiKeyChange = (value: string) => {
+    setApiKey(value);
+    if (value.trim()) {
+      sessionStorage.setItem('gemini_api_key', value.trim());
+    } else {
+      sessionStorage.removeItem('gemini_api_key');
+    }
+  };
   const [progresionesDisponibles, setProgresionesDisponibles] = useState<{ id: number, descripcion: string }[]>([]);
   const [selectedProgression, setSelectedProgression] = useState<string>('');
   const [specificTopic, setSpecificTopic] = useState('');
@@ -44,6 +55,38 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   const [result, setResult] = useState<LessonPlan | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+
+  // --- Analítica: tiempo real de planeación (de abrir el generador a imprimir) ---
+  const sessionStartRef = useRef<number>(Date.now());
+
+  // --- Pantalla de espera narrada mientras Gemini genera ---
+  const [loadingSeconds, setLoadingSeconds] = useState(0);
+  const LOADING_MESSAGES = [
+    'Consultando la progresión oficial SEP…',
+    'Analizando el contexto de tu escuela y tu grupo…',
+    'Diseñando la secuencia didáctica (inicio, desarrollo y cierre)…',
+    'Elaborando los instrumentos de evaluación…',
+    'Revisando vinculación PAEC y transversalidad…',
+    'Dando los últimos toques a tu planeación…'
+  ];
+  const loadingMessage = LOADING_MESSAGES[Math.min(Math.floor(loadingSeconds / 7), LOADING_MESSAGES.length - 1)];
+  const loadingProgress = Math.min(92, Math.round((loadingSeconds / 45) * 100));
+
+  useEffect(() => {
+    if (!isLoading) {
+      setLoadingSeconds(0);
+      return;
+    }
+    const interval = setInterval(() => setLoadingSeconds(s => s + 1), 1000);
+    return () => clearInterval(interval);
+  }, [isLoading]);
+
+  // Analítica: el docente abrió el generador
+  useEffect(() => {
+    sessionStartRef.current = Date.now();
+    analyticsService.trackPlaneacionIniciada(subject.subjectName);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // --- NUEVO: ESTADO PARA LA ACTIVIDAD DEL TALLER (Paso 2 del PDF) ---
   // Mapeamos: Problema Detectado -> Función Pedagógica
@@ -70,10 +113,17 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
 
   const printRef = useRef<HTMLDivElement>(null);
 
-  const handlePrint = useReactToPrint({
+  const handlePrintOnly = useReactToPrint({
     contentRef: printRef,
     documentTitle: `Planeacion-${subject.subjectName}-${new Date().toLocaleDateString()}`,
   });
+
+  // Imprimir = planeación entregable. Registramos el tiempo total real del docente.
+  const handlePrint = () => {
+    const tiempoTotalSegundos = (Date.now() - sessionStartRef.current) / 1000;
+    analyticsService.trackPlaneacionImpresa(subject.subjectName, tiempoTotalSegundos);
+    handlePrintOnly();
+  };
 
   useEffect(() => {
     if (subject.subjectName) {
@@ -271,7 +321,9 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
 
     try {
       // PRESERVADO: Pasamos la apiKey manual (si existe) al servicio
+      const generationStart = Date.now();
       const plan = await generateLessonPlan(promptEstructurado, school, subject, apiKey);
+      analyticsService.trackPlaneacionGenerada(subject.subjectName, (Date.now() - generationStart) / 1000);
 
       const finalPlan: LessonPlan = {
         ...plan,
@@ -330,18 +382,40 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
 
         {/* 0. API KEY MANUAL (PRESERVADO) */}
         <div className="mb-6 p-4 bg-indigo-50 rounded-xl border border-indigo-100">
-          <label className="text-xs font-bold text-indigo-700 uppercase flex items-center gap-2 mb-2">
-            <Sparkles className="w-3 h-3" /> API Key de Gemini (Opcional - Para mayor velocidad)
-          </label>
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <label className="text-xs font-bold text-indigo-700 uppercase flex items-center gap-2">
+              <Sparkles className="w-3 h-3" /> Tu API Key de Gemini
+            </label>
+            <a
+              href="https://aistudio.google.com/apikey"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 text-white rounded-lg text-xs font-bold hover:bg-indigo-700 transition-colors"
+            >
+              <ExternalLink className="w-3 h-3" />
+              ¿No tienes una? Créala GRATIS aquí (1 minuto)
+            </a>
+          </div>
           <input
             type="password"
             value={apiKey}
-            onChange={(e) => setApiKey(e.target.value)}
+            onChange={(e) => handleApiKeyChange(e.target.value)}
             placeholder="Pegar Google Gemini API Key aquí..."
             className="w-full p-2 rounded-lg border border-indigo-200 bg-white text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 font-mono"
           />
-          <p className="text-[10px] text-indigo-500 mt-1">
-            Usar tu propia clave asegura que no tengas límites de cuota. Si lo dejas vacío, se usará la del sistema.
+          <div className="mt-2 text-[11px] text-indigo-700 leading-relaxed">
+            <span className="font-bold">Cómo obtenerla:</span> 1) Abre el botón azul e inicia sesión con tu cuenta de Google →
+            2) Presiona <span className="font-mono bg-indigo-100 px-1 rounded">"Create API key"</span> →
+            3) Cópiala y pégala aquí. Listo, es gratuita.
+          </div>
+          <p className="text-[10px] text-indigo-500 mt-2 flex items-start gap-1">
+            <ShieldCheck className="w-3 h-3 mt-0.5 flex-shrink-0" />
+            <span>
+              <span className="font-bold">Seguridad:</span> tu clave solo vive en este navegador mientras la pestaña está abierta
+              (se borra al cerrarla). Recomendación: genera una clave nueva en cada sesión y borra la anterior en
+              {' '}<a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer" className="underline font-semibold">Google AI Studio</a>.
+              Si lo dejas vacío, se usará la clave del sistema (puede tener límites de cuota).
+            </span>
           </p>
         </div>
 
@@ -696,17 +770,39 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
 
       </div>
 
-      <button
-        disabled={isLoading || (!selectedProgression && !specificTopic)}
-        onClick={handleGenerate}
-        className={`w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 shadow-lg transition-all ${isLoading || (!selectedProgression && !specificTopic)
-          ? 'bg-slate-200 text-slate-400 cursor-not-allowed shadow-none'
-          : 'bg-indigo-600 text-white hover:bg-indigo-700 active:scale-95'
-          } `}
-      >
-        {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Sparkles className="w-5 h-5" />}
-        {isLoading ? 'Aplicando Criterio Pedagógico IA...' : 'Generar Planeación Personalizada'}
-      </button>
+      {isLoading ? (
+        /* --- PANTALLA DE ESPERA NARRADA: el docente ve el avance y no vuelve a picar el botón --- */
+        <div className="w-full p-6 rounded-2xl bg-indigo-50 border border-indigo-200 shadow-inner">
+          <div className="flex items-center gap-3 mb-4">
+            <Loader2 className="w-6 h-6 animate-spin text-indigo-600 flex-shrink-0" />
+            <div>
+              <p className="font-bold text-indigo-900 text-sm">Generando tu planeación… no cierres esta ventana</p>
+              <p className="text-indigo-600 text-sm mt-0.5 animate-pulse">{loadingMessage}</p>
+            </div>
+          </div>
+          <div className="w-full bg-indigo-100 rounded-full h-2.5 overflow-hidden">
+            <div
+              className="bg-indigo-600 h-2.5 rounded-full transition-all duration-1000 ease-linear"
+              style={{ width: `${loadingProgress}%` }}
+            />
+          </div>
+          <p className="text-[11px] text-indigo-400 mt-2 text-right">
+            Esto suele tardar entre 20 y 40 segundos ({loadingSeconds}s)
+          </p>
+        </div>
+      ) : (
+        <button
+          disabled={!selectedProgression && !specificTopic}
+          onClick={handleGenerate}
+          className={`w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 shadow-lg transition-all ${(!selectedProgression && !specificTopic)
+            ? 'bg-slate-200 text-slate-400 cursor-not-allowed shadow-none'
+            : 'bg-indigo-600 text-white hover:bg-indigo-700 active:scale-95'
+            } `}
+        >
+          <Sparkles className="w-5 h-5" />
+          Generar Planeación Personalizada
+        </button>
+      )}
 
       {
         error && (

@@ -3,9 +3,9 @@
 # Script de deploy para GitHub Pages
 echo "🚀 Iniciando deploy a GitHub Pages..."
 
-# 1. Construir la aplicación con base path específico
+# 1. Construir la aplicación (el base path /EDUPLANMX/ ya viene de vite.config.ts en modo producción)
 echo "📦 Construyendo aplicación..."
-GITHUB_PAGES=true npm run build
+npm run build
 
 # 2. Navegar a la carpeta de build
 cd dist

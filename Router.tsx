@@ -61,6 +61,7 @@ const RoleBasedRedirect: React.FC = () => {
         case 'directivo':
             return <Navigate to="/directivo/dashboard" replace />;
         case 'maestro':
+        case 'guest': // Modo demo: el invitado usa la experiencia del maestro
             return <Navigate to="/maestro/dashboard" replace />;
         case 'alumno':
             return <Navigate to="/alumno/dashboard" replace />;
@@ -95,7 +96,7 @@ const Router: React.FC = () => {
                     <Route
                         path="/maestro/dashboard"
                         element={
-                            <ProtectedRoute allowedRoles={['maestro', 'superadmin']}>
+                            <ProtectedRoute allowedRoles={['maestro', 'superadmin', 'guest']}>
                                 <App />
                             </ProtectedRoute>
                         }
@@ -104,7 +105,7 @@ const Router: React.FC = () => {
                     <Route
                         path="/maestro/guia-curricular"
                         element={
-                            <ProtectedRoute allowedRoles={['maestro', 'superadmin']}>
+                            <ProtectedRoute allowedRoles={['maestro', 'superadmin', 'guest']}>
                                 <GuiaCurricular />
                             </ProtectedRoute>
                         }
@@ -113,7 +114,7 @@ const Router: React.FC = () => {
                     <Route
                         path="/maestro/guia-curricular/:materiaId"
                         element={
-                            <ProtectedRoute allowedRoles={['maestro', 'superadmin']}>
+                            <ProtectedRoute allowedRoles={['maestro', 'superadmin', 'guest']}>
                                 <ProgramaMateria />
                             </ProtectedRoute>
                         }

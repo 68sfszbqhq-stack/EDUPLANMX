@@ -13,3 +13,6 @@ dist
 /*.png
 
 dist
+
+# macOS
+.DS_Store

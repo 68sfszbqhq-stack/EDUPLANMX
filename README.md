@@ -9,11 +9,11 @@ Sistema integral de planeación didáctica para Educación Media Superior, aline
 - ✅ Autenticación con Firebase
 - ✅ Base de datos en Firestore
 - ✅ Interfaz moderna y responsive
-- ✅ Deploy automático en Netlify
+- ✅ Deploy en GitHub Pages (`npm run deploy`)
 
 ## 🌐 Deploy
 
-**Producción**: https://superb-dodol-acefed.netlify.app  
+**Producción**: https://68sfszbqhq-stack.github.io/EDUPLANMX/  
 **Repositorio**: https://github.com/68sfszbqhq-stack/EDUPLANMX
 
 ## 📚 Documentación
@@ -57,7 +57,7 @@ VITE_FIREBASE_APP_ID=                # Firebase App ID
 - **Styling**: Tailwind CSS
 - **IA**: Google Gemini 2.5 Flash
 - **Backend**: Firebase (Auth + Firestore)
-- **Deploy**: Netlify
+- **Deploy**: GitHub Pages
 - **Icons**: Lucide React
 
 ## 📄 Licencia

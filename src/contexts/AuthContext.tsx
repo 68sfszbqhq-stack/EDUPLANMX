@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { User as FirebaseUser } from 'firebase/auth';
 import { authService } from '../services/authService';
+import { analyticsService } from '../services/analyticsService';
 import type { Usuario, AuthContextType, LoginCredentials } from '../../types/auth';
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -94,6 +95,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setLoading(true);
         try {
             await authService.login({ email, password });
+            analyticsService.trackLogin('password');
             // onAuthStateChanged se encargará de establecer el usuario y setLoading(false)
         } catch (error) {
             setLoading(false);
@@ -105,6 +107,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setLoading(true);
         try {
             await authService.loginWithGoogle();
+            analyticsService.trackLogin('google');
             // onAuthStateChanged se encargará de establecer el usuario y setLoading(false)
         } catch (error) {
             setLoading(false);

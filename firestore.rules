@@ -13,62 +13,94 @@ service cloud.firestore {
 
     // Obtiene el documento del usuario actual desde la colección 'users'
     // IMPORTANTE: Esto consume 1 lectura por cada evaluación de regla.
+    // Solo usarla donde sea indispensable (plan Spark).
     function getUserData() {
       return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
     }
 
     // Verifica si el usuario es SUPER ADMIN leyendo su documento en 'users'
-    // Requiere que la regla de 'users' permita lectura al propio usuario.
     function isSuperAdmin() {
       return isAuthenticated() && getUserData().rol == 'superadmin';
     }
 
-    // Verifica si el usuario es Director
-    function isDirector() {
-       return isAuthenticated() && getUserData().rol == 'directivo';
+    // Verifica si el documento pertenece al usuario actual (gratis, no consume lecturas)
+    function isOwner() {
+      return isAuthenticated() && resource.data.userId == request.auth.uid;
     }
 
     // -------------------------------------------------------------------------
-    //  REGLAS DE COLECCIONES PRINCIPALES
+    //  1. USUARIOS
     // -------------------------------------------------------------------------
-
-    // 1. USUARIOS (USERS)
-    // Es fundamental permitir que cada usuario lea su propio perfil para que
-    // las funciones getUserData() e isSuperAdmin() funcionen correctamente.
     match /users/{userId} {
-      // Regla de Oro: Un usuario SIEMPRE puede leer su propio perfil.
-      allow read: if isAuthenticated() && request.auth.uid == userId;
-      
-      // Escritura: Solo el dueño puede editar sus datos básicos (o SuperAdmin)
-      allow create, update: if isAuthenticated() && request.auth.uid == userId;
-      
-      // SUPER ADMIN: Puede leer y escribir CUALQUIER usuario (gestión total)
+      // Regla de Oro: un usuario SIEMPRE puede leer/escribir su propio perfil
+      allow read, create, update: if isAuthenticated() && request.auth.uid == userId;
+
+      // SuperAdmin: gestión total de usuarios
       allow read, write: if isSuperAdmin();
     }
 
-    // 2. ESCUELAS (SCHOOLS)
+    // -------------------------------------------------------------------------
+    //  2. ESCUELAS
+    // -------------------------------------------------------------------------
     match /schools/{schoolId} {
-      // Lectura: Pública para todos los autenticados (necesario para selects de registro)
+      // Lectura: cualquier autenticado (necesario para el onboarding: buscar/unirse)
       allow read: if isAuthenticated();
-      
-      // Escritura: SOLO SuperAdmin puede crear o borrar escuelas.
-      // (Protege la integridad del sistema multi-tenant)
-      allow create, update, delete: if isSuperAdmin();
+
+      // Crear/actualizar: cualquier autenticado
+      // (el onboarding crea escuelas y actualiza estadísticas al unirse un docente)
+      allow create, update: if isAuthenticated();
+
+      // Borrar: solo SuperAdmin
+      allow delete: if isSuperAdmin();
     }
 
-    // 3. ALUMNOS (ALUMNOS)
+    // -------------------------------------------------------------------------
+    //  3. ALUMNOS (datos sensibles de menores: CURP, teléfonos, situación familiar)
+    // -------------------------------------------------------------------------
     match /alumnos/{alumnoId} {
-      // Lectura/Escritura: SuperAdmin tiene control total.
-      allow read, write: if isSuperAdmin();
-      
-      // Directores y Maestros: Pueden gestionar alumnos.
-      // En un entorno ultra-estricto validaríamos aquí que schoolId coincida.
-      // Para este sistema, confiamos en la autenticación y el frontend filtra por escuela.
-      allow read, write: if isAuthenticated();
+      // Crear: PÚBLICO — la página /registro la llenan alumnos sin cuenta
+      allow create: if true;
+
+      // Leer/editar/borrar: solo personal autenticado (docentes, directivos)
+      // NUNCA lectura pública: protege los datos de los menores
+      allow read, update, delete: if isAuthenticated();
     }
 
-    // 4. MATERIAS, PLANEACIONES, ASISTENCIAS (RESTO DEL SISTEMA)
-    // Regla por defecto para otras colecciones no explícitas
+    // -------------------------------------------------------------------------
+    //  4. CUESTIONARIOS SOCIOEDUCATIVOS (mismo criterio que alumnos)
+    // -------------------------------------------------------------------------
+    match /cuestionariosSocioEducativos/{cuestionarioId} {
+      allow create: if true;
+      allow read, update, delete: if isAuthenticated();
+    }
+
+    // -------------------------------------------------------------------------
+    //  5. PLANEACIONES (el docente es dueño de las suyas)
+    // -------------------------------------------------------------------------
+    match /planeaciones/{planId} {
+      // Leer: cualquier docente autenticado (permite compartir dentro de la escuela)
+      allow read: if isAuthenticated();
+
+      // Crear: cualquier autenticado
+      allow create: if isAuthenticated();
+
+      // Editar/borrar: el dueño de la planeación, o SuperAdmin
+      allow update, delete: if isOwner() || isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  6. FICHAS 12 (taller reflexivo personal del docente)
+    // -------------------------------------------------------------------------
+    match /fichas12/{fichaId} {
+      allow read, create: if isAuthenticated();
+      allow update, delete: if isOwner() || isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  7. RESTO DEL SISTEMA (materias, asignaciones, pmc, herramientas, etc.)
+    // -------------------------------------------------------------------------
+    // Solo usuarios autenticados. Nada del sistema es legible desde internet
+    // sin iniciar sesión.
     match /{document=**} {
       allow read, write: if isAuthenticated();
     }

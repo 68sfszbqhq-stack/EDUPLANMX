@@ -11,7 +11,8 @@ const firebaseConfig = {
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "eduplanmx",
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "eduplanmx.firebasestorage.app",
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "144677335686",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:144677335686:web:cd82543b32b323e3ea5707"
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:144677335686:web:cd82543b32b323e3ea5707",
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID // Para Google Analytics (opcional)
 };
 
 // Inicializar Firebase
