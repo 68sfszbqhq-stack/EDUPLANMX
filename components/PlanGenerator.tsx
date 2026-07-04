@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Sparkles, Loader2, Save, Send, Copy, Download, CheckCircle2, Calendar, BookOpen, Clock, List, Target, Brain, Layers, Eye, FileText, User, Table as TableIcon, ExternalLink, ShieldCheck } from 'lucide-react';
+import { Sparkles, Loader2, Save, Send, Copy, Download, CheckCircle2, Calendar, BookOpen, Clock, List, Target, Brain, Layers, Eye, FileText, User, Users, Table as TableIcon, ExternalLink, ShieldCheck } from 'lucide-react';
 import { useReactToPrint } from 'react-to-print';
 import { generateLessonPlan } from '../services/geminiService';
 import { analyticsService } from '../src/services/analyticsService';
@@ -18,6 +18,26 @@ interface PlanGeneratorProps {
   teacherName?: string;
   onSave: (plan: LessonPlan) => void;
 }
+
+// Machote: prompt que el docente copia y pega en Claude/ChatGPT junto con el CSV
+// de respuestas de sus Google Forms, para obtener el resumen del diagnóstico del grupo.
+const MACHOTE_DIAGNOSTICO = `Eres un analista educativo experto en bachillerato mexicano (NEM/MCCEMS).
+
+Te comparto las respuestas en CSV de un cuestionario socioeducativo aplicado a mi grupo de bachillerato. Analízalas y genera un RESUMEN DE DIAGNÓSTICO DEL GRUPO de máximo 300 palabras con esta estructura:
+
+1. PERFIL GENERAL: cuántos alumnos, edades, contexto socioeconómico predominante.
+2. CONECTIVIDAD: acceso a internet, dispositivos disponibles en casa (importante para decidir si puedo dejar tareas digitales).
+3. SITUACIÓN FAMILIAR Y LABORAL: cuántos trabajan además de estudiar, tipos de familia, red de apoyo.
+4. INTERESES PREDOMINANTES: qué les gusta, qué actividades los motivan.
+5. TRES IMPLICACIONES DIDÁCTICAS CONCRETAS: qué debo hacer diferente en mis clases dado todo lo anterior.
+
+REGLAS:
+- NO incluyas ningún dato personal identificable (nombres, CURP, teléfonos, direcciones).
+- Habla de porcentajes o proporciones aproximadas, no de alumnos individuales.
+- Escribe en español, directo y sin adornos: lo voy a pegar en mi plataforma de planeación.
+
+Aquí está el CSV:
+[PEGA AQUÍ TU CSV O ADJÚNTALO]`;
 
 const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherName, onSave }) => {
   const { user } = useAuth();
@@ -51,6 +71,23 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   const [selectedPecId, setSelectedPecId] = useState('');
   const [pecActivity, setPecActivity] = useState('');
   const [studentContextSummary, setStudentContextSummary] = useState<string>('');
+
+  // Diagnóstico del grupo escrito/pegado por el docente (persiste en este navegador)
+  const [diagnosticoGrupo, setDiagnosticoGrupo] = useState(() => localStorage.getItem('diagnosticoGrupo') || '');
+  const [showMachote, setShowMachote] = useState(false);
+  const [machoteCopiado, setMachoteCopiado] = useState(false);
+
+  const handleDiagnosticoChange = (value: string) => {
+    setDiagnosticoGrupo(value);
+    localStorage.setItem('diagnosticoGrupo', value);
+  };
+
+  const copiarMachote = () => {
+    navigator.clipboard.writeText(MACHOTE_DIAGNOSTICO).then(() => {
+      setMachoteCopiado(true);
+      setTimeout(() => setMachoteCopiado(false), 2500);
+    }).catch(() => { /* clipboard bloqueado: el docente puede seleccionar y copiar manualmente */ });
+  };
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<LessonPlan | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -286,10 +323,16 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
       ${includeSections.bibliography ? '- BIBLIOGRAFÍA: Incluir lista de fuentes consultadas (formato APA).' : ''}
     `;
 
+    // El diagnóstico escrito por el docente tiene prioridad sobre el resumen automático
+    const diagnosticoEfectivo = diagnosticoGrupo.trim() || studentContextSummary;
+
     const contextInstructions = `
       CONTEXTO A CONSIDERAR:
       ${includeContext.schoolVision ? `- VISIÓN ESCOLAR: "${school.vision}" (Alinearse a esto).` : ''}
-      ${includeContext.studentDiagnosis ? `- DIAGNÓSTICO GRUPO: "${studentContextSummary}" (Adaptar a estas necesidades).` : ''}
+      ${includeContext.studentDiagnosis && diagnosticoEfectivo ? `- DIAGNÓSTICO DEL GRUPO: "${diagnosticoEfectivo}"
+        INSTRUCCIÓN OBLIGATORIA: adapta al menos UNA actividad de la secuencia a estas características
+        y decláralo explícitamente dentro de la actividad con la etiqueta "[Adaptación al grupo]".
+        Si el diagnóstico indica poco acceso a internet, NO dejes tareas que lo requieran.` : ''}
       ${includeContext.communityContext ? `- CONTEXTO COMUNIDAD: "${school.municipality}" (Usar ejemplos locales).` : ''}
     `;
 
@@ -665,6 +708,63 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             </div>
 
           </div>
+        </div>
+
+        {/* --- DIAGNÓSTICO DE MI GRUPO (contextualización real) --- */}
+        <div className="col-span-1 md:col-span-2 bg-emerald-50 p-5 rounded-2xl border border-emerald-200 my-6">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <label className="text-sm font-bold text-emerald-900 flex items-center gap-2">
+              <Users className="w-4 h-4" />
+              4. Diagnóstico de mi grupo (para contextualizar de verdad)
+            </label>
+            <button
+              type="button"
+              onClick={() => setShowMachote(!showMachote)}
+              className="text-xs font-bold text-emerald-700 underline hover:text-emerald-900"
+            >
+              {showMachote ? 'Ocultar guía' : '📋 ¿Cómo generarlo desde mis Google Forms?'}
+            </button>
+          </div>
+
+          {showMachote && (
+            <div className="mb-4 p-4 bg-white rounded-xl border border-emerald-200 text-xs text-slate-700 space-y-3">
+              <p className="font-bold text-emerald-800">Genera tu diagnóstico en 4 pasos (5 minutos, una vez por semestre):</p>
+              <ol className="list-decimal list-inside space-y-1.5 leading-relaxed">
+                <li>Abre el Google Sheets con las respuestas de tu formulario → <span className="font-semibold">Archivo → Descargar → CSV</span>.</li>
+                <li>Abre <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="text-emerald-700 underline font-semibold">Claude</a> o <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-emerald-700 underline font-semibold">ChatGPT</a> y pega el machote de abajo junto con tu CSV (adjúntalo o pega su contenido).</li>
+                <li>Copia el resumen que te devuelva la IA.</li>
+                <li>Pégalo en el cuadro de aquí abajo. Se guarda en este navegador y se usará en <span className="font-semibold">todas</span> tus planeaciones.</li>
+              </ol>
+              <div className="relative">
+                <pre className="p-3 bg-slate-50 border border-slate-200 rounded-lg text-[10px] leading-relaxed whitespace-pre-wrap max-h-48 overflow-y-auto">{MACHOTE_DIAGNOSTICO}</pre>
+                <button
+                  type="button"
+                  onClick={copiarMachote}
+                  className={`absolute top-2 right-2 px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 transition-colors ${machoteCopiado
+                    ? 'bg-emerald-600 text-white'
+                    : 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200 border border-emerald-300'
+                    }`}
+                >
+                  {machoteCopiado ? <><CheckCircle2 className="w-3 h-3" /> ¡Copiado!</> : <><Copy className="w-3 h-3" /> Copiar machote</>}
+                </button>
+              </div>
+              <p className="text-[10px] text-emerald-700">
+                💡 El machote le pide a la IA que NO incluya datos personales de tus alumnos: solo porcentajes y patrones del grupo.
+              </p>
+            </div>
+          )}
+
+          <textarea
+            value={diagnosticoGrupo}
+            onChange={(e) => handleDiagnosticoChange(e.target.value)}
+            placeholder="Pega aquí el resumen del diagnóstico de tu grupo (perfil socioeconómico, acceso a internet, situación laboral/familiar, intereses, implicaciones didácticas)..."
+            className="w-full p-3 rounded-xl border border-emerald-200 bg-white text-sm focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 min-h-[110px]"
+          />
+          <p className="text-[10px] text-emerald-700 mt-1.5">
+            {diagnosticoGrupo.trim()
+              ? '✅ Guardado en este navegador. La IA adaptará al menos una actividad a tu grupo y lo marcará con la etiqueta [Adaptación al grupo] (mantén activada la casilla "Considerar Diagnóstico de Alumnos" de arriba).'
+              : 'Opcional pero poderoso: esto es lo que convierte una planeación genérica en una planeación de TU grupo.'}
+          </p>
         </div>
 
         {/* 3. ESTRATEGIA Y PEC */}
