@@ -1,0 +1,26 @@
+{
+    "name": "EduPlan MX — Planeación Docente Inteligente",
+    "short_name": "EduPlan MX",
+    "description": "Planeaciones didácticas alineadas al MCCEMS con IA, para docentes de Bachillerato General Oficial.",
+    "start_url": ".",
+    "scope": ".",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#eef2ff",
+    "theme_color": "#312e81",
+    "lang": "es-MX",
+    "icons": [
+        {
+            "src": "icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
