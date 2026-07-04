@@ -15,6 +15,7 @@ import ProgramaMateria from './pages/maestro/ProgramaMateria';
 import Herramientas from './pages/maestro/Herramientas';
 import { OnboardingPage } from './pages/OnboardingPage';
 import Ficha12 from './pages/maestro/Ficha12';
+import LandingPage from './components/LandingPage';
 
 // Componente para redirigir según el rol
 const RoleBasedRedirect: React.FC = () => {
@@ -32,7 +33,8 @@ const RoleBasedRedirect: React.FC = () => {
     }
 
     if (!user) {
-        return <Navigate to="/login" replace />;
+        // Visitante sin sesión: página pública de presentación (QR del congreso, links compartidos)
+        return <LandingPage />;
     }
 
     // Superadmin NO necesita onboarding (administra el sistema, no una escuela)

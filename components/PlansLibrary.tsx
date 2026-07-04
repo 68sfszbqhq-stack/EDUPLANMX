@@ -34,12 +34,45 @@ const PlansLibrary: React.FC = () => {
     applyFilters();
   }, [plans, searchTerm, filterSubject, filterSemester]);
 
+  /**
+   * Rescate único: sube a Firestore las planeaciones que quedaron atrapadas
+   * solo en localStorage (guardados previos a la nube, o fallos de red).
+   * Sin esto, limpiar el navegador o cambiar de equipo las pierde para siempre.
+   */
+  const sincronizarLocalesPendientes = async (nubeActual: PlaneacionFirestore[]) => {
+    if (!user?.id || !user?.schoolId) return false;
+    try {
+      const locales: LessonPlan[] = JSON.parse(localStorage.getItem('savedPlans') || '[]');
+      if (!Array.isArray(locales) || locales.length === 0) return false;
+
+      const enNube = new Set(nubeActual.map(p => `${p.title}|${p.subject}`));
+      const pendientes = locales.filter(p => p?.subject && !enNube.has(`${(p as any).title || p.subject}|${p.subject}`));
+      if (pendientes.length === 0) return false;
+
+      console.log(`☁️ Rescatando ${pendientes.length} planeaciones locales hacia Firestore...`);
+      for (const plan of pendientes) {
+        await planeacionesService.crear(plan, user.id, user.schoolId);
+      }
+      return true;
+    } catch (e) {
+      console.error('No se pudieron sincronizar planeaciones locales:', e);
+      return false;
+    }
+  };
+
   const loadPlans = async () => {
     if (!user?.id || !user?.schoolId) return;
 
     try {
       setLoading(true);
-      const plansData = await planeacionesService.getMias(user.id, user.schoolId);
+      let plansData = await planeacionesService.getMias(user.id, user.schoolId);
+
+      // Subir rezagadas de localStorage y recargar si hubo cambios
+      const huboRescate = await sincronizarLocalesPendientes(plansData);
+      if (huboRescate) {
+        plansData = await planeacionesService.getMias(user.id, user.schoolId);
+      }
+
       setPlans(plansData);
     } catch (error) {
       console.error('Error al cargar planeaciones:', error);

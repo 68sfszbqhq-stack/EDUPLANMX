@@ -11,6 +11,8 @@ import { PedagogicalAuditor } from './PedagogicalAuditor';
 import { pecService } from '../src/services/pecService';
 import { PECProject } from '../types';
 import { useAuth } from '../src/contexts/AuthContext';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { db } from '../src/config/firebase';
 
 interface PlanGeneratorProps {
   school: SchoolContext;
@@ -81,6 +83,38 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     setDiagnosticoGrupo(value);
     localStorage.setItem('diagnosticoGrupo', value);
   };
+
+  // Respaldo en la nube del diagnóstico: se guarda al salir del campo y se
+  // recupera en cualquier dispositivo (localStorage queda como caché rápida).
+  const puedeUsarNube = user?.id && user.id !== 'guest' && user.rol !== 'guest';
+
+  const guardarDiagnosticoEnNube = async () => {
+    if (!puedeUsarNube) return;
+    try {
+      await setDoc(doc(db, 'users', user!.id), { diagnosticoGrupo }, { merge: true });
+    } catch (e) {
+      console.error('No se pudo respaldar el diagnóstico en la nube:', e);
+    }
+  };
+
+  useEffect(() => {
+    // Si este navegador no tiene diagnóstico pero la nube sí, recuperarlo
+    const recuperar = async () => {
+      if (!puedeUsarNube || localStorage.getItem('diagnosticoGrupo')) return;
+      try {
+        const snap = await getDoc(doc(db, 'users', user!.id));
+        const guardado = snap.data()?.diagnosticoGrupo;
+        if (guardado) {
+          setDiagnosticoGrupo(guardado);
+          localStorage.setItem('diagnosticoGrupo', guardado);
+        }
+      } catch (e) {
+        console.error('No se pudo recuperar el diagnóstico de la nube:', e);
+      }
+    };
+    recuperar();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.id]);
 
   const copiarMachote = () => {
     navigator.clipboard.writeText(MACHOTE_DIAGNOSTICO).then(() => {
@@ -757,6 +791,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           <textarea
             value={diagnosticoGrupo}
             onChange={(e) => handleDiagnosticoChange(e.target.value)}
+            onBlur={guardarDiagnosticoEnNube}
             placeholder="Pega aquí el resumen del diagnóstico de tu grupo (perfil socioeconómico, acceso a internet, situación laboral/familiar, intereses, implicaciones didácticas)..."
             className="w-full p-3 rounded-xl border border-emerald-200 bg-white text-sm focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 min-h-[110px]"
           />

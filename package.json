@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deploy": "./deploy.sh"
+    "deploy": "./deploy.sh",
+    "respaldo": "tsx scripts/respaldo_firestore.ts"
   },
   "dependencies": {
     "@google/genai": "^1.35.0",
