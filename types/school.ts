@@ -106,6 +106,10 @@ export interface CompleteProfileData {
     materias?: string[];
     grados?: number[];
     telefono?: string;
+
+    // Identidad (obligatoria para completar onboarding; ver Router.tsx)
+    nombre?: string;
+    apellidoPaterno?: string;
 }
 
 // ============================================

@@ -6,6 +6,8 @@ interface CompleteProfileScreenProps {
     schoolName: string;
     puesto: Puesto;
     onComplete: (profileData: CompleteProfileData) => void;
+    defaultNombre?: string;
+    defaultApellido?: string;
 }
 
 const MATERIAS_COMUNES = [
@@ -32,13 +34,17 @@ const SEMESTRES = [1, 2, 3, 4, 5, 6];
 export const CompleteProfileScreen: React.FC<CompleteProfileScreenProps> = ({
     schoolName,
     puesto,
-    onComplete
+    onComplete,
+    defaultNombre = '',
+    defaultApellido = ''
 }) => {
     const [profileData, setProfileData] = useState<CompleteProfileData>({
         puesto,
         materias: [],
         grados: [],
-        telefono: ''
+        telefono: '',
+        nombre: defaultNombre,
+        apellidoPaterno: defaultApellido
     });
 
     const [customMateria, setCustomMateria] = useState('');
@@ -81,7 +87,10 @@ export const CompleteProfileScreen: React.FC<CompleteProfileScreenProps> = ({
         onComplete(profileData);
     };
 
-    const canSubmit = !isDocente || (profileData.materias && profileData.materias.length > 0);
+    // Nombre y apellido son OBLIGATORIOS: sin ellos, Router.tsx considera el
+    // onboarding incompleto y el usuario queda en un bucle infinito de onboarding.
+    const identidadCompleta = Boolean(profileData.nombre?.trim() && profileData.apellidoPaterno?.trim());
+    const canSubmit = identidadCompleta && (!isDocente || (profileData.materias && profileData.materias.length > 0));
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
@@ -100,6 +109,29 @@ export const CompleteProfileScreen: React.FC<CompleteProfileScreenProps> = ({
                                 Escuela: <span className="font-semibold text-blue-600">{schoolName}</span>
                             </p>
                         </div>
+                    </div>
+                </div>
+
+                {/* Nombre y Apellido (obligatorios) */}
+                <div className="mb-8">
+                    <label className="block text-sm font-medium text-gray-700 mb-3">
+                        ¿Cómo te llamas? * <span className="font-normal text-gray-400">(así aparecerás en tus planeaciones)</span>
+                    </label>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <input
+                            type="text"
+                            value={profileData.nombre || ''}
+                            onChange={(e) => setProfileData(prev => ({ ...prev, nombre: e.target.value }))}
+                            placeholder="Nombre(s)"
+                            className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        />
+                        <input
+                            type="text"
+                            value={profileData.apellidoPaterno || ''}
+                            onChange={(e) => setProfileData(prev => ({ ...prev, apellidoPaterno: e.target.value }))}
+                            placeholder="Apellido paterno"
+                            className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        />
                     </div>
                 </div>
 

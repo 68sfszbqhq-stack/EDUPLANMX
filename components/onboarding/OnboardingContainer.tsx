@@ -69,11 +69,16 @@ export const OnboardingContainer: React.FC = () => {
                 throw new Error('Información incompleta');
             }
 
-            // Extraer nombre y apellido del displayName
-            const fullName = user.displayName || '';
-            const nameParts = fullName.split(' ');
-            const nombre = nameParts[0] || 'Usuario';
-            const apellidoPaterno = nameParts[1] || '';
+            // Identidad: lo que capturó el formulario, con displayName de Google como respaldo.
+            // Ambos campos son obligatorios: Router.tsx exige nombre y apellidoPaterno
+            // para considerar el onboarding completo.
+            const nameParts = (user.displayName || '').split(' ');
+            const nombre = profileData.nombre?.trim() || nameParts[0] || '';
+            const apellidoPaterno = profileData.apellidoPaterno?.trim() || nameParts[1] || '';
+
+            if (!nombre || !apellidoPaterno) {
+                throw new Error('Escribe tu nombre y apellido para continuar');
+            }
 
             // Crear perfil de usuario en Firestore
             await schoolService.createUserProfile(
@@ -86,8 +91,10 @@ export const OnboardingContainer: React.FC = () => {
                 profileData
             );
 
-            // Redirigir al dashboard
-            navigate('/dashboard');
+            // Recarga completa: AuthContext debe releer el perfil desde Firestore.
+            // (navigate() dejaba el contexto con onboardingCompleto=false y el
+            // usuario rebotaba de vuelta al onboarding.)
+            window.location.assign(import.meta.env.BASE_URL);
         } catch (err: any) {
             console.error('Error al completar onboarding:', err);
             setError(err.message || 'Error al guardar el perfil');
@@ -142,6 +149,8 @@ export const OnboardingContainer: React.FC = () => {
                     schoolName={state.schoolName}
                     puesto={state.puesto}
                     onComplete={handleProfileComplete}
+                    defaultNombre={(user?.displayName || '').split(' ')[0] || ''}
+                    defaultApellido={(user?.displayName || '').split(' ').slice(1).join(' ') || ''}
                 />
             )}
         </>
