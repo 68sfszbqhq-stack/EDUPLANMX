@@ -175,6 +175,46 @@ def extraer_formato_tabla_metas(frag: str) -> tuple[list[dict], list[str]]:
     return progresiones, metas
 
 
+def extraer_formato_tema_metas(texto: str) -> tuple[list[dict], list[str]]:
+    """
+    Formato de las UAC de Humanidades (2023-2026):
+    párrafo de la progresión → línea 'Tema: X/Y' → 'METAS' →
+    tabla CATEGORÍA / SUBCATEGORÍAS / DIMENSIONES.
+    """
+    headers = [m.start() for m in re.finditer(r"Tema:\s*[^\n]+\n\s*METAS", texto)]
+    if len(headers) < 3:
+        return [], []
+
+    progresiones = []
+    limites = [0] + headers
+    for idx, h in enumerate(headers):
+        chunk = texto[limites[idx]:h]
+        # El párrafo de la progresión es el último bloque de texto "corrido"
+        # (separado por líneas en blanco) antes de la línea "Tema:"
+        piezas = [p for p in re.split(r"\n\s*\n", chunk)]
+        parrafo = ""
+        for pieza in reversed(piezas):
+            plano = limpiar(pieza.replace("\n", " "))
+            # descartar residuos de tabla (dimensiones numeradas, encabezados)
+            if len(plano) >= 80 and "SUBCATEGOR" not in plano and "DIMENSION" not in plano \
+                    and not re.match(r"^\d\.\s", plano):
+                parrafo = plano
+                break
+        if parrafo:
+            progresiones.append({"id": idx + 1, "descripcion": parrafo[:1200]})
+
+    # Metas del primer bloque (texto entre METAS y CATEGORÍA)
+    metas = []
+    m = re.search(r"METAS\s*\n(.{50,1500}?)CATEGOR", texto[headers[0]:headers[0] + 2500], re.DOTALL)
+    if m:
+        for linea in re.split(r"\n\s*\n", m.group(1)):
+            plano = limpiar(linea.replace("\n", " "))
+            if len(plano) >= 40:
+                metas.append(plano[:350])
+
+    return progresiones, metas
+
+
 def parsear(texto: str) -> dict:
     texto = texto.replace("\r", "\n")
 
@@ -207,6 +247,14 @@ def parsear(texto: str) -> dict:
             progresiones = prog_tabla
             if metas2 and not metas_tabla:
                 metas_tabla = metas2
+
+    # Estrategia 2c: formato Humanidades (párrafo → "Tema:" → METAS)
+    if len(progresiones) < 3:
+        prog_tema, metas3 = extraer_formato_tema_metas(texto)
+        if len(prog_tema) > len(progresiones):
+            progresiones = prog_tema
+            if metas3 and not metas_tabla:
+                metas_tabla = metas3
 
     # Fallback: patrón "Progresión 1." repartido por el documento
     if not progresiones:

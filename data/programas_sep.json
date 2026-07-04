@@ -239,7 +239,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/nfhyrKiRiF-Pensamiento-Matematico-I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -610,7 +610,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.864Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/UbN2iAEhFi-Cultura-Digital-I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -768,107 +768,135 @@
     "progresiones": [
       {
         "id": 1,
-        "descripcion": "Explora a partir de la pregunta '¿Por qué estoy aquí?' para acercarse a los saberes, recursos y prácticas filosóficas.",
+        "descripcion": "Explora a partir de la pregunta “¿Por qué estoy aquí?” o aquellas que le permiten cuestionar el carácter histórico y existencial de su identidad, para acercarse (de forma contextual) a los saberes , recursos, prácticas y aplicaciones de las humanidades, especialment e la Filosofía, la Ética o la Lógica, como son la argumentación y el pensamiento crítico . Se busca introducir al estudiantado en las humanidades entendidas como área de conocimiento del MCCEMS ¿Cómo funcionan las Humanidades? Cuestionando. ¿Qué se cuestiona en Humanidades? Todo; para las Humanidades todo es cuestionable –incluso la afirmación de que todo se puede cuestionar. Respondiendo la pregunta “¿Por qué estoy aquí?” o aquellas que le permiten observar la configuración histórica de su identidad, el estudiantado indaga la variedad de funciones en el uso del lenguaje, y va dando cuenta de que al afirmarse deberá tomar posición y dar razones para sostener su posición singular . La pregunta lo coloca en situación de examinar su vida, de reco nocer distintos discursos, saberes y tipos de intencionalidad, lo que exige evaluar la experiencia colectiva que se lleva a cabo en el intercambio discursivo del cuestionamiento d",
+        "metas": [
+          "Utiliza los significados (culturales, políticos, históricos, tecnológicos, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su vida y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Asume roles relacionados con los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias de forma humanista."
+        ],
         "tematicas": [
-          "Asombro filosófico",
-          "El cuestionamiento"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortaleza a la formación. \nDentro de esta configuración, el eje de las di mensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \n5 \n \nc El Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, e nunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, an álisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la experiencia \ncotidiana del estudiantado, sin perder de vista el apren dizaje de trayectoria. \n \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \n \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio independiente . \n \nEn el presente documento se describe la UAC correspondiente a Humanidades I del \nprimer semestre."
         ]
       },
       {
         "id": 2,
-        "descripcion": "Reconoce la experiencia de sí misma/o analizando discursos clásicos y contemporáneos.",
+        "descripcion": "c Reconoce la experiencia de sí misma/o analizando discursos clásicos y contemporáneos sobre las pasiones y los vicios para que se percate cómo se estructuran las vivencias desde la colectividad. Se busca que el estudiante identifique y examine la experiencia de sí, a través de la reflexión de sus emociones , ideas o posturas asumidas, pues la manera en que se percibe y concibe a sí misma/o es en principio una construcción externa. Dicho de otra manera, las personas no pueden determinarse a sí mismas completamente y sólo desde sí mismas. Para que se percate cómo está construida/o desde fuera, usará discursos humanísticos antiguos y/o contemporáneos que tratan y discuten pasiones y vicios humanos, como afecciones y estructuras de la propia experiencia que determinan el comportamiento de una persona y sus relaciones sociales, así como su propia concepción e imagen de sí. Esas afecci ones y estructuras de la experiencia no son de principio producidas por la propia persona, sino recibidas de otros, de lo colectivo. Concebirse a sí misma/o como iracundo, melancólico, comportarse como alguien habituado a lo perjudicial para sí, es algo qu e en un inicio proviene de fuera de su persona.",
+        "metas": [
+          "Utiliza los significados (culturales, políticos, históricos, tecnológicos, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su vida y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Asume roles relacionados con los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias de forma humanista."
+        ],
         "tematicas": [
-          "Conocimiento de sí mismo"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortaleza a la formación. \nDentro de esta configuración, el eje de las di mensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \n5 \n \nc El Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, e nunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, an álisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la experiencia \ncotidiana del estudiantado, sin perder de vista el apren dizaje de trayectoria. \n \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \n \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio independiente . \n \nEn el presente documento se describe la UAC correspondiente a Humanidades I del \nprimer semestre."
         ]
       },
       {
         "id": 3,
-        "descripcion": "Pone en cuestión la manera en que los otros dan sentido a su realidad.",
+        "descripcion": "c Cuestiona cómo sus pasiones y virtudes configuran su propia experiencia, para reflexionar cómo está n estructurada sus vivencias y el sentido de la vida que asume. El contacto que el estudiante tenga con los discursos clásicos y contemporáneos sobre las pasiones y las virtudes abre la posibilidad para que piense cómo está estructurada su experiencia, los sentidos de vida que asume, las prácticas que prefiere, los placeres y deseos que conforman su sensibilidad. La propia experiencia se encuentra configurada por pasiones y deseos, de igu al modo lo que se concibe como una virtud. Que una persona tenga la capacidad de configurar desde sí misma sus potencias y capacidades, implica contrastar y evaluar sus aspiraciones, caprichos, afectos, incapacidades y arbitrariedades. La pregunta filosófi ca sobre la experiencia de sí es la búsqueda de una configuración propia de la virtud.",
+        "metas": [
+          "Utiliza los significados (culturales, políticos, históricos, tecnológicos, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su vida y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Asume roles relacionados con los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias de forma humanista."
+        ],
         "tematicas": [
-          "Alteridad",
-          "El Otro"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortaleza a la formación. \nDentro de esta configuración, el eje de las di mensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \n5 \n \nc El Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, e nunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, an álisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la experiencia \ncotidiana del estudiantado, sin perder de vista el apren dizaje de trayectoria. \n \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \n \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio independiente . \n \nEn el presente documento se describe la UAC correspondiente a Humanidades I del \nprimer semestre."
         ]
       },
       {
         "id": 4,
-        "descripcion": "Cuestiona cómo sus pasiones y virtudes configuran su propia experiencia.",
+        "descripcion": "Comprende la configuración histórica de la experiencia propia. Para delimitar la configuración (pasional, sensible o afectiva) de la experiencia de sí, es necesario investigar su génesis y su construcción histórica. De esta manera, se pretende que el estudiante emplee herramientas humanísticas para reconocer la conformación histórica d e su experiencia de sí. Pues si la estructura de la propia experiencia de principio es recibida desde fuera de la persona, de los otros, de lo colectivo, también es conveniente que explore su carácter histórico. Dicho de otra manera, las personas de otras époc as no se concibieron a sí mismas de igual manera que las del día de hoy. Una persona que vivió en la Grecia antigua, una en la edad media, y una en el México prehispánico, no se pensaron a sí mismas de la misma manera que una del siglo XXI.",
+        "metas": [
+          "Utiliza los significados (culturales, políticos, históricos, tecnológicos, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su vida y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Asume roles relacionados con los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias de forma humanista."
+        ],
         "tematicas": [
-          "Pasiones",
-          "Virtudes",
-          "Ética"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortaleza a la formación. \nDentro de esta configuración, el eje de las di mensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \n5 \n \nc El Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, e nunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, an álisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la experiencia \ncotidiana del estudiantado, sin perder de vista el apren dizaje de trayectoria. \n \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \n \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio independiente . \n \nEn el presente documento se describe la UAC correspondiente a Humanidades I del \nprimer semestre."
         ]
       },
       {
         "id": 5,
-        "descripcion": "Reflexiona sobre la vida buena y la felicidad desde diversas perspectivas.",
+        "descripcion": "Comprende el papel que los otros –humanos, animales, cosas, instituciones – tienen en la experiencia de sí misma/o, para distinguir las diversas maneras en cómo se relaciona con seres animados y/o inanimados. Se intenta que el estudiante se acerque a los discursos y saberes humanísticos en los que se da cabida y valora a lo no humano. Una de las virtudes de las humanidades es que permiten discutir el carácter exclusivamente humano de la existencia, pues el ser humano no sería humano sin relacionarse con los demás seres y cosas, sin acoger en su humanidad a los animales, las instituciones y las cosas. Que el estu diante comprenda que se relaciona de diferentes maneras con los demás seres. Por ejemplo, que toma a una computadora como objeto tecnológico, mueble, utensilio; a los animales como mascotas, componentes de un ecosistema, alimento, espectáculo; y a las inst ituciones como formas de gobierno, formas de reproducción económica, formas de crear cultura. Entender que se relaciona de diferentes maneras con diferentes seres y cosas, es una vía para que comprenda que la experiencia de sí es una construcción colectiva . Que una persona conciba a un animal como mascota o que piense qu",
+        "metas": [
+          "Utiliza los significados (culturales, políticos, históricos, tecnológicos, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su vida y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Asume roles relacionados con los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias de forma humanista."
+        ],
         "tematicas": [
-          "Eudaimonía",
-          "Felicidad",
-          "Vida buena"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortaleza a la formación. \nDentro de esta configuración, el eje de las di mensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \n5 \n \nc El Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, e nunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, an álisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la experiencia \ncotidiana del estudiantado, sin perder de vista el apren dizaje de trayectoria. \n \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \n \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio independiente . \n \nEn el presente documento se describe la UAC correspondiente a Humanidades I del \nprimer semestre."
         ]
       },
       {
         "id": 6,
-        "descripcion": "Analiza la relación entre el placer y la vida buena.",
+        "descripcion": "Distingue los significados –económicos, sociales, de género, ambientales, políticos, entre otros – que constituyen su vida y los vincula a sus capacidades de construir la colectividad, para identificar que el tipo de discurso depende del consenso y del reco nocimiento colectivo. Una experiencia de sí se encuentra configurada históricamente a partir de muchas relaciones con seres humanos y no humanos. Por ello es conveniente que el estudiante tenga un primer acercamiento al conocimiento deductivo y sus formas de validez, así como la fiabilidad de los discursos, saberes, técnicas y metodologías de los distintos tipos de discurso, para identificar y enunciar los sentidos de esas relaciones. Conc ebir a un bosque como un recurso natural o como un ecosistema, a un animal como ser igual o inferior, a un objeto técnico como parte de la propia experiencia o como algo ajeno, las preferencias afectivas como no determinadas o como algo que no se puede mod ificar, en todos estos casos se trata de sentidos y vivencias que pueden enunciarse en discursos y justificarse mediante argumentos. Las humanidades se ocupan en componer, establecer, transmitir y criticar esos discursos. De esta manera, rec",
+        "metas": [
+          "Utiliza los significados (culturales, políticos, históricos, tecnológicos, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su vida y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Asume roles relacionados con los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias de forma humanista."
+        ],
         "tematicas": [
-          "Hedonismo",
-          "Placer vs Felicidad"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortaleza a la formación. \nDentro de esta configuración, el eje de las di mensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \n5 \n \nc El Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, e nunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, an álisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la experiencia \ncotidiana del estudiantado, sin perder de vista el apren dizaje de trayectoria. \n \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \n \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio independiente . \n \nEn el presente documento se describe la UAC correspondiente a Humanidades I del \nprimer semestre."
         ]
       },
       {
         "id": 7,
-        "descripcion": "Examina la validez de los argumentos y las falacias en discursos cotidianos.",
+        "descripcion": "Enuncia lo que conoce de sí misma/o para saber quién es en relación con los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas, para expresar cómo se sitúa a sí mismo en la colectividad. Después de conocer los discursos y textos human ísticos sobre la experiencia de sí, sobre su carácter histórico y sus múltiples sentidos –humanos y no humanos –, es conveniente que el estudiante ejercite la escritura de sí. Ejercitar la escritura de sí puede hacerse de muchas maneras (en diarios, cartas, poemas, pinturas, audios, videos...). El que se pueda escribir sobre una/o misma/o implica tener el vocabulario y los sentidos para hacerlo. Los saberes y discursos clásicos y contemporáneos son para ejercitarlos en la propia vida y en la colectiva. Que e l estudiante ejercite la concepción de sí en la escritura –lo que es, lo que desea ser, lo que no quiere ser para los otros y lo que puede ser con los otros – es una oportunidad para que ponga en funcionamiento los saberes y discursos que ha conocido antes. Que una persona enuncie quién es, permite que se conozca a sí misma y se critique en relación con los acontecimientos, discursos, instituciones, imágenes, objetos y prácti",
+        "metas": [
+          "Utiliza los significados (culturales, políticos, históricos, tecnológicos, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su vida y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Asume roles relacionados con los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias de forma humanista."
+        ],
         "tematicas": [
-          "Lógica",
-          "Argumentación",
-          "Falacias"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortaleza a la formación. \nDentro de esta configuración, el eje de las di mensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \n5 \n \nc El Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, e nunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, an álisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la experiencia \ncotidiana del estudiantado, sin perder de vista el apren dizaje de trayectoria. \n \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \n \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio independiente . \n \nEn el presente documento se describe la UAC correspondiente a Humanidades I del \nprimer semestre."
         ]
       },
       {
         "id": 8,
-        "descripcion": "Identifica los fines de la argumentación en diferentes contextos.",
+        "descripcion": "Ejerce la crítica usando discursos clásicos y contemporáneos que postulan el problema de una vida alienada, mutilada en sus capacidades, que le impide construir una vida propia y colectividad, para dar cuenta de cómo se encarna la servidumbre voluntaria Hacer que el estudiante formule razones y explicaciones de por qué no puede llevar a cabo todo lo que desea, de por qué no puede cumplirse todo lo que concibe que puede llegar a ser su experiencia, le da herramientas para construirse a sí misma/o y a su colectividad. Esto implica plantearse preguntas sobre qué es aquello que incapacita a alguien para poder vivir todo lo que piensa que puede y debe vivir, y si todos los impedimentos son externos, de las cosas, o vienen de los otros. Los discursos humanístic os sobre la vida mutilada o alienación requieren la figura de una persona que encarne esos impedimentos, como ser esclavo, no sólo de los otros, si no de sí misma. La tradición humanística concibe al esclavo de sí –“soy pobre, soy violento, soy un sometido , soy ignorante, soy impío…” – como algo que debe criticarse y transformarse mediante acciones sobre aquel que se concibe como tal.",
+        "metas": [
+          "Utiliza los significados (culturales, políticos, históricos, tecnológicos, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su vida y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Asume roles relacionados con los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias de forma humanista."
+        ],
         "tematicas": [
-          "Debate",
-          "Persuasión"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortaleza a la formación. \nDentro de esta configuración, el eje de las di mensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \n5 \n \nc El Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, e nunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, an álisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la experiencia \ncotidiana del estudiantado, sin perder de vista el apren dizaje de trayectoria. \n \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \n \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio independiente . \n \nEn el presente documento se describe la UAC correspondiente a Humanidades I del \nprimer semestre."
         ]
       },
       {
         "id": 9,
-        "descripcion": "Reflexiona sobre la libertad y la responsabilidad.",
+        "descripcion": "Argumenta la configuración –histórica, política, social, ambiental, tecnológica, etcétera – de su propia experiencia, para justificar y fundamentar sus propias decisiones y así fortalecer sus capacidades de construir la colectividad. Hay que colocar al estudiante en situación de empl ear los recursos y técnicas de la Lógica, argumentación y pensamiento crítico, así como los saberes humanísticos para comprender, los tipos de argumentos, así como los elementos fundamentales que le permitirán estructurar y evaluar las razones desde las cu ales fundamenta o toma decisiones sobre su experiencia de sí. L os recursos y técnicas humanísticas exigen de quienes hacen uso de ellas la verdad, la relevancia, la validez, la veracidad, la autenticidad de sus afirmaciones. Las estructuras de los argument os pueden ser lógicas, retóricas, heurísticas o literarias, pero el resultado que interesa es que el estudiante estructure y fortalezca la experiencia de sí. El diálogo , la negociación y la revisión racional de sus creencias y las de los otros es una herra mienta poderosa para distinguir si una afirmación de deseo sobre la propia vida es factible y ética . Y esto ocurre sometiendo esa afirmación ",
+        "metas": [
+          "Utiliza los significados (culturales, políticos, históricos, tecnológicos, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su vida y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Asume roles relacionados con los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias de forma humanista."
+        ],
         "tematicas": [
-          "Libertad",
-          "Determinismo",
-          "Responsabilidad"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortaleza a la formación. \nDentro de esta configuración, el eje de las di mensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \n5 \n \nc El Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, e nunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, an álisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la experiencia \ncotidiana del estudiantado, sin perder de vista el apren dizaje de trayectoria. \n \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \n \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio independiente . \n \nEn el presente documento se describe la UAC correspondiente a Humanidades I del \nprimer semestre."
         ]
       },
       {
         "id": 10,
-        "descripcion": "Comprende el sentido de la vida desde una perspectiva humanista.",
+        "descripcion": "Interpreta qué podría ser una mejor experiencia de sí misma/o en relación con los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias, para describir y especificar el sentido de lo que le sería deseable vivir. Evaluar, expresar y concebir si la modificación de la propia experiencia es realizable, requiere determinar una experiencia de sí misma/o que sea distinta y más completa en relación con las experiencias anteriores. Se busca que el est udiante desarrolle habilidades y emplee los recursos y habilidades de pensamiento crítico. La pretensión es que el estudiante comprenda que puede transformar sus experiencias frente a elementos tan diferentes como pueden ser un acontecimiento violento, un discurso político, un objeto de la vida cotidiana, una práctica viciosa. Y concebir una mejor experiencia de sí, exige concebirla como una mejor experiencia con los otros.",
+        "metas": [
+          "Utiliza los significados (culturales, políticos, históricos, tecnológicos, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su vida y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Asume roles relacionados con los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias de forma humanista."
+        ],
         "tematicas": [
-          "Sentido de la vida",
-          "Existencialismo"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortaleza a la formación. \nDentro de esta configuración, el eje de las di mensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \n5 \n \nc El Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, e nunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, an álisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la experiencia \ncotidiana del estudiantado, sin perder de vista el apren dizaje de trayectoria. \n \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \n \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio independiente . \n \nEn el presente documento se describe la UAC correspondiente a Humanidades I del \nprimer semestre."
         ]
       }
     ],
     "organizador_curricular": {
       "propositos_formativos": [
-        "Reflexionar sobre la condición humana, la cultura y la sociedad para construir una visión crítica y ética del entorno.",
-        "Desarrollar el pensamiento filosófico para el análisis de problemas existenciales y sociales contemporáneos."
+        "específico de la progresión. \n \n5 \n \nc El Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, e nunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, an álisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la experiencia \ncotidiana del estudiantado, sin perder de vista el apren dizaje de trayectoria. \n \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \n \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio independiente . \n \nEn el presente documento se describe la UAC correspondiente a Humanidades I del \nprimer semestre."
       ],
       "categorias": [
         "Formación Fundamental"
       ],
       "metas_aprendizaje": [
-        "Logro de aprendizajes clave"
+        "Utiliza los significados (culturales, políticos, históricos, tecnológicos, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su vida y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+        "Asume roles relacionados con los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias de forma humanista."
       ]
     },
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
-    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
+    "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/m5PDHySHHH-Humanidades-I.pdf",
     "modelo": "2024",
-    "estado": "oficial"
+    "estado": "oficial",
+    "extraccion": "automatica-v1 calidad=BUENA (revisar contra PDF)"
   },
   {
     "materia": "Ciencias Sociales I",
@@ -1082,7 +1110,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.863Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.166Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/bIBXYcTqly-Ciencias-Sociales-I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -1245,7 +1273,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.865Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/SbT3x05vfn-InglesI.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -1507,7 +1535,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/HFhKDCTZRZ-Pensamiento-Matematico-II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -1654,7 +1682,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/wtvy24BQc8-Lengua-y-Comunicacion-II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -1858,7 +1886,7 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/kAcekdw7X3-Cultura-Digital-II.pdf",
-    "fecha_extraccion": "2026-07-04T06:03:49.864Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
@@ -2122,7 +2150,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.863Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.166Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/WYT4Dwfwp2-Ciencias-Sociales-II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -2140,93 +2168,113 @@
     "progresiones": [
       {
         "id": 1,
-        "descripcion": "Examina la experiencia de lo colectivo y la comunidad.",
+        "descripcion": "Reconoce la experiencia colectiva de una comunidad mediante el análisis de los discursos del iusnaturalismo, para percatarse de que las relaciones sociales son una construcción colectiva. Se tratan y discuten conceptos sobre la conformación de lo colectivo (lo que incluye: contrato, pacto, convenio, sobrevivencia, entre otras). Se b usca que el estudiante identifique y examine la experiencia colectiva de una comunidad. Para eso debe concebir que, en general, las relaciones sociales, económicas, afectivas y políticas son una construcción. Las colectividades fundamentan y justifican su existencia y la manera en que se reproducen mediante discursos determinados. ¿Cuándo y por qué se hace una fiesta comunitaria?, ¿de qué manera debe actuar una persona en determinada situación?, ¿cuál es la razón por la que se trabaja de cierta manera? La r espuesta a estas preguntas remite a que toda colectividad se ha ido construyendo y su reproducción se ha legitimado y justificado discursivamente. De allí la conveniencia de usar recursos filosóficos para observar que las prácticas y sentidos de toda organ ización y estructura colectivas se pueden transformar.",
+        "metas": [
+          "Examina los significados (culturales, políticos, históricos, tecnológicos, naturales, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su experiencia individual y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Pone a prueba las concepciones de la colectividad vinculándolas a su capacid ad de decisión en situaciones de su vida usando los saberes y conocimientos de la literatura y la filosofía."
+        ],
         "tematicas": [
-          "Comunidad",
-          "Colectividad"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \n \n5 \n \nc juicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la exp eriencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular p or semestre, horas y créditos \n \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min. 6 horas \n15 "
         ]
       },
       {
         "id": 2,
-        "descripcion": "Analiza las formas de organización política y social.",
+        "descripcion": "c Comprende cómo se utilizan las potencias colectivas en la experiencia de una comunidad para acercarse a los discursos y prácticas sobre los diversos efectos del poder y la construcción social: autoritarismo, participación, fascismo, patriarcado, solidaridad, democracia, entre otras. Se pretende que el estudiante se acerque a los discursos clásicos y contemporáneos que postulan que toda comunidad se ha constituido de relaciones de violencia, efectos de poder o formas de potencia colectiva. La forma y la estructura política de una comu nidad no aparecen de manera fortuita o accidental; como toda construcción social, están sometidas a proyectos, negociaciones, peleas, intenciones y conflictos. La forma y estructura de una comunidad se deben al poder, a la violencia o al ejercicio de una c olectividad. Es conveniente que el estudiante pueda reconocer si una relación, una práctica, una institución o la manera en que se vive en una comunidad se debe a una autoridad violenta, a un derecho o al vigor social de sus miembros.",
+        "metas": [
+          "Examina los significados (culturales, políticos, históricos, tecnológicos, naturales, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su experiencia individual y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Pone a prueba las concepciones de la colectividad vinculándolas a su capacid ad de decisión en situaciones de su vida usando los saberes y conocimientos de la literatura y la filosofía."
+        ],
         "tematicas": [
-          "Política",
-          "Sociedad"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \n \n5 \n \nc juicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la exp eriencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular p or semestre, horas y créditos \n \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min. 6 horas \n15 "
         ]
       },
       {
         "id": 3,
-        "descripcion": "Reflexiona sobre la justicia y las leyes.",
+        "descripcion": "Comprende los conflictos que constituyen la experiencia colectiva de una comunidad para cuestionar tales procesos de sujeción, esclavitud, servidumbre voluntaria y explotación mediante el análisis crítico del discurso. Lo anterior le permite concebir los sentidos y formas de la experiencia colectiva de una comunidad. Se pretende que el estudiante conozca prácticas clásicas y contemporáneas que consideran que en toda comunidad se realizan procesos de sometimiento, de exclusión, de soberanía, de obediencia, de rebeldía y ejercicios de ciudadanía, y que emplee ese discur so para valorar cómo ocurren tales procesos en una comunidad determinada. Una comunidad se ha constituido en un proceso, en algún momento han sido legitimadas las formas políticas que la conforman mediante discursos, relaciones de poder y formas de violenc ia determinadas, pero también en toda comunidad se estructura y justifica quiénes deben obedecer o someterse, quiénes son excluidos de alguna relación y quiénes son explotados en cierto espacio y momento de lo colectivo.",
+        "metas": [
+          "Examina los significados (culturales, políticos, históricos, tecnológicos, naturales, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su experiencia individual y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Pone a prueba las concepciones de la colectividad vinculándolas a su capacid ad de decisión en situaciones de su vida usando los saberes y conocimientos de la literatura y la filosofía."
+        ],
         "tematicas": [
-          "Justicia",
-          "Legalidad"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \n \n5 \n \nc juicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la exp eriencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular p or semestre, horas y créditos \n \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min. 6 horas \n15 "
         ]
       },
       {
         "id": 4,
-        "descripcion": "Cuestiona las relaciones de poder en la sociedad.",
+        "descripcion": "c Valora la configuración institucional de una comunidad para cuestionar y decidir qué roles cumplir en la construcción de la experiencia de su colectividad. Una institución puede concebirs e como un organismo que concreta el sentido de las prácticas colectivas de una comunidad. La edad y manera en que las personas pueden ejercer su sexualidad, el manejo de las riquezas producidas por el cuerpo colectivo, la toma de decisiones comunes, el eje rcicio de la fuerza, la transmisión de saberes y conocimientos, todas estas prácticas están constituidas en instituciones. El matrimonio, el banco, el gobierno, la policía, el ejército y la escuela son instituciones. Toda institución busca regular los confl ictos y darle forma al poder, la violencia y las potencias colectivas. Una democracia cuenta con participación ciudadana, el fascismo con la centralización en un cuerpo monolítico de lo colectivo, en el autoritarismo se impone de manera opresiva la volunt ad de quien ejerce el poder sin un consenso… Una persona que reconoce las instituciones que regulan y dan forma a su colectividad adquiere bases para decidir qué hacer y cómo participar en ella.",
+        "metas": [
+          "Examina los significados (culturales, políticos, históricos, tecnológicos, naturales, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su experiencia individual y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Pone a prueba las concepciones de la colectividad vinculándolas a su capacid ad de decisión en situaciones de su vida usando los saberes y conocimientos de la literatura y la filosofía."
+        ],
         "tematicas": [
-          "Poder",
-          "Autoridad"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \n \n5 \n \nc juicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la exp eriencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular p or semestre, horas y créditos \n \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min. 6 horas \n15 "
         ]
       },
       {
         "id": 5,
-        "descripcion": "Analiza la relación entre el individuo y el Estado.",
+        "descripcion": "c Ejerce la crítica sobre la experiencia colectiva de una comunidad usando los discursos clásicos y contemporáneos que tratan sobre efectos de alienación para plantearse preguntas sobre qué es aquello que incapacita a una comunidad en el despliegue de todas sus riquezas e impide una experiencia colectiva gozosa y así cuestionar si esas dificultades y limitaciones se deben al carácter alienado de las relaciones colectivas. Hacer que el estudiante formule razones y explique por qué una comunidad no puede llevarse a cabo plenamente, en to das sus potencialidades y satisfaciendo todas sus necesidades, le da herramientas para repensar y construir su colectividad. Las prácticas y tradiciones clásicas y contemporáneas sobre la alienación o enajenación postulan mecanismos de usurpación y apropia ción de las fuerzas y frutos del trabajo colectivo. Que alguien pueda identificar y enjuiciar el sentido alienado de la experiencia colectiva de su comunidad le da capacidades para reconstruirla.",
+        "metas": [
+          "Examina los significados (culturales, políticos, históricos, tecnológicos, naturales, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su experiencia individual y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Pone a prueba las concepciones de la colectividad vinculándolas a su capacid ad de decisión en situaciones de su vida usando los saberes y conocimientos de la literatura y la filosofía."
+        ],
         "tematicas": [
-          "Ciudadano y Estado"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \n \n5 \n \nc juicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la exp eriencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular p or semestre, horas y créditos \n \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min. 6 horas \n15 "
         ]
       },
       {
         "id": 6,
-        "descripcion": "Explora conceptos de utopía y distopía social.",
+        "descripcion": "c Pone en cuestión las maneras en que se reproduce una comunidad para vincularlas a su capacidad de decisión y construcción de lo colectivo. Una característica de toda experiencia colectiva –de sus formas, conflictos, estructuras e invenciones – es que debe crear las condiciones para reproducirse. El esfuerzo, la labor, el trabajo o la solida ridad colectiva hacen que una comunidad pueda mantenerse y crecer. Es necesario que el estudiante aprenda a distinguir y valorar el sentido de las diferentes formas en que se reproduce la experiencia colectiva de una comunidad. No es la misma experiencia c olectiva cuando la riqueza se concentra en pocas manos que cuando se distribuye entre los miembros de una colectividad, de manera que tienen recursos y bienes para satisfacer sus necesidades, deseos e intereses; tampoco es la misma experiencia cuando la co munidad tiene bienes y recursos en abundancia que cuando solo cuenta con recursos para satisfacer lo básico. Tener la capacidad de decidir el sentido de los propios esfuerzos y labores es un camino para modificar la colectividad.",
+        "metas": [
+          "Examina los significados (culturales, políticos, históricos, tecnológicos, naturales, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su experiencia individual y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Pone a prueba las concepciones de la colectividad vinculándolas a su capacid ad de decisión en situaciones de su vida usando los saberes y conocimientos de la literatura y la filosofía."
+        ],
         "tematicas": [
-          "Utopía",
-          "Futuro social"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \n \n5 \n \nc juicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la exp eriencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular p or semestre, horas y créditos \n \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min. 6 horas \n15 "
         ]
       },
       {
         "id": 7,
-        "descripcion": "Reflexiona sobre la guerra, la paz y la violencia.",
+        "descripcion": "c Explica hasta dónde se extiende –mundo tecnológico, natural, artístico, animal... – y quiénes conforman –humanos, animales, instituciones, cosas – la experiencia colectiva de su comunidad para que reconozcan los elementos que conforman su experiencia colecti va y sus sentidos dentro de ella, con el fin de enriquecerla. Una comunidad se puede concebir en relación con los lugares, funciones, prácticas, costumbres y sentidos que ocupan y tienen en ella las cosas y los animales. Incluso se puede sostener que toda comunidad humana forma parte de relaciones ambientales que la superan, con la naturaleza y fuerzas ajenas a lo humano. Así, la experiencia colectiva adquiere un sentido mayor que la experiencia de solo una comunidad humana. Se pretende, por tanto, que el e studiante adquiera elementos y recursos filosóficos y habilidades críticas para problematizar –en textos, pinturas, audios, videos – la experiencia colectiva de su comunidad, más allá de la vida humana que la conforma.",
+        "metas": [
+          "Examina los significados (culturales, políticos, históricos, tecnológicos, naturales, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su experiencia individual y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Pone a prueba las concepciones de la colectividad vinculándolas a su capacid ad de decisión en situaciones de su vida usando los saberes y conocimientos de la literatura y la filosofía."
+        ],
         "tematicas": [
-          "Paz y Violencia"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \n \n5 \n \nc juicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la exp eriencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular p or semestre, horas y créditos \n \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min. 6 horas \n15 "
         ]
       },
       {
         "id": 8,
-        "descripcion": "Analiza el impacto de la tecnología en la humanidad.",
+        "descripcion": "c Argumenta la posibilidad y conveniencia de preservar la experiencia colectiva de una comunidad para que pueda valorar la conveniencia de mantener o de transformar el sentido, la forma y la estructura de las relaciones de una comunidad . Hay que situar al estudiante en el empleo de los recursos, así como de los usos y prácticas filosóficos con la intención de que pueda comprender, fundamentar, justificar o tomar decisiones sobre la experiencia colectiva de una comunidad. Las humanidades exigen de quienes hacen uso de ellas que puedan enunciar y sostener la verdad, la relevancia, la validez, la veracidad y l a autenticidad de sus afirmaciones. Las estructuras de los argumentos pueden ser lógicas, retóricas, heurísticas o literarias. Se trata de que el estudiante, al comprender las condiciones de reproducción, las formas de autoridad y de sometimiento, los ejer cicios de poder y de solidaridad, las violencias, las instituciones y leyes que conforman la experiencia colectiva de una comunidad, se pregunte si se pueden mantener de la misma manera y si se pueden o deben cambiar.",
+        "metas": [
+          "Examina los significados (culturales, políticos, históricos, tecnológicos, naturales, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su experiencia individual y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+          "Pone a prueba las concepciones de la colectividad vinculándolas a su capacid ad de decisión en situaciones de su vida usando los saberes y conocimientos de la literatura y la filosofía."
+        ],
         "tematicas": [
-          "Tecnología y Humanismo"
-        ]
-      },
-      {
-        "id": 9,
-        "descripcion": "Reflexiona sobre el arte y la estética como formas de expresión humana.",
-        "tematicas": [
-          "Arte",
-          "Estética"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \n \n5 \n \nc juicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la exp eriencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular p or semestre, horas y créditos \n \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min. 6 horas \n15 "
         ]
       }
     ],
     "organizador_curricular": {
       "propositos_formativos": [
-        "Reflexionar sobre la condición humana, la cultura y la sociedad para construir una visión crítica y ética del entorno.",
-        "Desarrollar el pensamiento filosófico para el análisis de problemas existenciales y sociales contemporáneos."
+        "específico de la progresión. \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecursos filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \n \n5 \n \nc juicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la exp eriencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular p or semestre, horas y créditos \n \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min. 6 horas \n15 m"
       ],
       "categorias": [
         "Formación Fundamental"
       ],
       "metas_aprendizaje": [
-        "Logro de aprendizajes clave"
+        "Examina los significados (culturales, políticos, históricos, tecnológicos, naturales, entre otros) de las prácticas, discursos, instituciones y acontecimientos que constituyen su experiencia individual y los vincula a sus capacidades de construir la colectividad con base en los aportes de las humanidades.",
+        "Pone a prueba las concepciones de la colectividad vinculándolas a su capacid ad de decisión en situaciones de su vida usando los saberes y conocimientos de la literatura y la filosofía."
       ]
     },
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-02-08T01:33:44.724Z",
-    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
+    "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/ERGASUIzoF-Humanidades-II.pdf",
     "modelo": "2024",
-    "estado": "oficial"
+    "estado": "oficial",
+    "extraccion": "automatica-v1 calidad=BUENA (revisar contra PDF)"
   },
   {
     "materia": "Inglés II",
@@ -2377,7 +2425,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.865Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/5RMijU5dhV-Ingles-II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -2503,7 +2551,7 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/04/hoRWlvTon9-Laboratorio_de_Investigacion.pdf",
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
@@ -3119,7 +3167,7 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/04/ZaTS7U81zP-Progresiones_de_aprendizaje_de_Taller_de_Ciencias_I.pdf",
-    "fecha_extraccion": "2026-07-04T06:03:49.867Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.170Z",
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
@@ -3383,7 +3431,7 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/ABap6exTSS-Pensamiento-Matematico-III.pdf",
-    "fecha_extraccion": "2026-07-04T06:03:49.867Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
@@ -3546,7 +3594,7 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/nl3uW8bK4J-Lengua-y-Comunicacion-III.pdf",
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
@@ -3694,92 +3742,13 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/zk3xw6S8Rj-Ingles-III.pdf",
-    "fecha_extraccion": "2026-07-04T06:03:49.865Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
     "modelo": "2024",
     "estado": "oficial",
     "extraccion": "automatica-v1 calidad=BUENA (revisar contra PDF)"
-  },
-  {
-    "materia": "Ecosistemas: interacciones, energía y dinámica",
-    "semestre": 3,
-    "metadata": {
-      "nombre_uac": "ECOSISTEMAS: INTERACCIONES, ENERGÍA Y DINÁMICA",
-      "semestre": 3,
-      "creditos": 8,
-      "horas_semanales": 4
-    },
-    "organizador_curricular": {
-      "categorias": [
-        "Materia y energía",
-        "Sistemas",
-        "Diversidad, continuidad y cambio"
-      ],
-      "metas_aprendizaje": [
-        "Indagación científica",
-        "Modelado de fenómenos",
-        "Pensamiento crítico"
-      ],
-      "propositos_formativos": [
-        "Contribuir a la formación integral del estudiante en el área de Ecosistemas: interacciones, energía y dinámica bajo el marco del MCCEMS 2025."
-      ]
-    },
-    "progresiones": [
-      {
-        "id": 1,
-        "descripcion": "Comprende la naturaleza de la materia y sus propiedades",
-        "metas": [
-          "Meta: Indagación científica",
-          "Meta: Modelado de fenómenos",
-          "Meta: Pensamiento crítico"
-        ],
-        "tematicas": [
-          "Estados de agregación",
-          "Propiedades físicas y químicas",
-          "Tabla periódica",
-          "Enlaces químicos"
-        ]
-      },
-      {
-        "id": 2,
-        "descripcion": "Analiza las interacciones entre materia y energía",
-        "metas": [
-          "Meta: Indagación científica",
-          "Meta: Modelado de fenómenos",
-          "Meta: Pensamiento crítico"
-        ],
-        "tematicas": [
-          "Tipos de energía",
-          "Transformación de energía",
-          "Leyes de la termodinámica",
-          "Reacciones químicas"
-        ]
-      },
-      {
-        "id": 3,
-        "descripcion": "Examina sistemas biológicos y ambientales",
-        "metas": [
-          "Meta: Indagación científica",
-          "Meta: Modelado de fenómenos",
-          "Meta: Pensamiento crítico"
-        ],
-        "tematicas": [
-          "La célula",
-          "Metabolismo",
-          "Ecosistemas",
-          "Flujo de energía en sistemas vivos"
-        ]
-      }
-    ],
-    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761610",
-    "orientaciones_didacticas": [],
-    "criterios_evaluacion": [],
-    "bibliografia": [],
-    "modelo": "2024",
-    "estado": "borrador"
   },
   {
     "materia": "Ciencias Sociales III",
@@ -4000,7 +3969,7 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/ErWYq1Lfle-Ciencias-Sociales-III.pdf",
-    "fecha_extraccion": "2026-07-04T06:03:49.863Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.166Z",
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
@@ -4024,54 +3993,133 @@
         "Vivir aquí y ahora"
       ],
       "metas_aprendizaje": [
-        "Reflexión filosófica",
-        "Argumentación ética",
-        "Apreciación estética"
+        "Analiza de forma humanística las concepciones de la colectividad de forma crítica y reflexiva para fortalecer su capacidad de decisión en situaciones de su vida.",
+        "Actúa los roles que juega en los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias con base en los aportes de las humanidades."
       ],
       "propositos_formativos": [
-        "Reflexionar sobre la condición humana, la cultura y la sociedad para construir una visión crítica y ética del entorno.",
-        "Desarrollar el pensamiento filosófico para el análisis de problemas existenciales y sociales contemporáneos."
+        "específico de la progresión. \n \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecurso s filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la ex periencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \n \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min 6 horas \n15 min 80 20"
       ]
     },
     "progresiones": [
       {
         "id": 1,
-        "descripcion": "Reflexiona sobre la condición humana y el sentido de la vida",
+        "descripcion": "Examina discursos clásicos y contemporáneos sobre una vida examinada para hacer patente la experiencia humana. Se pretende que el estudiante conozca los discursos clásicos y contemporáneos que postulan la posibilidad de una vida examinada para responder qué significa ser humano. En ge neral, estos saberes y prácticas sostienen que es posible dar forma a la vida humana. Para las humanidades, examinar la vida –pensar el sentido de la existencia, el significado de cómo y para qué se está aquí y ahora –, implica abrir la posibilidad de darse una forma de vida que no se subyugue a acontecimientos azarosos. Para las humanidades, ser humano implica fundamentalmente pensar la propia vida; examinar la propia vida significa ser humano .",
         "metas": [
-          "Meta: Reflexión filosófica",
-          "Meta: Argumentación ética",
-          "Meta: Apreciación estética"
+          "Analiza de forma humanística las concepciones de la colectividad de forma crítica y reflexiva para fortalecer su capacidad de decisión en situaciones de su vida.",
+          "Actúa los roles que juega en los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias con base en los aportes de las humanidades."
         ],
         "tematicas": [
-          "Introducción a la filosofía",
-          "El ser humano",
-          "Libertad y responsabilidad",
-          "Sentido de la vida"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecurso s filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la ex periencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \n \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min 6 horas \n15 min 80 2"
         ]
       },
       {
         "id": 2,
-        "descripcion": "Analiza problemas éticos y morales de la actualidad",
+        "descripcion": "c Comprende la configuración histórica de la experiencia humana para identificar que esta es performativa, se está diciendo, se está recreando, entre otras cosas, que la concepción de lo que es ser humano ha cambiado, puede y volverá a configurarse a partir de acontecimientos, prácticas y discursos. Se trata de colocar al estudiante en la situación en que interprete qué se entiende por ser humano de manera histórica. Hay concepciones del ser humano como animal, ser con razón, ser con espíritu, productor de cu ltura o un proyecto hacia lo mejor; y hay otras concepciones en las que es algo insignificante, frágil, poco valioso, nada diferente a una cosa entre otras cosas. Las concepciones se originaron en circunstancias históricas determinadas y desde paradigmas c ulturales específicos.",
         "metas": [
-          "Meta: Reflexión filosófica",
-          "Meta: Argumentación ética",
-          "Meta: Apreciación estética"
+          "Analiza de forma humanística las concepciones de la colectividad de forma crítica y reflexiva para fortalecer su capacidad de decisión en situaciones de su vida.",
+          "Actúa los roles que juega en los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias con base en los aportes de las humanidades."
         ],
         "tematicas": [
-          "Ética y moral",
-          "Valores universales",
-          "Dilemas éticos modernos",
-          "Justicia y equidad"
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecurso s filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la ex periencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \n \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min 6 horas \n15 min 80 2"
+        ]
+      },
+      {
+        "id": 3,
+        "descripcion": "Problematiza la experiencia humana desde discursos clásicos y contemporáneos que postulan que lo propio de lo humano son aspectos negativos (degradación, maldad, violencia, corrupción, vicios o crueldad) para que los conozca, valore e indague, promoviendo sus habilidades y uso de recursos filosóficos con el fin de cuestionar y evaluar la experiencia humana . En la tradición humanística existen textos que plantean que lo propio del ser humano es la crueldad con los otros seres, las formas de vida injustas o viciosas, las maneras de vivir corruptas e imposibles de cambiar o que el ser humano degrada o destruye lo que toca. Al acercarse a dichos di scursos cada uno podrá identificarse, extrañarse o ahondar en la dificultad de posicionarse estando exento de atribuciones o prácticas descritas, remitiendo a una reflexión crítica de nuestra experiencia en tanto humanos.",
+        "metas": [
+          "Analiza de forma humanística las concepciones de la colectividad de forma crítica y reflexiva para fortalecer su capacidad de decisión en situaciones de su vida.",
+          "Actúa los roles que juega en los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias con base en los aportes de las humanidades."
+        ],
+        "tematicas": [
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecurso s filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la ex periencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \n \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min 6 horas \n15 min 80 2"
+        ]
+      },
+      {
+        "id": 4,
+        "descripcion": "c Cuestiona los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que configuran y mantienen las experiencias humanas actuales para poner en uso los recursos y aplicaciones filosóficos que le posibilitan ejercitar habilidades para evaluar y criticar esos acontecimientos, discursos, instituciones y prácticas que configuran y mantienen cualquier experiencia humana. Toda experiencia humana actual está configurada por acontecimientos, instituciones , imágenes y discursos producidos históricamente. El intercambio económico que permite la reproducción de las formas de vida, la organización estatal de la experiencia colectiva y la concepción del ser humano como un ser que ocupa un lugar predominante en el mundo, son acontecimientos económicos, discursivos y políticos que configuran la experiencia humana occidental. Todos esos fenómenos han configurado la existencia de una parte de la humanidad –la occidental -, en un momento determinado, y traen aparejado s efectos positivos y negativos para la experiencia humana.",
+        "metas": [
+          "Analiza de forma humanística las concepciones de la colectividad de forma crítica y reflexiva para fortalecer su capacidad de decisión en situaciones de su vida.",
+          "Actúa los roles que juega en los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias con base en los aportes de las humanidades."
+        ],
+        "tematicas": [
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecurso s filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la ex periencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \n \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min 6 horas \n15 min 80 2"
+        ]
+      },
+      {
+        "id": 5,
+        "descripcion": "c Comprende discursos clásicos y contemporáneos que conciben las formas de vida de seres no humanos y de las cosas –en fábulas, mitos, poemas o leyendas - para concebir la experiencia humana en relación con las de otros seres, ya sean seres no humanos o no vivos. Se pretende que el estudiante se acerque a discursos y saberes humanísticos en los que se da voz y se concede la palabra a lo no humano o no vivo. Las humanidades se han encargado de salvaguardar y favorecer tipos de saberes y discursos en los que se expresan seres no hu manos o no vivientes. En ellos no solo se representa a los seres que no pueden usar la palabra articulada, sino que se expresa la experiencia no humana. Los humanistas han hecho el ejercicio de expresar las pasiones de dioses y semidioses, percibir y enunc iar el mundo como lo haría un animal, el instrumento de un campesino o los muertos.",
+        "metas": [
+          "Analiza de forma humanística las concepciones de la colectividad de forma crítica y reflexiva para fortalecer su capacidad de decisión en situaciones de su vida.",
+          "Actúa los roles que juega en los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias con base en los aportes de las humanidades."
+        ],
+        "tematicas": [
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecurso s filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la ex periencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \n \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min 6 horas \n15 min 80 2"
+        ]
+      },
+      {
+        "id": 6,
+        "descripcion": "c Ejerce la crítica a experiencias humanas que excluyen a seres no humanos o no vivos para que adquiera elementos y recursos filosóficos que le posibiliten problematizar la experiencia humana diferente de una concepción antropocéntrica. La existencia es mayor que la vida humana, el número de vivientes y cosas excede al de los seres humanos vivos. Los seres humanos forman parte de una colectividad mayor en la que no pueden influir. La naturaleza tiene procesos y ciclos en los que no hay participación de lo humano. Las invenciones técnicas fallan y funcionan con independencia del esfuerzo humano, los animales resisten de múltiples maneras la intervención en su h ábitat, se recuerda a quienes vivieron antes y lo que hicieron sigue teniendo impacto en los vivos. Una persona que examine las experiencias que excluyen a seres no humanos o no vivos tendrá elementos para valorar cualquier experiencia humana.",
+        "metas": [
+          "Analiza de forma humanística las concepciones de la colectividad de forma crítica y reflexiva para fortalecer su capacidad de decisión en situaciones de su vida.",
+          "Actúa los roles que juega en los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias con base en los aportes de las humanidades."
+        ],
+        "tematicas": [
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecurso s filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la ex periencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \n \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min 6 horas \n15 min 80 2"
+        ]
+      },
+      {
+        "id": 7,
+        "descripcion": "c Valora las relaciones sociales, políticas, económicas, morales, tecnológicas, de género que conforman las formas actuales de la experiencia de lo humano con la alteridad. Las formas de vida humana actuales causan efectos negativos en otros seres vivos, humanos y no humanos y, en general, en la naturaleza: destrucción, rebajamiento, ultraje, desprecio . Se busca que los estudiantes valoren entre mantener la experiencia humana –seguir viviendo como has ta ahora - o modificarla. Una persona que conozca discursos que enuncian experiencias no humanas y resaltan sus características, podrá poner en cuestión una experiencia humana que excluya a los seres no humanos, las cosas y los no vivientes, y tendrá elemen tos para valorar la pertinencia de mantener o transformar esa experiencia.",
+        "metas": [
+          "Analiza de forma humanística las concepciones de la colectividad de forma crítica y reflexiva para fortalecer su capacidad de decisión en situaciones de su vida.",
+          "Actúa los roles que juega en los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias con base en los aportes de las humanidades."
+        ],
+        "tematicas": [
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecurso s filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la ex periencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \n \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min 6 horas \n15 min 80 2"
+        ]
+      },
+      {
+        "id": 8,
+        "descripcion": "c Enuncia cómo se concibe a sí misma/o en relación con la experiencia humana de su localidad, para que confronte, retome discusiones y ponga en operación discursos que ha revisado en sesiones anteriores. Se trata de que el estudiante ejercite sus habilidades críticas y de metacognición -mediante textos, pinturas, audios, representaciones, videos – en los que vincule la experiencia de sí misma/o con la experiencia humana vigente en su localidad. El cometido de estos ejercicios es que el estudiante confronte la experiencia de sí misma/o con lo que ha trabajado de la experiencia humana. Esta confrontación servirá para enriquecer ambas concepciones, de sí y de lo humano, y a la vez le permitirá identificar lo no humano y no vivo que configura su propia vida.",
+        "metas": [
+          "Analiza de forma humanística las concepciones de la colectividad de forma crítica y reflexiva para fortalecer su capacidad de decisión en situaciones de su vida.",
+          "Actúa los roles que juega en los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias con base en los aportes de las humanidades."
+        ],
+        "tematicas": [
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecurso s filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la ex periencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \n \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min 6 horas \n15 min 80 2"
+        ]
+      },
+      {
+        "id": 9,
+        "descripcion": "c Argumenta sobre la posibilidad y conveniencia de una experiencia humana que incluya a seres no humanos, a los muertos y a las cosas para que analice cómo se ha configurado la experiencia colectiva de su comunidad. El estudiante emplea recursos filosóficos de fundamentación, justificación o toma de decisiones sobre la experiencia humana que configura la experiencia colectiva de su comunidad y su propia experiencia. Se pretende que pueda argumentar –de manera retórica, lógica, heurística o literaria – la inclu sión en la experiencia humana no solo de lo humano, sino de los seres no humanos, los no vivos, las cosas y los seres imaginarios. Se trata de que el estudiante argumente sobre la conveniencia de una experiencia humana que contenga lo no humano y lo no viv o, o si la experiencia humana únicamente puede comprender lo que viven, sienten, piensan, experimentan los seres humanos vivos. Investigar si un ser humano sólo se puede concebir como tal cuando establece diferencias o se opone a lo que no es humano o no e stá vivo, posibilita tener una concepción de coexistencia en la diversidad.",
+        "metas": [
+          "Analiza de forma humanística las concepciones de la colectividad de forma crítica y reflexiva para fortalecer su capacidad de decisión en situaciones de su vida.",
+          "Actúa los roles que juega en los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias con base en los aportes de las humanidades."
+        ],
+        "tematicas": [
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecurso s filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la ex periencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \n \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min 6 horas \n15 min 80 2"
+        ]
+      },
+      {
+        "id": 10,
+        "descripcion": "Hipotetiza qué sería una mejor experiencia humana para poner en cuestión los aspectos negativos de esa experiencia (degradación, maldad, violencia, corrupción, vicios, crueldad) y enjuiciar los acontecimientos, discursos, instituciones, imágenes, objetos o prácticas que la configuran . Concebir, expresar y evaluar una e xperiencia humana más allá de lo que el ser humano ha sido hasta ahora, requiere pensar otras que puedan incluir a los seres no humanos y no vivientes, Se busca que el estudiante desarrolle habilidades y emplee recursos y prácticas filosóficas para describ ir y examinar el significado de lo que sería posible y deseable como experiencia humana justa y digna; una experiencia humana mejor a la actual y que permita buenas formas de vida y relaciones apropiadas con los otros .",
+        "metas": [
+          "Analiza de forma humanística las concepciones de la colectividad de forma crítica y reflexiva para fortalecer su capacidad de decisión en situaciones de su vida.",
+          "Actúa los roles que juega en los acontecimientos, discursos, instituciones, imágenes, objetos y prácticas que conforman sus vivencias con base en los aportes de las humanidades."
+        ],
+        "tematicas": [
+          "de \nla formación filosófica, que sustentan y coadyuvan al adecuado desarrollo de habilidades \ncríticas, de autoconocimiento y metacognición que dan sentido y fortale za a la formación. \nDentro de esta configuración, el eje de las dimensiones al articularse con las \nsubcategorías orienta el propósito específico de la progresión. \n \nEl Área Humanidades usará de manera particular, aunque no excluyente, los siguientes \nrecurso s filosóficos: discurso, crítica, comprensión, problematización, enunciación, \nconversación dialógica, interpretación, entre otras. Las maneras en que dichos recursos \nderivarán en su vinculación a las metodologías activas remiten a lo que nombramos usos, \nprácticas y aplicaciones: argumentación, producción de discursos, análisis de discursos, \njuicio, controversia, puesta en acción, determinación de sentidos, entre otras. La intención \nde su puesta en práctica se refiere a una formación que pone al centro la ex periencia \ncotidiana del estudiantado, sin perder de vista el aprendizaje de trayectoria. \nEl Área de Conocimiento Humanidades se encuentra integrada por tres UAC, a \ndesarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nHumanidades I Primero 4 1 5 64 16 80 8 \n \nHumanidades II Segundo 4 1 5 64 16 80 8 \n \nHumanidades \nIII Tercero 5 1 hora \n15 min 6 horas \n15 min 80 2"
         ]
       }
     ],
-    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761615",
+    "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/6sNbULfreG-Humanidades-III.pdf",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
     "modelo": "2024",
-    "estado": "borrador"
+    "estado": "oficial",
+    "extraccion": "automatica-v1 calidad=BUENA (revisar contra PDF)"
   },
   {
     "materia": "Inglés IV",
@@ -4229,92 +4277,13 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/1QjjvDf5vs-Ingles-IV.pdf",
-    "fecha_extraccion": "2026-07-04T06:03:49.865Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
     "modelo": "2024",
     "estado": "oficial",
     "extraccion": "automatica-v1 calidad=BUENA (revisar contra PDF)"
-  },
-  {
-    "materia": "Reacciones Químicas",
-    "semestre": 4,
-    "metadata": {
-      "nombre_uac": "REACCIONES QUÍMICAS",
-      "semestre": 4,
-      "creditos": 8,
-      "horas_semanales": 4
-    },
-    "organizador_curricular": {
-      "categorias": [
-        "Materia y energía",
-        "Sistemas",
-        "Diversidad, continuidad y cambio"
-      ],
-      "metas_aprendizaje": [
-        "Indagación científica",
-        "Modelado de fenómenos",
-        "Pensamiento crítico"
-      ],
-      "propositos_formativos": [
-        "Contribuir a la formación integral del estudiante en el área de Reacciones Químicas bajo el marco del MCCEMS 2025."
-      ]
-    },
-    "progresiones": [
-      {
-        "id": 1,
-        "descripcion": "Comprende la naturaleza de la materia y sus propiedades",
-        "metas": [
-          "Meta: Indagación científica",
-          "Meta: Modelado de fenómenos",
-          "Meta: Pensamiento crítico"
-        ],
-        "tematicas": [
-          "Estados de agregación",
-          "Propiedades físicas y químicas",
-          "Tabla periódica",
-          "Enlaces químicos"
-        ]
-      },
-      {
-        "id": 2,
-        "descripcion": "Analiza las interacciones entre materia y energía",
-        "metas": [
-          "Meta: Indagación científica",
-          "Meta: Modelado de fenómenos",
-          "Meta: Pensamiento crítico"
-        ],
-        "tematicas": [
-          "Tipos de energía",
-          "Transformación de energía",
-          "Leyes de la termodinámica",
-          "Reacciones químicas"
-        ]
-      },
-      {
-        "id": 3,
-        "descripcion": "Examina sistemas biológicos y ambientales",
-        "metas": [
-          "Meta: Indagación científica",
-          "Meta: Modelado de fenómenos",
-          "Meta: Pensamiento crítico"
-        ],
-        "tematicas": [
-          "La célula",
-          "Metabolismo",
-          "Ecosistemas",
-          "Flujo de energía en sistemas vivos"
-        ]
-      }
-    ],
-    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761622",
-    "orientaciones_didacticas": [],
-    "criterios_evaluacion": [],
-    "bibliografia": [],
-    "modelo": "2024",
-    "estado": "borrador"
   },
   {
     "materia": "Matemáticas IV (Propedéutico)",
@@ -4662,92 +4631,13 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/xZQVKoOlnr-Conciencia-Historica-II.pdf",
-    "fecha_extraccion": "2026-07-04T06:03:49.863Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.166Z",
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
     "modelo": "2024",
     "estado": "oficial",
     "extraccion": "automatica-v1 calidad=BUENA (revisar contra PDF)"
-  },
-  {
-    "materia": "La Energía",
-    "semestre": 5,
-    "metadata": {
-      "nombre_uac": "LA ENERGÍA",
-      "semestre": 5,
-      "creditos": 8,
-      "horas_semanales": 4
-    },
-    "organizador_curricular": {
-      "categorias": [
-        "Materia y energía",
-        "Sistemas",
-        "Diversidad, continuidad y cambio"
-      ],
-      "metas_aprendizaje": [
-        "Indagación científica",
-        "Modelado de fenómenos",
-        "Pensamiento crítico"
-      ],
-      "propositos_formativos": [
-        "Contribuir a la formación integral del estudiante en el área de La Energía bajo el marco del MCCEMS 2025."
-      ]
-    },
-    "progresiones": [
-      {
-        "id": 1,
-        "descripcion": "Comprende la naturaleza de la materia y sus propiedades",
-        "metas": [
-          "Meta: Indagación científica",
-          "Meta: Modelado de fenómenos",
-          "Meta: Pensamiento crítico"
-        ],
-        "tematicas": [
-          "Estados de agregación",
-          "Propiedades físicas y químicas",
-          "Tabla periódica",
-          "Enlaces químicos"
-        ]
-      },
-      {
-        "id": 2,
-        "descripcion": "Analiza las interacciones entre materia y energía",
-        "metas": [
-          "Meta: Indagación científica",
-          "Meta: Modelado de fenómenos",
-          "Meta: Pensamiento crítico"
-        ],
-        "tematicas": [
-          "Tipos de energía",
-          "Transformación de energía",
-          "Leyes de la termodinámica",
-          "Reacciones químicas"
-        ]
-      },
-      {
-        "id": 3,
-        "descripcion": "Examina sistemas biológicos y ambientales",
-        "metas": [
-          "Meta: Indagación científica",
-          "Meta: Modelado de fenómenos",
-          "Meta: Pensamiento crítico"
-        ],
-        "tematicas": [
-          "La célula",
-          "Metabolismo",
-          "Ecosistemas",
-          "Flujo de energía en sistemas vivos"
-        ]
-      }
-    ],
-    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761638",
-    "orientaciones_didacticas": [],
-    "criterios_evaluacion": [],
-    "bibliografia": [],
-    "modelo": "2024",
-    "estado": "borrador"
   },
   {
     "materia": "Temas Selectos de Humanidades",
@@ -5005,92 +4895,13 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/5zZt8MLKWt-Conciencia-Historica-III.pdf",
-    "fecha_extraccion": "2026-07-04T06:03:49.863Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.166Z",
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
     "modelo": "2024",
     "estado": "oficial",
     "extraccion": "automatica-v1 calidad=BUENA (revisar contra PDF)"
-  },
-  {
-    "materia": "Herencia y Evolución",
-    "semestre": 6,
-    "metadata": {
-      "nombre_uac": "HERENCIA Y EVOLUCIÓN",
-      "semestre": 6,
-      "creditos": 8,
-      "horas_semanales": 4
-    },
-    "organizador_curricular": {
-      "categorias": [
-        "Materia y energía",
-        "Sistemas",
-        "Diversidad, continuidad y cambio"
-      ],
-      "metas_aprendizaje": [
-        "Indagación científica",
-        "Modelado de fenómenos",
-        "Pensamiento crítico"
-      ],
-      "propositos_formativos": [
-        "Contribuir a la formación integral del estudiante en el área de Herencia y Evolución bajo el marco del MCCEMS 2025."
-      ]
-    },
-    "progresiones": [
-      {
-        "id": 1,
-        "descripcion": "Comprende la naturaleza de la materia y sus propiedades",
-        "metas": [
-          "Meta: Indagación científica",
-          "Meta: Modelado de fenómenos",
-          "Meta: Pensamiento crítico"
-        ],
-        "tematicas": [
-          "Estados de agregación",
-          "Propiedades físicas y químicas",
-          "Tabla periódica",
-          "Enlaces químicos"
-        ]
-      },
-      {
-        "id": 2,
-        "descripcion": "Analiza las interacciones entre materia y energía",
-        "metas": [
-          "Meta: Indagación científica",
-          "Meta: Modelado de fenómenos",
-          "Meta: Pensamiento crítico"
-        ],
-        "tematicas": [
-          "Tipos de energía",
-          "Transformación de energía",
-          "Leyes de la termodinámica",
-          "Reacciones químicas"
-        ]
-      },
-      {
-        "id": 3,
-        "descripcion": "Examina sistemas biológicos y ambientales",
-        "metas": [
-          "Meta: Indagación científica",
-          "Meta: Modelado de fenómenos",
-          "Meta: Pensamiento crítico"
-        ],
-        "tematicas": [
-          "La célula",
-          "Metabolismo",
-          "Ecosistemas",
-          "Flujo de energía en sistemas vivos"
-        ]
-      }
-    ],
-    "url_fuente": "https://dgb.sep.gob.mx/marco-curricular",
-    "fecha_extraccion": "2026-01-11T15:42:02.761648",
-    "orientaciones_didacticas": [],
-    "criterios_evaluacion": [],
-    "bibliografia": [],
-    "modelo": "2024",
-    "estado": "borrador"
   },
   {
     "materia": "Filosofía",
@@ -5215,7 +5026,7 @@
       }
     ],
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/Z03Gad3seQ-Cultura-Digital-III.pdf",
-    "fecha_extraccion": "2026-07-04T06:03:49.864Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
@@ -5568,7 +5379,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/3UpbnblPrG-La-materia-y-sus-interacciones-CNEYT-I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -5720,7 +5531,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.863Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.166Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/ViOtYhJQoe-Conservacion-de-la-energia-y-su-interaccion-con-la-material-CNEYT-II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -5856,7 +5667,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.865Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/SeLPhTPWlp-Ecosistemas-interacciones-energia-y-dinamica-CNEYT-III.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -5958,7 +5769,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.863Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.166Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/Gws8ZMHhYt-Conciencia-Historica-I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -6078,7 +5889,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.867Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/zE10WacuIS-Reacciones-quimicas-conservacion-de-la-materia-en-la-formacion-de-nuevas-sustancias-CNEYT-IV.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -6230,7 +6041,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/MbJML0d90P-La-energia-en-los-procesos-de-la-vida-diaria-CNEYT-V.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -6390,7 +6201,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.859Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.163Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/02/DzgNkbVcma-Análisis%20de%20Fenómenos%20Físicos%20I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -6486,7 +6297,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.864Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/02/iOEZFnLS7v-Derecho%20y%20Sociedad%20I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -6582,7 +6393,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.865Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/02/QbGomQjvxx-Fundamentos%20de%20Administración%20I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -6734,7 +6545,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/VNFYXP943a-Organismos-estructuras-y-procesos-herencia-y-evolucion-biologica-CNEYT-VI.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -6886,7 +6697,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.862Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.165Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/02/nbYhSC6Ikv-Análisis%20de%20Fenómenos%20Físicos%20II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -6990,7 +6801,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.864Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/02/V6BX9HQWji-Derecho%20y%20Sociedad%20II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -7086,7 +6897,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.867Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/02/7m8ebYgkJ2-Raíces%20etimológicas%20del%20español%20I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -7198,7 +7009,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.868Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.170Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/02/ClcA8H3GeJ-Taller%20de%20Probabilidad%20y%20Estadística%20I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -7286,7 +7097,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.863Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.166Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/04/EgsxRgRMbs-Comunicacion_y_Sociedad_I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -7414,7 +7225,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.868Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.170Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/04/RSy6bF9KM0-Taller_de_Pensamiento_Variacional_I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -7571,7 +7382,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/04/VG8wBINrYm-Pensamiento_Filosofico_I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -7667,7 +7478,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.862Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.165Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/05/s5D0yncAde-Analisis-de-Fenomenos-y-Procesos-Biologicos.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -7771,7 +7582,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/05/mBfgI2gaPj-Pensamiento-Matematico-Aplicado-a-las-Finanzas-I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -7851,7 +7662,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.865Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/05/vO37Caevim-Ingles-V.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -7947,7 +7758,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.864Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/05/LTW39gRG39-Dibujo-Tecnico-I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -8171,7 +7982,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.867Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.170Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/05/VZORWKWMt3-Salud-Integral-I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -8275,7 +8086,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.864Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/A20VZSzNuz-Economia-I-La-funcion-de-los-agentes-economicos-en-la-sociedad.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -8371,7 +8182,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.867Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/Lar9DWU6D0-Procesos-contabIes-I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -8459,7 +8270,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.868Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.170Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/SY9gWjLXw6-Temas-selectos-de-ciencias-sociales-I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -8547,7 +8358,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.862Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.165Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/08/TC43xDZdJf-Arte-y-cultura-I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -8643,7 +8454,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/08/6ALUESwiGV-Logica-y-pensamiento-critico.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -8739,7 +8550,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.865Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/02/tBzGdELOql-Fundamentos%20de%20Administración%20II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -8803,7 +8614,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/02/salm0xvzvJ-Organización%20del%20flujo%20de%20materia%20y%20energía%20en%20los%20organismos%20II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -8899,7 +8710,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.867Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/02/w6dRwxlVwo-Raíces%20etimológicas%20del%20español%20II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -9027,7 +8838,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.868Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.170Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/02/ZVm1SRzFeu-Taller%20de%20Probabilidad%20y%20Estadística%20II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -9163,7 +8974,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.868Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.170Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/04/mhXCsidbDl-Taller_de_Pensamiento_Variacional_II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -9251,7 +9062,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.863Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.166Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/04/UBRpxYaEuQ-Comunicacion_y_Sociedad_II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -9347,7 +9158,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.867Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/04/WK0EjtBFfI-Psicologia_II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -9488,7 +9299,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.868Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.170Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/05/xGxKoMO2if-Temas-Selectos-de-Biologia.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -9568,7 +9379,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.865Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.168Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/05/WpXlMRiOuK-Ingles-VI.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -9672,7 +9483,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.864Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/05/8dkxuHEEN6-Dibujo-Tecnico-II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -9784,7 +9595,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/05/EGsoMg1MGh-Pensamiento-Matematico-Aplicado-a%20las-Finanzas-II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -9928,7 +9739,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.867Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.170Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/05/JnckIqdZg7-Salud-Integral-II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -10024,7 +9835,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.865Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/cTaHGAe136-Economia-II-Politica-economica-y-politica-publica-mexicana.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -10120,7 +9931,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.867Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/1oYt2rGIM3-Procesos-contabIes-II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -10216,7 +10027,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.868Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.170Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/07/O2eLyBIwfF-Temas-selectos-de-ciencias-sociales-II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -10312,7 +10123,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.862Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.165Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/08/2Fja73R7iV-Arte-y-cultura-II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -10408,7 +10219,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.865Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/08/sbXAkJT3n8-Experiencia-Estetica.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -10647,7 +10458,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.866Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.169Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/04/yUoZTSVhoI-Pensamiento_Literario.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -10790,7 +10601,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.868Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.171Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/04/2n4no7T5CZ-Temas_selectos_de_Matematicas_I.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -10878,7 +10689,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.868Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.171Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2026/02/XpmVRgpT9H-Temas_Selectos_de_Matematicas_II.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -11040,7 +10851,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.865Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.167Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/04/le6CptSR0R-Espacio_y_Sociedad.pdf",
     "modelo": "2024",
     "estado": "oficial",
@@ -11216,7 +11027,7 @@
     "orientaciones_didacticas": [],
     "criterios_evaluacion": [],
     "bibliografia": [],
-    "fecha_extraccion": "2026-07-04T06:03:49.868Z",
+    "fecha_extraccion": "2026-07-04T19:36:31.170Z",
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/04/84Nuywj4iX-Taller_de_Ciencias_II.pdf",
     "modelo": "2024",
     "estado": "oficial",
