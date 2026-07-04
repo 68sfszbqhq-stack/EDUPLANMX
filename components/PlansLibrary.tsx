@@ -5,6 +5,7 @@ import { useReactToPrint } from 'react-to-print';
 import PlanDocument from './PlanDocument';
 import { useAuth } from '../src/contexts/AuthContext';
 import { planeacionesService, PlaneacionFirestore } from '../src/services/planeacionesService';
+import { descargarPlaneacionWord } from '../src/services/wordService';
 
 const PlansLibrary: React.FC = () => {
   const { user } = useAuth();
@@ -12,6 +13,8 @@ const PlansLibrary: React.FC = () => {
   const [filteredPlans, setFilteredPlans] = useState<PlaneacionFirestore[]>([]);
   const [selectedPlan, setSelectedPlan] = useState<PlaneacionFirestore | null>(null);
   const [loading, setLoading] = useState(true);
+  // Biblioteca del plantel: memoria pedagógica colectiva de la escuela
+  const [vista, setVista] = useState<'mias' | 'escuela'>('mias');
   const [searchTerm, setSearchTerm] = useState('');
   const [filterSubject, setFilterSubject] = useState<string>('all');
   const [filterSemester, setFilterSemester] = useState<string>('all');
@@ -22,12 +25,13 @@ const PlansLibrary: React.FC = () => {
     documentTitle: selectedPlan ? `Planeacion-${selectedPlan.subject}` : 'Planeacion',
   });
 
-  // Cargar planeaciones desde Firestore
+  // Cargar planeaciones desde Firestore (propias o de toda la escuela)
   useEffect(() => {
     if (user?.id && user?.schoolId) {
       loadPlans();
     }
-  }, [user]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user, vista]);
 
   // Aplicar filtros
   useEffect(() => {
@@ -65,6 +69,14 @@ const PlansLibrary: React.FC = () => {
 
     try {
       setLoading(true);
+
+      if (vista === 'escuela') {
+        // Biblioteca del plantel: lo que han creado todos los colegas
+        const plansData = await planeacionesService.getEscuela(user.schoolId, 100);
+        setPlans(plansData);
+        return;
+      }
+
       let plansData = await planeacionesService.getMias(user.id, user.schoolId);
 
       // Subir rezagadas de localStorage y recargar si hubo cambios
@@ -165,19 +177,6 @@ const PlansLibrary: React.FC = () => {
     );
   }
 
-  // Sin planeaciones
-  if (plans.length === 0) {
-    return (
-      <div className="text-center py-20 bg-white rounded-3xl border border-dashed border-slate-300">
-        <div className="bg-slate-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-400">
-          <FileText className="w-10 h-10" />
-        </div>
-        <h3 className="text-xl font-bold text-slate-800">No hay planes guardados</h3>
-        <p className="text-slate-500 mt-2">Tus planeaciones generadas aparecerán aquí.</p>
-      </div>
-    );
-  }
-
   // Vista de Detalle de Planeación
   if (selectedPlan) {
     return (
@@ -191,11 +190,20 @@ const PlansLibrary: React.FC = () => {
           </button>
 
           <div className="flex gap-2">
+            {/* Solo el autor puede eliminar su planeación */}
+            {selectedPlan.userId === user?.id && (
+              <button
+                onClick={() => handleDelete(selectedPlan.id!, selectedPlan.title)}
+                className="flex items-center gap-2 px-4 py-2 bg-rose-50 text-rose-600 rounded-xl text-sm font-bold hover:bg-rose-100 transition-all"
+              >
+                <Trash2 className="w-4 h-4" /> Eliminar
+              </button>
+            )}
             <button
-              onClick={() => handleDelete(selectedPlan.id!, selectedPlan.title)}
-              className="flex items-center gap-2 px-4 py-2 bg-rose-50 text-rose-600 rounded-xl text-sm font-bold hover:bg-rose-100 transition-all"
+              onClick={() => descargarPlaneacionWord(selectedPlan.content as LessonPlan)}
+              className="flex items-center gap-2 px-4 py-2 bg-blue-700 text-white rounded-xl text-sm font-bold hover:bg-blue-800 transition-all"
             >
-              <Trash2 className="w-4 h-4" /> Eliminar
+              <FileText className="w-4 h-4" /> Word
             </button>
             <button
               onClick={() => handlePrint()}
@@ -221,13 +229,36 @@ const PlansLibrary: React.FC = () => {
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-3">
         <h3 className="text-xl font-bold text-slate-800 flex items-center gap-2">
           <FileText className="w-6 h-6 text-indigo-600" />
-          Tu Historial de Planeaciones
+          {vista === 'mias' ? 'Tu Historial de Planeaciones' : 'Biblioteca del Plantel'}
           <span className="text-sm font-normal text-slate-500">({filteredPlans.length})</span>
         </h3>
+
+        {/* Pestañas: mis planeaciones / las de toda mi escuela */}
+        <div className="flex bg-slate-100 rounded-xl p-1">
+          <button
+            onClick={() => setVista('mias')}
+            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${vista === 'mias' ? 'bg-white shadow text-indigo-700' : 'text-slate-500 hover:text-slate-700'}`}
+          >
+            Mis planeaciones
+          </button>
+          <button
+            onClick={() => setVista('escuela')}
+            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${vista === 'escuela' ? 'bg-white shadow text-indigo-700' : 'text-slate-500 hover:text-slate-700'}`}
+          >
+            De mi escuela
+          </button>
+        </div>
       </div>
+
+      {vista === 'escuela' && (
+        <p className="text-xs text-slate-500 bg-indigo-50 border border-indigo-100 rounded-xl px-4 py-2.5">
+          💡 Memoria pedagógica del plantel: consulta cómo planean tus colegas. Puedes verlas, imprimirlas
+          o bajarlas a Word como referencia — solo cada autor puede eliminar las suyas.
+        </p>
+      )}
 
       {/* Filtros y Búsqueda */}
       <div className="bg-white p-4 rounded-2xl border border-slate-200 space-y-4">
@@ -292,8 +323,17 @@ const PlansLibrary: React.FC = () => {
 
       {/* Lista de Planeaciones */}
       {filteredPlans.length === 0 ? (
-        <div className="text-center py-12 bg-slate-50 rounded-2xl">
-          <p className="text-slate-600">No se encontraron planeaciones con los filtros seleccionados.</p>
+        <div className="text-center py-16 bg-white rounded-3xl border border-dashed border-slate-300">
+          <div className="bg-slate-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-400">
+            <FileText className="w-8 h-8" />
+          </div>
+          <p className="text-slate-600 font-medium">
+            {plans.length === 0
+              ? (vista === 'mias'
+                ? 'Aún no tienes planeaciones guardadas. Genera tu primera en el paso ③.'
+                : 'Tu escuela aún no tiene planeaciones compartidas.')
+              : 'No se encontraron planeaciones con los filtros seleccionados.'}
+          </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-4">
@@ -305,7 +345,12 @@ const PlansLibrary: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-800">{plan.title}</h4>
-                  <div className="flex items-center gap-3 mt-1">
+                  <div className="flex items-center gap-3 mt-1 flex-wrap">
+                    {vista === 'escuela' && (plan.content as any)?.meta?.teacher && (
+                      <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">
+                        {(plan.content as any).meta.teacher}
+                      </span>
+                    )}
                     <span className="text-xs font-medium text-slate-500 flex items-center gap-1">
                       <BookOpen className="w-3 h-3" /> {plan.subject}
                     </span>
@@ -321,13 +366,15 @@ const PlansLibrary: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button
-                  onClick={() => handleDelete(plan.id!, plan.title)}
-                  className="p-2 text-rose-500 hover:bg-rose-50 rounded-lg transition-colors"
-                  title="Eliminar planeación"
-                >
-                  <Trash2 className="w-5 h-5" />
-                </button>
+                {plan.userId === user?.id && (
+                  <button
+                    onClick={() => handleDelete(plan.id!, plan.title)}
+                    className="p-2 text-rose-500 hover:bg-rose-50 rounded-lg transition-colors"
+                    title="Eliminar planeación"
+                  >
+                    <Trash2 className="w-5 h-5" />
+                  </button>
+                )}
                 <button
                   onClick={() => setSelectedPlan(plan)}
                   className="px-4 py-2 bg-indigo-50 text-indigo-700 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-indigo-100 transition-colors"

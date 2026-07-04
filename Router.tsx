@@ -16,6 +16,7 @@ import Herramientas from './pages/maestro/Herramientas';
 import { OnboardingPage } from './pages/OnboardingPage';
 import Ficha12 from './pages/maestro/Ficha12';
 import LandingPage from './components/LandingPage';
+import AvisoPrivacidad from './components/AvisoPrivacidad';
 
 // Componente para redirigir según el rol
 const RoleBasedRedirect: React.FC = () => {
@@ -80,6 +81,7 @@ const Router: React.FC = () => {
                     {/* Rutas Públicas */}
                     <Route path="/login" element={<Login />} />
                     <Route path="/registro" element={<RegistroAlumnos />} />
+                    <Route path="/privacidad" element={<AvisoPrivacidad />} />
 
                     {/* Onboarding - Protegido pero accesible para usuarios autenticados */}
                     <Route

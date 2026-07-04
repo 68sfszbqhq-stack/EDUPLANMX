@@ -13,6 +13,7 @@ import { PECProject } from '../types';
 import { useAuth } from '../src/contexts/AuthContext';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from '../src/config/firebase';
+import { descargarPlaneacionWord } from '../src/services/wordService';
 
 interface PlanGeneratorProps {
   school: SchoolContext;
@@ -981,6 +982,12 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
               <div className="flex gap-2">
                 <button onClick={handleSaveToLibrary} className="flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-700 rounded-xl text-sm font-bold hover:bg-indigo-100">
                   <Save className="w-4 h-4" /> Guardar
+                </button>
+                <button
+                  onClick={() => descargarPlaneacionWord(result, school.schoolName, school.cct)}
+                  className="flex items-center gap-2 px-4 py-2 bg-blue-700 text-white rounded-xl text-sm font-bold hover:bg-blue-800"
+                >
+                  <FileText className="w-4 h-4" /> Word
                 </button>
                 <button onClick={() => handlePrint()} className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-xl text-sm font-bold hover:bg-slate-800">
                   <Download className="w-4 h-4" /> PDF

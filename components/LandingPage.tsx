@@ -141,7 +141,10 @@ const LandingPage: React.FC = () => {
                     </button>
                 </div>
                 <p className="text-xs text-slate-400 mt-8">
-                    © 2026 EduPlan MX · Hecho para México · Proyecto educativo sin fines de lucro
+                    © 2026 EduPlan MX · Hecho para México · Proyecto educativo sin fines de lucro ·{' '}
+                    <button onClick={() => navigate('/privacidad')} className="underline hover:text-indigo-600">
+                        Aviso de privacidad
+                    </button>
                 </p>
             </section>
         </div>

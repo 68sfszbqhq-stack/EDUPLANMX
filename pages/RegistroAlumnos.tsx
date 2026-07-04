@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CheckCircle, UserPlus, School } from 'lucide-react';
 import FormularioAlumno from '../components/FormularioAlumno';
 import type { Alumno } from '../types/diagnostico';
@@ -49,6 +50,12 @@ const RegistroAlumnos: React.FC = () => {
                         <div>
                             <h1 className="text-2xl font-bold text-slate-900">EduPlan MX</h1>
                             <p className="text-sm text-slate-600">Registro de Alumnos - Bachillerato General Oficial</p>
+                            <p className="text-xs text-slate-400 mt-0.5">
+                                Tus datos se usan solo con fines de diagnóstico educativo.{' '}
+                                <Link to="/privacidad" className="underline text-indigo-500 hover:text-indigo-700">
+                                    Consulta el aviso de privacidad
+                                </Link>
+                            </p>
                         </div>
                     </div>
                 </div>
