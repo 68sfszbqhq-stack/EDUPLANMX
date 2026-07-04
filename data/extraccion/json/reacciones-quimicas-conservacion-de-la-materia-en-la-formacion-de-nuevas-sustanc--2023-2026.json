@@ -1,0 +1,60 @@
+{
+ "nombre": "Reacciones químicas: conservación de la materia en la formación de nuevas sustancias CNEYT IV",
+ "generacion": "2023-2026",
+ "componente": "fundamental",
+ "url": "https://dgb.sep.gob.mx/storage/recursos/2025/09/zE10WacuIS-Reacciones-quimicas-conservacion-de-la-materia-en-la-formacion-de-nuevas-sustancias-CNEYT-IV.pdf",
+ "slug": "reacciones-quimicas-conservacion-de-la-materia-en-la-formacion-de-nuevas-sustanc--2023-2026",
+ "proposito": "de mejorar la enseñanza y el ap rendizaje durante el desarrollo de la \nsituación didáctica. La práctica de la evaluación en el aula es formativa en la medida en \nque la evidencia sobre los logros de las y los estudiantes se interpreta y usa por el \nprofesorado, los estudiantes o sus compañe ras y compañeros , para tomar decisiones \nsobre las actividades a realizar en futuras sesiones, a fin de que las y los estudiantes \naprenden mejor, con base en las evidencias que se obtuvieron. \nLa evaluación necesaria para el área de Ciencias Natur ales, Experimentales y Tecnología \nes formativa dado que tiene la cualidad de ser utilizada como una estrategia de mejora \ncontinua. Este tipo de evaluación es constante, ofrece la posibilidad de detectar el \nprogreso o dificultad en el proceso de enseñanza y apren dizaje del estudiantado, permite \nvisualizar el avance que se ha logrado y los objetivos por alcanzar. Para que tenga lugar la \nevaluación formativa se propone la utilización de la auto y coevaluación. Es importante \naclarar que la evaluación formativa no exc luye a la evaluación diagnóstica y sumativa, las \ncuales pueden estar presentes si los contenidos de la progresión ameritan su uso. ",
+ "progresiones": [
+  {
+   "id": 1,
+   "descripcion": "ETAPA DE PROGRESIÓN Las sustancias reaccionan químicamente de formas características. En un proceso químico, los átomos que componen las sustancias originales llamadas reactivos se reagrupan formando diferentes sustancias, denominadas productos, que se caracterizan por tener propiedades distintas a las de los reactivos."
+  },
+  {
+   "id": 2,
+   "descripcion": "c Cada átomo tiene una subestructura con cargas eléctricas, que consiste en un núcleo con protones y neutrones, rodeado de electrones."
+  },
+  {
+   "id": 3,
+   "descripcion": "c Cada átomo tiene una subestructura con cargas eléctricas, que consiste en un núcleo con protones y neutrones, rodeado de electrones."
+  },
+  {
+   "id": 4,
+   "descripcion": "La tabla periódica ordena los elementos químicos horizontalmente por el número de protones en el núcleo del átomo y coloca aquellos con propiedades químicas similares en columnas. Los patrones repetitivos de esta tabla se asocian a los patrones de la configuración de electrones externos."
+  },
+  {
+   "id": 5,
+   "descripcion": "c Los ejemplos de propiedades que son predecibles a partir de patrones incluyen la reactividad de los metales, los tipos de enlaces formados, la cantidad de enlaces formados y las reacciones con el oxígeno."
+  },
+  {
+   "id": 6,
+   "descripcion": "c La atracción y repulsión entre cargas eléctricas a escala atómica explica la estructura, propiedades y transformaciones de la materia, así como las fuerzas de contacto entre los objetos materiales."
+  },
+  {
+   "id": 7,
+   "descripcion": "c El hecho de que los átomos se conserven, aunado al conocimiento de las propiedades químicas de los elementos involucrados, puede usarse para describir y predecir reacciones químicas."
+  },
+  {
+   "id": 8,
+   "descripcion": "c Es posible establecer relaciones proporcionales entre las masas de los átomos en los reactivos y los productos, y la traducción de estas relaciones a la escala macroscópica usando el concepto de mol como la conversión de la escala atómica a la escala macroscópica."
+  },
+  {
+   "id": 9,
+   "descripcion": "c Un equilibrio dinámico ocurre cuando dos procesos reversibles suceden a la misma velocidad. Diversos procesos (como determinadas reacciones químicas) son reversibles y cuando están en un equilibrio dinámico, la reacción inversa ocurre a la misma velocidad"
+  },
+  {
+   "id": 10,
+   "descripcion": "c Los procesos químicos, sus velocidades y si requieren energía o la liberan, pueden entenderse en términos de colisiones de átomos o moléculas y reordenamiento de átomos para formar distintas sustancias, con los consiguientes cambios en la suma de las energías de enlace de todas las moléculas y los cambios correspondientes en la energía cinética."
+  },
+  {
+   "id": 11,
+   "descripcion": "z Si un sistema en equilibrio es perturbado, el sistema evoluciona para contrarrestar dicha perturbación, llegando a un nuevo estado de equilibrio."
+  }
+ ],
+ "metas_aprendizaje": [],
+ "contenidos": [
+  "que darán cumplimiento a la formación de las y los estu diantes de EMS y \nserán desarrollados a través de las progresiones de aprendizaje. El Área de Conocimiento \nde Ciencias Naturales, Experimentales y Tecnología se encuentra integrada por seis UAC, \na desarrollarse en seis semestres (ver tabla 1). \n \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos. \n \nUnidades de \nAprendizaje Curricular Semestre* Horas semanales Horas semestrales Créditos MD EI Total MD EI Total \nLa materia y sus \ninteracciones Primero 4 1 5 64 16 80 8 \nConservación de la \nenergía y su s \ninteracci ones con la \nmateria Segundo 4 1 5 64 16 80 8 \nEcosistemas: \ninteracciones, energía y \ndinámica Tercero 4 1 5 64 16 80 8 \nReacciones químicas: \nconservación de la \nmateria en la \nformación de nuevas \nsustancias Cuarto 4 1 5 64 16 80 8 \nLa energía en los \nprocesos de la vida \ndiaria Quinto 4 1 5 64 16 80 8 \nOrganismos: \nestructuras y procesos. \nHerencia y evolución \nbiológica Sexto 4 1 5 64 16 80 8 \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio independiente. \n \n \n6"
+ ],
+ "calidad_extraccion": "BUENA",
+ "extraido_con": "extraer_progresiones.py v1"
+}

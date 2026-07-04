@@ -1,0 +1,66 @@
+{
+ "nombre": "Cultura Digital I",
+ "generacion": "2023-2026",
+ "componente": "fundamental",
+ "url": "https://dgb.sep.gob.mx/storage/recursos/2025/09/UbN2iAEhFi-Cultura-Digital-I.pdf",
+ "slug": "cultura-digital-i--2023-2026",
+ "proposito": "es que puedan hacer uso de las Tecnologías de la Información, \nComunicación, Conocimientos y Aprendizajes Digitales (TICCAD ) entre otras para \nseleccionar, procesar, analizar y sistematizar la información dentro de un marco \nnormativo y de seguridad y fomenten el uso de dichos recursos de forma responsable en \nel entorno que lo rodea. \n \n \n4 \n \nc Las categorías que componen este Recurso Sociocognitivo son: \n• Ciudadanía Digital \n• Comunicación y colaboración \n• Pensamiento algorítmico \n• Creatividad digital. \nLa Cultura Di gital como cultura endémica de las comunidades de usuarios de sistemas \ndigitales o de interacción en línea, no es solamente un tipo de cultura que se relaciona \ncon el procesamiento de palabras, o con la producción de presentaciones electrónicas. \nLa Cultura Digital que se busca desarrollar en la Nueva Escuela Mexicana de la EMS está \nrelacionada con saberes digitales informáticos de orden operativo e instrumental, pero \ntambién con los saberes digitales informacionales que permite potenciar el desempeño \nde las comunidades académicas, del desarrollo de habilidades para la comunicación y \ncolaboración, la capacidad creativa, el pensamiento algorítmico y la conc",
+ "progresiones": [
+  {
+   "id": 1,
+   "descripcion": "Identifica y aplica la normatividad que regula el uso del ciberespacio y servicios digitales; cuida su salud digital y el medio ambiente, reconoce los criterios para la selección de información, la privacidad de la información del usuario, el respeto de los derechos de autor, los tipos de licenciamiento de software y normas del uso de la información a través de diferentes dispositivos tecnológicos según el contexto."
+  },
+  {
+   "id": 2,
+   "descripcion": "Reconoce su identidad como ciudadano en medios digitales con credenciales para acceder al ciberespacio y plataformas para interactuar y colaborar de manera cotidiana conforme a la normatividad, seguridad, recursos disponibles y su contexto."
+  },
+  {
+   "id": 3,
+   "descripcion": "Conoce y utiliza los requerimientos, tipos de licenciamiento del software (navegadores, sistema operativo, niveles de acceso) y hardware (conectividad), así como las unidades de medida, sean de velocidad, procesamiento o almacenamiento de información, para acceder a servicios tecnológicos, al ciberespacio y a los servicios digitales conforme a los lineamientos de uso y gestión de la información digital según el contexto. ."
+  },
+  {
+   "id": 4,
+   "descripcion": "Utiliza el ciberespacio y servicios digitales conforme a normatividad y al contexto personal, académico, social y ambiental, para integrarse con seguridad en ambientes virtuales."
+  },
+  {
+   "id": 5,
+   "descripcion": "Conoce y utiliza herramientas de productividad: procesadores de texto, hojas de cálculo y presentaciones electrónicas para acceder al conocimiento y la experiencia de Ciencias Sociales, Ciencias Naturales, Experimentales y Tecnología, Humanidades, Recursos Sociocognitivos y Socioemocionales según el contexto."
+  },
+  {
+   "id": 6,
+   "descripcion": "Reconoce características de una situación, fenómeno o problemática de las ciencias naturales, experimentales y tecnología, ciencias sociales, humanidades o de su vida cotidiana para establecer alternativas de solución conforme a su contexto y recursos."
+  },
+  {
+   "id": 7,
+   "descripcion": "Computacional y lenguaje algorítmico. Desarrolla una estrategia que consta de una secuencia de pasos finitos, organizados en forma lógica para dar respuesta a una situación, fenómeno o problemática de las ciencias naturales, experimentales y tecnología, ciencias sociales, humanidades o de su vida cotidiana."
+  },
+  {
+   "id": 8,
+   "descripcion": "Computacional y lenguaje algorítmico. Conoce los diferentes métodos, técnicas o diagramas de flujo – 5 E (Enganche, Explorar, Explicar, Elaborar, Evaluar), divide y vencerás, método del caso, método del árbol de causas, método científico, diseño descendente, refinamiento por pasos - y aplica el más pertinente de acuerdo con la situación, fenómeno o problemática para representar la solución."
+  },
+  {
+   "id": 9,
+   "descripcion": "Computacional y lenguaje algorítmico. Utiliza elementos: dato, información, variables, constantes, expresiones, operadores lógicos, operaciones relacionales, operadores aritméticos, estructuras condicionales, selectivas y repetitivas para modelar soluciones de manera algorítmica."
+  },
+  {
+   "id": 10,
+   "descripcion": "9 Utiliza lenguaje algorítmico y de programación a través de medios digitales para solucionar la situación, fenómeno o problemática."
+  }
+ ],
+ "metas_aprendizaje": [
+  "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
+  "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
+  "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
+  "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
+  "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
+  "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
+  "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
+  "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
+  "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso."
+ ],
+ "contenidos": [
+  "digitales permitiendo una práctica docente ágil, \nactualizada, innovadora y al contexto de nuestros alumnos. \nEl Recurso Sociocognitivo de Cultura Digital se encuentra integrada por tres UAC, a \ndesarrollars e en dos semestres y una tercera sujeta a la posibilidad de cada servicio \neducativo o subsistema de Educación Media Superior (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nAsignatura Semestre Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nCultura Digital I Primero 3 45 \nmin. 3 hrs. \n45 min 48 12 60 6 \nCultura Digital II Segundo 2 30 \nmin. 2 hrs. \n30 \nmin. 32 8 40 4 \nCultura Digital \nIII Sexto* 1 15 min. 1 hr. 15 \nmin. 16 4 20 2 \n \n \n*De acuerdo con el mapa curricular de cada servicio educativo . \nMD: Mediación docente. EI: Estudio Independient e \n \n \n5 \n \nEn el presente documento se describe la UAC correspondiente a Cultura Digital I a \ndesarrollarse durante el primer semestre."
+ ],
+ "calidad_extraccion": "BUENA",
+ "extraido_con": "extraer_progresiones.py v1"
+}

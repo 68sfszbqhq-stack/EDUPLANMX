@@ -1,0 +1,76 @@
+{
+ "nombre": "Conservación de la energía y su interacción con la materia CNEYT II",
+ "generacion": "2023-2026",
+ "componente": "fundamental",
+ "url": "https://dgb.sep.gob.mx/storage/recursos/2025/09/ViOtYhJQoe-Conservacion-de-la-energia-y-su-interaccion-con-la-material-CNEYT-II.pdf",
+ "slug": "conservacion-de-la-energia-y-su-interaccion-con-la-materia-cneyt-ii--2023-2026",
+ "proposito": "",
+ "progresiones": [
+  {
+   "id": 1,
+   "descripcion": "SEGUNDO SEMESTRE PROGRESIÓN “ CONSERVACIÓN DE LA ENERGÍA Y SU INTERACCIÓN CON LA MATERIA ” “La energía no puede ser creada o destruida, pero puede ser transportada de un lugar a otro dentro del sistema y transferida entre sistemas. Muchos fenómenos se pueden explicar en términos de transferencias de energía. Las expresiones matemáticas que cuantifican los cambios en las formas de energía dentro de un sistema y las transferencias de energía dentro o fuera de este, permiten utilizar el concep to de conservación de energía para predecir y describir su comportamiento” (National Research Council, 2012). ETAPA DE PROGRESIÓN La energía puede ser transferida de un objeto en movimiento a otro objeto cuando colisionan. La energía está presente cuando hay objetos en movimiento, hay sonido, hay luz o hay calor."
+  },
+  {
+   "id": 2,
+   "descripcion": "La energía tiene diferentes manifestaciones (por ejemplo, energía en campos electromagnéticos, energía térmica, energía de movimiento)."
+  },
+  {
+   "id": 3,
+   "descripcion": "La energía se puede transferir de distintas formas y entre objetos o sistemas, así como al interior de ellos."
+  },
+  {
+   "id": 4,
+   "descripcion": "Cuando la energía fluye es posible detectar la transferencia de energía a través de un objeto o sistema."
+  },
+  {
+   "id": 5,
+   "descripcion": "El cambio de estado y/o el movimiento de la materia en un sistema es promovido por la transferencia de energía."
+  },
+  {
+   "id": 6,
+   "descripcion": "La temperatura de un sistema se da en función de la energía cinética promedio y a la energía potencial por partícula. La relación depende del tipo de átomo o molécula del material y sus interacciones ."
+  },
+  {
+   "id": 7,
+   "descripcion": "La energía requerida para cambiar la temperatura de un objeto está en función de su masa y naturaleza, así como del medio."
+  },
+  {
+   "id": 8,
+   "descripcion": "La energía se transfiere de sistemas u objetos más calientes a otros más fríos."
+  },
+  {
+   "id": 9,
+   "descripcion": "La energía no puede ser creada o destruida, pero puede ser transportada de un lugar a otro y transferida entre sistemas."
+  },
+  {
+   "id": 10,
+   "descripcion": "La energía no se puede destruir, sin embargo, se puede convertir en otras formas de menor utilidad (por ejemplo, cuando hay pérdidas por calor)."
+  },
+  {
+   "id": 11,
+   "descripcion": "El funcionamiento de los sistemas depende de su disponibilidad de energía. CONCEPTO CENTRA L: Conservación de la energía y sus interacciones con la materia"
+  },
+  {
+   "id": 12,
+   "descripcion": "En los sistemas cerrados las cantidades totales de materia y energía se conservan."
+  },
+  {
+   "id": 13,
+   "descripcion": "Los cambios de energía y materia en un sistema se pueden rastrear a través de sus flujos hacía, desde y dentro del mismo."
+  },
+  {
+   "id": 14,
+   "descripcion": "Emplear el principio de conservación en el que la energía no se crea ni se destruye, significa que el cambio total de energía en cualquier sistema es siempre igual al total de energía transferida dentro o fuera del sistema."
+  },
+  {
+   "id": 15,
+   "descripcion": "A través del concepto de conservación de la energía es posible describir y predecir el comportamiento de un sistema."
+  }
+ ],
+ "metas_aprendizaje": [],
+ "contenidos": [
+  "que darán cumplimiento a la formación de las y los estudiantes de EMS y \nserán desarrollados a través de las progresiones de aprendizaje. \n \nEl Área de Conocimiento de Ciencias Naturales, Experimentales y Tecnología se \nencuentra integrada por seis UAC, a desarrollarse en seis semes tres (ver tabla 1). \n \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos. \n \nUnidades de \nAprendizaje \nCurricular Semestre* Horas semanales Horas semestrales \nCréditos MD EI Total MD EI Total \nLa materia y sus \ninteracciones Primero 4 1 5 64 16 80 8 \nConservación de la \nenergía y su s \ninteracci ones con \nla materia Segundo 4 1 5 64 16 80 8 \nEcosistemas: \ninteracciones, \nenergía y dinámica Tercero 4 1 5 64 16 80 8 \nReacciones \nquímicas: \nconservación de la \nmateria en la \nformación de \nnuevas sustancias Cuarto 4 1 5 64 16 80 8 \nLa energía en los \nprocesos de la vida \ndiaria Quinto 4 1 5 64 16 80 8 \nOrganismos: \nestructuras y \nprocesos. Herencia \ny evolución \nbiológica Sexto 4 1 5 64 16 80 8 \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio independiente. \n \n \n \n6"
+ ],
+ "calidad_extraccion": "MEDIA",
+ "extraido_con": "extraer_progresiones.py v1"
+}

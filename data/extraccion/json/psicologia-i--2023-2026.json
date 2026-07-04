@@ -1,0 +1,13 @@
+{
+ "nombre": "Psicología I",
+ "generacion": "2023-2026",
+ "componente": "optativa",
+ "url": "https://dgb.sep.gob.mx/storage/recursos/2025/06/Ufq4iGJ61m-Psicologia-I.pdf",
+ "slug": "psicologia-i--2023-2026",
+ "proposito": "",
+ "progresiones": [],
+ "metas_aprendizaje": [],
+ "contenidos": [],
+ "calidad_extraccion": "FALLIDA",
+ "extraido_con": "extraer_progresiones.py v1"
+}

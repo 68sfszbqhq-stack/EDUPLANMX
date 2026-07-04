@@ -1,0 +1,32 @@
+{
+ "nombre": "Cultura Digital III",
+ "generacion": "2023-2026",
+ "componente": "fundamental",
+ "url": "https://dgb.sep.gob.mx/storage/recursos/2025/09/Z03Gad3seQ-Cultura-Digital-III.pdf",
+ "slug": "cultura-digital-iii--2023-2026",
+ "proposito": "es que puedan hacer uso de las Tecnologías de la Información, \nComunicación, Conocimientos y Aprendizajes Digitales (TICCAD) entre otr as para \nseleccionar, procesar, analizar y sistematizar la información dentro de un marco \nnormativo y de seguridad y fomenten el uso de dichos recursos de forma responsable en \nel entorno que lo rodea. \nLas categorías que componen este Recurso Sociocognitivo son: \n \n4 \n \nc • Ciudadanía Digital \n• Comunicación y colaboración \n• Pensamiento algorítmico \n• Creatividad digital. \nLa Cultura Digital como cultura endémica de las comunidades de usuarios de sistemas \ndigitales o de int eracción en línea, no es solamente un tipo de cultura que se relaciona \ncon el procesamiento de palabras, o con la producción de presentaciones electrónicas. \nLa Cultura Digital que se busca desarrollar en la Nueva Escuela Mexicana de la EMS está \nrelacionada con saberes digitales informáticos de orden operativo e instrumental, pero \ntambién con los saberes digitales informacionales que permite potenciar el desempeño \nde las comunidades académicas, del desarrollo de habilidades para la comunicación y \ncolaboració n, la capacidad creativa, el pensamiento algorítmico y la conci",
+ "progresiones": [
+  {
+   "id": 1,
+   "descripcion": "Utiliza dispositivos tecnológicos, servicios de difusión y herramientas de software para crear y editar contenido digital (didáctico, documental, demostrativo, entretenimiento, informativo entre otros), conforme a sus recursos y contextos."
+  },
+  {
+   "id": 2,
+   "descripcion": "Productividad Identifica la comunicación digital por su alcance y organizadas en redes personales, locales, metropolitana, área ancha, global (PAN, LAN, MAN, WAN, GAN), por su topología (bus, anillo, estrella); o por sus medios de transmisión(pares trenzados, cable coax ial, fibra óptica, radio enlaces de VHF y UHF y Microondas) para conectar dispositivos tecnológicos conforme sus recursos y contexto."
+  },
+  {
+   "id": 3,
+   "descripcion": "Utiliza herramientas de comunicación digital en forma directa, o emisión y descarga continua, transmisión por secuencias, lectura y difusión continuo para difundir información, conocimientos, experiencias y aprendizajes de acuerdo a su contexto personal, a cadémico, social y ambiental."
+  },
+  {
+   "id": 4,
+   "descripcion": "Productividad Identifica las áreas y campos de aplicación de la inteligencia artificial (IA), internet de las cosas (IoT), Industria 4.0, Ciberseguridad, Ciencia de Datos, Robótica para considerar las vocaciones del estudiantado."
+  }
+ ],
+ "metas_aprendizaje": [],
+ "contenidos": [
+  "digitales permitiendo una práctica docente ág il, \nactualizada, innovadora y al contexto de nuestros alumnos. \nEl Recurso Sociocognitivo de Cultura Digital se encuentra integrada por tres UAC, a \ndesarrollarse en dos semestres y una tercera sujeta a la posibilidad de cada servicio \neducativo o subsistema de Educación Media Superior (ver tabla 1). \n \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nUnidad de \nAprendizaje \nCurricular Semestre Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nCultura Digital I Primero 3 45 \nmin. 3 hrs. \n45 min. 48 12 60 6 \nCultura Digital II Segundo 2 30 \nmin 2 hrs. \n30 min. 32 8 40 4 \nCultura Digital III Sexto* 1 15 \nmin. 1 hr. 15 \nmin 16 4 20 2 \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio Independiente \n \nEn el presente documento se describe la UAC correspondiente a Cultura Digital III a \ndesarrollarse durante el sexto semestre. \n \n \n5"
+ ],
+ "calidad_extraccion": "MEDIA",
+ "extraido_con": "extraer_progresiones.py v1"
+}

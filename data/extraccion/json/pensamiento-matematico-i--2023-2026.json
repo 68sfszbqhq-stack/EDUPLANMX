@@ -1,0 +1,82 @@
+{
+ "nombre": "Pensamiento Matemático I",
+ "generacion": "2023-2026",
+ "componente": "fundamental",
+ "url": "https://dgb.sep.gob.mx/storage/recursos/2025/09/nfhyrKiRiF-Pensamiento-Matematico-I.pdf",
+ "slug": "pensamiento-matematico-i--2023-2026",
+ "proposito": "de mejorar la enseñanza y el aprendizaje durante el desarrollo de la \nsituación didáctica. La práctica de la evaluación en el aula es formativa en la medida en \nque la evidencia sobre los logros de las y los estudi antes se interpreta y usa por el \nprofesorado, los estudiantes o sus compañeros, para tomar decisiones sobre las \nactividades a realizar en futuras sesiones, a fin de que las y los estudiantes aprenden \nmejor, con base en las evidencias que se obtuvieron. \nLa evaluación necesaria para Pensamiento Matemático es formativa dado que tiene la \ncualidad de ser utilizada como una estrategia de mejora continua. Este tipo de evaluación \nes constante, ofrece la posibilidad de detectar el progreso o dificultad en el proceso de \nenseñanza y aprendizaje del estudiantado, permite visualizar el avance que se ha logrado \ny los objetivos por alcanzar. Para que tenga lugar la evaluación formativa se propone la \nutilización de la auto y coevaluación. Es importante aclarar que la evalua ción formativa \nno excluye a la evaluación diagnóstica y sumativa, las cuales pueden estar presentes si los \ncontenidos de la progresión ameritan su uso. Algunos instrumentos que pueden apoyar \nla evaluación",
+ "progresiones": [
+  {
+   "id": 1,
+   "descripcion": "se especifica el qué enseñar , aprender y el qué desarrollar en Pensamiento M atemático para todos los subsistemas de la EMS en el país, sin hacer distinción de las modalidades del bachillerato. A continuación, se presentan cada una de las 15 progresiones que corresponde al programa de estudios de Pensamiento Matemático I, así como las relaciones con las metas, categorías y subcategorías . Discute la importancia de la toma razonada de decisiones, tanto a nivel personal como colectivo, utilizando ejemplos reales o ficticios y de problemáticas complejas que sean significativas para valorar la recolección de datos , su organización y la aleatoriedad. Se busca llevar al estudiantado a que aprecie el poder de la matemática y el pensamiento estadístico y probabilístico. En este punto no se espera que se resuelvan las p roblemáticas aborda das."
+  },
+  {
+   "id": 2,
+   "descripcion": "c Identifica la incertidumbre como consecuencia de la variabilidad y a través de simulaciones considera la frecuencia con la que un evento aleatorio puede ocurrir con la finalidad de tener más información sobre la probabilidad de que dicho evento suceda."
+  },
+  {
+   "id": 3,
+   "descripcion": "M2 Desarrolla la percepción y la intuición para generar conjeturas ante situaciones que requieren explicación o interpretación. Identifica la equiprobabilidad como una hipótesis que, en caso de que se pueda asumir, facilita el estudio de la probabilidad y observa que cuando se incrementa el número de repeticiones de una simulación, la frecuencia del evento estudiado tiende a su probabilidad teórica."
+  },
+  {
+   "id": 4,
+   "descripcion": "C c c Elige una técnica de conteo (ordenaciones con repetición, ordenaciones, permutaciones, combinaciones ) para calcular el número total de casos posibles y casos favorables para eventos simples con la finalidad de hallar su probabilidad y con ello generar una mayor conciencia en la toma de decisiones. Las técnicas de conteo se introducen para entender la probabilidad de eventos aleat orios en los que la expresión explícita de su espacio muestral es poco factible."
+  },
+  {
+   "id": 5,
+   "descripcion": "Observa cómo la probabilidad de un evento puede actualizarse cuando se obtiene más información al respecto y considera eventos excluyentes e independientes para emplearlos en la determinación de probabilidades condicionales. La introducción de la actualización de probabilidades se hace a través de simulaciones y sólo después se aborda el teorema de Bayes."
+  },
+  {
+   "id": 6,
+   "descripcion": "Selecciona una problemática o situación de interés, con la finalidad de recolectar información y datos de fuentes confiables e identifica las variables relevantes para su estudio."
+  },
+  {
+   "id": 7,
+   "descripcion": "c •c C Analiza datos categóricos y cuantitativos de alguna problemática o situación de interés para el estudiantado, a través de algunas de sus representaciones gráficas más sencillas como las gráficas de barras (variables cualitativas) o gráficos de puntos e his togramas (variables cuantitativas)."
+  },
+  {
+   "id": 8,
+   "descripcion": "Analiza cómo se relacionan entre sí dos o más variables categóricas a través del estudio de alguna problemática o fenómeno de interés para el estudiantado, con la finalidad de identificar si dichas variables son independientes."
+  },
+  {
+   "id": 9,
+   "descripcion": "afirmaciones acerca de situaciones, fenómenos o problemas propios de la matemática, de las ciencias o de su contexto Analiza dos o más variables cuantitativas a través del estudio de alguna problemática o fenómenos de interés para el estudiantado, con la finalidad de identificar si existe correlación entre dichas variables ."
+  },
+  {
+   "id": 10,
+   "descripcion": "c c •c Cuestiona afirmaciones estadísticas y gráficas, considerando valores atípicos (en el caso de variables cuantitativas) y la posibilidad de que existan factores o variables de confusión."
+  },
+  {
+   "id": 11,
+   "descripcion": "Identifica, ante la imposibilidad de estudiar la totalidad de una población, la opción de extraer información de ésta a través del empleo de técnicas de muestreo, en particular, valora la importancia de la aleatoriedad al momento de tomar una muestra."
+  },
+  {
+   "id": 12,
+   "descripcion": "procedimientos no rutinarios. Valora las ventajas y limitaciones de los estudios observacionales y los compara con el diseño de experimentos, a través de la revisión de algunos ejemplos tomados de diversas fuentes."
+  },
+  {
+   "id": 13,
+   "descripcion": "C Describe un fenómeno, problemática o situación de interés para el estudiantado utilizando las medidas de tendencia central (media, mediana y moda) y de dispersión (desviación estándar, varianza, rango intercuartil, etc.) adecuadas al contexto y valora que tipo de conclusiones puede extraer a partir de dicha información."
+  },
+  {
+   "id": 14,
+   "descripcion": "procedimientos no rutinarios. Explica un evento aleatorio cuyo comportamiento puede describirse a través del estudio de la distribución normal y calcula la probabilidad de que dicho evento suceda."
+  },
+  {
+   "id": 15,
+   "descripcion": "c Valora la posibilidad de hacer inferencias a partir de la revisión de algunas propiedades de distribuciones y del sentido de la estadística inferencial con la finalidad de modelar y entender algunos fenómenos ."
+  }
+ ],
+ "metas_aprendizaje": [
+  "Observa y obtiene información de una situación o fenómeno para establecer estrategias o formas de visualización que ayuden a entenderlo.",
+  "Observa y obtiene información de una situación o fenómeno para establecer estrategias o formas de visualización que ayuden a entenderlo.",
+  "Ejecuta cálculos y algoritmos para resolver problemas matemáticos, de las ciencias y de su entorno.",
+  "Selecciona un modelo matemático por la pertinencia de sus variables y relaciones para explicar una situación, fenómeno o resolver un problema tanto teórico como de su contexto.",
+  "Describe situaciones o fenómenos empleando rigurosamente el lenguaje matemático y el lenguaje natural."
+ ],
+ "contenidos": [
+  "y habilidades que darán cumplimiento a la formación de las y los \nestudiantes de EMS y serán desarrollados a través de las progresiones de aprendizaje. \nEl Recurso Sociocognitivo de Pensamiento Matemático se encuentra integrad o por tres \nUAC , a desarrollarse en tres semestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nPensamiento \nMatemático I Primero 4 1 5 64 16 80 8 \nPensamiento \nMatemático II Segundo 4 1 5 64 16 80 8 \nPensamiento \nMatemático \nIII Tercero 4 1 5 64 16 80 8 \n \n \n*De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio Independiente \n \nEn el presente documento se describe la UAC correspondi ente a Pensamiento \nMatemático I a desarrollarse durante el primer semestre. \n| \n5"
+ ],
+ "calidad_extraccion": "BUENA",
+ "extraido_con": "extraer_progresiones.py v1"
+}

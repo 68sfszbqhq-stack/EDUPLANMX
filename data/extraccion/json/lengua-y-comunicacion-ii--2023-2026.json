@@ -1,0 +1,72 @@
+{
+ "nombre": "Lengua y Comunicación II",
+ "generacion": "2023-2026",
+ "componente": "fundamental",
+ "url": "https://dgb.sep.gob.mx/storage/recursos/2025/09/wtvy24BQc8-Lengua-y-Comunicacion-II.pdf",
+ "slug": "lengua-y-comunicacion-ii--2023-2026",
+ "proposito": "de comprender, explicar su realidad y \ntransformarla. \n \n6 \n 4. Indaga sobre una situación, fenómeno o problemática y divulga los resultados \nde su investigación para beneficio de sí mismo o el medio que le rodea.",
+ "progresiones": [
+  {
+   "id": 1,
+   "descripcion": "Comprende qué es una reseña y comentario crítico y por qué es importante saber reseñar y realizar un análisis crítico para mejorar la sensibilidad crítica del estudiantado y su aplicación a todas las áreas de conocimiento y a los recursos sociocognitivos."
+  },
+  {
+   "id": 2,
+   "descripcion": "7 Distingue la diferencia entre la reseña y comentario crítico y el resumen y relato simple de un texto para comprender el nivel de complejidad de cada uno de ellos."
+  },
+  {
+   "id": 3,
+   "descripcion": "selección, organización y composición de la información contenida en un mensaje Identifica los tipos de reseñas o comentarios críticos más comunes, para comprender su aplicación en todas las áreas de conocimiento y en los recursos sociocognitivos."
+  },
+  {
+   "id": 4,
+   "descripcion": "Comenta y discute en torno a los conflictos de interés presentes en una obra literaria (géneros teatral o narrativo)."
+  },
+  {
+   "id": 5,
+   "descripcion": "Identifica las etapas de la composición de una reseña y comentario crítico de un texto o una fuente de información para comprender el proceso de su elaboración."
+  },
+  {
+   "id": 6,
+   "descripcion": "código Desarrolla la etapa I LECTURA ATENTA del texto para comprender la forma en que debe realizarse el análisis de la información."
+  },
+  {
+   "id": 7,
+   "descripcion": "Desarrolla la etapa II ORGANIZACIÓN DE LAS IDEAS de la reseña y comentario crítico para comprender la forma en que debe ser ordenada."
+  },
+  {
+   "id": 8,
+   "descripcion": "Desarrolla la etapa III PLANEACIÓN de la reseña y comentario crítico para comprender la forma en que debe ser esbozada."
+  },
+  {
+   "id": 9,
+   "descripcion": "Desarrolla la etapa IV COMPOSICIÓN de la reseña y comentario crítico para comprender la forma en que debe ser redactada."
+  },
+  {
+   "id": 10,
+   "descripcion": "respuestas Comenta y discute en torno a las decisiones y acciones de los personajes en obra literaria (géneros teatral o narrativo)."
+  },
+  {
+   "id": 11,
+   "descripcion": "Desarrolla la etapa V REVISIÓN de la reseña y comentario crítico para comprender la forma de verificar su información e incorpora apoyos visuales, gráficos y no verbales críticos en la comunicación oral y escrita para comprender la forma en que debe enfatizarse e ilustrarse la información de la reseña."
+  },
+  {
+   "id": 12,
+   "descripcion": "13 Realiza la exposición oral formal de una reseña y comentario crítico de un texto para explicar y compartir su análisis crítico."
+  },
+  {
+   "id": 13,
+   "descripcion": "encontrar respuestas Genera una conversación en torno a la crítica de un texto para intercambiar puntos de vista sobre la visión crítica del texto estudiado."
+  },
+  {
+   "id": 14,
+   "descripcion": "14 Comenta y discute en torno al mensaje crítico implícito del autor en una obra literaria (géneros teatrales, narrativo y poesía)."
+  }
+ ],
+ "metas_aprendizaje": [],
+ "contenidos": [
+  "que darán cumplimiento a la formación \nde las y los estudiantes de EMS y serán desarrollados a través de las progresiones de \naprendizaje. El Recurso de Lengua y Comunicación I se encuentra integrada por tres \nUAC (ver tabla 1). \n \n \n5 \n \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nLengua y \nComunicación I Primero 3 45 \nmin . 3 hrs. \n45 \nmin. 48 12 60 6 \nLengua y \nComunicación \nII Segundo \n3 45 \nmin . 3 hrs. \n45 \nmin. 48 12 60 6 \nLengua y \nComunicación \nIII Tercero \n3 45 \nmin . 3 hrs. \n45 \nmin. 48 12 60 6 \n \n* De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio Independiente \n \nEn el presente documento se describe la UAC correspondiente a Lengua y \nComunicación del segundo semestre ."
+ ],
+ "calidad_extraccion": "BUENA",
+ "extraido_con": "extraer_progresiones.py v1"
+}

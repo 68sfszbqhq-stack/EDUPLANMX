@@ -1,0 +1,40 @@
+{
+ "nombre": "Conciencia Histórica I",
+ "generacion": "2023-2026",
+ "componente": "fundamental",
+ "url": "https://dgb.sep.gob.mx/storage/recursos/2025/09/Gws8ZMHhYt-Conciencia-Historica-I.pdf",
+ "slug": "conciencia-historica-i--2023-2026",
+ "proposito": "se desarrol la el análisis de la situación presente del estudiante, su familia, \ncomunidad, nación y el mundo, preguntándose porqué estamos en estas condiciones y \ncuáles son los hechos y procesos del pasado que influyen en las circunstancias actuales. \nLa Conciencia Histórica permitirá a las y los estudiantes de la EMS recopilar información, \nanalizarla críticamente para comprender e interpretar los procesos y hechos vividos por \nlos seres humanos, las comunidades y las sociedades en el pasado, con el propósito de \ndesarro llar pensamiento crítico para explicar y ubicarse en la realidad presente, así como \norientar sus acciones futuras. \nEste Recurso Sociocognitivo está constituido por las siguientes categorías: método \nhistórico, explicación histórica, pensamiento crítico histórico y proceso histórico ; se \nintegra por tres U nidades de Aprendizajes Curriculares (UAC) que se desarrollarán en tres \nsemestres (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \nUnidades de \nAprendizaje \nCurricular Semestre Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nConciencia \nHistórica I . \nPerspectivas \ndel México \nantiguo en los",
+ "progresiones": [
+  {
+   "id": 1,
+   "descripcion": "se plantean los contenidos fundamentales qué enseñar y el qué aprender en Conciencia Histórica para todos los subsistemas de la EMS en el país, sin hacer distinción de las modalidade s. Para profundizar en qué son las progresiones, su conceptualización y desarrollo, se sugiere revisar el documento de Progresiones de Conciencia Histórica, así como sus Orientaciones Pedagógicas en el siguiente enlace: https://n9.cl/2fcvo . A continuación, se presentan cada una de las progresiones que corresponde al programa de estudios de Conciencia Histórica I. Perspectivas de l México Antiguo en los con textos globales , así como su relaci ón con las metas de aprendizaje , categorías y subcategorías. PROGRESIÓN DE APRENDIZAJE El estudiantado comprende el concepto de Conciencia Histórica para diferenciarla de la historia cronológica basada en datos y fechas."
+  },
+  {
+   "id": 2,
+   "descripcion": "Las y los estudiantes identifican los cambios ocurridos a través del tiempo para satisfacer las necesidades materiales, tecnológicas, las formas de organización social y las relaciones de poder para que comprenda las transformaciones históricas."
+  },
+  {
+   "id": 3,
+   "descripcion": "c c c Las y los estudiantes comprenden los rasgos de Mesoamérica, Aridoamérica y Oasisamérica que siguen vigentes en el México actual, tales como: herencia genética, características lingüísticas, estructuras sociales comunitarias, expresiones culinarias, entre otras, para que para que valoren el or igen multicultural, multilingüe y multiétnico de México."
+  },
+  {
+   "id": 4,
+   "descripcion": "La comunidad estudiantil explica la formación del mundo moderno: desarrollos tecnológicos, expansión de redes comerciales y del imperio otomano, y cambios en el pensamiento religioso, que posibilitaron los procesos de conquista en América."
+  }
+ ],
+ "metas_aprendizaje": [
+  "Investiga procesos históricos para fortalecer el pensamiento crítico.",
+  "Método histórico Investiga procesos históricos para fortalecer el pensamiento crítico.",
+  "Explica causas y factores de procesos históricos con perspectiva de género, multicultural, multiétnica e incluyente para que reconozca la participación de todos los grupos sociales.",
+  "Método histórico Investiga procesos históricos para fortalecer el pensamiento crítico.",
+  "Explica causas y factores de procesos históricos con perspectiva de género, multicultural, multiétnica e incluyente para que reconozca la participación de todos los grupos sociales.",
+  "Método histórico Investiga procesos históricos para fortalecer el pensamiento crítico.",
+  "Explica causas y factores de procesos históricos con perspectiva de género, multicultur al, multiétnica e incluyente para que reconozca la participación de todos los grupos sociales."
+ ],
+ "contenidos": [
+  "que deberá abordar con el estudiantado . Una de las características que identifican a las \nprogresiones del presente Recurso Sociocognitivo es que permite ubicar y aplicar los \ncontenidos fundamentales en una diversidad de contextos, problemáticas y situaciones, \nsiempre con la idea de que la Concien cia Histórica sea cercana y vivencial para el \nestudiantado. Estas progresiones de aprendizaje, como su nombre lo indica, precisan un \nconocimiento que va de lo más sencillo a lo más complejo, y para ello necesariamente se \nrequiere haber revisado la progresi ón previa. \nCon el planteamiento de las progresiones de aprendizaje se plantean los contenidos \nfundamentales qué enseñar y el qué aprender en Conciencia Histórica para todos los \nsubsistemas de la EMS en el país, sin hacer distinción de las modalidade s. \nPara profundizar en qué son las progresiones, su conceptualización y desarrollo, se \nsugiere revisar el documento de Progresiones de Conciencia Histórica, así como sus \nOrientaciones Pedagógicas en el siguiente enlace: https://n9.cl/2fcvo . \nA continuación, se presentan cada una de las progresiones que corresponde al programa \nde estudios de Conciencia Histórica I. Perspectivas de l México Antiguo en los con textos \nglobales , así como su relaci ón con las metas de aprendizaje , categorías y subcategorías. \nPROGRESIÓN DE APRENDIZAJE \n \nEl estudiantado comprende el concepto de Conciencia Histórica para diferenciarla de la historia cronológica \nbasada en datos y fechas. \n \nM"
+ ],
+ "calidad_extraccion": "MEDIA",
+ "extraido_con": "extraer_progresiones.py v1"
+}

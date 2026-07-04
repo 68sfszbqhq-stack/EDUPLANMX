@@ -16,3 +16,6 @@ dist
 
 # macOS
 .DS_Store
+
+# PDFs oficiales DGB (pesados, regenerables con scripts/extraer_progresiones.py)
+data/pdfs_dgb/

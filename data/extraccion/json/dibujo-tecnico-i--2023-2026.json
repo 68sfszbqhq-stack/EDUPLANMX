@@ -1,0 +1,48 @@
+{
+ "nombre": "Dibujo Técnico I",
+ "generacion": "2023-2026",
+ "componente": "optativa",
+ "url": "https://dgb.sep.gob.mx/storage/recursos/2025/05/LTW39gRG39-Dibujo-Tecnico-I.pdf",
+ "slug": "dibujo-tecnico-i--2023-2026",
+ "proposito": "de mejorar la enseñanza y el aprendizaje mientras la instrucción aún está en curso. La práctica \nen el aula es formativa en la medida en que la evidencia sobre los logros del estudiantado se interpreta y usa \npor el profesorado, los aprendi ces o sus compañeros, para tomar decisiones sobre los próximos pasos en la \ninstrucción, los que se espera sean mejores que las decisiones que habrían tomado en ausencia de la evidencia \nque se obtuvo. \nPara profundizar sobre el tema de evaluación formativa y la retroalimentación se sugiere revisar el documento \nde Orientaciones para la Evaluación del Aprendizaje en el siguiente enlace: \nhttps://dgb.sep.gob.mx/storage/recursos/2024/04/6mL0WsYtNp -Orientaciones -para -la-evaluacion -\ndel-aprendizaje -(1).pdf",
+ "progresiones": [
+  {
+   "id": 1,
+   "descripcion": "Observa ejemplos gráficos con lo cual explora la historia e importancia del dibujo técnico, \ndestacando su utilidad, aplicación y alcance, reconociéndolo como un lenguaje de comunicación universal que \nse aplica en diversas disciplinas. \n \nMetas Categorías Subcategorías \nC1M1 . Realiza representaciones \ngeométricas de diversos objetos a \nmano alzada y utilizando distintos \ninstrumentos de dibujo técnico. C1. Procedural S1. Elementos geométricos \nC4M1 Describe y construye \nrepresentaciones gráficas, tomando \ncomo referencia proporciones y \nescalas. C4. Normativa S1. Reglamentación \nS2. Lenguaje técnico"
+  },
+  {
+   "id": 2,
+   "descripcion": "Traza líneas y formas regulares a mano alzada, aplicando los elementos geométricos básicos \n(punto, línea, plano y espacio), a partir de la observación y proporción, para la creación de bocetos. \n \nMetas Categorías Subcategorías \nC2M1. Interpreta la representación \ngráfica de elementos geométricos, \ncuerpos y dimensionamiento de \nobjetos, utilizando el trazo de C1. Procedural S1. Elementos geométricos \n11 Dibujo Técnico I \nlíneas, sistema de proporcionalidad \ny ambientación. \nC4M1. Describe y construye \nrepresentaciones gráficas, tomando \ncomo referencia proporciones y \nescalas. C4. Normativa S1. Reglamentación"
+  },
+  {
+   "id": 3,
+   "descripcion": "Utiliza los instrumentos básicos de dibujo técnico para representar objetos geométricos de \nforma precisa. \nMetas Categorías Subcategorías \nC1M1. Realiza representaciones \ngeométricas de diversos objetos a \nmano alzada y utilizando distintos \ninstrumentos de dibujo técnico. C1. Procedural S1. Elementos geométricos \nC4M1. Describe y construye \nrepresentaciones gráficas, tomando \ncomo referencia proporciones y \nescalas. C4. Normativa \nS1. Reglamentación \nS2. Lenguaje técnico"
+  },
+  {
+   "id": 4,
+   "descripcion": "Conoce la normativa básica aplicable al dibujo técnico las cuales aplica mediante la elaboración \nde representaciones gráficas que le permitan realizar dibujos de manera correcta, los cuales socializa con sus \npares y establece relaciones con otras Unidades de Aprendizaje Curricular. \n \nMetas Categorías Subcategorías \nC4M1. Describe y construye \nrepresentaciones gráficas, tomando \ncomo referencia proporciones y \nescalas. \nC4M2. Utiliza los instrumentos de \nmedición y dibujo, para modelar su \nentorno a través del trazo \ncorrespondiente. C4. Normativa S1. Reglamentación \nS2. Lenguaje técnico \n \n \n \n \n12"
+  },
+  {
+   "id": 5,
+   "descripcion": "Realiza dibujos aplicando la normatividad básica a través de la creación de representaciones en \ndos y tres dimensiones, para la interpretación de especificaciones técnicas. \n \n \nMetas Categorías Subcategorías \nC4M1. Describe y construye \nrepresentaciones gráficas, tomando \ncomo referencia proporciones y \nescalas. \nC4M2. Utiliza los instrumentos de \nmedición y dibujo, para modelar su \nentorno a través del trazo \ncorrespondiente. \nC4M3. Aplica la reglamentación y \nnormatividad sobre \ndimensionamientos, para la \ncreación de diversas \nrepresentaciones en dos y tres \ndimensiones. \n C4. Normativa S1. Reglamentación \nS2. Lenguaje técnico"
+  },
+  {
+   "id": 6,
+   "descripcion": "Comprende los conceptos básicos de la proyección ortogonal para desarrollar la capacidad de \nvisualizar y representar objetos geométricos desde distintas vistas, que faciliten su interpretación y \ncomprensión, para resolver problemas de otras Unidades de Aprendizaje Curricular. \n \n \nMetas Categorías Subcategorías \nC3M4. Aplica conocimientos de \ngeometría y matemáticas para \nresolver problemas relacionados \ncon la proyección ortogonal. \n C2. Proceso de \nrazonamiento S1. Capacidad para observar y \nconjeturar \n13 Dibujo Técnico I \nC4M3. Aplica la reglamentación y \nnormatividad sobre \ndimensionamientos, para la \ncreación de diversas \nrepresentaciones en dos y tres \ndimensiones. \n C4. Normativa S1. Reglamentación \nS2. Lenguaje técnico"
+  },
+  {
+   "id": 7,
+   "descripcion": "Observa figuras geométricas en el trazado de cuerpos aplicando los principios de las \nproyecciones axonométricas con lo cual explora las tres dimensiones espaciales y da una interpretación clara \ndel espacio que le rodea. \n \nMetas Categorías Subcategorías \nC3M1 . Observa su entorno y \npermite representar gráficamente \nal elaborar planos, isométricos y \ncuerpos bidimensionales a partir de \nuna montea triplanar. \nC2. Proceso de \nrazonamiento S2. Proyecciones ortogonales C3M2 .Utiliza elementos \ngeométricos para generar \nsensaciones de profundidad y \nperspectiva. \nC3M3. Aplica elementos básicos de \nla geometría espacial, ubicando un \ncuerpo a partir de una perspectiva \no isométrico. \n \nC4M3. Aplica la reglamentación y \nnormatividad sobre \ndimensionamientos, para la \ncreación de diversas \nrepresentaciones en dos y tres \ndimensiones. C4. Normativa S1. Reglamentación \nS2. Lenguaje técnico \n \n14"
+  },
+  {
+   "id": 7,
+   "descripcion": "Momento 1. Identificación de la progresión \n \nObserva formas geométricas y traza cuerpos geométricos aplicando los principios de proyecciones \naxonométricas para conocer las tres dimensiones que componen el espacio y su interpretación clara. \n \nCategoría(s): C2. Proceso de razonamiento. \nSubcategoría(s): C2S1. Capacidad para observar y conjeturar \nMetas de aprendizaje: C2M2. Visualiza objetos de tres dimensiones a partir de dibujos bidimensionales y \nconstruye objetos a través de proyecciones axonométricas y ortogonales. \nMomento 2. Diseñar una actividad \n \nLa siguiente actividad es una sugerencia didáctica, por lo que el personal docente podrá diseñar situaciones -\nproblema de conformidad con su contexto y recursos disponibles. La presente progresión será desarrollada \n16 \nen tres sesiones de una hora cada una, con mediación del personal docente, para el desarrollo del concepto \nde trazo de cuerpos geométricos aplicando los principios axonométricos. \n \nSesión 1 \nSugerencias para el personal docente \n \nLas actividades, preguntas o información que se plantee deberán tener las siguientes características: \n \n1. Generar ambientes de aprendizaje emocionalmente seguros en donde el estudi"
+  }
+ ],
+ "metas_aprendizaje": [],
+ "contenidos": [
+  ", planes y \nprogramas de estudio, métodos, materiales didácticos e instrumentos para la evaluación del aprendizaje del \nbachillerato general, en sus diferentes modalidades y enfoques, y difundir los vigentes ”; además de “ impulsar \nlas reformas curriculares de los estudios de bachillerato que resulten necesarias para responder a los \nrequerimientos de la sociedad del conocimiento y del desarrollo sustentable ” (RISEP, 2020). \nEn este sentido, los planteamientos del MCCEMS buscan una formación integral en el estudiantado mediante \nel desarrollo de la capacidad creadora, productiva, libre y digna del ser humano, conformando una ciudadanía \nque tenga amor al país, a su cultura e historia. Por ello, el Bachillerato General plantea las diversas Unidades \nde Aprendizaje Curricular (UAC) para que, con sus estudiantes egresados y egresadas contribuya al logro de \nsu objetivo específico, el cual radica en la “ conformación de una ciudadanía reflexiva, con capacidad de \nformular y asumir responsabilidades de manera comunitaria, interactuar en contextos plurales y propositivos, \ntrazarse metas y aprender de manera continua y colaborativa ”. \nEn este contexto, se presenta la UAC Dibujo Técnico I específica del Bachillerato General, con objetivos \ndelimitados acorde a las características del subsistema y de la población a la cual se dirige. El documento se \nencuentra conformado por apartados media nte los cuales se describe no solo la fundamentación, sino los \nelementos claves para su im"
+ ],
+ "calidad_extraccion": "BUENA",
+ "extraido_con": "extraer_progresiones.py v1"
+}

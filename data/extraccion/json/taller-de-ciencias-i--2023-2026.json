@@ -1,0 +1,13 @@
+{
+ "nombre": "Taller de Ciencias I",
+ "generacion": "2023-2026",
+ "componente": "extendido-obligatorio",
+ "url": "https://dgb.sep.gob.mx/storage/recursos/2025/04/UN4QbDHbjm-Taller_de_Ciencias_I.pdf",
+ "slug": "taller-de-ciencias-i--2023-2026",
+ "proposito": ", así como los \nconceptos centrales , transversales y prácticas de ciencia e ingienería que \nayudarán a abordar los aprendizajes. \nEn cuanto a los ambientes de aprendizaje, se pueden utilizar diferentes espacios: \na) El aula, ya sea presencial o virtual. \nb) La escuela, donde se puedan realizar actividades en laboratorios, talleres u \notros espacios. \nc) La comunidad, incluyendo la casa, la localidad o la región. \nEn el caso del Taller de Ciencias I, se recomienda utilizar diversos ambientes de \naprendizaje como espacio de experimentación que permitan la vinculación entre \nla tecnología y la sociedad. Es imprescindible tomar en cuenta que tecnología \nhace referencia a cualquier modificación del mundo natural con el objetivo \nsatisfacer una necesidad humana (DOF, 09/08/23), por lo que se pue de encontrar \nejemplos desde una pluma hasta un sistema de captación pluvial. Entre los \nrecursos digitales sugeridos se pueden utiliza r los siguientes: Biomodel, \n \n \n22 \n \n Educaplay, Educarchile, Global Climate Change, Middle School Chemistry , \nNational Science Teaching Association .",
+ "progresiones": [],
+ "metas_aprendizaje": [],
+ "contenidos": [],
+ "calidad_extraccion": "PARCIAL",
+ "extraido_con": "extraer_progresiones.py v1"
+}

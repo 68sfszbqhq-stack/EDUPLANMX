@@ -1,0 +1,277 @@
+{
+ "nombre": "Taller de Ciencias I (progresiones)",
+ "generacion": "2023-2026",
+ "componente": "extendido-obligatorio",
+ "url": "https://dgb.sep.gob.mx/storage/recursos/2025/04/ZaTS7U81zP-Progresiones_de_aprendizaje_de_Taller_de_Ciencias_I.pdf",
+ "slug": "taller-de-ciencias-i-progresiones--2023-2026",
+ "proposito": "y relevancia de la UAC de Taller de Ciencias I ................................ ....................... 7 \n3. Conceptos básicos del Área de Conocimiento de Ciencias Naturales \nExperimentales y Tecnología ................................ ................................ ................................ ................................ ...... 9 \n3.1 Conceptos centrales ................................ ................................ ................................ ................................ ..... 9 \n3.1.1 Aplicación tecnológica de la materia y energía. ................................ ................................ ..10 \n3.2 Conceptos transversales ................................ ................................ ................................ ........................... 10 \n3.3 Prácticas de ciencia e ingeniería ................................ ................................ ................................ ........ 13 \n3.4 Metas de aprendizaje ................................ ................................ ................................ ................................ . 15 \n3.5 Perfil de egreso: Aprendizajes de trayectoria ................................ ........",
+ "progresiones": [
+  {
+   "id": 1,
+   "descripcion": "Justificación ................................ ................................ ................................ ................................ ................................ .. 5"
+  },
+  {
+   "id": 2,
+   "descripcion": "Fundamentos de las UAC Taller de Ciencias I ................................ ................................ .................. 6 \n2.1 Definición de la UAC Taller de Ciencias I ................................ ................................ ........................ 6 \n2.2 Propósito y relevancia de la UAC de Taller de Ciencias I ................................ ....................... 7"
+  },
+  {
+   "id": 3,
+   "descripcion": "Conceptos básicos del Área de Conocimiento de Ciencias Naturales \nExperimentales y Tecnología ................................ ................................ ................................ ................................ ...... 9 \n3.1 Conceptos centrales ................................ ................................ ................................ ................................ ..... 9 \n3.1.1 Aplicación tecnológica de la materia y energía. ................................ ................................ ..10 \n3.2 Conceptos transversales ................................ ................................ ................................ ........................... 10 \n3.3 Prácticas de ciencia e ingeniería ................................ ................................ ................................ ........ 13 \n3.4 Metas de aprendizaje ................................ ................................ ................................ ................................ . 15 \n3.5 Perfil de egreso: Aprendizajes de trayectoria ................................ ................................ ............. 17"
+  },
+  {
+   "id": 4,
+   "descripcion": "Progresiones de Aprendizaje ................................ ................................ ................................ ..................... 18 \n4.1 Segundo semestre – Taller de ciencias I ................................ ................................ ........................ 19 \n4.1.1 Concepto central: “Aplicación tecnológica de la materia y energía” ................ 19 \n4.1.2 Justificación como concepto central ................................ ................................ .................... 19 \n4.1.3 Aplicación disciplinar ................................ ................................ ................................ ...................... 20 \n4.1.4 Ideas científicas para desarrollar en las y los estudiantes en la EMS ............... 20 \n4.1.5 Progresión de aprendizaje del concepto central “Aplicación tecnológica de \nla materia y energía” ................................ ................................ ................................ ................................ ............. 21"
+  },
+  {
+   "id": 5,
+   "descripcion": "Glosario ................................ ................................ ................................ ................................ ................................ ......... 33"
+  },
+  {
+   "id": 6,
+   "descripcion": "Referencias documentales para la elaboración de estas progresiones ............................ 34"
+  },
+  {
+   "id": 7,
+   "descripcion": "Anexo ................................ ................................ ................................ ................................ ................................ ............. 36 \n7.1 Anexo 1: Fuentes de información sugerida ................................ ................................ ................. 36 \nCréditos ................................ ................................ ................................ ................................ ................................ ................... 39 \n \n \n \n \n4 \n Presentación \n \nLa Dirección General del Bachillerato (DGB) presenta las Progresiones de \nAprendizaje de las diversas Áreas de Conocimiento y de los Recursos \nSociocognitivos del componente del currículo extendido obligatorio, para el Plan \nde estudios propio de esta Dirección General. \nEstas tienen su sustento, teórica y conceptualmente, en el modelo educativo del \nMarco Curricular Común de la Educación Media Superior (MCCEMS)1, y dan \ncumplimiento a las atribuciones conferidas a esta Dirección por el Reglamento \nInterior de la Secretaría de Educación Pública (SEP), en el cual se establece, en el \nArtículo 19 Fracciones I y II la importancia de “ proponer las"
+  },
+  {
+   "id": 1,
+   "descripcion": "Justificación \n \nLograr la concreción de los objetivos de l Marco Curricular Común de la Educación \nMedia Superior (MCCEMS ) implica la enseñanza de las Ciencias Naturales, \nExperimentales y Tecnología como un factor indispensable. Su propósito \nfundamental es conectar los principios científicos con la realidad cotidiana de las \ny los estudiantes, promoviendo habilidades como la o bservación, la \nexperimentación y la resolución de problemas. Busca una aproximación práctica , \nflexible y contextualizad a, empleando estrategias pedagógicas adapta das al \ndesarrollo cognitivo y social de las y los jóvenes, con el fin de fomentar una \ncomprensión más profunda y una actitud positiva hacia la ciencia. \nPara conocer la justificación del Área de Ciencias Naturales, Experimentales y \nTecnología, y los motivos del cambio en el enfoque educativo, se puede consultar \nal documento de Progresiones de Aprendizaje de Ciencias Naturales, \nExperimentales y Tecnología ( SEMS , 2023a), que ofrece una visión más extensa . \nLa UAC Taller de Ciencias I se encuentra dentro del componente fundamental \nextendido obligatorio del segundo semestre, esta tiene un enfoque centrado en \nlas prácticas de ciencia e "
+  },
+  {
+   "id": 2,
+   "descripcion": "Fundamento s de las UAC Taller de \nCiencias I \n2.1 Definición de la UAC Taller de Ciencias I \n \nEsta UAC prom ueve una comprensión más profunda de los saberes científicos, \nsu relación con el contexto y su papel en la toma de decisiones a nivel individual \ny colectivo a partir de los contenidos presentes en la s UAC “La materia y sus \ninteracciones” y “La conservación de la energía y sus interacciones con la \nmateria” , llevando al estudiantado a reflexionar la relación entre ciencia, \ntecnología y el contexto inmediato , haciendo uso de estrategias pedagógicas \nactivas e indagatorias . \nDesde esta perspectiva, se fortalece la comprensión de la ciencia como una \nactividad humana contextualizada. Las y los estudiantes no sólo exploran los \nfenómenos naturales, sino que también tienen una aproximación a cómo la \nciencia y la tecnología influyen recíprocamente para y por la sociedad. \nAdemás, se explora cómo la ciencia y la tecnología pueden ofrecer alternativas \npara abordar problemáticas específicas de su entorno adecuado a su nivel \n7 \n académico. L as y los estudiantes son motivados a visualizar problemáticas desde \nuna perspectiva científica, socialmente pertinente y culturalment"
+  },
+  {
+   "id": 3,
+   "descripcion": "Conceptos básicos del Área de \nConocimiento de Ciencias Naturales \nExperimentales y Tecnología \n \n3.1 Conceptos centrales \n \nLos conceptos centrales para desarrollar dentro del Marco Curricular Común de \nla Educación Media Superior son:"
+  },
+  {
+   "id": 1,
+   "descripcion": "La materia y sus interacciones."
+  },
+  {
+   "id": 2,
+   "descripcion": "Conservación de la energía y sus interacciones con la materia."
+  },
+  {
+   "id": 3,
+   "descripcion": "Ecosistemas: interacciones, energía y dinámica."
+  },
+  {
+   "id": 4,
+   "descripcion": "Reacciones químicas: conservación de la materia en la formación de \nnuevas sustancias."
+  },
+  {
+   "id": 5,
+   "descripcion": "La energía en los procesos de la vida diaria."
+  },
+  {
+   "id": 6,
+   "descripcion": "Organismos: estructuras y procesos. \nPara más detalles, se puede consultar el documento de Progresiones de \nAprendizaje del Área de Conocimiento de Ciencias Naturales, Experimentales y \nTecnología ( SEMS , 2023a). \nEn el caso del Taller de Ciencias I se desarrolla el siguiente concepto central para \nque las y los estudiantes consoliden los contenidos presentes en primer y \nsegundo semestre asociándolos a su vida cotidiana. \n \n10 \n 3.1.1 Aplicación tecnológica de la materia y energía. \n \nEste concepto central explora cómo las propiedades y transformaciones de la \nmateria, junto con los principios de conservación de la energía, influyen en los \navances científicos y tecnológicos que impactan en la sociedad. Esta conexión \npermite comprender có mo el conocimiento científico, en torno a la materia y la \nenergía, no solo impulsa la innovación tecnológica, sino también cómo esta tiene \nrelación con la calidad de vida y el entorno social. \nSe enfoca en fomentar una comprensión profunda de los conocimientos \ncientíficos, destacando su relación con el entorno y su relevancia en la toma de \ndecisiones a nivel individual y colectivo, a partir de cuestionamientos científicos, \ntecnológicos y s"
+  },
+  {
+   "id": 1,
+   "descripcion": "Patrones. Los patrones son formas, estructuras y organizaciones que \naparecen con regularidad en la naturaleza, se repiten en el espacio y/o en \nel tiempo (periodicidad). Se identifican y analizan tanto las relaciones \ncomo los factores que influyen en los patrones ob servados de formas y \neventos en la naturaleza, que guían su organización y clasificación. El papel \nque juegan los patrones como un concepto transversal es que funciona \ncomo vínculo entre las observaciones de los fenómenos y las explicaciones. \nSe espera que las y los estudiantes integren varios patrones observados a \ntravés de las escalas para usarlos como evidencia de causalidad en las \nexplicaciones de los fenómenos. Los patrones son fundamentales para el \ndescubrimiento científico, el diseño de ingeniería y el aprendizaje de las \n11 \n Ciencias naturales, experimentales y tecnología en el aula. En el \naprendizaje tridimensional, herramientas como gráficos, tablas, mapas y \necuaciones matemáticas ayudan a las y los estudiantes a encontrar, \nanalizar y comunicar patrones a medida que particip an en prácticas \ncientíficas y de ingeniería para desarrollar y utilizar su comprensión de los \nconceptos centrales de la di"
+  },
+  {
+   "id": 2,
+   "descripcion": "Causa y efecto. Investiga y explica las relaciones causales simples o \nmúltiples de fenómenos en la naturaleza, además de sus efectos directos \ne indirectos. Este concepto transversal está apoyado en el concepto de \npatrones y también está vinculada con el desarrollo del co ncepto de \nsistemas (y modelos de sistemas). Para comprender las causas y los efectos \nes necesario analizar los patrones y los mecanismos que producen \nvariaciones en ellos. Este concepto proporciona las herramientas para \nrealizar predicciones y está centrado en responder a la pregunta de por \nqué suceden las cosas. Comprender qué hace que sucedan los patrones \nposibilita la realización de predicciones sobre lo que podría suceder dadas \nciertas condiciones, además de comprender cómo replicarlos. L a \nresolución de problemas vinculados a los conceptos centrales se fortalece \na partir del análisis de la causa y el efecto."
+  },
+  {
+   "id": 3,
+   "descripcion": "Medición (Escala, proporción y cantidad). Este concepto está presente y \nes importante en todas las disciplinas científicas. Es un instrumento \nanalítico que ayuda a comprender diversos fenómenos y permite generar \nexplicaciones más detalladas del mundo natural. También es una \nherramienta de pensami ento que permite a las y los estudiantes razonar a \ntravés de las disciplinas científicas a escalas muy grandes y pequeñas, en \nmuchos casos, los procesos de menor escala subyacen a los fenómenos \nmacroscópicos observa bles. Su enseñanza comienza ayudando a las y los \nestudiantes a comprender las unidades y las medidas, y a identificar las \nrelaciones entre las variables, lo que les es útil en la explicación de los \nfenómenos de estudio. Este concepto transversal amplía la comprensión y \ncapacidad de predicción de los fenómenos y proporciona una visión más \ncuantitativa de los sistemas observados en las prácticas de ciencia e \ningeniería, lo que resulta en la definición de características y \ncategorización de los fenómenos refor zando la aplicación de los conceptos \ncentrales disciplinares."
+  },
+  {
+   "id": 4,
+   "descripcion": "Sistemas. Este concepto transversal integra un enfoque que ayuda a las y \nlos estudiantes a comprender qué pasa en un fenómeno determinado a \npartir del análisis de un sistema (o modelo) rastreando lo que entra, lo que \nsucede dentro y lo que sale de éste. Un sistema es un grupo organizado de \nobjetos relacionados, integrados por componentes, límites, recursos, flujos \ny retroalimentación. Los modelos se pueden utilizar para comprender y \npredecir el comportamiento de los sistemas. La mayoría de los fenómenos \n12 \n examinados en las ciencias naturales son sistemas. Este concepto \ntransversal es una herramienta importante para comprender el mundo \nnatural desde la perspectiva de las distintas disciplinas y su conexión entre \nla ciencia y la ingeniería, al representar las interacciones y los procesos del \nsistema. Los modelos se utilizan también para predecir comportamientos \nde los sistemas e identificar problemas en ellos. Comprender los sistemas \n(y los modelos de sistemas) es importante en la creación de sentido \ncientífic o. La ciencia centra sus esfuerzos en investigar problemas \nasociados a los sistemas que afectan nuestras vidas, esto lo realizan a partir \ndel rastreo y compr"
+  },
+  {
+   "id": 5,
+   "descripcion": "Conservación, flujos y ciclos de la materia y la energía. Este concepto \ntransversal se enfoca principalmente en la conservación de la materia y la \nenergía, rastreando lo que permanece igual en los sistemas a través de sus \nflujos y ciclos. No debe confundirse con los conceptos centrales \ndisciplinares, ya que esto s se enfocan principalmente en los mecanismos \nque involucran la materia y la energía, explicando el cambio. Las leyes de \nconservación, que separan la conservación de la energía de la \nconservación de la materia, se aplican con gran precisión a los fenómenos \nque implican cambios físicos y químicos desde la escala atómico -\nmolecular hasta la macroscópica. Las leyes de conservación funcionan \ncomo reglas que restringen el rango de posibilidades de cómo se \ncomportan los sistemas. Estas leyes proporcionan una base para evaluar la \nviabilidad de las ideas y son tan poderosas que son utilizadas por todas las \ndisciplinas científicas. Por ejemplo, los mecanismos de cambio en la \nmateria y la energía que se observan en fenómenos como la fotosíntesis, \nla ebullición o el ciclo del agua se basan en estas leyes. La utilidad de las \nleyes de conservación de la materia y la ener"
+  },
+  {
+   "id": 6,
+   "descripcion": "Estructura y función. El concepto transversal proporciona un medio para \nanalizar el funcionamiento de un sistema y para generar ideas en la \nresolución de problemas. Es importante en todos los campos de la ciencia \ny la ingeniería entender la estructura y función de un sistema n atural. Es \nun concepto transversal que se desarrolla en todas las disciplinas, ya sea \npara diseño (infraestructura, programas, circuitos) o bien para explicar \nprocesos esenciales (la fotosíntesis o las propiedades de los tejidos de \n13 \n plantas y animales). La perspectiva de este concepto transversal de la \nestructura y función permite el desarrollo de habilidades de ingeniería en \nlas prácticas, al identificar las interrelaciones entre las propiedades, la \nestructura y la función de los sis temas. De la misma forma, los conceptos \ncentrales disciplinares se ven apoyados de esta categoría para profundizar \ncómo la estructura de un objeto determina muchas de sus propiedades y \nfunciones."
+  },
+  {
+   "id": 7,
+   "descripcion": "Estabilidad y cambio. Este concepto transversal permite a las y los \nestudiantes comprender la naturaleza de los fenómenos al describir las \ncaracterísticas de la estabilidad de un sistema y los factores que producen \ncambios en él. La estabilidad o el cambio son una característi ca del \nfenómeno observado. Este concepto transversal ayuda a enfocar la \natención del estudiantado en diferenciar entre estados estables y estados \ncambiantes. Los elementos que afectan la estabilidad y los factores que \ncontrolan las tas as de cambio son críticos para comprender qué causa un \nfenómeno. Por ejemplo, los procesos de adaptación de los ecosistemas a \nambientes cambiantes. Las y los estudiantes utilizan este concepto \ntransversal para describir las interacciones dentro y entre sis temas y para \nrespaldar explicaciones basadas en la evidencia. El concepto transversal de \nestabilidad y cambio es indispensable para dar sentido a los fenómenos al \ncentrar las observaciones en aspectos que alteren la estabilidad de un \nsistema. Comprender la s causas que originan cambios en los sistemas \ncomo un soporte para la aplicación de los conceptos centrales disciplinares \ny diseñar soluciones que pueden so"
+  },
+  {
+   "id": 1,
+   "descripcion": "Hacer preguntas y definir problemas. Para desarrollar esta habilidad \nlas y los estudiantes expresan sus ideas y experiencias previas, las cuales \nvan progresando hasta formular, refinar y evaluar problemas usando \nmodelos. Las prácticas deben ser consistentes con el modelo \npedagógico y siempre dar oportunidad a la presentación de las ideas \nsobre qué piensan que va a suceder."
+  },
+  {
+   "id": 2,
+   "descripcion": "Desarrollar y usar modelos. Para estimular la habilidad de predecir y \nmostrar relaciones entre variables, es necesario avanzar en el uso y \ndesarrollo de modelos por parte de las y los estudiantes. Esta habilidad \ncomplementa el concepto transversal de sistemas."
+  },
+  {
+   "id": 3,
+   "descripcion": "Planificar y realizar investigaciones. Las y los estudiantes desarrollan \nla habilidad de buscar información que sirva de evidencia y probar \nmodelos en la realización de investigaciones planificadas."
+  },
+  {
+   "id": 4,
+   "descripcion": "Usar las matemáticas y el pensamiento computacional. Promover \nentre las y los estudiantes el análisis y la representación de los datos de \nun modelo matemático y eventualmente diseñar modelos \ncomputacionales simples."
+  },
+  {
+   "id": 5,
+   "descripcion": "Analizar e interpretar datos. Crear experiencias de aprendizaje que \npromueva entre las y los estudiantes utilizar conjuntos de datos \ngenerados a través de modelos, o bien, obtenerlos de bases de datos \nrelacionadas con los fenómenos de estudio. Avanzar gradualmente al \nanálisis estadíst ico de los datos para obtener resultados más detallados."
+  },
+  {
+   "id": 6,
+   "descripcion": "Construir explicaciones y diseñar soluciones. Las y los estudiantes \ndesarrollan progresivamente la habilidad de explicar los fenómenos \nbasados en las evidencias recolectadas en su proceso de aprendizaje, \nlas cuales son coherentes con las ideas y teorías de la ciencia. La \nresolución de problemas tambi én debe ser una habilidad que \nevolucione hacia soluciones con base en la comprensión de sus causas."
+  },
+  {
+   "id": 7,
+   "descripcion": "Argumentar a partir de evidencias. Para desarrollar el razonamiento \ncientífico y discutir explicaciones sobre el mundo natural, las y los \nestudiantes deben contar con espacios donde puedan argumentar a \npartir de evidencias apropiadas, las cuales pueden provenir de las \nactividades realizada s y conocimientos adquiridos en el aula, o bien, de \neventos científicos históricos o actuales."
+  },
+  {
+   "id": 8,
+   "descripcion": "Obtener, evaluar y comunicar información. Las y los estudiantes \ndeben desarrollar la habilidad de evaluar la información y su \nconfiabilidad. Esta capacidad se impulsa al proponer actividades que \n15 \n planteen a las y los estudiantes recurrir a diferentes fuentes de \ninformación y compararlas con lo que aprenden en el salón de clases \n(p. 23). \nLa UAC de Taller de Ciencias I brindará al estudiantado espacios donde podrá \nargumentar a partir de la experiencia activa y la comprensión de principios, las \ncuales pueden ser desarrolladas a partir de las siguientes metodologías de \nenseñanza: Modelo de instrucción indagatoria de las 5E (Enganchar, Explorar , \nExplicar, Elaborar y Evaluar) , Aprendizaje basado en proyectos, Método de talleres, \nCentros de interés, Aprendizaje basado en la indagación, Estudio de casos y \nAprendizaje basado en problemas , entre otras. \nDesde dichas metodologías, el estudiantado continuará desarrollando \nhabilidades mediante las prácticas de ciencia e ingeniería , reflexionando la \nrelación entre ciencia, tecnología y sociedad. \n \n3.4 Metas de aprendizaje \n \nConstituyen una guía para la evaluación que permite plantear los aprendizajes \nesenciales que el es"
+  },
+  {
+   "id": 4,
+   "descripcion": "Progresiones de Aprendizaje \n \nLas Progresiones de Aprendizaje son unidades didácticas innovadoras y flexibles \npara la descripción secuencial de los aprendizajes asociados a la comprensión y \nsolución de necesidades y problemáticas personales y/o sociales (DOF, 09/08/23 ). \nEn el caso de las UAC pertenecientes al área de conocimiento de Ciencias \nNaturales, Experimentales y Tecnologías, éstas permiten la apropiación del \n19 \n Concepto central, complementándose con los Conceptos transversales y las \nPrácticas de ciencia e ingeniería. \nEn este sentido, las Progresi ones de Aprendizaje de Taller de Ciencias I tienen la \nfinalidad de apropiarse del concepto central “Vinculando la materia y la energía \ncon la ciencia, tecnología y sociedad”, a partir de actividades experimentales que \npermitan profundizar sus conocimientos científicos mediante el análisis de su \nimpacto tecnológico y social . \n \n4.1 Segundo semestre – Taller de ciencias I \n4.1.1 Concepto central: “ Aplicación tecnológica de la materia y \nenergía ” \n \nEste concepto central explora cómo las propiedades y transformaciones de la \nmateria, junto con los principios de conservación de la energía, influyen en los \navances cien"
+  },
+  {
+   "id": 1,
+   "descripcion": "La comprensión de la estructura y propiedades de los materiales es \nesencial para desarrollar procesos tecnológicos eficaces, donde los \nenlaces químicos juegan un papel clave al permitir la creación de \nmateriales con características específicas para su apli cación."
+  },
+  {
+   "id": 2,
+   "descripcion": "La gestión responsable de la materia, incluyendo su transformación \ntras el desuso, se convierte en una prioridad desde perspectivas \ncientíficas y tecnológicas."
+  },
+  {
+   "id": 3,
+   "descripcion": "La temperatura y presión en un sistema tienen una influencia directa \nen la materia y la energía necesaria para actividades tecnológicas."
+  },
+  {
+   "id": 4,
+   "descripcion": "La interacción entre la materia y la energía, evidente en cambios físicos \ny químicos, no solo impulsa el desarrollo tecnológico, sino que también \nincide directamente a la sociedad y al medio ambiente. \n \n21 \n 4.1.5 Progresi ones de aprendizaje s del concepto central \n“Aplicación tecnológica de la materia y energía ” \n \nA continuación , se enuncian las Progresi ones de Aprendizaje correspondiente a \nTaller de Ciencias I , las habilidades mínimas que se espera que el estudiantado \ndesarrolle a partir de las Prácticas de ciencias e ingeniería, así como algunas \nsugerencias para su abordaje, mismas que no son limitativas, ya que , el personal \ndocente podrá elegir las mejores estrategias , desde la autonomía en la didáctica, \npara abordarlas de acuerdo con su contexto. \n \n Por su ubicación en el mapa curricular, Taller de Ciencias I busca robustecer los \nconocimientos de las UAC de “La materia y sus interacciones” y “Conservación de la \nenergía y sus interacciones con la materia” , a partir de la profundización en la \npráctica científica. Esto no implica que las UAC anteriores no lleven a cabo ejercicios \nprácticos por sí mismas, sino que, al retomar los aprendizajes desarrollados en"
+  },
+  {
+   "id": 5,
+   "descripcion": "Analizar e interpretar datos"
+  },
+  {
+   "id": 7,
+   "descripcion": "Argumentar a partir de evidencias \nSugerencia para el abordaje de la Progresión 1 \nPara enriquecer la comprensión de la estructura y propiedades de los \nmateriales, se fomentará la contextualización a través de un análisis \nhistórico de la evolución de los materiales y su impacto en la sociedad. \nAl explorar brevemente la historia de los materiales, desde los primeros \nusos prehistóricos hasta las innovaciones más recientes, las y los \nestudiantes podrán apreciar cómo la elección de materiales ha sido un \nfactor clave en el desarrollo tecnológico y en la transformación de las \ncondiciones sociales. lo que les permitirá estar mejor equipadas y \nequipados para comprender la importancia de la estructura y \npropiedades de la materia en el desarrollo tecnológico y su impacto en \nla sociedad. \nPor ejemplo, al analizar tecnologías de cambio de fase en la industria, \ncomo la refrigeración y la calefacción, se destacará cómo la evolución \nde los materiales ha sido fundamental en el diseño y funcionamiento de \ndispositivos cotidianos, como el refrigera dor y los automóviles. Este \nanálisis permitirá al estudiantado trazar la conexión directa entre la \nelección de materiales a lo largo del ti"
+  },
+  {
+   "id": 6,
+   "descripcion": "Construir explicaciones y diseñar soluciones"
+  },
+  {
+   "id": 7,
+   "descripcion": "Argumentar a partir de evidencias \nSugerencia para el abordaje de la Progresión 2 \nSe podrá explorar la relación entre la polaridad de los enlaces en las \nmoléculas y la solubilidad de sustancias en disolventes específicos, \ndestacando cómo estas propiedades son esenciales en la fabricación de \nproductos químicos y en procesos de separación en la industria. \nCuestionar como la polaridad de algunas sustancias, como los bloqueadores, \nel jabón, fertilizantes, herbicidas, hidrocarburos, etc., influye en su solubilidad \nen el agua, aire o suelo y qué afectaciones tiene en los ecosistemas. \nComparando las propiedades dadas por diferentes enlaces, especialmente \nen aleaciones como el acero y el bronce, se planteará la interrogante de \ncómo estas elecciones han potenciado el crecimiento económico de \nalgunas regiones, influyendo en su calidad de v ida. Este enfoque estimulará \nel cuestionamiento sobre las decisiones detrás de la elección de materiales \nen la creación de objetos, conectando de manera práctica y crítica el papel \nde los enlaces químicos en el desarrollo de tecnológico y social. \n24 \n Progresión 3 La materia que utiliza la sociedad no desaparece, se cons erva y su \ngestión a"
+  },
+  {
+   "id": 3,
+   "descripcion": "Planificar y realizar investigaciones"
+  },
+  {
+   "id": 5,
+   "descripcion": "Analizar e interpretar datos"
+  },
+  {
+   "id": 7,
+   "descripcion": "Argumentar a partir de evidencias \nSugerencia para el abordaje de la Progresión 3 \nExplorar la relación intrínseca entre ciencia, tecnología y sociedad, \nresaltando cómo los avances en estas áreas inciden en la forma en que \nmanejamos y gestionamos los materiales. Para reforzar esta conexión, se \nsugieren actividades prácticas donde el estu diantado pueda participar \nactivamente en el proceso, como la creación de productos reutilizando o \nreciclando materiales en desuso. De esta manera, se promueve una \ncomprensión más profunda de cómo la ciencia y la tecnología impactan \ndirectamente en nuestras prácticas sociales y ambientales, fomentando \nuna actitud proactiva hacia la gestión sostenible de los recursos. \n*Es importante no confundir reutilizar con reciclar. La primera implica \ndarle un nuevo uso a un objeto o mercancía después de cumplir su \nfunción primaria, lo que a menudo requiere adaptaciones o rediseños. Por \notro lado, reciclar se centra en transformar m ateriales específicos para su \nreutilización, pero no todos los materiales son reciclables (Lara, 2008). \n25 \n Progresión 4 Las variables de temperatura y presión de un sistema determinado \ninfluyen en la materia y cantida"
+  },
+  {
+   "id": 1,
+   "descripcion": "Hacer preguntas y definir problemas"
+  },
+  {
+   "id": 2,
+   "descripcion": "Desarrollar y usar modelos"
+  },
+  {
+   "id": 4,
+   "descripcion": "Usar las matemáticas y el pensamiento computacional"
+  },
+  {
+   "id": 6,
+   "descripcion": "Construir explicaciones y diseñar soluciones \nSugerencia para el abordaje de la Progresión 4 \nMediante una problemática cercana a su contexto, se buscará inducir \nal estudiantado a cuestionarse o plantearse problemáticas \nrelacionadas con las variables de temperatura y presión en un sistema \ndeterminado, así como su influencia en la materia y cantidad de \nenergía. Por ejemplo, se les incentivará a analizar cómo el refrige rador \npuede generar una temperatura menor que la del medio ambiente y \nse les pedirá que observen la relación de estas variables con los \nfenómenos que se presentan. \nPosteriormente y con apoyo del uso de simuladores o actividades \nexperimentales que les permitan medir los cambios, se buscará que \npuedan comparar las variables en un sistema. En este proceso, se \nexplicará la importancia de variables más específicas como la de \npresión atmosférica, la cual afecta la cantidad de energía utilizada en \nprocesos tecnológicos. \nFinalmente, se les puede solicitar que investiguen los cambios de \ntemperatura y presión en diversos procesos tecnológicos, como, por \nejemplo, la fabricación del hielo, gasolina o el funcionamiento de los \nmotores de combustión. Al hacer uso de"
+  },
+  {
+   "id": 1,
+   "descripcion": "Hacer preguntas y definir problemas"
+  },
+  {
+   "id": 3,
+   "descripcion": "Planificar y realizar investigaciones"
+  },
+  {
+   "id": 5,
+   "descripcion": "Analizar e interpretar datos"
+  },
+  {
+   "id": 7,
+   "descripcion": "Argumentar a partir de evidencias \nSugerencia para el abordaje de la Progresión 5 \nEl estudiantado puede examinar cómo la temperatura y la presión \ninfluyen en estos cambios de agregación, comprendiendo así la relación \nentre las propiedades físicas de la materia y su participación en este ciclo \nvital. \nSe puede abordar desde el análisis del cambio climático y/o el efecto \ninvernadero, identificando los cambios de temperatura y presión en el \nplaneta y los que esto ha causado en el ciclo hidrológico, así como sus \nconsecuencias en las actividades sociales co mo la agricultura. \nPosteriormente, se puede ampliar el enfoque a otros ciclos \nbiogeoquímicos. \n27 \n Progresión 6 La transferencia de energía es capaz de modificar un sistema, \ngenerando movimiento en sus partículas y el uso de este conocimiento incide en \nel avance tecnológico y la vida cotidiana. \n \n \n \n Habilidades por desarrollar a partir de las prácticas de ciencia e ingeniería:"
+  },
+  {
+   "id": 2,
+   "descripcion": "Desarrollar y usar modelos"
+  },
+  {
+   "id": 6,
+   "descripcion": "Construir explicaciones y diseñar soluciones"
+  },
+  {
+   "id": 7,
+   "descripcion": "Argumentar a partir de evidencias"
+  },
+  {
+   "id": 8,
+   "descripcion": "Obtener, evaluar y comunicar información \nSugerencia para el abordaje de la Progresión 6 \nPor medio de prácticas con materiales de uso cotidiano o al alcance de los \nestudiantes, realizar un modelo que demuestre la transferencia de energía, \ncomo la transformación de energía eólica -mecánica a eléctrica o energía \nquímica a eléctrica \nCon jugo de limón, dos electrodos metálicos y un multímetro se puede \nlograr esta demostración químico -eléctrica, al introducir los electrodos en \nel jugo de limón se produce una diferencia de potencial eléctrico que puede \nmedirse con el multímetro o voltímetro. \n28 \n Progresión 7 La interacción de la materia con la energía genera cambios físicos \ny químicos, algunas de estas interacciones son utilizadas en la tecnología \ninfluyendo en la sociedad y el ambiente. \n \n Habilidades por desarrollar a partir de las prácticas de ciencia e ingeniería:"
+  },
+  {
+   "id": 2,
+   "descripcion": "Desarrollar y usar modelos"
+  },
+  {
+   "id": 4,
+   "descripcion": "Usar las matemáticas y el pensamiento computacional \nSugerencia para el abordaje de la Progresión 7 \nAprovechando la transferencia de energía en el proceso, los estudiantes \npueden entender cómo la manipulación de la energía afecta la \nmaleabilidad de la materia sólida, permitiendo la creación de formas \nespecíficas. Además, se puede introducir la discusión sobre la estructura \ndel material y cómo la cantidad de energía necesaria para derretir \nsustancias como el chocolate y las velas impacta en su fabricación. Esta \naproximación práctica no solo ilustra la relación entre la energía y los \ncambios en la materia, sino que también destaca cómo estas interacciones \ninfluyen en productos cotidianos, conectando así la tecnología con la \nsociedad y el ambiente de manera tangible y aplicada. \n29 \n Progresión 8 La ciencia como un esfuerzo humano para el bienestar, parte 1.5: \nDiscusión de la relación entre ciencia, tecnología y sociedad para proponer ideas \ninnovadoras sobre el impacto de materiales y tecnologías. \n \n \n \n \n Habilidades por desarrollar a partir de las prácticas de ciencia e ingeniería:"
+  },
+  {
+   "id": 1,
+   "descripcion": "Hacer preguntas y definir problemas"
+  },
+  {
+   "id": 2,
+   "descripcion": "Desarrollar y usar modelos"
+  },
+  {
+   "id": 3,
+   "descripcion": "Planificar y realizar investigaciones"
+  },
+  {
+   "id": 4,
+   "descripcion": "Usar las matemáticas y el pensamiento computacional"
+  },
+  {
+   "id": 5,
+   "descripcion": "Analizar e interpretar datos"
+  },
+  {
+   "id": 6,
+   "descripcion": "Construir explicaciones y diseñar soluciones"
+  },
+  {
+   "id": 7,
+   "descripcion": "Argumentar a partir de evidencias"
+  },
+  {
+   "id": 8,
+   "descripcion": "Obtener, evaluar y comunicar información \nSugerencia para el abordaje de la Progresión 8 \nPueden abordar la relación entre ciencia, tecnología y sociedad mediante \nla investigación y diseño de soluciones innovadoras que impacten \npositivamente en el uso de materiales y tecnologías en su entorno. Por \nejemplo, podrían proponer mejoras en la gestión de residuos utilizando \ntecnologías sostenibles, o diseñar un producto que aborde desafíos locales, \nconsiderando tanto la eficacia técnica como el impacto social y ambiental. \nEste enfoque práctico no solo fomentará la comprensión de la \ninterconexión entre ciencia y tecnología, sino que también cultivará \nhabilidades creativas y críticas, preparando a las y los estudiantes para \nabordar problemas del mundo real con enfoques científicos e innovadores. \n30 \n Tabla 4. Uso de los conceptos transversales y las prácticas en la apropiación del \nconcepto central (Taller de Ciencias I) “Vinculando la materia y la energía con la \nciencia, la tecnología y la sociedad” \nCT1. \nPatrones Aplica los aprendizajes sobre la materia y sus diferentes estados, así \ncomo sus interacciones, en actividades experimentales, para explicar \ncómo influyen en fenómen"
+  }
+ ],
+ "metas_aprendizaje": [],
+ "contenidos": [
+  "Justificación \n \nLograr la concreción de los objetivos de l Marco Curricular Común de la Educación \nMedia Superior (MCCEMS ) implica la enseñanza de las Ciencias Naturales, \nExperimentales y Tecnología como un factor indispensable. Su propósito \nfundamental es conectar los principios científicos con",
+  "Fundamento s de las UAC Taller de \nCiencias I \n2.1 Definición de la UAC Taller de Ciencias I \n \nEsta UAC prom ueve una comprensión más profunda de los saberes científicos, \nsu relación con el contexto y su papel en la toma de decisiones a nivel individual \ny colectivo a partir de los contenidos pres"
+ ],
+ "calidad_extraccion": "BUENA",
+ "extraido_con": "extraer_progresiones.py v1"
+}

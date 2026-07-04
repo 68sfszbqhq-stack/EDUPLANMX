@@ -1,0 +1,15 @@
+{
+ "nombre": "Electrónica",
+ "generacion": "2023-2026",
+ "componente": "laboral",
+ "url": "https://dgb.sep.gob.mx/storage/recursos/2025/06/fa9OuHbJXt-Electronica.pdf",
+ "slug": "electronica--2023-2026",
+ "proposito": "que el estudiantado desarrolle \nhabilidades y destrezas en el área mediante la aplicación de los principios tanto \nde electricidad como de electrónica, per mitiéndole obtener la formación para \nrealizar programas y diseños electrónicos que contribuyan a la solución de \nproblemas de su entorno, su comunidad y en el ámbito industrial con el uso de \ninstrumentos de medición, principios electrónicos y conocimientos relacionados \ncon esta Formación Laboral . \nPor otro lado, en caso de que el estudiantado continuar a con sus estudios \nprofesionales, esta formación laboral le ofrece una amplia perspectiva del mundo \nde la electrónica junto con las bases de las U nidades de Aprendizaje Curricular \n(UAC) afines, que le permitirán un mejor desarrollo profesional, así como una \nvisión y práctica de las actualizaciones de las tecnologías en el mundo. Además \nde obtener las capacidades y habilidades mínimas necesarias para ingresar a un \ntrabajo en caso de no po der continuar co n sus estudios. \nFinalmente, la Formación Laboral Básica en electrónica desarrolla competencias \nprofesionales de reconocimiento al poner en marcha y dar mantenimiento tanto \na dispositivos como a sistemas electrónicos ",
+ "progresiones": [],
+ "metas_aprendizaje": [],
+ "contenidos": [
+  ", planes y programas de estudio, métodos, materiales didácticos e \ninstrumentos para la evaluación del aprendizaje del bachillerato general, en sus \ndiferentes modalidades y enfoques, y difundir los vigentes”; además de “impulsar \nlas reformas curricul ares de los estudios de bachillerato que resulten necesarias \npara responder a los requerimientos de la sociedad del conocimiento y del \ndesarrollo sustentable”. (RISEP, 2020) \nEn este sentido, los planteamientos del MCCEMS buscan una formación integral \nen el estudiantado mediante el desarrollo de la capacidad creadora, productiva, \nlibre y digna del ser humano, con amor al país, a su cultura e historia. Por ello, el \nBachillerato General plantea las diversas Unidades de Aprendizaje Curricular \n(UAC) y Formaciones Laborales Básicas para que con sus estudiantes egresados \ny egresadas contribuya al logro de su objetivo específico, el cual radica en la \n“conformación de una ciudadanía refl exiva, con capacidad de formular y asumir \nresponsabilidades de manera comunitaria, interactuar en contextos plurales y \npropositivos, trazarse metas y aprender de manera continua y colaborativa”. \nEn este contexto, se presenta la Formación Laboral Básica en Electrónica , \nespecífica del Bachillerato General, con objetivos delimitados acorde a las \ncaracterísticas del subsistema y de la población a la cual se dirige. El documento \nse encuentra conformado por apartados mediante los cuales se describe la \njustificación y los ele mentos claves par"
+ ],
+ "calidad_extraccion": "PARCIAL",
+ "extraido_con": "extraer_progresiones.py v1"
+}

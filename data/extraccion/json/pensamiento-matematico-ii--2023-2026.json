@@ -1,0 +1,80 @@
+{
+ "nombre": "Pensamiento Matemático II",
+ "generacion": "2023-2026",
+ "componente": "fundamental",
+ "url": "https://dgb.sep.gob.mx/storage/recursos/2025/09/HFhKDCTZRZ-Pensamiento-Matematico-II.pdf",
+ "slug": "pensamiento-matematico-ii--2023-2026",
+ "proposito": "de mejorar la enseñanza y el aprendizaje durante el desarrollo de la \nsituación didáctica. La práctica de la evaluación en el aula es format iva en la medida en \nque la evidencia sobre los logros de las y los estudiantes se interpreta y usa por el \nprofesorado, los estudiantes o sus compañeros, para tomar decisiones sobre las \nactividades a realizar en futuras sesiones, a fin de que las y los estudiantes aprenden \nmejor, con base en las evidencias que se obtuvieron. \nLa evaluación necesaria para Pensamiento Matemático es formativa dado que tiene la \ncualidad de ser utilizada como una estrategia de mejora continua. Este tipo de evaluación \nes consta nte, ofrece la posibilidad de detectar el progreso o dificultad en el proceso de \nenseñanza y aprendizaje del estudiantado, permite visualizar el avance que se ha logrado \ny los objetivos por alcanzar. Para que tenga lugar la evaluación formativa se propone la \nutilización de la auto y coevaluación. Es importante aclarar que la evaluación formativa \n \n16 \n \nno excluye a la evaluación diagnóstica y sumativa, las cuales pueden estar presentes si los \ncontenidos de la progresión ameritan su uso. Algunos instrumentos que pu eden apoyar \nla e",
+ "progresiones": [
+  {
+   "id": 1,
+   "descripcion": "se especifica el qué enseñar , aprender y el qué desarrollar en Pensamiento Matemático para todos los subsistemas de la EMS en el país, sin hacer distinción de las modalidades del bachillerato. A continuación, se presentan cada una de las 1 4 progresiones que corresponde al programa de estudios de Pensamiento Matemático I I, así como las relaciones con las metas, categorías y subcategorías . Compara, considerando sus aprendizajes de trayectoria, el lenguaje natural con el lenguaje matemático para observar que este último requiere de precisión y rigurosidad."
+  },
+  {
+   "id": 2,
+   "descripcion": "Revisa algunos elementos de la sintaxis del lenguaje algebraico considerando que en el álgebra buscamos la expresión adecuada al problema que se pretende resolver (utilizamos la expresión simplificada, la expresión desarrollada de un número, la expresión factorizada, productos notables, según nos convenga)."
+  },
+  {
+   "id": 3,
+   "descripcion": "algebraico e iconográfico. Examina situaciones que puedan modelarse utilizando lenguaje algebraico y resuelve problemas en los que se requiere hacer una transliteración entre expresiones del lenguaje natural y expresiones del lenguaje simbólico del algebra"
+  },
+  {
+   "id": 4,
+   "descripcion": "Explica algunas relaciones entre números enteros utilizando conceptos como el de divisibilidad, el de número primo o propiedades generales sobre este conjunto numérico, apoyándose del uso adecuado del lenguaje algebraico."
+  },
+  {
+   "id": 5,
+   "descripcion": "Conceptualiza el máximo común divisor (M.C.D.) y mínimo común múltiplo (m.c.m.) de dos números enteros y los aplica en la resolución de problemas."
+  },
+  {
+   "id": 6,
+   "descripcion": "Revisa desde una perspectiva histórica al conjunto de los números reales, comenzando con la consideración de números decimales positivos hasta llegar a la presentación de la estructura de campo ordenado de los números reales."
+  },
+  {
+   "id": 7,
+   "descripcion": "Resuelve situaciones -problema significativas para el estudiantado que involucren el estudio de proporcionalidad tanto directa como inversa, así como también el estudio de porcentajes, empleando la estructura algebraica de los números reales."
+  },
+  {
+   "id": 8,
+   "descripcion": "de procedimientos no rutinarios. Discute la conformación de un proyecto de vida considerando elementos básicos de la matemática financiera tales como interés simple y compuesto, ahorros y deudas a través de la aplicación de la estructura algebraica de los números reales y con la finalidad de promover la toma de decisiones más razonadas."
+  },
+  {
+   "id": 9,
+   "descripcion": "Conceptualiza el área de una superficie y deduce fórmulas para calcular áreas de figuras geométricas simples como rectángulos, triángulos, trapecios, etc., utilizando principios y propiedades básicas de geometría sintética."
+  },
+  {
+   "id": 10,
+   "descripcion": "Revisa el teorema del triángulo de Napoleón, considerándolo como un problema -meta en el que se aplican resultados de la geometría euclidiana como: Teorema de Pitágoras, criterios de congruencia y semejanza de triángulos, caracterizaciones de cuadriláteros concíclicos, entre otros."
+  },
+  {
+   "id": 11,
+   "descripcion": "•c Emplea un sistema de coordenadas y algunos elementos básicos de geometría analítica como la distancia entre dos puntos en el plano para calcular áreas de figuras geométricas básicas y compara estos resultados con los cálculos obtenidos empleando principios básicos de geometría sintética."
+  },
+  {
+   "id": 12,
+   "descripcion": "Modela situaciones y resuelve problemas significativos para el estudiantado tanto de manera algebraica como geométrica al aplicar propiedades básicas de funciones lineales, cuadráticas y polinomiales"
+  },
+  {
+   "id": 13,
+   "descripcion": "procedimientos no rutinarios. Resuelve problemáticas provenientes de las áreas del conocimiento que involucren la resolución de sistemas de ecuaciones lineales y considera una interpretación geométrica de estos sistemas."
+  },
+  {
+   "id": 14,
+   "descripcion": "Modela situaciones y resuelve problemas en los que se busca optimizar valores aplicando el teorema fundamental de la programación lineal y combinando elementos del lenguaje algebraico que conciernen al estudio de desigualdades y sistemas de ecuaciones lineales con dos incógnitas."
+  }
+ ],
+ "metas_aprendizaje": [
+  "Describe situaciones o fenómenos empleando rigurosamente el lenguaje matemático y el lenguaje natural.",
+  "Ejecuta cálculos y algoritmos para resolver problemas matemáticos, de las ciencias y de su entorno.",
+  "Socializa con sus pares sus conjeturas, descubrimientos o procesos en la solución de un problema tanto teórico como de su entorno.",
+  "Analiza los resultados obtenidos al aplicar procedimientos algorítmicos propios del Pensamiento Matemático en la resolución de problemáticas teóricas y de su contexto.",
+  "Construye un modelo matemático, identificando las variables de interés, con la finalidad de explicar una situación o fenómeno y/o resolver un problema tanto teórico como de su entorno.",
+  "Describe situaciones o fenómenos empleando rigurosamente el lenguaje matemático y el lenguaje natural.",
+  "Desarrolla la percepción y la intuición para generar conjeturas ante situacion"
+ ],
+ "contenidos": [
+  "y habilidades que darán cumplimiento a la formación de las y los \nestudiantes de EMS y serán desarrollados a través de las progresiones de aprendizaje. \nEl Recurso Sociocognitivo de Pensamiento Matemático se encuentra integrad o por tres \nUAC , a desarrollarse en tres semestres (ver tabla 1). \n \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \n \n \nUnidades de \nAprendizaje \nCurricular Semestre\n* Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nPensamiento \nMatemático I Primero 4 1 5 64 16 80 8 \n \nPensamiento \nMatemático II Segundo 4 1 5 64 16 80 8 \nPensamiento \nMatemático \nIII Tercero 4 1 5 64 16 80 8 \n \n*De acuerdo con el mapa curricular de cada servicio educativo. \nMD: Mediación docente. EI: Estudio Independiente \n \nEn el presente documento se describe la UAC correspondiente a Pensamiento \nMatemático I I a desarrollarse durante el segundo semestre . \n \n5"
+ ],
+ "calidad_extraccion": "BUENA",
+ "extraido_con": "extraer_progresiones.py v1"
+}
