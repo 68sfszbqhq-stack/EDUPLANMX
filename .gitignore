@@ -22,3 +22,6 @@ data/pdfs_dgb/
 
 # Respaldos locales de Firestore (contienen datos personales, NUNCA subir)
 backups/
+
+# Temporales de Microsoft Office
+~$*
