@@ -206,7 +206,12 @@ class AuthService {
                 return null;
             }
 
-            return userDoc.data() as Usuario;
+            // El id SIEMPRE se toma del documento (es el uid de Firebase). `data()` no
+            // lo incluye, y hay cuentas antiguas que tampoco lo guardaron dentro: sin
+            // esto, user.id queda undefined y se cae en silencio todo lo que depende de
+            // él (respaldo del diagnóstico, sincronización del flujo y de la bitácora,
+            // y la propiedad de las planeaciones).
+            return { ...userDoc.data(), id: userDoc.id } as Usuario;
         } catch (error) {
             console.error('Error al obtener datos del usuario:', error);
             throw new Error('Error al obtener datos del usuario');
