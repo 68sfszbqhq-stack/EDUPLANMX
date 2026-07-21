@@ -135,8 +135,7 @@ EDUPLANMX/
 ├── hooks/                    # useFormularioAlumno, useCuestionarioIntegrado
 ├── data/                     # ⭐ Catálogo oficial SEP (programas_sep.json + variantes)
 ├── scripts/                  # ETL: extractores Python/Node que generan data/*.json
-├── firestore.rules           # Reglas de seguridad Firestore (dev)
-├── firestore_prod.rules      # Reglas endurecidas (producción)
+├── firestore.rules           # Reglas de seguridad Firestore (único archivo, es el que se despliega)
 ├── firestore.indexes.json    # Índices compuestos
 ├── vite.config.ts            # base path condicional (GitHub Pages vs Netlify)
 ├── netlify.toml              # Build + redirect SPA
@@ -351,7 +350,7 @@ Colecciones detectadas en el código:
 - `alumnos`: lectura/escritura para autenticados (el frontend filtra por escuela).
 - **Regla catch-all**: cualquier otra colección permite lectura/escritura a cualquier autenticado.
 
-⚠️ **Advertencia conocida**: las reglas actuales son permisivas (el aislamiento por escuela se confía al frontend). Existe `firestore_prod.rules` con versión endurecida; ver `RESOLUCION-SEGURIDAD-FINAL.md` y `DESPLEGAR-REGLAS-FIRESTORE.md`.
+✅ **Seguridad (jul 2026)**: el aislamiento de `/alumnos` por escuela está garantizado en las reglas de Firestore, no solo en el frontend; crear un alumno exige `schoolId`. La regla comodín permisiva se sustituyó por deny-por-defecto: cada colección tiene su regla explícita y cualquier colección nueva queda bloqueada hasta que se le escriba una. Se desplegan con `firebase deploy --only firestore:rules --project eduplanmx`.
 
 ---
 

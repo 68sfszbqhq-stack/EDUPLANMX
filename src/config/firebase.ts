@@ -1,5 +1,9 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import {
+  initializeFirestore,
+  persistentLocalCache,
+  persistentMultipleTabManager,
+} from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 // Configuración de Firebase
@@ -18,8 +22,18 @@ const firebaseConfig = {
 // Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 
-// Inicializar servicios
-export const db = getFirestore(app);
+// Firestore con caché offline persistente.
+//
+// Los planteles trabajan con internet intermitente: con esto, las planeaciones,
+// materias y demás datos ya vistos siguen disponibles sin conexión, y las
+// escrituras hechas offline se sincronizan solas al volver la red.
+// persistentMultipleTabManager evita que se rompa si el docente abre la app en
+// varias pestañas. Si el navegador no soporta IndexedDB (modo privado antiguo),
+// Firestore cae solo a memoria, así que no hace falta un try/catch.
+export const db = initializeFirestore(app, {
+  localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() }),
+});
+
 export const auth = getAuth(app);
 
 export default app;

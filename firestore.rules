@@ -109,12 +109,62 @@ service cloud.firestore {
     }
 
     // -------------------------------------------------------------------------
-    //  7. RESTO DEL SISTEMA (materias, asignaciones, pmc, herramientas, etc.)
+    //  7. GESTIÓN DE USUARIOS (panel de administración)
     // -------------------------------------------------------------------------
-    // Solo usuarios autenticados. Nada del sistema es legible desde internet
-    // sin iniciar sesión.
+    // OJO: colección 'usuarios' (con o) — distinta de 'users' (perfiles de auth).
+    // La consultan las asignaciones para resolver el nombre del maestro, por eso
+    // la lectura es para cualquier autenticado; alta/edición/baja, solo SuperAdmin.
+    match /usuarios/{usuarioId} {
+      allow read: if isAuthenticated();
+      allow write: if isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  8. CATÁLOGO E INSUMOS INSTITUCIONALES (no son datos personales de menores)
+    // -------------------------------------------------------------------------
+    // Materias, grupos, asignaciones de materia, diagnósticos de grupo y la
+    // Planeación de la Mejora Continua. Datos operativos del plantel: cualquier
+    // docente autenticado los usa. No hay lectura pública.
+    match /materias/{id}            { allow read, write: if isAuthenticated(); }
+    match /grupos/{id}              { allow read, write: if isAuthenticated(); }
+    match /asignaciones/{id}        { allow read, write: if isAuthenticated(); }
+    match /diagnosticos_grupo/{id}  { allow read, write: if isAuthenticated(); }
+    match /pmc_diagnosis/{id}       { allow read, write: if isAuthenticated(); }
+    match /pmc_metas/{id}           { allow read, write: if isAuthenticated(); }
+
+    // -------------------------------------------------------------------------
+    //  9. HERRAMIENTAS GENERADAS (historial personal de cada docente)
+    // -------------------------------------------------------------------------
+    // Cada documento lleva userId; la app lee filtrando por él. Editar o borrar,
+    // solo el dueño (o SuperAdmin).
+    match /herramientas_generadas/{id} {
+      allow read, create: if isAuthenticated();
+      allow update, delete: if isOwner() || isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  10. TELEMETRÍA DE USO DE IA (control de cuotas)
+    // -------------------------------------------------------------------------
+    // Los agregados los consulta el SuperAdmin; cada docente puede registrar su
+    // propio consumo (el documento va indexado por su uid).
+    match /api_usage/{userId} {
+      allow read: if isSuperAdmin() || (isAuthenticated() && request.auth.uid == userId);
+      allow write: if isAuthenticated() && request.auth.uid == userId;
+    }
+    match /api_quotas/{id} {
+      allow read: if isAuthenticated();
+      allow write: if isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  CIERRE — DENEGAR POR DEFECTO
+    // -------------------------------------------------------------------------
+    // Cualquier colección no declarada arriba queda BLOQUEADA. Antes había una
+    // regla comodín que la abría a cualquier autenticado: eso hacía que toda
+    // colección nueva naciera accesible sin querer. Con este deny explícito, una
+    // colección nueva no funciona hasta que se le escriba una regla a conciencia.
     match /{document=**} {
-      allow read, write: if isAuthenticated();
+      allow read, write: if false;
     }
   }
 }
