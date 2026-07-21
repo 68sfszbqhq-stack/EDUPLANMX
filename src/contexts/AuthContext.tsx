@@ -6,8 +6,36 @@ import type { Usuario, AuthContextType, LoginCredentials } from '../../types/aut
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+// Modo demo (QR del congreso, links compartidos): vive en sessionStorage para que
+// sobreviva al callback de Firebase y a un refresh, y se borre al cerrar la pestaña.
+const GUEST_FLAG = 'eduplan_modo_invitado';
+
+const USUARIO_INVITADO = {
+    id: 'guest',
+    email: 'invitado@eduplan.mx',
+    nombre: 'Maestro',
+    apellidoPaterno: 'Invitado',
+    apellidoMaterno: '',
+    rol: 'guest',
+    activo: true,
+    fechaCreacion: new Date().toISOString(),
+    ultimoAcceso: new Date().toISOString(),
+    onboardingCompleto: true, // Saltamos onboarding
+    schoolName: 'Escuela Demo',
+    schoolId: 'demo'
+} as Usuario;
+
+const hayModoInvitado = () => {
+    try {
+        return sessionStorage.getItem(GUEST_FLAG) === '1';
+    } catch {
+        return false;
+    }
+};
+
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [user, setUser] = useState<Usuario | null>(null);
+    // Si la pestaña ya estaba en modo demo, restauramos al invitado desde el primer render
+    const [user, setUser] = useState<Usuario | null>(() => hayModoInvitado() ? USUARIO_INVITADO : null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -83,7 +111,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
                     setUser(null);
                 }
             } else {
-                setUser(null);
+                // Sin sesión de Firebase. Si la pestaña está en modo demo, conservamos al
+                // invitado: de lo contrario este callback borraría la sesión que acaba de
+                // crear "Probar la demo sin cuenta" y devolvería al visitante al inicio.
+                setUser(hayModoInvitado() ? USUARIO_INVITADO : null);
             }
             setLoading(false);
         });
@@ -117,6 +148,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     const logout = async () => {
         try {
+            try { sessionStorage.removeItem(GUEST_FLAG); } catch { /* no bloquea el logout */ }
             await authService.logout();
             setUser(null);
         } catch (error) {
@@ -124,20 +156,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
     };
     const loginAsGuest = () => {
-        setUser({
-            id: 'guest',
-            email: 'invitado@eduplan.mx',
-            nombre: 'Maestro',
-            apellidoPaterno: 'Invitado',
-            apellidoMaterno: '',
-            rol: 'guest',
-            activo: true,
-            fechaCreacion: new Date().toISOString(),
-            ultimoAcceso: new Date().toISOString(),
-            onboardingCompleto: true, // Saltamos onboarding
-            schoolName: 'Escuela Demo',
-            schoolId: 'demo'
-        } as Usuario);
+        try {
+            sessionStorage.setItem(GUEST_FLAG, '1');
+        } catch {
+            // Sin sessionStorage el demo sigue funcionando hasta el próximo refresh
+        }
+        setUser(USUARIO_INVITADO);
+        setLoading(false);
     };
 
     const value: AuthContextType = {

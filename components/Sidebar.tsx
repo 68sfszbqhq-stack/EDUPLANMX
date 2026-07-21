@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network, Sparkles, ChevronDown, CheckCircle2, Menu, X } from 'lucide-react';
+import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network, Sparkles, ChevronDown, CheckCircle2, Menu, X, Compass, NotebookPen } from 'lucide-react';
 import { useAuth } from '../src/contexts/AuthContext';
 import { analyticsService } from '../src/services/analyticsService';
 
@@ -13,15 +13,28 @@ interface SidebarProps {
 const getStepProgress = () => {
     let contextoListo = false;
     let tienePlaneaciones = false;
+    let flujoCompleto = false;
+    let tieneBitacora = false;
     try {
         const school = JSON.parse(localStorage.getItem('schoolContext') || '{}');
         contextoListo = Boolean(school?.vision?.trim() || school?.municipality?.trim() || school?.cct?.trim());
         const plans = JSON.parse(localStorage.getItem('savedPlans') || '[]');
         tienePlaneaciones = Array.isArray(plans) && plans.length > 0;
+        // Flujo de contextualización: completo cuando las 4 fases (plantel, grupo, BAP, PAEC) tienen datos
+        const flujo = JSON.parse(localStorage.getItem('flujoContexto') || '{}');
+        const hayTexto = (obj: any) => obj && Object.values(obj).some((v: any) => typeof v === 'string' && v.trim());
+        flujoCompleto = Boolean(
+            hayTexto(flujo?.plantel) &&
+            hayTexto(flujo?.grupo) &&
+            flujo?.bap && Object.values(flujo.bap).some((c: any) => c?.detectada) &&
+            (hayTexto(flujo?.paec) || (Array.isArray(flujo?.paec?.asignaturas) && flujo.paec.asignaturas.length > 0))
+        );
+        const bitacora = JSON.parse(localStorage.getItem('bitacoraDocente') || '[]');
+        tieneBitacora = Array.isArray(bitacora) && bitacora.length > 0;
     } catch {
         // localStorage corrupto: sin palomitas, sin drama
     }
-    return { contextoListo, tienePlaneaciones };
+    return { contextoListo, tienePlaneaciones, flujoCompleto, tieneBitacora };
 };
 
 const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
@@ -30,14 +43,16 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [showMore, setShowMore] = useState(false);
 
-    const { contextoListo, tienePlaneaciones } = getStepProgress();
+    const { contextoListo, tienePlaneaciones, flujoCompleto, tieneBitacora } = getStepProgress();
 
     // Ruta principal del docente, en el orden en que debe recorrerla
     const pasos = [
-        { id: 'context', label: 'Contexto Escolar', icon: Settings, step: 1, done: contextoListo },
-        { id: 'diagnostico', label: 'Diagnóstico del Grupo', icon: Users, step: 2, done: false },
-        { id: 'generator', label: 'Generar Planeación', icon: PlusCircle, step: 3, done: false, destacado: true },
-        { id: 'plans', label: 'Mis Planeaciones', icon: History, step: 4, done: tienePlaneaciones },
+        { id: 'flujo', label: 'Flujo de Contextualización', icon: Compass, step: 1, done: flujoCompleto },
+        { id: 'context', label: 'Contexto Escolar', icon: Settings, step: 2, done: contextoListo },
+        { id: 'diagnostico', label: 'Diagnóstico del Grupo', icon: Users, step: 3, done: false },
+        { id: 'generator', label: 'Generar Planeación', icon: PlusCircle, step: 4, done: false, destacado: true },
+        { id: 'plans', label: 'Mis Planeaciones', icon: History, step: 5, done: tienePlaneaciones },
+        { id: 'bitacora', label: 'Bitácora de Sesiones', icon: NotebookPen, step: 6, done: tieneBitacora },
     ];
 
     const masHerramientas = [
@@ -87,7 +102,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
 
                 {/* Ruta numerada: el camino del docente */}
                 <p className="text-[10px] uppercase font-bold text-indigo-400 tracking-widest px-4 pt-4 pb-1">
-                    Tu planeación en 4 pasos
+                    Tu ciclo completo, paso a paso
                 </p>
                 {pasos.map((item) => {
                     const Icon = item.icon;

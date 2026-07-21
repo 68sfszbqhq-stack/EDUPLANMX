@@ -315,6 +315,37 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                 </div>
             )}
 
+            {/* 8b. CICLO DE RETROALIMENTACIÓN FORMATIVA (MCCEMS — Fichas 03 y 18) */}
+            {plan.feedbackCycle && (plan.feedbackCycle.whereGoing || plan.feedbackCycle.whereIs || plan.feedbackCycle.howToGetThere) && (
+                <div className="mb-6 border border-slate-500 rounded-sm avoid-break">
+                    <div className="bg-slate-700 text-white px-3 py-2 border-b border-slate-500 font-bold text-sm uppercase text-center print:bg-slate-800 print:text-white">
+                        VIII-B. Ciclo de Retroalimentación Formativa
+                    </div>
+                    <table className="w-full text-left text-xs border-collapse">
+                        <tbody className="divide-y divide-slate-300">
+                            <tr className="border-b border-slate-300">
+                                <td className="p-3 border-r border-slate-300 w-[30%] bg-slate-100 font-bold uppercase text-[10px] align-top print:bg-slate-200">
+                                    ¿Hacia dónde va?
+                                </td>
+                                <td className="p-3 text-slate-700">{plan.feedbackCycle.whereGoing}</td>
+                            </tr>
+                            <tr className="border-b border-slate-300">
+                                <td className="p-3 border-r border-slate-300 bg-slate-100 font-bold uppercase text-[10px] align-top print:bg-slate-200">
+                                    ¿Dónde se encuentra?
+                                </td>
+                                <td className="p-3 text-slate-700">{plan.feedbackCycle.whereIs}</td>
+                            </tr>
+                            <tr>
+                                <td className="p-3 border-r border-slate-300 bg-slate-100 font-bold uppercase text-[10px] align-top print:bg-slate-200">
+                                    ¿Cómo puede llegar ahí?
+                                </td>
+                                <td className="p-3 text-slate-700">{plan.feedbackCycle.howToGetThere}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            )}
+
             {/* 9. REFLEXIÓN DOCENTE (ESPACIO PARA LLENAR) */}
             <div className="mb-6 border border-slate-400 border-dashed rounded-sm p-4 bg-slate-50/50 avoid-break print:block hidden">
                 <div className="font-bold text-xs uppercase text-slate-500 mb-4 text-center">

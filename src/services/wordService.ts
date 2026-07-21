@@ -147,11 +147,34 @@ export async function descargarPlaneacionWord(plan: LessonPlan, schoolName?: str
         }
     }
 
+    // 7b. Ciclo de retroalimentación formativa del MCCEMS (Fichas 03 y 18)
+    if (p.feedbackCycle && (p.feedbackCycle.whereGoing || p.feedbackCycle.whereIs || p.feedbackCycle.howToGetThere)) {
+        hijos.push(titulo('7-B. Ciclo de retroalimentación formativa'));
+        hijos.push(tabla([
+            ['¿Hacia dónde va?', p.feedbackCycle.whereGoing || '—'],
+            ['¿Dónde se encuentra?', p.feedbackCycle.whereIs || '—'],
+            ['¿Cómo puede llegar ahí?', p.feedbackCycle.howToGetThere || '—'],
+        ], ['Pregunta orientadora', 'Respuesta']));
+    }
+
     // 8. Recursos
     const recursos: string[] = Array.isArray(p.resources) ? p.resources : [];
     if (recursos.length) {
         hijos.push(titulo('8. Recursos didácticos'));
         recursos.forEach(r => hijos.push(new Paragraph({ bullet: { level: 0 }, children: [new TextRun(r)] })));
+    }
+
+    // Constancia de mediación docente (Fichas 16 y 34: la IA apoya, el docente decide)
+    if (p.aiTrace?.reviewedByTeacher) {
+        hijos.push(titulo('9. Constancia de revisión docente'));
+        hijos.push(parrafo(
+            'Esta planeación fue elaborada con apoyo de inteligencia artificial y revisada por el docente, ' +
+            'quien conserva la responsabilidad sobre la selección de contenidos, el enfoque socioemocional ' +
+            'y la adecuación al contexto del grupo.'
+        ));
+        if (p.aiTrace.teacherAdjustments?.trim()) {
+            hijos.push(parrafo(`Ajustes realizados por el docente: ${p.aiTrace.teacherAdjustments}`));
+        }
     }
 
     // Firmas

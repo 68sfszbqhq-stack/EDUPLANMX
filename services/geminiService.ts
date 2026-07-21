@@ -48,6 +48,23 @@ export const generateLessonPlan = async (
     4. RESPUESTA: Solo devuelve el JSON válido sin texto adicional.
     5. IDIOMA: Español.
 
+    ENFOQUE NEM MODELO 2025 (Ficha 01 — así lo revisa la supervisión escolar):
+    6. APERTURA: no es solo introducción, es diagnóstico activo. Debe incluir escucha empática
+       y democracia participativa: el estudiantado contextualiza la actividad a su entorno y
+       se consensúan el producto esperado y los criterios de evaluación.
+    7. DESARROLLO: incluye micro-intervenciones focalizadas del docente con preguntas
+       metacognitivas explícitas (ej. "¿Cómo llegaste a esa conclusión?", "¿Qué otra ruta
+       intentaste?", "¿Cómo se conecta esto con lo que vive tu comunidad?").
+    8. CIERRE: es asamblea de reflexión, NUNCA un juicio final. Debe reflexionar en dos ejes:
+       lo técnico (¿cumplimos los criterios acordados?) y lo humano (¿cómo nos sentimos?).
+    9. ERROR: trátalo como oportunidad de aprendizaje, nunca de forma punitiva.
+    10. CICLO DE RETROALIMENTACIÓN (MCCEMS): llena feedbackCycle con las tres preguntas.
+        En "howToGetThere" da sugerencias CONCRETAS y accionables, NUNCA genéricas
+        (mal: "estudiar más"; bien: "rehacer la tabla de verdad del caso 2 verificando
+        la columna de la disyunción antes del viernes").
+    11. LENGUAJE INCLUYENTE: usa "el estudiantado", "las y los estudiantes"; evita el
+        masculino genérico y los estereotipos de género en los ejemplos.
+
     INFORMACIÓN OFICIAL: ${contextoOficial.substring(0, 800)}...
     CONTEXTO ESCUELA: ${school.schoolName}, ${school.vision}.
     SOLICITUD: "${prompt}"
@@ -160,12 +177,21 @@ export const generateLessonPlan = async (
                 }
               }
             },
+            feedbackCycle: {
+              type: Type.OBJECT,
+              properties: {
+                whereGoing: { type: Type.STRING },
+                whereIs: { type: Type.STRING },
+                howToGetThere: { type: Type.STRING }
+              },
+              required: ["whereGoing", "whereIs", "howToGetThere"]
+            },
             resources: { type: Type.ARRAY, items: { type: Type.STRING } },
             duaStrategies: { type: Type.STRING },
             evaluation: { type: Type.STRING },
             duration: { type: Type.STRING }
           },
-          required: ["title", "subject", "sessions", "meta", "evaluationTable", "fundamento", "paec", "curricularElements", "resources"]
+          required: ["title", "subject", "sessions", "meta", "evaluationTable", "fundamento", "paec", "curricularElements", "resources", "feedbackCycle"]
         }
       }
     });
@@ -232,7 +258,16 @@ export const generateLessonPlan = async (
         development: parsedData.sessions?.[0]?.sequence?.development?.activity || "Consultar desglose por sesiones",
         closing: parsedData.sessions?.[0]?.sequence?.closing?.activity || "Consultar desglose por sesiones"
       },
-      teacherReflection: parsedData.teacherReflection || { strengths: '', opportunities: '', adjustments: '' }
+      teacherReflection: parsedData.teacherReflection || { strengths: '', opportunities: '', adjustments: '' },
+      // Trazabilidad del uso de IA (Fichas 16 y 34): se guarda el prompt exacto que se envió.
+      // La revisión del docente se marca después, en el panel de Revisión Docente.
+      aiTrace: {
+        prompt,
+        model,
+        generatedAt: new Date().toISOString(),
+        teacherAdjustments: '',
+        reviewedByTeacher: false
+      }
     };
 
     if (programaOficial) {

@@ -6,8 +6,10 @@ import { analyticsService } from '../src/services/analyticsService';
 import { programasSEPService } from '../src/services/programasSEPService';
 import { SchoolContext, SubjectContext, LessonPlan } from '../types';
 import { getStudentContextSummary } from '../src/services/studentStatsService';
+import { flujoContextoService } from '../src/services/flujoContextoService';
 import PlanDocument from './PlanDocument';
 import { PedagogicalAuditor } from './PedagogicalAuditor';
+import { RevisionDocente } from './RevisionDocente';
 import { pecService } from '../src/services/pecService';
 import { PECProject } from '../types';
 import { useAuth } from '../src/contexts/AuthContext';
@@ -20,6 +22,7 @@ interface PlanGeneratorProps {
   subject: SubjectContext;
   teacherName?: string;
   onSave: (plan: LessonPlan) => void;
+  onNavigate?: (view: string) => void;
 }
 
 // Machote: prompt que el docente copia y pega en Claude/ChatGPT junto con el CSV
@@ -42,8 +45,13 @@ REGLAS:
 Aquí está el CSV:
 [PEGA AQUÍ TU CSV O ADJÚNTALO]`;
 
-const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherName, onSave }) => {
+const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherName, onSave, onNavigate }) => {
   const { user } = useAuth();
+
+  // Contexto capturado en el Flujo de Contextualización (panel "flujo").
+  // Se lee al montar: si el docente lo edita, al volver aquí se recarga.
+  const [contextoFlujo] = useState(() => flujoContextoService.load());
+  const fasesFlujoActivas = flujoContextoService.fasesCompletas(contextoFlujo);
 
   // --- Estados Originales ---
   // API Key Manual: vive SOLO en sessionStorage (se borra al cerrar la pestaña, nunca se guarda en disco ni en Firestore)
@@ -69,7 +77,8 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   const [endDate, setEndDate] = useState('');
   const [didacticStrategy, setDidacticStrategy] = useState('Aprendizaje Basado en Proyectos (ABP)');
   const [paecMode, setPaecMode] = useState<'manual' | 'linked'>('manual');
-  const [paecProblem, setPaecProblem] = useState('');
+  // Prellenado desde el Flujo de Contextualización (Fase 3): el docente puede sobrescribirlo
+  const [paecProblem, setPaecProblem] = useState(() => flujoContextoService.load().paec.problematica || '');
   const [activeProjects, setActiveProjects] = useState<PECProject[]>([]);
   const [selectedPecId, setSelectedPecId] = useState('');
   const [pecActivity, setPecActivity] = useState('');
@@ -361,6 +370,10 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     // El diagnóstico escrito por el docente tiene prioridad sobre el resumen automático
     const diagnosticoEfectivo = diagnosticoGrupo.trim() || studentContextSummary;
 
+    // Contexto del Flujo de Contextualización (plantel, grupo, BAP, PAEC)
+    // Se relee aquí por si el docente lo editó en otra pestaña/vista antes de generar
+    const bloqueFlujo = flujoContextoService.generarBloquePrompt(flujoContextoService.load());
+
     const contextInstructions = `
       CONTEXTO A CONSIDERAR:
       ${includeContext.schoolVision ? `- VISIÓN ESCOLAR: "${school.vision}" (Alinearse a esto).` : ''}
@@ -380,7 +393,9 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
       CONTEXTO Y DIAGNÓSTICO (INPUT HUMANO):
       - Escuela: ${school.schoolName} (${school.municipality})
       ${contextInstructions}
-      
+
+      ${bloqueFlujo}
+
       CONFIGURACIÓN TÉCNICA:
       - Sesiones: ${numSessions} (Duración estricta: ${sessionDuration} min por sesión).
       - TIEMPO TOTAL POR SESIÓN: ${sessionDuration} minutos.
@@ -445,6 +460,23 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
       alert('Planeación guardada con éxito.');
     }
   };
+
+  // Fase 5 del flujo: la mediación docente queda registrada en el propio plan (Fichas 16 y 34)
+  const handleConfirmRevision = (ajustes: string) => {
+    setResult(prev => prev ? {
+      ...prev,
+      aiTrace: {
+        prompt: prev.aiTrace?.prompt || '',
+        model: prev.aiTrace?.model || 'gemini-2.5-flash',
+        generatedAt: prev.aiTrace?.generatedAt || new Date().toISOString(),
+        teacherAdjustments: ajustes,
+        reviewedByTeacher: true,
+        reviewedAt: new Date().toISOString(),
+      }
+    } : prev);
+  };
+
+  const revisionPendiente = Boolean(result && !result.aiTrace?.reviewedByTeacher);
 
   const handleCopyToClipboard = () => {
     if (!result) return;
@@ -745,6 +777,38 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           </div>
         </div>
 
+        {/* --- CONTEXTO DEL FLUJO DE CONTEXTUALIZACIÓN --- */}
+        <div className={`col-span-1 md:col-span-2 p-4 rounded-2xl border flex flex-wrap items-center justify-between gap-3 mt-6 ${fasesFlujoActivas > 0
+          ? 'bg-indigo-50 border-indigo-200'
+          : 'bg-slate-50 border-slate-200'}`}>
+          <div className="flex items-start gap-2.5">
+            <span className="text-lg leading-none mt-0.5">🧭</span>
+            <div>
+              <p className="text-sm font-bold text-slate-800">
+                {fasesFlujoActivas > 0
+                  ? `Flujo de Contextualización activo: ${fasesFlujoActivas}/4 fases capturadas`
+                  : 'Aún no has llenado el Flujo de Contextualización'}
+              </p>
+              <p className="text-xs text-slate-500">
+                {fasesFlujoActivas > 0
+                  ? 'La IA usará tu contexto de plantel, grupo, BAP y PAEC para situar esta planeación.'
+                  : 'Llénalo una vez por semestre y todas tus planeaciones saldrán contextualizadas a TU grupo.'}
+              </p>
+            </div>
+          </div>
+          {onNavigate && (
+            <button
+              type="button"
+              onClick={() => onNavigate('flujo')}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-colors ${fasesFlujoActivas > 0
+                ? 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200 border border-indigo-300'
+                : 'bg-indigo-600 text-white hover:bg-indigo-700'}`}
+            >
+              {fasesFlujoActivas > 0 ? 'Editar flujo' : 'Abrir el flujo'}
+            </button>
+          )}
+        </div>
+
         {/* --- DIAGNÓSTICO DE MI GRUPO (contextualización real) --- */}
         <div className="col-span-1 md:col-span-2 bg-emerald-50 p-5 rounded-2xl border border-emerald-200 my-6">
           <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
@@ -985,17 +1049,29 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
                 </button>
                 <button
                   onClick={() => descargarPlaneacionWord(result, school.schoolName, school.cct)}
-                  className="flex items-center gap-2 px-4 py-2 bg-blue-700 text-white rounded-xl text-sm font-bold hover:bg-blue-800"
+                  disabled={revisionPendiente}
+                  title={revisionPendiente ? 'Confirma primero tu revisión docente' : 'Descargar en Word'}
+                  className="flex items-center gap-2 px-4 py-2 bg-blue-700 text-white rounded-xl text-sm font-bold hover:bg-blue-800 disabled:bg-slate-300 disabled:cursor-not-allowed"
                 >
                   <FileText className="w-4 h-4" /> Word
                 </button>
-                <button onClick={() => handlePrint()} className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-xl text-sm font-bold hover:bg-slate-800">
+                <button
+                  onClick={() => handlePrint()}
+                  disabled={revisionPendiente}
+                  title={revisionPendiente ? 'Confirma primero tu revisión docente' : 'Exportar a PDF'}
+                  className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-xl text-sm font-bold hover:bg-slate-800 disabled:bg-slate-300 disabled:cursor-not-allowed"
+                >
                   <Download className="w-4 h-4" /> PDF
                 </button>
               </div>
             </div>
 
-            {/* AUDITORÍA: Cumple con el "Paso 3: Lectura crítica" del PDF */}
+            {/* FASE 5 — Revisión docente: la IA propone, el docente decide (Fichas 16 y 34) */}
+            <div className="mb-6">
+              <RevisionDocente plan={result} onConfirm={handleConfirmRevision} />
+            </div>
+
+            {/* FASE 6 — Auditoría con el checklist oficial (Ficha 01) */}
             <div className="mb-8 no-print">
               <PedagogicalAuditor
                 plan={result}

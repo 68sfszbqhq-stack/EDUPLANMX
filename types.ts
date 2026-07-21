@@ -132,6 +132,23 @@ export interface LessonPlan {
     adjustments: string;
   };
 
+  // 10b. Ciclo de retroalimentación formativa del MCCEMS (Fichas 03 y 18)
+  feedbackCycle?: {
+    whereGoing: string;    // ¿Hacia dónde va? — meta clara para el estudiante
+    whereIs: string;       // ¿Dónde se encuentra? — evidencia que lo muestra
+    howToGetThere: string; // ¿Cómo puede llegar ahí? — sugerencias CONCRETAS
+  };
+
+  // 10c. Trazabilidad del uso de IA (Fichas 16 y 34: la IA apoya, el docente decide)
+  aiTrace?: {
+    prompt: string;          // prompt exacto enviado al modelo
+    model: string;
+    generatedAt: string;     // ISO
+    teacherAdjustments: string; // qué ajustó el docente tras la lectura crítica
+    reviewedByTeacher: boolean;
+    reviewedAt?: string;     // ISO
+  };
+
   resources: string[];
   duration: string;
   transversality?: any; // Compatibilidad legacy
@@ -161,7 +178,47 @@ export interface LessonPlan {
   };
 }
 
-export type AppView = 'dashboard' | 'context' | 'generator' | 'plans' | 'diagnostico' | 'admin-asignacion' | 'admin-alumnos' | 'pmc' | 'paec';
+export type AppView = 'dashboard' | 'context' | 'generator' | 'plans' | 'diagnostico' | 'admin-asignacion' | 'admin-alumnos' | 'pmc' | 'paec' | 'flujo' | 'bitacora';
+
+// --- FLUJO DE CONTEXTUALIZACIÓN (fases que alimentan la planeación) ---
+
+export type BAPCategoriaId = 'didacticas' | 'socioeconomicas' | 'fisicas' | 'socioemocionales';
+
+export interface BAPCategoria {
+  detectada: boolean;
+  notas: string;
+  estrategiasElegidas: string[]; // estrategias sugeridas que el docente aceptó
+}
+
+export interface ContextoFlujo {
+  // Fase 0 — Contexto del plantel (complementa SchoolContext)
+  plantel: {
+    aprobacion: string;          // % aprobación
+    abandono: string;            // % abandono
+    eficienciaTerminal: string;  // % eficiencia terminal
+    conectividad: string;        // internet/dispositivos en el plantel
+    fortalezas: string;          // FODA resumido
+  };
+  // Fase 1 — Diagnóstico del grupo (Fichas 01 y 24)
+  grupo: {
+    intereses: string;
+    saberesPrevios: string;
+    desafios: string;
+    porcentajeTrabaja: string;
+    estilosAprendizaje: string;
+    socioemocional: string;
+  };
+  // Fase 2 — Registro de BAP (Ficha 08)
+  bap: Record<BAPCategoriaId, BAPCategoria>;
+  // Fase 3 — Contexto comunitario y PAEC (Fichas 39-42)
+  paec: {
+    problematica: string;
+    asignaturas: string[]; // ≥3 para PAEC formal
+    productoComunitario: string;
+    actores: string;
+  };
+  actualizadoEl: string; // ISO date
+}
 
 // --- NUEVOS TIPOS PARA PMC Y PAEC ---
 
@@ -197,6 +254,22 @@ export interface PMC {
   cycle: string;
   diagnosis: PMCDiagnosis;
   goals: PMCGoal[];
+}
+
+// --- BITÁCORA DOCENTE (cierra el ciclo del flujo de contextualización) ---
+
+export type SemaforoNivel = 'verde' | 'amarillo' | 'rojo';
+
+export interface BitacoraEntry {
+  id: string;
+  fecha: string;      // YYYY-MM-DD
+  grupo: string;
+  materia: string;
+  tema: string;
+  semaforo: SemaforoNivel; // 🟢 comprendido · 🟡 dudas · 🔴 no se entendió
+  quePaso: string;    // logros de la sesión
+  queFallo: string;   // obstáculos didácticos o técnicos
+  queSigue: string;   // acuerdos de mejora / ajuste
 }
 
 export interface ProblemPAEC {

@@ -9,6 +9,8 @@ import PlanGenerator from './components/PlanGenerator';
 import Dashboard from './components/Dashboard';
 import PlansLibrary from './components/PlansLibrary';
 import DiagnosticoDashboard from './components/DiagnosticoDashboard';
+import FlujoContextualizacion from './components/FlujoContextualizacion';
+import BitacoraDocente from './components/BitacoraDocente';
 import Sidebar from './components/Sidebar';
 import AsignacionMaterias from './pages/admin/AsignacionMaterias';
 import GestionAlumnos from './pages/admin/GestionAlumnos';
@@ -141,6 +143,21 @@ const App: React.FC = () => {
             setSubject={setSubjectContext}
           />
         );
+      case 'flujo':
+        return (
+          <FlujoContextualizacion
+            school={schoolContext}
+            subject={subjectContext}
+            onNavigate={handleNavigate}
+          />
+        );
+      case 'bitacora':
+        return (
+          <BitacoraDocente
+            materiaActiva={subjectContext.subjectName}
+            onNavigate={handleNavigate}
+          />
+        );
       case 'generator':
         return (
           <PlanGenerator
@@ -148,6 +165,7 @@ const App: React.FC = () => {
             subject={subjectContext}
             teacherName={user ? `${user.nombre} ${user.apellidoPaterno}` : undefined}
             onSave={handleSavePlan}
+            onNavigate={handleNavigate}
           />
         );
       case 'plans':
