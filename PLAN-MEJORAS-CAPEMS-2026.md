@@ -135,8 +135,17 @@
 - Verificado en producción: panel de flujo, sidebar de 6 pasos y bitácora.
 - Cambio de comportamiento visible para los 7 docentes: Word y PDF ya NO se
   descargan hasta confirmar la revisión docente (Fichas 16 y 34).
-- Limitación viva: flujo y bitácora siguen en localStorage (no sincronizan
-  entre dispositivos). Es la deuda más importante a resolver.
+- RESUELTO el 20 jul 2026: flujo y bitácora ya sincronizan con la cuenta del
+  docente (campos `flujoContexto` y `bitacoraDocente` en `users/{uid}`).
+  Diseño offline-first: localStorage sigue siendo la lectura inmediata.
+  Verificado en producción de punta a punta: dato escrito, almacenamiento local
+  borrado, dato recuperado desde la nube.
+- Bug de raíz encontrado al verificar: `authService.getUserData` devolvía
+  `userDoc.data()`, que no incluye el id del documento, así que `user.id`
+  quedaba undefined en cuentas sin campo `id` guardado. Rompía en silencio el
+  respaldo del diagnóstico, la sincronización y el userId de las planeaciones.
+  Corregido adjuntando siempre `id: userDoc.id`.
+- La lógica de fusión de la bitácora tiene prueba: `npm run prueba:fusion`.
 
 ## Estado del flujo (fases 0–7 + bucle)
 - Fases 0–4 (plantel, grupo, BAP, PAEC, curricular) → panel `flujo` ✅
