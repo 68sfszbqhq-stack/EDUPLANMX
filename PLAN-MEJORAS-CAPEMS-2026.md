@@ -129,6 +129,15 @@
   4 Selección curricular → 5 IA + revisión docente → RESULTADO (planeación con mapa de
   trazabilidad) → 6 Auditor → 7 Export/entrega → ↺ bitácora semáforo reinicia el ciclo.
 
+## Desplegado a producción (20 jul 2026)
+- Commit `e320cae` en `main`; GitHub Pages sirviendo bundle `index-7HVTOm5l.js`.
+- URL: https://68sfszbqhq-stack.github.io/EDUPLANMX/
+- Verificado en producción: panel de flujo, sidebar de 6 pasos y bitácora.
+- Cambio de comportamiento visible para los 7 docentes: Word y PDF ya NO se
+  descargan hasta confirmar la revisión docente (Fichas 16 y 34).
+- Limitación viva: flujo y bitácora siguen en localStorage (no sincronizan
+  entre dispositivos). Es la deuda más importante a resolver.
+
 ## Estado del flujo (fases 0–7 + bucle)
 - Fases 0–4 (plantel, grupo, BAP, PAEC, curricular) → panel `flujo` ✅
 - Fase 5 (IA + revisión docente) → `RevisionDocente.tsx` + `aiTrace` ✅
