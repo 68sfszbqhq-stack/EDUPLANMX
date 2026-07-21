@@ -129,6 +129,24 @@
   4 Selección curricular → 5 IA + revisión docente → RESULTADO (planeación con mapa de
   trazabilidad) → 6 Auditor → 7 Export/entrega → ↺ bitácora semáforo reinicia el ciclo.
 
+## Auditoría de seguridad — corregido y desplegado (21 jul 2026)
+- URGENTE (resuelto): la clave de Gemini estaba incrustada en el bundle público.
+  Vite ya no la inyecta; cada docente usa su propia clave (sessionStorage).
+  Verificado en producción: ya no es descargable. PENDIENTE DE JOSÉ: revocar la
+  clave anterior en Google AI Studio (estuvo pública → asumir comprometida).
+- ALTO (resuelto): datos de alumnos (menores) no aislados por escuela.
+  - Consultas acotadas por schoolId (studentStats, obtenerAlumnos, dashboard).
+  - /registro ahora exige el CCT (o ?escuela=CCT en el enlace del docente) y liga
+    al alumno a su plantel; antes nacían huérfanos.
+  - Herramienta "asociar TODOS los alumnos a mí" ahora solo adopta huérfanos y es
+    solo superadmin.
+  - firestore.rules DESPLEGADAS: /alumnos se lee/escribe solo dentro de la misma
+    escuela; crear exige schoolId. schools pasó a lectura pública (solo metadatos).
+- Reglas desplegadas con `firebase deploy --only firestore:rules --project eduplanmx`
+  (el CLI está en /usr/local/bin/firebase con credenciales activas).
+- Quedan del diagnóstico: regla comodín amplia, persistencia offline de Firestore,
+  y los dos archivos de reglas divergentes (solo firestore.rules se despliega).
+
 ## Desplegado a producción (20 jul 2026)
 - Commit `e320cae` en `main`; GitHub Pages sirviendo bundle `index-7HVTOm5l.js`.
 - URL: https://68sfszbqhq-stack.github.io/EDUPLANMX/
