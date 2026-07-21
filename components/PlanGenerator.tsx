@@ -50,8 +50,14 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
 
   // Contexto capturado en el Flujo de Contextualización (panel "flujo").
   // Se lee al montar: si el docente lo edita, al volver aquí se recarga.
-  const [contextoFlujo] = useState(() => flujoContextoService.load());
+  const [contextoFlujo, setContextoFlujo] = useState(() => flujoContextoService.load());
   const fasesFlujoActivas = flujoContextoService.fasesCompletas(contextoFlujo);
+
+  // Si el docente entra desde otro dispositivo y viene directo aquí sin pasar por
+  // el panel del flujo, traemos su contexto de la nube para no generar en genérico.
+  useEffect(() => {
+    flujoContextoService.sincronizar(user).then(setContextoFlujo);
+  }, [user]);
 
   // --- Estados Originales ---
   // API Key Manual: vive SOLO en sessionStorage (se borra al cerrar la pestaña, nunca se guarda en disco ni en Firestore)

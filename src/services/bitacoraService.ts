@@ -1,6 +1,16 @@
 import { BitacoraEntry, SemaforoNivel } from '../../types';
+import { UsuarioSync, puedeSincronizar, leerCampoUsuario, escribirCampoUsuario } from './nubeSync';
+import { fusionarBitacoras } from './fusionBitacora';
+
+export { fusionarBitacoras };
 
 const STORAGE_KEY = 'bitacoraDocente';
+const CAMPO_NUBE = 'bitacoraDocente';
+
+// Tope de seguridad: un documento de Firestore admite 1 MB. Cada registro pesa
+// ~300 bytes, así que 1500 entradas (varios años de bitácora diaria) van muy
+// holgadas y evitan que el documento del usuario crezca sin control.
+const MAX_ENTRADAS_NUBE = 1500;
 
 export const SEMAFORO_INFO: Record<SemaforoNivel, { emoji: string; etiqueta: string; clase: string }> = {
     verde: { emoji: '🟢', etiqueta: 'Comprendido', clase: 'bg-emerald-50 border-emerald-300 text-emerald-800' },
@@ -30,7 +40,54 @@ export const bitacoraService = {
     eliminar(id: string): BitacoraEntry[] {
         const todas = this.listar().filter(e => e.id !== id);
         localStorage.setItem(STORAGE_KEY, JSON.stringify(todas));
+        // Recordamos el borrado para que la fusión con la nube no lo resucite
+        try {
+            const borrados: string[] = JSON.parse(localStorage.getItem(`${STORAGE_KEY}_borrados`) || '[]');
+            localStorage.setItem(`${STORAGE_KEY}_borrados`, JSON.stringify([...new Set([...borrados, id])]));
+        } catch {
+            // Sin registro de borrados el peor caso es que reaparezca una entrada
+        }
         return todas;
+    },
+
+    idsBorrados(): string[] {
+        try {
+            const v = JSON.parse(localStorage.getItem(`${STORAGE_KEY}_borrados`) || '[]');
+            return Array.isArray(v) ? v : [];
+        } catch {
+            return [];
+        }
+    },
+
+    /**
+     * Sube la bitácora completa a la nube (las más recientes primero).
+     * Devuelve si el respaldo se escribió de verdad, para que la interfaz no
+     * anuncie un respaldo que no ocurrió.
+     */
+    async respaldar(entradas: BitacoraEntry[], user?: UsuarioSync | null): Promise<boolean> {
+        if (!puedeSincronizar(user)) return false;
+        return escribirCampoUsuario(user.id, CAMPO_NUBE, entradas.slice(0, MAX_ENTRADAS_NUBE));
+    },
+
+    /**
+     * Fusiona lo local con la nube por id de entrada. A diferencia del flujo, aquí
+     * NO gana la versión más reciente: se unen ambas listas, porque el docente pudo
+     * registrar sesiones distintas en la escuela y en su casa y ninguna debe perderse.
+     */
+    async sincronizar(user?: UsuarioSync | null): Promise<BitacoraEntry[]> {
+        const locales = this.listar();
+        if (!puedeSincronizar(user)) return locales;
+
+        const remotas = await leerCampoUsuario<BitacoraEntry[]>(user.id, CAMPO_NUBE);
+        if (!Array.isArray(remotas)) {
+            if (locales.length > 0) await this.respaldar(locales, user);
+            return locales;
+        }
+
+        const fusionadas = fusionarBitacoras(locales, remotas, this.idsBorrados());
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(fusionadas));
+        await this.respaldar(fusionadas, user);
+        return fusionadas;
     },
 
     /**

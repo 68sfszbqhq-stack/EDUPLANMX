@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
     Compass, School, Users, ShieldAlert, Network, BookOpen, Sparkles,
-    CheckCircle2, ChevronDown, ArrowDown, RefreshCw, ArrowRight
+    CheckCircle2, ChevronDown, ArrowDown, RefreshCw, ArrowRight, Cloud, CloudOff
 } from 'lucide-react';
 import { SchoolContext, SubjectContext, ContextoFlujo, BAPCategoriaId } from '../types';
 import { flujoContextoService, ESTRATEGIAS_BAP } from '../src/services/flujoContextoService';
+import { puedeSincronizar } from '../src/services/nubeSync';
+import { useAuth } from '../src/contexts/AuthContext';
 
 interface FlujoContextualizacionProps {
     school: SchoolContext;
@@ -82,8 +84,13 @@ const Campo: React.FC<{
 );
 
 const FlujoContextualizacion: React.FC<FlujoContextualizacionProps> = ({ school, subject, onNavigate }) => {
+    const { user } = useAuth();
+    // Arranca con la copia local (instantánea y disponible sin internet)
     const [flujo, setFlujo] = useState<ContextoFlujo>(() => flujoContextoService.load());
     const [asignaturaInput, setAsignaturaInput] = useState('');
+    const [estadoNube, setEstadoNube] = useState<'local' | 'sincronizando' | 'sincronizado' | 'error'>(
+        puedeSincronizar(user) ? 'sincronizando' : 'local'
+    );
 
     const fases = flujoContextoService.fases(flujo);
     const completas = flujoContextoService.fasesCompletas(flujo);
@@ -100,10 +107,34 @@ const FlujoContextualizacion: React.FC<FlujoContextualizacionProps> = ({ school,
     });
     const toggle = (id: string) => setAbiertas(prev => ({ ...prev, [id]: !prev[id] }));
 
-    // Autoguardado: cada cambio persiste de inmediato en este navegador
+    // Al abrir: reconciliamos con la nube para que el trabajo hecho en otro
+    // dispositivo aparezca aquí. Si no hay internet, se queda con lo local.
+    const yaSincronizo = useRef(false);
     useEffect(() => {
-        flujoContextoService.save(flujo);
-    }, [flujo]);
+        if (!puedeSincronizar(user) || yaSincronizo.current) return;
+        yaSincronizo.current = true;
+        flujoContextoService.sincronizar(user).then(vigente => {
+            setFlujo(vigente);
+            setEstadoNube('sincronizado');
+        });
+    }, [user]);
+
+    // Autoguardado local inmediato + respaldo en la nube con pausa, para no
+    // escribir en Firestore en cada tecla que teclea el docente.
+    const primeraCarga = useRef(true);
+    useEffect(() => {
+        if (primeraCarga.current) {
+            primeraCarga.current = false;
+            return;
+        }
+        const sellado = flujoContextoService.save(flujo);
+        if (!puedeSincronizar(user)) return;
+        const t = setTimeout(() => {
+            flujoContextoService.respaldar(sellado, user)
+                .then(ok => setEstadoNube(ok ? 'sincronizado' : 'error'));
+        }, 1200);
+        return () => clearTimeout(t);
+    }, [flujo, user]);
 
     const setPlantel = (campo: keyof ContextoFlujo['plantel'], valor: string) =>
         setFlujo(prev => ({ ...prev, plantel: { ...prev.plantel, [campo]: valor } }));
@@ -165,6 +196,19 @@ const FlujoContextualizacion: React.FC<FlujoContextualizacionProps> = ({ school,
                         />
                     </div>
                     <span className="text-sm font-bold text-indigo-200">{completas}/4 fases</span>
+                </div>
+                <div className="flex items-center gap-1.5 mt-2 text-[11px] text-indigo-300">
+                    {estadoNube === 'local' ? (
+                        <><CloudOff className="w-3.5 h-3.5" /> Guardado solo en este navegador (modo demo)</>
+                    ) : estadoNube === 'sincronizando' ? (
+                        <><Cloud className="w-3.5 h-3.5 animate-pulse" /> Sincronizando con tu cuenta…</>
+                    ) : estadoNube === 'error' ? (
+                        <span className="flex items-center gap-1.5 text-amber-300">
+                            <CloudOff className="w-3.5 h-3.5" /> Sin conexión: guardado aquí y se subirá cuando vuelvas a entrar
+                        </span>
+                    ) : (
+                        <><Cloud className="w-3.5 h-3.5 text-emerald-300" /> Respaldado en tu cuenta: lo verás en cualquier dispositivo</>
+                    )}
                 </div>
             </div>
 

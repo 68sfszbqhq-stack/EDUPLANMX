@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { NotebookPen, Trash2, AlertTriangle, ArrowRight, Copy, CheckCircle2 } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { NotebookPen, Trash2, AlertTriangle, ArrowRight, Copy, CheckCircle2, Cloud, CloudOff } from 'lucide-react';
 import { BitacoraEntry, SemaforoNivel } from '../types';
 import { bitacoraService, SEMAFORO_INFO } from '../src/services/bitacoraService';
 import { flujoContextoService } from '../src/services/flujoContextoService';
+import { puedeSincronizar } from '../src/services/nubeSync';
+import { useAuth } from '../src/contexts/AuthContext';
 
 interface BitacoraDocenteProps {
     materiaActiva?: string;
@@ -19,9 +21,31 @@ const hoyISO = () => {
 };
 
 const BitacoraDocente: React.FC<BitacoraDocenteProps> = ({ materiaActiva, onNavigate }) => {
+    const { user } = useAuth();
     const [entradas, setEntradas] = useState<BitacoraEntry[]>(() => bitacoraService.listar());
     const [copiado, setCopiado] = useState(false);
     const [volcado, setVolcado] = useState(false);
+    const [estadoNube, setEstadoNube] = useState<'local' | 'sincronizando' | 'sincronizado' | 'error'>(
+        puedeSincronizar(user) ? 'sincronizando' : 'local'
+    );
+
+    // Al abrir: fusionamos con la nube para no perder sesiones registradas
+    // desde otro dispositivo (se unen por id, no se pisan).
+    const yaSincronizo = useRef(false);
+    useEffect(() => {
+        if (!puedeSincronizar(user) || yaSincronizo.current) return;
+        yaSincronizo.current = true;
+        bitacoraService.sincronizar(user).then(fusionadas => {
+            setEntradas(fusionadas);
+            setEstadoNube('sincronizado');
+        });
+    }, [user]);
+
+    const respaldar = (lista: BitacoraEntry[]) => {
+        if (!puedeSincronizar(user)) return;
+        setEstadoNube('sincronizando');
+        bitacoraService.respaldar(lista, user).then(ok => setEstadoNube(ok ? 'sincronizado' : 'error'));
+    };
 
     const [form, setForm] = useState({
         fecha: hoyISO(),
@@ -39,11 +63,17 @@ const BitacoraDocente: React.FC<BitacoraDocenteProps> = ({ materiaActiva, onNavi
 
     const registrar = () => {
         if (!form.tema.trim()) return;
-        setEntradas(bitacoraService.guardar(form));
+        const actualizadas = bitacoraService.guardar(form);
+        setEntradas(actualizadas);
+        respaldar(actualizadas);
         setForm(f => ({ ...f, tema: '', quePaso: '', queFallo: '', queSigue: '', semaforo: 'verde' }));
     };
 
-    const borrar = (id: string) => setEntradas(bitacoraService.eliminar(id));
+    const borrar = (id: string) => {
+        const actualizadas = bitacoraService.eliminar(id);
+        setEntradas(actualizadas);
+        respaldar(actualizadas);
+    };
 
     const copiarResumen = () => {
         navigator.clipboard.writeText(resumenTexto);
@@ -55,13 +85,16 @@ const BitacoraDocente: React.FC<BitacoraDocenteProps> = ({ materiaActiva, onNavi
     const volcarADiagnostico = () => {
         const flujo = flujoContextoService.load();
         const previo = flujo.grupo.desafios.trim();
-        flujoContextoService.save({
+        const actualizado = flujoContextoService.save({
             ...flujo,
             grupo: {
                 ...flujo.grupo,
                 desafios: previo ? `${previo}\n\n[Desde bitácora] ${resumenTexto}` : `[Desde bitácora] ${resumenTexto}`,
             },
         });
+        // El vuelco también viaja a la nube: si no, el diagnóstico enriquecido
+        // se quedaría en este dispositivo.
+        flujoContextoService.respaldar(actualizado, user);
         setVolcado(true);
         setTimeout(() => setVolcado(false), 3000);
     };
@@ -75,6 +108,19 @@ const BitacoraDocente: React.FC<BitacoraDocenteProps> = ({ materiaActiva, onNavi
                         <h2 className="text-xl font-bold">Bitácora Docente</h2>
                         <p className="text-slate-300 text-sm">Menos es más: qué pasó, qué falló y qué sigue. Un registro por sesión.</p>
                     </div>
+                </div>
+                <div className="flex items-center gap-1.5 mt-2 text-[11px] text-slate-400">
+                    {estadoNube === 'local' ? (
+                        <><CloudOff className="w-3.5 h-3.5" /> Guardado solo en este navegador (modo demo)</>
+                    ) : estadoNube === 'sincronizando' ? (
+                        <><Cloud className="w-3.5 h-3.5 animate-pulse" /> Sincronizando con tu cuenta…</>
+                    ) : estadoNube === 'error' ? (
+                        <span className="flex items-center gap-1.5 text-amber-400">
+                            <CloudOff className="w-3.5 h-3.5" /> Sin conexión: guardada aquí y se subirá cuando vuelvas a entrar
+                        </span>
+                    ) : (
+                        <><Cloud className="w-3.5 h-3.5 text-emerald-400" /> Respaldada en tu cuenta: la verás en cualquier dispositivo</>
+                    )}
                 </div>
                 {resumen.total > 0 && (
                     <div className="flex flex-wrap gap-3 mt-4">

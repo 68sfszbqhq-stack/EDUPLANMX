@@ -1,6 +1,8 @@
 import { ContextoFlujo, BAPCategoriaId } from '../../types';
+import { UsuarioSync, puedeSincronizar, leerCampoUsuario, escribirCampoUsuario } from './nubeSync';
 
 const STORAGE_KEY = 'flujoContexto';
+const CAMPO_NUBE = 'flujoContexto';
 
 // Estrategias sugeridas por categoría de BAP, derivadas de la Ficha 08
 // (prevención, minimización o eliminación de barreras) y del dossier de planeación situada.
@@ -78,8 +80,50 @@ export const flujoContextoService = {
         }
     },
 
-    save(flujo: ContextoFlujo): void {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...flujo, actualizadoEl: new Date().toISOString() }));
+    save(flujo: ContextoFlujo): ContextoFlujo {
+        const sellado = { ...flujo, actualizadoEl: new Date().toISOString() };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(sellado));
+        return sellado;
+    },
+
+    /**
+     * Sube la versión local a la nube. No bloquea: si falla, lo local queda intacto.
+     * Devuelve si el respaldo realmente se escribió, para no anunciar al docente
+     * que su trabajo está a salvo cuando no lo está.
+     */
+    async respaldar(flujo: ContextoFlujo, user?: UsuarioSync | null): Promise<boolean> {
+        if (!puedeSincronizar(user)) return false;
+        return escribirCampoUsuario(user.id, CAMPO_NUBE, flujo);
+    },
+
+    /**
+     * Reconcilia lo local con la nube al abrir la app y devuelve la versión vigente.
+     * Gana la más reciente por `actualizadoEl`: así el docente que capturó en la
+     * escuela ve ese trabajo al abrir en su casa, y viceversa.
+     */
+    async sincronizar(user?: UsuarioSync | null): Promise<ContextoFlujo> {
+        const local = this.load();
+        if (!puedeSincronizar(user)) return local;
+
+        const remoto = await leerCampoUsuario<ContextoFlujo>(user.id, CAMPO_NUBE);
+        if (!remoto) {
+            // Primera vez en la nube: subimos lo local si tiene algo
+            if (this.fasesCompletas(local) > 0) await this.respaldar(local, user);
+            return local;
+        }
+
+        const fechaLocal = local.actualizadoEl || '';
+        const fechaRemota = remoto.actualizadoEl || '';
+
+        if (fechaRemota > fechaLocal) {
+            // La nube es más nueva: la adoptamos como copia local
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(remoto));
+            return remoto;
+        }
+
+        // Lo local es igual o más nuevo: lo empujamos a la nube
+        if (fechaLocal > fechaRemota) await this.respaldar(local, user);
+        return local;
     },
 
     // Qué fases tienen información capturada (para palomitas y flechas del panel)
