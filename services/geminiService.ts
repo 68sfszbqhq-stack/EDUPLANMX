@@ -3,7 +3,19 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { SchoolContext, SubjectContext, LessonPlan } from "../types";
 import { programasSEPService } from "../src/services/programasSEPService";
 
-const DEFAULT_API_KEY = import.meta.env.VITE_API_KEY || '';
+/**
+ * NO se incrusta ninguna clave de Gemini en el código.
+ *
+ * EduPlan MX se publica como sitio estático (GitHub Pages): todo lo que Vite
+ * inyecta con `import.meta.env.VITE_*` viaja dentro del JavaScript que cualquiera
+ * puede descargar y leer. Una clave puesta ahí es una clave pública, y quien la
+ * extraiga consume la cuota —o genera cargos— de la cuenta que la creó.
+ *
+ * Por eso cada docente usa su propia clave gratuita de Google AI Studio, que se
+ * guarda solo en sessionStorage de su navegador (se borra al cerrar la pestaña,
+ * nunca se escribe en disco ni en Firestore). Además reparte la cuota entre el
+ * colectivo en lugar de concentrarla en una sola cuenta.
+ */
 
 export const generateLessonPlan = async (
   prompt: string,
@@ -12,11 +24,15 @@ export const generateLessonPlan = async (
   customApiKey?: string
 ): Promise<LessonPlan> => {
 
-  // 1. Determinar qué API Key usar (la del usuario o la del entorno)
-  const effectiveApiKey = customApiKey?.trim() || DEFAULT_API_KEY;
+  // 1. La clave la pone el docente; no hay ninguna de respaldo (ver nota de arriba)
+  const effectiveApiKey = customApiKey?.trim();
 
   if (!effectiveApiKey) {
-    throw new Error("⚠️ No hay API Key de Gemini configurada. Por favor, ingresa tu clave o configurala en el archivo .env");
+    throw new Error(
+      "🔑 Falta tu API Key de Gemini. Pégala en el campo del inicio del formulario " +
+      "(el botón azul \"Créala GRATIS aquí\" te la da en un minuto con tu cuenta de Google). " +
+      "Se guarda solo en este navegador y se borra al cerrar la pestaña."
+    );
   }
 
   // 2. Inicializar el cliente de IA con la clave correcta

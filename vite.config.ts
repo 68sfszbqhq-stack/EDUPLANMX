@@ -20,8 +20,8 @@ export default defineConfig(({ mode }) => {
       outDir: 'dist',
       sourcemap: false
     },
-    define: {
-      'process.env.VITE_API_KEY': JSON.stringify(env.VITE_API_KEY)
-    }
+    // NO se inyecta ninguna clave de IA al bundle: este sitio es estático y
+    // público, así que cualquier valor definido aquí queda legible para quien
+    // descargue el JavaScript. Cada docente aporta su clave desde la interfaz.
   };
 });

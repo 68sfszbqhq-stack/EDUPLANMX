@@ -1,12 +1,27 @@
 
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../config/firebase';
 
-export const getStudentContextSummary = async (): Promise<string> => {
+/**
+ * Resumen del alumnado PARA CONTEXTUALIZAR LA PLANEACIÓN DE UN DOCENTE.
+ *
+ * Va acotado al plantel del docente por dos razones: son datos personales de
+ * menores y no deben cruzarse entre escuelas, y un resumen calculado con
+ * alumnos de otro plantel describiría a un grupo que no es el suyo.
+ *
+ * Sin `schoolId` no se consulta nada: es preferible devolver un aviso a leer
+ * la base completa.
+ */
+export const getStudentContextSummary = async (schoolId?: string): Promise<string> => {
+    if (!schoolId) {
+        return "No se pudo identificar tu plantel, así que no se consultó información de alumnado.";
+    }
     try {
-        const snapshot = await getDocs(collection(db, 'alumnos'));
+        const snapshot = await getDocs(
+            query(collection(db, 'alumnos'), where('schoolId', '==', schoolId))
+        );
         const total = snapshot.size;
-        if (total === 0) return "No hay alumnos registrados en la base de datos.";
+        if (total === 0) return "No hay alumnos registrados de este plantel en la base de datos.";
 
         const alumnos = snapshot.docs.map(d => d.data());
 

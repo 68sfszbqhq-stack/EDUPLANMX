@@ -43,8 +43,11 @@ service cloud.firestore {
     //  2. ESCUELAS
     // -------------------------------------------------------------------------
     match /schools/{schoolId} {
-      // Lectura: cualquier autenticado (necesario para el onboarding: buscar/unirse)
-      allow read: if isAuthenticated();
+      // Lectura: PÚBLICA. La página pública /registro busca el plantel por CCT
+      // para ligar al alumno a su escuela (sin sesión iniciada). Los datos de una
+      // escuela (nombre, CCT, municipio) no son personales ni sensibles; los datos
+      // de menores viven en /alumnos, que sí está protegido por escuela.
+      allow read: if true;
 
       // Crear/actualizar: cualquier autenticado
       // (el onboarding crea escuelas y actualiza estadísticas al unirse un docente)
@@ -58,12 +61,21 @@ service cloud.firestore {
     //  3. ALUMNOS (datos sensibles de menores: CURP, teléfonos, situación familiar)
     // -------------------------------------------------------------------------
     match /alumnos/{alumnoId} {
-      // Crear: PÚBLICO — la página /registro la llenan alumnos sin cuenta
-      allow create: if true;
+      // Crear: PÚBLICO — la página /registro la llenan alumnos sin cuenta.
+      // Se exige schoolId para que ningún expediente nazca huérfano: sin dueño,
+      // el registro no pertenece a ninguna escuela y nadie puede resguardarlo.
+      allow create: if request.resource.data.schoolId is string
+                    && request.resource.data.schoolId.size() > 0;
 
-      // Leer/editar/borrar: solo personal autenticado (docentes, directivos)
-      // NUNCA lectura pública: protege los datos de los menores
-      allow read, update, delete: if isAuthenticated();
+      // Leer/editar/borrar: SOLO personal de la misma escuela.
+      //
+      // Son datos personales de menores (CURP, teléfonos, situación familiar), así
+      // que el aislamiento no puede depender de que el frontend recuerde filtrar.
+      // Con esta regla, Firestore RECHAZA cualquier consulta a /alumnos que no
+      // venga acotada con where('schoolId','==', <la escuela del usuario>).
+      allow read, update, delete: if isSuperAdmin()
+                                  || (isAuthenticated()
+                                      && resource.data.schoolId == getUserData().schoolId);
     }
 
     // -------------------------------------------------------------------------

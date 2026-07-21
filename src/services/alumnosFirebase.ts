@@ -6,6 +6,7 @@ import {
     updateDoc,
     deleteDoc,
     query,
+    where,
     orderBy,
     Timestamp
 } from 'firebase/firestore';
@@ -38,14 +39,24 @@ export class AlumnosFirebaseService {
     }
 
     /**
-     * Obtener todos los alumnos
+     * Obtener los alumnos de un plantel.
+     *
+     * `schoolId` es obligatorio en la práctica: son datos personales de menores y
+     * no deben cruzarse entre escuelas. Solo se omite para el panel de superadmin,
+     * que sí administra todo el sistema y cuyas reglas de Firestore lo permiten.
      */
-    async obtenerAlumnos(): Promise<Alumno[]> {
+    async obtenerAlumnos(schoolId?: string): Promise<Alumno[]> {
         try {
-            const q = query(
-                collection(db, COLLECTION_NAME),
-                orderBy('fechaRegistro', 'desc')
-            );
+            const q = schoolId
+                ? query(
+                    collection(db, COLLECTION_NAME),
+                    where('schoolId', '==', schoolId),
+                    orderBy('fechaRegistro', 'desc')
+                )
+                : query(
+                    collection(db, COLLECTION_NAME),
+                    orderBy('fechaRegistro', 'desc')
+                );
 
             const querySnapshot = await getDocs(q);
             const alumnos: Alumno[] = [];

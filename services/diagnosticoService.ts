@@ -3,8 +3,16 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { db } from '../src/config/firebase';
 import type { Alumno, DiagnosticoGrupal } from '../types/diagnostico';
 
-const apiKey = import.meta.env.VITE_API_KEY || '';
-const ai = new GoogleGenAI({ apiKey });
+// La clave la aporta el docente y vive solo en sessionStorage de su navegador.
+// No se incrusta ninguna en el bundle: el sitio es estático y público, así que
+// cualquier clave compilada aquí sería legible para todo el mundo.
+const obtenerClaveDocente = (): string => {
+    try {
+        return sessionStorage.getItem('gemini_api_key')?.trim() || '';
+    } catch {
+        return '';
+    }
+};
 
 export const diagnosticoService = {
 
@@ -56,6 +64,16 @@ export const diagnosticoService = {
         }
       }
     `;
+
+        const clave = obtenerClaveDocente();
+        if (!clave) {
+            throw new Error(
+                "🔑 Falta tu API Key de Gemini para analizar el diagnóstico. " +
+                "Pégala en el generador de planeaciones (ahí está el botón para crearla gratis) " +
+                "y vuelve a intentarlo."
+            );
+        }
+        const ai = new GoogleGenAI({ apiKey: clave });
 
         try {
             const response = await ai.models.generateContent({

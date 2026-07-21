@@ -6,8 +6,10 @@ import PlanFactibleWeb from './PlanFactibleWeb';
 
 import FormularioAlumno from './FormularioAlumno';
 import { alumnosService } from '../src/services/alumnosFirebase';
+import { useAuth } from '../src/contexts/AuthContext';
 
 const DiagnosticoDashboard: React.FC = () => {
+    const { user } = useAuth();
     const [alumnos, setAlumnos] = useState<Alumno[]>([]);
     const [diagnostico, setDiagnostico] = useState<DiagnosticoGrupal | null>(null);
     const [cargando, setCargando] = useState(false);
@@ -24,7 +26,9 @@ const DiagnosticoDashboard: React.FC = () => {
         setCargandoAlumnos(true);
         try {
             console.log('🔄 Iniciando carga de alumnos desde Firebase (forzado)...');
-            const alumnosFirebase = await alumnosService.obtenerAlumnos();
+            // Acotado al plantel del docente: son datos de menores y no se cruzan
+            // entre escuelas (ver reglas de /alumnos en firestore.rules).
+            const alumnosFirebase = await alumnosService.obtenerAlumnos(user?.schoolId);
 
             if (alumnosFirebase.length > 0) {
                 setAlumnos(alumnosFirebase);
@@ -42,9 +46,13 @@ const DiagnosticoDashboard: React.FC = () => {
     };
 
     const handleGuardarAlumno = async (nuevoAlumno: Alumno) => {
+        if (!user?.schoolId) {
+            alert('No se pudo identificar tu plantel. Vuelve a iniciar sesión antes de registrar alumnos.');
+            return;
+        }
         try {
-            // Guardar en Firebase
-            await alumnosService.guardarAlumno(nuevoAlumno);
+            // Siempre ligado al plantel del docente que lo captura
+            await alumnosService.guardarAlumno({ ...nuevoAlumno, schoolId: user.schoolId, schoolCct: user.schoolCct });
             console.log('✅ Alumno guardado en Firebase');
 
             // Recargar lista de alumnos

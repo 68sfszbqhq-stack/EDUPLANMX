@@ -232,12 +232,14 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   }, [subject.subjectName]);
 
   useEffect(() => {
+    // Depende de schoolId: al inicio puede no estar cargado todavía
+    if (!user?.schoolId) return;
     const loadStudentStats = async () => {
-      const stats = await getStudentContextSummary();
+      const stats = await getStudentContextSummary(user.schoolId);
       setStudentContextSummary(stats);
     };
     loadStudentStats();
-  }, []);
+  }, [user?.schoolId]);
 
   useEffect(() => {
     const loadPecs = async () => {
@@ -502,11 +504,14 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           Generador Inteligente NEM (Actividad Taller IA)
         </h3>
 
-        {/* 0. API KEY MANUAL (PRESERVADO) */}
-        <div className="mb-6 p-4 bg-indigo-50 rounded-xl border border-indigo-100">
+        {/* 0. API KEY DEL DOCENTE — obligatoria: la app no incrusta ninguna clave */}
+        <div className={`mb-6 p-4 rounded-xl border ${apiKey.trim()
+          ? 'bg-indigo-50 border-indigo-100'
+          : 'bg-amber-50 border-amber-300'}`}>
           <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <label className="text-xs font-bold text-indigo-700 uppercase flex items-center gap-2">
-              <Sparkles className="w-3 h-3" /> Tu API Key de Gemini
+            <label className={`text-xs font-bold uppercase flex items-center gap-2 ${apiKey.trim() ? 'text-indigo-700' : 'text-amber-800'}`}>
+              <Sparkles className="w-3 h-3" />
+              Tu API Key de Gemini {apiKey.trim() ? '' : '(necesaria para generar)'}
             </label>
             <a
               href="https://aistudio.google.com/apikey"

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { CheckCircle, UserPlus, School } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { CheckCircle, UserPlus, School, AlertCircle } from 'lucide-react';
 import FormularioAlumno from '../components/FormularioAlumno';
 import type { Alumno } from '../types/diagnostico';
 import { alumnosService } from '../src/services/alumnosFirebase';
+import { schoolService } from '../src/services/schoolService';
 
 const RegistroAlumnos: React.FC = () => {
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
@@ -11,16 +12,48 @@ const RegistroAlumnos: React.FC = () => {
     const [guardando, setGuardando] = useState(false);
     const [nombreAlumno, setNombreAlumno] = useState('');
 
+    // El plantel llega en el enlace que comparte el docente: /registro?escuela=<CCT>.
+    // Sin plantel el expediente quedaría huérfano y visible para cualquier escuela,
+    // así que se pide el CCT antes de abrir el formulario.
+    const [params] = useSearchParams();
+    const [cct, setCct] = useState(() => (params.get('escuela') || '').toUpperCase());
+    const [cctEscrito, setCctEscrito] = useState('');
+    const [escuela, setEscuela] = useState<{ id: string; nombre: string; cct: string } | null>(null);
+    const [buscandoEscuela, setBuscandoEscuela] = useState(Boolean(params.get('escuela')));
+    const [errorEscuela, setErrorEscuela] = useState('');
+
+    useEffect(() => {
+        if (!cct.trim()) return;
+        let cancelado = false;
+        setBuscandoEscuela(true);
+        setErrorEscuela('');
+        schoolService.getSchoolByCCT(cct.trim())
+            .then(s => {
+                if (cancelado) return;
+                if (s) {
+                    setEscuela({ id: s.id, nombre: s.nombre, cct: s.cct });
+                } else {
+                    setErrorEscuela(`No encontramos un plantel con la clave ${cct.trim()}. Verifícala con tu maestro.`);
+                }
+            })
+            .catch(() => { if (!cancelado) setErrorEscuela('No se pudo verificar el plantel. Revisa tu conexión.'); })
+            .finally(() => { if (!cancelado) setBuscandoEscuela(false); });
+        return () => { cancelado = true; };
+    }, [cct]);
+
     const handleGuardarAlumno = async (alumno: Alumno) => {
+        if (!escuela) return;
         setGuardando(true);
         setNombreAlumno(alumno.datosAdministrativos.nombre);
 
         try {
-            // Guardar en Firebase
+            // Guardar en Firebase, siempre ligado a un plantel
             await alumnosService.guardarAlumno({
                 datosAdministrativos: alumno.datosAdministrativos,
                 datosNEM: alumno.datosNEM,
-                fechaRegistro: alumno.fechaRegistro
+                fechaRegistro: alumno.fechaRegistro,
+                schoolId: escuela.id,
+                schoolCct: escuela.cct
             });
 
             setMostrarFormulario(false);
@@ -80,9 +113,65 @@ const RegistroAlumnos: React.FC = () => {
                                 la mejor experiencia educativa personalizada.
                             </p>
 
+                            {/* Identificación del plantel: sin esto no se abre el formulario */}
+                            {escuela ? (
+                                <div className="max-w-md mx-auto mb-8">
+                                    <div className="flex items-center justify-center gap-2 p-4 bg-emerald-50 border border-emerald-200 rounded-2xl">
+                                        <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                                        <p className="text-sm text-emerald-900 text-left">
+                                            Te vas a registrar en <span className="font-bold">{escuela.nombre}</span>
+                                            <span className="block text-xs text-emerald-700">CCT: {escuela.cct}</span>
+                                        </p>
+                                    </div>
+                                    <button
+                                        type="button"
+                                        onClick={() => { setEscuela(null); setCct(''); setCctEscrito(''); }}
+                                        className="mt-2 text-xs text-slate-500 underline hover:text-slate-700"
+                                    >
+                                        No es mi plantel, cambiarlo
+                                    </button>
+                                </div>
+                            ) : (
+                                <div className="max-w-md mx-auto mb-8 text-left">
+                                    <label className="block text-sm font-bold text-slate-700 mb-1.5">
+                                        Clave de tu plantel (CCT)
+                                    </label>
+                                    <p className="text-xs text-slate-500 mb-2">
+                                        Tu maestro o maestra te la puede dar. Sirve para que tu registro llegue
+                                        a tu escuela y no a otra.
+                                    </p>
+                                    <div className="flex gap-2">
+                                        <input
+                                            type="text"
+                                            value={cctEscrito}
+                                            onChange={e => setCctEscrito(e.target.value.toUpperCase())}
+                                            onKeyDown={e => { if (e.key === 'Enter') setCct(cctEscrito); }}
+                                            placeholder="Ej. 21EBH0026G"
+                                            className="flex-1 p-3 rounded-xl border border-slate-300 font-mono uppercase focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400"
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={() => setCct(cctEscrito)}
+                                            disabled={!cctEscrito.trim() || buscandoEscuela}
+                                            className="px-5 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 disabled:bg-slate-300 disabled:cursor-not-allowed"
+                                        >
+                                            {buscandoEscuela ? '…' : 'Verificar'}
+                                        </button>
+                                    </div>
+                                    {errorEscuela && (
+                                        <p className="mt-2 text-xs text-red-600 flex items-start gap-1.5">
+                                            <AlertCircle className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
+                                            {errorEscuela}
+                                        </p>
+                                    )}
+                                </div>
+                            )}
+
                             <button
                                 onClick={() => setMostrarFormulario(true)}
-                                className="inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg"
+                                disabled={!escuela}
+                                title={escuela ? 'Comenzar registro' : 'Primero identifica tu plantel'}
+                                className="inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg disabled:from-slate-300 disabled:to-slate-300 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none"
                             >
                                 <UserPlus className="w-6 h-6" />
                                 Comenzar Registro

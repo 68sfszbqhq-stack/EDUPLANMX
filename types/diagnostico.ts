@@ -98,6 +98,13 @@ export interface Alumno {
   datosAdministrativos: DatosAdministrativos;
   datosNEM: DatosNEM;
   fechaRegistro: string;
+  /**
+   * Plantel al que pertenece el alumno. Es lo que aísla sus datos: sin esto,
+   * el expediente queda huérfano y visible para cualquier escuela del sistema.
+   * Opcional en el tipo solo por los registros anteriores a este campo.
+   */
+  schoolId?: string;
+  schoolCct?: string;
 }
 
 // ============================================

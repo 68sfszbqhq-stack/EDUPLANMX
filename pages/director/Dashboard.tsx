@@ -101,19 +101,25 @@ const DirectorDashboard: React.FC = () => {
     };
 
     const runDiagnosis = async () => {
+        if (!user?.schoolId) return;
         try {
-            // Obtener un estudiante cualquiera para ver su estructura
-            const q = query(collection(db, 'alumnos'), limit(1));
+            // Muestra acotada al propio plantel: esta herramienta es para revisar la
+            // forma de los datos, no para asomarse a los expedientes de otras escuelas.
+            const q = query(
+                collection(db, 'alumnos'),
+                where('schoolId', '==', user.schoolId),
+                limit(1)
+            );
             const s = await getDocs(q);
             if (!s.empty) {
                 setSampleStudent({
                     id: s.docs[0].id,
                     data: s.docs[0].data(),
-                    mySchoolId: user?.schoolId,
-                    match: s.docs[0].data().schoolId === user?.schoolId ? 'YES' : 'NO'
+                    mySchoolId: user.schoolId,
+                    match: 'YES'
                 });
             } else {
-                setSampleStudent({ message: 'No students found at all in DB' });
+                setSampleStudent({ message: 'No hay alumnos registrados en este plantel.' });
             }
         } catch (e) {
             console.error(e);
@@ -125,19 +131,21 @@ const DirectorDashboard: React.FC = () => {
 
     const migrateStudents = async () => {
         if (!user?.schoolId || !user?.schoolName) return;
-        if (!confirm(`⚠️ ACCIÓN CRÍTICA ⚠️\n\n¿Estás seguro de asignar TODOS los alumnos existentes en la base de datos a TU escuela actual?\n\nEscuela: ${user.schoolName}\nID: ${user.schoolId}\n\nEsto moverá a todos los alumnos huérfanos a tu panel. Solo haz esto si estás seguro de que, en este sistema, TÚ eres la única escuela activa.`)) return;
+        if (!confirm(`Adoptar alumnos sin plantel asignado\n\nEscuela: ${user.schoolName}\n\nSe revisarán únicamente los registros que NO tengan plantel (los creados antes de que el formulario pidiera la clave del CCT). Los alumnos que ya pertenecen a otra escuela NO se tocan.\n\n¿Continuar?`)) return;
 
-        setMigrationStatus('⏳ Migrando alumnos, por favor espera...');
+        setMigrationStatus('⏳ Buscando alumnos sin plantel...');
         try {
-            const q = query(collection(db, 'alumnos'));
+            // Solo huérfanos: reasignar alumnos de OTRA escuela seria robarle
+            // sus expedientes a ese plantel, no una migración.
+            const q = query(collection(db, 'alumnos'), where('schoolId', '==', null));
             const snap = await getDocs(q);
 
             let count = 0;
 
             const promises = snap.docs.map(async (d) => {
                 const data = d.data();
-                // Si no tiene schoolId o es diferente al mío
-                if (data.schoolId !== user.schoolId) {
+                // Defensa adicional: nunca tocar un registro que ya tiene dueño
+                if (!data.schoolId) {
                     count++;
                     return updateDoc(doc(db, 'alumnos', d.id), {
                         schoolId: user.schoolId,
@@ -148,7 +156,9 @@ const DirectorDashboard: React.FC = () => {
 
             await Promise.all(promises);
 
-            setMigrationStatus(`✅ ¡Éxito! Se han asociado ${count} alumnos a tu escuela.`);
+            setMigrationStatus(count > 0
+                ? `✅ Listo: ${count} alumno(s) sin plantel quedaron asignados a tu escuela.`
+                : '✅ No hay alumnos sin plantel: no se modificó ningún registro.');
             loadStats(); // Recargar estadísticas
             runDiagnosis(); // Actualizar muestra
 
@@ -417,12 +427,24 @@ const DirectorDashboard: React.FC = () => {
                                 </div>
                             )}
 
-                            <button
-                                onClick={migrateStudents}
-                                className="w-full bg-red-50 text-red-600 border border-red-200 py-2 rounded font-bold hover:bg-red-100 transition-colors"
-                            >
-                                🔧 Asociar TODOS los alumnos a MÍ ({user?.schoolName})
-                            </button>
+                            {/* Limpieza de datos legados: solo superadmin. Adoptar expedientes
+                                huérfanos implica leer registros sin dueño, y esa lectura no
+                                debe estar al alcance de cualquier plantel. */}
+                            {(user?.rol as string) === 'superadmin' ? (
+                                <button
+                                    onClick={migrateStudents}
+                                    className="w-full bg-amber-50 text-amber-700 border border-amber-300 py-2 rounded font-bold hover:bg-amber-100 transition-colors"
+                                >
+                                    🔧 Adoptar alumnos sin plantel asignado ({user?.schoolName})
+                                </button>
+                            ) : (
+                                <p className="text-xs text-slate-500 leading-relaxed">
+                                    Si hay alumnos sin plantel asignado (registros anteriores a que el
+                                    formulario pidiera la clave CCT), pídele al administrador del sistema
+                                    que los adopte. Los alumnos que ya pertenecen a otra escuela nunca se
+                                    reasignan.
+                                </p>
+                            )}
                         </div>
                     </div>
                 </div>
