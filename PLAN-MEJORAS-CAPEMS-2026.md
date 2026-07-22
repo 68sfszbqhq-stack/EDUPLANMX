@@ -144,8 +144,20 @@
     escuela; crear exige schoolId. schools pasó a lectura pública (solo metadatos).
 - Reglas desplegadas con `firebase deploy --only firestore:rules --project eduplanmx`
   (el CLI está en /usr/local/bin/firebase con credenciales activas).
-- Quedan del diagnóstico: regla comodín amplia, persistencia offline de Firestore,
-  y los dos archivos de reglas divergentes (solo firestore.rules se despliega).
+- Pendientes menores RESUELTOS (21 jul 2026):
+  - Regla comodín amplia → deny-por-defecto: cada colección con regla explícita
+    (usuarios, materias, grupos, asignaciones, diagnosticos_grupo, pmc,
+    pmc_diagnosis, pmc_metas, herramientas_generadas, api_usage, api_quotas);
+    colección nueva nace bloqueada. Verificado en producción con sesión de
+    maestro: planeaciones, PEC/pmc, alumnos, materias, flujo y bitácora sin
+    errores de permisos. (El deny hizo visible al instante un hueco: faltaba la
+    regla de `pmc`, se añadió y desplegó.)
+  - Persistencia offline de Firestore activada (initializeFirestore +
+    persistentLocalCache multi-pestaña) en src/config/firebase.ts.
+  - Eliminado firestore_prod.rules divergente; firestore.rules es el único.
+- Anotado como deuda (no de seguridad): 'usuarios' y 'users' son colecciones
+  distintas — el panel de admin opera sobre 'usuarios' mientras los perfiles de
+  auth viven en 'users'. Revisar si la gestión de usuarios apunta a la correcta.
 
 ## Desplegado a producción (20 jul 2026)
 - Commit `e320cae` en `main`; GitHub Pages sirviendo bundle `index-7HVTOm5l.js`.
