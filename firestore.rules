@@ -129,6 +129,7 @@ service cloud.firestore {
     match /grupos/{id}              { allow read, write: if isAuthenticated(); }
     match /asignaciones/{id}        { allow read, write: if isAuthenticated(); }
     match /diagnosticos_grupo/{id}  { allow read, write: if isAuthenticated(); }
+    match /pmc/{id}                 { allow read, write: if isAuthenticated(); }
     match /pmc_diagnosis/{id}       { allow read, write: if isAuthenticated(); }
     match /pmc_metas/{id}           { allow read, write: if isAuthenticated(); }
 

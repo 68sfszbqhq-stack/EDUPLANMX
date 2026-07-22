@@ -539,9 +539,9 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             <ShieldCheck className="w-3 h-3 mt-0.5 flex-shrink-0" />
             <span>
               <span className="font-bold">Seguridad:</span> tu clave solo vive en este navegador mientras la pestaña está abierta
-              (se borra al cerrarla). Recomendación: genera una clave nueva en cada sesión y borra la anterior en
+              (se borra al cerrarla) — nunca se guarda en disco ni se sube a ningún servidor. Es tuya y gratuita: cada
+              docente usa la suya, así se reparte la cuota. Consíguela en
               {' '}<a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer" className="underline font-semibold">Google AI Studio</a>.
-              Si lo dejas vacío, se usará la clave del sistema (puede tener límites de cuota).
             </span>
           </p>
         </div>
