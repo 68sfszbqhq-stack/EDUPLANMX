@@ -121,9 +121,15 @@ export interface LessonPlan {
   evaluationTable?: Array<{
     instrument: string;
     percentage: number;
-    agent: string;
+    // La lista de cotejo pide identificar el TIPO por momento y por agente, no solo
+    // la ponderación. Sin estas dos columnas el punto se marca como incompleto.
+    moment: string; // Diagnóstica | Formativa | Sumativa
+    agent: string;  // Autoevaluación | Coevaluación | Heteroevaluación
     criteria: string;
   }>;
+
+  // 9b. Materiales, recursos y REFERENCIAS (la lista de cotejo pide los tres)
+  references?: string[]; // bibliografía y fuentes consultadas
 
   // 10. Retroalimentación Docente (Template vacío para llenar después)
   teacherReflection?: {

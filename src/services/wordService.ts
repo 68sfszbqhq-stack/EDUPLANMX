@@ -134,6 +134,29 @@ export async function descargarPlaneacionWord(plan: LessonPlan, schoolName?: str
     // 7. Evaluación
     hijos.push(titulo('7. Evaluación'));
     if (plan.evaluation) hijos.push(parrafo(plan.evaluation));
+
+    // Tabla de evaluación con ponderación, momento y agente: es la que la ATP revisa.
+    // Antes solo se exportaba evaluationDetails, que la IA no llena, así que el Word
+    // salía sin plan de evaluación aunque la planeación sí lo tuviera.
+    if (Array.isArray(plan.evaluationTable) && plan.evaluationTable.length) {
+        hijos.push(tabla(
+            plan.evaluationTable.map(f => [
+                f.instrument || '—',
+                `${f.percentage || 0}%`,
+                f.moment || '—',
+                f.agent || '—',
+                f.criteria || '—',
+            ]),
+            ['Instrumento / Evidencia', 'Valor', 'Momento', 'Agente', 'Criterio']
+        ));
+        const total = plan.evaluationTable.reduce((s, f) => s + (f.percentage || 0), 0);
+        hijos.push(parrafo(
+            total === 100
+                ? 'Total: 100%'
+                : `Total: ${total}%  —  ATENCIÓN: la ponderación debe sumar 100%.`
+        ));
+    }
+
     if (p.evaluationDetails) {
         const filas: string[][] = [];
         if (p.evaluationDetails.diagnostic) filas.push(['Diagnóstica', p.evaluationDetails.diagnostic]);
@@ -157,11 +180,17 @@ export async function descargarPlaneacionWord(plan: LessonPlan, schoolName?: str
         ], ['Pregunta orientadora', 'Respuesta']));
     }
 
-    // 8. Recursos
+    // 8. Recursos y referencias (la lista de cotejo pide materiales, recursos Y referencias)
     const recursos: string[] = Array.isArray(p.resources) ? p.resources : [];
     if (recursos.length) {
-        hijos.push(titulo('8. Recursos didácticos'));
+        hijos.push(titulo('8. Materiales y recursos didácticos'));
         recursos.forEach(r => hijos.push(new Paragraph({ bullet: { level: 0 }, children: [new TextRun(r)] })));
+    }
+
+    const referencias: string[] = Array.isArray(p.references) ? p.references : [];
+    if (referencias.length) {
+        hijos.push(titulo('8-B. Referencias'));
+        referencias.forEach(r => hijos.push(new Paragraph({ bullet: { level: 0 }, children: [new TextRun(r)] })));
     }
 
     // Constancia de mediación docente (Fichas 16 y 34: la IA apoya, el docente decide)

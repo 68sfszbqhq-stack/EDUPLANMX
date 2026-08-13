@@ -69,6 +69,10 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                             <span className="text-slate-500 font-normal ml-1">({plan.meta?.hoursPerWeek || 4} hrs/sem)</span>
                         </span>
                     </div>
+                    <div className="p-2">
+                        <span className="block font-bold text-slate-500 uppercase text-[9px]">Fecha de Elaboración</span>
+                        <span className="font-bold text-slate-900">{plan.date || 'Por registrar'}</span>
+                    </div>
                 </div>
             </div>
 
@@ -269,8 +273,13 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                         <p>{plan.independentStudy?.estimatedTime || '60 min semana'}</p>
                     </div>
                     <div className="md:col-span-3 border-t border-slate-200 pt-2 mt-1">
-                        <span className="block font-bold text-slate-600 text-[10px] uppercase">Estrategia de Retroalimentación</span>
-                        <p className="italic text-slate-700">{plan.independentStudy?.feedbackLink || 'Revisión en la siguiente clase mediante preguntas aleatorias.'}</p>
+                        <span className="block font-bold text-slate-600 text-[10px] uppercase">
+                            Estrategia de Retroalimentación <span className="font-normal normal-case text-slate-400">(modalidad y momento)</span>
+                        </span>
+                        <p className="text-slate-800">{plan.independentStudy?.feedbackStrategy || 'Por definir: indicar si es individual o grupal y en qué momento se realiza.'}</p>
+                        {plan.independentStudy?.feedbackLink && (
+                            <p className="italic text-slate-600 mt-1">{plan.independentStudy.feedbackLink}</p>
+                        )}
                     </div>
                 </div>
             </div>
@@ -284,10 +293,11 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                     <table className="w-full text-left text-xs border-collapse">
                         <thead>
                             <tr className="bg-slate-100 border-b border-slate-400 text-slate-800 print:bg-slate-200">
-                                <th className="p-3 border-r border-slate-300 w-[25%] font-bold uppercase text-[10px]">Instrumento / Evidencia</th>
-                                <th className="p-3 border-r border-slate-300 w-[10%] text-center font-bold uppercase text-[10px]">Valor</th>
+                                <th className="p-3 border-r border-slate-300 w-[22%] font-bold uppercase text-[10px]">Instrumento / Evidencia</th>
+                                <th className="p-3 border-r border-slate-300 w-[9%] text-center font-bold uppercase text-[10px]">Valor</th>
+                                <th className="p-3 border-r border-slate-300 w-[14%] font-bold uppercase text-[10px]">Momento</th>
                                 <th className="p-3 border-r border-slate-300 w-[15%] font-bold uppercase text-[10px]">Agente</th>
-                                <th className="p-3 w-[50%] font-bold uppercase text-[10px]">Criterio Específico</th>
+                                <th className="p-3 w-[40%] font-bold uppercase text-[10px]">Criterio Específico</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-300">
@@ -295,21 +305,32 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                                 <tr key={idx} className="border-b border-slate-300">
                                     <td className="p-3 border-r border-slate-300 font-bold text-slate-900">{item.instrument}</td>
                                     <td className="p-3 border-r border-slate-300 text-center font-bold">{item.percentage}%</td>
+                                    <td className="p-3 border-r border-slate-300 text-slate-700">{item.moment}</td>
                                     <td className="p-3 border-r border-slate-300 text-slate-700">{item.agent}</td>
                                     <td className="p-3 text-slate-700 align-top">
                                         {item.criteria}
                                     </td>
                                 </tr>
                             ))}
-                            <tr className="bg-slate-100 font-bold text-slate-900 border-t-2 border-slate-400">
-                                <td className="p-3 border-r border-slate-300 text-right uppercase text-[10px]">Total Acumulado</td>
-                                <td className="p-3 border-r border-slate-300 text-center">
-                                    {plan.evaluationTable.reduce((sum, i) => sum + i.percentage, 0)}%
-                                </td>
-                                <td colSpan={2} className="p-3 bg-slate-50 text-[10px] font-normal italic text-slate-500">
-                                    * La evaluación formativa es continua y sistemática.
-                                </td>
-                            </tr>
+                            {(() => {
+                                // La ponderación debe sumar 100. Si no, se avisa en el propio
+                                // documento: es de lo primero que revisa la ATP.
+                                const total = plan.evaluationTable!.reduce((sum, i) => sum + (i.percentage || 0), 0);
+                                const cuadra = total === 100;
+                                return (
+                                    <tr className="bg-slate-100 font-bold text-slate-900 border-t-2 border-slate-400">
+                                        <td className="p-3 border-r border-slate-300 text-right uppercase text-[10px]">Total Acumulado</td>
+                                        <td className={`p-3 border-r border-slate-300 text-center ${cuadra ? '' : 'text-red-600'}`}>
+                                            {total}%
+                                        </td>
+                                        <td colSpan={3} className="p-3 bg-slate-50 text-[10px] font-normal italic text-slate-500">
+                                            {cuadra
+                                                ? '* La evaluación formativa es continua y sistemática.'
+                                                : `⚠ La ponderación debe sumar 100%. Ajusta los porcentajes antes de entregar.`}
+                                        </td>
+                                    </tr>
+                                );
+                            })()}
                         </tbody>
                     </table>
                 </div>
@@ -345,6 +366,37 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                     </table>
                 </div>
             )}
+
+            {/* 8c. MATERIALES, RECURSOS Y REFERENCIAS
+                La lista de cotejo pide los tres. plan.resources ya se calculaba en
+                geminiService (con respaldo incluido) pero no se imprimía en ningún lado. */}
+            <div className="mb-6 border border-slate-500 rounded-sm avoid-break">
+                <div className="bg-slate-700 text-white px-3 py-2 border-b border-slate-500 font-bold text-sm uppercase text-center print:bg-slate-800 print:text-white">
+                    VIII-C. Materiales, Recursos y Referencias
+                </div>
+                <div className="p-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                    <div>
+                        <p className="font-bold text-slate-600 text-[10px] uppercase mb-1 border-b border-slate-200">
+                            Materiales y Recursos Didácticos
+                        </p>
+                        <ul className="list-disc list-inside text-slate-800 space-y-0.5">
+                            {plan.resources?.length
+                                ? plan.resources.map((r, i) => <li key={i}>{r}</li>)
+                                : <li className="text-slate-400 italic">Sin recursos registrados</li>}
+                        </ul>
+                    </div>
+                    <div>
+                        <p className="font-bold text-slate-600 text-[10px] uppercase mb-1 border-b border-slate-200">
+                            Referencias
+                        </p>
+                        <ul className="list-disc list-inside text-slate-800 space-y-0.5">
+                            {plan.references?.length
+                                ? plan.references.map((r, i) => <li key={i} className="break-words">{r}</li>)
+                                : <li className="text-slate-400 italic">Sin referencias registradas</li>}
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             {/* 9. REFLEXIÓN DOCENTE (ESPACIO PARA LLENAR) */}
             <div className="mb-6 border border-slate-400 border-dashed rounded-sm p-4 bg-slate-50/50 avoid-break print:block hidden">

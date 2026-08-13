@@ -94,6 +94,29 @@ export const generateLessonPlan = async (
     11. LENGUAJE INCLUYENTE: usa "el estudiantado", "las y los estudiantes"; evita el
         masculino genérico y los estereotipos de género en los ejemplos.
 
+    LISTA DE COTEJO DE LA ASESORÍA TÉCNICO-PEDAGÓGICA (así se revisa la planeación;
+    si un punto falta, la planeación se regresa al docente):
+    12. RETROALIMENTACIÓN — independentStudy.feedbackStrategy debe decir SIEMPRE dos
+        cosas: si es INDIVIDUAL o GRUPAL, y EN QUÉ MOMENTO ocurre.
+        Mal: "se retroalimenta en clase".
+        Bien: "Grupal al cierre de cada sesión e individual por escrito sobre el
+        reporte, al devolverlo en la sesión 4".
+    13. EVALUACIÓN — cada renglón de evaluationTable lleva sus cinco datos:
+        - moment: exactamente uno de "Diagnóstica", "Formativa" o "Sumativa"
+        - agent: exactamente uno de "Autoevaluación", "Coevaluación" o "Heteroevaluación"
+          (es QUIÉN evalúa; no escribas "Docente" ni "Alumno")
+        - instrument: el instrumento concreto (rúbrica, lista de cotejo, escala…)
+        - percentage: la ponderación. LA SUMA DE TODOS DEBE DAR EXACTAMENTE 100.
+        - criteria: qué se evalúa
+        Incluye al menos una diagnóstica, varias formativas y al menos una sumativa,
+        y al menos una autoevaluación o coevaluación.
+    14. REFERENCIAS — llena "references" con las fuentes que el docente puede consultar
+        y citar (libro con autor y año, programa oficial de la UAC, sitio verificable).
+        No inventes libros ni autores: si no tienes una referencia real, cita el programa
+        de estudios oficial de la UAC y materiales de la propia escuela.
+    15. RECURSOS — "resources" es la lista maestra de materiales de toda la planeación,
+        no solo de una sesión.
+
     INFORMACIÓN OFICIAL: ${contextoOficial.substring(0, 800)}...
     CONTEXTO ESCUELA: ${school.schoolName}, ${school.vision}.
     SOLICITUD: "${prompt}"
@@ -176,9 +199,13 @@ export const generateLessonPlan = async (
               properties: {
                 activities: { type: Type.STRING },
                 feedbackLink: { type: Type.STRING },
+                // La lista de cotejo exige decir SI es individual o grupal y CUÁNDO.
+                // Sin esto el punto se marca incompleto aunque feedbackLink venga lleno.
+                feedbackStrategy: { type: Type.STRING },
                 resources: { type: Type.STRING },
                 estimatedTime: { type: Type.STRING }
-              }
+              },
+              required: ["activities", "feedbackStrategy", "estimatedTime"]
             },
             sessions: {
               type: Type.ARRAY,
@@ -208,9 +235,11 @@ export const generateLessonPlan = async (
                 properties: {
                   instrument: { type: Type.STRING },
                   percentage: { type: Type.NUMBER },
+                  moment: { type: Type.STRING },
                   agent: { type: Type.STRING },
                   criteria: { type: Type.STRING }
-                }
+                },
+                required: ["instrument", "percentage", "moment", "agent", "criteria"]
               }
             },
             feedbackCycle: {
@@ -223,11 +252,12 @@ export const generateLessonPlan = async (
               required: ["whereGoing", "whereIs", "howToGetThere"]
             },
             resources: { type: Type.ARRAY, items: { type: Type.STRING } },
+            references: { type: Type.ARRAY, items: { type: Type.STRING } },
             duaStrategies: { type: Type.STRING },
             evaluation: { type: Type.STRING },
             duration: { type: Type.STRING }
           },
-          required: ["title", "subject", "sessions", "meta", "evaluationTable", "fundamento", "paec", "curricularElements", "resources", "feedbackCycle"]
+          required: ["title", "subject", "sessions", "meta", "evaluationTable", "fundamento", "paec", "curricularElements", "resources", "references", "feedbackCycle", "independentStudy"]
         }
       }
     });
@@ -282,6 +312,27 @@ export const generateLessonPlan = async (
         // Fallback final si no hay nada en sesiones tampoco
         parsedData.resources = ["Pizarrón", "Cuaderno del alumno", "Libro de texto", "Dispositivo multimedia"];
       }
+    }
+
+    // --- GARANTÍA DE REFERENCIAS ---
+    // La lista de cotejo pide "materiales, recursos Y referencias". Si el modelo no las
+    // devuelve, citamos el programa oficial: es la fuente que el docente sí puede defender.
+    if (!Array.isArray(parsedData.references) || parsedData.references.length === 0) {
+      parsedData.references = programaOficial
+        ? [`Programa de estudios oficial de ${programaOficial.materia} (DGB/SEP). ${programaOficial.url_fuente}`]
+        : ['Programa de estudios oficial de la UAC (DGB/SEP), MCCEMS.'];
+    }
+
+    // --- NORMALIZACIÓN DE LA TABLA DE EVALUACIÓN ---
+    // Momento y agente son dos puntos distintos de la lista de cotejo. Se dejan visibles
+    // como "Por definir" en vez de en blanco: así el docente ve qué le falta completar.
+    if (Array.isArray(parsedData.evaluationTable)) {
+      parsedData.evaluationTable = parsedData.evaluationTable.map((fila: any) => ({
+        ...fila,
+        moment: fila.moment || 'Por definir',
+        agent: fila.agent || 'Heteroevaluación',
+        percentage: Number(fila.percentage) || 0
+      }));
     }
 
     // Compatibilidad con campos legacy
