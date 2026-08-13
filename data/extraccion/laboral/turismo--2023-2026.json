@@ -1,0 +1,446 @@
+{
+  "nombre": "Turismo",
+  "slug": "turismo--2023-2026",
+  "clave": "3101600005-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "Introducción al turismo y servicio de hospedaje.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Analiza la historia y los conceptos del ámbito turístico, sus elementos y los relativos al servicio de hospedaje y la entidad jurídica que regula su actividad con respeto y tolerancia, a través de investigación documental, física y/o digital para reconocerlo como un fenómeno social.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Introducción al turismo",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Identifica la evolución del Turismo como fenómeno social en México y en el mundo, para valorar la multiculturalidad turística en sus diversos contextos.",
+          "actividadClave": "El estudiantado realizará un safari fotográfico utilizando sus teléfonos celulares, con el propósito de identificar y analizar la superestructura, infraestructura y estructura turística de su entorno, observando los cambios ocurridos desde su infancia hasta la actualidad. Durante esta actividad, las y los estudiantes aplicarán el método Cornell para tomar notas y reflexionar sobre la evolución de su comunidad. Al final, se presentarán las fotografías en tamaño póster en una exposición escolar abierta a la comunidad. Desarrollo: 1. Formación de Equipos: Las y los estudiantes se organizan en equipos de 4 y eligen una zona de su comunidad para realizar el safari fotográfico. 2. Exploración y Captura Fotográfica: Con sus celulares, los equipos capturan fotos de la superestructura, infraestructura y estructura turística del lugar, observando los cambios desde su infancia. 3. Notas con el Método Cornell: Durante el recorrido, las y los estudiantes toman notas utilizando el método Cornell (Pistas, Notas y Resumen) para registrar lo aprendido. 4. Revisión y Coevaluación: Se proyectan las fotos en el aula y se realiza una lluvia de ideas para dar sugerencias sobre cómo mejorar las fotos. 5. Exposición de Fotografías: Las mejores fotos se imprimen en tamaño póster y se exhiben en la escuela, invitando a la comunidad escolar a apreciarlas. Material: ● Teléfonos Celulares con cámara. ● Hojas para tomar notas usando el método Cornell. ● Impresoras y papel fotográfico para imprimir las fotos en tamaño póster. ● Proyector y pantalla para mostrar las fotos en clase. ● Material de exposición (carteles, espacio para exhibir las fotos). 14",
+          "evidencias": [
+            {
+              "nombre": "Escala de estimación (5 rasgos)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [
+                {
+                  "numero": 1,
+                  "texto": "El diseño de la imagen es…"
+                },
+                {
+                  "numero": 2,
+                  "texto": "La app de fotografía empleadas fueron…"
+                },
+                {
+                  "numero": 3,
+                  "texto": "El contenido expresa las ideas de forma…"
+                },
+                {
+                  "numero": 4,
+                  "texto": "La identificación del tema central es…"
+                },
+                {
+                  "numero": 5,
+                  "texto": "El aporte alcanzado de los puntos de vista expresados en la fotografía fue…"
+                }
+              ],
+              "niveles": [
+                "Sobresaliente",
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": []
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Servicio de hospedaje",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Clasifica los servicios de hospedaje, identificando el Marco Legal, con el propósito de conocer la forma de aplicar leyes, artículos y reglamentos en servicios y productos turísticos, de forma ética.",
+          "actividadClave": "El estudiantado investigará la oferta hotelera de su ciudad, categorizando los diferentes tipos de hospedaje según las clasificaciones vistas en clase. Esto les permitirá reconocer la variedad de opciones disponibles en su comunidad y reflexionar sobre el impacto de estas empresas en la economía local y estatal. Desarrollo: 1. Investigación y Categorización: En binas, los y las estudiantes investigan la oferta hotelera en su ciudad, clasificando los establecimientos según las categorías vistas en clase y elaborando un listado con la información recabada. 2. Revisión y Coevaluación: El alumnado lee su listado en clase, lo coteja con el de sus compañeros, realiza correcciones y actualizaciones, luego participa en un debate sobre la clasificación y servicios de los hoteles. 3. Elaboración del Manual Digital: Con la información recabada, los y las estudiantes elaboran un manual digital sobre la oferta hotelera del municipio, reflexionando sobre el impacto económico de estas empresas. Materiales y software: ● Computadoras o dispositivos electrónicos con acceso a internet. ● Hojas o documentos para tomar notas. ● Proyector y pantalla para las presentaciones y coevaluación. ● Software de diseño o procesadores de texto para crear el manual digital. ● Fuentes de información como sitios web de hoteles y directorios turísticos locales. 16",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "PUNTOS Contenido",
+                  "puntos": 20,
+                  "descripcionNiveles": "Extrae las ideas centrales del tema y las argumenta entendiéndolas y explicándolas. Extrae algunas ideas centrales del tema, aunque omite algunas importantes. Se le dificultó extraer las ideas centrales del tema. Sólo transcribe la información si hacer una verdadera selección. D"
+                },
+                {
+                  "criterio": "Diseño",
+                  "puntos": 20,
+                  "descripcionNiveles": "Identifica cuales la continuidad de ideas, para facilitar su entendimiento y análisis, aporta ejemplos con apoyo de imágenes o dibujos. Identifica cuales la continuidad de ideas, pero es complicado su entendimiento y análisis, aporta imágenes o dibujos, pero muy pocos. Identifica el tema, no hace ninguna aportación, no divide la información para su análisis coloca imágenes o dibujos que poco aportan. Sólo transcribe, investiga sin importarle las divisiones temáticas ni incluye imágenes ni dibujos de apoyo. M"
+                },
+                {
+                  "criterio": "Mensaje",
+                  "puntos": 20,
+                  "descripcionNiveles": "Toda la información fue plasmada con precisión. Casi toda la información fue plasmada con precisión. La mayoría de la información fue plasmada con precisión. No hay información con precisión e Incorrectamente plasmada. O"
+                },
+                {
+                  "criterio": "Ortografía",
+                  "puntos": 20,
+                  "descripcionNiveles": "No hay errores de gramática, ortografía o puntuación. Casi no hay errores de gramática, ortografía o puntuación. Unos pocos errores de gramática, ortografía o puntuación. Muchos errores de gramática, ortografía o puntuación. P"
+                },
+                {
+                  "criterio": "Presentación",
+                  "puntos": 20,
+                  "descripcionNiveles": "El manual esta ordenado, limpio, preciso y se refiere al tema. El manual es ordenado, limpio y se refiere al tema. El manual es ordenado y algo referido al tema. El manual no es ordenado y muy poco referido al tema. TOTAL Turismo 17 Turismo"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Servicios turísticos",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Descubre los atractivos y recursos turísticos más importantes en su estado a través de recorridos turísticos vivenciales y/o digitales, para reforzar la identidad y diversidad cultural regional. Comprende la operación y funcionamiento del establecimiento de restaurante y bar considerando el uso apropiado de mobiliario y equipo para brindar un servicio de calidad, asumiendo retos con tolerancia y cordialidad.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Recursos turísticos en tu estado y guiar recorridos en",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Identifica los diferentes recursos y atractivos turísticos en su estado para favorecer las prácticas de campo, apoyándose de un vocabulario en inglés acorde al contexto del ámbito turístico.",
+          "actividadClave": "Las y los estudiantes comprenderán qué son los recursos y los atractivos turísticos, a través de una investigación individual y la creación de un collage visual. Además, desarrollarán un vocabulario en inglés relacionado con el turismo y, como proyecto final, realizarán una visita guiada a un atractivo turístico, usando dicho vocabulario, para grabar y presentar un video. Desarrollo: 1. Investigación Individual: ¿Qué es un recurso turístico? Cada estudiante investigará qué se entiende por recurso turístico (elementos naturales, culturales, históricos, etc. que atraen a los turistas). ¿Qué es un atractivo turístico? Posteriormente, investigarán sobre qué se considera un atractivo turístico (lugares o actividades que generan interés en los turistas debido a su belleza, historia o singularidad). 2. Diseño de Collage: Los y las estudiantes deberán crear un collage de imágenes utilizando un programa de su elección (por ejemplo, Canva, PowerPoint, Photoshop, etc.) que refleje tanto los recursos como los atractivos turísticos de la región o de su interés. El collage debe incluir imágenes representativas de los recursos y atractivos, acompañadas de breves descripciones sobre su importancia. 3. Vocabulario en inglés: Los y las estudiantes elaborarán un vocabulario en inglés con las palabras más comunes utilizadas por los turistas en la región (por ejemplo: \"tour\", \"ticket\", \"guide\", \"museum\", \"hotel\", etc.). Este vocabulario ayudará al estudiantado a prepararse para el proyecto final de la visita guiada. 4. Visita Guiada y Proyecto Final en Equipos: En equipos de 2 personas, las y los estudiantes seleccionarán un atractivo turístico de la región para realizar una visita guiada. Durante la visita, deberán utilizar el vocabulario en inglés previamente aprendido para interactuar con sus compañeros y guiar la visita, simulando una experiencia real de un turista extranjero. 18 5. Finalmente, grabarán un video de su visita guiada, presentando el atractivo turístico e incluyendo las palabras en inglés de su vocabulario. 6. El video será enviado al docente para su revisión y evaluación. Materiales: ● Dispositivos electrónicos (computadoras, tabletas o teléfonos móviles) con acceso a internet para realizar la investigación y crear el collage. ● Programas de diseño como Canva, PowerPoint, Photoshop, o cualquier otro software para la elaboración del collage. ● Diccionarios o fuentes en línea para investigar el vocabulario turístico en inglés. ● Cámaras o teléfonos móviles para grabar el video de la visita guiada. ● Acceso a un atractivo turístico de la región para llevar a cabo la visita guiada (puede ser un lugar real o simulado si no es posible hacerlo físicamente).",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (4 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Contenido",
+                  "puntos": 20,
+                  "descripcionNiveles": "Contiene el 100% de los elementos solicitados Contiene el 90% de los elementos solicitados. C"
+                },
+                {
+                  "criterio": "Contiene el 70% de los elementos solicitados Contiene menos del 70% de los elementos solicitados Creatividad",
+                  "puntos": 20,
+                  "descripcionNiveles": "Su diseño es muy atractivo, se hace excelente uso de las imágenes, fuentes, color, etc. Su diseño es atractivo, se hace buen uso de las imágenes, fuentes, color, etc. Su diseño es poco atractivo, se hace muy poco uso de las imágenes, fuentes, color, etc. Su diseño no es atractivo, no se hace uso de las fuentes, color, gráficos, etc. C"
+                },
+                {
+                  "criterio": "Cantidad de información",
+                  "puntos": 20,
+                  "descripcionNiveles": "La información de todos los elementos está al 100% de acuerdo con lo solicitado. La información de todos los elementos está al 90% de acuerdo con lo solicitado. La información de todos los elementos está al 70% de acuerdo con lo solicitado. Presenta menos del 70 % de la Información de acuerdo a lo solicitado. M"
+                },
+                {
+                  "criterio": "Materiales",
+                  "puntos": 20,
+                  "descripcionNiveles": "Se ajusta 100% a los materiales o al software solicitado Se ajusta en un 90% a los materiales o al software solicitados Omite bastantes materiales o no se ajusta al software solicitado No utiliza los materiales o software solicitado Puntualidad en la entrega (20 puntos) Se ajusta a tiempos indicados Un día de retraso después del tiempo indicado. 3 días de retraso después del tiempo indicado. Más de 3 días de retraso. Turismo 19 Turismo Rúbrica para evaluar video sobre atractivo turístico en inglés. Criterios de evaluación"
+                }
+              ]
+            },
+            {
+              "nombre": "Rúbrica (4 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Coherencia y fluidez",
+                  "puntos": 30,
+                  "descripcionNiveles": "El/la estudiante presenta el video de manera clara, bien estructurada y fluida, demostrando un dominio completo del tema y argumentando de manera coherente. No comete errores significativos de pronunciación o entonación, y se expresa con confianza. El/la estudiante presenta el video de manera clara y estructurada, aunque puede haber algunos momentos de falta de fluidez o incoherencia en sus argumentos. Comete algunos errores de pronunciación o entonación, pero se hace entender en general. El/la estudiante presenta el video de manera aceptable, aunque puede haber falta de coherencia y fluidez en algunos momentos. Comete errores frecuentes de pronunciación o entonación, pero se hace entender en la mayoría de los casos. El/la estudiante tiene dificultades para presentar el video de manera clara y coherente. Su fluidez es limitada y comete numerosos errores de pronunciación o entonación, lo que dificulta la comprensión de su mensaje. V"
+                },
+                {
+                  "criterio": "Vocabulario y gramática",
+                  "puntos": 20,
+                  "descripcionNiveles": "El/la estudiante utiliza un amplio vocabulario relacionado con el tema y demuestra un dominio excepcional de la gramática. Utiliza expresiones idiomáticas y estructuras gramaticales complejas de manera correcta y apropiada. El/la estudiante utiliza un vocabulario adecuado al tema y demuestra un dominio sólido de la gramática. Utiliza una variedad de estructuras gramaticales y evita errores graves de vocabulario o gramática. El/la estudiante utiliza un vocabulario básico relacionado con el tema y demuestra un dominio aceptable de la gramática. Utiliza estructuras gramaticales simples y comete errores frecuentes, pero no graves de vocabulario o gramática. El/la estudiante tiene dificultades para utilizar un vocabulario adecuado y muestra un dominio limitado de la gramática. Utiliza estructuras gramaticales básicas y comete numerosos errores de vocabulario y gramática. A"
+                },
+                {
+                  "criterio": "Apoyo visual",
+                  "puntos": 20,
+                  "descripcionNiveles": "El/la estudiante utiliza material visual de manera efectiva para respaldar su presentación. Los elementos visuales son claros, relevantes y se integran de manera fluida en el video. El/la estudiante utiliza material visual adecuado para respaldar su presentación. Los elementos visuales son comprensibles y se integran de manera adecuada en el video. El/la estudiante utiliza material visual de manera básica para respaldar su presentación. Los elementos visuales pueden ser confusos o poco relevantes, pero aun así aportan algo al video. El/la estudiante tiene dificultades para utilizar material visual de manera efectiva. Los elementos visuales son confusos o poco relevantes y no contribuyen significativamente al video. Materiales, desarrollo y rúbricas de evaluación. C"
+                },
+                {
+                  "criterio": "Contenido y conocimiento",
+                  "puntos": 30,
+                  "descripcionNiveles": "El/la estudiante demuestra un conocimiento profundo y detallado. Presenta información precisa, relevante y bien fundamentada, mostrando comprensión de la historia, cultura, atracciones turísticas y otros aspectos relevantes. El/la estudiante demuestra un conocimiento sólido. Presenta información precisa y relevante, mostrando comprensión de la historia, cultura, atracciones turísticas y otros aspectos relevantes. El/la estudiante demuestra un conocimiento aceptable. Presenta información básica y generalizada, mostrando una comprensión limitada de la historia, cultura, atracciones turísticas y otros aspectos relevantes. El/la estudiante tiene dificultades para demostrar un conocimiento adecuado. La información presentada es incorrecta, irrelevante o poco fundamentada. 20"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Servicio de restaurante y bar",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Reconoce los diferentes servicios de restaurante y bar, con el propósito de operarlos de manera correcta en beneficio de la población objetivo",
+          "actividadClave": "El estudiantado trabajará de manera colaborativa para diseñar un cuadro comparativo que diferencie las características de los servicios en un restaurante y un bar. Además, desarrollarán habilidades prácticas en un taller de turismo, aprendiendo a ejecutar correctamente los tipos de servicios y montajes de mesas asignados por el profesor para una demostración de servicio al cliente. Desarrollo: 1. Distinguir los conceptos más comunes del área de Restaurante y Bar como: Aforo, Blancos (Felpa, mantelería, Bambalinas, Servilletas, Cubremantel), comensal, carta, cristalería, escarchado, Coffe, mixología, stick, entre otros. 2. Diseño del Cuadro Comparativo: Los y las estudiantes colaborarán para crear un cuadro comparativo que destaque las diferencias entre los servicios de un restaurante y un bar, incluyendo características como menú, ambiente, y tipo de servicio. 3. Práctica en el Taller de Turismo: Los y las estudiantes practicarán los servicios y montajes de mesas para restaurante y bar, siguiendo las instrucciones del profesor. Esto incluye montaje de mesas, protocolo de atención y servicio de bebidas. 4. Demostración en Vivo: el alumnado realizará una demostración de los servicios ante comensales invitados, poniendo en práctica lo aprendido sobre el servicio al cliente en restaurante y bar. Materiales: ● Herramientas para el cuadro comparativo: Hojas de papel o herramientas digitales (PowerPoint, Canva). ● Utensilios de servicio: Platos, cubiertos, copas, vasos, manteles, servilletas. ● Materiales de barra: Cristalería, licor, utensilios para preparar bebidas. ● Espacio para la práctica: Un taller o salón adecuado para realizar los montajes y servicios. ● Comensales invitados: Compañeros o profesores para la demostración. Turismo 21 Turismo",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe Mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Presentación del documento",
+                  "puntos": 20,
+                  "descripcionNiveles": "Tiene Portada, diseño en la presentación, ordena la información y da referencias de donde tomó la información. Solo tiene datos de Identificación aislados, diseño en la presentación, ordena la información y presenta referencias. Solo tiene datos de Identificación aislados, no tiene un diseño o estilo, poco orden en la información y solo menciona algunas referencias. Solo tiene datos de Identificación aislados. No tiene un diseño o estilo, poco orden en la información y no presenta referencias. P"
+                },
+                {
+                  "criterio": "Profundización del tema",
+                  "puntos": 20,
+                  "descripcionNiveles": "Descripción clara y sustancial del cuadro y buena cantidad de detalles. Descripción clara y sustancial del cuadro. Descripción ambigua del cuadro, algunos detalles no clarifican el tema. Descripción incorrecta del cuadro, sin detalles significativos o escasos. C"
+                },
+                {
+                  "criterio": "Calidad del Diseño",
+                  "puntos": 20,
+                  "descripcionNiveles": "Cuadro sobresaliente y atractivo que cumple con los criterios de diseño planteados, sin errores de ortografía. Cuadro simple pero bien organizado sin errores de ortografía. Cuadro simple, con ciertas debilidades en la organización y con al menos tres errores ortográficos. Cuadro mal planteado que no cumple con los criterios de diseño planteados y con más de tres errores de ortografía. C"
+                },
+                {
+                  "criterio": "Cantidad de categorías de comparación usadas",
+                  "puntos": 20,
+                  "descripcionNiveles": "El uso de categorías está acorde tanto en jerarquía como en número para permitir una adecuada comparación del tema establecido. El uso de categorías está acorde para permitir una adecuada comparación del tema establecido, aunque necesita ajustar el orden jerárquico. El número de categorías no está acorde con la temática presentada y muestra deficiencias en el orden jerárquico. El número de categorías no está acorde con la temática o no guardan relación con el tema. C"
+                },
+                {
+                  "criterio": "Calidad de la información presentada",
+                  "puntos": 20,
+                  "descripcionNiveles": "La información está claramente relacionada con el tema y proporciona varios niveles de comparación. La información da respuesta al objetivo principal del cuadro comparar mas no aporta otros niveles de análisis. La información proporcionada guarda relación con las categorías, aunque su calidad (fuentes)es deficiente. La información suministrada no guarda relación con el tema. 22 Rúbrica para evaluar la atención al cliente en restaurante y bar. VALORACIÓN"
+                }
+              ]
+            },
+            {
+              "nombre": "Rúbrica (3 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Conocimiento de la operación de un restaurante y bar",
+                  "puntos": 40,
+                  "descripcionNiveles": "El/la estudiante demuestra un conocimiento profundo y completo de las operaciones básicas de un restaurante y bar, y es capaz de explicar y aplicar estos conceptos de manera efectiva. El/la estudiante posee un conocimiento aceptable de las operaciones básicas de un restaurante y bar, pero puede tener dificultades para aplicar estos conceptos en situaciones prácticas. El/la estudiante muestra un conocimiento limitado de las operaciones básicas de un restaurante y bar, y tiene dificultades para aplicar estos conceptos en situaciones prácticas. El/la estudiante no muestra comprensión de las operaciones básicas de un restaurante y bar. H"
+                },
+                {
+                  "criterio": "Habilidades en elaboraciones de platos a la vista del cliente",
+                  "puntos": 30,
+                  "descripcionNiveles": "El/la estudiante demuestra habilidades excepcionales en la atención al cliente y en el servicio de alimentos y bebidas, superando las expectativas en todos los aspectos evaluados. El/la estudiante posee habilidades aceptables en la atención al cliente y en el servicio de alimentos y bebidas, pero puede tener algunas áreas de mejora en algunos aspectos evaluados. El/la estudiante muestra habilidades limitadas en la atención al cliente y en el servicio de alimentos y bebidas, y tiene dificultades para cumplir con las expectativas en algunos aspectos evaluados. El/la estudiante no tiene habilidades en la atención al cliente y en el servicio de alimentos y bebidas. A"
+                },
+                {
+                  "criterio": "Aplicación de conocimientos en situaciones prácticas",
+                  "puntos": 30,
+                  "descripcionNiveles": "El/la estudiante es capaz de aplicar de manera efectiva y precisa los conocimientos adquiridos en situaciones prácticas relacionadas con la operación de un restaurante y bar. El/la estudiante puede tener dificultades para aplicar de manera consistente los conocimientos adquiridos en situaciones prácticas relacionadas con la operación de un restaurante y bar. El/la estudiante muestra una aplicación limitada de los conocimientos adquiridos en situaciones prácticas relacionadas con la operación de un restaurante y bar. El/la estudiante no es capaz de aplicar los conocimientos adquiridos en situaciones prácticas relacionadas con la operación de un restaurante y bar. Turismo 23 Turismo"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "Mercadotecnia (Marketing)",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Valora los principales atractivos turísticos y su ubicación geográfica con un pensamiento crítico y reflexivo para su preservación y conservación, aplicando los elementos de la mercadotecnia. Participa en la elaboración de paquetes relacionados con patrimonio Turístico de manera responsable y empática, para la correcta toma de decisiones al requerir un servicio de viaje.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Patrimonio turístico nacional",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Valora los recursos turísticos de su región y promueve su conservación de manera sustentable y responsable.",
+          "actividadClave": "A través de un trabajo en equipo, el estudiantado desarrollará habilidades de investigación, análisis geográfico, clasificación y comunicación. La actividad se estructura en varias fases que incluyen la recopilación de información, la localización geográfica de la misma, el análisis de rutas turísticas y la creación de una guía de viajero digital, culminando en una presentación a la comunidad escolar. Desarrollo: 1. Fase de investigación (Primer momento): Las y los alumnos se organizan en equipos de cuatro personas. Cada equipo realiza una investigación sobre las tradiciones, costumbres, y el patrimonio natural y cultural del estado y de su municipio. Para ello, se les proporcionará acceso a fuentes de información como libros, internet, entrevistas a expertos locales y visitas a sitios relevantes. Durante esta fase, las y los estudiantes recopilan datos sobre las festividades, monumentos, paisajes naturales, y elementos culturales representativos. 2. Ubicación geográfica de la información (Segundo momento): En esta etapa, las y los estudiantes deben ubicar en un mapa del estado toda la información que recabaron en el primer paso. Pueden dividir la información en categorías como tradiciones, patrimonio natural, patrimonio cultural, etc., o bien, optar por organizarla sin una clasificación específica. Además, deberán identificar y señalar en el mapa el patrimonio de su municipio. 3. Incorporación de rutas turísticas (Tercer momento): A continuación, el estudiantado integra a su investigación las rutas turísticas que se han revisado en clase, clasificándolas en tres categorías: gastronómicas, deportivas y culturales. Sin embargo, solo deben considerar aquellas rutas que se desarrollan dentro del municipio de su interés. Esta actividad permitirá que los alumnos relacionen la teoría aprendida en clase con el contexto local. 4. Elaboración de la guía de viajero (Cuarto momento): En esta fase, el alumnado utiliza la información reunida y los mapas para crear una guía de viajero digital. Para ello, pueden utilizar aplicaciones o procesadores de texto de su elección, permitiendo que cada equipo diseñe un documento atractivo que incluya mapas, descripciones de los lugares, rutas turísticas recomendadas, datos históricos y culturales, así como recomendaciones prácticas para los viajeros. Se les fomentará la creatividad en el diseño y la presentación de la guía, incluyendo imágenes y contenido multimedia cuando sea posible. 24 5. Presentación y exposición (Quinto momento): Finalmente, cada equipo presentará su producto terminado en una exposición abierta a la comunidad escolar. Durante la exposición, las y los estudiantes podrán explicar el proceso de investigación, las rutas turísticas seleccionadas, y cómo organizaron la información para crear su guía de viajero. Además, podrán responder preguntas de la audiencia y reflexionar sobre lo aprendido en el proyecto. Materiales: ● Fuentes de información (libros, internet, entrevistas, mapas). ● Tecnología para crear la guía digital (computadoras, software de diseño y edición). ● Materiales para la exposición (carteles, presentaciones, recursos visuales).",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Contenido",
+                  "puntos": 20,
+                  "descripcionNiveles": "Extrae las ideas centrales del tema y las argumenta entendiéndolas y explicándolas. Extrae algunas ideas centrales del tema, aunque omite algunas importantes. Se le dificultó extraer las ideas centrales del tema. Sólo transcribe la información si hacer una verdadera selección. D"
+                },
+                {
+                  "criterio": "Diseño",
+                  "puntos": 20,
+                  "descripcionNiveles": "Identifica cuales la continuidad de ideas, para facilitar su entendimiento y análisis, aporta ejemplos con apoyo de imágenes o dibujos. Identifica cuales la continuidad de ideas, pero es complicado su entendimiento y análisis, aporta imágenes o dibujos, pero muy pocos. Identifica el tema, no hace ninguna aportación, no divide la información para su análisis coloca imágenes o dibujos que poco aportan. Sólo transcribe, investiga sin importarle las divisiones temáticas ni incluye imágenes ni dibujos de apoyo. M"
+                },
+                {
+                  "criterio": "Mensaje",
+                  "puntos": 20,
+                  "descripcionNiveles": "Toda la información fue plasmada con precisión. Casi toda la información fue plasmada con precisión. La mayoría de la información fue plasmada con precisión. No hay información con precisión e Incorrectamente plasmada. O"
+                },
+                {
+                  "criterio": "Ortografía",
+                  "puntos": 20,
+                  "descripcionNiveles": "No hay errores de gramática, ortografía o puntuación. Casi no hay errores de gramática, ortografía o puntuación. Unos pocos errores de gramática, ortografía o puntuación. Muchos errores de gramática, ortografía o puntuación. P"
+                },
+                {
+                  "criterio": "Presentación",
+                  "puntos": 20,
+                  "descripcionNiveles": "La guía esta ordenada, limpio, preciso y se refiere al tema. La guía esta ordenada, limpio y se refiere al tema. La guía esta ordenada y en algo se refiere al tema. La guía no es ordenada y muy poco referida al tema. TOTAL Turismo 25 Turismo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Comercializar productos turísticos y elaboración de paquetes.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Relaciona el Patrimonio Turístico de México con su ubicación geográfica, utilizando mapas geográficos y/o digitales para que, con el apoyo docente, elabore paquetes turísticos, aplicando elementos de la comercialización y la mercadotecnia.",
+          "actividadClave": "En esta actividad, el estudiantado trabajará en equipos de 5 para diseñar un paquete turístico de 3 días dentro de su municipio, basándose en la guía de viajero que elaboraron previamente. A través de la selección de atractivos turísticos y la creación de un itinerario, las y los estudiantes desarrollarán habilidades de planificación y comunicación. La actividad culmina con la realización de un spot publicitario que promoverá el paquete turístico creado por los equipos. Este spot será diseñado para compartirlo en redes sociales y presentarlo a la comunidad escolar. Desarrollo: 1. Primer momento (Selección de atractivos y lugares): Las y los alumnos se organizan en equipos de 5 y, basándose en la guía de viajero que crearon en el semestre anterior, seleccionan los atractivos, productos, sitios y lugares dentro del municipio que formarán parte de un paquete turístico de 3 días. La selección debe incluir una variedad de actividades y lugares de interés que representen bien el patrimonio y las experiencias locales. 2. Segundo momento (Definición del itinerario y debate): El equipo organiza y define el itinerario de actividades para cada uno de los 3 días del paquete turístico. Durante esta fase, los miembros del equipo debaten sobre los lugares más atractivos a su parecer y eligen cuáles serán los responsables de visitar dichos lugares. Estos miembros serán también los encargados de presentar el spot publicitario en el siguiente paso. 3. Tercer momento (Creación del spot publicitario): Las y los estudiantes producen un spot publicitario de entre 1 y 3 minutos de duración. Este video debe incluir toda la información recabada sobre el paquete turístico, siguiendo el itinerario definido. El spot debe contar con música de ambientación y una descripción clara del paquete, mostrando los lugares y actividades seleccionados. El objetivo es que el video sea lo suficientemente atractivo para ser compartido en redes sociales y presentado a la comunidad escolar. Materiales: ● Fuentes de información: Guía de viajero elaborada previamente, libros, internet, y otros recursos para obtener detalles sobre los atractivos turísticos del municipio. ● Tecnología para la creación del spot: Cámaras o teléfonos móviles con buena calidad de grabación, software de edición de video (como iMovie, Adobe Premiere, o herramientas similares), y acceso a plataformas para agregar música de ambientación (como bibliotecas de música libre de derechos). ● Equipo para la presentación: Recursos para la filmación del spot (micrófonos, cámaras, trípodes) y equipo para la proyección del video (computadoras, proyectores o pantallas para la presentación final). 26",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (4 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Duración",
+                  "puntos": 25,
+                  "descripcionNiveles": "Se apega al tiempo establecido por el maestro. Excede o está a -/+de 3 min. Del tiempo establecido de duración. Excede o está a -/+de 5 min. Del tiempo establecido de duración. C"
+                },
+                {
+                  "criterio": "Contenido",
+                  "puntos": 25,
+                  "descripcionNiveles": "Abarca cada uno de los puntos temáticos requeridos por el maestro. Uso adecuado del lenguaje Abarca parcialmente los puntos temáticos requeridos por el maestro. Uso adecuado del lenguaje Abarca pocos o ninguno de los puntos temáticos requeridos por el maestro. Uso inadecuado del lenguaje. O"
+                },
+                {
+                  "criterio": "Originalidad",
+                  "puntos": 25,
+                  "descripcionNiveles": "Completamente autentico. El trabajo está basado Parcialmente en ideas ya Existentes. El trabajo es una copia de otra idea. A"
+                },
+                {
+                  "criterio": "Audio",
+                  "puntos": 25,
+                  "descripcionNiveles": "La calidad del audio es: -clara -volumen adecuado y suficiente -no existen interrupciones Auditivas. La calidad del audio es: -parcialmente claro -el volumen vario de manera notoria e impide en ocasiones la comprensión. -tiene pocas interrupciones La calidad del audio es: -de poca claridad -el volumen no es suficiente o no se percibe del todo e impide la comprensión. -hay muchas interrupciones. Turismo 27 Turismo"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "Desarrollo organizacional",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Conoce el marco legal de una empresa en función a los distintos tipos de eventos a partir de sus elementos, promoviendo la comunicación asertiva y colaborativa para llevar a cabo proyectos específicos en su contexto.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Desarrollo de eventos socioculturales y de negocios.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Reconoce los tipos de evento, su estructura y etapas, mediante la organización y el trabajo colaborativo.",
+          "actividadClave": "En esta actividad, el alumnado trabajará en grupos de tres (trinas) para diseñar, planificar y crear una invitación para un evento de su elección. A través de un proceso de debate y reflexión, las y los estudiantes seleccionarán el tipo de evento más atractivo, considerando sus ventajas y desventajas. A continuación, definirán el tema del evento, organizarán los comités responsables y asignarán las actividades correspondientes. Posteriormente, realizarán una investigación sobre el evento elegido, sus características, necesidades logísticas y la información clave que deben comunicar a los asistentes. Finalmente, las y los alumnos diseñarán una invitación que contenga toda la información necesaria y la expondrán a la comunidad escolar al final del ciclo. Desarrollo: 1. Debate y reflexión: Las y los alumnos, organizados en trinas, discuten sobre qué tipo de evento les parece más atractivo, analizando sus ventajas y desventajas. 2. Definición del evento: Seleccionan el tema del evento, crean comités y asignan actividades a cada miembro del grupo. 3. Investigación: Realizan una investigación sobre el evento elegido, sus características, necesidades logísticas y la información relevante para los asistentes. 4. Diseño de la invitación: Con la información obtenida, las y los estudiantes diseñan una invitación que contenga todos los detalles del evento. 5. Exposición: Presentan las invitaciones a la comunidad escolar al final del ciclo, explicando el proceso de planificación. Materiales: ● Fuentes de información (libros, internet, entrevistas). ● Herramientas para el diseño de invitaciones (software de diseño gráfico o procesadores de texto). ● Materiales para la exposición (invitaciones impresas, carteles, proyectores si es necesario). 28",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (4 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Contenido Precisión",
+                  "puntos": 15,
+                  "descripcionNiveles": "Toda la información de la invitación muestra la investigación 89-80% de la información en la invitación es correcta. 80% al 60% de la información en la invitación es correcta La invitación muestra más del 50% de la información incorrecta Escritura Organización. (15 puntos) Cada sección en la invitación tiene una introducción, un desarrollo y una conclusión clara. La mayor parte de las secciones en la invitación tienen una introducción, un desarrollo y una conclusión clara. Menos de la mitad de las secciones de la invitación tienen una introducción, un desarrollo y una conclusión clara. La invitación no muestra organización ni secciones relevantes."
+                },
+                {
+                  "criterio": "Creatividad en el formato",
+                  "puntos": 15,
+                  "descripcionNiveles": "La invitación tiene un formato excepcionalme nte atractivo y una información bien organizada. La invitación tiene la información bien organizada. Y luce algo atractivo. El formato de la invitación y la organización del material son confusos para el lector. No elaboró la invitación."
+                },
+                {
+                  "criterio": "Ortografía y Revisión",
+                  "puntos": 15,
+                  "descripcionNiveles": "No existen errores ortográficos ni gramaticales. Existen algunos errores ortográficos y gramaticales Existen muchos errores ortográficos y gramaticales. La mayor parte del escrito luce con errores ortográficos y gramaticales. E"
+                },
+                {
+                  "criterio": "Elaboración",
+                  "puntos": 40,
+                  "descripcionNiveles": "Utilizó un procesador de texto y colocó imágenes atractivas. Elaboró la invitación sin utilizar procesador de texto, escribió a mano, pero luce con limpieza y orden, colocó imágenes atractivas Elaboró la invitación sin utilizar procesador de texto, escribió a mano, pero luce desorganizado y sucio. No colocó imágenes atractivas No elaboró la invitación."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Empresas turísticas",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Construye un proyecto con los elementos básicos de los negocios turísticos incluyendo su marco legal.",
+          "actividadClave": "Luego de conocer la parte administrativa y operativa de una empresa del sector, el estudiantado visitará un destino dentro de su municipio, donde podrá observar y experimentar de manera vivencial el trabajo de una empresa turística en su desarrollo de servicios. Las y los estudiantes deberán organizarse en equipos para gestionar la logística de la salida de campo, mientras que el personal docente proporcionará la orientación necesaria en aspectos clave como seguridad, manejo de recursos y organización. Al finalizar la actividad, los alumnos deberán crear un vlog de 3 minutos donde reflexionen sobre lo aprendido y experimentado durante la visita, el cual será publicado en las redes sociales de la institución. Desarrollo: 1. Conocimiento y selección del destino: Las y los estudiantes aprenden sobre la parte administrativa y operativa de una empresa turística y seleccionan el destino a visitar con la orientación del personal docente. 2. Organización logística: El estudiantado se organiza en equipos para planificar aspectos logísticos de la salida, como primeros auxilios, guías, botiquín y manejo de desperdicios. 3. Visita de campo: Las y los estudiantes realizan la visita al destino seleccionado, observando el funcionamiento de la empresa turística y los servicios ofrecidos. 4. Elaboración del vlog: Tras la visita, las y los alumnos crean un vlog de 3 minutos sobre lo que aprendieron y vivieron, con una reflexión grupal. 5. Publicación: Los vlogs se entregan al docente y se publican en las redes sociales de la institución. Materiales: ● Información sobre la empresa turística y el destino. ● Equipos de grabación (cámaras, móviles, micrófonos). ● Software de edición de video. ● Material logístico para la salida (botiquín, mapas, recursos de seguridad). ● Acceso a plataformas de redes sociales para publicar los vlogs. 30",
+          "evidencias": []
+        }
+      ]
+    }
+  ],
+  "calidadExtraccion": "BUENA",
+  "coberturaInstrumentos": {
+    "conInstrumento": 7,
+    "total": 8
+  },
+  "avisos": [
+    "Módulo 4 submódulo 2: sin indicadores de evaluación"
+  ],
+  "extraidoEl": "2026-08-13T23:26:55.250Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/xazMmN9SFT-Turismo.pdf"
+}

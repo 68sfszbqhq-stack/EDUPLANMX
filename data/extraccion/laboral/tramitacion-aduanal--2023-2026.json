@@ -1,0 +1,270 @@
+{
+  "nombre": "Tramitación Aduanal",
+  "slug": "tramitacion-aduanal--2023-2026",
+  "clave": "3041100004-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "El Sistema Armonizado y los organismos del comercio nacional e internacional",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Usa de manera ética y responsable las diferentes herramientas ofertadas por los organismos del comercio nacional e internacional, para identificar los trámites inherentes al comercio, considerando los bienes comprendidos dentro del Sistema Armonizado.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Estructura del Sistema Armonizado de Designación y Codificación de Mercancías.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Reconoce los diferentes ámbitos de la aplicación de la Ley de Impuestos Generales de Importación y Exportación (LIGIE), de forma ética y responsable, considerando la estructura del Sistema Armonizado de Designación y Codificación de Mercancías (SA).",
+          "actividadClave": "Análisis y aplicación del SADCM dentro de un proceso de Importación/Exportación: Por medio del trabajo colaborativo de 4 a 5 integrantes por equipo, el estudiantado lleva a cabo la clasificación arancelaria de un producto específico para importación o exportación, dentro de la Estructura del Sistema Armonizado de Designación y Codificación de Mercancías (SADCM), al realizar el uso de este sistema los estudiantes se darán cuenta que es clave para garantizar que las actividades comerciales internacionales que se realicen conforme a la normatividad vigente, evitando problemas legales o fiscales. Así mismo desarrollarán habilidades de investigación y análisis de la estructura y aplicación de las leyes en un contexto real, lo que les permitirá reconocer cómo los productos se clasifican bajo el marco del Sistema Armonizado. Materiales: ● Acceso bibliográfico al Sistema Armonizado. ● Ley de los impuestos Generales de Importación y Exportación (LIGIE). www.siicex-caaarem.org.mx Desarrollo: ● Se integran en equipos de 4 a 5 integrantes. ● Selección de productos. ● Analizan cada uno de los productos. ● Ubicación de los productos en el SADCM. ● Presentación del reporte. ● El docente podrá realizar preguntas y retroalimentar. 14",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Organismos relacionados con el comercio nacional e internacional.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Reconoce los organismos del comercio nacional e internacional, identificando el tipo de trámite que realiza según sus facultades y los diferentes contextos en donde se aplica.",
+          "actividadClave": "En equipo de 5 integrantes, el estudiantado deberá diseñar y elaborar un podcast. El estudiantado analizará las actividades que realizan las diferentes secretarías de gobierno dentro del comercio exterior; para lo cual elegirán un tema de acuerdo con su contexto. A través del trabajo colaborativo llevarán a cabo roles como: presentador e invitado; podrán hacer el uso de herramientas de audio y aplicaciones para compartirlo. Con esta actividad, el estudiantado no solo adquiere conocimientos teóricos, sino que también desarrolla habilidades prácticas y destrezas que les serán útiles en su formación como futuros profesionistas en el área del comercio y la administración. Además, fomentan una actitud ética y responsable ante las normativas comerciales. Materiales: ● Tema. ● Plataforma. ● Guion. Desarrollo: ● Se integran en equipos de 5 integrantes. ● Eligen un tema o concepto. ● Selección del formato (conversación, entrevista, documental o narrativo). ● Estilo y roles. ● Investigación (material necesario para informarse sobre el tema que abordarán). ● Guion. ● Grabación. ● Edición. ● Presentación en clase. 16",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (6 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe Mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Contenido",
+                  "puntos": 15,
+                  "descripcionNiveles": "El contenido es relevante, bien investigado, y claro. Se abordan todos los puntos de manera profunda y reflexiva. El contenido es relevante y claro, aunque algunos puntos no se desarrollan completamente. El contenido es algo relevante, pero faltan detalles o se abordan temas superficiales. El contenido es vago, desorganizado o irrelevante. E"
+                },
+                {
+                  "criterio": "Estructura y organización",
+                  "puntos": 15,
+                  "descripcionNiveles": "El podcast tiene una estructura clara con una introducción, desarrollo y conclusión bien definidos. La secuencia es lógica. El podcast tiene una estructura clara, pero la transición entre ideas podría mejorarse. La estructura es confusa o desorganizada, dificultando el seguimiento. El podcast no tiene una estructura clara. C"
+                },
+                {
+                  "criterio": "Creatividad",
+                  "puntos": 10,
+                  "descripcionNiveles": "El podcast es creativo y original, presentando ideas innovadoras de manera única. El podcast es algo creativo, aunque sigue enfoques comunes. El podcast presenta ideas poco originales o se basa demasiado en fuentes externas sin agregar valor propio. El podcast carece de creatividad o presenta ideas repetitivas y sin innovación. L"
+                },
+                {
+                  "criterio": "Lenguaje",
+                  "puntos": 20,
+                  "descripcionNiveles": "El lenguaje es claro, fluido y fácil de entender. El ritmo es adecuado. El lenguaje es claro, pero en algunos momentos podría ser más fluido. El lenguaje es algo difícil de entender o tiene muchos errores de pronunciación. El lenguaje es confuso, con demasiados errores o falta de claridad. I"
+                },
+                {
+                  "criterio": "Interacción /participación",
+                  "puntos": 20,
+                  "descripcionNiveles": "El presentador interactúa de manera dinámica, mostrando entusiasmo y captando la atención del oyente. El presentador es interactivo, pero podría mejorar la dinámica o el entusiasmo. El presentador tiene poca interacción o parece desinteresado. El presentador no interactúa o muestra falta de interés. C"
+                },
+                {
+                  "criterio": "Calidad",
+                  "puntos": 20,
+                  "descripcionNiveles": "El audio es de alta calidad, sin ruidos de fondo ni interrupciones. El volumen y el tono son adecuados. El audio es de buena calidad, pero con pequeños ruidos o fluctuaciones en el volumen. El audio tiene algunos problemas técnicos, como ruidos de fondo o cambios notables de volumen. El audio tiene muchos problemas técnicos que dificultan la comprensión. 17 Tramitación Aduanal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Clasificación arancelaria y estructura del comercio nacional e internacional",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Participa en la clasificación de mercancías con responsabilidad ética y crítica, aplicando la Ley de los Impuestos Generales de Importación y Exportación, con la intención de calcular el pago correcto de los aranceles, tomando en cuenta los ordenamientos legales del comercio nacional e internacional.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Clasificación arancelaria",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Participa en la clasificación de las mercancías (naturaleza, uso o función) de acuerdo con el contexto, tomando en cuenta la normatividad aplicable con la finalidad de una correcta clasificación.",
+          "actividadClave": "A partir de una lista de mercancías de la Ley de los Impuestos Generales de Importación y Exportación (LIGIE) los estudiantes elaborarán fichas técnicas utilizando equipo de cómputo en documento Word, con el apoyo de la LIGIE y las Notas Legales, podrán realizar sus fichas y analizar cada una de las mercancías para poder identificar, describir y clasificar correctamente. En el aula y laboratorio se estarán presentando los avances de cada sección que se les haya asignado, compartiendo dudas, ya que al finalizar el curso deben de hacer entrega de sus fichas en la plataforma classroom, dando cumplimiento al instrumento de evaluación (lista de cotejo) el estudiantado identifica la mercancía de acuerdo con su natural uso o función, así como el pago de arancel aplicable que debe de cumplir toda mercancía al entrar o salir de territorio. Material: ● Equipo de cómputo. ● Pintarrón. ● Internet. Desarrollo: ● Utilizar la Ley de los Impuestos Generales de Importación y Exportación para Clasificar el listado de mercancías. ● Redactar en cada una de las fichas técnicas la sección, capítulo, partida, subpartida, fracción arancelaria y su Nico de las secciones I a la XXI de la LIGIE. ● Revisar las notas de sección, capitulo y subpartida para aplicarlas en la ficha técnica. ● Mostrar avance de fichas en sesión clase, donde se comparten dudas y retroalimentar por parte del docente para poder tener la clasificación correcta de cada una de las mercancías. ● Enviar fichas en la plataforma Classroom en documento PDF, dándole complimiento a la lista de cotejo que se les proporciono por el personal docente en plataforma. 18",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Estructura del comercio nacional e internacional",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Describe los procesos tanto de importación como de exportación de bienes y servicios en operaciones del comercio nacional e internacional, reflexionando respecto a la diversidad cultural.",
+          "actividadClave": "En equipo de 5 integrantes, el estudiantado deberá elaborar un video TikTok. En esta actividad el estudiantado analizará las actividades del comercio nacional e internacional y su jerarquía dentro del Sistema Jurídico Mexicano, deberán elegir un tema de acuerdo con su contexto. Por medio del trabajo cooperativo podrán llevar a cabo la acción de un invitado o colaborador analítico del tema. Con este trabajo los alumnos no solo obtendrán conocimientos teóricos, sino que también desarrollarán habilidades prácticas y destrezas que les serán útiles en su formación como futuros profesionistas en el área de Comercio. 19 Tramitación Aduanal Materiales: ● Acceso bibliográfico al Sistema Armonizado. ● Ley de los impuestos Generales de Importación y Exportación (LIGIE). www.siicex-caaarem.org.mx Desarrollo: ● Integración por equipo. ● Elección de tema. ● Investigación. ● Selección de la forma del video (diálogo, entrevista o expositivo). ● Guion. ● Grabación. ● Edición. ● Presentación en clase. 20",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (7 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe Mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Formato",
+                  "puntos": 10,
+                  "descripcionNiveles": "Respeta el formato requerido y tiene al menos 4 secciones de la misma duración y calidad. Respeta el formato requerido y tiene al menos 4 secciones/temas, con diferente duración y/o calidad. No respeta el formato requerido, pero tiene al menos 4 secciones/temas diferentes. No respeta el formato requerido y no tiene al menos 4 secciones/temas diferentes. C"
+                },
+                {
+                  "criterio": "Contenido",
+                  "puntos": 30,
+                  "descripcionNiveles": "Cubre los temas a profundidad con detalles y ejemplos. El conocimiento del tema es excelente. Incluye conocimiento básico sobre el tema. El contenido es bueno. Incluye información esencial sobre el tema, pero tiene 1- 2 errores al hacerlo. El contenido es mínimo y tiene varios errores en los hechos. O"
+                },
+                {
+                  "criterio": "Originalidad",
+                  "puntos": 20,
+                  "descripcionNiveles": "El producto demuestra gran originalidad. Las ideas son creativas e ingeniosas. El producto demuestra cierta originalidad. El trabajo demuestra el uso de nuevas ideas y de perspicacia. Usa ideas de otras personas (dándoles crédito), pero no hay evidencia de ideas originales. Usa ideas de otras personas, pero no les da crédito. U"
+                },
+                {
+                  "criterio": "Uso de lenguaje",
+                  "puntos": 10,
+                  "descripcionNiveles": "No hay faltas de ortografía, ni errores gramaticales. El mensaje es claro. Tres o menos faltas de ortografía y/o errores de puntuación. El mensaje es claro. Cuatro errores de ortografía y/o errores gramaticales. A veces el mensaje es confuso. Más de cuatro errores de ortografía y no se entiende el mensaje. G"
+                },
+                {
+                  "criterio": "Grabación y edición del video, interés",
+                  "puntos": 10,
+                  "descripcionNiveles": "Diferentes tomas o ángulos de cámara, efecto de sonido, imágenes, etc. Proporcionando variedad al video. 3-4 tomas diferentes o ángulos de cámara, efectos de sonido, imágenes etc. Proporcionando variedad al video. 1-2 tomas diferentes o ángulos de cámara, efectos de sonido, imágenes, etc. proporcionando variedad en el video. Poco esfuerzo para proporcionar variedad en el video. G"
+                },
+                {
+                  "criterio": "Grabación y edición del video, calidad",
+                  "puntos": 10,
+                  "descripcionNiveles": "La calidad del video fue excelente en todas sus partes. El resultado es interesante. La calidad fue excelente en la mayor parte del video. A veces el video es algo lento o poco interesante. La calidad no es muy buena, pero el resultado es interesante. La calidad del video y el resultado no son muy buenos. T"
+                },
+                {
+                  "criterio": "Temporalización",
+                  "puntos": 10,
+                  "descripcionNiveles": "Entregado en forma y tiempo, completo y previas para corregir. Entregado en forma y tiempo y completo. Entregado en forma y tiempo, pero incompleto. Entregado fuera de tiempo. 21 Tramitación Aduanal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "Merceología I y legislación aduanera",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Clasifica productos y mercancías conforme a sus propiedades físicas y químicas de su contexto; sus características, propiedades, materia constitutiva, usos y funciones, desde su estado original de la materia prima hasta su transformación. Reflexiona sobre los fundamentos legales de manera ética y responsable para la entrada y salida del despacho aduanero, de acuerdo con el contexto, mediante los diversos regímenes.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Merceología I",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Colabora en la evaluación de productos y mercancías considerando las propiedades físicas, químicas, materia constitutiva, usos y funciones que establece el Sistema Armonizado, con una actitud de cuidado al ambiente.",
+          "actividadClave": "A través de la actividad el estudiantado comprende la importancia de la clasificación y evaluación de sustancias peligrosas, aprendiendo sobre sus propiedades físicas, químicas e impacto en el medio ambiente, mientras desarrollan una actitud responsable en su manejo. Así mismo participan de manera responsable el uso de las mercancías peligrosas. Materiales: ● Ficha técnica. ● Ley de los impuestos Generales de Importación y Exportación (LIGIE).www.siicexcaaarem.org.mx ● Materiales para la elaboración de maqueta (cartón, pintura, pegamento, etc.). Desarrollo: ● El personal docente lleva a cabo la explicación del tema “Sustancias Peligrosas”, destacando las propiedades físicas, químicas, y de los riesgos asociados a las sustancias peligrosas. Discutir la importancia del cuidado al medio ambiente al manejar productos peligrosos. ● Se organizan en equipos de 4 a 5 integrantes. ● Se realiza la rifa de la sustancia a trabajar. ● El estudiantado ya agrupado lleva a cabo la elección de una mercancía que esté dentro del tipo de sustancia que se le asignó. ● Recopila datos importantes para llenar la ficha técnica de la mercancía. ● Ubica la mercancía dentro de una fracción arancelaria, investigan cuáles son los requerimientos por partes de la normatividad. ● Se busca cumplir con la cuestión de los pictogramas, analizar la hoja de seguridad de la mercancía y el tipo de equipo de seguridad necesario. ● Se elabora la maqueta del producto de su elección. 22 ● Organizan la exposición. ● Exponen al grupo. ● El personal docente evalúa y retroalimenta al grupo.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Legislación aduanera",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Conoce los fundamentos legales, que regulan la entrada y salida de mercancías del territorio nacional. Sugerencia de evidencia de evaluación Esta actividad permite que el estudiantado comprenda la importancia de los trámites aduaneros y fundamentos legales de importación y exportación. En equipo de 5 integrantes realizarán una investigación de cuáles son los requisitos necesarios para la importación y exportación de mercancías de acuerdo con su contexto. Deberán hacer uso de herramientas de audios y aplicaciones para compartirlo, por medio de la elaboración de QR. Materiales: Ficha técnica. Ley de los impuestos Generales de Importación y Exportación (LIGIE). www.siicex-caaarem.org.mx Materiales para la elaboración de maqueta (cartón, pintura, pegamento, etc.). Evidencia de Evaluación. Lista de cotejo para evaluar el QR NOMBRE DEL/LA ESTUDIANTE: ASPECTOS PARA EVALUAR SÍ NO VALOR % Domino del desarrollo del tema La explicación es clara, se entienden la idea que quieren proyectarse. Calidad de la imagen El estudiantado se vale de recursos tecnológicos a su alcance para elaborar el QR, este es de fácil acceso y muestra la información pertinente. Creatividad Los ya las estudiantes muestran originalidad e innovación para la elaboración del QR y se refleja en el contenido de este. Elocuencia El estudiantado es capaz de explicar de manera oral el procedimiento para la elaboración del QR, así como del contenido de este. Formato El contenido del QR se encuentra organizado, esquematizado, con buena ortografía y congruencia entre sus apartados. 24",
+          "actividadClave": "",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "Merceología II y logística del transporte",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Clasifica mercancías presentes en su contexto, de acuerdo con su naturaleza orgánica e inorgánica a partir de sus propiedades, materia constitutiva, usos y funciones, desde su estado original de la materia prima hasta su transformación, para el pago y cumplimiento de las regulaciones arancelarias o de otra naturaleza al momento de su importación o exportación. Describe el flujo de materias primas o productos semielaborados o terminados de forma ética y responsable, tomando en consideración el lugar donde se producen hasta el lugar de consumo.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Merceología II",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Conoce la clasificación arancelaria, con el propósito de identificar adecuadamente las mercancías, facilitar el proceso de revisión en las aduanas y definir los aranceles aduaneros.",
+          "actividadClave": "A través del uso de las Tics, el estudiantado comprende los diferentes tipos de mercancías que se comercializan internacionalmente, su clasificación arancelaria, las regulaciones correspondientes y los impuestos asociados; el estudiantado tendrá que ser creativo y usar recursos visuales (gráficos, tablas, imágenes) para realizar una presentación: clara y comprensible. Después de las presentaciones, habrá una ronda de preguntas y respuestas donde los y las estudiantes podrán interactuar y discutir sobre los temas presentados. Por lo tanto, es importante partir de un análisis de la naturaleza de las mercancías y desarrollar habilidades de análisis crítico sobre cómo estas actividades impactan la economía global. Las y los estudiantes jugarán un papel activo en todas las fases de la actividad: investigación, colaboración, creación de presentaciones y evaluación. Se fomentará el trabajo en equipo y la creatividad, haciendo que los estudiantes se involucren profundamente con el contenido y con la aplicación de las TIC. El estudiantado tendrá la oportunidad de interactuar en tiempo real con sus compañeros a través de las presentaciones y las discusiones posteriores, lo que les permitirá reflexionar sobre el aprendizaje compartido. Material: ● Presentación en Power Point, Canva, etc. ● Videos (YouTube o Khan Academy). ● Internet. ● Páginas oficiales de la OMC/OMA. 25 Tramitación Aduanal Desarrollo: ● Integrarse en equipo de 5 personas. ● Asignan a cada uno un tipo de mercancía (por ejemplo, productos agrícolas, maquinaria, productos farmacéuticos). ● Investigarán diferentes tipos de mercancías en comercio internacional utilizando fuentes digitales. ● Deberán investigar su clasificación arancelaria (LIGIE), regulaciones necesarias para su exportación/importación, y los impuestos que se aplica. ● Elaboran la presentación de la mercancía asignada (Power Point/Canva). ● Los y las estudiantes tendrán que ser creativos y usar recursos visuales (gráficos, tablas, imágenes) para hacer la presentación más clara y comprensible. ● Después de las presentaciones, habrá una ronda de preguntas y respuestas donde los estudiantes podrán interactuar y discutir sobre los temas presentados. ● El personal docente evaluará el conocimiento adquirido por los estudiantes sobre los tipos de mercancías y su capacidad para utilizar herramientas tecnológicas en su aprendizaje. ● Por último, realizan un formulario de retroalimentación utilizando herramientas como Google Forms.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Logística del transporte",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Clasifica por medio de la regulación pertinente a cada contexto, el envase, embalaje, los modos y medios de transporte a emplear que coadyuve a garantizar la entrega efectiva, responsable y oportuna de las diferentes mercancías a los y las clientes.",
+          "actividadClave": "En trabajo colaborativo de 5 estudiantes, deberán realizar un despacho de mercancía, utilizando el tipo y modo de transporte de la mercancía y su embalaje para que la mercancía llegue a su destino en condiciones óptimas y mostrar cotización del medio de transporte seleccionado, diseño de una ruta de distribución y sistema de monitoreo, invitando a los estudiantes a que trabajen de manera colaborativa definiendo roles, enfocados a su entorno de la región, para diseñar y coordinar el despacho de la mercancía. Material: ● Equipo multimedia. ● Pizarrón. ● Internet. ● Software especializado de simulación Global Map (software especializado en ruta terrestre). ● Leyes. ● Cañón. Desarrollo: ● Se forman equipos de trabajo colaborativo de 5 estudiantes. ● Tener acceso al laboratorio de cómputo, para integrar un expediente que cumpla con los formatos exigibles por la autoridad competente: Padrón, pedimento, Factura comercial, Conocimiento de embarque, Permisos, Certificados. ● Diseña un plan logístico de transporte, incluyendo lo siguiente: Medio de transporte, Ruta, Tiempo, Costo, Seguridad de entrega, Seguros, ruta de distribución. ● Analizar diversos tipos de materiales de empaque y embalaje utilizados en diferentes productos, para seleccionar el que se va a utilizar en el despacho de la mercancía. ● Presentar reporte final del Despacho de mercancía en Classroom en documento PDF y exponer en sesión clase por cada equipo de trabajo. 27 Tramitación Aduanal",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe Mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Integración del expediente",
+                  "puntos": 20,
+                  "descripcionNiveles": "Muestra: Padrón, pedimento, Factura comercial, Conocimiento de embarque, Permisos, Certificados. Muestra: solamente más de 4 y menos de 5 documentos que integran el expediente. Solo muestra menos de 3 documentos que integran el expediente. Muestra documentos que integran el expediente incompleto. D"
+                },
+                {
+                  "criterio": "Diseña un plan logístico de transporte",
+                  "puntos": 20,
+                  "descripcionNiveles": "Su plan logístico cumple con: medio de transporte, tiempo, costo, seguridad de entrega, seguros, ruta de distribución. Muestra: medio de transporte, costo, seguridad de entrega, ruta de distribución. Solo muestra: medio de transporte y costo. Solo muestra de su plan logístico 2 eslabones de la cadena de suministro. E"
+                },
+                {
+                  "criterio": "Embalaje",
+                  "puntos": 20,
+                  "descripcionNiveles": "Presenta embalaje a utilizar y sus medios de seguridad de acuerdo con la normatividad. Presenta embalaje a utilizar y sus medios de seguridad sin hacer. Presenta embalaje a utiliza. Presenta embalaje sin orden. I"
+                },
+                {
+                  "criterio": "Información",
+                  "puntos": 20,
+                  "descripcionNiveles": "La información está claramente relacionada con el tema principal y proporciona las actividades que deben desarrollar para el cumplimiento del despacho de la mercancía. La información está relacionada con el tema, pero solo muestra actividades a desarrollar. La información no tiene orden y le falta más de 3 eslabones de la cadena de suministro para su cumplimiento. La información no está en orden. P"
+                },
+                {
+                  "criterio": "Presentación",
+                  "puntos": 20,
+                  "descripcionNiveles": "El despacho de la Mercancía cumple con los temas a desarrollar de manera ordenada, presentado en PDF, con los requisitos de portada, introducción, índice, desarrollo, conclusión y bibliografía. El despacho de la Mercancía muestra los temas de manera ordenada, sin reportar en PDF y cumple con portada, introducción, índice, desarrollo, conclusión y bibliografía. El Despacho de la Mercancía solo muestra presentación, pero no tiene orden y la falta de 1 a 2 requisitos. El Despacho de la Mercancía no cumple con presentación. Total 28 Lista de cotejo para evaluar exposición del despacho de mercancía. Instrucciones: Con la siguiente lista de cotejo se evaluará la presentación del Power Point y desarrollo individual de los expositores, un valor de 30% de calificación. Esta presentación deberá incluir, la metodología. Nombre del tema a exponer: Hora de Inicio: Hora de Término: Valor Elementos para evaluar SÍ NO 1.- Se dieron instrucciones previas de cómo se iba a desarrollar. 2.- Su postura y actitud corporal fue adecuada. 3.- Su tono de voz y pronunciación de frases y palabras fue adecuada (no uso muletilla o frases no permitidas). 4.- El tema fue explicado con claridad. 5.- El material de apoyo fue el adecuado (incluida frases cortas pero sustanciosas e imágenes referentes al tema). 6.- El contenido del tema era el adecuado. 7.- Evito leer el material de apoyo de la pantalla. 8.- Conservó una actitud dinámica ante el grupo invitándolo a participar. 9.- Presento errores ortográficos en Power Point. 10.- Tuvo una actitud que a tu juicio no fue la adecuada. Especifica: TOTAL 29 Tramitación Aduanal Recomendaciones para el trabajo en el aula y la escuela Es importante contextualizar al estudiantado sobre los procesos históricos, económicos, culturales que se presentan de forma paralela o detrás del conocimiento científico y tecnológico, y cómo éstos influyen de forma directa en el desarrollo de la calidad de vida de una sociedad, esto con la finalidad de que puedan formular cuestionamientos, plantear y contrastar hipótesis y proponer soluciones a problemas que afectan a su comunidad. Por ello, lo que a continuación se enumera es una serie de orientaciones pedagógicas para el fomento de las competencias laborales básicas:7 ● Enfocar la acción educativa en el estudiantado y su aprendizaje. ● Tener en cuenta los aprendizajes previos del o la estudiante. ● Mostrar empatía con el estudiantado. ● Favorecer el desarrollo de habilidades socioemocionales como elemento fundamental para el aprendizaje. ● Reconocer la naturaleza social del conocimiento (enfoque comunitario). ● Establecer la transversalidad curricular (Currículum fundamental y ampliado). ● Diseñar situaciones didácticas que propicien el aprendizaje situado mediante metodologías activas. ● Entender la evaluación como un proceso formativo, continuo y permanente. ● Desarrollar estrategias de aprendizaje con enfoque de inclusión y equidad. ● Usar las Tecnologías de la Información, Comunicación, Conocimiento y Aprendizaje Digitales (TICCAD). ● Fomentar la innovación tecnológica desde un enfoque ético. 7 Subsecretaría de Educación Media Superior. (2023b). El currículum laboral en la educación media superior. SEP. 30 Rol docente El Marco para la excelencia en la enseñanza y la gestión escolar en Educación Media Superior publicado por la Unidad del Sistema para la Carrera de las Maestras y los Maestros establece el perfil que debe reunir el y la docente en Educación Media Superior, el cual consta de cinco dominios, los cuales organizan los criterios e indicadores deseables para el o la docente de la Nueva Escuela Mexicana, los cuales son: 1. Asume la identidad de su función. Desarrolla su función como agente fundamental en la formación integral del estudiantado, en un marco de inclusión y respeto a la diversidad, con la finalidad de contribuir al logro de la excelencia educativa. 2. Domina el currículo para la enseñanza y el aprendizaje. Comprende la articulación del modelo educativo con los contenidos y la transversalidad del conocimiento, considerando las características y contexto del estudiantado para el logro de los aprendizajes. 3. Planifica e implementa los procesos de enseñanza y aprendizaje. Planifica e implementa el trabajo pedagógico para generar ambientes de aprendizaje, a partir de los planes y programas de estudio, así como, de las características y contexto del estudiantado. 4. Participa en el trabajo colegiado y en las actividades colaborativas de la comunidad escolar. Contribuye a la consolidación de una comunidad escolar participativa para mejorar las actividades académicas, escolares y comunitarias. 5. Define su trayectoria de formación, capacitación y actualización para la mejora del ejercicio de su función. Reflexiona sobre su práctica, formación académica y habilidad socioemocional para orientar su trayecto formativo. 31 Tramitación Aduanal Rol del estudiantado El rol del estudiantado en el proceso educativo no se limita simplemente a recibir información y repetirla, sino que debe ser un agente activo en la construcción de su propio conocimiento y de su identidad. En este sentido, no sólo se trata de aprender a leer y escribir; implica aprender a narrar y comprender su propia vida, tanto como autor o autora de su historia personal, como testigo de su contexto social y cultural. Este proceso es fundamental para que el estudiantado se convierta en un sujeto consciente y crítico de su realidad. La educación es un motor de transformación social, pero también puede perpetuar las desigualdades existentes al tratar a todos y todas por igual sin considerar la diversidad inherente al estudiantado. La educación debe empoderarles, dándoles las condiciones necesarias para reconocer y cuestionar las desigualdades que les rodean. Si las y los estudiantes son insertados en una educación que no considera su clase, sexo, género, etnia, lengua, cultura, capacidad, condición migratoria, religión o cualquier otro aspecto de su identidad, es muy probable que se apropien de la idea de que “la escuela no es para ellos y ellas”, ya que se enfrentarían constantemente a comentarios o actitudes que les califican de incapaces, ignorantes, indolentes o inútiles terminando por creerlo y asumirlo como verdad. Esta autodesvalorización es una barrera significativa para su desarrollo ya que puede llevar a creer que el conocimiento y la sabiduría pertenecen únicamente a las y los \"profesionales\" y no reconocen el valor de su propio conocimiento y experiencia. El rol de las y los estudiantes, entonces, debe ser el de un sujeto activo que desafía y transforma estas narrativas opresivas que fomentan las desigualdades. Debe aprender a valorar su propia voz y experiencia, y a reconocer su capacidad para conocer y transformar su realidad. La educación debe ser un proceso liberador que les permita verse a sí mismos o mismas como agentes de transformación social, capaces de escribir su propia historia y de participar activamente en la construcción de una sociedad más justa y humana. 32 Tecnologías de la Información, Comunicación, Conocimiento y Aprendizaje Digital (TICCAD) La implementación de las TICCAD en la planeación didáctica representa una oportunidad para enriquecer la experiencia educativa, al facilitar el desarrollo de las habilidades, saberes y competencias digitales, potenciar la creatividad y motivación del estudiantado y favorecer la labor del profesorado. (Aprende.mx, 2022). Al transversalizar el uso de las TICCAD, se busca integrar sus herramientas de manera horizontal a lo largo de todas las Unidad de Aprendizaje Curricular, en lugar de relegarlas a un recurso sociocognitivo específico. Esto permite que las y los estudiantes desarrollen habilidades digitales de manera progresiva y coherente a lo largo de su formación académica, independientemente del área de conocimiento en la que se encuentren. No obstante, resulta crucial que la integración de las TICCAD se realice considerando las particularidades de cada plantel, su infraestructura, el nivel de competencia digital del personal docente y el estudiantado, así como los recursos disponibles. De esta manera, se garantiza que estas herramientas se utilicen de manera efectiva y se maximice su impacto en el proceso educativo. Al integrar las TICCAD en la planeación didáctica de acuerdo con las posibilidades de cada plantel, las y los docentes pueden enriquecer el proceso de enseñanza y aprendizaje, promoviendo la participación activa de sus estudiantes, fomentando el pensamiento crítico y creativo, y facilitando el acceso a una educación de excelencia para todos y todas. 33 Tramitación Aduanal Recursos didácticos Para trabajar los Módulos y Submódulos de la Formación Laboral Básica, se pueden utilizar diversos recursos, tales como: bibliográficos, materiales didácticos, aulas virtuales, simuladores, páginas web, entre otros medios digitales que puedan ser aplicados a su contexto y de acuerdo con su nivel académico que brinden experiencias mediante el uso de modelos que permitan al estudiantado llevar a cabo análisis de los distintos conocimientos. Es fundamental tener claridad sobre el propósito de la Formación, así como las competencias de formación laboral básicas que ayudarán a abordar los aprendizajes. En cuanto a los ambientes de aprendizaje, se pueden utilizar diferentes espacios: A. El aula, ya sea presencial o virtual. B. La escuela, donde se puedan realizar actividades en otros espacios. C. La comunidad, incluyendo la casa, la localidad o la región. 34 Proceso de evaluación bajo el enfoque en competencias La evaluación por competencias es un proceso que permitirá mediante la obtención de evidencias conocer el dominio de conocimientos, habilidades y actitudes socioafectivas desarrolladas por el estudiantado. Dicho proceso deberá ser formativo e integral, es decir, permitirá visualizar no solo el saber, saber hacer y saber ser, sino también el bagaje histórico y cultural lo cual permitirá al estudiantado la comprensión de la realidad social y laboral de los sectores y de la comunidad para a partir de ello lograr su intervención y aporte. Para ello lo que a continuación se presentan son los principios que orientarán el proceso de evaluación: 1. Validez: debe existir correlación entre los resultados de la evaluación y los resultados esperados en situaciones laborales reales. 2. Confiabilidad: producir resultados consistentes al evaluar en momentos diferentes y en diversos contextos. 3. Accesibilidad: facilitar el acceso a cualquier persona que pueda ser capaz de demostrar el desarrollo de la competencia. 4. Comunicación: dar a conocer previamente las condiciones en que se va a evaluar, y posteriormente, los resultados mediante la retroalimentación. 5. Equidad: evitar cualquier práctica discriminatoria, es decir, el estudiantado será evaluado bajo los mismos criterios e indicadores. 6. Flexibilidad: adaptarse a diferentes modalidades y opciones de formación, así como a las características y necesidades del estudiantado.8 Así pues para poder llevar a cabo lo aquí planteado, se propone la utilización de una amplia gama de instrumentos que permitan visualizar tanto el proceso como el resultado final del aprendizaje del estudiantado, entre los que se encuentran: rúbricas, pruebas de ejecución, portafolios de evidencias, diario de campo o bitácora, organizadores gráficos, ensayos, resolución de ejercicios y problemas, exámenes o pruebas tipo saber, exposición, método de casos, proyectos y debates o discusiones dirigidas, entre otros. De igual forma, es necesario que la evaluación contemple: ● Autoevaluación: cuando el estudiantado valora su desarrollo y la forma en que aprendió. ● Coevaluación: a través de la retroalimentación entre pares, fomentando la cooperación, la colaboración, la empatía y la crítica constructiva. 8 Subsecretaría de Educación Media Superior. (2023). El currículum laboral en la educación media superior. SEP. 35 Tramitación Aduanal ● Heteroevaluación: emitida por el personal docente en función de los conocimientos, habilidades, actitudes y valores ponderados en los instrumentos de evaluación. Finalmente, respecto a los pasos para evaluar las competencias laborales básicas, se presenta a continuación una propuesta elaborada por la Subsecretaría de Educación Media Superior (2023b), la cual ilustra la ruta a seguir y constituye una referencia para el personal docente. 36 Fuentes de consulta sugeridas Las siguientes fuentes de información constituyen sugerencias de apoyo para el abordaje de las competencias laborales, no son limitativas, ni restrictivas. El personal docente podrá hacer uso de estas y también podrá utilizar las que considere adecuadas de acuerdo con sus necesidades y contexto: Física: ● Carvajal Contreras, Máximo. (2007). Derecho Aduanero. México. Porrúa. ISBN: 9786070916717 ● Ediciones Fiscales ISEF. (2016), Compendio de Comercio Exterior. México, ISEF. ● ISBN: 9783687269496 ● Gutiérrez Delgado, Jesús Bernardo. (2018). Ley de los Impuestos Generales de Importación y Exportación. México. Tax Editores Unidos. ISBN: 9786076292013 ● Gutiérrez Delgado, Jesús Bernardo. (2013). Notas Explicativas de la Tarifa Arancelaria de la LIGIE Tomo I-II. México, Tax Editores Unidos. ISBN: 9786074405415 ● Ediciones Fiscales ISEF. (2015) Ley Aduanera y su Reglamento. México. ISEF. ISBN: 9783687268222 ● Méndez Castro, Ricardo. (2014). Contribuciones al Comercio Exterior, “Manual práctico para el cumplimiento pleno de las Obligaciones Aduaneras”. México. ISEF. ISBN: 9786074066548 ● Ugarte Romano Luis (2002) Merceología, Teoría y Práctica. México CIACI (Centro de Investigación Aduanera y de Comercio Internacional A.C.), México, Postema, ISBN 968-5227-06-3 ● Vélez Maya, Tulio. (2014). Logística Empresarial. Bogotá, Colombia. Ediciones de la U. ISBN 9789587621860 ● Cámara de Diputados del H. Congreso de la Unión, (2009) Constitución Política de los Estados Unidos Mexicanos México D.F. Diario Oficial de la Federación. ● Carmona López Juan Manuel (2005) Sistema Armonizado de Designación y Codificación de Mercancías. México, D.F. SIICEX. ISBN: 970-94680-1-4 ● Christopher Martin, (2010), Logística “Aspectos estratégicos” México, Limasa, ISBN: 978-968-18-5282-5 ● Reyes Díaz Leal Eduardo, (2017), Sistema Aduanero Mexicano 2017, México, Global Business University, ISBN: 978-607-7918-55-4 ● Rohde Ponce Andrés, (2009), Cuarto Encuentro Iberoamericano de Derecho Aduanero. (Los Tratos Internacionales en Materia Aduanera en el Entorno Mundial del Siglo XXI, México, Isef, ISBN 978-607-406-058-4 ● Salvador Mercado H., (2008), Canales de Distribución y Logística, México, Macchi, ISBN: 968-5180-03-02 37 Tramitación Aduanal ● Rohde Ponce Andrés, (2000), Derecho Aduanero Mexicano (fundamentos y regulaciones de la actividad aduanera), México, Isef, ISBN: 970-676-034-2 ● León Álex y Romero Rosa (2003) Logística del transporte marítimo. Barcelona, Marge Books, ISBN: 978-84-86684-20-X ● Carmona López José Manuel, (2007), Análisis de las Reglas Generales, Reglas Complementarias y Notas Legales de los Copolímeros, Textiles, Metales, Máquinas, Aparatos e Instrumentos y sus Partes, México, ISBN: 970-94680-0-6 Electrónica: ● Organización Mundial de Comercio. Extraído el 20 de febrero del 2018, desde: https://es.wikipedia.org/wiki/Organizaci%C3%B3n_Mundial_del_Co mercio ● Reglas de clasificación arancelaria, Extraído el 20 de febrero del 2018., desde http://tarifaenlinea.com/dof/reggral.html ● Diferentes tipos de transporte de Mercancías. Extraído el 20 de febrero del 2018., desde: https://www.tibagroup.com/mx/transporte-internacional-demercancias 38 Referencias bibliográficas ACUERDO número 09/05/24 que modifica el diverso número 09/08/23 por el que se establece y regula el Marco Curricular Común de la Educación Media Superior. Secretaría de Educación Pública. DOF. (2024) Fecha de citación [11-01-2024]. Disponible en formato HTML: https://www.dof.gob.mx/nota_detalle.php?codigo=5729564&fecha=05/0 6/2024#gsc.tab=0 Aprende.mx. (1 de mayo de 2022). TICCAD. Nueva Escuela Mexicana. Recuperado de: https://nuevaescuelamexicana.sep.gob.mx/detallerecurso/20711/ Subsecretaría de Educación Media Superior. (2023a). Progresiones de Aprendizaje del Área de Conocimientos Ciencias Sociales. SEP. https://educacionmediasuperior.sep.gob.mx/work/models/sems/Resour ce/13634/1/images/Documento%20de%20progresiones%20- %20Ciencias%20sociales%20.pdf Subsecretaría de Educación Media Superior. (2023b). El currículum laboral en la educación media superior. SEP. https://educacionmediasuperior.sep.gob.mx/work/models/sems/Resour ce/13634/1/images/CURRICULUM%20LABORAL%202023.pdf 39 Tramitación Aduanal Créditos Personal docente que elaboró Luis Enrique Agüero Beltrán Preparatoria Federal “Lázaro Cárdenas” 1/1, Tijuana, Baja California. Karina Yesenia Reyes Gutiérrez Preparatoria Federal “Lázaro Cárdenas” 1/1, Tijuana, Baja California Guadalupe Dávila Moreno Colegio de Bachilleres del Estado de Chihuahua Gildardo Torreos Mier Preparatoria Federal “Lázaro Cárdenas” 1/1, Tijuana, Baja California Personal docente que colaboró Damaris Azeneth Eugenio Garza Colegio de Bachilleres del Estado de Tamaulipas, Nuevo Laredo. Lizbeth Julieta Solís Cárdenas Colegio de Bachilleres del Estado de Tamaulipas, Nuevo Laredo. Personal académico de la Dirección General del Bachillerato Jorge Alejandro Rangel Sandoval Brenda Nalleli Durán Orozco Fanny Casas Cortés Mercedes Gabriela Castro Nava Alma Andrea Orozco Fierro Belem Ramos Cerón Héctor Franco Gutiérrez Isis Yoalit Oropeza Ledezma Miguel Hernández González Nallely Vázquez Hernández Nitzi Medina Méndez Octavio Javier García Romero Oscar Mendoza Ruiz Saúl Ramón Hernández Bocanegra Se autoriza la reproducción total o parcial de este documento, siempre y cuando se cite la fuente y no se haga con fines de lucro. 40"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "calidadExtraccion": "PARCIAL",
+  "coberturaInstrumentos": {
+    "conInstrumento": 3,
+    "total": 8
+  },
+  "avisos": [
+    "Módulo 1 submódulo 1: sin indicadores de evaluación",
+    "Módulo 2 submódulo 1: sin indicadores de evaluación",
+    "Módulo 3 submódulo 1: sin indicadores de evaluación",
+    "Módulo 3 submódulo 2: sin actividad clave",
+    "Módulo 3 submódulo 2: sin indicadores de evaluación",
+    "Módulo 4 submódulo 1: sin indicadores de evaluación",
+    "Submódulo #6 (Legislación aduanera): actividad clave incompleta"
+  ],
+  "extraidoEl": "2026-08-13T23:26:55.168Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/0JLDyljb5s-Tramitacion-aduanal.pdf"
+}

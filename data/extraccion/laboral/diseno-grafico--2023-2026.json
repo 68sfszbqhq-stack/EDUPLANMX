@@ -1,0 +1,139 @@
+{
+  "nombre": "Diseño Gráfico",
+  "slug": "diseno-grafico--2023-2026",
+  "clave": "3021600006-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "Introducción al diseño e imagen vectorial.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Identifica los fundamentos del diseño, utilizando diferentes técnicas gráficas, generando materiales visuales creativos con un programa vectorial, integrando el conocimiento y cumpliendo con las leyes de la composición aplicadas en su entorno.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Fundamentos básicos del diseño.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Identifica tanto técnicas tradicionales como digitales para reconocer elementos básicos del diseño en proyectos impresos y bocetos, con el propósito de explorar habilidades creativas y fomentar la innovación.",
+          "actividadClave": "En equipos de tres integrantes, el estudiantado analizará la importancia de los elementos básicos del diseño y su aplicación en proyectos gráficos. Para ello, diseñarán y elaborarán una composición visual en técnica libre, en la que identifiquen y apliquen estos elementos de manera acorde a las necesidades de su contexto. Material: ● Papel doble carta (a su elección dependiendo de lo que encuentren en su entorno, se sugiere papel bond, marquilla o mantequilla). ● Instrumentos de dibujo (reglas, lápices, colores, marcadores). Desarrollo: 1. Lluvia de ideas mediante una pregunta detonadora. 2. Participación activa del estudiantado en la lluvia de ideas. 3. Presentación docente de los elementos del diseño (conceptuales, visuales y de relación) y sus ejemplos aplicados. 4. División del grupo en equipos de trabajo. 5. Elaboración de bocetos. 6. Revisión docente. 7. Ajustar el diseño con base a las observaciones hechas por el docente. 8. Registro de avances por clase. 9. Entrega de trabajos. 10. Evaluación y retroalimentación docente. 13 Diseño Gráfico",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Programas vectoriales.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Utiliza herramientas tecnológicas para crear propuestas visuales simples e innovadoras dentro de su entorno.",
+          "actividadClave": "Las y los estudiantes deberán modelar en 2D y 3D las figuras proporcionadas por el personal docente, utilizando AutoCAD o SketchUp. Para ello, deberán analizar las necesidades específicas de cada figura, considerando aspectos como texturas, colores, tipo y calidad de línea, entre otros. Se recomienda el uso de herramientas de trabajo en la nube para compartir avances y facilitar sesiones de retroalimentación. Además, se fomentará la creatividad mediante la incorporación de elementos adicionales que mejoren visualmente las figuras, promoviendo así la innovación en sus diseños. 14 Material y software: ● Computadora con AutoCAD (o puede descargar App). ● (https://www.autodesk.com/mx/education/edu-software/overview#) o sketchup (https://help.sketchup.com/es/downloading-sketchup). ● Acceso a software colaborativo (Google Drive, OneDrive). Desarrollo: 1. Lluvia de ideas mediante una pregunta detonadora para determinar que herramientas tecnológicas conocen para elaborar objetos e ilustraciones. 2. Participación activa del estudiantado en la lluvia de ideas. 3. Presentación docente de algunos recursos tecnológicos que permiten crear propuestas simples en 2D Y 3D, así como ejemplos de ilustraciones elaboradas con ello. 4. Análisis y elección de herramienta tecnológica simple que se encuentre de fácil acceso para el estudiantado de acuerdo con su contexto. 5. Presentación de interfaz de pantalla y principales herramientas. 6. Práctica simultánea de las herramientas. 7. Creación de un nuevo archivo y configuración de espacio de trabajo. 8. Dibujar la base de las figuras en dos y tres dimensiones. 9. Añadir detalles de diseño innovadores. 10. Aplicar materiales y texturas para visualizar el modelo. 11. Ajustar el modelo con base a las observaciones hechas por el docente. 12. Exportar el modelo en PDF. 13. Exposición digital de ilustraciones. 14. Evaluación y retroalimentación docente.",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Legalidad empresarial y mercadotecnia",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Analiza los conceptos de la teoría del color siendo consciente y responsable con los significados y emociones que pueden evocar para proponer diseños gráficos de impacto visual de acuerdo con las necesidades de su contexto. Así mismo, distingue la historia y relevancia de la tipografía en el diseño, las características y su aplicación con el fin de integrarlos de forma crítica a productos editoriales.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Teoría del color.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Reconoce algunas aplicaciones básicas del color de manera ética en la generación de mensajes visuales en su contexto.",
+          "actividadClave": "De manera individual, cada estudiante deberá elaborar un círculo cromático creativo, desarrollando un diseño propio que fomente la innovación y la creatividad, conservando la esencia y la correcta distribución de los colores, ya que el círculo cromático sirve como base para el análisis de las propiedades del color. Material: ● Cartón escolar tamaño doble carta (dependiendo del que puedan conseguir en su contexto, se sugiere: ilustración, cascarón de huevo o caple). ● Pinturas acrílicas (rojo, amarillo, azul, blanco, negro). ● Pincel delgado y mediano. ● Godete o base para realizar mezclas. ● Bote con agua. ● Servilletas o trapo para secado de pincel. Desarrollo: 1. Plática grupal sobre cómo el color impacta en las personas y en su estado de ánimo. 2. Participación activa del estudiantado en la plática. 3. Presentación docente sobre el color, su clasificación y propiedades. 4. Práctica de combinaciones de colores primarios, secundarios y terciarios. 5. Elaboración de círculo cromático creativo, con un diseño propio de cada estudiantado, sin perder la esencia ni distribución de colores del círculo cromático. 6. Registro de avances por clase. 7. Entrega de trabajos. 8. Evaluación y retroalimentación docente. 16",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Tipografía y productos editoriales",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Participa en la elaboración de propuestas de diseño utilizando clasificaciones tipográficas para expresar ideas simples y generar proyectos editoriales básicos.",
+          "actividadClave": "En equipos de cinco integrantes, el estudiantado deberá diseñar y elaborar un periódico escolar gigante, utilizando las principales tipografías. Cada equipo analizará las necesidades específicas de su contexto escolar y de la sección del periódico que le haya sido asignada. Se fomentará el trabajo colaborativo y la creatividad mediante la incorporación de elementos de diseño y el uso estratégico del color en la tipografía. Material: ● Papel 90x60 (dependiendo de lo que tengan en su contexto, se sugiere papel bond, manila, estraza). ● Marcadores diversos. ● Instrumentos de dibujo (reglas, escuadras, compás, etc.). ● Lápices de dibujo. Desarrollo: 1. Formar equipos de trabajo (5 integrantes). 2. Investigar los formatos que se utilizan en los periódicos. 3. Definir el diseño del periódico. 4. Definir la información e ilustraciones a realizar. 5. Realizar un boceto a lápiz, tamaño carta, para afinar detalles del diseño. 6. Revisión docente. 7. Ajustar el diseño con base a las observaciones hechas por el personal docente. 8. Elaboración de la sección del periódico asignada. 9. Añadir detalles de diseño innovadores: adornos, colores, ilustraciones. 10. Exposición en el pórtico de la escuela. 11. Evaluación y retroalimentación docente. 17 Diseño Gráfico",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "Producción de imagen y comunicación.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Resuelve problemas de imagen de forma crítica con las diferentes técnicas empleadas en proyectos de carácter publicitario, haciendo uso de las técnicas de expresión gráfica y las herramientas de edición para desarrollar proyectos de calidad que puedan ser difundidos de forma digital o impresa.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Comunicación gráfica",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Aplica principios de la sintaxis de la imagen para resolver problemas gráficos simples en la vida cotidiana aportando ideas básicas.",
+          "actividadClave": "En equipos de tres integrantes, el estudiantado deberá rediseñar y elaborar un pictograma. Cada equipo analizará las necesidades específicas de su contexto escolar, considerando que los pictogramas serán utilizados como medio informativo dentro del plantel. Se fomentará el trabajo colaborativo y la creatividad mediante la incorporación de elementos de diseño, así como el uso del color y las tipografías. Material: ● Papel doble carta (dependiendo del que puedan conseguir en su contexto, se sugiere: ilustración, cascarón de huevo o caple). ● Marcadores diversos. ● Instrumentos de dibujo (reglas, escuadras, compás, etc.). ● Lápices de dibujo. Desarrollo: 1. Formar equipos de trabajo (3 integrantes). 2. Elección de pictograma a rediseñar. 3. Realizar un boceto a lápiz, tamaño carta, para afinar detalles del diseño. 4. Revisión docente. 5. Ajustar el diseño con base a las observaciones hechas por el personal docente. 6. Elaboración del pictograma. 7. Añadir detalles de diseño innovadores: adornos, colores, tipografías. 8. Exposición de pictogramas en el plantel. 9. Evaluación y retroalimentación docente. 19 Diseño Gráfico",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Ventas y difusión.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Colabora en el desarrollo de propuestas de difusión utilizando herramientas tecnológicas y manuales, mostrando un entendimiento básico del entorno económico y social.",
+          "actividadClave": "En equipos de cinco integrantes, el estudiantado deberá organizarse para capturar una fotografía representativa de su plantel. Cada equipo analizará las necesidades específicas de su contexto escolar con el objetivo de lograr una imagen atractiva y significativa. Se fomentará el trabajo colaborativo y la creatividad mediante la edición de la imagen en Adobe Photoshop o en un programa similar. Durante este proceso, el estudiantado podrá ajustar fondos, agregar tipografías y retocar iluminaciones y colores para mejorar la composición visual. Material y software: ● Computadora con Adobe Photoshop (es posible utilizar cualquier otro programa similar para la edición de imágenes). ● Teléfono celular con cámara. Desarrollo: 1. Formar equipos de trabajo (5 integrantes). 2. Analizar el plantel escolar y deliberar las posibles áreas a fotografiar. 3. Toma de fotografías. 4. Elección de la fotografía más atractiva. 20 5. Crear un nuevo archivo en Adobe Photoshop e insertar la fotografía elegida. 6. Realizar retoques a la imagen (fondo, iluminación y colores). 7. Aplicar texto correspondiente. 8. Exportar el modelo para impresión (de no tener posibilidades de imprimir, enviar el diseño al correo proporcionado por el docente o subirlo a Classroom). 9. Exposición en el pórtico de la escuela de las fotografías obtenidas. 10. Realizar coevaluación entre los integrantes de los equipos.",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "Proyectos de difusión.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Desarrolla un envase, empaque y soporte publicitario (display) de un producto, utilizando las herramientas tecnológicas, fundamentos del diseño, el color y la tipografía, teniendo en cuenta los principios de la elaboración de productos y su impacto con el medio ambiente de acuerdo con el Manual de estilo (Brief), desarrollando un trabajo ético de forma colaborativa.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Productos de difusión masiva.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Utiliza los requerimientos del Manual de estilo (brief) para abordar una problemática visual simple de un producto de manera adecuada.",
+          "actividadClave": "De manera individual, cada estudiante deberá elaborar un brief sobre un evento representativo que se llevará a cabo en su plantel, como un aniversario escolar, baile de reyes, concurso de baile, carrera deportiva, entre otros. Se fomentará la innovación y la creatividad mediante la incorporación de elementos decorativos, el uso estratégico del color, imágenes y tipografías, con el fin de crear un documento visualmente atractivo y bien estructurado. Material y software: La realización de dicho brief puede realizarse de dos formas: ● Manual: Papel bond doble carta, marcadores diversos, Instrumentos de dibujo (reglas, escuadras, compás, etc) y lápices de dibujo. ● Digital: Computadora con Adobe Photoshop (es posible utilizar cualquier otro programa similar para la edición de imágenes). Desarrollo: 1. Presentación docente sobre el brief (definición, clasificación, características). 2. Análisis de ejemplos de manera grupal. 3. Participación activa del estudiantado. 4. Elección individual del evento a promocionar de acuerdo con las necesidades de su plantel. 5. Elaboración de bocetos de prueba. 6. Elaboración de brief del evento seleccionado. 7. Incorporación de elementos decorativos, gráficos, color y tipografías. 8. Registro de avances por clase. 9. Entrega de trabajos (físicos para exposición escolar, digital vía Classroom) 10. Autoevaluación del estudiantado para determinar logros. 22",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Diseño de producto sustentable.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Aplica conocimientos de diseño para generar una propuesta básica y sustentable para su entorno.",
+          "actividadClave": "En equipos de ocho integrantes, el estudiantado deberá diseñar y elaborar una lámpara funcional utilizando materiales reciclables. Cada equipo analizará las necesidades específicas de su contexto escolar para seleccionar los materiales más adecuados. Se fomentará el trabajo colaborativo y la creatividad mediante la integración de elementos de diseño, el uso del color, la funcionalidad y la reutilización de materiales reciclados, con el objetivo de crear un producto estético y sostenible. Material: ● Material para reciclar (se sugiere botellas de plástico y cartón). ● Silicón frío, tijeras. ● Cable, pinzas de corte, foco, pila cuadrada 9V, interruptor doble, cinta de aislar. Desarrollo: 1. Formar equipos de trabajo (5 integrantes). 2. Investigar las conexiones básicas para lograr que el foco prenda con la pila (ejemplo: https://www.youtube.com/watch?v=H6KFcQ9aSKc ). 3. Definir el diseño de la lámpara dependiendo de los materiales recolectados. 23 Diseño Gráfico 4. Realizar un boceto a lápiz, tamaño carta, para afinar detalles del diseño. 5. Revisión docente. 6. Ajustar el diseño con base a las observaciones hechas por el personal docente. 7. Realizar las conexiones necesarias. 8. Elaboración de la lámpara con el material para reciclar seleccionado. 9. Añadir detalles de diseño innovadores (adornos, colores). 10. Exposición en el pórtico de la escuela. 11. Evaluación y retroalimentación docente.",
+          "evidencias": []
+        }
+      ]
+    }
+  ],
+  "calidadExtraccion": "BUENA",
+  "coberturaInstrumentos": {
+    "conInstrumento": 0,
+    "total": 8
+  },
+  "avisos": [
+    "Módulo 1 submódulo 1: sin indicadores de evaluación",
+    "Módulo 1 submódulo 2: sin indicadores de evaluación",
+    "Módulo 2 submódulo 1: sin indicadores de evaluación",
+    "Módulo 2 submódulo 2: sin indicadores de evaluación",
+    "Módulo 3 submódulo 1: sin indicadores de evaluación",
+    "Módulo 3 submódulo 2: sin indicadores de evaluación",
+    "Módulo 4 submódulo 1: sin indicadores de evaluación",
+    "Módulo 4 submódulo 2: sin indicadores de evaluación"
+  ],
+  "extraidoEl": "2026-08-13T23:26:54.323Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/pXqZTxtOr6-Diseno-grafico.pdf"
+}

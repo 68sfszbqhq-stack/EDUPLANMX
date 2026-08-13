@@ -1,0 +1,309 @@
+{
+  "nombre": "Comunicación",
+  "slug": "comunicacion--2023-2026",
+  "clave": "3032100003-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "Procesos comunicativos",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Produce mensajes tanto orales como escritos para componer textos de manera metodológica y asertiva, poniendo en práctica aspectos teóricos del proceso comunicativo en contextos locales o globales.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Expresión oral",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Utiliza herramientas comunicativas básicas de manera ética en diferentes espacios de socialización, reconociendo áreas de oportunidad y fortalezas en su contexto.",
+          "actividadClave": "El estudiantado producirá discursos orales y escritos, desarrollando y aplicando destrezas de expresión oral (voz, ritmo, entonación, etc.) y escrita (identificación y procesamiento de la información de diversas fuentes, coherencia, unidad ), liderazgo, trabajo colaborativo, usando conocimientos sobre diferentes temáticas, demostrará habilidades argumentativas y comunicativas verbales como la exposición de opiniones, ideas y experiencias de manera fundamentada y coherente y no verbales como posturas, gestos, manejo de brazos, voz etc., mostrará valores como la responsabilidad, la empatía, el respeto y tolerancia entre otros; favoreciendo la escucha, el diálogo y la participación activa mediante un debate. Material: a) Investigación escrita sobre el tema a desarrollar. b) Equipo de cómputo, manejo de procesador de texto. c) Acceso a software colaborativo (Drive). d) Espacio adecuado para realizar debates (sala de usos múltiples, audiovisual o salón de clases acondicionado para la actividad a desarrollar). e) Reloj, imágenes señaléticas (Semáforo), Pódium. Desarrollo: Formar equipos de debate de 7 integrantes por tema. Pasos para desarrollar el debate: 1. Definir el tema. Ubicar la controversia a discutir. 2. Establecer las reglas, los tiempos. 3. Preparar la argumentación. Investigar sobre el tema y la postura. 4. Definir los roles. Integrar equipos. 5. Desarrollar el debate. Respetar todos los acuerdos establecidos. 6. Concluir adecuadamente. Comunicar a los participantes el análisis y las apreciaciones en voz del relator. 14",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Defensa de sus argumentos",
+                  "puntos": 20,
+                  "descripcionNiveles": "Mantiene la defensa de su postura con argumentos variados y un dominio que le permite ser flexible e improvisar con bastante rigor. Mantiene la defensa de su postura con variados argumentos y un dominio suficiente como para incorporar una idea no prevista. La defensa del tema se construye con argumentos evidentes que demuestran que no ha habido un trabajo de campo previo. Los argumentos guardan alguna relación, aunque están construidos de oídas y sin dureza. D"
+                },
+                {
+                  "criterio": "Dominio del tema",
+                  "puntos": 20,
+                  "descripcionNiveles": "Manifiesta un trabajo previo evidenciado en un dominio total del tema, completamente interiorizado y reflexionado que le permite hacer buenas valoraciones. Manifiesta un trabajo previo evidenciado en un conocimiento del tema, aunque debe seguir avanzando en las valoraciones y juicios críticos. Manifiesta Demuestra un conocimiento básico del tema desde un punto de vista expositivo, quizá memorístico o reproductivo y sin aportaciones personales auténticos. Manifiesta un conocimiento básico que le permite participar en el debate. C"
+                },
+                {
+                  "criterio": "Capacidad de escuchar a sus compañeros y compañeras",
+                  "puntos": 20,
+                  "descripcionNiveles": "Escucha atentamente las intervenciones de los compañeros y las compañeras y sigue las reglas para el intercambio comunicativo, analizando sus argumentos, mostrando respeto y consideración por las ideas, sentimientos y emociones de los demás. Escucha a sus compañeros y compañeras y analiza sus argumentos. Escucha a sus compañeros y compañeras, mostrando dificultad en el análisis de sus argumentos. Participa en el debate, aunque necesita algunas instrucciones para respetar ideas o las normas de intercambio, así como para analizar e incorporar argumentos de las y los compañeros. R"
+                },
+                {
+                  "criterio": "Respeto del uso de la palabra y de las ideas de los demás",
+                  "puntos": 20,
+                  "descripcionNiveles": "Aplica y tiene interiorizadas las normas sociales de comunicación: escucha activa, turno de palabra, participación respetuosa, adecuación a la intervención del Interlocutor y ciertas reglas de cortesía. En alguna ocasión hay que recordarle las las normas sociales de comunicación. En varias ocasiones hay que recordarle las las normas sociales de comunicación. De manera frecuente hay que recordarle las las normas sociales de comunicación: escucha activa, turno de palabra. V"
+                },
+                {
+                  "criterio": "Vocabulario",
+                  "puntos": 20,
+                  "descripcionNiveles": "Utiliza un vocabulario preciso de acuerdo a las ideas expuestas, incorporando nuevas palabras y perspectivas desde la escucha y las intervenciones de los demás. En general, el vocabulario utilizado se adecúa a las ideas expuestas, así como en las intervenciones. Prevalece un lenguaje coloquial con algunas palabras adecuadas a las ideas expuestas. Integra un vocabulario básico que se destaca en un guion o esquema que utiliza para sus intervenciones. 15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Teoría de la comunicación",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Participa en la creación de contenidos en diferentes formatos para favorecer la comunicación asertiva, desarrollando un pensamiento crítico básico ante diversas modalidades de comunicación en su entorno.",
+          "actividadClave": "El estudiantado analiza y construye mensajes estructurados empleando las metodologías comunicativas, desarrollando un pensamiento crítico, reflexivo e interpretativo de la información, evaluando y utilizando diversos textos, identificando los elementos, estructuras y funciones que conforman un texto, con objetividad y flexibilidad a la diversidad de puntos de vista considerando el contexto y el medio en el que se genere el mensaje, permitiendo que se desarrollen competencias comunicativas y pensamientos estructurados ,habilidades tales como el reconocimiento y la jerarquización de ideas; la capacidad para resumir; la revisión de la información; la construcción de hipótesis; y la socialización de puntos de vista, considerando el texto y las imágenes; mediante la actividad de Análisis de contenido. Desarrollo: a) Seleccionar un texto. b) Uso de la técnica de comprensión lectora. c) Definir la metodología de análisis de contenido (funcionalista, estructuralista o funcional-estructural). d) Definición del objetivo a alcanzar. e) Facilitar una participación comunicativa a partir de la expresión de ideas y contrastar puntos de vista contradictorios o similares. 16",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Análisis y construcción del mensaje",
+                  "puntos": 20,
+                  "descripcionNiveles": "Desarrolla un análisis profundo, estructurado y coherente del mensaje, empleando metodologías comunicativas con precisión. Presenta un análisis adecuado y estructurado del mensaje, aunque con algunas omisiones en la metodología. El análisis es superficial y muestra deficiencias en la estructura y aplicación de metodologías. No presenta un análisis claro ni estructurado; falta coherencia y aplicación de metodologías. P"
+                },
+                {
+                  "criterio": "Pensamiento crítico y reflexivo",
+                  "puntos": 20,
+                  "descripcionNiveles": "Evalúa la información con un alto nivel de reflexión y crítica, considerando diferentes perspectivas y contextualización. Presenta una reflexión adecuada y considera algunas perspectivas, aunque con menor profundidad. Su análisis muestra poca reflexión crítica y limitada consideración de perspectivas. No evidencia pensamiento crítico ni reflexión en el análisis. I"
+                },
+                {
+                  "criterio": "Identificación de elementos, estructuras y funciones del texto o del producto",
+                  "puntos": 20,
+                  "descripcionNiveles": "Reconoce y explica con precisión los elementos, estructuras y funciones que conforman el texto. Identifica correctamente los elementos y funciones del texto, aunque con algunas imprecisiones. Presenta dificultades para identificar elementos clave o los describe de manera ambigua. No identifica adecuadamente los elementos ni su función dentro del texto. J"
+                },
+                {
+                  "criterio": "Jerarquización y síntesis de ideas",
+                  "puntos": 20,
+                  "descripcionNiveles": "Ordena y prioriza ideas de manera clara y lógica, elaborando síntesis precisas y pertinentes. Presenta una jerarquización adecuada, aunque con leves fallas en la estructura o síntesis. Muestra dificultades en la organización y síntesis de ideas, con algunas inconsistencias. No jerarquiza ideas ni elabora síntesis claras. C"
+                },
+                {
+                  "criterio": "Construcción de hipótesis",
+                  "puntos": 20,
+                  "descripcionNiveles": "Plantea hipótesis bien fundamentadas, con argumentos sólidos y basadas en el análisis del contenido. Formula hipótesis adecuadas, aunque con menor profundidad o fundamentación. Sus hipótesis son vagas o poco sustentadas. No presenta hipótesis o estas son incoherentes. 17"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Material visual con fines persuasivos",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Emplea planes integrales de promoción a través de mensajes visuales impresos y digitales de carácter masivo, favoreciendo el desarrollo creativo, reconociendo la interculturalidad del entorno.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Publicidad y propaganda",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Diseña planes sencillos de promoción y publicidad para difundir información en diversos medios de comunicación, potenciando su creatividad y empleando formas de expresión acordes con su contexto.",
+          "actividadClave": "El estudiantado diseñará en equipo de 6 personas una campaña publicitaria o propagandística con la intención de modificar la actitud, percepción y/o conducta de la audiencia desarrollando y aplicando las estrategias comunicativas que conoce, capacidad de pensamiento crítico y reflexivo; fortaleciendo su habilidad de liderazgo, trabajo colaborativo, aplicación de estrategias persuasivas, socialización con diferentes audiencias tendiendo diversidad de contextos; mostrando los valores de respeto, empatía, ética, libertad e imparcialidad. Materiales: 1. Información sobre el tema. 2. Equipo de cómputo, manejo de software. Desarrollo: 1. Determinar el objetivo de la campaña. 2. Definición de público meta. 3. Diseño de mensajes. 4. Plan de medios. 18",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (4 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Sobresaliente",
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Claridad del Mensaje",
+                  "puntos": 40,
+                  "descripcionNiveles": "El mensaje de la campaña es claro, conciso y fácilmente comprensible para la audiencia objetivo. Es claro y comprensible, aunque puede haber ligeras ambigüedades o complejidades. Es comprensible, pero algunas áreas podrían generar confusión en la audiencia. Confuso y no se transmite de manera efectiva, afectando la comprensión. No hay evidencia de un mensaje claro en ninguna fase de la campaña. C"
+                },
+                {
+                  "criterio": "Creatividad y Originalidad",
+                  "puntos": 20,
+                  "descripcionNiveles": "La campaña demuestra un nivel excepcional de creatividad y originalidad en el enfoque visual y conceptual. La campaña es creativa y original, destacándose en ciertos aspectos visuales o conceptuales. Con oportunidades para innovar en ciertos aspectos. Carece de creatividad y originalidad, afectando su impacto visual y conceptual. No hay evidencia de creatividad ni originalidad en ninguna fase de la campaña. C"
+                },
+                {
+                  "criterio": "Conexión Emocional con la Audiencia",
+                  "puntos": 20,
+                  "descripcionNiveles": "La campaña establece una conexión emocional profunda con la audiencia, generando empatía y resonancia. La campaña logra una conexión emocional efectiva, aunque puede haber áreas de mejora. La conexión emocional es básica, con oportunidades para fortalecer la resonancia emocional. La campaña no logra establecer una conexión emocional efectiva con la audiencia. No hay evidencia de conexión emocional con la audiencia en ninguna fase de la campaña. C"
+                },
+                {
+                  "criterio": "Coherencia y Consistencia",
+                  "puntos": 20,
+                  "descripcionNiveles": "La campaña mantiene una coherencia y consistencia visual y temática en todos sus elementos. La campaña es coherente y consistente en su mayoría, aunque puede haber ligeras variaciones. La coherencia y consistencia son básicas, con algunas áreas que podrían mejorarse. La campaña carece de coherencia y consistencia, afectando la percepción global. No hay evidencia de coherencia ni consistencia en ninguna fase de la campaña. 19"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Diseño gráfico",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Colabora en la creación de mensajes visuales simples, identificando necesidades básicas de su contexto para resolver problemáticas de manera creativa.",
+          "actividadClave": "El estudiantado en colaboración con los integrantes de su equipo conformados por 5 o 6 educandos, aplicando y fortaleciendo sus conocimientos de comunicación y diseño , realizarán mensajes visuales simples observando su entorno(escuela, comunidad, redes sociales) y detectar una problemática que pueda resolverse con un mensaje visual (ej. contaminación, bullying, inclusión, salud mental etc.)para abordar problemáticas de su contexto, con el fin de que los jóvenes desarrollen empatía , sensibilidad, y tolerancia además del respeto en su comunidad escolar así como con la población en general brindando crecimiento intelectual y personal. Material: 1. Área equipada con equipo de cómputo, software, mesas de trabajo. Desarrollo: 1. Realizar una investigación sobre el impacto del problema y posibles soluciones. 2. Determinar el medio de difusión (cartel, redes sociales, folleto, infografía, historia de Instagram). 3. Elegir un público objetivo (jóvenes, comunidad escolar, padres de familia, redes sociales). 4. Redactar un mensaje claro y conciso que ayude a sensibilizar o informar sobre la problemática elegida. 5. Presentación y retroalimentación. 20",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (6 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Identificación de la problemática",
+                  "puntos": 10,
+                  "descripcionNiveles": "Identifica claramente una problemática relevante en su entorno y la justifica con evidencia. Identifica una problemática relevante, pero la justificación es limitada. La problemática es poco clara o general, con poca relación con el entorno. No se identifica una problemática clara o es irrelevante."
+                },
+                {
+                  "criterio": "Creatividad e innovación",
+                  "puntos": 10,
+                  "descripcionNiveles": "El mensaje visual es altamente creativo, innovador y original en su diseño y concepto. Presenta creatividad y originalidad, aunque con algunos elementos convencionales. El mensaje es poco creativo o reutiliza ideas comunes. Falta de creatividad, sin elementos innovadores."
+                },
+                {
+                  "criterio": "Colaboración en equipo",
+                  "puntos": 20,
+                  "descripcionNiveles": "Se evidencia una excelente cooperación, integración y equidad en la participación de todos los integrantes. La colaboración es buena, aunque algunos miembros tienen menor participación. Participación desigual en el equipo, con poca integración. No hay trabajo en equipo efectivo; algunos integrantes no participan."
+                },
+                {
+                  "criterio": "Aplicación de conocimientos de comunicación y diseño",
+                  "puntos": 20,
+                  "descripcionNiveles": "Aplica de manera efectiva y pertinente los principios de comunicación visual y diseño. Aplica conocimientos básicos de comunicación visual y diseño, aunque con algunas fallas. Presenta errores en la aplicación de los principios de comunicación y diseño. No aplica principios básicos de comunicación visual ni diseño."
+                },
+                {
+                  "criterio": "Impacto y pertinencia del mensaje",
+                  "puntos": 20,
+                  "descripcionNiveles": "El mensaje es claro, persuasivo y pertinente para la problemática abordada. El mensaje es adecuado, pero le falta claridad o fuerza persuasiva. El mensaje es poco claro o no logra transmitir su propósito de manera efectiva. El mensaje no es pertinente o no se comprende."
+                },
+                {
+                  "criterio": "Sensibilización y promoción de valores",
+                  "puntos": 20,
+                  "descripcionNiveles": "Refleja empatía, sensibilidad y fomenta valores de respeto y tolerancia. Promueve valores positivos, aunque con menor impacto. Presenta valores, pero de manera superficial o poco evidente. No promueve valores claros o puede transmitir un mensaje inadecuado. 21"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "Productos informativos con impacto masivo",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Construye productos audiovisuales en diferentes formatos, utilizando herramientas tecnológicas favoreciendo y promoviendo la apertura a la diversidad en el contexto social.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Periodismo",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Reconoce fuentes de información básicas que den cuenta sobre fenómenos naturales, sociales, económicos, históricos o políticos, respetando la diversidad cultural y mostrando apertura a diferentes puntos de vista.",
+          "actividadClave": "El estudiantado en trabajo colaborativo de 10 integrantes elaborarán un medio informativo periodístico impreso o digital, fortaleciendo sus conocimientos y acrecentando sus habilidades comunicativas verbales y no verbales en la elaboración de géneros periodísticos, mostrando ética, imparcialidad, colaboración, objetividad y respeto con el público al que se dirige el proyecto y con su equipo de trabajo fortaleciendo sus capacidades de liderazgo y compañerismo; capacidad de análisis ,reflexión, y tolerancia ante la diversidad de opiniones . Material: 1. Información documental y electrónica sobre géneros periodísticos. 2. Equipo y manejo de cómputo y programas. 3. Espacio físico adecuado para el desarrollo del proyecto (sala de cómputo, mesas de trabajo. Desarrollo: 1. Selección de medio. 2. Redacción y selección del material a publicar. 3. Diseño del producto. 4. Distribución del producto. 5. Análisis y reflexión del impacto del producto. 22",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Contenido y relevancia",
+                  "puntos": 20,
+                  "descripcionNiveles": "Los artículos y contenido del periódico son altamente relevantes para la comunidad escolar, abordando temas de interés y actualidad. El contenido es relevante y de interés general, pero podría haber una mayor profundidad en algunos artículos. Adecuado, pero carece de profundidad o relevancia en algunos casos. Poco relevante y carece de interés general. C"
+                },
+                {
+                  "criterio": "Calidad de la escritura",
+                  "puntos": 20,
+                  "descripcionNiveles": "La escritura en el periódico es de alta calidad, con una redacción precisa, gramática adecuada y estilo periodístico efectivo. La escritura es buena, pero podría haber algunas mejoras en términos de precisión y estilo. Aceptable, pero contiene algunos errores de gramática o estilo. Deficiente y dificulta la comprensión. D"
+                },
+                {
+                  "criterio": "Diseño",
+                  "puntos": 20,
+                  "descripcionNiveles": "El diseño del periódico es atractivo y profesional, con un diseño equilibrado y efectivo. El diseño es adecuado y atractivo, pero podría haber algunas mejoras en términos de equilibrio y organización. Básico o poco atractivo. Deficiente y dificulta la lectura. V"
+                },
+                {
+                  "criterio": "Variedad de fuentes",
+                  "puntos": 20,
+                  "descripcionNiveles": "El periódico utiliza una variedad de fuentes confiables y entrevistas para respaldar los artículos, lo que aumenta la credibilidad. Se utilizan fuentes confiables y algunas entrevistas para respaldar los artículos. Limitadas y podrían ser más confiables en algunos casos. Escasas y poco confiables. D"
+                },
+                {
+                  "criterio": "Diseño gráfico e imágenes",
+                  "puntos": 20,
+                  "descripcionNiveles": "El uso de gráficos, imágenes y fotografías es excepcional y mejora significativamente la presentación visual del periódico El uso de gráficos e imágenes es bueno y complementa el contenido de manera efectiva. El uso de gráficos e imágenes es básico y podría ser más efectivo. Deficiente y no mejora la presentación visual. 23"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Radio",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Integra elementos básicos del lenguaje sonoro para crear mensajes radiofónicos sencillos que persuadan a las y los oyentes de diferentes contextos.",
+          "actividadClave": "El estudiantado en equipos de 5 a 6 integrantes aprovechando su conocimiento y el uso estratégico de las herramientas tecnológicas diseñará, redactará y producirá un programa de radio en donde se promuevan mensajes radiofónicos promoviendo la inclusión en distintos ámbitos (social, educativo, laboral, etc.), utilizando los elementos del lenguaje sonoro (voz, música, efectos y silencios) compartiendo los conocimientos adquiridos con temáticas de actualidad de género: juvenil musical, social, deportivo etc. desarrollando las habilidades tecnológicas adquiridas apoyando esto al estudiante a desenvolverse académica, profesional y laboralmente fortaleciendo valores esenciales como compartir y colaborar, el respeto y la tolerancia ante la diversidad así como también los valores éticos, estéticos, entre otros. Material: 1. Cabina o espacio acondicionado para grabar. 2. Equipo de cómputo con micrófono, programas para grabar y editar (software de audio, con Audacity o adobe), acceso a internet. 3. Micrófono unidireccional y/omnidireccional, pedestal, audífonos. 4. Mesa, sillas. Desarrollo: a) Investigar sobre los temas para iniciar el proceso de preproducción, escucha y analiza mensajes radiofónicos sobre inclusión y otros ámbitos. b) Define el mensaje y el público objetivo. c) Selección del género radiofónico. d) Redacción del guion radiofónico en formato adecuado (narrador, diálogos, efectos, música). e) Producción del programa. f) Graba las voces con buena dicción y entonación. g) Asegurarse que el mensaje sea claro, persuasivo y significativo. h) Agregar efectos sonoros y música para reforzar el mensaje. i) Edita el audio garantizando coherencia y calidad. j) Proceso de postproducción. k) Comparte los mensajes en clase o en plataformas escolares. l) Reflexiona sobre la efectividad del mensaje y su impacto social. m) Discute cómo la radio puede influir en la construcción de una sociedad más inclusiva. 24",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "Mensajes audiovisuales en distintos contextos",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Produce mensajes (internos y externos) para una organización pública o privada, mediante la generación de propuestas creativas y críticas con el uso adecuado de la tecnología audiovisual para lograr los objetivos de ésta cumpliendo con las necesidades del entorno.",
+      "submodulos": []
+    }
+  ],
+  "calidadExtraccion": "BUENA",
+  "coberturaInstrumentos": {
+    "conInstrumento": 5,
+    "total": 6
+  },
+  "avisos": [
+    "Módulo 3 submódulo 2: sin indicadores de evaluación"
+  ],
+  "extraidoEl": "2026-08-13T23:26:54.011Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/FEbkDn7Bo2-Comunicacion.pdf"
+}

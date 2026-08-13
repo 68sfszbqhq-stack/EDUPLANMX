@@ -1,0 +1,220 @@
+{
+  "nombre": "Laboratorista Clínico",
+  "slug": "laboratorista-clinico--2023-2026",
+  "clave": "3095300003-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "Introducción al laboratorio clínico",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Apoya en la organización de materiales, reactivos, equipo y residuos biológico-infecciosos del laboratorio clínico, siguiendo la normatividad nacional e internacional vigente, para colaborar en su funcionamiento de manera ética y responsable.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Normatividad del laboratorio clínico",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Aplica las normas nacionales e internacionales vigentes siguiendo procedimientos establecidos para apoyar la operatividad de un laboratorio clínico.",
+          "actividadClave": "En equipos de 4 las y los estudiantes elaboran un cuadro de forma digital referente a las normas nacionales e internacionales que se aplican en el laboratorio clínico, la actividad se basa en el trabajo colaborativo y de equipo, además se practica la comprensión lectura y análisis de Normas Oficiales Mexicanas (NOM) para su aplicación en todas las etapas de análisis clínico (preanálisis, análisis y post análisis). Durante el desarrollo de la actividad la (el) docente guiara el avance de este y realiza las observaciones pertinentes a los equipos. Al finalizar el cuadro cada equipo lo presentará en una sesión para comparar los puntos de importancia y retomar su aplicación en el campo laboral. Material: 1. Archivo electrónico o copias de las NOM: NOM - 087 - ECOL SSA1 2002, NOM - 007 - SSA3 2011, NOM 010 SSA2 1993, NOM 012 STPS 1999, NOM 005 STPS 1998, NMX EC 15189 IMNC 2015. 2. Computadora por equipo con paquetería de office. 3. Libreta para tomar notas. Desarrollo: 1. Integrar equipos mixtos de 4 – 5 estudiantes. 2. Contar con el material en copias o electrónico de las NOM antes mencionadas por equipo. 3. Se asignará una norma a cada equipo para hacer más ágil la actividad. 4. Cada equipo debe revisar de la siguiente forma: leer detenidamente y analizar los puntos de mayor importancia de la norma. 5. Cada integrante del equipo debe compartir su opinión u observaciones para el llenado completo del cuadro. 6. Cuando cada equipo termine, el (la) docente guiará a las y los estudiantes para compartir la información y completar el cuadro. 7. Al finalizar la actividad se pide por equipo que de acuerdo con la norma revisada expresen su aplicación dentro del laboratorio clínico. 14 Ej. De cuadro: NOMBRE DE LA NORMA (NACIONAL O INTERNACIONAL) PUNTOS CLAVE QUE ABORDA LA NORMA IMPORTANCIA DEL CONOCIMIENTO Y APLICACIÓN EN EL LABORATORIO CLÍNICO OPINIÓN DE LA IMPORTANCIA DE SEGUIMIENTO PUNTUAL DE LA NORMA (CONSIDERANDO LA BIOÉTICA) OPINIÓN y/o SUGERENCIA REFERENTES A LA NORMA",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Material y equipo de laboratorio clínico",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Organiza los distintos materiales y equipos de laboratorio clínico de acuerdo con su clasificación para su uso en las diversas áreas mediante trabajo colaborativo.",
+          "actividadClave": "Las y los estudiantes integrados en equipos mixtos realizarán una investigación donde plasmarán de forma gráfica los diversos tipos de materiales y el equipo de laboratorio, haciendo énfasis en su clasificación de acuerdo con el tipo y el uso en distintas áreas. En el producto final de esta actividad, los equipos incorporan la información solicitada para formar un álbum de consulta con la información y las imágenes correspondientes. Material: 1. Libros de texto y enciclopedias científicas. 2. Artículos y fuentes digitales (revistas científicas, páginas web especializadas). 3. Fotografías e ilustraciones de diferentes tipos de materiales y equipos de laboratorio. 4. Software de edición de imágenes o presentación (si se opta por un álbum digital). Desarrollo de la actividad: 1. Formación de equipos. 2. Los equipos investigarán los diferentes tipos de materiales y equipos utilizados en laboratorios. Esta investigación incluirá: o La clasificación de los materiales según su tipo (metales, plásticos, vidrio, etc.) y su uso (medición, protección, conservación, etc.). o El análisis de equipos de laboratorio (microscopios, termómetros, matraces, etc.) y su uso en diferentes áreas científicas. o Recopilación de imágenes ilustrativas de los materiales y equipos investigados, ya sea a través de internet, libros, o fotografías tomadas por las y los estudiantes. 3. Elaboración del álbum de consulta: o Cada equipo organizará la información recopilada y la presentará de manera gráfica. El álbum deberá incluir: ▪ Una clasificación visual de los materiales y equipos, con imágenes y descripciones breves. ▪ Información sobre el uso específico de cada material o equipo en diferentes ramas de la ciencia. ▪ Una breve explicación de las propiedades de los materiales y su importancia en los laboratorios. 4. Presentación: o Al final de la actividad, los equipos presentarán su álbum de consulta a la clase. Durante la presentación, cada equipo explicará las categorías y tipos de materiales y equipos que han investigado, así como los usos más comunes en su área correspondiente. 16",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Operatividad del laboratorio clínico, anatomía y fisiología.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Asiste en la operación del equipo de laboratorio para desarrollar técnicas de análisis clínicos, haciendo uso de manuales y conduciéndose con responsabilidad ética; además, relaciona las funciones del cuerpo humano con conocimientos básicos de biología para apoyar en el diagnóstico de enfermedades.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Operación de material y equipo de laboratorio clínico.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Asiste en la operación de materiales y equipos de laboratorio con responsabilidad, haciendo uso adecuado de los manuales para el desarrollo de técnicas de análisis clínicos.",
+          "actividadClave": "Las y los estudiantes analizarán los manuales de operatividad para posteriormente realizar una guía de uso de los siguientes equipos de laboratorio clínico: a) Balanza granataria. b) Balanza analítica. c) Microscopio óptico. d) Centrifuga. e) Autoclave. f) Espectrofotómetro. Desarrollo: 1. Integrados en equipos diversos, a cada uno se les asignará la revisión de un manual de operatividad de cada equipo (uno diferente para cada caso). 2. Cada equipo expondrá a la clase la forma correcta del funcionamiento del equipo de laboratorio que le fue asignado. 3. Los equipos elaborarán un manual de uso de cada uno de los equipos de laboratorio. 4. El o la docente presenta escenarios en los que se cometen errores comunes en el uso del equipo de laboratorio. Las y los estudiantes deberán identificarlos, explicarlos y proponer soluciones basándose en los manuales de uso que los mismos equipos elaboraron, de este modo la evaluación será no solo heteroevaluación si no que permitirá la reflexión y análisis en la coevaluación y autoevaluación. 18",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (4 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "ÓPTIMO",
+                "ADECUADO",
+                "SUFICIENTE",
+                "DEBE MEJORAR"
+              ],
+              "criterios": [
+                {
+                  "criterio": "PUNTAJE Precisión de la información",
+                  "puntos": 30,
+                  "descripcionNiveles": "La información es correcta, basada en los manuales y sin errores. Cubre todos los aspectos técnicos relevantes del equipo asignado (funcionamiento, mantenimiento, medidas de seguridad, etc.). Se demuestra un alto nivel de comprensión sobre el uso y las precauciones necesarias. Presenta información correcta, con mínimos errores. Se cubren los puntos más relevantes, pero con mayor detalle se podría mejorar. Tiene algunos errores que pueden generar confusión en el uso del equipo y no cubre todos los aspectos importantes del manual. Contiene información incorrecta o insuficiente sobre el funcionamiento o las precauciones necesarias. O"
+                },
+                {
+                  "criterio": "Organización y estructura",
+                  "puntos": 20,
+                  "descripcionNiveles": "Está bien estructurado con portada, índice, los pasos necesarios para usar correctamente el equipo, medidas de seguridad, resolución de problemas comunes e imágenes claras. Está organizado, aunque algunos detalles menores pueden estar ausentes o no tan bien organizados. Falta organización o claridad en algunos puntos y tiene secciones faltantes. Está incompleto, desorganizado o contiene errores importantes en la información sobre el uso del equipo. R"
+                },
+                {
+                  "criterio": "Responsabilidad en el trabajo",
+                  "puntos": 20,
+                  "descripcionNiveles": "El equipo cumple con los plazos, sigue los lineamientos, todos participan activamente en la investigación, creación y exposición, demostrando un excelente manejo del tiempo. El equipo entrega a tiempo, aunque con pequeños descuidos en detalles y algunos pueden haber tenido una mayor carga de trabajo que otros. El equipo entrega con retraso o muestra falta de compromiso en algunos aspectos. El equipo no cumple con los plazos o las instrucciones dadas. Hay poca participación de algunos miembros. P"
+                },
+                {
+                  "criterio": "Presentación visual y diseño",
+                  "puntos": 30,
+                  "descripcionNiveles": "El diseño es atractivo, con imágenes, diagramas y formato claro. Fácil de leer. El diseño es adecuado, con algunos elementos gráficos, aunque podría mejorar. El diseño es poco llamativo o con errores de formato. El diseño se aprecia descuidado, sin imágenes o poco legible. Observaciones: 19 Laboratorista Clínico"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Características y funcionamiento del cuerpo humano",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Relaciona las características y funciones del cuerpo humano con conocimientos básicos de biología para apoyar el diagnóstico de enfermedades en un laboratorio clínico.",
+          "actividadClave": "Se integran en equipos de 4 personas las y los estudiantes para realizar una investigación sobre los aparatos y sistemas del cuerpo humano. La (el) docente asigna con un listado previo el aparato o sistema a revisar, de cada uno de estos se indaga por órgano su estructura (anatomía), funcionamiento (fisiología) y las enfermedades más frecuentes (haciendo énfasis en las presentadas por la población mexicana). Después de revisada la investigación (los puntos mencionados anteriormente) guiados por la o el docente, se procede a elaborar un lapbook por cada equipo. Al término de la actividad se colocan los lapbook para compartir con todo el grupo y reflexionar sobre la importancia del diagnóstico oportuno por medio de pruebas de laboratorio y el chequeo cada determinado tiempo dependiendo del sexo y edad de la persona. Desarrollo: 1. Integrados en equipos (de preferencia mixtos) las y los estudiantes realizan una investigación sobre los aparatos y sistemas del cuerpo humano, cada equipo solo realiza uno. 2. La asignación de los temas será por parte del o la docente, previo listado de estos. Se asignarán por sorteo. 3. Dentro de la investigación con al menos 3 fuentes (bibliográficas o electrónicas confiables) se deben abordar los siguientes aspectos: Estructura (anatomía) de los órganos que componen el aparato o sistema, Funcionamiento (fisiología) de los órganos y enfermedades más recurrentes (de ser posible sobre todo enfatizar en la población mexicana). 4. La investigación debe ser colaborativa así, como el producto clave de esta. 5. Ya revisada la investigación por el (la) docente, se procede a elaborar un lapbook por cada equipo. 6. El día de entrega del lapbook cada equipo lo comparte con todo el grupo colocándolo en el aula para revisión de los demás equipos. 7. También se asignará un equipo para coevaluar la actividad entre ellos. Nota: Un lapbook es un libro de cartulina que se utiliza para presentar la información acerca de un tema. Dentro de un lapbook ponemos solapas, ventanitas, fotos enganchadas, pequeños libros, sobres que contienen información y todo tipo de elementos para exponer un tema en concreto 20",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "Análisis y bacteriología clínica",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Asiste en la toma y procesamiento de muestras del cuerpo humano, aplicando técnicas de laboratorio supervisadas para clasificar bacterias de importancia médica, siguiendo lineamientos establecidos y considerando el código de bioética para contribuir al diagnóstico clínico de enfermedades relevantes.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Análisis clínicos en el cuerpo humano",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Asiste en diversas técnicas de toma de muestras del cuerpo humano, para su procesamiento y análisis en el laboratorio clínico aplicando el código de bioética.",
+          "actividadClave": "En equipos de 3 estudiantes, se elaborará un manual electrónico de recopilación de tomas de muestras del cuerpo humano, para lo anterior el o la docente tendrá un listado de las tomas de muestra más comunes del cuerpo humano abordando esto por aparatos y sistemas, los cuales serán: ● Tejido sanguíneo. ● Aparato respiratorio. ● Sistema digestivo. ● Sistema cutáneo. ● Aparato reproductor masculino y femenino. ● Sistema nervioso. De cada sistema y aparato se investigarán las técnicas de tomas de muestras más comunes, por ejemplo, del tejido sanguíneo: toma de muestra de sangre venosa y arterial, punción capilar y tamiz neonatal. Es necesario agregar algunas consideraciones necesarias en la toma de muestras, y también las imágenes que apoyen la explicación. Por otra parte, es importante integrar la parte bioética de cada toma de muestra biológica al paciente para genera una reflexión al respecto. Posteriormente, este manual será utilizado para llevar a cabo algunas de las técnicas investigadas. Desarrollo: 1. Las y los estudiantes se integran en equipos de 3 para asignar una técnica de toma de muestra de algún aparato o sistema del cuerpo humano. 2. Una vez que el o la docente haya asignado la técnica de toma de muestra a investigar, les explicará los puntos que deben considerar en la investigación para cada toma de muestra. Los puntos para integrar en cada técnica son: o Título de la técnica (Ej. Punción capilar) 22 o Fundamento científico. Donde se explicará para que se realiza esa técnica o en que apoya al diagnóstico clínico. o Material (en forma de listado). Incluir en este apartado reactivos u otras sustancias a requerir. o Procedimiento. Describir paso a paso como se realiza la toma de muestra, si es necesario integrar alguna fórmula o cómo se calcula lo observado o cuantificado en cada determinación. o También se deben agregar las imágenes necesarias para ilustrar el material y procedimiento a seguir en la toma de muestra. 3. Para obtener la información necesaria se debe consultar algún manual de toma de muestra (mínimo deben ser 3 referencias por técnica de toma de muestra), la información puede provenir de referencias físicas y/o electrónicas. 4. El o la docente guiara a cada equipo con las observaciones necesarias acorde a la técnica asignada ara que se cumplan los puntos solicitados. 5. Ya que los equipos tengan su información completa iniciara el vaciado a un programa de paquetería por ejemplo Word o en otra plataforma de diseño como Canva. 6. Para el formato del manual el o la docente dará las indicaciones de tamaño de fuente, tipos de fuente, etc. 7. Las técnicas investigadas se ordenarán conforme la muestra que se obtenga; Ej. Sangre (toma de sanguínea venosa y capilar, punción capilar y tamiz neonatal). 8. Ya que toda la información del grupo este en un archivo, se aplicarán los elementos de diseño que hagan falta, como escudos del plantel, interlineado, etc. 9. Finalmente, frente al grupo se presentará el manual proyectando para conocer todo su trabajo y esfuerzo, y se explicará cómo será utilizado en las sesiones posteriores.",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (7 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "ÓPTIMO",
+                "ADECUADO",
+                "SUFICIENTE",
+                "DEBE MEJORAR"
+              ],
+              "criterios": [
+                {
+                  "criterio": "ORDEN DE LA INFORMACIÓN",
+                  "puntos": 10,
+                  "descripcionNiveles": "El texto está organizado de forma que permite una fácil lectura y sigue un orden lógico. Están bien diferenciadas todas las partes que integran el manual mediante elementos tipográficos. El texto está organizado, pero no sigue un orden lógico. Están diferencias la mayoría de las partes que integran el manual mediante elementos tipográficos. El texto no está organizado en la mayoría y no tiene un orden lógico. No se diferencian bien las partes que integran el manual mediante los elementos tipográficos. El texto no está organizado y no tiene orden lógico."
+                },
+                {
+                  "criterio": "CONTENIDO DE LA INFORMACIÓN",
+                  "puntos": 10,
+                  "descripcionNiveles": "La información está completa y bien sintetizada, sigue el orden solicitado por el(la) docente para la técnica asignada. La información está completa, pero no sigue el orden solicitado por el(la) docente de la técnica asignada. La información está incompleta, no tiene el orden solicitado, aunque si es la técnica asignada. La información está incompleta y no tiene el orden solicitado además la técnica no es la asignada. ORTOGRAFÍA Y REDACCIÓN (10 puntos No existen faltas de ortografía, la puntuación es correcta. La redacción es correcta y se comprende el texto. Presenta 2 faltas de ortografía, la puntuación es correcta en la mayoría del texto. Se dificulta un poco la comprensión del texto. Presenta más de 3 faltas de ortografía, la puntuación es incorrecta. La lectura del texto es muy difícil de leer. Presenta más de 5 faltas de ortografía, la puntuación es incorrecta. La lectura del texto no puede realizarse. 23 Laboratorista Clínico"
+                },
+                {
+                  "criterio": "SINTAXIS",
+                  "puntos": 10,
+                  "descripcionNiveles": "Se han utilizado correctamente los tiempos verbales y las oraciones son breves y están bien construidas. Se utilizan de forma correcta los tiempos verbales, las oraciones no son cortas, pero están bien construidas. Algunos verbos no se utilizan de forma correcta en su tiempo, las oraciones no son cortas ni están bien construidas. Los tiempos de los verbos no se utilizan de forma correcta, las oraciones no son cortas ni están bien construidas."
+                },
+                {
+                  "criterio": "SELECCIÓN DE IMÁGENES",
+                  "puntos": 10,
+                  "descripcionNiveles": "Todas las imágenes seleccionadas son de gran claridad y se utilizan de manera adecuada para apoyar la explicación de cada técnica. De las imágenes seleccionadas 2 no son claras pero el texto que las acompaña es acertado y cuidado. Dentro de las imágenes seleccionadas más de 3 no son claras y el texto que las acompaña no es acertado ni bien cuidado. En las imágenes seleccionadas todas no son claras, y el texto que las acompaña no es acertado ni cuidado."
+                },
+                {
+                  "criterio": "PRESENTACIÓN",
+                  "puntos": 20,
+                  "descripcionNiveles": "La técnica de toma de muestra asignada se presenta de acuerdo con lo solicitado por el (la) docente en cuanto a forma y secuencia. La técnica de toma de muestra se presenta de acuerdo con lo solicitado solo en forma, pero la secuencia no está correcta. La técnica de toma de muestra no está presentada de acuerdo con los solicitado ni en la secuencia requerida. La técnica de toma de muestra no se presenta de acuerdo con lo solicitado, ni en la secuencia. La técnica está equivocada."
+                },
+                {
+                  "criterio": "CONSIDERACIONES ÉTICAS",
+                  "puntos": 20,
+                  "descripcionNiveles": "Se aborda de manera reflexiva y clara la parte bioética relacionada con cada técnica de toma de muestra, considerando el bienestar del paciente y la importancia del consentimiento informado. Se mencionan las consideraciones éticas, pero no se profundiza mucho en ellas. Las consideraciones éticas son superficiales o no están bien desarrolladas. No se abordan las consideraciones éticas o son mínimas."
+                },
+                {
+                  "criterio": "TRABAJO COLABORATIVO",
+                  "puntos": 10,
+                  "descripcionNiveles": "En la investigación de la técnica asignada todo el equipo colabora y todos opinan para el desarrollo del manual. En la investigación de la técnica asignada no participan un integrante del equipo, pero si opina para su terminación. En la investigación no participan 2 integrantes del equipo y tampoco opinan para su terminación. La investigación la realiza un solo integrante del equipo y los demás no opinan para la finalización de la actividad. Observaciones:"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Bacteriología clínica",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Apoya en técnicas de aislamiento bacteriológico bajo supervisión para la diferenciación de bacterias y el procesamiento de muestras, actuando con responsabilidad.",
+          "actividadClave": "En equipos, se realiza la técnica de aislamiento de siembra por estría, sobre un medio de cultivo solido adecuado dispuesto en una placa de Petri. La técnica de siembre por estría permite obtener colonias individuales de microorganismos a partir de una muestra, el objetivo es diluir la carga microbiana de forman que las células queden separadas y puedan desarrollar colonias independientes. Con esta práctica el estudiantado podrá diferenciar los distintos tipos de colonias que existen y las bacterias que las forman. Material: ● Placa de Petri con medio de Cultivo. ● Asa de siembra o asa bacteriológica. ● Cultivo de muestra. ● Estufa de laboratorio. ● Mechero Bunsen. ● Agua Destilada. ● Rotulador permanente. ● Papel secante. ● Guantes de Látex. Desarrollo: El estudiantado ingresa al laboratorio clínico portando debidamente su bata y equipo de protección necesaria. Se organizan en equipos de 8 integrantes formados por afinidad, cada equipo cuenta con el material necesario para realizar la práctica y bajo la supervisión y con apoyo de la(el) docente se procede a realizar lo siguiente: 1. Esterilizar el asa. 2. Colocar una pequeña cantidad de muestra, con un asa de platino y se reparte sobre el medio de cultivo en la placa de Petri. 3. Distribuir la muestra sobre la superficie del medio de cultivo. 4. Dibujar las estrías con el asa. 5. Quedando separadas e inmovilizadas las células bacterianas, se incuban en condiciones adecuadas, para que en cada célula viable se origine una colonia visible, cada colonia bacteriana tiene sus características determinadas en cuanto a su forma, borde, elevación, tamaño y consistencia. 6. Las colonias pueden ser opacas, translucidas o transparentes, algunas producen pigmentos, otras aparecen con superficie pulverulenta, otras son lisas o rugosas o poseen anillos concéntricos, en ocasiones el olor es también característico, ejemplo la colonia de serratia tiene aspecto mucoso y comienza a pigmentar en la parte central. 25 Laboratorista Clínico",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "Parasitología y micología clínica",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Registra las características de parásitos y hongos de importancia médica, utilizando técnicas de laboratorio supervisadas y aplicando conocimientos básicos de diagnóstico clínico, cumpliendo medidas de seguridad e higiene.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Parasitología clínica",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Registra las principales características de los parásitos para apoyar en el reconocimiento de enfermedades de interés clínico, siguiendo lineamientos establecidos.",
+          "actividadClave": "En equipos, realiza la técnica de coproparasitoscópico directo con una o más muestras de heces duras o pastosas. El objetivo de la actividad es identificar formas parasitarias intestinales, huevos de helmintos o quistes de protozoarios de manera macroscópica o microscópica, algunos parásitos que se pueden encontrar son giardia lamblia, entamoeba histolytica, ascaris lumbricoides para conocer si tiene una infección parasitaria del tracto gastrointestinal (amibiasis). Material: 1. Muestra de materia fecal recolectada en un frasco estéril. 2. solución Salina isotónica al 0.85% estéril. 3. Lugol (solución yodada). 4. Abatelenguas. 5. Portaobjetos. 6. Cubreobjetos. 7. Cubrebocas y guantes. 8. Microscopio. Desarrollo: El estudiantado ingresa al laboratorio clínico portando debidamente su bata y equipo de protección necesaria, en equipos de 6 formados por afinidad, cada equipo cuenta con el material necesario para realizar la práctica y bajo la supervisión y con apoyo de la(el) docente se procede a realizar lo siguiente: 1. Depositar una gota de solución salina o Lugol en un portaobjetos. 2. Abrir el frasco donde se encuentra la muestra. 3. Homogenizar la muestra con la ayuda de un abatelenguas o agitador de madera. 4. Tomar aproximadamente 2 mg con la punta del abatelenguas o el agitador de madera. 5. Mezclar la muestra en la solución salina y luego en el Lugol. 6. Colocar un cubreobjeto sobre cada gota. 27 Laboratorista Clínico 7. Leer el montaje en el microscopio en busca de parásitos intestinales. Al finalizar las y los estudiantes identifican las características generales de los parásitos de acuerdo con su clasificación, virulencia y ciclo biológico, y explican la importancia de los parásitos de interés clínico, de acuerdo con la clasificación de las enfermedades causadas por estos agentes.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Micología clínica",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Aplica técnicas de laboratorio supervisadas aplicando conocimientos básicos de diagnóstico clínico micológico, cumpliendo medidas de seguridad e higiene.",
+          "actividadClave": "En equipos de 5 integrantes, las y los estudiantes realizan la técnica de raspado de uña con Hidróxido de potasio (KOH). Esta técnica consiste en tomar una muestra de las uñas, para identificar infecciones superficiales por hongos. El objetivo de la práctica es que el estudiantado aprenda a reconocer los diferentes tipos de hongos que pueden causar enfermedades en el ser humano. Materiales: 1. Bisturí romo o lancetas. 2. Placas de Petri. 3. Pinzas sin dientes. 4. Tijeras o corta uñas. 5. Guantes, mascarillas y gafas. 6. Portaobjeto. 7. Cubreobjeto. 8. Alcohol al 70% 9. Gasas. 10. Agua destilada. 11. KOH-potasa caustica. 12. Mechero bunsen. 13. Glicerol o tinta Parker. 14. Microscopio. Consideraciones previo a la práctica: ● Cepillar las uñas con agua y jabón 3 veces al día los 3 días previos a la toma de la muestra. ● Realizar un baño con sal la noche anterior. ● Retirar el esmalte o laca de todas las uñas. Desarrollo: El estudiantado ingresa al laboratorio clínico portando debidamente su bata y equipo de protección necesaria, en equipos de 5 integrantes formados por afinidad, cada equipo cuenta con el material necesario para realizar la práctica y bajo la supervisión y con apoyo de la o el docente se procede a realizar la misma. 1. Previo a la toma de la muestra se debe realizar una limpieza y desinfección de la zona afectada utilizando una gasa estéril impregnada con alcohol al 70%. 2. Despegar la lámina ungueal. 3. Raspar con el bisturí bajo la lámina ungueal hasta llegar a la zona dolorosa. 4. Cortar con una tijera fina y curva o con un cortaúñas los fragmentos de uña afectada. 5. Recoger el material obtenido en una placa de Petri. 29 Laboratorista Clínico Preparación de la Muestra: 1. Con una pipeta se aplica una gota de disolución en el portaobjeto y se depositará la muestra en el portaobjeto. 2. Se tapa con un cubreobjeto y se extenderá de forma homogénea, presionando suavemente para deshacer las burbujas de aire. 3. Se elimina el exceso de disolución con una gasa. 4. Se espera que el KOH elimine la queratina, este proceso se puede acelerar calentando la muestra suavemente con un mechero bunsen. 5. Aplicar colorante tinta Parker o azul de lactofenol para visualizar mejor los hongos. 6. Visualización de la muestra en el microscopio con el objetivo de 10 y posteriormente una vez localizado las hifas se estudiarán con objetivos de 40 aumentos. 7. Las levaduras se visualizarán como elementos esféricos u ovalados, los hongos miceliales se verán como hifas hialinas o pigmentadas, tabicadas o no de diámetro irregular según el hongo que corresponda. Al finalizar las y los estudiantes identifican las características generales de los hongos de acuerdo con su clasificación, virulencia y áreas del cuerpo humano que afecta, y explica la importancia de los hongos de interés clínico de acuerdo con la clasificación de las enfermedades causadas por estos microorganismos.",
+          "evidencias": []
+        }
+      ]
+    }
+  ],
+  "calidadExtraccion": "BUENA",
+  "coberturaInstrumentos": {
+    "conInstrumento": 2,
+    "total": 8
+  },
+  "avisos": [
+    "Módulo 1 submódulo 1: sin indicadores de evaluación",
+    "Módulo 1 submódulo 2: sin indicadores de evaluación",
+    "Módulo 2 submódulo 2: sin indicadores de evaluación",
+    "Módulo 3 submódulo 2: sin indicadores de evaluación",
+    "Módulo 4 submódulo 1: sin indicadores de evaluación",
+    "Módulo 4 submódulo 2: sin indicadores de evaluación"
+  ],
+  "extraidoEl": "2026-08-13T23:26:54.745Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/6OaSb0nh9d-Laboratorista-Clinico.pdf"
+}

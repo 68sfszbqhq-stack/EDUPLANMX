@@ -1,0 +1,219 @@
+{
+  "nombre": "Tecnologías de la Comunicación y la Información",
+  "slug": "tecnologias-de-la-comunicacion-y-la-informacion--2023-2026",
+  "clave": "3062300003-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "Software de aplicación",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Prepara información en documentos electrónicos mediante programas de aplicación, para resolver diferentes tipos de problemas presentes en su entorno, en donde se permita transmitir información de forma congruente, coherente y organizada.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Gestión de archivos de texto",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Integra información digital mediante la creación de documentos electrónicos, empleando software de aplicación, como procesadores de textos y editor de imágenes de manera responsable y creativa en ámbitos laborales, escolares y de la vida cotidiana.",
+          "actividadClave": "En equipos de cuatro integrantes, el estudiantado elaborará un cuestionario utilizando la herramienta Google Forms. Este cuestionario será compartido con sus compañeros y compañeras para recopilar información sobre sus hábitos de estudio. Una vez obtenidos los datos, deberán: 1. Generar un documento de texto digital con el análisis de la información recabada. 2. Elaborar una presentación electrónica que muestre los resultados obtenidos. La presentación deberá incluir voz, imágenes y audio, con el objetivo de convertirla en un video explicativo. 3. Cada miembro del equipo tendrá un rol definido como diseñador o desarrollador, asegurando una distribución equitativa del trabajo. Finalmente, los resultados se publicarán en Blogger y/o en un sitio web creado con Google Sites. Material y equipo: 1. Computadora con conexión a internet. 2. Acceso a software colaborativo (Google Drive, Forms, Documentos de texto, presentaciones electrónicas, correo electrónico de Gmail). Desarrollo: 1. Formar equipos de trabajo (3-4 integrantes). 2. Investigar sobre hábitos de estudio. 3. Diseñar las preguntas del cuestionario. 2. Elaborar el cuestionario. 3. Compartir el cuestionario. 4. Descargar las respuestas. 5. Clasificar las respuestas. 15 Tecnologías de la Información y la Comunicación 6. Elaborar el documento de texto con los resultados, darle formato al documento (Portada prediseñada, Tabla de contenido, encabezado y pie de página, imágenes, notas, citas, estilos para: Títulos, subtítulos, texto, Lista y tablas). 7. Subir el documento a Sites de Google. 8. Elaborar una presentación electrónica con los mismos datos del documento. 9. Añadir voz propia. 10. Añadir imágenes. 11. Añadir música. 12. Guardar el archivo como .pptx y como mp4. 13. Subir los archivos a Sites de Google. 14. Publicar el sitio y compartirlo con sus compañeros y docente.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Hoja de cálculo aplicado",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Prepara información a través de la manipulación de datos y fórmulas, elaborando gráficos en una aplicación de hoja de cálculo, resolviendo de manera creativa e innovadora, situaciones en diversos ambientes y contextos.",
+          "actividadClave": "En equipos de cuatro integrantes, el estudiantado creará un cuestionario en Google Forms, el cual será compartido con sus compañeros para recopilar información sobre sus hábitos de estudio. Con los datos obtenidos, deberán generar reportes estadísticos utilizando funciones estadísticas y gráficos dinámicos en una hoja de cálculo. Estos elementos serán incluidos como objetos vinculados en un documento y una presentación electrónicos, permitiendo su modificación directa desde la aplicación de hojas de cálculo. Cada integrante del equipo asumirá un rol definido como diseñador o desarrollador, asegurando una distribución equitativa del trabajo. 17 Tecnologías de la Información y la Comunicación Finalmente, los resultados serán publicados en Blogger y/o en un sitio web creado con Google Sites. Material y equipo: 1. Computadora con conexión a internet. 2. Acceso a software colaborativo (Google Drive, Forms, Documentos de texto, presentaciones electrónicas, correo institucional). Desarrollo: 1. Formar equipos de trabajo (3-4 integrantes). 2. Investigar sobre hábitos de estudio. 3. Diseñar las preguntas del cuestionario. 4. Elaborar el cuestionario. 5. Compartir el cuestionario. 6. Descargar las respuestas. 7. Clasificar las respuestas. 8. Aplicar diferentes filtros a los datos y realizar reportes con ellas. 9. Aplicar funciones como promedio, máximos, mínimos, buscarv, buscarh, media, mediana, moda. 10. Generar gráficos por grupo. 11. Generar gráficos por actividad. 12. Generar gráficos dinámicos por grupo. 13. Elaborar un documento donde se muestren los datos y los gráficos. 14. Los gráficos dinámicos insertarlos como objeto. 15. Subir los archivos a Sites de Google. 16. Publicar el sitio y compartirlo con sus compañeros y docente.",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Hardware y comunicaciones",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Integra comunidades virtuales con la intención de generar la interacción del estudiantado, utilizando software social y educativo favoreciendo un ambiente de comunicación incluyente y ético dentro de su entorno personal, profesional y educativo. Desarrolla habilidades para resolver problemas de operación en el equipo de cómputo, aplicando diferentes tipos de mantenimiento, empleando diferentes conexiones para las redes de cómputo, trabajando con responsabilidad y tolerancia a la frustración en los ámbitos organizacionales, educativos y de la vida cotidiana.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Comunidades virtuales.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Plantea el uso, creación y administración de plataformas electrónicas de consulta, comunicación y distribución de contenidos multimedia, proponiendo comunidades virtuales que le permitan comunicarse en un ambiente innovador en diferentes contextos.",
+          "actividadClave": "En equipos de tres integrantes, el estudiantado elegirá un tema para desarrollar una campaña publicitaria orgánica en redes sociales con el objetivo de construir una comunidad virtual en torno a dicho tema. Cada equipo creará dos empresas: 1. Cliente (empresa que necesita la publicidad). 2. La agencia de publicidad en medios (encargada de generar los contenidos y gestionar la campaña). Fases de la actividad: 1. Planificación y propuesta: ● La agencia de publicidad diseña un portafolio creativo, que incluye la estrategia visual y de contenido. ● Elabora un plan de trabajo, especificando las redes sociales a utilizar y la cantidad de publicaciones mensuales. ● Presenta un presupuesto, detallando el costo del servicio. 2. Aprobación e implementación: ● Cliente (representado por el personal docente) revisa la propuesta y el presupuesto. ● Una vez aprobados, la agencia inicia la campaña, realizando las publicaciones conforme al plan. 20 3. Evaluación de resultados: ● Se mide el éxito de la campaña en función del número de likes, seguidores o interacciones obtenidos. ● Cada equipo publica su campaña y los resultados en Google Sites y los presenta ante el grupo. Material y equipo: 1. Computadora con conexión a internet. 2. Cuenta de correo del equipo, cuenta en Facebook, instagram, tiktok. Desarrollo: 1. Formar equipos de 3 integrantes. 2. Elegir un tema para crear una campaña publicitaria orgánica en redes sociales y construir una comunidad virtual alrededor del tema. 3. Se crearán 2 empresas una es la del cliente y la otra es la empresa de publicidad en medios, que será la encargada de generar los contenidos en redes. 4. La empresa de publicidad elabora un portafolio creativo (de publicidad). 5. La empresa de publicidad elabora un plan de trabajo donde señala las redes y la cantidad de publicaciones que realizará mensualmente. 6. La empresa de publicidad elabora un presupuesto señalando lo que se cobrará por el servicio. 7. Se elabora una propuesta para el cliente (docente). 2. Se elabora una carta donde se acepta la propuesta y el presupuesta. 3. Se inicia la campaña haciendo las publicaciones que aparecen en la propuesta. 4. Se muestran las publicaciones. 5. Se muestran los resultados. 6. Se muestra la interacción con los seguidores. 7. Se muestran los likes. 8. Se muestran las vistas. 9. Se muestran los comentarios. 10. Se comparten las publicaciones y los link al docente. 11. Se elabora un reporte de los resultados. 12. Se publica el reporte en Sites de Google. 13. Se socializan los resultados a los compañeros y docente.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Mantenimiento y redes de cómputo.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Propone acciones correctivas para los problemas de operación del equipo de cómputo, mediante la aplicación de mantenimiento preventivo de acuerdo con las especificaciones del fabricante, prolongando la vida útil del equipo, mostrando responsabilidad e iniciativa en diversos ámbitos.",
+          "actividadClave": "En equipos de tres integrantes, el estudiantado elaborará un video demostrativo donde mostrarán el proceso de mantenimiento preventivo de una computadora. Contenido del video: 1. Mantenimiento de hardware: ● Limpieza de la carcasa y el teclado con aire comprimido. ● Apertura de la carcasa y reconocimiento de los componentes de la tarjeta madre, señalando su nombre, funcionalidad y capacidad. ● Instalación de la memoria RAM. ● Cierre del CPU y conexión del teclado y la pantalla. 2. Mantenimiento de software y memoria: ● Explicación y ejecución de tareas básicas de optimización del sistema. ● Uso de herramientas para liberar espacio y mejorar el rendimiento. 3. Conexión de red: ● Cada integrante elaborará un cable de red. ● Se conectarán los cables a un switch, verificando su correcto funcionamiento. Trabajo colaborativo: Durante la grabación, el estudiantado se alternará en las siguientes funciones: ● Grabar el video. ● Realizar físicamente el mantenimiento. ● Explicar verbalmente cada acción y describir las características de los dispositivos. 23 Tecnologías de la Información y la Comunicación Material y equipo: 1. Computadoras. 2. Compresor o aire comprimido en botella, paño suave, pulseras antiestáticas, alcohol isopropílico. 3. Celular con aplicación de grabadora de video. Desarrollo: 1. El estudiantado en equipos se coloca junto al equipo de cómputo al que van a realizarle el mantenimiento, comienzan a grabar el video. 2. Se realiza la presentación. 3. Realizan las siguientes actividades de manera alterna, participando en los 3 roles. 4. Limpieza física del equipo: a. Apagar la computadora y desconectarla. b. Limpiar el teclado, la pantalla, y el ratón con un paño suave. c. Limpiar el interior de la carcasa (con aire comprimido) para eliminar el polvo acumulado en los ventiladores, disipadores y componentes internos. Esto ayuda a prevenir el sobrecalentamiento. 5. Verificación del sistema de refrigeración: a. Comprobar que los ventiladores y disipadores de calor funcionen correctamente. b. Asegurarse de que no haya obstrucciones que impidan una correcta circulación de aire. 6. Revisión de conexiones y cables: a. Verificar que todos los cables estén bien conectados y en buen estado. b. Comprobar que no haya cables desgastados o en mal estado. 7. Comprobación del software antivirus: a. Asegurarse de que el software antivirus esté actualizado y ejecutando análisis periódicos de seguridad. b. Revisar que no haya programas maliciosos o software no deseado (adware). 8. Actualización de software y controladores: a. Mantener el sistema operativo y las aplicaciones actualizadas. b. Revisar que los controladores de hardware (tarjetas gráficas, sonido, red, etc.) estén actualizados. 9. Revisión de espacio en disco y rendimiento: a. Liberar espacio en disco eliminando archivos innecesarios (como temporales y caché). b. Comprobar la integridad del disco duro o SSD y realizar desfragmentación si es necesario (en el caso de discos duros HDD). c. Optimizar el arranque del sistema eliminando programas innecesarios que se inician automáticamente. 10. Backup o copia de seguridad: a. Hacer copias de seguridad periódicas de los archivos importantes para evitar pérdidas de datos. 11. Verificación de la memoria RAM: a. Ejecutar herramientas de diagnóstico para comprobar que la memoria RAM esté funcionando correctamente. 12. Conectan el cable de red a un switch y verifican que la conexión si funciona. 13. Editan el video y lo presentan en clase. 24",
+          "evidencias": [
+            {
+              "nombre": "Escala de estimación (9 rasgos)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [
+                {
+                  "numero": 1,
+                  "texto": "Limpieza física del equipo Se revisa la limpieza de las partes externas de la computadora, incluyendo el teclado, la pantalla, el ratón y la carcasa. Limpieza completa de todas las partes externas. Limpieza parcial de las partes externas. No se realiza la limpieza."
+                },
+                {
+                  "numero": 2,
+                  "texto": "Limpieza interna del equipo Uso de aire comprimido o herramientas adecuadas para eliminar el polvo de los componentes internos (ventiladores, disipadores, etc.). Limpieza completa y adecuada del interior del equipo. Limpieza incompleta o incorrecta. No se realiza la limpieza interna."
+                },
+                {
+                  "numero": 3,
+                  "texto": "Verificación del sistema de refrigeración Revisión de ventiladores y disipadores de calor, asegurándose de que estén funcionando correctamente. Revisión completa y adecuada de los sistemas de refrigeración. Revisión parcial o incorrecta. No se realiza revisión."
+                },
+                {
+                  "numero": 4,
+                  "texto": "Comprobación de las conexiones y cables Inspección visual de los cables y puertos, asegurando que no haya cables sueltos o dañados. Inspección completa y adecuada de conexiones. Inspección parcial o inadecuada. No se realiza inspección."
+                },
+                {
+                  "numero": 5,
+                  "texto": "Revisión de software antivirus y actualizaciones Asegurarse de que el software antivirus esté actualizado y ejecutando análisis, así como verificar las actualizaciones del sistema operativo. Verificación completa de antivirus y actualizaciones. Verificación incompleta. No se realiza verificación."
+                },
+                {
+                  "numero": 6,
+                  "texto": "Revisión del espacio en disco y rendimiento Liberación de espacio en el disco duro y optimización del rendimiento del sistema (desfragmentación, eliminación de archivos innecesarios). Optimización completa del espacio y rendimiento. Acciones parciales. No se realiza ninguna acción."
+                },
+                {
+                  "numero": 7,
+                  "texto": "Copia de seguridad (Backup) Realización de copias de seguridad de archivos importantes. Se realiza una copia de seguridad completa. Se realiza una copia de seguridad parcial. No se realiza copia de seguridad."
+                },
+                {
+                  "numero": 8,
+                  "texto": "Conectan el cable de red a un switch Conectan el cable al switch y verifican su buen funcionamiento. Conectan correctamente y el cable funciona. Conectan el cable con corrección, no funciona correctamente. No conectan el cable."
+                },
+                {
+                  "numero": 9,
+                  "texto": "Editan y entregan el video El video se entrega de manera digital en Drive, editado correctamente. Se entrega en drive, editado y completo. No se edita correctamente, pero se entrega en drive. No se entrega de manera digital en drive."
+                }
+              ],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Debe mejorar"
+              ],
+              "criterios": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "Desarrollo de sistemas",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Plantea soluciones críticas y responsables mediante la metodología de desarrollo de software para demostrar eficiencia en el manejo de base de datos y software de programación de alto nivel, que sean aplicables a necesidades de una empresa o institución para el tratamiento de información.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Sistemas de información",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Propone el diseño de sistemas de información, a partir del análisis de las necesidades de los usuarios, permitiendo la solución de problemas de manera responsable e innovadora en diferentes contextos.",
+          "actividadClave": "En equipos de tres integrantes, el estudiantado aplicará la metodología de cascada para diseñar un Sistema de Información para Reservas de Eventos, el cual permitirá a los asistentes: ● Registrar sus datos personales. ● Elegir asientos específicos. ● Seleccionar diferentes horarios y salas. ● Realizar pagos en distintos formatos. Fases del proyecto: 1. Levantamiento de requerimientos: ● Aplicar entrevistas o encuestas para recopilar las necesidades del usuario. ● Clasificar la información obtenida para estructurar la propuesta. 2. Análisis y modelado de datos: ● Definir necesidades y especificaciones del sistema. ● Identificar entidades y atributos para la base de datos. ● Aplicar las reglas de normalización para optimizar la estructura. ● Modelar la base de datos mediante diagramas Entidad-Relación (E-R) y el modelo relacional. 3. Diseño de la interfaz de usuario: ● Utilizar Canva para crear un prototipo visual del sistema. 4. Presentación y publicación: ● Elaborar una presentación electrónica con los resultados del proyecto. ● Publicar la presentación en un sitio web de Google Sites. 26 Material y equipamiento: 1. Computadora con acceso a internet. 2. Herramientas CASE gratuitas. Desarrollo: 1. Formar los equipos de 4 personas. 2. Elaborar las entrevistas con los usuarios clave (administradores, empleados, clientes). 3. Aplicar encuestas o cuestionarios para obtener información de usuarios. 4. Identificar el flujo de trabajo y las actividades de los usuarios. 5. Elaborar los diagramas mostrando el flujo de trabajo identificado. 6. Agrupar las necesidades recopiladas en categorías o áreas funcionales (por ejemplo: gestión de inventarios, generación de informes, etc.). 7. Identificar las funcionalidades clave del sistema. 8. Analizar los requisitos de rendimiento, seguridad y usabilidad. 9. Definir la misión y visión del sistema de información. 10. Establecer objetivos claros y medibles que muestren las necesidades del usuario. 11. Crear una lista de requisitos funcionales (qué debe hacer el sistema) y no funcionales (rendimiento, escalabilidad, etc.). 12. Diseñar un diagrama de entidades y relaciones (ERD) para mostrar cómo los datos se interrelacionan. 13. Establecer los tipos de datos, estructuras de almacenamiento y las relaciones entre los diferentes elementos de información. 14. Crear prototipos de la interfaz con CANVA. 15. Definir la navegación y la organización del sistema en base a cómo los usuarios interactúan con el sistema. 16. Determinar las plataformas tecnológicas y las herramientas de desarrollo a utilizar. 17. Presentar todos los documentos generados en una presentación electrónica. 18. Subir y compartir todos los documentos en un sites Google.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Programación",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Identifica sistemas de información organizacionales mediante la codificación y compilación de instrucciones algorítmicas pertinentes utilizando lenguajes de programación y bases de datos para cumplir con los requerimientos de funcionalidad y rendimiento establecidos en el diseño de sistemas de información asumiendo la frustración como parte del proceso en ambientes laborales, educativos y de la vida cotidiana.",
+          "actividadClave": "En equipos de tres integrantes, el estudiantado aplicará la metodología de cascada para diseñar un Sistema de Información para Reservas de Eventos, el cual permitirá a los asistentes: ● Registrar sus datos personales. ● Elegir asientos específicos. ● Seleccionar diferentes horarios y salas. ● Realizar pagos en distintos formatos. Roles dentro del equipo: Cada integrante asumirá un rol específico en el desarrollo del sistema: ● Programador de la Base de Datos: Diseña y desarrolla la base de datos utilizando MySQL. ● Desarrollador de la Interfaz Gráfica: Crea la interfaz utilizando Python o Visual Studio. ● Coordinador del Proyecto: Supervisa la integración de la base de datos y la interfaz, asegurando el cumplimiento de la metodología. Fases del desarrollo (Metodología en Cascada): 1. Levantamiento de requerimientos: o Identificación de las necesidades del sistema mediante análisis y recopilación de datos. 29 Tecnologías de la Información y la Comunicación 2. Diseño de la base de datos: o Modelado de datos con diagramas E-R y aplicación de normalización. o Creación de la base de datos en MySQL. 3. Diseño y desarrollo de la interfaz gráfica: o Creación de la interfaz en Python (Tkinter, PyQt) o Visual Studio. o Integración con la base de datos para gestionar las reservas. 4. Pruebas y ajustes: o Validación de la funcionalidad del sistema. o Corrección de errores antes de la entrega final. 5. Documentación y presentación: o Elaboración de una presentación electrónica con los resultados del proyecto. o Publicación de los avances y conclusiones en un sitio web de Google Sites. Material y equipo: 1. Computadora. 2. Tkinter o PyQt. 3. XAMPP. 4. Host gratuito. Desarrollo: 1. Recoger todos los requisitos para la gestión de las reservas. 2. Crear diagramas de casos de uso y especificar las características: usuarios, horarios de reserva, cancelaciones, notificaciones. 3. Definir la estructura de la base de datos para crear el diseño de la base de datos: tablas para reservas, clientes, lugares, horarios. 2. Diseño de la interfaz gráfica para las reservas en línea y la gestión por parte del personal del restaurante. 3. Implementar las tablas en MySQL y configurar las relaciones entre las tablas. 4. Desarrollar las funcionalidades en Python para la reserva, la consulta de disponibilidad y la cancelación de reservas. 5. Crear la interfaz gráfica en Python donde los clientes pueden hacer reservas y el personal puede gestionar los lugares. 6. Probar el sistema con diferentes escenarios: reservas múltiples, cancelaciones, disponibilidad de mesas. 7. Verificar que la base de datos se actualice correctamente. 8. Resolver errores encontrados durante la fase de pruebas. 9. Actualizar el sistema según las necesidades del cliente, como agregar nuevas funcionalidades o mejorar la interfaz.",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "Software de diseño",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Diseña páginas web, animaciones multimedia, imágenes digitales e impresas, para generar productos de comunicación y publicidad en el ámbito laboral y comunitario, favoreciendo el desarrollo ético, creativo e intercultural del entorno.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Páginas web",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Colabora en la construcción de sitios web creativos y funcionales mediante software de diseño web, para transmitir información electrónica diversa a gran escala de manera responsable y empática en contextos laborales, educativos y de la vida cotidiana.",
+          "actividadClave": "En equipos de tres integrantes, el estudiantado diseñará y desarrollará un sitio web dinámico que presente información detallada sobre diversas universidades, incluyendo: ● Programas académicos. ● Requisitos de admisión. ● Ubicación en mapa. ● Categoría (pública/privada). Tecnologías a utilizar: ● HTML y CSS → Diseño y estructura visual del sitio. ● PHP y MySQL → Almacenamiento y procesamiento de datos. ● JavaScript → Dinamismo e interacción con los usuarios. Fases de desarrollo: 1. Diseño y estructura del sitio web: Creación de una página principal con una lista de 12 universidades, mostrando: ● Nombre ● Logo ● Ubicación con mapa ● Imagen de la universidad ● Categoría (pública/privada) ● Programas académicos principales Aplicación de un diseño atractivo con HTML y CSS. 2. Desarrollo de formularios interactivos: a. Formulario de registro para usuarios, solicitando: ● Nombre ● Edad 33 Tecnologías de la Información y la Comunicación ● Tres carreras de interés b. Formulario de consulta que permita buscar: ● Programas académicos específicos ● Costos ● Requisitos de admisión 10. Base de datos en MySQL: a. Creación de tablas para almacenar: ● Usuarios registrados ● Datos de tres universidades específicas ● Cinco nombres de carreras por universidad 11. Conexión e interactividad con PHP y JavaScript: a. Uso de PHP y MySQL para almacenar y gestionar las consultas de los usuarios. b. Implementación de JavaScript para mostrar dinámicamente la información desde la base de datos. 12. Publicación y pruebas: a. Subir el sitio a un host gratuito. b. Enviar la URL al docente para revisión y pruebas de funcionalidad. Material y equipo: 1. Computadora con acceso a internet. 2. Notepad++. 3. Host gratuito. Desarrollo: 1. Formar los equipos de 3 personas. 2. Crear la estructura HTML para mostrar una lista de universidades. 3. Diseñar la página de inicio con CSS para hacerla visualmente atractiva y responsiva. 2. Crear una base de datos \"universidades\" en MySQL 3. Crear una base de datos “usuarios” en MySQL con información sobre los usuarios registrados. 4. Crear un formulario de consulta para que los usuarios hagan preguntas específicas. 5. Crear un formulario de registro donde los usuarios registren datos personales. 6. Usar PHP para manejar las consultas y almacenarlas en la base de datos. 7. Utiliza JavaScript para evaluar las respuestas de los formularios. 8. Utilizar JavaScript para incluir un reloj que muestre hora y fecha 9. Desplegar la información de las universidades y programas de forma dinámica desde la base de datos. 10. Probar la funcionalidad del formulario y la base de datos. 11. Subir la página al host. 12. Compartir la URL al docente para hacer revisiones y retroalimentar.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Diseño digital",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Elabora diversos recursos gráficos publicitarios utilizando software de diseño, permitiendo su publicación en medios digitales e impresos para comunicar ideas o emociones aplicables a contextos laborales, escolares y de la vida cotidiana, en un ambiente ético e innovador, mostrando flexibilidad y apertura a diferentes puntos de vista.",
+          "actividadClave": "En equipos de tres integrantes (preferentemente los mismos del proyecto del sitio web de universidades), el estudiantado generará y optimizará las imágenes necesarias para su integración en el sitio web. Tareas a realizar: 1. Creación y optimización de logos: ● Diseñar o dar formato a los logos de las universidades. ● Ajustar el formato, resolución y tamaño para su correcta visualización en la web. 2. Edición de imágenes de las universidades: ● Optimizar fotografías de las universidades, asegurando una buena calidad y peso optimizado. ● Editar imágenes de ubicaciones y mapas para facilitar la navegación en el sitio web. 3. Uso de herramientas gratuitas: ● GIMP. ● Paint. ● Canva. ● Figma. 4. Especificación de características de las imágenes: ● Crear un sitio web en Google Sites donde se detallen los datos técnicos de cada imagen, incluyendo: ● Formato (JPEG, PNG, SVG, etc.). ● Tamaño en píxeles. ● Resolución (DPI). ● Aplicación utilizada para la edición. Materiales y equipo: 1. Computadora con acceso a internet. 2. Celular con cámara de buena resolución. 3. Gimp, Paint, canva y Figma. Desarrollo: 1. Formar el equipo. 2. Identificar mediante una lista las diferentes imágenes que se solicitan para el proyecto de páginas web “Universidades”. 3. Buscar en internet las imágenes referentes a los logos de las universidades y las fotografías de las instalaciones. 4. Generar el icono para el sitio web “Universidades” generando el archivo .ico. 37 Tecnologías de la Información y la Comunicación 5. Generar con Google Maps las ubicaciones de las universidades. 6. Editar las imágenes usando por lo menos 3 de las aplicaciones propuestas.. 7. Entregar las imágenes en el formato, tamaño y resolución adecuada para insertarse en el sitio web. 8. Entregar las imágenes generadas en forma de portafolio en drive y compartir con el personal docente. 9. Subir las imágenes al host junto con las páginas web. 10. Crear el sitio web usando Sites de Google, donde se suban las imágenes como portafolio creativo, especificando formato, tamaño, resolución y aplicación utilizada para edición.",
+          "evidencias": [
+            {
+              "nombre": "Escala de estimación (5 rasgos)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [
+                {
+                  "numero": 1,
+                  "texto": "Asume la identidad de su función. Desarrolla su función como agente fundamental en la formación integral del estudiantado, en un marco de inclusión y respeto a la diversidad, con la finalidad de contribuir al logro de la excelencia educativa."
+                },
+                {
+                  "numero": 2,
+                  "texto": "Domina el currículo para la enseñanza y el aprendizaje. Comprende la articulación del modelo educativo con los contenidos y la transversalidad del conocimiento, considerando las características y contexto del estudiantado para el logro de los aprendizajes."
+                },
+                {
+                  "numero": 3,
+                  "texto": "Planifica e implementa los procesos de enseñanza y aprendizaje. Planifica e implementa el trabajo pedagógico para generar ambientes de aprendizaje, a partir de los planes y programas de estudio, así como, de las características y contexto del estudiantado."
+                },
+                {
+                  "numero": 4,
+                  "texto": "Participa en el trabajo colegiado y en las actividades colaborativas de la comunidad escolar. Contribuye a la consolidación de una comunidad escolar participativa para mejorar las actividades académicas, escolares y comunitarias."
+                },
+                {
+                  "numero": 5,
+                  "texto": "Equidad: evitar cualquier práctica discriminatoria, es decir, el estudiantado será evaluado bajo los mismos criterios e indicadores."
+                }
+              ],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Debe mejorar"
+              ],
+              "criterios": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "calidadExtraccion": "BUENA",
+  "coberturaInstrumentos": {
+    "conInstrumento": 2,
+    "total": 8
+  },
+  "avisos": [
+    "Módulo 1 submódulo 1: sin indicadores de evaluación",
+    "Módulo 1 submódulo 2: sin indicadores de evaluación",
+    "Módulo 2 submódulo 1: sin indicadores de evaluación",
+    "Módulo 3 submódulo 1: sin indicadores de evaluación",
+    "Módulo 3 submódulo 2: sin indicadores de evaluación",
+    "Módulo 4 submódulo 1: sin indicadores de evaluación"
+  ],
+  "extraidoEl": "2026-08-13T23:26:55.101Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/Xfh2h51qUK-Tecnologias-de-la-Comunicacion-y-la-Informacion.pdf"
+}

@@ -1,0 +1,173 @@
+{
+  "nombre": "Mecánica Dental",
+  "slug": "mecanica-dental--2023-2026",
+  "clave": "3093100002-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "Anatomía dental y modelados en cera",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Integra los conceptos teóricos de anatomía dental para la elaboración de modelados en cubos de cera reproduciendo su morfología y utilizando el instrumental adecuado para favorecer habilidades, destrezas manuales y su desarrollo creativo.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Anatomía dental",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Diferencia las características anatómicas de los dientes reconociendo cada una de las caras del diente expresando ideas de manera creativa para integrar los conocimientos en la práctica dentro del taller de mecánica dental.",
+          "actividadClave": "Analiza y describe la importancia y función de los dientes como parte fundamental de la cavidad oral. ● Describe y esquematiza la constitución histológica de los órganos dentarios y las superficies que lo componen. ● Identifica y clasifica en grupos los órganos dentarios teniendo en cuenta su forma y función. ● Enlista y describe las características anatómicas que identifican a cada una de las denticiones. ● Separa y esquematiza la posición que ocupa cada uno de los órganos dentarios en un odontograma. ● Explica e ilustra la importancia de utilizar una nomenclatura que identifique a cada uno de los órganos dentales. ● Identifica, describe e ilustra, las características anatómicas de los dientes anteriores, posteriores, superiores e inferiores. Desarrollo: 1. El estudiantado escuchará en plenaria la información brindada por el personal docente. 2. El estudiantado realizará lecturas al respecto de los temas vistos en clase con un correcto manejo de la bibliografía sugerida para reforzar la información recibida. 3. Realizará mapas conceptuales acerca de los temas vistos en clase que deberán ser elaborados con alta calidad en su cuaderno acompañado de ilustraciones pertinentes. 4. Realizará evaluaciones continuas al finalizar cada tema; acompañadas de retroalimentación para reforzar los conocimientos obtenidos. 14",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Taller de anatomía dental.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Participa en la elaboración de tallados de anatomía dental en cubos de cera, identificando las características de los dientes, para desarrollar habilidades manuales y sentido creativo. 15 Mecánica Dental",
+          "actividadClave": "El estudiantado elaborará de manera individual el tallado de los diferentes dientes de una hemiarcada superior e inferior en cubos de cera, reproduciendo con precisión las características anatómicas de la corona. A través de esta actividad, desarrollará habilidades manuales al utilizar los instrumentos adecuados, realizando mediciones y cortes milimétricos, además de aplicar su creatividad para dar la forma correcta a cada diente. Debido a la concentración y precisión que requiere esta tarea, se enfatizará la importancia de seguir medidas de seguridad e higiene, como el uso obligatorio de bata de laboratorio y gorro. Asimismo, se fomentará la responsabilidad en el manejo de los instrumentos, trabajando bajo la supervisión del profesorado para garantizar un proceso seguro y adecuado. Material e instrumental: 1. Espátula de lecrón. 2. Campo de trabajo (toalla, mantel plástico). 3. Jabón zote. 4. Cepillo dental. 5. Media para pulir de preferencia de color claro (blanca, beige). 6. Cubos de cera (15 aprox.) de 3 a 4 cm de alto y de más de 15 mm de base. 7. Vernier. 8. Cuadernillo de trabajo (prácticas de Anatomía Dental 2da edición de María Teresa Riojas Garza, Editorial Manual Moderno). 9. Pk Thomas (set de 5 instrumentos). 10. Mechero de alcohol con mecha. 11. Alcohol etílico. 12. Encendedor. 13. Bata y gorro. Desarrollo: 1. El estudiantado cada vez que ingrese al laboratorio deberá portar su uniforme que consta de bata blanca de manga larga de algodón y su gorro. 2. Se le capacitará del manejo del instrumental y del material 3. Iniciará realizando cortes en jabón para adquirir habilidades y destrezas. 4. Realizará figuras geométricas en los cubos. 5. Tallará individualmente y por semana 1 diente diferente de las hemiarcadas superior e inferior. Solo tallará la corona. Deberá tomar en cuenta las medidas y los cortes proporcionadas por el cuadernillo de prácticas. 6. Cada semana entregará un diente (corona) al docente para su evaluación.",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Manejo y manipulación de materiales dentales.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Integra los conceptos teóricos de materiales dentales para la elaboración de modelos de estudio y de trabajo, utilizando el instrumental y material adecuado para realizar montajes y dados de laboratorio favoreciendo habilidades, destrezas manuales y desarrollo creativo con las medidas de seguridad de higiene necesarias.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Materiales dentales.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Conoce las características físicas y usos de diferentes tipos de instrumentos, equipo y materiales dentales haciendo uso del pensamiento reflexivo para la selección del material adecuado dentro del taller de mecánica dental.",
+          "actividadClave": "El estudiantado adquirirá los conocimientos necesarios para clasificar los materiales dentales según sus características, forma y función, comprendiendo la importancia de su correcta selección y manipulación para obtener resultados óptimos. A lo largo de la actividad, desarrollará habilidades de trabajo colaborativo, fomentando la disposición hacia un método de trabajo organizado y meticuloso, lo que le permitirá integrarse de manera efectiva con sus compañeros en un entorno de aprendizaje estructurado. Material e instrumental: 1. Bata de laboratorio de algodón. 2. Gorro de tela. 3. Campo de trabajo de plástico. 4. Agar. 5. Ollita. 6. Hornilla. 7. Espátula cola de castor (metálica). 8. Modelos de yeso piedra de adulto (azul, rosa o amarillo). 9. Vaselina. 10. Mufla metálica. 11. Taza de hule mediana flexible. 12. Investimento. 13. Báscula. 14. Polivinilsiloxano pesado. 15. Cera periférica. 16. Tabla de encerado. 17. Cera para modelar. 18. Pk Thomas. 18 19. Espátula de lecrón. 20. Espátula 7ª. 21. Mechero de alcohol. 22. Alcohol 96o. 23. Encendedor. 24. Modelos de yeso piedra infantiles (azul, rosa o amarillo). 25. Acrílico autocurable rápido traslucido. 26. Separador yeso acrílico. 27. Pincel. 28. Gotero de vidrio. 29. Fresones, puntas, borlas y mantas para pulir. 30. Piedra pómez. 31. Motor de baja velocidad. Desarrollo: 1. El estudiantado recibirá en plenaria los conocimientos teóricos acerca del uso y características de los materiales dentales para que cada vez que ingrese al laboratorio portando su uniforme de seguridad conformado de bata de manga larga de algodón y su gorro ponga en práctica sus conocimientos. 2. Realizará mapas conceptuales y diagramas de flujo que coadyuven a reforzar sus conocimientos teóricos previos a la práctica. 3. Asistirá a laboratorio donde: La primera práctica consistirá en realizar una impresión con hidrocoloide reversible. 4. La segunda práctica correrá la impresión con investimento. 5. La tercera practica realizará la toma de impresión con polivinilsiloxano. 6. La cuarta práctica hará encerado sobre tabla de yeso de dientes anteriores. 7. La quinta practica realizará encerado sobre tabla de yeso de dientes posteriores. 8. La sexta práctica hará un acrilado sobre modelos infantiles. 9. La séptima práctica realizará el pulido de los acrílicos. 10. En cada laboratorio se le estará revisando cada una de las prácticas.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Taller de materiales dentales.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Manipula bajo supervisión, materiales dentales como de impresión, yeso, acrílicos y ceras utilizando instrumental y equipo adecuado de manera responsable con medidas de seguridad e higiene para la elaboración de modelos dentales.",
+          "actividadClave": "El estudiantado realizará de manera individual la toma de impresiones sobre modelos dentales de adulto, asegurándose de utilizar la cantidad adecuada de alginato y cuidando cada detalle del proceso, como si se tratara de un procedimiento en un paciente real. Posteriormente, procederá a verter yeso en las impresiones para obtener múltiples copias del modelo, empleando diferentes tipos de yeso y comparando sus características y diferencias. Con los modelos obtenidos, realizará un montaje en un articulador de bisagra, aprendiendo sobre la correcta oclusión de un paciente. Asimismo, elaborará dados de trabajo en otro par de modelos y explorará el uso de otros materiales esenciales en odontología, como acrílicos y ceras. Durante toda la actividad, el estudiantado deberá trabajar de manera ordenada y limpia, respetando las medidas de seguridad e higiene establecidas en el laboratorio, incluyendo el uso obligatorio de bata de manga larga y gorro. Además, se fomentará la responsabilidad en el manejo del equipo y materiales, evitando su uso inadecuado para prevenir riesgos. Todo el proceso se llevará a cabo bajo la supervisión del profesorado para garantizar un aprendizaje seguro y efectivo. Material e instrumental: 1. Alginato de fraguado normal. 2. Medidas para polvo y líquido. 3. Modelos de yeso piedra de adulto (azul, rosa o amarillo) de adulto. 4. Taza de hule mediana flexible. 5. Espátula cola de castor (preferencia metálica). 6. Vaselina. 7. Cucharillas para adulto (superior e inferior) que le queden a los modelos de adulto. 8. Cera periférica. 9. Campo de trabajo. 20 10. Bata blanca / gorro. 11. Yeso ferretero (blanco) no ortodóntico. 12. Yeso piedra (rosa, amarillo o azul). 13. Lija de agua (grano muy fino). 14. Zócalos (superior e inferior) adulto. 15. Cera para encajonar. 16. Articulador metálico de bisagra de adulto. 17. Espátula de lecrón. 18. Dowell pins (10 pins). 19. Grapas (de papelería). 20. Kola Loka (crazy glue). 21. Fresón de bola. 22. Segueta y sierra de depósito dental (para joyero). Desarrollo: 1. El estudiantado cada vez que ingrese al laboratorio deberá portar su uniforme que consta de bata blanca de manga larga de algodón y su gorro. 2. Se le capacitará del manejo del instrumental y del material. 3. Iniciará haciendo 3 pares de impresiones de modelos de adulto con alginato. 4. Realizará el llenado de las impresiones con diferentes tipos de yeso. 5. El primer par lo utilizará para colocarle zócalos. 6. El segundo par lo procederá a montar en un articulador de bisagra. 7. El tercer par lo utilizará para hacer dados de trabajo. 8. Hará encerados en 1 de los modelos. 9. Hará un acrilado sobre el otro modelo. 10. En cada laboratorio se le estará revisando el avance que lleve.",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "Prostodoncia fija y aparatología ortodóntica.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Construye aparatos removibles de ortodoncia utilizando el instrumental y materiales adecuados favoreciendo la prevención de riesgos. Crea de forma responsable y ética prótesis dentales y fijas con los estándares de calidad requerida que puedan contribuir a la rehabilitación oral.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Taller de ortodoncia.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Participa en la elaboración de aparatos removibles de ortodoncia utilizando materiales dentales adecuados para así desarrollar sus habilidades manuales de manera responsable con medidas de seguridad e higiene.",
+          "actividadClave": "El estudiantado elaborará un Retenedor Hawley, seleccionando y realizando los dobleces de alambre adecuados según el diseño del aparato ortodóntico. Durante la actividad, confeccionará distintos tipos de ganchos, incluyendo ganchos bola, ganchos Adams, ganchos circunferenciales y el arco vestibular, asegurando precisión en su estructura. Finalmente, completará el proceso con la aplicación de acrílico y el pulido del retenedor, garantizando un acabado funcional y estético. Material: 1. Modelos dentales. 2. Pinzas de dos picos. 3. Pinza de tres picos. 4. Alicatas 5. Alambre .028. 6. Alambre .032. 7. Plumón punta fina. 8. Cera pegajosa. 9. Separador alcote. 10. Acrílico polvo y líquido. 11. Motor de baja velocidad. 12. Fresones para pulir. 13. Blanco España. 14. Borla para pulir. 23 Mecánica Dental Desarrollo: 1. Investigar sobre diferentes tipos de aparatos ortodónticos y usos. 2. Realizar práctica sobre dobleces de ansas. 3. Elaborar gancho bola. 4. Elaborar gancho Adams. 5. Elaborar gancho circunferencial. 6. Seleccionar los ganchos para el diseño del Retenedor Hawley. 7. Acrilar el retenedor Hawley. 8. Recortar y pulir el Retenedor Hawley.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Prótesis dental fija.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Asiste en la realización de una prótesis dental fija para la rehabilitación oral siguiendo una secuencia ordenada de pasos utilizando medidas de seguridad e higiene de manera responsable.",
+          "actividadClave": "El estudiantado elaborará una Prótesis Dental Fija, siguiendo una secuencia ordenada de pasos que garantice la precisión y funcionalidad del trabajo. Durante el proceso, aplicará las medidas de seguridad e higiene correspondientes, demostrando responsabilidad en el manejo de materiales e instrumentos. La actividad permitirá desarrollar habilidades técnicas y reforzar la importancia de la disciplina y el cuidado en los procedimientos odontológicos. 24 Material: 1. Modelos dentales con dados de trabajo en las piezas seleccionadas para trabajar. 2. Separador yeso-cera. 3. P.K. Thomas. 4. Cera dental para modelar. 5. Espátula de Lecron. 6. Putty Speedex. 7. Acrílico rápido dental. 8. Color diente (líquido y monómero). 9. Godete de plástico o vidrio. 10. Mechero de alcohol. 11. Fresones para pulir acrílicos en motor. Desarrollo: 1. Identificar conceptos y materiales para elaborar una prótesis dental fija. 2. Elaborar patrones de cera reproduciendo características anatómicas para coronas provisionales individuales. (4 unidades) 3. Modelar en cera un esqueleto de puente de tres unidades. 4. Investigar la técnica de revestido y vaciado para puente con frente estético. 5. Encerar puente provisional de 3 unidades, reproduciendo anatomía de premolares y molares. 6. Acrilar puente y coronas provisionales. 7. Pulido de coronas provisionales. 8. Pulido y ajustes de puente acrilado.",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "Prostodoncia total y parcial removible.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Diseña prótesis parciales removibles y totales integrando los conocimientos adquiridos para seguir los pasos en la elaboración de cada una de las prótesis, utilizando equipo adecuado con las medidas de seguridad e higiene y estándares de calidad.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Prótesis parcial removible.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Fabrica una prótesis parcial removible para la rehabilitación oral siguiendo una secuencia ordenada de pasos utilizando medidas de seguridad e higiene de manera responsable.",
+          "actividadClave": "El estudiantado comprenderá la importancia de las prótesis removibles en la rehabilitación oral, identificando sus características, funciones y componentes principales. Asimismo, que logre describir y explicar las partes de un puente removible, reconociendo su función en la distribución de fuerzas y su ajuste en la cavidad oral. Finalmente, que desarrolle habilidades para el diseño y encerado del esqueleto de una prótesis removible, entendiendo su proceso de elaboración para garantizar una adecuada adaptación y funcionalidad en el paciente. Material e instrumental: 1. Bata de laboratorio de algodón. 2. Gorro de tela. 3. Campo de trabajo (mantel plástico). 4. Modelos de yeso para PPR. 5. Motor de mesa de baja velocidad. 6. Fresones. 7. Espátula de lecrón. 8. Cuadernillo de trabajo. 9. Pk Thomas (set de 5 instrumentos). 10. Mechero de alcohol con mecha. 11. Alcohol etílico 96°. 12. Encendedor. 13. Taza de hule. 14. Espátula cola de castor. 15. Agar. 16. Investimento. 17. Mufla metálica. 18. Báscula. 19. Articulador. 20. Cera rosa toda estación. 26 21. Cera para modelar patrones de cera. 22. Formas prefabricadas para prótesis removible. 23. Yeso piedra. 24. Vaselina. 25. Acrílico autocurable color 62. 26. Acrílico autocurable para prótesis. 27. Piedras montadas. 28. Borlas. 29. Piedra pómez en polvo. 30. Pasta para pulir acrílico. Desarrollo: 1. Definición e indicación de casos en los que se requiere una prótesis removible. 2. Partes de una prótesis removible y su función. 3. Analizado de modelos. 4. Investido y vaciado. 5. Diseño del esqueleto de una prótesis removible. 6. Recortado y pulido del metal. 7. Técnica para acrílico. 8. Pulido final. Apertura Realiza una evaluación diagnóstica a través de una sesión de preguntas y respuestas para conocer el nivel de conocimiento que tiene el participante acerca del módulo. Encarga al estudiante investigar los diferentes tipos de paralelometros que existen en el mercado y su aplicación dental. Para este fin, facilita manuales, material bibliográfico, direcciones electrónicas, ubicación de laboratorios y depósitos dentales. Las y los estudiantes que previamente fueron organizados por equipos de trabajo investigan la gama de materiales que son usados para el duplicado de modelos para elaborar la prótesis dental removible, además de indagar la técnica más utilizada y efectiva. Les proporciona ubicación de laboratorios dentales donde realizara el encargo el cual entregara en tiempo y forma que considere el personal docente. Desarrollo 1. Higieniza los modelos de trabajo para la elaboración de las prótesis dentales removibles. 2. Bloquea las zonas retentivas en el modelo de trabajo para la elaboración de la prótesis dental removible de un mucodentosoportado. 3. Elabora el molde para el modelo refractario de una prótesis dental removible de un mucodentosoportado. 4. Pesa el investimento de acuerdo con el tamaño del modelo; prepara el investimento de acuerdo con las especificaciones del fabricante; aplica el investimento y; deja que fragüe el investimento de acuerdo con las especificaciones del fabricante. 5. Higieniza la estructura metálica, la base de registro y los modelos de trabajo para el terminado de las prótesis dentales removibles: Sumergiéndolos en un recipiente con solución desinfectante. 27 Mecánica Dental 6. Articula los dientes artificiales en los modelos de trabajo para la elaboración de las prótesis dentales: Realizando las retenciones en los dientes artificiales de acuerdo con las especificaciones de la orden de trabajo; Colocando los dientes artificiales en la base de registro de acuerdo con las características anatómicas de la oclusión del antagonista, y; Fijando con cera los dientes artificiales en las bases de registro. Cierre Realimenta el proceso de enseñanza aprendizaje realizado durante el submódulo. El personal docente resuelve las dudas del estudiantado y evalúa de manera integral el submódulo de acuerdo con las actividades realizadas.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Prótesis total removible.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Colabora en la producción de una prótesis total removible para la rehabilitación oral siguiendo una secuencia ordenada de pasos utilizando medidas de seguridad e higiene de manera responsable. 28",
+          "actividadClave": "El estudiantado deberá elaborar una Prótesis Total Removible siguiendo una secuencia ordenada de pasos, aplicando medidas de seguridad e higiene de manera responsable. Para ello, deberá identificar las zonas anatómicas y zonas de interés protésico en un modelo desdentado, asegurando una correcta planificación del proceso. Además, llevará a cabo la adaptación de bases Graff y rodillos de cera sobre los modelos desdentados, aplicando los conocimientos adquiridos para su correcta colocación. Posteriormente, realizará el montaje de los modelos desdentados y la articulación de los dientes sobre los rodillos de cera, incluyendo la caracterización de la encía para lograr un resultado más estético y funcional. Finalmente, ejecutará el procedimiento de empacado de acrílico y enmuflado, concluyendo con el recorte y pulido de la prótesis removible total para su entrega final. Material: 1. Modelos edéntulos. 2. Articulador de bisagra. 3. Bases Graff. 4. Rodillos. 5. Juego de dientes prefabricados. 6. Cera rosa toda estación. 7. Mechero. 8. Espátula de lecrón. 9. Espátula 7A. 10. Mufla superior e inferior. 11. Yeso ferretero. 12. Separador alcote. 13. Prensa. 14. Acrílico color encía (polvo y líquido). 15. Motor de alta/baja velocidad. 16. Fresones para recortar y pulir. 17. Blanco España. 18. Borlas para brillo. Desarrollo: 1. Identifica zonas anatómicas y zonas protésicas en modelo edéntulo. 2. Adapta bases graff y rodillos a modelo de trabajo. 3. Articula modelos en el articulador de bisagra. 4. Articula dientes anteriores y posteriores a los rodillos. 5. Encera los modelos, representando la encía. 6. Realiza el procedimiento de enmuflado. 7. Realiza el procedimiento de acrilado y empacado. 8. Pulido de prótesis.",
+          "evidencias": [
+            {
+              "nombre": "Escala de estimación (5 rasgos)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [
+                {
+                  "numero": 1,
+                  "texto": "Asume la identidad de su función. Desarrolla su función como agente fundamental en la formación integral del estudiantado, en un marco de inclusión y respeto a la diversidad, con la finalidad de contribuir al logro de la excelencia educativa."
+                },
+                {
+                  "numero": 2,
+                  "texto": "Domina el currículo para la enseñanza y el aprendizaje. Comprende la articulación del modelo educativo con los contenidos y la transversalidad del conocimiento, considerando las características y contexto del estudiantado para el logro de los aprendizajes."
+                },
+                {
+                  "numero": 3,
+                  "texto": "Planifica e implementa los procesos de enseñanza y aprendizaje. Planifica e implementa el trabajo pedagógico para generar ambientes de aprendizaje, a partir de los planes y programas de estudio, así como, de las características y contexto del estudiantado."
+                },
+                {
+                  "numero": 4,
+                  "texto": "Participa en el trabajo colegiado y en las actividades colaborativas de la comunidad escolar. Contribuye a la consolidación de una comunidad escolar participativa para mejorar las actividades académicas, escolares y comunitarias."
+                },
+                {
+                  "numero": 5,
+                  "texto": "Equidad: evitar cualquier práctica discriminatoria, es decir, el estudiantado será evaluado bajo los mismos criterios e indicadores."
+                }
+              ],
+              "niveles": [
+                "Sobresaliente",
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "calidadExtraccion": "BUENA",
+  "coberturaInstrumentos": {
+    "conInstrumento": 1,
+    "total": 8
+  },
+  "avisos": [
+    "Módulo 1 submódulo 1: sin indicadores de evaluación",
+    "Módulo 1 submódulo 2: sin indicadores de evaluación",
+    "Módulo 2 submódulo 1: sin indicadores de evaluación",
+    "Módulo 2 submódulo 2: sin indicadores de evaluación",
+    "Módulo 3 submódulo 1: sin indicadores de evaluación",
+    "Módulo 3 submódulo 2: sin indicadores de evaluación",
+    "Módulo 4 submódulo 1: sin indicadores de evaluación"
+  ],
+  "extraidoEl": "2026-08-13T23:26:54.908Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/XImFnLEjPV-Mecanica-Dental.pdf"
+}

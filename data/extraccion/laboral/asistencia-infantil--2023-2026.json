@@ -1,0 +1,638 @@
+{
+  "nombre": "Asistencia Infantil",
+  "slug": "asistencia-infantil--2023-2026",
+  "clave": "3012701003-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "Asistencia infantil y las etapas del desarrollo.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Comprende las etapas de la infancia para brindar una atención adecuada en el cuidado infantil, coadyuvando al desarrollo de un comportamiento responsable y consciente en su vida cotidiana. Aplica los instrumentos y técnicas normativas del cuidado infantil en diversos ámbitos de su contexto para favorecer el desempeño responsable y ético.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "El perfil en asistencia infantil y etapas del desarrollo.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Explica el crecimiento saludable en la infancia haciendo uso del conocimiento de la asistencia infantil de manera eficaz y responsable para brindar un buen servicio en su comunidad, mostrando compromiso con el trabajo, la disciplina y el orden.",
+          "actividadClave": "Las y los estudiantes crearán un video educativo sobre el crecimiento saludable en la infancia, que abarque las etapas prenatal, natal y posnatal y que sea útil para brindar un buen servicio en la comunidad. Estructura del Video: 1. El video deberá ser editado como formato de noticiero, presentando capsulas informativas. 2. Esta actividad será realizada en equipos de 8 integrantes como máximo. 3. Deberá contener la siguiente información: a. Introducción (1-2 minutos). i. Presentación del tema: La importancia del crecimiento saludable en la infancia. ii. Breve mención de las etapas: prenatal, natal y posnatal. iii. Objetivo del video: Proporcionar información útil para asistentes infantiles y la comunidad. b. Etapa Prenatal (3-4 minutos). i. Explicar cómo el desarrollo fetal es crucial para el crecimiento saludable. ii. Importancia de la alimentación materna, control prenatal y evitación de sustancias nocivas. c. Etapa Natal (3-4 minutos). i. Importancia del parto asistido y el cuidado inmediato del recién nacido. ii. Signos de un recién nacido saludable. iii. Importancia del contacto piel a piel y la lactancia materna. 14 d. Etapa Posnatal (3-4 minutos). i. Desarrollo físico, emocional y social en los primeros años de vida. ii. Importancia de la estimulación temprana y el juego. iii. Seguimiento del crecimiento y desarrollo (vacunas, chequeos). iv. Ejemplos de juegos y actividades para estimular el desarrollo. e. Perfil del Asistente Infantil (2-3 minutos). i. Características y habilidades necesarias para un asistente infantil. ii. Importancia de la capacitación continua y la sensibilidad cultural. f. Conclusión (1-2 minutos). i. Resumen de la importancia de cada etapa del crecimiento infantil. ii. Llamado a la acción: Importancia de involucrarse en la comunidad y apoyar a las familias. iii. Información de contacto o recursos disponibles en la comunidad. Consejos para la producción del video ● Duración Total: Intenta que el video no exceda los 20 minutos para mantener la atención del espectador. ● Información: Intenta que la información sea accesible y comprensible para todos los miembros de la comunidad, independientemente de su nivel de educación. La claridad y la empatía son clave para conectar con la audiencia y brindar un servicio valioso. ● Estilo Visual: Utiliza un estilo visual atractivo, con gráficos claros e imágenes que ilustren los puntos clave. ● Narración: Considera usar una voz clara y amigable. También puede incluir testimonios de profesionales de la salud o padres. ● Recursos Adicionales: Al final del video, proporciona enlaces a recursos útiles, como folletos, sitios web o líneas de ayuda.",
+          "evidencias": [
+            {
+              "nombre": "Evidencia 1",
+              "tipoInstrumento": "lista-cotejo",
+              "indicadores": [
+                {
+                  "numero": 1,
+                  "texto": "Busca información en las ligas recomendadas."
+                },
+                {
+                  "numero": 2,
+                  "texto": "Consulta otras fuentes de información, que incorpora al final del video, proporciona enlaces a recursos útiles, como folletos, sitios web o líneas de ayuda."
+                },
+                {
+                  "numero": 3,
+                  "texto": "Identifica la información requerida y la resume de manera adecuada"
+                },
+                {
+                  "numero": 4,
+                  "texto": "El contenido del video tiene relación a lo expedido e incorporó todos los momentos de video en las cápsulas."
+                },
+                {
+                  "numero": 5,
+                  "texto": "Utiliza un de tono voz claro y amigable. Además, incluye testimonios de profesionales de la salud o padres de familia."
+                },
+                {
+                  "numero": 6,
+                  "texto": "El video transmite empatía hacia las familias y la comunidad, considerando sensibilidades culturales."
+                },
+                {
+                  "numero": 7,
+                  "texto": "El producto demuestra gran originalidad. Las ideas son creativas e ingeniosas."
+                },
+                {
+                  "numero": 8,
+                  "texto": "Utiliza un estilo visual atractivo, con gráficos claros e imágenes que ilustren los puntos clave en el video."
+                },
+                {
+                  "numero": 9,
+                  "texto": "El video cumple con el tiempo establecido (20 minutos)"
+                },
+                {
+                  "numero": 10,
+                  "texto": "Trasmite los conocimientos del tema (etapa prenatal), explicando el desarrollo fetal, la Importancia de la alimentación materna, control prenatal y evitación de sustancias nocivas."
+                },
+                {
+                  "numero": 11,
+                  "texto": "Trasmite los conocimientos del tema (etapa natal) Importancia del parto asistido y el cuidado inmediato del recién nacido, signos de un recién nacido"
+                },
+                {
+                  "numero": 12,
+                  "texto": "Trasmite los conocimientos del tema (etapa postnatal) Desarrollo físico, emocional y social en los primeros años de vida, importancia de la estimulación temprana y el juego y seguimiento del crecimiento y desarrollo (vacunas, chequeos)."
+                },
+                {
+                  "numero": 13,
+                  "texto": "Trasmite los conocimientos del tema perfil del asistente infantil, menciona las características y habilidades necesarias."
+                },
+                {
+                  "numero": 14,
+                  "texto": "La calidad del vídeo, sonido y del enfoque es bueno en todas sus partes."
+                }
+              ],
+              "niveles": [],
+              "criterios": []
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Asistencia en el cuidado infantil.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Aplica colaborativamente técnicas basadas en los protocolos de atención del cuidado de menores de edad para favorecer un desempeño competente y responsable en las acciones que realice con la población infantil en su comunidad.",
+          "actividadClave": "Las y los alumnos mediante una investigación en diversas fuentes bibliográficas dan respuesta a las preguntas: ¿qué es la etapa lactante? ¿qué es la etapa maternal? ¿qué es la etapa preescolar? Posteriormente en equipos de trabajo, estructuran una guía que les permita plasmar las medidas de seguridad en cada etapa en los temas de higiene, sueño y alimentación. Esta guía les permitirá realizar una práctica educativa en una institución de nivel preescolar de su entorno inmediato aplicando los conocimientos sobre estos temas, resolviendo las necesidades que se presenten aplicando protocolos de seguridad que se deben seguir para el cuidado de las y los niños lactantes, maternales y preescolares. En una institución educativa de nivel preescolar dentro de su entorno inmediato, podrán aplicar los conocimientos adquiridos sobre higiene, sueño y alimentación para realizar una actividad educativa con las y los niños de esa institución. Esto puede incluir actividades de sensibilización, demostraciones prácticas o talleres para educadores sobre protocolos de seguridad y cuidado infantil. Al final de la actividad, los y las estudiantes deberán reflexionar sobre su experiencia práctica, analizando los retos que enfrentaron, la efectividad de la guía aplicada y cómo las y los niños respondieron a las intervenciones. Deberán identificar posibles mejoras en la guía y en la aplicación de las medidas de seguridad. 16",
+          "evidencias": [
+            {
+              "nombre": "Evidencia 1",
+              "tipoInstrumento": "lista-cotejo",
+              "indicadores": [
+                {
+                  "numero": 1,
+                  "texto": "Presenta la investigación con información enfocada al tema, es clara, precisa y considera los elementos ortográficos."
+                },
+                {
+                  "numero": 2,
+                  "texto": "Explica de manera adecuada cada una de las etapas con énfasis en sus características principales."
+                },
+                {
+                  "numero": 3,
+                  "texto": "La guía está claramente estructurada y organizada, con secciones diferenciadas para cada etapa (lactante, maternal, preescolar)."
+                },
+                {
+                  "numero": 4,
+                  "texto": "La guía ofrece información relevante y útil sobre las necesidades específicas de cada etapa, con protocolos de seguridad adecuados relacionados con higiene, sueño y alimentación"
+                },
+                {
+                  "numero": 5,
+                  "texto": "Los protocolos de seguridad están fundamentados normativas vigentes."
+                },
+                {
+                  "numero": 6,
+                  "texto": "Se proporcionan ejemplos prácticos y aplicables para implementar los protocolos en la institución educativa."
+                },
+                {
+                  "numero": 7,
+                  "texto": "Llega a acuerdos para la realización de trabajo en equipo, colabora en las actividades e intercambia ideas con respeto y tolerancia."
+                },
+                {
+                  "numero": 8,
+                  "texto": "Muestra un comportamiento ético, pertinente y participativo con la comunidad."
+                },
+                {
+                  "numero": 9,
+                  "texto": "La guía está bien presentada visualmente, con un diseño claro, organizado y atractivo."
+                },
+                {
+                  "numero": 10,
+                  "texto": "La guía está escrita en un lenguaje claro y accesible para el público destinatario (educadores, cuidadores, padres)."
+                }
+              ],
+              "niveles": [],
+              "criterios": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Protección de los derechos de la infancia y la cultura de prevención de accidentes.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Explica la historia de los Derechos Infantiles, los tipos de maltrato y las técnicas de prevención de riesgos para favorecer la reflexión sobre las consecuencias de sus actos como ser social y promover así un comportamiento ético en su vida cotidiana.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Protección de los Derechos de la infancia.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Favorece el respeto a los derechos infantiles y la prevención de riesgos en la infancia, con base en documentos normativos y protocolos de seguridad existentes que le permitan adoptar un comportamiento ético que rechace cualquier tipo exclusión y segregación en el cuidado de la comunidad infantil.",
+          "actividadClave": "El o la docente proporciona una lectura con el tema Derechos de la infancia, los alumnos elaboran un folleto que les permita identificar los diversos derechos de los infantes, promoviendo a su vez el pensamiento reflexivo al retomar temas como: ● Derechos clave a abordar: Derecho a la educación, a la protección contra el maltrato, a jugar y descansar, a ser escuchados, a tener una identidad y a ser respetados, entre otros. ● Maltrato por acción y omisión: Diferenciar entre lo que constituye maltrato activo (como abusos físicos o emocionales) y maltrato por omisión (como negligencia o no proporcionar necesidades básicas). El folleto debe incluir información sobre cómo prevenir y reconocer el maltrato infantil y qué hacer en caso de ser testigos de alguna situación de abuso o negligencia. Al final socializarán en el aula la información recabada y las diferentes situaciones de maltrato infantil que conozcan promoviendo el debate y la reflexión. Posteriormente, se realiza una campaña de sensibilización sobre los \"derechos de la infancia\", la cual puede ser en redes sociales. De forma individual o en equipos de trabajo, las y los estudiantes realizan un spot que les permita concientizar sobre el tema. Una vez elaborado el spot se comparte en las redes sociales de la institución, promoviendo un pensamiento reflexivo y de rechazo a las distintas formas de discriminación al incluir un llamado a la acción para promover el respeto y la protección de los derechos de la infancia. 18 La campaña de sensibilización también puede ser a través de un teatro guiñol con niños y niñas de preescolar con la finalidad de abordar el tema de los derechos de las y los niños y promover una cultura de respeto y prevención del maltrato infantil. Se representa una historia sobre un niño o niña que vive una situación en la que se vulneran sus derechos, y cómo logra resolverla con la ayuda de sus amigos o familiares, incluyendo mensajes positivos sobre el respeto y la importancia de cuidar a los demás. Se procura incitar a las y los niños a participar en la historia, tomando decisiones sobre lo que deben hacer los personajes. Termina la actividad evidenciando la reflexión de la obra, los derechos que se revisaron y recordando que todos tienen derechos y que es importante respetarlos.",
+          "evidencias": [
+            {
+              "nombre": "Folleto",
+              "tipoInstrumento": "lista-cotejo",
+              "indicadores": [
+                {
+                  "numero": 1,
+                  "texto": "Identifica correctamente los diversos derechos de los infantes, reflexionando sobre su importancia."
+                },
+                {
+                  "numero": 2,
+                  "texto": "Explica correctamente las diferencias entre maltrato por acción y maltrato por omisión, demostrando comprensión."
+                },
+                {
+                  "numero": 3,
+                  "texto": "Está bien estructurado, es fácil de entender y visualmente atractivo."
+                },
+                {
+                  "numero": 4,
+                  "texto": "Invita a reflexionar sobre el respeto a los derechos de las y los niños y la prevención del maltrato."
+                },
+                {
+                  "numero": 5,
+                  "texto": "Socializa la información y la relaciona con situaciones de maltrato infantil cercanas."
+                },
+                {
+                  "numero": 6,
+                  "texto": "Dentro del equipo se llega a acuerdos para la realización de trabajo en equipo, colabora en las actividades, intercambia ideas con respeto y tolerancia"
+                },
+                {
+                  "numero": 7,
+                  "texto": "Promueve un pensamiento reflexivo y de rechazo a las distintas formas de discriminación."
+                }
+              ],
+              "niveles": [],
+              "criterios": []
+            },
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "ÓPTIMO",
+                "ADECUADO",
+                "SUFICIENTE",
+                "DEBE MEJORAR"
+              ],
+              "criterios": [
+                {
+                  "criterio": "PARTICIPACIÓN",
+                  "puntos": 20,
+                  "descripcionNiveles": "El estudiantado participa activamente en todas las actividades de la creación del spot, demuestra entusiasmo y está comprometido con el aprendizaje. El estudiantado participa en la mayoría de las actividades de la creación del spot, demuestra interés y muestra algún compromiso con el aprendizaje. El estudiantado participa ocasionalmente en las actividades de la creación del spot, pero muestra poco interés y compromiso con el aprendizaje. El estudiantado no participa o muestra poco interés en las actividades de la creación del spot."
+                },
+                {
+                  "criterio": "CREATIVIDAD Y ORIGINALIDAD",
+                  "puntos": 20,
+                  "descripcionNiveles": "El spot es muy creativo, original y utiliza recursos visuales y sonoros de manera efectiva para captar la atención. El spot es creativo y utiliza algunos recursos visuales o sonoros bien, pero podría mejorar. El spot es algo predecible y carece de creatividad. Los recursos visuales y sonoros no son suficientemente efectivos. El spot carece de creatividad, los recursos visuales y sonoros son muy limitados o mal utilizados."
+                },
+                {
+                  "criterio": "ENFOQUE EN LOS DERECHOS DE LAS Y LOS NIÑOS",
+                  "puntos": 20,
+                  "descripcionNiveles": "El spot aborda los derechos de las y los niños de manera completa y clara, cubriendo varios aspectos importantes. El spot menciona los derechos de las y los niños, pero no los aborda con suficiente profundidad. El spot menciona algunos derechos de las y los niños, pero de manera superficial. El spot no aborda adecuadamente los derechos de las y los niños. 19 Asistencia Infantil"
+                },
+                {
+                  "criterio": "IMPACTO Y SENSIBILIZACIÓN",
+                  "puntos": 20,
+                  "descripcionNiveles": "El spot tiene un fuerte impacto emocional y sensibiliza efectivamente sobre la importancia de los derechos de las y los niños. El spot tiene un buen impacto emocional, pero podría ser más persuasivo en su llamado a la acción. El impacto emocional es débil y no transmite claramente la importancia del tema. El spot no genera un impacto emocional o no sensibiliza al público."
+                },
+                {
+                  "criterio": "DURACIÓN Y ADECUACIÓN DEL FORMATO",
+                  "puntos": 20,
+                  "descripcionNiveles": "El spot tiene una duración adecuada (1- 2 minutos) y está bien adaptado para las redes sociales. El spot tiene una duración adecuada, pero podría haber sido más efectivo con un mejor formato o edición. El spot es demasiado largo o corto para el mensaje que intenta transmitir. El spot tiene una duración inapropiada y no se adapta bien al formato de redes sociales."
+                }
+              ]
+            },
+            {
+              "nombre": "Rúbrica (7 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "ÓPTIMO",
+                "ADECUADO",
+                "SUFICIENTE",
+                "DEBE MEJORAR"
+              ],
+              "criterios": [
+                {
+                  "criterio": "PARTICIPACIÓN",
+                  "puntos": 20,
+                  "descripcionNiveles": "El estudiantado participa activamente en todas las actividades de Teatro Guiñol, demuestra entusiasmo y está comprometido con el aprendizaje. El estudiantado participa en la mayoría de las actividades de Teatro Guiñol, demuestra interés y muestra algún compromiso con el aprendizaje. El estudiantado participa ocasionalmente en las actividades de Teatro Guiñol, pero muestra poco interés y compromiso con el aprendizaje. El estudiantado no participa o muestra poco interés en las actividades de Teatro Guiñol."
+                },
+                {
+                  "criterio": "CLARIDAD EN LA EXPLICACIÓN",
+                  "puntos": 20,
+                  "descripcionNiveles": "El estudiantado explicó los derechos de las y los niños de manera clara y sencilla, utilizando ejemplos comprensibles para las y los niños. Los derechos de las y los niños fueron explicados de manera clara, pero con algunos términos o ejemplos que podrían mejorarse. La explicación de los derechos fue algo confusa o no se adaptó completamente al nivel de las y los niños. La explicación de los derechos fue confusa o poco comprensible para las y los niños."
+                },
+                {
+                  "criterio": "IMAGINACIÓN Y CREATIVIDAD",
+                  "puntos": 10,
+                  "descripcionNiveles": "El estudiantado muestra un alto nivel de imaginación y creatividad al desarrollar los personajes y las historias en las representaciones de Teatro Guiñol. El estudiantado muestra cierto nivel de imaginación y creatividad al desarrollar los personajes y las historias en las representaciones de Teatro Guiñol. El estudiantado muestra poco nivel de imaginación y creatividad al desarrollar los personajes y las historias en las representaciones de Teatro Guiñol. El estudiantado no muestra imaginación ni creatividad al desarrollar los personajes y las historias en las representaciones de Teatro Guiñol."
+                },
+                {
+                  "criterio": "INTERACCIÓN CON EL GUION",
+                  "puntos": 10,
+                  "descripcionNiveles": "El estudiantado sigue el guion de manera precisa, se expresa claramente y utiliza entonación adecuada durante las representaciones de Teatro Guiñol. El estudiantado sigue el guion en su mayoría, se expresa de manera clara y utiliza entonación adecuada durante las representaciones de Teatro Guiñol. El estudiantado sigue ocasionalmente el guion, se expresa de manera poco clara y utiliza entonación inadecuada durante las representaciones de Teatro Guiñol. El estudiantado no sigue el guion, se expresa de manera poco clara y utiliza entonación inadecuada durante las representaciones de Teatro Guiñol."
+                },
+                {
+                  "criterio": "INTERACCIÓN CON LAS Y LOS NIÑOS",
+                  "puntos": 10,
+                  "descripcionNiveles": "El estudiantado se involucró de manera activa a los niños y niñas, motivándolos a participar y reflexionar sobre sus derechos. El estudiantado involucró a los niños y niñas en algunos momentos, pero la participación podría haberse fomentado más. Las y los niños participaron de manera limitada y no se les motivó suficientemente a reflexionar sobre los derechos. Las y los niños no fueron involucrados activamente, y no hubo un esfuerzo significativo para motivar su participación. 20"
+                },
+                {
+                  "criterio": "ELABORACIÓN DE TÍTERES",
+                  "puntos": 10,
+                  "descripcionNiveles": "Los títeres de mano son de calidad, originales, creativos, y bien construidos de forma que ninguna pieza se cayó durante la presentación. Los títeres de mano son creativos y bien construidos de forma que ninguna pieza se cayó durante la presentación. Los títeres de manos están bien construidos de forma que ninguna pieza se cayó durante la presentación. Los títeres de manos no están bien construidos, algunas piezas se cayeron durante la presentación. REFLEXIÓN SOBRE LOS VALORES, DERECHOS DE LAS Y LOS NIÑOS,"
+                },
+                {
+                  "criterio": "CULTURA DE RESPETO Y PREVENCIÓN DEL MALTRATO INFANTIL",
+                  "puntos": 20,
+                  "descripcionNiveles": "El estudiantado reflexiona de forma profunda y significativa sobre los valores presentes en la obra, derechos de las y los niños, cultura de respeto y prevención del maltrato infantil. El estudiantado reflexiona de forma adecuada sobre los valores presentes en la obra, derechos de las y los niños, cultura de respeto y prevención del maltrato infantil. El estudiantado muestra cierta reflexión sobre los valores, derechos de las y los niños, cultura de respeto y prevención del maltrato infantil. El estudiantado no logra reflexionar de forma clara sobre los valores, derechos de las y los niños, cultura de respeto y prevención del maltrato infantil."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "La importancia de la prevención de accidentes y la cultura de protección civil.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Comprende la importancia de la prevención de accidentes y cultura de protección civil, promoviendo la toma de decisiones de manera consciente e informada para beneficio de su entorno.",
+          "actividadClave": "Con la intención de que las y los estudiantes reflexionen sobre por qué ocurren los accidentes y cómo actuar ante ellos, se realizará un análisis de diversos casos, para llegar a conclusiones sobre medidas de prevención, para esto, previamente realizan una visita al centro de salud de la comunidad o se comunican con personal de salud para conocer los accidentes más comunes que ocurren en niños y niñas en su entorno (por ejemplo, caídas, intoxicaciones, quemaduras, accidentes de tránsito, etc.). Se les pide que preparen una guía con preguntas relevantes como: ● ¿Cuáles son los accidentes más comunes entre niños y niñas? ● ¿Cuáles son las principales causas de estos accidentes? ● ¿Qué medidas preventivas recomiendan los expertos? ● ¿Cuáles son las primeras acciones que se deben tomar en caso de accidente? El estudiantado analiza diferentes casos de accidentes infantiles, tanto reales como hipotéticos, que podrían ocurrir en diferentes lugares (en casa, la escuela, parques, etc.). En equipos, las y los estudiantes preparan un sociodrama de uno de los accidentes antes mencionados. Durante la actuación, se deben identificar los elementos clave relacionados con las causas, la prevención del accidente y las medidas de actuación que deben tomarse. 21 Asistencia Infantil Posterior a las representaciones y los análisis, se crea en conjunto un manual con el objetivo de proporcionar pautas sobre la prevención de accidentes, la cultura de protección civil y técnicas de primeros auxilios y un botiquín, mismos que donaran a un centro infantil cercano acompañado de una explicación de prevención de accidentes más frecuentes en las y los niños, tanto en casa, como en la escuela.",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (6 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "ÓPTIMO",
+                "ADECUADO",
+                "SUFICIENTE",
+                "DEBE MEJORAR"
+              ],
+              "criterios": [
+                {
+                  "criterio": "ANÁLISIS",
+                  "puntos": 20,
+                  "descripcionNiveles": "Identifican las causas y consecuencias de los accidentes de manera profunda, llegando a acuerdos claros sobre medidas preventivas. El análisis de los casos es adecuado, y los estudiantes proponen medidas preventivas, pero algunas ideas no están bien desarrolladas. El análisis de los casos es superficial, y las medidas preventivas propuestas son vagas o incompletas. El análisis de los casos es pobre, con poca reflexión y propuestas débiles de prevención."
+                },
+                {
+                  "criterio": "SOCIODRAMA",
+                  "puntos": 10,
+                  "descripcionNiveles": "Representa a profundidad el desarrollo del tema (muestra claramente el tipo de accidente, las causas y cómo prevenirlo), considerando los elementos de un sociodrama (guion, roles, actuación, discusión). Representa regular profundidad en el desarrollo del tema (cubre el accidente y las medidas preventivas, pero algunos aspectos podrían haber sido más claros), considera 3 elementos de un sociodrama (guion, roles, actuación, discusión). Representa escasa profundidad en el desarrollo del tema (no cubre adecuadamente las medidas preventivas), considera 2 elementos de un sociodrama (guion, roles, actuación, discusión). Carece de profundidad en el tema, no se desarrollan adecuadamente los elementos del sociodrama."
+                },
+                {
+                  "criterio": "BOTIQUÍN",
+                  "puntos": 10,
+                  "descripcionNiveles": "Conoce el concepto, identifica y hace uso correcto de los elementos que conforman un botiquín. Está equipado, con todos los elementos necesarios y explicaciones claras sobre su uso y la importancia de cada elemento. Conoce el concepto, identifica, pero, no hace uso correcto de los elementos que conforman un botiquín, algunos elementos esenciales podrían haber sido incluidos o explicados mejor. Conoce el concepto, pero, contiene pocos elementos esenciales y las explicaciones sobre su uso son limitadas. No identifica, ni hace uso correcto de los elementos que conforman un botiquín."
+                },
+                {
+                  "criterio": "CLARIDAD Y ACCESIBILIDAD DEL MANUAL",
+                  "puntos": 20,
+                  "descripcionNiveles": "El manual está escrito de manera clara y accesible, adecuado para el público objetivo (padres, cuidadores), con ejemplos prácticos y lenguaje sencillo. El manual es claro y accesible en su mayoría, pero algunos conceptos podrían explicarse de manera más sencilla o detallada. El manual es algo difícil de entender o contiene jergas técnicas que podrían dificultar la comprensión. El manual es confuso, tiene errores de redacción y no es adecuado para el público objetivo."
+                },
+                {
+                  "criterio": "TRABAJO EN EQUIPO",
+                  "puntos": 20,
+                  "descripcionNiveles": "Interviene y colabora en las actividades en equipo, intercambia ideas, aplicando el respeto y la tolerancia. Interviene en las actividades en equipo, intercambia ideas, aplicando el respeto y la tolerancia. Interviene poco en las actividades en equipo, intercambia pocas ideas, aplicando el respeto y la tolerancia. Interviene y colabora en las actividades en equipo, intercambia ideas, pero no aplica el respeto y la tolerancia. 22"
+                },
+                {
+                  "criterio": "IMPACTO Y CONCIENTIZACIÓN",
+                  "puntos": 20,
+                  "descripcionNiveles": "Demuestran un alto nivel de conciencia sobre la prevención de accidentes y la importancia de educar a otros sobre el tema. Tienen una buena comprensión del tema, pero podrían profundizar más en la concientización sobre la prevención. Muestran comprensión básica del tema, pero no transmiten claramente la importancia de la prevención. No muestran una comprensión adecuada sobre la importancia de la prevención de accidentes."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "La educación inicial y su impacto en la infancia.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Diseña actividades reconociendo la importancia de la estimulación temprana y la educación inicial a través de un trabajo proactivo y responsable que le permita brindar un buen servicio en su comunidad.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "La creatividad y su influencia en la estimulación temprana.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Colabora en la estructuración de actividades creativas de educación inicial mediante el uso de la estimulación temprana y otras técnicas, para brindar un servicio profesional e innovador dentro de su contexto.",
+          "actividadClave": "Las y los alumnos investigan de manera individual los conceptos \"creatividad\", \"estimulación temprana\" y \"lúdica\". Se pueden utilizar las siguientes preguntas como guía: ¿Qué es la creatividad? ¿Cómo se desarrolla la creatividad en los niños y niñas? ¿Qué factores favorecen la creatividad?; ¿Qué es la estimulación temprana? ¿Por qué es importante en los primeros años de vida? ¿Qué actividades pueden fomentar la estimulación temprana en los niños y niñas?; ¿Qué significa el término \"lúdico\"? ¿Cómo se relaciona el juego con el aprendizaje? ¿Cuáles son los beneficios del juego en la educación infantil? Con base en la investigación, en equipos de trabajo, recuperan los datos más interesantes y elaboran una actividad denominada ¿Sabías qué?, presentar los conceptos de forma atractiva, utilizando datos curiosos, preguntas y respuestas, o mini-quizzes relacionados con estos temas; se presentan ante el grupo y se analizan con el o la docente, asegurándose de que estos conceptos se involucren en la práctica educativa. Posteriormente las y los alumnos en equipos, diseñan, fabrican o crean al menos tres materiales didácticos, con el objetivo de darles uso en prácticas educativas de estimulación temprana en instituciones de nivel inicial y/o preescolar. Una vez creados los materiales, los estudiantes simulan cómo utilizarían estos materiales didácticos en una actividad educativa para niños y niñas en una institución preescolar o de nivel inicial, durante la simulación deben aplicar los principios de estimulación temprana que investigaron, promoviendo el desarrollo físico, emocional, cognitivo y social de los niños y niñas a través del juego y la creatividad. 24",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (7 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "ÓPTIMO",
+                "ADECUADO",
+                "SUFICIENTE",
+                "DEBE MEJORAR"
+              ],
+              "criterios": [
+                {
+                  "criterio": "INVESTIGACIÓN SOBRE CONCEPTOS",
+                  "puntos": 10,
+                  "descripcionNiveles": "Los conceptos están completamente definidos, con ejemplos claros y bien investigados. Los conceptos están bien explicados, pero algunos detalles faltan. Los conceptos son superficiales o incompletos. Los conceptos son incorrectos o muy superficiales. E"
+                },
+                {
+                  "criterio": "ELABORACIÓN DE LA ACTIVIDAD \"¿SABÍAS QUÉ?\"",
+                  "puntos": 15,
+                  "descripcionNiveles": "La actividad es muy creativa, clara y genera un gran interés por los conceptos investigados. La actividad está bien elaborada, pero podría ser más creativa o detallada. La actividad es sencilla y falta creatividad en su desarrollo. La actividad no es clara, y no fomenta el aprendizaje de los conceptos."
+                },
+                {
+                  "criterio": "DISEÑO DE MATERIALES DIDÁCTICOS",
+                  "puntos": 15,
+                  "descripcionNiveles": "Los materiales son innovadores, apropiados para la edad y claramente relacionados con la estimulación temprana. Los materiales son adecuados, pero podrían mejorar en creatividad o en relación con los principios de estimulación temprana. Los materiales son básicos y faltan detalles para ser completamente adecuados. Los materiales son inadecuados o no cumplen con el objetivo educativo."
+                },
+                {
+                  "criterio": "APLICACIÓN DE LOS PRINCIPIOS DE ESTIMULACIÓN TEMPRANA",
+                  "puntos": 30,
+                  "descripcionNiveles": "Los materiales y actividades están completamente alineados con los principios de estimulación temprana y se aplica correctamente el juego como herramienta de aprendizaje. Los materiales están alineados con los principios de estimulación temprana, pero algunas actividades podrían ser mejoradas. Hay elementos de estimulación temprana, pero algunos materiales no están bien aplicados. Los principios de estimulación temprana no se reflejan claramente en los materiales o actividades."
+                },
+                {
+                  "criterio": "CREATIVIDAD Y ORIGINALIDAD",
+                  "puntos": 10,
+                  "descripcionNiveles": "Los estudiantes muestran una gran creatividad en todos los aspectos de la actividad, tanto en la investigación como en la creación de los materiales. Los estudiantes demuestran creatividad, pero algunos materiales o actividades podrían ser más originales. La creatividad está presente, pero los materiales o actividades son comunes o predecibles. Los estudiantes muestran poca creatividad en la actividad."
+                },
+                {
+                  "criterio": "TRABAJO EN EQUIPO",
+                  "puntos": 10,
+                  "descripcionNiveles": "Llega a acuerdos para la realización de trabajo en equipo, colabora en las actividades, intercambia ideas con respeto y tolerancia. El trabajo es de alta calidad, y todos contribuyen de forma equitativa. El equipo trabaja bien, con una distribución adecuada de tareas, pero algunos miembros no participaron activamente en todas las áreas. El trabajo en equipo es algo desorganizado, con una distribución desigual de las tareas. Algunos miembros no contribuyen de manera equitativa. El trabajo en equipo es muy desorganizado, con escasa colaboración entre los miembros. Un miembro o varios no participan activamente."
+                },
+                {
+                  "criterio": "COMPORTAMIENTO ÉTICO",
+                  "puntos": 10,
+                  "descripcionNiveles": "Mantiene un comportamiento ético durante el desarrollo de la práctico, favoreciendo el aprendizaje y generando un ambiente agradable. Muestra respeto y ética, aunque en algunos momentos pueden mejorar la escucha activa o la forma de tratar las ideas de otros. El comportamiento ético y el respeto son moderados, con algunas actitudes poco respetuosas o deshonestas, o falta de escucha en el grupo. El comportamiento ético es inadecuado, con actitudes de deshonestidad, falta de respeto o desconsideració n durante la actividad."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "La educación inicial e instituciones de atención infantil.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Participa colaborativamente en la planeación de actividades de educación inicial conforme a los protocolos de estancia infantil.",
+          "actividadClave": "Las y los estudiantes diseñarán y llevarán a cabo una clase de educación inicial en equipo, creando un ambiente de aprendizaje adecuado y utilizando materiales que fomenten el desarrollo integral de las y los niños. Desarrollo del proyecto: 1. Investigación y Planificación: El estudiantado deberá investigar el programa de educación inicial y seleccionar el área de desarrollo a trabajar (personal, social y ambiental). Una vez elegido el área de desarrollo escogerá el tema y los contenidos a desarrollar en su propuesta de clase, en la que deberá además definir los objetivos de aprendizaje, es decir definir qué habilidades o conocimientos que se espera que las y los niños adquieran al final de la clase. 2. Elaboración del Escenario de Aprendizaje: El equipo deberá diseñar un espacio físico que sea seguro y estimulante que incluya áreas de juego, lectura y actividades creativas. Deben pensar en cómo organizar el espacio para que las y los niños puedan moverse libremente y explorar. - Elabora escenario rotativo de mediano plazo (material decorativo) 3. Materiales para cada niño y niña: El equipo creará una lista de materiales que necesitarán, como libros ilustrados, juguetes, materiales de arte (papel, colores, tijeras, plastilina, pinturas), y cualquier otro recurso que apoye el tema elegido. Si es posible, las y los estudiantes pueden hacer algunos de los materiales ellos mismos, como libros de cuentos o juegos didácticos, impresión de actividades individuales para cada niño y niña, etc. 4. Implementación de la Clase: El estudiantado llevará a cabo una prueba piloto de la clase con sus compañeros. El maestro retroalimentara y dará recomendaciones de mejora para cuando lo trabajen con niños y niñas. 26",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (6 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "ÓPTIMO",
+                "ADECUADO",
+                "SUFICIENTE",
+                "DEBE MEJORAR"
+              ],
+              "criterios": [
+                {
+                  "criterio": "INVESTIGACIÓN Y PLANIFICACIÓN",
+                  "puntos": 20,
+                  "descripcionNiveles": "La investigación es profunda, aborda el programa de educación inicial en su totalidad. Los objetivos de aprendizaje están claramente definidos, son específicos, medibles y adecuados a la edad de las y los niños. Investigación adecuada, cubre los puntos principales del programa de educación inicial. Los objetivos son claros y apropiados para la edad de las y los niños. Investigación superficial, algunos aspectos del programa no se abordan. Los objetivos son vagos o poco adecuados para la edad de las y los niños. Falta de investigación, objetivos no definidos o inapropiados para la edad de las y los niños."
+                },
+                {
+                  "criterio": "ELABORACIÓN DEL ESCENARIO DE APRENDIZAJE",
+                  "puntos": 20,
+                  "descripcionNiveles": "El espacio está cuidadosamente diseñado y organizado para fomentar la exploración y el desarrollo integral. Se utiliza una variedad de áreas (juego, lectura, creatividad) que fomentan el aprendizaje. El espacio está bien organizado, pero podría beneficiarse de más variedad de áreas para las y los niños. El espacio está organizado, pero algunas áreas no son adecuadas o están poco desarrolladas. El espacio no está bien organizado o carece de áreas esenciales para el desarrollo infantil."
+                },
+                {
+                  "criterio": "MATERIALES PARA CADA NIÑO Y NIÑA",
+                  "puntos": 20,
+                  "descripcionNiveles": "Los materiales son variados, creativos y adecuados para el tema. Se incluye una mezcla de materiales manuales, educativos y lúdicos que fomentan el desarrollo integral. Los materiales son adecuados y cumplen con el propósito del tema, aunque faltan algunos recursos variados. Los materiales son básicos y no son completamente adecuados para el tema o las actividades. Los materiales son insuficientes, inadecuados o no apoyan el tema o la actividad."
+                },
+                {
+                  "criterio": "REFLEXIÓN Y EVALUACIÓN",
+                  "puntos": 20,
+                  "descripcionNiveles": "La reflexión es profunda, crítica y basada en la observación. Se analizan claramente los aciertos y las áreas de mejora. Se demuestran aprendizajes significativos. Reflexión adecuada, identificando los principales aciertos y áreas de mejora. Se realiza un análisis general de la experiencia. Reflexión superficial, se identifican algunos aciertos, pero no se analizan profundamente los aspectos a mejorar. Reflexión escasa, sin análisis detallado de los logros y aspectos a mejorar."
+                },
+                {
+                  "criterio": "TRABAJO EN EQUIPO",
+                  "puntos": 10,
+                  "descripcionNiveles": "El equipo muestra una excelente coordinación y comunicación. Todos los miembros contribuyen de manera equitativa y efectiva a todas las fases del proyecto. El equipo trabaja bien, aunque algunos miembros podrían haber contribuido más en ciertas fases del proyecto. El trabajo en equipo es funcional, pero existen momentos de falta de colaboración o coordinación. El equipo no colabora de manera efectiva, y la división de tareas no es equitativa."
+                },
+                {
+                  "criterio": "COMPORTAMIENTO ÉTICO y PROFESIONAL",
+                  "puntos": 10,
+                  "descripcionNiveles": "El equipo demuestra un comportamiento ético ejemplar en todo momento: respeto por las y los niños, empatía, confidencialidad, y trabajo en un ambiente inclusivo y no discriminatorio. El equipo muestra comportamiento ético, con algunas pequeñas áreas de mejora en el trato con las y los niños o en la inclusión. El equipo cumple con lo básico en cuanto a ética, pero hay áreas de oportunidad relacionadas con la empatía o el trato profesional. El equipo muestra falta de consideración ética o profesional, con actitudes inapropiadas o irrespetuosas hacia las y los niños."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "La etapa preescolar como base de la educación con una visión incluyente.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Propone actividades de educación preescolar, reconociendo la importancia de la inclusión con respeto y tolerancia para sus semejantes dentro de su contexto.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "La educación preescolar aplicada de manera incluyente.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Contribuye en la estructuración de actividades para educación preescolar, mostrando una actitud proactiva, siguiendo documentos normativos y principios pedagógicos, bajo supervisión, de manera incluyente y ética para brindar un buen servicio en su comunidad.",
+          "actividadClave": "Las y los estudiantes deberán elaborar planeaciones didácticas considerando el Programa de Educación Prescolar actual, una para cada uno de los campos formativos, retomando las especificidades que corresponden a esta fase de la educación. Deberán considerar en la planeación didáctica contar con actividades de inicio, desarrollo y cierre. Una vez elaboradas las planeaciones, en equipos, seleccionarán una que aplicarán en contexto real, el cual puede ser en una institución preescolar en su comunidad, en casa con familiares o amigos, o en un evento comunitario. Deberán desarrollar los materiales necesarios para la implementación. Durante la clase, el estudiantado deberá observar cómo interactúan las y los niños con los materiales y el espacio, y estar listos para adaptar la actividad según sea necesario. Esta aplicación, deberá hacerse con la supervisión de la o el docente, quien podrá intervenir en caso de ser necesario. Después de la clase, el estudiantado puede recoger opiniones de los niños y niñas (si es posible) y de los demás jóvenes y adultos presentes, sobre lo que funcionó bien y lo que podría mejorarse. Posteriormente reflexionarán sobre su experiencia, qué aprendieron y cómo se sintieron al trabajar con las y los niños. Materiales: Video como hacer una planeación para preescolar https://youtu.be/bXCpA9sKfuk 28",
+          "evidencias": [
+            {
+              "nombre": "Evidencia 1",
+              "tipoInstrumento": "lista-cotejo",
+              "indicadores": [
+                {
+                  "numero": 1,
+                  "texto": "Entregan planeación de la actividad basada en un campo formativo."
+                },
+                {
+                  "numero": 2,
+                  "texto": "Cuentan con el material didáctico para el desarrollo de la actividad."
+                },
+                {
+                  "numero": 3,
+                  "texto": "Los materiales son apropiados para la edad y el desarrollo de los niños y niñas, y están alineados con el campo formativo."
+                },
+                {
+                  "numero": 4,
+                  "texto": "Organizan su espacio para brindar atención adecuada."
+                },
+                {
+                  "numero": 5,
+                  "texto": "Reciben con dinamismo al grupo asignado y se presenta el equipo."
+                },
+                {
+                  "numero": 6,
+                  "texto": "La actividad es de acorde al campo formativo."
+                },
+                {
+                  "numero": 7,
+                  "texto": "La actividad tiene un inicio, desarrollo y cierre."
+                },
+                {
+                  "numero": 8,
+                  "texto": "Facilitó una interacción adecuada y fomentó la participación activa de todos los niños y niñas del grupo."
+                },
+                {
+                  "numero": 9,
+                  "texto": "El equipo fue capaz de adaptarse a las necesidades de las y los niños, y ajustar las actividades según las circunstancias."
+                },
+                {
+                  "numero": 10,
+                  "texto": "Evalúan que se cumplió el objetivo de aprendizaje."
+                },
+                {
+                  "numero": 11,
+                  "texto": "Muestran igualdad al realizar la actividad con los niños y niñas."
+                },
+                {
+                  "numero": 12,
+                  "texto": "Refuerzan al grupo."
+                },
+                {
+                  "numero": 13,
+                  "texto": "El tema tratado y los contenidos abordados son adecuados al campo formativo, con objetivos claros y alineados con el desarrollo integral."
+                },
+                {
+                  "numero": 14,
+                  "texto": "Los objetivos son claros, medibles y realistas para el grupo de niños y niñas al que se dirigirá la clase."
+                }
+              ],
+              "niveles": [],
+              "criterios": []
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "La educación inclusiva en la etapa preescolar.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Colabora en la detección de problemas o dificultades en el aprendizaje a través de los principios pedagógicos, desarrollando actividades que promuevan la apertura, tolerancia y respeto a la diversidad en su comunidad.",
+          "actividadClave": "Las y los estudiantes, en equipos, investigarán y construirán un recorrido visual interactivo (puede ser un póster, mural, presentación digital o línea de tiempo) que muestre los hitos clave en los avances hacia la inclusión educativa, desde el pasado hasta la actualidad. Retomando los siguientes temas: 1) Primeros enfoques. 2) Institucionalización. 3) Escuelas especiales. 4) Integración escolar. 5) Escuela inclusiva. 6) Atención a la diversidad. 29 Asistencia Infantil Conjunto con el (la) docente, reflexionarán sobre los avances en inclusión que se han logrado hasta ahora, pero también sobre los desafíos actuales que persisten, se pueden plantear las siguientes preguntas detonadoras: ● ¿Cuáles son los avances más significativos en la inclusión educativa en su país o contexto? ● ¿Qué barreras o desafíos siguen existiendo para lograr una educación totalmente inclusiva? ● ¿Cómo se puede mejorar la inclusión de todos los estudiantes en su propia comunidad educativa? Posteriormente se abordarán los trastornos o necesidades educativas más comunes en la etapa maternal y preescolar, haciendo énfasis en cómo la atención a la diversidad ayuda a que todos los estudiantes, independientemente de sus características, participen activamente en su proceso de aprendizaje. Las y los estudiantes, en equipos, investigarán el nombre y ubicación de las instituciones que brindan atención a personas con necesidades educativas especiales, concluyendo con la visita y observación del servicio de atención especial que presta la institución más cercana a su contexto, esto con el objetivo de sensibilizar y promover una conciencia de respeto y rechazo a la discriminación en su entorno. Esta sensibilización servirá como base para que posteriormente indaguen estrategias y enfoques pedagógicos inclusivos que apoyan en la atención a las dificultades de aprendizaje en las etapas maternal y preescolar y puedan generar materiales que les permitan identificar estas necesidades y la mejor forma de atenderlas.",
+          "evidencias": [
+            {
+              "nombre": "Evidencia 1",
+              "tipoInstrumento": "lista-cotejo",
+              "indicadores": [
+                {
+                  "numero": 1,
+                  "texto": "La investigación cubre todos los temas de manera exhaustiva. Se presentan los hitos clave de la inclusión educativa de forma clara y detallada, incluyendo datos y ejemplos relevantes."
+                },
+                {
+                  "numero": 2,
+                  "texto": "Analiza y expresa sus ideas de manera oportuna."
+                },
+                {
+                  "numero": 3,
+                  "texto": "El recorrido visual es muy creativo, visualmente atractivo y fácil de entender."
+                },
+                {
+                  "numero": 4,
+                  "texto": "Participa activamente en clase, aportando ideas y comentarios que enriquecen la clase."
+                },
+                {
+                  "numero": 5,
+                  "texto": "Los elementos visuales están bien organizados y hacen que la información sea accesible y atractiva."
+                },
+                {
+                  "numero": 6,
+                  "texto": "Hace una reflexión profunda y crítica sobre los avances y desafíos de la inclusión educativa."
+                },
+                {
+                  "numero": 7,
+                  "texto": "Sus respuestas a las preguntas detonadoras están bien fundamentadas, considerando la investigación, así como el contexto local y global."
+                },
+                {
+                  "numero": 8,
+                  "texto": "Entrega sus productos en tiempo y forma."
+                },
+                {
+                  "numero": 9,
+                  "texto": "Durante el trabajo en equipo participo de manera activa y apoyo de manera equitativa en el proyecto."
+                },
+                {
+                  "numero": 10,
+                  "texto": "Hace uso de las TICCAD para la indagación y elaboración de sus productos."
+                },
+                {
+                  "numero": 11,
+                  "texto": "Toma notas durante su estancia en la institución de asistencia en la institución de atención infantil."
+                },
+                {
+                  "numero": 12,
+                  "texto": "Muestra una actitud respetuosa y profesional."
+                },
+                {
+                  "numero": 13,
+                  "texto": "Promueve una conciencia de respeto y rechazo a la discriminación en su entorno."
+                },
+                {
+                  "numero": 14,
+                  "texto": "Muestra una alta sensibilidad hacia la importancia de la atención inclusiva."
+                },
+                {
+                  "numero": 15,
+                  "texto": "Se comprometieron con los valores de respeto, empatía y rechazo a la discriminación al interactuar y reflexionar sobre la experiencia."
+                }
+              ],
+              "niveles": [],
+              "criterios": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "calidadExtraccion": "BUENA",
+  "coberturaInstrumentos": {
+    "conInstrumento": 8,
+    "total": 8
+  },
+  "avisos": [],
+  "extraidoEl": "2026-08-13T23:26:53.892Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/pgeAL0sAUT-Asistencia-Infantil.pdf"
+}

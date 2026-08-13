@@ -1,0 +1,431 @@
+{
+  "nombre": "Administración",
+  "slug": "administracion--2023-2026",
+  "clave": "3042100007-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "Cultura emprendedora",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Reconoce y ejemplifica el proceso administrativo fundamental a partir de la identificación de un proyecto emprendedor propio de su contexto, con la finalidad de explicar su importancia, así como su valor económico y social.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Emprendimiento y empresa",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Distingue los recursos en diferentes tipos de empresas de su contexto y sus áreas funcionales, a partir de diferentes estrategias administrativas con una visión colaborativa para reconocer la importancia del proceso administrativo y su contribución a la productividad y competitividad en la misma.",
+          "actividadClave": "El estudiantado se organizará en equipos de trabajo, seleccionarán una empresa local de su comunidad (puede ser un pequeño negocio, una tienda, un taller, etc.). El objetivo será realizar un diagnóstico exhaustivo de la empresa, identificando sus recursos, áreas funcionales, procesos administrativos y su posición en el mercado. Desarrollo: Formación de equipos: Formar equipos de trabajo (2-3 integrantes). Selección de la empresa: Cada equipo elegirá una empresa local y obtendrá el permiso para realizar el diagnóstico. Recopilación de información: Las y los estudiantes realizarán entrevistas con los propietarios o empleados, observarán los procesos de la empresa y recopilarán datos sobre sus recursos (humanos, financieros, materiales), productos o servicios, clientes, competencia, etc. Análisis de la información: Los equipos analizarán la información recopilada para identificar las fortalezas, debilidades, oportunidades y amenazas de la empresa (análisis FODA). También analizarán las áreas funcionales (producción, marketing, finanzas, recursos humanos) y los procesos administrativos (planificación, organización, dirección y control). Diagnóstico: Las y los estudiantes elaborarán un diagnóstico de la empresa, identificando sus principales problemas y áreas de mejora. Propuesta de mejora: Los equipos diseñarán una propuesta de mejora que incluya estrategias administrativas para contribuir a la productividad y competitividad de la empresa. La propuesta debe ser realista y viable, considerando los recursos disponibles y las necesidades de la empresa. Presentación: Cada equipo presentará su diagnóstico y propuesta de mejora ante el resto de la clase. 14 Nota: Esta actividad puede ser adaptada según las características y necesidades del estudiantado y las empresas locales. Es importante brindar al estudiantado la orientación y el apoyo necesarios para llevar a cabo el diagnóstico y la propuesta de mejora de manera efectiva.",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Sobresaliente",
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Selección y comprensión de la empresa",
+                  "puntos": 10,
+                  "descripcionNiveles": "Selección de una empresa relevante y adecuada. Demuestra una comprensión profunda de la empresa, su contexto y sus desafíos. Selección de una empresa adecuada. Comprensión de la empresa y sus desafíos. Selección de una muestra aceptable. Demuestra una comprensión básica de la empresa. Selección de una muestra con limitaciones. Demuestra una comprensión limitada de la empresa. Selección de una muestra inadecuada."
+                },
+                {
+                  "criterio": "Demuestra falta de comprensión de la empresa Recopilación y análisis de datos",
+                  "puntos": 20,
+                  "descripcionNiveles": "Recopilación exhaustiva de datos relevantes utilizando diversas fuentes (entrevistas, observaciones, etc.) Análisis profundo y preciso de los datos, identificando patrones y tendencias. Recopilación de datos relevantes utilizando fuentes variadas. Análisis adecuado de los datos, identificando patrones y tendencias Recopilación de datos suficientes, aunque con algunas limitaciones. Análisis básico de los datos, Recopilación limitada de datos. suficientes, Análisis superficial de los datos. Recopilación insuficiente de datos. aunque con Análisis incompleto o incorrecto. D"
+                },
+                {
+                  "criterio": "Diagnóstico",
+                  "puntos": 20,
+                  "descripcionNiveles": "Diagnóstico claro, preciso y fundamentado en el análisis de datos. Identificación de fortalezas, debilidades, oportunidades y amenazas relevantes. Diagnóstico adecuado y fundamentado. Identificación de la mayoría de los aspectos clave. Diagnóstico aceptable, aunque con algunas limitaciones. Identificación de algunos aspectos relevantes. Diagnóstico superficial y poco fundamentado. Identificación limitada de aspectos. Diagnóstico incompleto o incorrecto. Falta de identificación de aspectos relevantes."
+                },
+                {
+                  "criterio": "Propuesta de mejora",
+                  "puntos": 30,
+                  "descripcionNiveles": "Propuesta de mejora innovadora realista y viable. Estrategias claras y detalladas para abordar los problemas identificados y aprovechar las oportunidades Propuesta de mejora adecuada y realista. Estrategias bien definidas para abordar los problemas identificados. Propuesta de mejora aceptable, aunque con algunas limitaciones. Estrategias básicas para abordar los problemas. Propuesta de mejora superficial y poco realista. Estrategias vagas o poco viables. Propuesta de mejora incompleta o inadecuada. Falta de estrategias claras. P"
+                },
+                {
+                  "criterio": "Presentación",
+                  "puntos": 20,
+                  "descripcionNiveles": "Presentación clara, organizada y persuasiva. Uso efectivo de recursos visuales, comunicación oral fluida y profesional. Presentación bien organizada y clara. Uso adecuado de recursos visuales, comunicación oral adecuada. Presentación aceptable, aunque con algunas limitaciones en la organización o claridad. Uso básico de recursos visuales Presentación clara y desorganizada. Uso limitado de recursos visuales. Comunicación oral con dificultades. Presentación incompleta o confusa. Falta de recursos visuales. Comunicación oral deficiente. 15 Administración"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Proceso administrativo",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Examina las etapas del proceso administrativo, empleando sus principios con responsabilidad social, para explicar su importancia en el logro de los objetivos de un proyecto sustentable.",
+          "actividadClave": "Las y los estudiantes, organizados en equipos de trabajo, con ayuda del personal docente diseñarán un proyecto sustentable que responda a una necesidad o problemática identificada en su comunidad. El proyecto deberá ser viable, factible y generar un impacto positivo en el medio ambiente y/o la sociedad. Los equipos aplicarán las etapas del proceso administrativo para la planificación, organización, dirección y control del proyecto. Desarrollo: 1. Formación de equipos. 2. Identificación de la necesidad/problemática: Las y los estudiantes realizarán un análisis de su comunidad para identificar necesidades o problemáticas relacionadas con la sustentabilidad (ej. gestión de residuos, energías renovables, agricultura urbana, etc.). 3. Diseño del proyecto: Los equipos definirán los objetivos, actividades, recursos y cronograma del proyecto. El proyecto deberá ser innovador, viable y generar un impacto positivo en el medio ambiente y/o la sociedad. 4. Aplicación del proceso administrativo. 5. Planificación: Definición de objetivos, estrategias, actividades y recursos. 6. Organización: Asignación de roles y responsabilidades, diseño de la estructura del proyecto. 7. Dirección: Liderazgo, motivación y comunicación efectiva dentro del equipo. 8. Control: Seguimiento y evaluación del progreso del proyecto, identificación de desviaciones y aplicación de medidas correctivas. 9. Elaboración del plan de proyecto: Las y los estudiantes elaborarán un documento que incluya la descripción del proyecto, los objetivos, el cronograma, el presupuesto, el análisis de viabilidad, el plan de implementación y el plan de evaluación. 10. Presentación: Cada equipo presentará su proyecto ante el resto de la clase, explicando cómo aplicaron las etapas del proceso administrativo y cómo el proyecto contribuye a la sustentabilidad. 16",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (4 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Sobresaliente",
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe Mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Identificación de la Necesidad/ Problemática y Diseño del Proyecto",
+                  "puntos": 20,
+                  "descripcionNiveles": "Identificación clara y relevante de una necesidad/ problemática de la comunidad. Diseño innovador, visible y con impacto positivo en la sustentabilidad. Identificación adecuada de una necesidad/ problemática. Diseño viable y con impacto positivo. Identificación aceptable de una necesidad/ problemática . Diseño básico con potencial de impacto. Identificación limitada de una necesidad/ problemática. Diseño con viabilidad o impacto cuestionables. Identificación inadecuada de una necesidad/ problemática. Diseño inviable o sin impacto."
+                },
+                {
+                  "criterio": "Aplicación del proceso administrativo",
+                  "puntos": 30,
+                  "descripcionNiveles": "Aplicación rigurosa y efectiva de las etapas del proceso administrativo (planificación, organización, dirección y control) Evidencia clara de la aplicación en todas las fases del proyecto. Aplicación adecuada de las etapas del proceso administrativo. Evidencia en la mayoría de las fases. Aplicación básica del proceso administrativ o. Evidencia limitada de la aplicación. Aplicación superficial de las etapas del proceso administrativo. Aplicación incorrecta o inexistente de las etapas del proceso administrativo. Aplicación superficial de las etapas del proceso administrativo. Aplicación incorrecta o inexistente de las etapas del proceso administrativo."
+                },
+                {
+                  "criterio": "Elaboración del Plan de proyecto",
+                  "puntos": 25,
+                  "descripcionNiveles": "Plan de proyecto completo, detallado y bien estructurado. Incluye todos los elementos clave (objetivos, cronograma, presupuesto, etc.) Análisis de viabilidad sólido y fundamentado. Plan de proyecto bien estructurado. Incluye todos los elementos clave. Análisis de viabilidad adecuado. Plan de proyecto aceptable, aunque con algunos elementos clave ausentes. Análisis de viabilidad básico. Plan de proyecto poco estructurado o incompleto. Algunos elementos clave ausentes. Análisis de viabilidad débil o superficial. Plan de proyecto ausente o inadecuado. Falta de estructura y elementos clave. Análisis de viabilidad ausente o incorrecto. P"
+                },
+                {
+                  "criterio": "Presentación",
+                  "puntos": 25,
+                  "descripcionNiveles": "Presentación clara, organizada y persuasiva. Explicación detallada de la aplicación del proceso administrativo y el impacto del proyecto. Uso efectivo de recursos visuales. Comunicación oral fluida y profesional. Presentación clara y organizada. Explicación adecuada de la aplicación del proceso administrativo y del impacto del proyecto. Uso adecuado de recursos visuales. Presentación aceptable, aunque con algunas inconsistenci as. Explicación básica de la aplicación y el impacto. Uso limitado de recursos visuales. Presentación poco clara y desorganizada. Explicación superficial de la aplicación y el impacto. Uso limitado de recursos visuales. Comunicación con dificultades. Presentación deficiente. Explicación confusa o inexistente. Falta de claridad y recursos visuales. Comunicación oral deficiente. 17 Administración"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Legalidad empresarial y mercadotecnia",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Examina las acciones básicas de gestión legal en diferentes tipos de empresa, empleando éticamente la normatividad vigente para la creación de una pequeña y mediana empresa. Explica las características elementales de un estudio de viabilidad en un producto o servicio de calidad, aplicando las etapas y técnicas de la investigación de mercados de forma colaborativa, para estudiar la rentabilidad de una idea de negocio, producto o servicio que satisfaga las necesidades y preferencias de las y los consumidores.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Legalidad empresarial",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Distingue las acciones de gestión legal, empleando la normatividad vigente de forma ética, para la creación de una empresa o negocio que responda a las necesidades de su contexto.",
+          "actividadClave": "Las y los estudiantes, organizados en equipos de trabajo, y con la asesoría del personal docente simularán ser asesores legales para emprendedores locales que desean iniciar un negocio. Cada equipo seleccionará una idea de negocio viable y relevante para su comunidad. El objetivo será investigar y presentar los requisitos legales necesarios para la creación y operación de dicho emprendimiento, considerando las necesidades específicas del contexto local. Desarrollo: 1. Formación de equipos: Formar equipos de trabajo (2-3 integrantes). Selección de la idea de negocio: Los equipos elegirán una idea de negocio que sea relevante para su comunidad y que tenga potencial de desarrollo. 2. Investigación legal: Las y los estudiantes investigarán los requisitos legales necesarios para la creación y operación del emprendimiento seleccionado, incluyendo: a. Tipos de sociedades mercantiles y su aplicabilidad al negocio. b. Trámites y permisos a nivel federal, estatal y municipal. c. Obligaciones fiscales y laborales. 3. Normativas específicas del sector al que pertenece el negocio. Elaboración de un informe de asesoría: Los equipos elaborarán un informe detallado que incluya: a. Descripción de la idea de negocio. b. Análisis de los requisitos legales aplicables. c. Recomendaciones y pasos por seguir para la creación y operación del negocio. d. Formularios y documentos necesarios para los trámites legales. 18 e. Presentación de la asesoría: Cada equipo presentará su informe de asesoría ante el resto de la clase, simulando una sesión de asesoramiento con un emprendedor.",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (4 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Sobresaliente",
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe Mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Selección y Viabilidad de la Idea de Negocio",
+                  "puntos": 15,
+                  "descripcionNiveles": "Selección de una idea de negocio innovadora, relevante y con alto potencial de desarrollo en el contexto local. Selección de una idea de negocio viable y relevante para la comunidad. Selección de una idea de negocio aceptable, aunque con algunas limitaciones en su viabilidad o relevancia. Selección de una idea de negocio con viabilidad o relevancia cuestionable. Selección de una idea de negocio inadecuada o inviable."
+                },
+                {
+                  "criterio": "Investigación Legal",
+                  "puntos": 30,
+                  "descripcionNiveles": "Investigación exhaustiva y precisa de los requisitos legales aplicables al emprendimiento. Identificación de todas las normativas relevantes y su correcta interpretación. Investigación adecuada de los requisitos legales, identificación de algunas normativas relevantes. Investigación básica de los requisitos legales. Identificación de algunas normativas relevantes. Investigación limitada de los requisitos legales. Identificación de pocas normativas relevantes. Investigación incompleta o incorrecta de los requisitos legales."
+                },
+                {
+                  "criterio": "Elaboración del Informe de Asesoría",
+                  "puntos": 30,
+                  "descripcionNiveles": "Informe de asesoría completo, detallado y bien estructurado. Incluye todos los elementos clave (descripción del negocio, análisis legal, recomendaciones, formularios, etc.). Lenguaje claro y preciso. Informe de asesoría adecuado y bien estructurado. Incluye la mayoría de los elementos clave. Lenguaje claro. Informe de asesoría aceptable, aunque con algunas limitaciones en la estructura o contenido. Incluye algunos elementos clave. Informe de asesoría incompleto o poco estructurado. Incluye pocos elementos clave. Lenguaje confuso. Informe de asesoría ausente i inadecuado. Falta de elementos clave. Lenguaje incorrecto."
+                },
+                {
+                  "criterio": "Presentación de la Asesoría",
+                  "puntos": 25,
+                  "descripcionNiveles": "Presentación clara, organizada y persuasiva. Simulación efectiva de una sesión de asesoramiento. Comunicación oral fluida y profesional. Uso adecuado de los recursos visuales. Presentación bien organizada y clara. Simulación adecuada de la sesión. Comunicación oral adecuada. Uso básico de los recursos visuales. Presentación aceptable, aunque con algunas limitaciones en la organización o claridad. Simulación básica. Presentación poco clara y desorganizada. Simulación con dificultades. Uso limitado de recursos visuales. Presentación Incompleta o confusa. Falta de simulación y recursos visuales. Comunicación oral deficiente. 19 Administración"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Mercadotecnia",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Reconoce las funciones de la mercadotecnia participando en la investigación de mercado de un producto o servicio en su contexto, con la finalidad de analizar los principios y técnicas que permitan posicionar y satisfacer las necesidades y preferencias de las personas consumidoras.",
+          "actividadClave": "Las y los estudiantes, organizados en equipos de trabajo, y con asesoría del personal docente seleccionarán un producto o servicio ofrecido por un negocio local. Con el propósito de desarrollar una estrategia de posicionamiento integral que permita al negocio destacar en el mercado y satisfacer las necesidades y preferencias de su público objetivo. Desarrollo: 1. Formación de equipos. 2. Selección del producto/servicio: Los equipos elegirán un producto o servicio ofrecido por un negocio local que consideren que tiene potencial de crecimiento. 3. Investigación de mercado: Las y los estudiantes realizarán una investigación de mercado para analizar: a. El público objetivo del producto/servicio (necesidades, preferencias, hábitos de consumo). b. La competencia (productos/servicios similares, estrategias de marketing). c. Las tendencias del mercado. 4. Definición de la estrategia de posicionamiento, los equipos definirán: a. El segmento de mercado al que se dirigirán. b. La propuesta de valor del producto/servicio (qué lo hace único y atractivo). c. Los atributos clave que se destacarán en la comunicación. d. Los canales de comunicación que se utilizarán. 5. Desarrollo del plan de marketing: Las y los estudiantes elaborarán un plan de marketing que incluya: a. Estrategias de producto (características, diseño, empaque). b. Estrategias de precio (fijación de precios, descuentos, promociones). c. Estrategias de distribución (canales de venta, logística). d. Estrategias de comunicación (publicidad, relaciones públicas, marketing digital). 6. Presentación de la estrategia: Cada equipo presentará su estrategia de posicionamiento ante el resto de la clase, simulando una presentación ante el dueño del negocio local. 20",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (4 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Sobresaliente",
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe Mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Selección del producto/ servicio e investigación de mercado",
+                  "puntos": 20,
+                  "descripcionNiveles": "Selección del producto/ servicio con alto potencial. Investigación de mercado exhaustiva y precisa, identificando claramente el público objetivo, la competencia y las tendencias. Selección del producto/ servicio adecuado. Investigación de mercado completa, identificando los aspectos clave. Selección del producto/ servicio aceptable. Investigación de mercado básica, identificando algunos aspectos relevantes. Selección del producto/ servicio con limitaciones. Investigación de mercado superficial, con poca información relevante. Selección del producto/ servicio inadecuado. Investigación de mercado incompleta o incorrecta."
+                },
+                {
+                  "criterio": "Definición de la estrategia de posicionamient o",
+                  "puntos": 30,
+                  "descripcionNiveles": "Estrategia de posicionamiento innovadora, clara y bien fundamentada. Propuesta de valor única y atractiva. Segmento de mercado bien definido y justificado. Atributos clave claramente identificados. Estrategia de posicionamien to adecuada y bien definida. Propuesta de valor clara. Segmento de mercado definido. Atributos clave identificados. Estrategia de posicionamien to aceptable aunque con algunas limitaciones. Propuesta de valor básica. Segmento de mercado con poca definición. Estrategia de posicionamient o superficial y poco fundamentada. Propuesta de valor vaga. Segmento de mercado mal definido. Estrategia de posicionamiento incompleta o inadecuada. Falta propuesta de valor y segmentación."
+                },
+                {
+                  "criterio": "Desarrollo del plan de marketing",
+                  "puntos": 30,
+                  "descripcionNiveles": "Plan de marketing completo, detallada y bien estructurado. Incluye estrategias claras y coherentes para las 4P´s. Justificación sólida de las decisiones tomadas. Plan de marketing adecuado y bien estructurado. Incluye estrategias para las 4P´s. Justificación adecuada. Plan de marketing adecuado y bien estructurado. Incluye estrategias para las 4P´s. Plan de marketing incompleto o poco estructurado. Incluye pocas estrategias para las 4P´s. Plan de marketing ausente o inadecuado. Falta de estrategias para las 4P´s."
+                },
+                {
+                  "criterio": "Presentación de la estrategia",
+                  "puntos": 20,
+                  "descripcionNiveles": "Presentación clara, organizada y persuasiva. Simulación efectiva de una presentación ante el cliente. Comunicación oral fluida y profesional. Uso adecuado de recursos visuales. Presentación bien organizada y clara. Simulación adecuada. Comunicación oral adecuada. Uso básico de recursos visuales. Presentación aceptable, aunque con algunas limitaciones en la organización y claridad. Simulación básica. Presentación poco clara y desorganizada. Simulación con dificultades. Uso limitado de recursos visuales. Presentación incompleta o confusa. Falta de simulación y recursos visuales. Comunicación oral deficiente. 21 Administración"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "Gestión financiera y ventas",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Explica los elementos y técnicas básicas de la gestión financiera en una empresa de acuerdo con las normas y leyes vigentes, con la finalidad visualizar su importancia de llevar a cabo una adecuada y responsable administración de los recursos. Esboza la venta de un producto o servicio acorde a las necesidades de su contexto, a través de las fases o etapas fundamentales del proceso de ventas, a fin de obtener resultados atendiendo ética y profesionalmente a las y los potenciales consumidores de manera presencial y/o a distancia.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Finanzas",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Emplea los elementos y técnicas de la gestión financiera en una empresa de su contexto, de acuerdo con las normas y leyes vigentes, para reconocer su diagnóstico patrimonial y económico y poder tomar decisiones financieras.",
+          "actividadClave": "Simular el proceso de análisis financiero de una empresa real del entorno local, con el objetivo de que las y los estudiantes puedan aplicar los conocimientos y técnicas de gestión financiera para diagnosticar su situación patrimonial y económica, y proponer soluciones para la toma de decisiones financieras. Desarrollo: 1. Selección de una Empresa Local: a. Las y los estudiantes, en equipos, seleccionarán una empresa real de su comunidad (puede ser un negocio familiar, una pequeña empresa, etc.) b. Deberán obtener información financiera básica de la empresa (estados financieros, balances, etc.), ya sea a través de entrevistas, investigación en línea o acceso a información pública. 2. Análisis Financiero: Realizarán un análisis detallado de la situación financiera de la empresa, utilizando herramientas y técnicas de gestión financiera como: a. Análisis de ratios financieros (liquidez, solvencia, rentabilidad) b. Análisis de estados financieros (balance general, estado de resultados) c. Elaboración de un diagnóstico patrimonial y económico. d. Identificarán las fortalezas y debilidades financieras de la empresa, así como las oportunidades y amenazas del entorno. 22 3. Propuesta de Soluciones y Toma de Decisiones: Con base en el análisis financiero, propondrán soluciones para mejorar la situación financiera de la empresa. Elaborarán un plan de acción que incluya: a. Estrategias para aumentar la rentabilidad. b. Propuestas para mejorar la gestión de la liquidez c. Recomendaciones para la toma de decisiones de inversión o financiamiento. d. Justificarán sus propuestas con argumentos sólidos y datos financieros. 4. Presentación y Defensa del Análisis: a. Presentarán los resultados de su análisis y sus propuestas ante un panel de evaluadores (profesores, empresarios locales, etc.) b. Responderán a las preguntas del panel de manera clara y fundamentada. c. Se evaluará la capacidad de los alumnos para aplicar los conocimientos y técnicas de gestión financiera en un contexto real. 23 Administración",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Selección de la Empresa y Recopilación de Información",
+                  "puntos": 10,
+                  "descripcionNiveles": "Selecciona una empresa local relevante y obtiene información completa y precisa sobre sus procesos de comunicación. Selecciona una empresa local adecuada y obtiene información suficiente sobre sus procesos de comunicación. Selecciona una empresa local, pero la información recabada sobre las prácticas de comunicación es limitada o incompleta. La selección de la empresa local o la recopilación de información sobre sus procesos de comunicación es deficiente o ausente."
+                },
+                {
+                  "criterio": "Diagnóstico de la Comunicación",
+                  "puntos": 10,
+                  "descripcionNiveles": "Realiza un diagnóstico profundo y preciso del proceso de comunicación de la empresa, utilizando herramientas y técnicas adecuadas.. El informe de diagnóstico es completo, bien fundamentado y presenta un análisis detallado de las fortalezas, debilidades y causas de los problemas de comunicación. Realiza un diagnóstico adecuado de los procesos de comunicación de la empresa, utilizando herramientas y técnicas básicas. El informe de diagnóstico es preciso y adecuado, y presenta un análisis de las fortalezas y debilidades. Realiza un diagnóstico limitado de los procesos de comunicación de la empresa, con algunas imprecisiones o deficiencias. El informe de diagnóstico presenta algunas limitaciones en su análisis. El diagnóstico de los procesos de comunicación es deficiente o inexistente. El informe de diagnóstico es incompleto o incorrecto."
+                },
+                {
+                  "criterio": "Propuesta de Mejoras y Plan de Acción",
+                  "puntos": 30,
+                  "descripcionNiveles": "Propone estrategias y acciones innovadoras y viables para mejorar los procesos de comunicación de la empresa. El plan de acción es detallado, realista, bien justificado y presenta objetivos SMART, estrategias concretas, recursos necesarios, responsables e indicadores de seguimiento. Propone estrategias y acciones adecuadas para mejorar los procesos de comunicación de la empresa. El plan de acción es preciso, adecuado y presenta objetivos, estrategias, recursos y responsables. Propone estrategias y acciones limitadas o poco viables para mejorar los procesos de comunicación de la empresa. El plan de acción presenta algunas limitaciones en su estructura o contenido. La propuesta de mejoras o el plan de acción son deficientes o ausentes."
+                },
+                {
+                  "criterio": "Presentación y Defensa del Diagnóstico y Propuesta",
+                  "puntos": 30,
+                  "descripcionNiveles": "Presenta el diagnóstico y la propuesta de manera clara, concisa y persuasiva. Responde a las preguntas del panel de evaluadores de manera informada y segura. Presenta el diagnóstico y la propuesta de manera clara y organizada. Responde a las preguntas del panel de evaluadores de manera adecuada. La presentación del diagnóstico y la propuesta es poco clara o desorganizada. Tiene dificultades para responder a las preguntas del panel de evaluadores. La presentación del diagnóstico y la propuesta es deficiente o ausente. No responde o responde de manera inadecuada a las preguntas del panel de evaluadores."
+                },
+                {
+                  "criterio": "Aplicación de Competencias Laborales Básicas",
+                  "puntos": 20,
+                  "descripcionNiveles": "Demuestra un dominio sobresaliente de las competencias laborales básicas relevantes (comunicación, análisis, pensamiento crítico, etc.). Demuestra un buen dominio de las competencias laborales básicas relevantes. Demuestra un dominio limitado de las competencias laborales básicas relevantes. Presenta un dominio deficiente o nulo de las competencias laborales básicas relevantes. 24"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Ventas y difusión",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Diseña de manera supervisada la venta de un producto o servicio acorde a las necesidades de su contexto de manera presencial y/o a distancia, empleando las fases o etapas del proceso de ventas, a fin de atender ética y profesionalmente a las potenciales personas consumidoras.",
+          "actividadClave": "Simular el proceso completo de diseño y venta de un producto o servicio innovador, desde la identificación de una necesidad del cliente hasta la presentación de la propuesta de venta y el cierre de la venta, enfocándose en la atención ética y profesional al cliente. Desarrollo: 1. Identificación de una Necesidad del Cliente: a. Las y los estudiantes, de forma individual o en equipos, identificarán una necesidad o problema específico de un grupo de clientes potenciales. b. Realizarán una investigación de mercado básica para comprender las características, necesidades y preferencias de este grupo de clientes. 2. Diseño del Producto o Servicio Innovador: a. Diseñarán un producto o servicio innovador que satisfaga la necesidad identificada. b. Elaborarán una propuesta de valor clara y atractiva que destaque los beneficios del producto o servicio para el cliente. 3. Elaboración de la Propuesta de Venta: Desarrollarán una propuesta de venta completa que incluya: a. Descripción detallada del producto o servicio. b. Estrategia de precios y condiciones de venta. c. Plan de marketing y comunicación. d. Presentación visual atractiva (folletos, presentaciones, etc.). 4. Simulación de la Venta: Realizarán una simulación de venta, donde pondrán en práctica sus habilidades de comunicación, negociación y cierre de ventas. a. Atenderán las dudas y objeciones de los \"clientes\" de manera profesional y ética. b. Se evaluará la capacidad de los alumnos para atender a los clientes de manera presencial y/o a distancia. 5. Evaluación y Retroalimentación: a. Presentarán los resultados de su proyecto (propuesta de venta, simulación de venta) ante un panel de evaluadores (profesores, profesionales de ventas, etc.) b. Recibirán retroalimentación sobre la calidad de su propuesta de venta, su desempeño en la simulación y su capacidad para atender al cliente de manera ética y profesional. 25 Administración",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Identificación de la Necesidad del Cliente",
+                  "puntos": 10,
+                  "descripcionNiveles": "Identifica una necesidad clara y relevante de un grupo de clientes potenciales. La investigación de mercado es completa y precisa. Identifica una necesidad de un grupo de clientes potenciales. La investigación de mercado es adecuada. Identifica una necesidad, pero la investigación de mercado es limitada o incompleta. Identifica una necesidad o la investigación de mercado son deficientes o ausentes.."
+                },
+                {
+                  "criterio": "Diseño del Producto o Servicio innovador",
+                  "puntos": 20,
+                  "descripcionNiveles": "Diseña un producto o servicio innovador que satisface la necesidad identificada. La propuesta es clara, atractiva y bien fundamentada. Diseña un producto o servicio que satisface la necesidad identificada. La propuesta de valor es adecuada. El diseño del producto o servicio es limitado o poco innovador. La propuesta de valor presenta algunas deficiencias. El diseño del producto o servicio es deficiente o ausente. La propuesta de valor es incompleta o incorrecta."
+                },
+                {
+                  "criterio": "Elaboración de la Propuesta de Venta",
+                  "puntos": 30,
+                  "descripcionNiveles": "Elabora una propuesta de venta completa, detallada y bien estructurada. La presentación visual es atractiva y profesional. Elabora una propuesta de venta adecuada con los elementos esenciales. La presentación visual es adecuada. La propuesta de venta presenta algunas deficiencias en su estructura o contenido. La presentación visual es limitada. La propuesta de venta es incompleta o presenta deficiencias significativas. La presentación visual es deficiente o ausente."
+                },
+                {
+                  "criterio": "Simulación de la Venta",
+                  "puntos": 20,
+                  "descripcionNiveles": "Demuestra excelentes habilidades de comunicación, negociación y cierre de ventas. Atiende las dudas y objeciones de los “clientes” de manera profesional y efectiva. Demuestra buenas habilidades de comunicación, negociación y cierre de ventas. Atiende las dudas y objeciones de los “clientes” de manera adecuada. Demuestra habilidades de comunicación, negociación y cierre de ventas limitadas. Atiende las dudas y objeciones de los “clientes” de manera poco efectiva. Demuestra habilidades de comunicación, negociación y cierre de ventas deficientes. Tiene dificultades para atender las dudas y objeciones de los “clientes”."
+                },
+                {
+                  "criterio": "Aplicación de Competencias Laborales Básicas",
+                  "puntos": 20,
+                  "descripcionNiveles": "Demuestra un dominio sobresaliente de las competencias laborales básicas relevantes (comunicación, orientación al cliente, negociación, etc.). Demuestra un buen dominio de las competencias laborales básicas relevantes. Demuestra un dominio limitado de las competencias laborales básicas relevantes. Demuestra un dominio deficiente o nulo de las competencias laborales básicas relevantes. 26"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "Comunicación de la empresa y proyecto emprendedor",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Distingue los procesos fundamentales de comunicación interna y externa de la empresa con base en las evidencias obtenidas de las y los diversos interlocutores, a fin de visualizar la eficiencia de la gestión y la implementación de estrategias y acciones que sirvan para mejorar. Ejemplifica un proyecto sustentable en su contexto, integrando los conocimientos básicos teórico-prácticos adquiridos durante la Formación Laboral y a lo largo de su vida con el propósito de identificar posibles ganancias económicas sin dañar el medio ambiente, así como plantear acciones para su inserción en el mercado laboral y/o empresarial.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Comunicación de la empresa",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Compara de manera colaborativa los procesos de comunicación interna y externa de una empresa, a partir de las evidencias obtenidas de las y los diversos interlocutores, a fin de visualizar la eficiencia de su gestión y la implementación de estrategias y acciones que sirvan para mejorar los procesos de comunicación.",
+          "actividadClave": "Simula el proceso de diagnóstico y mejora de la comunicación interna y externa de una empresa real del entorno local, con el objetivo de que las y los estudiantes puedan aplicar los conocimientos y técnicas de comunicación empresarial para identificar áreas de mejora y proponer soluciones efectivas. Desarrollo: 1. Selección de una Empresa Local: a. Las y los estudiantes, en equipos, seleccionarán una empresa real de su comunidad (puede ser un negocio familiar, una pequeña empresa, etc.) b. Deberán obtener información sobre los procesos de comunicación interna y externa de la empresa, ya sea a través de entrevistas, observación directa o investigación en línea. 2. Diagnóstico de la Comunicación: Realizarán un diagnóstico detallado de los procesos de comunicación de la empresa, utilizando herramientas y técnicas de comunicación empresarial como: a. Análisis de los canales de comunicación utilizados (internos y externos) b. Evaluación de la efectividad de la comunicación (claridad, precisión, oportunidad) c. Identificación de barreras y problemas de comunicación. d. Elaborarán un informe de diagnóstico que incluya: ● Descripción de los procesos de comunicación actuales. ● Identificación de fortalezas y debilidades. 27 Administración ● Análisis de las causas de los problemas de comunicación. 3. Propuesta de Mejoras y Plan de Acción: Con base en el diagnóstico, propondrán estrategias y acciones para mejorar los procesos de comunicación de la empresa. a. Elaborarán un plan de acción que incluya: ● Objetivos específicos, medibles, alcanzables, relevantes y con plazos definidos. ● Estrategias y acciones concretas para mejorar la comunicación interna y externa. ● Recursos necesarios y responsables de la implementación. ● Indicadores de seguimiento y evaluación. 4. Presentación y Defensa del Diagnóstico y la Propuesta: a. Presentarán los resultados de su diagnóstico y su propuesta de mejoras ante un panel de evaluadores (profesores, empresarios locales, etc.) b. Responderán a las preguntas del panel de manera clara y fundamentada. c. Se evaluará la capacidad de los alumnos para aplicar los conocimientos y técnicas de comunicación empresarial en un contexto real. 28",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Selección y obtención de información de la empresa",
+                  "puntos": 10,
+                  "descripcionNiveles": "Selecciona una empresa local relevante y obtiene información financiera completa y precisa. Selecciona una empresa local adecuada y obtiene información financiera suficiente. Selecciona una empresa pero la información financiera obtenida es limitada o incompleta. La selección de la empresa local o la obtención de información financiera es deficiente o ausente."
+                },
+                {
+                  "criterio": "Análisis financiero detallado",
+                  "puntos": 20,
+                  "descripcionNiveles": "Realiza un análisis financiero profundo y preciso, utilizando herramientas y técnicas adecuadas. El diagnóstico patrimonial y económico es completo y bien fundamentado. Realiza un análisis financiero adecuado, utilizando herramientas y técnicas básicas. El diagnóstico patrimonial y económico es preciso y adecuado. Realiza un análisis financiero limitado, con algunas imprecisiones o deficiencias. El diagnóstico patrimonial y económico presenta algunas limitaciones. Realiza un análisis financiero es deficiente o ausente. El diagnóstico patrimonial y económico es incompleto o incorrecto."
+                },
+                {
+                  "criterio": "Propuesta de soluciones y Plan de acción",
+                  "puntos": 30,
+                  "descripcionNiveles": "Propone soluciones innovadoras y viables para mejorar la situación financiera de la empresa. El plan de acción es detallado, realista y bien justificado. Propone soluciones adecuadas para mejorar la situación financiera de la empresa. El plan de acción es preciso y adecuado. Propone soluciones limitadas o poco viables para mejorar la situación financiera de la empresa. El plan de acción presenta algunas limitaciones. La propuesta de soluciones o el plan de acción son deficientes o ausentes."
+                },
+                {
+                  "criterio": "Presentación y defensa del análisis",
+                  "puntos": 25,
+                  "descripcionNiveles": "Presenta el análisis y las propuestas de manera clara, concisa y persuasiva. Responde a las preguntas del panel de evaluadores de manera informada y segura. Presenta el análisis y las propuestas de manera clara y organizada. Responde a las preguntas del panel de evaluadores de manera adecuada. La presentación del análisis y las propuestas son poco claras o desorganizadas. Tiene dificultades para responder las preguntas del panel de evaluadores. La presentación del análisis y las propuestas son deficientes o ausentes. No responde o responde de manera inadecuada las preguntas del panel de evaluadores."
+                },
+                {
+                  "criterio": "Aplicación de competencias laborales básicas",
+                  "puntos": 15,
+                  "descripcionNiveles": "Demuestra un dominio sobresaliente de las competencias laborales básicas (análisis, pensamiento crítico, toma de decisiones, etc.) Demuestra buen dominio de las competencias laborales básicas relevantes. Demuestra un dominio limitado de las competencias laborales básicas relevantes. Demuestra un dominio deficiente o nulo de las competencias laborales básicas relevantes. 29 Administración"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Proyecto emprendedor",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Describe de forma colaborativa un proyecto sustentable de su contexto, siguiendo el modelo de plan de negocio, a fin de identificar posibles ganancias económicas sin dañar el medio ambiente, así como plantear acciones que permitan explorar el mercado laboral y/o empresarial.",
+          "actividadClave": "Simula el proceso completo de desarrollo de un proyecto emprendedor sustentable, desde la identificación de una oportunidad en el contexto local hasta la elaboración de un plan de negocio y la presentación de la propuesta, enfocándose en la identificación de posibles ganancias económicas. Desarrollo: 1. Identificación de una Oportunidad y Análisis del Contexto: ● Las y los estudiantes, en equipos, identificarán una oportunidad de negocio en su contexto local que tenga un enfoque sustentable (social, ambiental o económico) ● Realizarán un análisis del contexto local para identificar las necesidades, recursos disponibles y posibles impactos del proyecto. 2. Diseño del Proyecto Sustentable: ● Diseñarán un proyecto emprendedor que aproveche la oportunidad identificada y tenga un enfoque sustentable. ● Definirán los objetivos, actividades, recursos y cronograma del proyecto. 3. Elaborarán una propuesta de valor clara y atractiva que destaque los beneficios del proyecto para la comunidad y el medio ambiente. 4. Elaboración del Plan de Negocio: ● Desarrollarán un plan de negocio completo que incluya: _ Descripción del producto o servicio. _ Análisis de mercado y público objetivo. _ Estrategia de marketing y ventas. _ Plan de producción u operación. _ Estructura organizativa. _ Plan financiero (inversión inicial, costos, ingresos, rentabilidad). _ Análisis de impacto social y ambiental. 5. Presentación y Defensa del Proyecto: ● Presentarán los resultados de su proyecto (plan de negocio, prototipo o simulación) ante un panel de evaluadores (profesores, emprendedores locales, etc.) ● Responderán a las preguntas del panel de manera clara y fundamentada. Se evaluará la viabilidad del proyecto, su impacto sustentable y su potencial de ganancias económicas. 30",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Identificación de la Oportunidad y Análisis del Contexto",
+                  "puntos": 10,
+                  "descripcionNiveles": "Identifica una oportunidad de negocio relevante y bien definida en el contexto local. El análisis del contexto es profundo, preciso y considera aspectos sociales, ambientales y económicos. Identifica una oportunidad de negocio en el contexto local. El análisis del contexto es adecuado y considera aspectos relevantes. Identifica una oportunidad de negocio, pero el análisis del contexto es limitado o incompleto. La identificación de la oportunidad o el análisis del contexto son deficientes o ausentes."
+                },
+                {
+                  "criterio": "Diseño del Proyecto Sustentable",
+                  "puntos": 20,
+                  "descripcionNiveles": "Diseña un proyecto emprendedor innovador y viable, con un enfoque sustentable claro y definido. La propuesta de valor es atractiva y destaca los beneficios para la comunidad y el medio ambiente. Diseña un proyecto emprendedor con un enfoque sustentable. La propuesta de valor es adecuada y presenta los beneficios del proyecto. El diseño del proyecto es limitado o poco innovador. La propuesta de valor presenta algunas deficiencias. El diseño del proyecto es deficiente o ausente. La propuesta de valor es incompleta o incorrecta."
+                },
+                {
+                  "criterio": "Elaboración del Plan de Negocio",
+                  "puntos": 20,
+                  "descripcionNiveles": "Elabora un plan de negocio completo, detallado y bien estructurado. El plan financiero es preciso, realista y demuestra una sólida comprensión de los conceptos financieros. El análisis de impacto social y ambiental es completo y bien fundamentado. Elabora un plan de negocio adecuado, con los elementos esenciales. El plan financiero es preciso y demuestra una comprensión básica de los conceptos financieros. El análisis de impacto social y ambiental es adecuado. El plan de negocio presenta algunas deficiencias en su estructura o contenido. El plan financiero presenta algunas imprecisiones o demuestra una comprensión limitada de los conceptos financieros. El análisis del impacto social y ambiental es limitado. El plan de negocio es incompleto o presenta deficiencias significativas. El plan financiero es impreciso o demuestra una falta de comprensión de los conceptos financieros. El análisis de impacto social y ambiental es deficiente o ausente."
+                },
+                {
+                  "criterio": "Presentación y Defensa del Proyecto",
+                  "puntos": 30,
+                  "descripcionNiveles": "Presenta el proyecto de manera clara, concisa y persuasiva. Responde a las preguntas del panel de evaluadores de manera informada y segura. Presenta el proyecto de manera clara y organizada. Responde a las preguntas del panel de evaluadores de manera adecuada. La presentación del proyecto es poco clara o desorganizada. Tiene dificultades para responder a las preguntas del panel de evaluadores. La presentación del proyecto es deficiente o ausente. No responde o responde de manera inadecuada a las preguntas del panel de evaluadores."
+                },
+                {
+                  "criterio": "Aplicación de Competencia s Laborales Básicas",
+                  "puntos": 20,
+                  "descripcionNiveles": "Demuestra un dominio sobresaliente de las competencias laborales básicas relevantes (pensamiento crítico, creatividad, planificación, comunicación, etc.) Demuestra un buen dominio de las competencias laborales básicas relevantes. Demuestra un dominio limitado de las competencias laborales relevantes. Demuestra un dominio deficiente o nulo de las competencias laborales básicas relevantes. 31 Administración Recomendaciones para el trabajo en el aula y la escuela Es importante contextualizar al estudiantado sobre los procesos históricos, económicos, culturales que se presentan de forma paralela o detrás del conocimiento científico y tecnológico, y cómo éstos influyen de forma directa en el desarrollo de la calidad de vida de una sociedad, esto con la finalidad de que puedan formular cuestionamientos, plantear y contrastar hipótesis y proponer soluciones a problemas que afectan a su comunidad. Por ello, lo que a continuación se enumera es una serie de orientaciones pedagógicas para el fomento de las competencias laborales básicas:7 ● Enfocar la acción educativa en el estudiantado y su aprendizaje. ● Tener en cuenta los aprendizajes previos del o la estudiante. ● Mostrar empatía con el estudiantado. ● Favorecer el desarrollo de habilidades socioemocionales como elemento fundamental para el aprendizaje. ● Reconocer la naturaleza social del conocimiento (enfoque comunitario). ● Establecer la transversalidad curricular (Currículum fundamental y ampliado). ● Diseñar situaciones didácticas que propicien el aprendizaje situado mediante metodologías activas. ● Entender la evaluación como un proceso formativo, continuo y permanente. ● Desarrollar estrategias de aprendizaje con enfoque de inclusión y equidad. ● Usar las Tecnologías de la Información, Comunicación, Conocimiento y Aprendizaje Digitales (TICCAD). ● Fomentar la innovación tecnológica desde un enfoque ético. 7 Subsecretaría de Educación Media Superior. (2023b). El currículum laboral en la educación media superior. SEP. 32 Rol docente El Marco para la excelencia en la enseñanza y la gestión escolar en Educación Media Superior publicado por la Unidad del Sistema para la Carrera de las Maestras y los Maestros establece el perfil que debe reunir el y la docente en Educación Media Superior, el cual consta de cinco dominios, los cuales organizan los criterios e indicadores deseables para él o la docente de la Nueva Escuela Mexicana, los cuales son: 1. Asume la identidad de su función. Desarrolla su función como agente fundamental en la formación integral del estudiantado, en un marco de inclusión y respeto a la diversidad, con la finalidad de contribuir al logro de la excelencia educativa. 2. Domina el currículo para la enseñanza y el aprendizaje. Comprende la articulación del modelo educativo con los contenidos y la transversalidad del conocimiento, considerando las características y contexto del estudiantado para el logro de los aprendizajes. 3. Planifica e implementa los procesos de enseñanza y aprendizaje. Planifica e implementa el trabajo pedagógico para generar ambientes de aprendizaje, a partir de los planes y programas de estudio, así como, de las características y contexto del estudiantado. 4. Participa en el trabajo colegiado y en las actividades colaborativas de la comunidad escolar. Contribuye a la consolidación de una comunidad escolar participativa para mejorar las actividades académicas, escolares y comunitarias. 5. Define su trayectoria de formación, capacitación y actualización para la mejora del ejercicio de su función. Reflexiona sobre su práctica, formación académica y habilidad socioemocional para orientar su trayecto formativo. 33 Administración Rol del estudiantado El rol del estudiantado en el proceso educativo no se limita simplemente a recibir información y repetirla, sino que debe ser un agente activo en la construcción de su propio conocimiento y de su identidad. En este sentido, no sólo se trata de aprender a leer y escribir; implica aprender a narrar y comprender su propia vida, tanto como autor o autora de su historia personal, como testigo de su contexto social y cultural. Este proceso es fundamental para que el estudiantado se convierta en un sujeto consciente y crítico de su realidad. La educación es un motor de transformación social, pero también puede perpetuar las desigualdades existentes al tratar a todos y todas por igual sin considerar la diversidad inherente al estudiantado. La educación debe empoderarles, dándoles las condiciones necesarias para reconocer y cuestionar las desigualdades que les rodean. Si las y los estudiantes son insertados en una educación que no considera su clase, sexo, género, etnia, lengua, cultura, capacidad, condición migratoria, religión o cualquier otro aspecto de su identidad, es muy probable que se apropien de la idea de que “la escuela no es para ellos y ellas”, ya que se enfrentarían constantemente a comentarios o actitudes que les califican de incapaces, ignorantes, indolentes o inútiles terminando por creerlo y asumirlo como verdad. Esta autodesvalorización es una barrera significativa para su desarrollo ya que puede llevar a creer que el conocimiento y la sabiduría pertenecen únicamente a las y los \"profesionales\" y no reconocen el valor de su propio conocimiento y experiencia. El rol de las y los estudiantes, entonces, debe ser el de un sujeto activo que desafía y transforma estas narrativas opresivas que fomentan las desigualdades. Debe aprender a valorar su propia voz y experiencia, y a reconocer su capacidad para conocer y transformar su realidad. La educación debe ser un proceso liberador que les permita verse a sí mismos o mismas como agentes de transformación social, capaces de escribir su propia historia y de participar activamente en la construcción de una sociedad más justa y humana. 34 Tecnologías de la Información, Comunicación, Conocimiento y Aprendizaje Digital (TICCAD) La implementación de las TICCAD en la planeación didáctica representa una oportunidad para enriquecer la experiencia educativa, al facilitar el desarrollo de las habilidades, saberes y competencias digitales, potenciar la creatividad y motivación del estudiantado y favorecer la labor del profesorado. (Aprende.mx, 2022). Al transversalizar el uso de las TICCAD, se busca integrar sus herramientas de manera horizontal a lo largo de todas las Unidad de Aprendizaje Curricular, en lugar de relegarlas a un recurso sociocognitivo específico. Esto permite que las y los estudiantes desarrollen habilidades digitales de manera progresiva y coherente a lo largo de su formación académica, independientemente del área de conocimiento en la que se encuentren. No obstante, resulta crucial que la integración de las TICCAD se realice considerando las particularidades de cada plantel, su infraestructura, el nivel de competencia digital del personal docente y el estudiantado, así como los recursos disponibles. De esta manera, se garantiza que estas herramientas se utilicen de manera efectiva y se maximice su impacto en el proceso educativo. Al integrar las TICCAD en la planeación didáctica de acuerdo con las posibilidades de cada plantel, las y los docentes pueden enriquecer el proceso de enseñanza y aprendizaje, promoviendo la participación activa de sus estudiantes, fomentando el pensamiento crítico y creativo, y facilitando el acceso a una educación de excelencia para todos y todas. 35 Administración Recursos didácticos Para trabajar los Módulos y Submódulos de la Formación Laboral Básica, se pueden utilizar diversos recursos, tales como: bibliográficos, materiales didácticos, aulas virtuales, simuladores, páginas web, entre otros medios digitales que puedan ser aplicados a su contexto y de acuerdo con su nivel académico que brinden experiencias mediante el uso de modelos que permitan al estudiantado llevar a cabo análisis de los distintos conocimientos. Es fundamental tener claridad sobre el propósito de la Formación, así como las competencias de formación laboral básicas que ayudarán a abordar los aprendizajes. En cuanto a los ambientes de aprendizaje, se pueden utilizar diferentes espacios: A. El aula, ya sea presencial o virtual. B. La escuela, donde se puedan realizar actividades en otros espacios. C. La comunidad, incluyendo la casa, la localidad o la región. 36 Proceso de evaluación bajo el enfoque en competencias La evaluación por competencias es un proceso que permitirá mediante la obtención de evidencias conocer el dominio de conocimientos, habilidades y actitudes socioafectivas desarrolladas por el estudiantado. Dicho proceso deberá ser formativo e integral, es decir, permitirá visualizar no solo el saber, saber hacer y saber ser, sino también el bagaje histórico y cultural lo cual permitirá al estudiantado la comprensión de la realidad social y laboral de los sectores y de la comunidad para a partir de ello lograr su intervención y aporte. Para ello lo que a continuación se presentan son los principios que orientarán el proceso de evaluación: 1. Validez: debe existir correlación entre los resultados de la evaluación y los resultados esperados en situaciones laborales reales. 2. Confiabilidad: producir resultados consistentes al evaluar en momentos diferentes y en diversos contextos. 3. Accesibilidad: facilitar el acceso a cualquier persona que pueda ser capaz de demostrar el desarrollo de la competencia. 4. Comunicación: dar a conocer previamente las condiciones en que se va a evaluar, y posteriormente, los resultados mediante la retroalimentación. 5. Equidad: evitar cualquier práctica discriminatoria, es decir, el estudiantado será evaluado bajo los mismos criterios e indicadores. 6. Flexibilidad: adaptarse a diferentes modalidades y opciones de formación, así como a las características y necesidades del estudiantado.8 Así pues para poder llevar a cabo lo aquí planteado, se propone la utilización de una amplia gama de instrumentos que permitan visualizar tanto el proceso como el resultado final del aprendizaje del estudiantado, entre los que se encuentran: rúbricas, pruebas de ejecución, portafolios de evidencias, diario de campo o bitácora, organizadores gráficos, ensayos, resolución de ejercicios y problemas, exámenes o pruebas tipo saber, exposición, método de casos, proyectos y debates o discusiones dirigidas, entre otros. De igual forma, es necesario que la evaluación contemple: ● Autoevaluación: cuando el estudiantado valora su desarrollo y la forma en que aprendió. ● Coevaluación: a través de la retroalimentación entre pares, fomentando la cooperación, la colaboración, la empatía y la crítica constructiva. 8 Subsecretaría de Educación Media Superior. (2023). El currículum laboral en la educación media superior. SEP. 37 Administración ● Heteroevaluación: emitida por el personal docente en función de los conocimientos, habilidades, actitudes y valores ponderados en los instrumentos de evaluación. Finalmente, respecto a los pasos para evaluar las competencias laborales básicas, se presenta a continuación una propuesta elaborada por la Subsecretaría de Educación Media Superior (2023b), la cual ilustra la ruta a seguir y constituye una referencia para el personal docente. 38 Fuentes de consulta sugeridas Las siguientes fuentes de información constituyen sugerencias de apoyo para el abordaje de las competencias laborales, no son limitativas, ni restrictivas. El personal docente podrá hacer uso de estas y también podrá utilizar las que considere adecuadas de acuerdo con sus necesidades y contexto.: Física: ● Münch, Lourdes. (2014). Administración. Gestión organizacional, enfoques y proceso administrativo. Segunda edición. México: Pearson Educación. ISBN: 9786073227001 ● Peteraf, Thompson I. y Gamble Strickland, John E. (2012). Administración estratégica. Teorías y casos. 18ª edición. México. McGraw-Hill. Educación. ISBN: 9786071507570 ● Gary Armstrong, Philip Kotler. (2016). Fundamentos del marketing. 13ª edición. México. Pearson Educación. ISBN: 9786073238458. ● Münch, Lourdes. (2017). Nuevos fundamentos de mercadotecnia. Hacia el liderazgo del mercado. Cuarta edición. México. Trillas. ISBN: 9786071731661 ● Lara Flores, Elías y Lara Ramírez, Leticia. (2017). Primer curso de contabilidad. 28ª edición. México: Trillas, S.A. de C.V. ISBN: 9786071731111. ● Garrido, Francisco Javier. (2007). Comunicación estratégica. Las claves de la comunicación empresarial en el siglo XXI. México. Ediciones Gestión 2000. ISBN: 9788480889179 ● Alcaraz Rodríguez, Rafael. (2015). El emprendedor de éxito. Quinta edición. México: McGraw-Hill-Educación. ISBN: 9786071512789 ● Blanchard, Ken. (2015). Un servicio legendario. La clave es interesarse por el cliente. Primera edición. México: Empresa Activa. ISBN: 9788492921218 Electrónica: ● Modelo Canvas, video en YouTube. Extraído el 23 de febrero de 2018 desde: https://www.youtube.com/watch?v=i1Le5GYkBT8DLR (2017) ● INEGI (2017). Instituto Nacional de Estadística, Geografía e Informática. Extraído el 23 de febrero de 2018 desde: http://www.inegi.gob.mx/ 39 Administración Referencias bibliográficas ACUERDO número 09/05/24 que modifica el diverso número 09/05/23 por el que se establece y regula el Marco Curricular Común de la Educación Media Superior. Secretaría de Educación Pública. DOF. (2024) Fecha de citación [06-06-2024]. Disponible en formato HTML: https://www.dof.gob.mx/nota_detalle.php?codigo=5729564&fecha=05/0 6/2024#gsc.tab=0 Aprende.mx. (1 de mayo de 2022). TICCAD. Nueva Escuela Mexicana. Recuperado de: https://nuevaescuelamexicana.sep.gob.mx/detalle-recurso/20711/ Aprende.mx. (1 de mayo de 2022). TICCAD. Nueva Escuela Mexicana. Recuperado de: https://nuevaescuelamexicana.sep.gob.mx/detalle-recurso/20711/ Subsecretaría de Educación Media Superior. (2023a). Progresiones de Aprendizaje del Área de Conocimientos Ciencias Sociales. SEP. https://educacionmediasuperior.sep.gob.mx/work/models/sems/Resour ce/13634/1/images/Documento%20de%20progresiones%20- %20Ciencias%20sociales%20.pdf Subsecretaría de Educación Media Superior. (2023b). El currículum laboral en la educación media superior. SEP. https://educacionmediasuperior.sep.gob.mx/work/models/sems/Resour ce/13634/1/images/CURRICULUM%20LABORAL%202023.pdf 40 Créditos Personal docente que elaboró Alejandra Briones Cervantes Colegio de Bachilleres del Estado de Tlaxcala Plantel 11- Panotla Fabiola del Carmen Ríos Guzmán Centro de Estudios de Bachillerato 8/3 León, Guanajuato. Olga Lidia Jiménez Castañeda Centro de Estudios de Bachillerato 6/13 “Jesús Reyes Heroles” Cd. Serdán, Puebla Sandra Cecilia Lezama Canizales Colegio de Bachilleres del Estado de San Luis Potosí. Personal docente que colaboró Jocelin Paola Aguilar Galván Centro de Estudios de Bachillerato 8/3 Aguascalientes, Aguascalientes. Personal académico de la Dirección General del Bachillerato Jorge Alejandro Rangel Sandoval Brenda Nalleli Durán Orozco Fanny Casas Cortés Mercedes Gabriela Castro Nava Alma Andrea Orozco Fierro Belem Ramos Cerón Héctor Franco Gutiérrez Isis Yoalit Oropeza Ledezma Miguel Hernández González Nallely Vázquez Hernández Nitzi Medina Méndez Javier García Romero Oscar Mendoza Ruiz Saúl Ramón Hernández Bocanegra Se autoriza la reproducción total o parcial de este documento, siempre y cuando se cite la fuente y no se haga con fines de lucro."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "calidadExtraccion": "BUENA",
+  "coberturaInstrumentos": {
+    "conInstrumento": 8,
+    "total": 8
+  },
+  "avisos": [],
+  "extraidoEl": "2026-08-13T23:26:53.800Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/AHN9coqB0j-Administracion.pdf"
+}

@@ -1,0 +1,299 @@
+{
+  "nombre": "Desarrollo Comunitario",
+  "slug": "desarrollo-comunitario--2023-2026",
+  "clave": "3031500005-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "Conceptos de Desarrollo Comunitario y Comunidad",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Explica los conceptos fundamentales de Desarrollo Comunitario, así como los elementos que la integran, de forma crítica y reflexiva, para favorecer la comprensión de diferentes situaciones sociales en su contexto.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Conceptos de Desarrollo Comunitario",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Comprende los conceptos y características de Desarrollo Comunitario, desde una perspectiva social y cultural compartida para reconocer las problemáticas afines en su entorno y actuar de manera ética y responsable.",
+          "actividadClave": "Organizados en equipos las y los estudiantes deberán elaborar un material gráfico (carteles, trípticos, infografías, volantes, folletos, etc.) de difusión, en el cual describan las características más sobresalientes y favorables de su comunidad, considerando como temas primordiales como: la salud, educación, alimentación, cultura y empleo. Asimismo, de manera reflexiva deberán argumentar cómo se podría impulsar el desarrollo comunitario a través de una Cultura de paz, tema que es la base del Proyecto Escolar Comunitario, lo cual permitirá abonar a las actividades realizadas en el PEC, para ello, se propone llevar a cabo plenarias o foros de discusión en donde las y los estudiantes expresen su experiencia sobre la actividad y cómo podrían conseguir cambios cualitativos en las actitudes y comportamientos de su comunidad. Desarrollo: 1. Formar equipos de trabajo (4-5 integrantes). 2. Los y las estudiantes organizados en equipos, deberán investigar de forma documental y de campo las características de su comunidad, así como el tipo de desarrollo que se observan en aspectos de: salud, educación, alimentación, cultura y empleo entre otros. 3. Con el apoyo del personal docente y los materiales necesarios las y los estudiantes elaboran un material de difusión que impulse el desarrollo comunitario, así como incluir en éste un enunciado reflexivo que aporte al PEC de cómo el desarrollo fomenta una cultura de paz. 4. Una vez conformada la actividad, los equipos deberán difundir en espacios escolares y públicos de la comunidad, así como organizar plenarias o foros de discusión. 13 Desarrollo Comunitario",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Contenido",
+                  "puntos": 20,
+                  "descripcionNiveles": "Los contenidos indicados, se presentan en forma clara, precisa y completos. Los contenidos indicados, se presentan en forma clara y precisa, pero falta información. Los contenidos indicados, se presentan, pero falta información. I"
+                },
+                {
+                  "criterio": "Imágenes",
+                  "puntos": 20,
+                  "descripcionNiveles": "Las imágenes apoyan y representan totalmente el mensaje. Algunas imágenes apoyan y representan el mensaje y tienen las dimensiones necesarias. Algunas imágenes no son claras ni bien proporcionadas. Las imágenes no sirven de apoyo al mensaje. T"
+                },
+                {
+                  "criterio": "Trabajo Colaborativo",
+                  "puntos": 20,
+                  "descripcionNiveles": "Todos los integrantes del equipo están presentes, se aprecia el trabajo colaborativo, cada integrante conoce el contenido del material de difusión. Todos los integrantes del equipo están presentes, Se aprecia poco el trabajo colaborativo, no todos conocen el contenido del material de difusión. No están presentes todos los integrantes del equipo. No se aprecia el trabajo colaborativo, no todos conocen el contenido del material de difusión. P"
+                },
+                {
+                  "criterio": "Presentación final",
+                  "puntos": 20,
+                  "descripcionNiveles": "Utiliza el tiempo asignado para la presentación. Se dirige a sus compañeros con voz clara y fuerte. Conoce y domina el tema. Utiliza el tiempo asignado para la presentación. Se dirige a sus compañeros con voz clara pero no muy fuerte. Conoce el tema, pero no lo domina completamente. Utiliza el tiempo asignado para la presentación. Se dirige a sus compañeros con voz baja y no muy clara. Desconoce y no domina el tema. E"
+                },
+                {
+                  "criterio": "Entrega",
+                  "puntos": 20,
+                  "descripcionNiveles": "Utiliza el tiempo asignado para la elaboración y se entrega en forma puntual. Cumple con las especificaciones requeridas, limpio y sin tachones. Utiliza el tiempo asignado para la elaboración del cartel y se entrega en forma puntual. Cumple con las especificaciones requeridas, presenta tachones y está sucio. Utiliza el tiempo asignado para la elaboración del cartel No cumple con las especificaciones requeridas, presenta tachones y está sucio. TOTAL Logros: Aspectos que mejorar: 14"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Conceptos de comunidad",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Reconoce los elementos que permiten el desarrollo de la comunidad, mediante la identificación de las necesidades, fortalezas y recursos disponibles con el fin de elaborar de manera colaborativa propuestas de mejora en su contexto.",
+          "actividadClave": "En equipos mixtos, de cinco integrantes, elegir una comunidad (puede ser donde viven o alguna que sea de su interés conocer), para que de manera colaborativa lleven a cabo una investigación documental y de campo sobre dicha comunidad obteniendo información como: nombre completo, ubicación, a qué municipio y estado al que pertenece, número de habitantes, lenguas indígenas que hablan, principales ocupaciones u oficios, es rural o urbana, servicios principales con los que cuenta, cómo se estructura, nombre de sus autoridades y representantes, principales festividades y/o tradiciones, deficiencias y/o áreas de oportunidad. Una vez obtenida dicha información se deberá elaborar de un video o bien se podrán utilizar los materiales disponibles en su contexto, posteriormente se organizará una presentación en el plantel donde cada equipo presentará la información de la comunidad investigada, junto con su propuesta de mejora, la cual llevará por nombre “Conociendo nuestras comunidades”. Materiales: ● Material bibliográfico. ● Cámara fotográfica o celular o algún otro material que permita la presentación o difusión de la actividad. ● Videograbadora. Desarrollo: 1. Formar equipos mixtos. 2. Elegir una comunidad. 3. Realizar una investigación documental y de campo sobre la comunidad elegida. 4. Registrar la información obtenida. 5. Analizar la información obtenida. 6. Agendar la presentación “Conociendo a nuestras comunidades” de cada uno de los equipos. 7. Preparar escenario con materiales y/o artefactos (arte, herramientas y ropa hechas por las personas y que son característicos de la comunidad objeto de estudio). 15 Desarrollo Comunitario",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (3 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Investigación documental",
+                  "puntos": 30,
+                  "descripcionNiveles": "Presentan un reporte de investigación sustentado con al menos 3 fuentes de consulta respecto a la comunidad. Presentan un reporte de investigación impreciso que carece de fuentes de consulta respecto a la comunidad. Carece de información de la comunidad y la mayoría de los aspectos solicitados. I"
+                },
+                {
+                  "criterio": "Investigación de campo",
+                  "puntos": 30,
+                  "descripcionNiveles": "La descripción de la comunidad de estudio es detallada, proporcionando información relevante. La descripción de la comunidad es adecuada, pero hay falta de organización en la información presentada. La descripción de la comunidad es insuficiente o confusa. Trabajo colaborativo (20 puntos Todos los integrantes mostraron responsabilidad compartida, así como una comunicación asertiva y empática. Casi todos los integrantes participaron y mostraron una comunicación asertiva y empática. Mostraron dificultad para participar como tener comunicación asertiva y empática como equipo. E"
+                },
+                {
+                  "criterio": "Estructura y presentación",
+                  "puntos": 20,
+                  "descripcionNiveles": "El equipo muestra que estudió con anticipación la información de la comunidad y presentan un excelente conocimiento sobre ésta. Solo algunos integrantes del equipo demuestran que estudiaron la información de la comunidad y presentan el conocimiento necesario, mientras que otros tienen dificultad para hablar de la comunidad. El equipo demuestra falta de conocimiento y dominio de la información de la comunidad a presentar. El contenido que presentan es completo y lo enriquecen con imágenes del contexto, lo que permite un mayor conocimiento de la comunidad. El contenido que presentan es incompleto, aunque lo enriquecen con imágenes del contexto, lo que permite un mejor acercamiento y conocimiento de la comunidad. El contenido que presentan es incompleto y carece de imágenes del contexto, lo que no permite el acercamiento con la comunidad. Los materiales de difusión (video, carteles, infografías, folletos, entre otros) son originales y creativos en contenido que permite la atención de los receptores. Los materiales de difusión (videos, carteles, infografías, folletos, entre otros) cuentan imágenes aceptables, pero falta mayor originalidad para captar la atención de los receptores. Los materiales de difusión (videos, carteles, infografías, folletos, entre otros) carece de originalidad y creatividad, impidiendo la atención de los receptores. 16"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Elaboración y aplicación del diagnóstico",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Elabora un diagnóstico comunitario básico, a través de la aplicación de instrumentos que permitan la detección de las problemáticas ecológicas, económicas y sociales de su contexto, para promover un comportamiento responsable y benéfico.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Elementos para elaborar un diagnóstico comunitario",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Elabora un diagnóstico comunitario a partir de la aplicación de métodos, técnicas y herramientas de investigación que permitan obtener datos concretos para detectar problemas sociales, económicos, políticos, religiosos, ambientales, entre otros más de su contexto.",
+          "actividadClave": "En equipos mixtos de cinco integrantes (preferentemente continuar con los equipos del submódulo 2 Conceptos de la comunidad) y con ayuda del personal docente deberán enriquecer el diagnóstico comunitario que habían realizado previamente de forma documental y de campo, a partir de la aplicación de diversos métodos y técnicas (encuestas, entrevistas, observación, árbol de problemas, matriz FODA, línea del tiempo, calendario de actividades comunales, dibujo de la comunidad , entre otros.) los cuales les proveerán de datos concretos para la detección de problemáticas y necesidades del contexto al que pertenecen. De este modo, podrán distinguir los diferentes tipos de diagnósticos, así como, comparar los diversos medios de recolección de información. En caso de conformar un nuevo equipo de trabajo, deberán elegir una comunidad y llevar a cabo las actividades que se mencionan. Desarrollo: 1. Formar equipos mixtos de trabajo. 2. Elegir la comunidad de la cual elaborarán un diagnóstico comunitario. 3. Conocer qué es un diagnóstico comunitario, los elementos que lo componen y sus principales características, ventajas y desventajas de dicho diagnóstico (explicado por el personal docente). 4. Conocer el fundamento teórico de los instrumentos de recolección de información para llevarlos a la práctica en la elaboración y aplicación. 5. Aplicar las técnicas de investigación documental y de campo (revisión de documentos, fichas, análisis documental, encuestas, entrevistas, observación, árbol de problemas, matriz FODA, línea del tiempo, entre otros), requeridas. 6. Indagar sobre el calendario de actividades comunales. 7. Obtener evidencias de la aplicación de los instrumentos. 8. Al concluir la aplicación práctica de todos los instrumentos seleccionados, concentrar todo lo obtenido y proceder al análisis de los datos obtenidos. 9. Redactar el diagnóstico comunitario 17 Desarrollo Comunitario 10. Organizar y entregar el trabajo final con base a los criterios establecidos por el personal docente.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Presentación y análisis de resultados de un diagnóstico comunitario",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Analiza el diagnóstico comunitario elaborado a partir de las necesidades y problemáticas identificadas para priorizar las más importantes y promover un comportamiento colectivo que busque beneficios en su entorno.",
+          "actividadClave": "Para dar seguimiento al Diagnóstico Comunitario elaborado en el submódulo anterior, se continuará con el desarrollo de la siguiente actividad trabajando también de manera colaborativa. A partir del análisis de las problemáticas y necesidades detectadas en la comunidad elegida, así como la identificación de los recursos y medios con los que se podría actuar, cada uno de los equipos elaborará y presentará por lo menos tres propuestas que favorezcan y promuevan beneficios en la comunidad estudiada. Para dar a conocer las propuestas se organizará una campaña de difusión bajo la autorización de los delegados o representantes de las comunidades, a fin de que éstos proporcionen o bien faciliten algún medio para la promoción y llevar a cabo la presentación de las propuestas. Desarrollo: 1. Formar equipos mixtos de trabajo. 2. Analizar los resultados del diagnóstico. 3. Detectar necesidades y problemáticas. 4. Identificar los recursos con los que cuenta la comunidad. 5. Cada equipo deberá elaborar sus propuestas. 6. Se realizará la presentación de las propuestas de acuerdo con los medios disponibles. 7. Solicitar apoyo y autorización de los delegados o representantes de las comunidades para la difusión y presentación de las propuestas. 19 Desarrollo Comunitario",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "Proyecto de desarrollo comunitario",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Realiza un proyecto comunitario que le permita aportar ideas fundamentales en la solución de necesidades o problemáticas detectadas, mostrando un comportamiento propositivo en beneficio del entorno.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Formulación de proyectos comunitarios",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Elabora metodológicamente un proyecto de desarrollo comunitario a partir de los datos obtenidos en el diagnóstico, a fin de dar solución a alguna problemática social, económica, política, religiosa, ambiental, entre otras de su contexto.",
+          "actividadClave": "Para llevar a cabo la siguiente actividad se dará continuidad al trabajo colaborativo retomando el diagnóstico elaborado en el módulo 2, submódulo 1 “Elementos para elaborar un diagnóstico comunitario”, así como con el análisis hecho en el submódulo “Presentación y análisis de los resultados de un diagnóstico comunitario”, mismo en el que se detectaron las problemáticas y necesidades de cada comunidad. A partir de ello, se determinará un proyecto comunitario que contribuya a la resolución de las problemáticas o de las necesidades detectadas. Lo anterior deberá ser observado, supervisado y retroalimentado en todo momento por parte del personal docente. Para la formulación y estructura del proyecto comunitario, se requerirá de: 1. Nombre del proyecto 2. Planteamiento del problema 3. Fundamentación: por qué se hace, razón u origen 4. Metas 5. Beneficiarios 6. Cronograma de actividades 7. Localización física y cobertura espacial 8. Presupuesto 9. Fuentes de consulta 10. Ejecución del proyecto (fecha y lugar de ejecución del proyecto y evidencias) 11. Conclusión (Esta se realizará por cada uno de los integrantes de los equipos, en la cual expliquen qué lograron y cómo se sintieron (en el caso que se logrará la ejecución del proyecto). 21 Desarrollo Comunitario Finalmente, cada uno de los integrantes de los equipos elaborará sus conclusiones, respecto al proyecto en cuestión, así como la entrega del proyecto comunitario la cual será por cada uno de los equipos de trabajo. Desarrollo: 1. Continuar con el trabajo en equipos (considerar la pertinencia que sean los mismos equipos de los módulos anteriores). 2. Retomar los resultados del diagnóstico y el análisis de la información, donde se detectaron las necesidades y problemáticas, así como los recursos con los que cuenta la comunidad. 3. Generar una lluvia de ideas de posibles soluciones a las problemáticas y/o necesidades. 4. Elegir una sola problemática y/o necesidad a trabajar. 5. El personal docente deberá abordar en grupo, los aspectos teóricos y metodológicos para la formulación y estructura del proyecto, así como los criterios para su evaluación. 6. Revisión (personal docente a cargo) y entrega del proyecto formulado. 7. Ejecución del proyecto.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Formas legales de las organizaciones comunitarias",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Planea el proyecto de desarrollo comunitario partiendo de la normatividad y los apoyos que proporcionan las instituciones federales, estatales, municipales y privadas, con la finalidad de promover la participación y la toma de decisiones que ayuden a mejorar las condiciones de vida de la comunidad.",
+          "actividadClave": "En equipos de trabajo y con apoyo en todo momento del personal docente el estudiantado investigará y clasificará qué tipo de instituciones Federales, Estatales, Municipales y privadas favorecen a los proyectos de desarrollo comunitario en su contexto, con la finalidad de identificar sus funciones, la normatividad y los apoyos que éstas ofrecen en beneficio de las comunidades. También se deberá indagar sobre las iniciativas y propuestas que ofrecen dichas instituciones. Desarrollo: 1. Formar equipos. 2. Retomar en la medida de lo posible a la comunidad con la que han trabajado en los submódulos anteriores. 3. Investigar cuáles son las instituciones que participan y promueven los proyectos de desarrollo comunitario en su contexto, sus funciones, cómo está conformada, si reciben algún tipo de financiamiento, si cuentan con algún registro legal o bajo qué fundamentos normativos es su existencia, Para ello, se solicitará a los equipos que elaboren un cuadro de doble entrada. 4. Elaborar un reporte escrito con por lo menos dos iniciativas de instituciones Federales, Estatales, Municipales y privadas que por equipo se investigaron y se consideraron relevantes, porque promueven y apoyan el desarrollo de proyectos comunitarios. Dicho reporte también deberá describir los fines, procedimientos de participación y las convocatorias que emiten. 23 Desarrollo Comunitario",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (4 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Total Profundización del tema",
+                  "puntos": 25,
+                  "descripcionNiveles": "Descripción clara y sustancial de las diferentes organizaciones comunitarias existentes en la comunidad, Identificando las características de cada una de ellas: Sus funciones, cómo está conformada, si reciben algún tipo de financiamiento o cómo subsisten económicamente. Descripción ambigua del tema, algunos detalles que no clarifican la existencia, funciones y características de las organizaciones comunitarias de la comunidad. Descripción escasa de las diferentes organizaciones comunitarias existentes en la comunidad, no enuncia las características de cada una de ellas. C"
+                },
+                {
+                  "criterio": "Claridad el tema",
+                  "puntos": 30,
+                  "descripcionNiveles": "Tema bien organizado y claramente presentado, así como de fácil seguimiento de cada organización comunitaria, contiene un título que identifica el tema. Tema bien focalizado, pero no suficientemente organizado, le falta un título y no están explícitas las organizaciones comunitarias. Tema impreciso y poco claro sin coherencia sobre las partes que lo componen. C"
+                },
+                {
+                  "criterio": "Calidad de presentación y diseño",
+                  "puntos": 25,
+                  "descripcionNiveles": "Presentación y diseño del cuadro sobresaliente y atractivo, incluye imágenes. Presentación y diseño del cuadro sencillo, pero bien organizado e imágenes. Cuadro mal planeado que no cumple los criterios de diseño plateados sin imágenes. E"
+                },
+                {
+                  "criterio": "Elementos ortográficos y de redacción",
+                  "puntos": 20,
+                  "descripcionNiveles": "La ortografía es correctamente con el tema, las ideas primarias y secundarias se distinguen unas de otras y las palabras clave representan conceptos importantes. Presenta algunos errores ortográficos y no se distinguen ideas principales de las secundarias, las palabras clave no aportan una idea clara de cada concepto. Presenta varios errores ortográficos, las ideas principales y secundarias están mal organizadas y no cuentan con palabras clave. Calificación final: Logros Aspectos de mejora 24"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "Formalización de proyectos comunitarios",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Distingue en la planeación de un proyecto de desarrollo comunitario las fases esenciales de formulación e instrumentación con base en el diagnóstico, para proponer posibles soluciones a las problemáticas y necesidades detectadas fomentando un comportamiento propositivo en beneficio del entorno.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Instrumentación de proyectos comunitarios",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Explica los resultados obtenidos de la implementación del proyecto comunitario para valorar su impacto a nivel individual y local y fortalecen la identidad comunitaria.",
+          "actividadClave": "Con base en el proyecto comunitario elaborado y aplicado en el submódulo 1 “Formulación de Proyectos Comunitarios” correspondiente al módulo 3, se diseñará entre los equipos de trabajo conformados por el estudiantado y el personal docente una presentación a la comunidad de los resultados obtenidos en el proyecto comunitario hasta el momento, con la finalidad de que ésta participe en la retroalimentación y mejorar dicho proyecto. En esta actividad se continuará con los equipos de trabajo ya establecidos, buscando que éstos con la ayuda del personal docente y el apoyo de las y los delegados de la comunidad gestionen los apoyos para la presentación de los resultados. Finalmente, cada uno de los equipos entregará por escrito en formato libre las propuestas o áreas de oportunidad que realice la comunidad y que podrían enriquecer dichos proyectos. Desarrollo: 1. Dar continuidad a la actividad con los equipos de trabajo establecidos. 2. Retomar el proyecto formulado y aplicado. 3. Realizar una presentación con los medios disponibles de los resultados obtenidos. 4. Agendar una cita con la o el delegado para buscar su apoyo en la organización y gestión de la presentación de los resultados del proyecto. 5. Asistir y presentar a la comunidad el proyecto (proceso y resultados) 6. Agradecer la participación de la comunidad en la ejecución del proyecto 7. Evaluar los resultados del proyecto con diferentes actores: los diferentes equipos evaluarán el trabajo de sus compañeros, así como autoridades externas, por parte de las y los docentes de manera frecuente e interactiva a lo largo de todo el proceso (evaluación formativa). 25 Desarrollo Comunitario",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (4 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Proyecto comunitario",
+                  "puntos": 20,
+                  "descripcionNiveles": "Los resultados obtenidos en el proyecto comunitario responden las problemática y necesidades de la comunidad que eligieron, Los resultados obtenidos en el proyecto comunitario atienden parcialmente las problemáticas o necesidades de la comunidad que eligieron. Los resultados obtenidos en el proyecto comunitario no atendieron las problemáticas o necesidades de la comunidad que eligieron. P"
+                },
+                {
+                  "criterio": "Presentación de los resultados",
+                  "puntos": 20,
+                  "descripcionNiveles": "La presentación es clara, creativa, concreta y les sirve de apoyo durante la exposición. Además, contiene todos los componentes metodológicos del desarrollo comunitario. La presentación sirve de apoyo durante la exposición, aunque está saturada de información, carece de creatividad. Además, no contiene todos los componentes metodológicos del desarrollo comunitario. La presentación no es clara, está saturada de información, carece de creatividad. Además, faltan la mayoría de los componentes metodológicos del desarrollo comunitario. C"
+                },
+                {
+                  "criterio": "Campaña de difusión",
+                  "puntos": 20,
+                  "descripcionNiveles": "Dan a conocer hora, día y lugar al menos mediante 2 medios de difusión de forma creativa Dan a conocer hora, día y lugar al menos mediante 1 medio de difusión de forma creativa Dan a conocer hora, día y lugar al menos mediante 1 medio de difusión, sin mayor creatividad Presentación ante la comunidad (20 puntos) El equipo domina el tema, su discurso es fluido y con tono adecuado, por lo que la audiencia está atenta El equipo domina el tema, aunque podrían mejorar la fluidez de su discurso y elevar el tono de voz. El equipo no domina el tema, su discurso carece de fluidez y falta mejorar el tono de voz. T"
+                },
+                {
+                  "criterio": "Trabajo colaborativo",
+                  "puntos": 20,
+                  "descripcionNiveles": "Todos los integrantes mostraron comunicación asertiva y empática, promoviendo un comportamiento benéfico en su entorno Solo algunos integrantes mostraron comunicación asertiva y empática, lo que podría interferir en la promoción de un comportamiento benéfico en su entorno Mostraron dificultad para tener comunicación asertiva y empática como equipo."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Proceso de legalización de las Sociedades Mercantiles",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Distingue las diversas formas de organización comunitaria presentes en su contexto, a partir de sus propósitos, nivel de participación y estructura a fin de promover nuevas formas de relacionarse que impulsen activamente el desarrollo de su comunidad.",
+          "actividadClave": "Formar equipos de trabajo para realizar una investigación bibliográfica y cibergráfica sobre los tipos de sociedades mercantiles, describiendo sus características y estableciendo qué tipo de sociedad mercantil es más viable en el desarrollo de un proyecto comunitario, por lo que, con base en dicha investigación llevarán a cabo un análisis de las leyes y el proceso de registro de cada tipo de sociedad para determinar la pertinencia en la legalización de su propuesta y/o de los proyectos comunitarios existentes en su comunidad, tomando en cuenta el impacto que generará en su contexto, por ello, al finalizar entregan como resultado un cuadro de doble entrada (mismo que contendrá los diversos tipos de sociedades mercantiles, descripción, campo de aplicación, tipos de proyectos comunitarios en los que aplica). 26 Desarrollo: 1. Formar equipos mixtos de trabajo (5 integrantes). 2. Realizar una investigación bibliográfica y cibergráfica sobre los tipos de sociedades mercantiles. 3. Describir cada una de las características y establecer qué tipo de sociedad mercantil es más viable en el desarrollo de un proyecto comunitario. 4. Analizar el proceso de registro de cada tipo de sociedad para determinar la pertinencia en la legalización de su propuesta y/o de los proyectos comunitarios existentes en su comunidad. 5. Entregar un cuadro de doble entrada (mismo que contendrá los diversos tipos de sociedades mercantiles, descripción, campo de aplicación, tipos de proyectos comunitarios en los que aplica).",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (4 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Total Profundización del tema",
+                  "puntos": 25,
+                  "descripcionNiveles": "Descripción clara y sustancial de las diferentes sociedades mercantiles, Identificando las características de cada una de ellas: sus funciones, cómo está conformada. Descripción ambigua del tema, falta información de las diferentes sociedades mercantiles. Descripción escasa de las diferentes sociedades mercantiles. C"
+                },
+                {
+                  "criterio": "Claridad el tema",
+                  "puntos": 25,
+                  "descripcionNiveles": "Tema bien organizado y claramente presentado, así como de fácil seguimiento de cada sociedad mercantil, contiene un título que identifica el tema Tema bien focalizado, pero no suficientemente organizado, le falta un título y no están explícitas las sociedades mercantiles Tema impreciso y poco claro sin coherencia sobre las partes que lo componen. C"
+                },
+                {
+                  "criterio": "Calidad de presentación y diseño",
+                  "puntos": 25,
+                  "descripcionNiveles": "Presentación y diseño del cuadro sobresaliente y atractivo, incluye imágenes. Presentación y diseño del cuadro sencillo, pero bien organizado e imágenes. Cuadro mal planeado que no cumple los criterios de diseño plateados sin imágenes. E"
+                },
+                {
+                  "criterio": "Elementos ortográficos y de redacción",
+                  "puntos": 25,
+                  "descripcionNiveles": "La ortografía es correctamente con el tema, las ideas primarias y secundarias se distinguen unas de otras y las palabras clave representan conceptos importantes. Presenta algunos errores ortográficos y no se distinguen ideas principales de las secundarias, las palabras clave no aportan una idea clara de cada concepto. Presenta varios errores ortográficos, las ideas principales y secundarias están mal organizadas y no cuentan con palabras clave. Calificación final: Logros Aspectos de mejora 27 Desarrollo Comunitario Recomendaciones para el trabajo en el aula y la escuela Es importante contextualizar al estudiantado sobre los procesos históricos, económicos, culturales que se presentan de forma paralela o detrás del conocimiento científico y tecnológico, y cómo éstos influyen de forma directa en el desarrollo de la calidad de vida de una sociedad, esto con la finalidad de que puedan formular cuestionamientos, plantear y contrastar hipótesis y proponer soluciones a problemas que afectan a su comunidad. Por ello, lo que a continuación se enumera es una serie de orientaciones pedagógicas para el fomento de las competencias laborales básicas:7 ● Enfocar la acción educativa en el estudiantado y su aprendizaje. ● Tener en cuenta los aprendizajes previos del o la estudiante. ● Mostrar empatía con el estudiantado. ● Favorecer el desarrollo de habilidades socioemocionales como elemento fundamental para el aprendizaje. ● Reconocer la naturaleza social del conocimiento (enfoque comunitario). ● Establecer la transversalidad curricular (Currículum fundamental y ampliado). ● Diseñar situaciones didácticas que propicien el aprendizaje situado mediante metodologías activas. ● Entender la evaluación como un proceso formativo, continuo y permanente. ● Desarrollar estrategias de aprendizaje con enfoque de inclusión y equidad. ● Usar las Tecnologías de la Información, Comunicación, Conocimiento y Aprendizaje Digitales (TICCAD). ● Fomentar la innovación tecnológica desde un enfoque ético. 7 Subsecretaría de Educación Media Superior. (2023b). El currículum laboral en la educación media superior. SEP. 28 Rol docente El Marco para la excelencia en la enseñanza y la gestión escolar en Educación Media Superior publicado por la Unidad del Sistema para la Carrera de las Maestras y los Maestros establece el perfil que debe reunir el y la docente en Educación Media Superior, el cual consta de cinco dominios, los cuales organizan los criterios e indicadores deseables para el o la docente de la Nueva Escuela Mexicana, los cuales son: 1. Asume la identidad de su función. Desarrolla su función como agente fundamental en la formación integral del estudiantado, en un marco de inclusión y respeto a la diversidad, con la finalidad de contribuir al logro de la excelencia educativa. 2. Domina el currículo para la enseñanza y el aprendizaje. Comprende la articulación del modelo educativo con los contenidos y la transversalidad del conocimiento, considerando las características y contexto del estudiantado para el logro de los aprendizajes. 3. Planifica e implementa los procesos de enseñanza y aprendizaje. Planifica e implementa el trabajo pedagógico para generar ambientes de aprendizaje, a partir de los planes y programas de estudio, así como, de las características y contexto del estudiantado. 4. Participa en el trabajo colegiado y en las actividades colaborativas de la comunidad escolar. Contribuye a la consolidación de una comunidad escolar participativa para mejorar las actividades académicas, escolares y comunitarias. 5. Define su trayectoria de formación, capacitación y actualización para la mejora del ejercicio de su función. Reflexiona sobre su práctica, formación académica y habilidad socioemocional para orientar su trayecto formativo. 29 Desarrollo Comunitario Rol del estudiantado El rol del estudiantado en el proceso educativo no se limita simplemente a recibir información y repetirla, sino que debe ser un agente activo en la construcción de su propio conocimiento y de su identidad. En este sentido, no sólo se trata de aprender a leer y escribir; implica aprender a narrar y comprender su propia vida, tanto como autor o autora de su historia personal, como testigo de su contexto social y cultural. Este proceso es fundamental para que el estudiantado se convierta en un sujeto consciente y crítico de su realidad. La educación es un motor de transformación social, pero también puede perpetuar las desigualdades existentes al tratar a todos y todas por igual sin considerar la diversidad inherente al estudiantado. La educación debe empoderarles, dándoles las condiciones necesarias para reconocer y cuestionar las desigualdades que les rodean. Si las y los estudiantes son insertados en una educación que no considera su clase, sexo, género, etnia, lengua, cultura, capacidad, condición migratoria, religión o cualquier otro aspecto de su identidad, es muy probable que se apropien de la idea de que “la escuela no es para ellos y ellas”, ya que se enfrentarían constantemente a comentarios o actitudes que les califican de incapaces, ignorantes, indolentes o inútiles terminando por creerlo y asumirlo como verdad. Esta autodesvalorización es una barrera significativa para su desarrollo ya que puede llevar a creer que el conocimiento y la sabiduría pertenecen únicamente a las y los \"profesionales\" y no reconocen el valor de su propio conocimiento y experiencia. El rol de las y los estudiantes, entonces, debe ser el de un sujeto activo que desafía y transforma estas narrativas opresivas que fomentan las desigualdades. Debe aprender a valorar su propia voz y experiencia, y a reconocer su capacidad para conocer y transformar su realidad. La educación debe ser un proceso liberador que les permita verse a sí mismos o mismas como agentes de transformación social, capaces de escribir su propia historia y de participar activamente en la construcción de una sociedad más justa y humana. 30 Tecnologías de la Información, Comunicación, Conocimiento y Aprendizaje Digital (TICCAD) La implementación de las TICCAD en la planeación didáctica representa una oportunidad para enriquecer la experiencia educativa, al facilitar el desarrollo de las habilidades, saberes y competencias digitales, potenciar la creatividad y motivación del estudiantado y favorecer la labor del profesorado. (Aprende.mx, 2022). Al transversalizar el uso de las TICCAD, se busca integrar sus herramientas de manera horizontal a lo largo de todas las Unidad de Aprendizaje Curricular, en lugar de relegarlas a un recurso sociocognitivo específico. Esto permite que las y los estudiantes desarrollen habilidades digitales de manera progresiva y coherente a lo largo de su formación académica, independientemente del área de conocimiento en la que se encuentren. No obstante, resulta crucial que la integración de las TICCAD se realice considerando las particularidades de cada plantel, su infraestructura, el nivel de competencia digital del personal docente y el estudiantado, así como los recursos disponibles. De esta manera, se garantiza que estas herramientas se utilicen de manera efectiva y se maximice su impacto en el proceso educativo. Al integrar las TICCAD en la planeación didáctica de acuerdo con las posibilidades de cada plantel, las y los docentes pueden enriquecer el proceso de enseñanza y aprendizaje, promoviendo la participación activa de sus estudiantes, fomentando el pensamiento crítico y creativo, y facilitando el acceso a una educación de excelencia para todos y todas. 31 Desarrollo Comunitario Recursos didácticos Para trabajar los Módulos y Submódulos de la Formación Laboral Básica, se pueden utilizar diversos recursos, tales como: bibliográficos, materiales didácticos, aulas virtuales, simuladores, páginas web, entre otros medios digitales que puedan ser aplicados a su contexto y de acuerdo con su nivel académico que brinden experiencias mediante el uso de modelos que permitan al estudiantado llevar a cabo análisis de los distintos conocimientos. Es fundamental tener claridad sobre el propósito de la Formación, así como las competencias de formación laboral básicas que ayudarán a abordar los aprendizajes. En cuanto a los ambientes de aprendizaje, se pueden utilizar diferentes espacios: A. El aula, ya sea presencial o virtual. B. La escuela, donde se puedan realizar actividades en otros espacios. C. La comunidad, incluyendo la casa, la localidad o la región. 32 Proceso de evaluación bajo el enfoque en competencias La evaluación por competencias es un proceso que permitirá mediante la obtención de evidencias conocer el dominio de conocimientos, habilidades y actitudes socioafectivas desarrolladas por el estudiantado. Dicho proceso deberá ser formativo e integral, es decir, permitirá visualizar no solo el saber, saber hacer y saber ser, sino también el bagaje histórico y cultural lo cual permitirá al estudiantado la comprensión de la realidad social y laboral de los sectores y de la comunidad para a partir de ello lograr su intervención y aporte. Para ello lo que a continuación se presentan son los principios que orientarán el proceso de evaluación: 1. Validez: debe existir correlación entre los resultados de la evaluación y los resultados esperados en situaciones laborales reales. 2. Confiabilidad: producir resultados consistentes al evaluar en momentos diferentes y en diversos contextos. 3. Accesibilidad: facilitar el acceso a cualquier persona que pueda ser capaz de demostrar el desarrollo de la competencia. 4. Comunicación: dar a conocer previamente las condiciones en que se va a evaluar, y posteriormente, los resultados mediante la retroalimentación. 5. Equidad: evitar cualquier práctica discriminatoria, es decir, el estudiantado será evaluado bajo los mismos criterios e indicadores. 6. Flexibilidad: adaptarse a diferentes modalidades y opciones de formación, así como a las características y necesidades del estudiantado.8 Así pues para poder llevar a cabo lo aquí planteado, se propone la utilización de una amplia gama de instrumentos que permitan visualizar tanto el proceso como el resultado final del aprendizaje del estudiantado, entre los que se encuentran: rúbricas, pruebas de ejecución, portafolios de evidencias, diario de campo o bitácora, organizadores gráficos, ensayos, resolución de ejercicios y problemas, exámenes o pruebas tipo saber, exposición, método de casos, proyectos y debates o discusiones dirigidas, entre otros. De igual forma, es necesario que la evaluación contemple: ● Autoevaluación: cuando el estudiantado valora su desarrollo y la forma en que aprendió. ● Coevaluación: a través de la retroalimentación entre pares, fomentando la cooperación, la colaboración, la empatía y la crítica constructiva. 8 Subsecretaría de Educación Media Superior. (2023). El currículum laboral en la educación media superior. SEP. 33 Desarrollo Comunitario ● Heteroevaluación: emitida por el personal docente en función de los conocimientos, habilidades, actitudes y valores ponderados en los instrumentos de evaluación. Finalmente, respecto a los pasos para evaluar las competencias laborales básicas, se presenta a continuación una propuesta elaborada por la Subsecretaría de Educación Media Superior (2023b), la cual ilustra la ruta a seguir y constituye una referencia para el personal docente. 34 Fuentes de consulta sugeridas Las siguientes fuentes de información constituyen sugerencias de apoyo para el abordaje de las competencias laborales, no son limitativas, ni restrictivas. El personal docente podrá hacer uso de estas y también podrá utilizar las que considere adecuadas de acuerdo con sus necesidades y contexto.: Física: ● Lara Flores, Elías y Lara Ramírez, Leticia. (2017). Primer curso de Contabilidad. Vigésima octava edición. México: Trillas. ISBN: 9786071731111 ● Hernández, y R, S. (2012). Introducción a la Administración: Origen, Evolución y Vanguardia. Primera edición. México: McGraw-Hill Interamericana. ISBN: 9786071506177 ● Torres Salinas, Aldo S. (2010). Contabilidad de Costos. Análisis para la toma de decisiones. Tercera edición. México. McGraw-Hill Interamericana. ISBN: 9786071502971 ● José Pérez Chávez y Raymundo Fol Olguín. (2017). Guía Práctica Fiscal. ISR, IVA, IMSS E INFONAVIT. Cuarta edición. México: Tax Editores Unidos. ISBN: 9786076290019 ● H. Congreso de la Unión. (2017). Ley Federal del Trabajo. México. Sista Editorial. ISBN: 9686816283 ● Alcaraz Rodríguez, Rafael. (2015). El Emprendedor de Éxito. Quinta edición. México: McGraw-Hill. ISBN: 9786071512789 ● José Pérez Chávez y Raymundo Fol Olguín. (2017). GUIA PRACTICA FISCAL. ISR, IVA, IMSS E INFONAVIT. Cuarta edición. México: Tax Editores Unidos. ISBN: 9786076290019 ● Chiavenato, I. (2013). Introducción a la Teoría General de la Administración. Octava edición. México: McGraw-Hill. ISBN: 8607509802. ● Koontz, H. (2012). Administración, Una Perspectiva global. Décimo cuarta edición. México: McGraw-Hill. ISBN: 9786071507594. ● Reyes A. (2008). Administración Moderna. Primera edición. México: Limusa. ISBN: 9789681842147. ● Moreno J. (2013). Contabilidad Básica. Cuarta edición. México: Grupo Editorial Patria. ISBN: 9786074386189. ● CONSEJO MEXICANO DE NORMAS DE INFORMACIÓN FINANCIERA, A.C. (2018). Norma de Información Financieras versión estudiantil. Décimo tercera edición. México: Consejo Mexicano de Normas de Información Financiera, A.C. ISBN: 9786078552368. ● Romero L., A. J. (2010). Principios de contabilidad. Cuarta edición. México. Editorial Mc Graw Hill. ISBN: 9786071502865. ● Anzures, M. (2005). Contabilidad General. Segunda edición. México: Editorial Porrúa. ISBN: 9789700755915. 35 Desarrollo Comunitario Electrónica: ● Administración de Empresas (generalidades). Extraído el 21 de febrero de 2018 desde: http://fcasua.contad.unam.mx/material_didactico/interior.htm# ● Estructura organizacional, tipos de organización y organigramas. Extraído el 21 de febrero de 2018 desde: https://www.gestiopolis.com/estructuraorganizacional-tipos-organizacion-organigramas/ ● Contabilidad (la entidad económica y su clasificación, la cuenta y la partida doble, reglas de cargo y abono, libros de contabilidad). Extraído el 21 de febrero de 2018 desde: http://fcasua.contad.unam.mx/material_didactico/interior.htm# ● Manual de Contabilidad Básica. Extraído el 21 de febrero de 2018 desde: https://www.upg.mx/wp-content/uploads/2015/10/LIBRO-19- Manual-de-contabilidad-basica.pdf ● Contabilidad (cuentas especiales del procedimiento analítico, de inventarios perpetuos, sistemas de pólizas). Extraído el 21 de febrero de 2018 desde: http://fcasua.contad.unam.mx/material_didactico/interior.htm# ● Manual de Contabilidad Básica. Extraído el 21 de febrero de 2018 desde: https://www.upg.mx/wp-content/uploads/2015/10/LIBRO-19-Manual-decontabilidad-basica.pdf ● Sistema Fiscal Mexicano Video en YouTube. Extraído el 21 de febrero de 2018 desde: https://www.youtube.com/watch?v=57r5TGnwLIg ● Desarrollo del Plan de Negocios en la Web. Extraído el 21 de febrero de 2018 desde: http://www.emprendedores.es/ Extraído el 21 de febrero de 2018 36 Referencias bibliográficas ACUERDO número 09/05/24 que modifica el diverso número 09/05/23 por el que se establece y regula el Marco Curricular Común de la Educación Media Superior. Secretaría de Educación Pública. DOF. (2024) Fecha de citación [06-06-2024]. Disponible en formato HTML: https://www.dof.gob.mx/nota_detalle.php?codigo=5729564&fecha=05/0 6/2024#gsc.tab=0 Aprende.mx. (1 de mayo de 2022). TICCAD. Nueva Escuela Mexicana. Recuperado de: https://nuevaescuelamexicana.sep.gob.mx/detalle-recurso/20711/ Aprende.mx. (1 de mayo de 2022). TICCAD. Nueva Escuela Mexicana. Recuperado de: https://nuevaescuelamexicana.sep.gob.mx/detalle-recurso/20711/ Subsecretaría de Educación Media Superior. (2023a). Progresiones de Aprendizaje del Área de Conocimientos Ciencias Sociales. SEP. https://educacionmediasuperior.sep.gob.mx/work/models/sems/Resour ce/13634/1/images/Documento%20de%20progresiones%20- %20Ciencias%20sociales%20.pdf Subsecretaría de Educación Media Superior. (2023b). El currículum laboral en la educación media superior. SEP. https://educacionmediasuperior.sep.gob.mx/work/models/sems/Resour ce/13634/1/images/CURRICULUM%20LABORAL%202023.pdf 37 Desarrollo Comunitario Créditos Personal docente que elaboró Elyda Hernández Miranda Preparatoria Federal por Cooperación 2/123 Tepoztlán, Morelos. Isidro Aparicio Cruz Colegio de Bachilleres del Estado de Zacatecas. Plantel Ojocaliente. Juana Nathalli Santillán Zamudio Colegio de Bachilleres del Estado de Hidalgo Edgar de la Cruz Mendoza Colegio de Bachilleres del Estado de Coahuila. Plantel “Juan Ealy Ortiz” Personal docente que colaboró Rocío Barrios Antonio Centro de Estudios de Bachillerato 6/9 Ixtlahuaca, Estado de México Personal académico de la Dirección General del Bachillerato Jorge Alejandro Rangel Sandoval Brenda Nalleli Durán Orozco Fanny Casas Cortés Mercedes Gabriela Castro Nava Alma Andrea Orozco Fierro Belem Ramos Cerón Héctor Franco Gutiérrez Isis Yoalit Oropeza Ledezma Octavio Javier García Romero Miguel Hernández González Nallely Vázquez Hernández Nitzi Medina Méndez Oscar Mendoza Ruiz Saúl Ramón Hernández Bocanegra Se autoriza la reproducción total o parcial de este documento, siempre y cuando se cite la fuente y no se haga con fines de lucro. 38"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "calidadExtraccion": "BUENA",
+  "coberturaInstrumentos": {
+    "conInstrumento": 5,
+    "total": 8
+  },
+  "avisos": [
+    "Módulo 2 submódulo 1: sin indicadores de evaluación",
+    "Módulo 2 submódulo 2: sin indicadores de evaluación",
+    "Módulo 3 submódulo 1: sin indicadores de evaluación"
+  ],
+  "extraidoEl": "2026-08-13T23:26:54.185Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/2hG5thpGK6-Desarrollo-Comunitario.pdf"
+}

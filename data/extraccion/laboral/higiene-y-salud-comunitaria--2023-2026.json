@@ -1,0 +1,310 @@
+{
+  "nombre": "Higiene y Salud Comunitaria",
+  "slug": "higiene-y-salud-comunitaria--2023-2026",
+  "clave": "3095600003-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "Principios básicos de anatomía, fisiología y epidemiología.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Define de manera crítica y reflexiva, los procesos de salud-enfermedad y método epidemiológico a través de una base teórica, considerando la anatomía y fisiología del cuerpo humano; con la finalidad de interpretar las condiciones de salud colectiva.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Bases anatómicas y fisiológicas y el proceso saludenfermedad.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Utiliza conceptos básicos del proceso de salud y enfermedad, para mejorar las condiciones de salud de la población.",
+          "actividadClave": "Identifica los principales sistemas y órganos del cuerpo humano, mediante diversas actividades en la plataforma Genially, así como sus principales patologías y medidas de prevención, posteriormente analiza y explica el proceso de salud-enfermedad de las patologías más comunes en su comunidad, utilizando las TICCAD, mediante la propuesta de Leavell y Clark. Con los conocimientos adquiridos previamente, tomando como referencia los niveles de prevención, realiza una campaña para promover mejores condiciones de salud (hábitos higiénicos, actividad física, vacunación oportuna y autocuidado). Desarrollo: 1. Introducción Teórica: Explicar los sistemas y órganos del cuerpo humano, sus patologías más comunes y los niveles de prevención según Leavell y Clark. 2. Actividad Interactiva en Genially: El estudiantado usa la plataforma Genially para explorar los sistemas y órganos del cuerpo, identificar patologías y aprender medidas preventivas mediante actividades interactivas. 3. Análisis del Proceso Salud-Enfermedad: Investigar las patologías comunes en su comunidad y analizar cómo aplicar los niveles de prevención (primaria, secundaria, terciaria) en su contexto local. 4. Diseño de la Campaña de Salud: Usando los conocimientos adquiridos, el estudiantado diseña una campaña de salud centrada en hábitos higiénicos, actividad física, vacunación y autocuidado, utilizando herramientas digitales para crear material visual y divulgación. 14 Materiales: 1. Tecnológicos: Plataforma Genially (para actividades interactivas). Dispositivos con acceso a internet. 2. Recursos Educativos: Presentaciones y videos educativos sobre anatomía y patologías. Artículos y lecturas sobre prevención. 3. Herramientas de Comunicación y Diseño: Plataformas de difusión (redes sociales, sitios web). Herramientas de diseño gráfico (Canva). 4. Material Adicional: Cuestionarios y encuestas para diagnóstico comunitario. Plantillas para la campaña de salud.",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Descripción de la historia natural",
+                  "puntos": 20,
+                  "descripcionNiveles": "Expone con detalle cada fase de la historia natural de la enfermedad (inicio, progreso, resolución o complicaciones) con ejemplos concretos. Expone las fases principales de la historia natural de la enfermedad, pero con pocos detalles o ejemplos. Menciona las fases de la historia natural, pero omite información importante o los ejemplos son escasos. C"
+                },
+                {
+                  "criterio": "Claridad y coherencia en la explicación",
+                  "puntos": 20,
+                  "descripcionNiveles": "La explicación es clara, lógica y fácil de seguir, utilizando un lenguaje apropiado. La explicación es clara en su mayoría, pero puede ser confusa en algunos puntos. La explicación es algo confusa o poco clara, dificultando el entendimiento. R"
+                },
+                {
+                  "criterio": "Relación con prevención y tratamiento",
+                  "puntos": 20,
+                  "descripcionNiveles": "Integra de manera clara la relación entre la historia natural de la enfermedad, las estrategias preventivas y los tratamientos disponibles. Hace referencia a la prevención o tratamiento, pero no establece una conexión clara con la historia natural. No menciona la prevención ni el tratamiento o la relación es confusa. O"
+                },
+                {
+                  "criterio": "Organización de la presentación",
+                  "puntos": 20,
+                  "descripcionNiveles": "La exposición está bien estructurada, con un flujo lógico de ideas que facilita la comprensión. La estructura de la presentación es algo desorganizada, dificultando la comprensión. La exposición carece de organización, con una secuencia de ideas confusa. P"
+                },
+                {
+                  "criterio": "Participación e interacción",
+                  "puntos": 20,
+                  "descripcionNiveles": "Todos los miembros del equipo interactúan de manera respetuosa y constructiva con sus compañeros y docente. La mayoría de los miembros del equipo interactúan de manera respetuosa y constructiva con sus compañeros y docente. Pocos miembros del equipo interactúan de manera respetuosa y constructiva con sus compañeros y docente. Lista de cotejo para evaluar campaña de salud: CRITERIO SÍ NO OBSERVACIÓN Demuestra una buena comprensión del tema trabajado y de las acciones desarrolladas. El tema trabajado está situado en el contexto escolar y comunitario. Utiliza en su explicación de forma creativa, ejemplos prácticos y reales, producto del conocimiento adquirido. El material informativo utilizado es claro, sencillo y adecuado al tema y acciones planeadas. Organiza el espacio de trabajo. Se expresa con claridad y seguridad. Participa activa y colaborativamente en la exposición del tema y coordinación del evento. 15 Higiene y Salud Comunitaria"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Epidemiología.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Contribuye en la elaboración de un diagnóstico de salud para solucionar problemas de salud colectiva.",
+          "actividadClave": "El estudiantado realizará un estudio de la comunidad, mediante la aplicación de una encuesta enfocada a detectar las principales problemáticas de salud y los grupos etarios que los y las presentan. Elaborarán un cuestionario el cual aplicarán a los pobladores de su comunidad. Recopilarán datos, realizarán gráficas y pruebas estadísticas. Presentarán una conclusión referente a las principales problemáticas de salud en su comunidad y posibles estrategias de promoción y prevención en salud colectiva. El alumnado aplicará los conceptos básicos de diagnóstico de salud comunitaria, utilizarán los métodos de recolección y análisis de datos en salud pública, reconociendo los factores de riesgo y determinantes de salud colectiva, así como las estrategias de promoción y prevención en salud. Mediante la identificación de problemas de salud y a través de la observación y la recolección de datos, analizarán y sintetizarán la información estadística y social, haciendo posible la elaboración de propuestas de intervención en salud. Se pretende que los y las estudiantes posean un pensamiento crítico para evaluar problemas de salud en la comunidad. A través del trabajo colaborativo para la realización del diagnóstico. Utilizando la expresión escrita clara y estructurada para la elaboración del informe. Así como el uso de herramientas digitales para la presentación de datos como lo son las gráficas y las tablas. Desarrollando un sentido de responsabilidad y compromiso con la investigación, empatía hacia las problemáticas de la comunidad, disposición para el trabajo en equipo y la toma de decisiones, honestidad en la recolección y análisis de información, respeto hacia la diversidad de experiencias y opiniones en temas de salud. Promoviendo la solidaridad al proponer soluciones para mejorar la calidad de vida de la comunidad. Desarrollo: 1. Diseño del Cuestionario: El estudiantado crea un cuestionario enfocado en identificar problemas de salud en la comunidad y los grupos etarios afectados. 2. Aplicación de la Encuesta: Se aplican las encuestas a una muestra representativa de la comunidad, respetando la ética en la recolección de datos. 3. Análisis de Datos: El estudiantado analiza los resultados utilizando herramientas estadísticas, creando gráficas y tablas para presentar los datos de manera clara. 4. Propuestas de Intervención: Basándose en los resultados, se elaboran propuestas de promoción y prevención de salud comunitaria. 5. Elaboración del Informe: El estudiantado realiza un informe con los resultados y propuestas de intervención. 6. Presentación de Resultados: Se presentan los hallazgos y propuestas utilizando herramientas digitales, como PowerPoint o Canva. 16 Materiales: ● Dispositivos con acceso a internet. ● Herramientas digitales de análisis y presentación (Excel, Google Sheets, PowerPoint, Canva). ● Cuestionarios impresos o digitales. ● Software para análisis estadístico (Excel, SPSS). ● Materiales visuales (carteles, gráficos). ● Herramientas de diseño (Canva, PowerPoint). ● Papel, bolígrafos y cuadernos para recolección inicial de datos.",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (9 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe Mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Definición del Problema y Objetivos",
+                  "puntos": 10,
+                  "descripcionNiveles": "El estudio tiene objetivos muy claros y específicos, alineados con las problemáticas de salud relevantes en la comunidad. Se explica bien la importancia y el propósito del estudio. Los objetivos están bien definidos y son apropiados, aunque podrían estar mejor especificados o más enfocados en algunas áreas clave. Los objetivos son vagos o parcialmente claros, y no están completamente alineados con las problemáticas de salud más relevantes de la comunidad. Los objetivos no están definidos claramente o son irrelevantes para las problemáticas de salud de la comunidad. D"
+                },
+                {
+                  "criterio": "Diseño de la Metodología",
+                  "puntos": 20,
+                  "descripcionNiveles": "La metodología es adecuada y bien estructurada, con métodos de recolección de datos apropiados. Se justifican las elecciones de diseño. La metodología es adecuada, pero podría haberse justificado mejor o ajustado de manera más efectiva a las necesidades del estudio. La metodología es básica y no está completamente alineada con los objetivos del estudio. Falta claridad en la justificación de las decisiones tomadas. La metodología es inapropiada o mal diseñada, con falta de justificación o sin coherencia con los objetivos del estudio. R"
+                },
+                {
+                  "criterio": "Recolección de Datos",
+                  "puntos": 10,
+                  "descripcionNiveles": "Se utiliza una variedad de herramientas de recolección de datos (cuestionarios, entrevistas, grupos focales) bien aplicadas, con un enfoque ético que garantiza la confidencialidad y el consentimiento informado. La recolección de datos es adecuada, pero podría haberse utilizado más variedad en las herramientas o algunas técnicas no se implementaron completamente. Se utilizan solo una o dos herramientas de recolección de datos, y hay algunas dudas sobre la ética y confidencialidad de los datos recolectados. La recolección de datos es incompleta o poco ética, sin considerar aspectos importantes como el consentimiento informado o la privacidad de los participantes. 1"
+                },
+                {
+                  "criterio": "17 Higiene y Salud Comunitaria Análisis de los Datos",
+                  "puntos": 10,
+                  "descripcionNiveles": "Los datos fueron analizados de manera profunda y rigurosa. Se identificaron tendencias claras, y el análisis se relaciona directamente con los objetivos del estudio. El análisis de los datos es bueno, pero podría haberse profundizado más en algunas áreas o se utilizaron métodos más simples. El análisis de los datos es superficial y no aborda las cuestiones clave del estudio. Se realiza una interpretación débil de los resultados. El análisis de los datos es insuficiente o incorrecto, con poca relación con las problemáticas de salud del estudio. P"
+                },
+                {
+                  "criterio": "Presentación de los Resultados",
+                  "puntos": 10,
+                  "descripcionNiveles": "Los resultados se presentan de manera clara, organizada y profesional, con gráficos y tablas que facilitan la comprensión. Las conclusiones están bien fundamentadas. Los resultados están bien presentados, pero pueden faltar algunos detalles o visualizaciones adicionales que ayuden a la comprensión. Los resultados están presentados de manera confusa, con falta de organización o sin utilizar ayudas visuales adecuadas. Los resultados no están bien organizados, son difíciles de entender y no incluyen ninguna visualización de datos. R"
+                },
+                {
+                  "criterio": "Recomendaciones y Propuestas de Acción",
+                  "puntos": 10,
+                  "descripcionNiveles": "Las recomendaciones son muy claras, prácticas y basadas en los resultados del estudio. Se proponen acciones viables y pertinentes para abordar las problemáticas de salud identificadas. Las recomendaciones son buenas, pero algunas podrían ser más detalladas o específicas en cuanto a su implementación. Las recomendaciones son vagas o generales, y no se relacionan completamente con los problemas identificados en la comunidad. Las recomendaciones son inapropiadas, poco realistas o no se basan en los resultados obtenidos. T"
+                },
+                {
+                  "criterio": "Trabajo en Equipo",
+                  "puntos": 10,
+                  "descripcionNiveles": "El equipo ha trabajado de manera excelente, con roles bien distribuidos y colaboración efectiva en todas las fases del proyecto. Todos los miembros contribuyeron activamente. El trabajo en equipo ha sido bueno, pero algunos miembros podrían haber participado más o algunas tareas no estuvieron perfectamente distribuidas. El trabajo en equipo fue adecuado, pero hubo falta de comunicación o contribución de algunos miembros. El trabajo en equipo fue deficiente, con poca colaboración y distribución inequitativa de las tareas. I"
+                },
+                {
+                  "criterio": "Impacto en la Comunidad",
+                  "puntos": 10,
+                  "descripcionNiveles": "El proyecto ha tenido un impacto positivo claro en la comunidad. Se evidencian acciones de seguimiento, sensibilización o cambios en la comunidad basados en los resultados. El impacto en la comunidad es visible, pero podría haberse potenciado mediante más acciones de difusión o seguimiento. El impacto en la comunidad es limitado o no se ha realizado un seguimiento adecuado de los resultados del estudio. El proyecto no ha tenido impacto en la comunidad o no se han realizado acciones para generar cambios. 1"
+                },
+                {
+                  "criterio": "18 Calidad de la Presentación Final",
+                  "puntos": 10,
+                  "descripcionNiveles": "La presentación final (informe, presentación oral, etc.) es profesional, clara y bien organizada. Los resultados son comunicados de manera efectiva. La presentación final es clara, pero podría mejorar en aspectos visuales o en la organización para facilitar su comprensión. La presentación final es aceptable, pero carece de estructura o claridad. Se necesita más trabajo en la comunicación de los resultados. La presentación final es confusa, desorganizada y no comunica de manera efectiva los resultados del estudio. Puntuación"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Salud pública y nutrición.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Aplica las bases de la salud pública de forma colaborativa en acciones y campañas de saneamiento para prevenir enfermedades a nivel colectivo. Integra habilidades y actitudes de salud alimentaria y nutricional por medio del conocimiento de la bioquímica aplicando de forma responsable los indicadores antropométricos, clínicos y dietéticos para la evaluación nutricional en las diferentes etapas de la vida.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Salud pública.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Selecciona acciones y estrategias básicas para el manejo y control del saneamiento, demostrando un compromiso proactivo en la prevención de enfermedades en la comunidad.",
+          "actividadClave": "El estudiantado reconoce las diferentes acciones de prevención en los contextos de su comunidad (escolar, familiar) Se realiza campaña de promoción de lavado de manos dentro del plantel escolar con una charla-taller, donde se invita a la comunidad escolar a promover en casa el lavado correcto de manos. Como segunda acción se realiza un día intensivo de limpieza del plantel escolar y sus alrededores con la finalidad de prevenir diferentes tipos de plagas las cuales son portadoras de diferentes enfermedades, abonando de esta manera a la conservación, mantenimiento de los espacios comunes. Tercera acción; se invita a la comunidad estudiantil a participar en una campaña digital, cuya finalidad es la prevención de enfermedades, dicho material será publicado en la página de Facebook del plantel escolar. Desarrollo: 1. Campaña de Lavado de Manos: El estudiantado diseña y realiza una charla-taller interactiva sobre la importancia del lavado de manos, enseñando la técnica correcta y promoviendo la práctica en casa. 2. Día Intensivo de Limpieza del Plantel: Se organiza un día de limpieza en el plantel escolar para prevenir plagas y enfermedades, con la participación de estudiantes, docentes y personal. 3. Campaña Digital de Prevención de Enfermedades: El estudiantado crea y publica material educativo sobre prevención de enfermedades en la página de Facebook del plantel, promoviendo la participación de la comunidad escolar. Materiales: ● Dispositivos con acceso a internet y redes sociales (Facebook del plantel). ● Herramientas de diseño gráfico (Canva, Adobe Spark). ● Folletos educativos, carteles y videos demostrativos sobre el lavado de manos. ● Guantes, bolsas de basura, productos de limpieza (desinfectantes, escobas, mopas). ● Infografías, videos, y textos informativos sobre prevención de enfermedades. 20",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Nutrición.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Reconoce acciones, medidas y programas de fomento, educación y promoción de la salud alimentaria, considerando las características nutricionales y socioeconómicas de la población, así como las políticas y normas sanitarias existentes para fomentar estilos de vida saludables.",
+          "actividadClave": "Con base en la investigación y el análisis de los hábitos alimentarios y de salud en la comunidad, el estudiantado elaborará una propuesta para mejorar la alimentación y promover estilos de vida saludables. Enfocado a la disminución de la obesidad, desnutrición, diabetes e hipertensión. Conceptos básicos y conocimientos sobre salud alimentaria y nutrición. Programas y Políticas Públicas de salud alimentaria en México. Factores socioeconómicos que influyen en la alimentación. Además, fortalecerán habilidades como el trabajo en equipo, la comunicación y el pensamiento crítico, mientras refuerzan valores esenciales como el respeto, la empatía, la ética y la honestidad en la construcción de una comunidad escolar más saludable. Desarrollo: 1. Investigación Comunitaria: El estudiantado investigará los hábitos alimentarios y de salud en su comunidad escolar mediante encuestas y entrevistas. 2. Análisis de Políticas Públicas: Estudiarán los programas y políticas de salud alimentaria en México relacionados con la obesidad, diabetes e hipertensión. 3. Elaboración de Propuesta: El estudiantado, en equipos, diseñarán una propuesta para mejorar la alimentación y promover estilos de vida saludables en la escuela. 4. Presentación de Resultados: Se organizarán eventos para compartir la propuesta con la comunidad escolar (charlas, exposiciones, etc.). 5. Desarrollo de Habilidades y Valores: Fomentarán el trabajo en equipo, la comunicación, el respeto, la empatía y el pensamiento crítico. 21 Higiene y Salud Comunitaria Materiales: ● Investigación: Encuestas, acceso a internet, artículos sobre nutrición y salud pública. ● Presentación: Carteles, infografías, material audiovisual (proyector, computadora). ● Trabajo en Equipo: Espacios para reuniones, computadoras, software de presentaciones. ● Sensibilización: Folletos informativos, material para actividades educativas (tarjetas, pizarras).",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe Mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Análisis de la encuesta (Interpretación y organización de datos)",
+                  "puntos": 20,
+                  "descripcionNiveles": "Presenta datos organizados con gráficos o tablas, analiza tendencias y relaciones, identifica factores clave. Presenta datos organizados, pero con análisis superficial o con pocos gráficos/tablas. Presenta datos sin organización clara, con análisis muy básico. No presenta datos organizados ni análisis coherente. T"
+                },
+                {
+                  "criterio": "Trabajo de investigación (Claridad, profundidad y uso de fuentes)",
+                  "puntos": 20,
+                  "descripcionNiveles": "Explica a fondo las causas, consecuencias y estadísticas actualizadas de cada problema. Usa fuentes confiables y bien citadas. Explica los problemas de manera clara, aunque le faltan detalles o más fuentes confiables. Información general, poco profunda, con pocas fuentes o sin citar correctamente. Información incompleta, poco clara o sin referencias confiables. P"
+                },
+                {
+                  "criterio": "Propuesta de mejora: Recetas (Creatividad, viabilidad y fundamentación)",
+                  "puntos": 20,
+                  "descripcionNiveles": "Propone soluciones innovadoras, realistas y bien justificadas con evidencia científica. Propone soluciones realistas, aunque no muy innovadoras, con alguna justificación. Propone soluciones generales, poco detalladas o difíciles de aplicar. No presenta propuesta o es poco viable sin justificación. P"
+                },
+                {
+                  "criterio": "Presentación y redacción (Claridad, ortografía y estructura)",
+                  "puntos": 20,
+                  "descripcionNiveles": "Redacción clara, sin errores ortográficos, bien estructurada. Redacción comprensible, con pocos errores ortográficos y estructura aceptable. Redacción confusa con errores ortográficos frecuentes y estructura deficiente. Texto difícil de entender, sin estructura ni coherencia. U"
+                },
+                {
+                  "criterio": "Uso de recursos visuales (Gráficos, imágenes, videos u otros)",
+                  "puntos": 20,
+                  "descripcionNiveles": "Uso adecuado de imágenes, gráficas y otros recursos que refuerzan la información. Usa algunos recursos visuales, aunque no siempre son adecuados o explicativos. Usa pocos o ningún recurso visual, o no aportan valor al contenido. No utiliza ningún recurso visual. 22"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "Práctica en salud I y salud sexual y reproductiva.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Propone de manera colaborativa y responsable acciones clínicas para apoyar la práctica médica en el primer nivel de atención hospitalaria. Explica los componentes biológicos y sociales de la sexualidad y reproducción de forma crítica y reflexiva para diseñar medidas que promuevan una vida sexual plena, placentera y responsable, con base en las necesidades que identifica en su comunidad.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Salud sexual y reproductiva.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Describe los elementos y características fundamentales de la sexualidad y reproducción, para establecer acciones básicas en educación, promoción y prevención.",
+          "actividadClave": "Los y las estudiantes pondrán en acción una campaña de salud, mediante un trabajo colaborativo. Conformarán equipos, realizarán una investigación previa y elaborarán carteles, infografías y trípticos acerca de los diferentes temas como los son: ● La concientización y promoción de la cartilla de los derechos sexuales y reproductivos de adolescentes y jóvenes. ● Métodos anticonceptivos: Clasificación y eficacia. ● Enfermedades de transmisión sexual: Principales enfermedades. Niveles de prevención primaria, secundaria y terciaria. ● Despenalización del aborto en México Implicaciones. ● Cartilla Nacional de vacunación. En este proceso, pondrán en práctica habilidades de comunicación, análisis crítico y creatividad para elaborar materiales informativos accesibles y efectivos. Además, se fomentará el respeto por la diversidad de opiniones, la empatía hacia las distintas realidades que enfrentan los jóvenes, la ética en el manejo de la información y la honestidad en la difusión de datos científicos y legales, garantizando que la campaña sea un espacio seguro y confiable para el aprendizaje y la reflexión. Desarrollo: 1. Conformación de 10 equipos de trabajo de 5 estudiantes. 2. Realizar una investigación bibliográfica o en la red acerca de los siguientes temas señalados. 3. Presentación del avance. Selección de información, imágenes, códigos QR y referencias en riguroso formato APA. 4. Presentación final en físico. 5. Evidencia en la plataforma de classroom. 23 Higiene y Salud Comunitaria Materiales: ● Investigación: Acceso a internet, libros, artículos y recursos digitales confiables. ● Diseño y presentación de materiales: Computadoras con software para diseño gráfico (como Canva, PowerPoint o Adobe Spark), impresoras, papel para impresión de carteles, infografías y trípticos. ● Códigos QR: Herramientas en línea para crear códigos QR que dirijan a fuentes o recursos relevantes. ● Formato APA: Guías y recursos sobre el formato de citas y referencias en estilo APA. ● Plataforma Classroom: Acceso a la plataforma para subir la evidencia final de la actividad.",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Contenido (Claridad, precisión y relevancia de la información)",
+                  "puntos": 20,
+                  "descripcionNiveles": "Información completa, precisa y bien organizada. Lenguaje claro y adecuado. Información adecuada, pero con pequeños errores o falta de profundidad. Información poco clara, con errores o insuficiente en algunos aspectos. Información incorrecta, confusa o muy incompleta. D"
+                },
+                {
+                  "criterio": "Diseño y creatividad (Distribución, imágenes, colores y tipografía)",
+                  "puntos": 20,
+                  "descripcionNiveles": "Diseño atractivo, armonioso y creativo. Elementos visuales bien equilibrados. Diseño adecuado, con buena distribución, aunque con áreas mejorables. Diseño poco llamativo o desordenado, con elementos mal distribuidos. Diseño deficiente, sin armonía visual, con colores o tipografía inapropiados. O"
+                },
+                {
+                  "criterio": "Ortografía y redacción (Corrección gramatical y ortográfica)",
+                  "puntos": 20,
+                  "descripcionNiveles": "Sin errores ortográficos o gramaticales. Redacción fluida y adecuada. Pocos errores ortográficos o gramaticales. Redacción comprensible. Varios errores ortográficos o gramaticales. Redacción poco clara. Errores graves en ortografía y gramática que dificultan la comprensión. O"
+                },
+                {
+                  "criterio": "Organización de la información (Jerarquización de ideas y coherencia)",
+                  "puntos": 20,
+                  "descripcionNiveles": "Información bien estructurada y fácil de comprender. Uso adecuado de títulos y subtítulos. Información organizada, aunque podría mejorar en claridad o jerarquización. Organización confusa o con falta de estructura clara. Información desordenada, sin jerarquía ni coherencia. I"
+                },
+                {
+                  "criterio": "Impacto y mensaje (Capacidad de sensibilizar y transmitir el mensaje)",
+                  "puntos": 20,
+                  "descripcionNiveles": "Mensaje claro, impactante y bien dirigido al público. Mensaje comprensible, pero con oportunidad de ser más llamativo. Mensaje poco claro o con dificultad para captar la atención. No transmite el mensaje o es difícil de entender. 24"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Técnicas clínicas I.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Adquiere habilidades y destrezas clínicas básicas, para asistir en las funciones de los profesionales de la salud.",
+          "actividadClave": "En esta actividad, el personal docente guiará a los y las estudiantes a través de un proceso de aprendizaje sobre el rol y las funciones de un asistente clínico, así como sobre la importancia de la historia clínica y el manejo de signos vitales. Mediante una lluvia de ideas, el estudiantado reflexionará sobre las responsabilidades de este profesional. Luego, el/la docente presentará un video para complementar las respuestas iniciales. A continuación, se introducirá el concepto de historia clínica y se demostrará el uso adecuado de los aparatos y técnicas de medición de signos vitales (temperatura, pulso, presión arterial, frecuencia respiratoria). En equipos o parejas, realizarán un ejercicio práctico de juego de roles, donde llenarán un formato de historia clínica y practicarán la toma de signos vitales de manera colaborativa y respetuosa. Desarrollo: 1. Lluvia de ideas inicial: El personal docente solicita al estudiantado que mencione los objetivos y funciones de un asistente clínico. El estudiantado compartirá sus ideas, que serán anotadas en el pizarrón. 2. Presentación del video: El personal docente presenta un video que explica en detalle las funciones y responsabilidades de un asistente clínico. Después de verlo, se retoman las respuestas iniciales de las y los estudiantes y se enriquecen con la información proporcionada en el video. 3. Introducción a la historia clínica y signos vitales: El personal docente introduce el concepto de historia clínica y su importancia en el proceso de atención al paciente. Además, se explica el manejo de signos vitales y se presenta una demostración de los aparatos y técnicas de medición de signos vitales, como la toma de temperatura, pulso, presión arterial y frecuencia respiratoria. 4. Juego de roles y práctica colaborativa: El estudiantado se divide en equipos o parejas. Cada pareja realizará un ejercicio de juego de roles, donde uno actúa como paciente y el otro como asistente clínico. Practicarán la toma de signos vitales y llenarán un formato de historia clínica de manera colaborativa, respetuosa y empática. 5. Reflexión y cierre: Al finalizar la actividad, el estudiantado compartirá sus experiencias y reflexiones sobre la práctica, destacando la importancia del trabajo en equipo, la empatía y el respeto al realizar este tipo de tareas en el ámbito clínico. Materiales: ● Instrumental: Baumanómetro, Estetoscopio, Termómetro, Cronómetro, Alcohol, Algodones, Oxímetro. ● Pizarrón y marcadores. ● Proyector o pantalla para el video. ● Formatos impresos de historia clínica. ● Espacios adecuados para la práctica. 25 Higiene y Salud Comunitaria",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "Práctica en salud II y cuidado del paciente geriátrico.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Desarrolla habilidades, destrezas y actitudes en primeros auxilios a través del conocimiento de las técnicas del soporte básico de vida para actuar de manera activa y responsable en caso de accidente. Emplea de manera responsable los conocimientos teóricos y prácticos para generar habilidades que le permitan realizar acciones sobre el cuidado y manejo de pacientes geriátricos.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Técnicas clínicas II.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Implementa un protocolo básico de seguridad, para prevenir accidentes y contribuir al cuidado de la salud en los grupos sociales.",
+          "actividadClave": "En esta actividad, los y las estudiantes formarán parte del taller “primer respondiente, primeros auxilios” el cual tiene como propósito que aprendan la importancia de la prevención en el ámbito de la salud y cómo actuar correctamente en caso de un incidente, priorizando siempre su integridad y seguridad. A lo largo del curso, los y las estudiantes aprenderán técnicas y procedimientos básicos para socorrer a personas en situaciones de emergencia, mientras refuerzan la importancia de trabajar de manera colaborativa, organizada y metódica. Además, se fomentará una actitud de disposición para ayudar a los demás en situaciones de urgencia, manteniendo siempre una comunicación efectiva y respetuosa. Desarrollo: 1. Introducción al curso: El personal docente presentará el curso de primer respondiente, explicando la importancia de la prevención en situaciones de emergencia y cómo estas prácticas pueden salvar vidas. Se enfatizará que el primer respondiente debe asegurar su propia integridad antes de intervenir en un incidente. 2. Capacitación en técnicas de primeros auxilios: Se enseñarán las técnicas básicas de primeros auxilios, como la reanimación cardiopulmonar (RCP), control de hemorragias, inmovilización de fracturas, manejo de quemaduras, entre otros. El estudiantado aprenderá a evaluar la situación, reconocer los signos vitales y aplicar las técnicas de forma adecuada y segura. 3. Simulaciones y prácticas: A través de ejercicios prácticos y simulaciones de situaciones de emergencia (por ejemplo, accidentes, desmayos, hemorragias), el estudiantado pondrá en práctica lo aprendido en escenarios controlados. Se fomentará el trabajo en equipo y la colaboración para que las y los estudiantes se ayuden mutuamente durante las simulaciones, siguiendo procedimientos organizados. 27 Higiene y Salud Comunitaria 4. Reflexión y evaluación: El estudiantado reflexionará sobre la importancia de mantener la calma y la organización en situaciones de emergencia. Al finalizar el curso, se realizará una evaluación teórica y práctica de los conocimientos adquiridos, asegurándose de que el estudiantado sea capaz de aplicar lo aprendido de forma efectiva y metódica. Materiales: ● Para la capacitación teórica: Presentaciones y videos educativos sobre primeros auxilios. Manuales o guías de primeros auxilios. ● Para la práctica de primeros auxilios: Muñecos de RCP o maniquíes de entrenamiento para realizar reanimación cardiopulmonar. ● Materiales para simulaciones de accidentes (vendajes, férulas, material para inmovilización, simuladores de heridas). Botiquines de primeros auxilios con suministros básicos (gasas, vendas, tijeras, etc.). ● Para la evaluación: Hojas de evaluación teórica y práctica. Espacios amplios para realizar las simulaciones y prácticas de primeros auxilios.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Cuidado de pacientes geriátricos.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Aplica de forma responsable los métodos y técnicas para el cuidado de personas adultas mayores para intervenir en sus necesidades de la vida cotidiana.",
+          "actividadClave": "A través de la investigación en equipos, los y las estudiantes analizarán los principales cambios que ocurren en el cuerpo durante el envejecimiento, las causas de estos cambios, las implicaciones en la vida diaria de las personas adultas mayores y las complicaciones asociadas a las enfermedades en esta etapa de la vida. Al finalizar, el estudiantado presentará sus resultados en una exposición oral, reflexionará sobre cómo ayudar a los adultos mayores a través de hábitos saludables y elaborarán infografías sobre los cuidados esenciales para este grupo etario. Desarrollo: 1. Introducción teórica: El personal docente explica los conceptos de geriatría y gerontología, utilizando ejemplos cotidianos para ilustrar los cambios en el cuerpo durante el envejecimiento. 2. Organización y asignación de temas: El grupo se divide en equipos, cada uno investigando un aparato o sistema del cuerpo humano (por ejemplo, sistema cardiovascular, respiratorio, nervioso, etc.) en relación con el envejecimiento. Los equipos deben investigar los siguientes aspectos relacionados con su tema: ● Principales cambios que sufre el aparato o sistema durante el envejecimiento. ● Causas que ocasionan esos cambios. ● Impacto en la vida de una persona adulta mayor cuando comienza a presentar signos de envejecimiento. ● Complicaciones que pueden surgir si la persona enferma en esta etapa. ● Enfermedades asociadas con el sistema investigado y cómo afectan a los adultos mayores. 3. Elaboración de recomendaciones: Los equipos crean un listado de sugerencias para mejorar la calidad de vida de los adultos mayores, incluyendo hábitos saludables. 4. Comparación de respuestas: Se realiza un cuadro comparativo sobre cómo el cuerpo joven y el envejecido responden a las enfermedades. 5. Presentación oral y reflexión: Cada equipo presenta sus hallazgos en una exposición oral seguida de una reflexión grupal sobre cómo mejorar la vida de los adultos mayores. 6. Infografía final: El estudiantado elabora una infografía con los cuidados esenciales para los adultos mayores. Materiales: ● Investigación: Acceso a internet y recursos digitales sobre geriatría y gerontología. ● Elaboración de presentaciones: Papel, lápices, computadoras (para infografías) y herramientas para crear presentaciones visuales. ● Exposición oral: Pizarrón o proyector para mostrar cuadros comparativos e infografías. ● Reflexión final: Espacios adecuados para la reflexión grupal y discusión. 29 Higiene y Salud Comunitaria",
+          "evidencias": []
+        }
+      ]
+    }
+  ],
+  "calidadExtraccion": "BUENA",
+  "coberturaInstrumentos": {
+    "conInstrumento": 4,
+    "total": 8
+  },
+  "avisos": [
+    "Módulo 2 submódulo 1: sin indicadores de evaluación",
+    "Módulo 3 submódulo 2: sin indicadores de evaluación",
+    "Módulo 4 submódulo 1: sin indicadores de evaluación",
+    "Módulo 4 submódulo 2: sin indicadores de evaluación"
+  ],
+  "extraidoEl": "2026-08-13T23:26:54.512Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/tjkslkUJRt-Higiene-y-Salud-Comunitaria.pdf"
+}

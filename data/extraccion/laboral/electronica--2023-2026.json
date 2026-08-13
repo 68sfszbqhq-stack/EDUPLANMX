@@ -1,0 +1,305 @@
+{
+  "nombre": "Electrónica",
+  "slug": "electronica--2023-2026",
+  "clave": "3071200009-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "Introducción a la electrónica y CAD",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Comprende las leyes de la electrónica e identifica los instrumentos de medición disponibles en su contexto para la detección de fallas en circuitos electrónicos básicos apoyándose del dibujo asistido por computador para crear prototipos electrónicos de forma colaborativa.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Introducción al diseño asistido por computador",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Dibuja objetos simples en tercera dimensión (3D), utilizando software CAD para proyectos de electrónica aportando propuestas innovadoras acorde a su contexto.",
+          "actividadClave": "En equipos de 3 integrantes, las y los estudiantes deberán modelar en 3D, utilizando AutoCAD, una caja protectora para un circuito electrónico. Cada equipo analizará las necesidades específicas de su contexto (por ejemplo, si el circuito estará en exteriores, en un entorno industrial o educativo) para proponer un diseño propio que no solo proteja el circuito, sino que también facilite su instalación y mantenimiento. Se fomentará el trabajo colaborativo mediante roles definidos (diseñador, modelador y coordinador), uso de herramientas de trabajo en la nube para compartir avances y sesiones de retroalimentación entre equipos. La innovación se buscará a través de la incorporación de elementos como sistemas de ventilación eficientes, estructuras modulares o materiales optimizados para diferentes entornos. Material y software: • Ordenador con AutoCAD (versión con capacidades 3D) o puede descargar APP o en línea (https://www.autodesk.com/mx/education/edu-software/overview#) • Acceso a software colaborativo (Google Drive, OneDrive, AutoCAD Web, etc.) • Especificaciones del circuito a alojar (dimensiones, conectores, ventilación, etc.) Desarrollo de la actividad: 1. Formar equipos de trabajo (2-3 integrantes). 2. Investigar sobre carcasas protectoras para circuitos electrónicos. 3. Definir el tipo de circuito que alojará la caja (ejemplo: un regulador de voltaje, un Arduino con sensores, etc.). 4. Identificar requerimientos específicos: dimensiones, accesos para conectores, orificios de ventilación. 5. Realizar un boceto preliminar en 2D del diseño (a mano o en AutoCAD). 6. Crear un nuevo archivo en AutoCAD en modo 3D. 7. Configurar el espacio de trabajo en \"Modelado 3D\". 8. Dibujar la base de la caja utilizando comandos de AutoCAD. 9. Diseñar las paredes y la tapa con comandos que ayuden a suavizar bordes. 10. Incluir orificios para conectores y ventilación. 14 11. Añadir detalles de diseño innovadores: bisagras, sistema de encaje, soporte para componentes. 12. Aplicar materiales y texturas para visualizar el modelo. 13. Ajustar el modelo con base a las observaciones hechas por el docente. 14. Exportar el modelo en PDF. 15. Enviar tu diseño al correo proporcionado por tu docente o subirlo a classroom. Nota: Si en el plantel se cuenta con impresora en 3D entonces: Exportar el modelo en formato STL para impresión 3D o presentación en PDF 3D.",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Sobresaliente",
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Uso de herramientas de AutoCAD",
+                  "puntos": 20,
+                  "descripcionNiveles": "Utiliza de forma precisa y eficiente comandos que contiene AutoCAD. Utiliza correctamente la mayoría de los comandos, con pequeños errores que no afectan el diseño final. Usa algunos comandos de forma básica, con errores que afectan ligeramente la calidad del modelo. Presenta un uso limitado de los comandos, con errores significativos que afectan el diseño. No presenta ningún uso de AutoCAD. T"
+                },
+                {
+                  "criterio": "Trabajo colaborativo",
+                  "puntos": 10,
+                  "descripcionNiveles": "Participación respetuosa en el equipo aportando ideas y contribuyendo de manera activa y significativa al proyecto. Participa en el equipo con algunas contribuciones relevantes. Acude con poca participación y aportaciones al proyecto. Casi nunca muestra participación y actividad en el proyecto. Nunca muestra participación en el equipo o depende completamente de otros para contemplar la tarea. D"
+                },
+                {
+                  "criterio": "Diseño técnico y precisión",
+                  "puntos": 20,
+                  "descripcionNiveles": "El modelo tiene dimensiones exactas, proporciones correctas y un acabado detallado. El modelo es funcional, con pequeños errores de proporciones o detalles menores. El modelo muestra errores de proporción o falta de detalles, pero conserva la idea general. El modelo es impreciso, con errores evidentes que afectan su funcionalidad. El modelo es insuficiente y no cubre las especificaciones emitidas. I"
+                },
+                {
+                  "criterio": "Innovación y creatividad",
+                  "puntos": 40,
+                  "descripcionNiveles": "Integra detalles innovadores (bisagras, soportes, sistemas de encaje) que mejoran la funcionalidad y estética. Presenta algunos elementos creativos, aunque podrían desarrollarse más para mejorar la funcionalidad. Se observan intentos de innovación, pero de forma básica o sin impacto en la funcionalidad. Existe intento de tener un poco de funcionalidad en su diseño, pero no contiene innivación ni creatividad. No hay evidencia de creatividad o innovación en el diseño. P"
+                },
+                {
+                  "criterio": "Presentación final",
+                  "puntos": 10,
+                  "descripcionNiveles": "El archivo final está bien organizado, sin errores de exportación, y se presenta de manera profesional. El archivo está correctamente exportado, con pequeños errores de formato o presentación. El archivo presenta algunos errores de exportación o falta de claridad en la presentación. El archivo presenta poca claridad y cuesta para poder abrirlo. No se entregó el archivo en el formato adecuado o presenta errores que dificultan su visualización. Total 15 Electrónica"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Fundamentos de Electrónica",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Emplea diagramas electrónicos simples, tomando en cuenta las leyes básicas, símbolos y componentes electrónicos, favoreciendo un pensamiento reflexivo para el armado de circuitos electrónicos que faciliten actividades dentro de su vida cotidiana.",
+          "actividadClave": "En equipos de tres, las y los estudiantes armarán un circuito de encendido automático de luz basado en una resistencia LDR, aplicando principios de circuitos eléctricos, Ley de Ohm y uso de transistores. Cada equipo analizará las necesidades de su contexto, es decir, calculará el valor de la resistencia que irá conectada con el LED, a partir de la observación del brillo emitido por LED, propondrá un valor comercial de resistencia menor con el objetivo de proteger el LED. Se fomenta el trabajo colaborativo mediante roles definidos (diseñador, instalador y coordinador). La innovación debe ser impulsada al solicitarles que integren elementos como sistemas de ahorro de energía y materiales que mejoren la eficiencia en nuestro entorno. Desarrollo de la actividad: 1. En equipos de tres, las y los estudiantes comprenderán el funcionamiento del LDR y diseñara un circuito que encienda un LED cuando oscurezca. 2. Analizarán el problema a través de las siguientes cuestiones: o Investigar en equipos las siguientes cuestiones. o ¿Cómo podemos encender la luz automáticamente cuando oscurece? o ¿Cómo te imaginas que funciona la luz de los postes que hay en tu comunidad? o ¿Cómo se comporta una LDR con cambios en la luz ambiental? o ¿Qué pasaría si colocas el multímetro y pones una punta en un extremo del LDR y la otra punta en el otro extremo y sitúas el multímetro en la función para medir resistencia? observa ¿Qué pasa cuando tiene incidencia de luz? Ve el valor de su resistencia, Ahora coloca en el LDR un objeto obscuro ¿Qué ocurre con el valor de su resistencia? 3. Armado del circuito en el protoboard: o Conecta un extremo de la resistencia de 100 Ω alimentación y el otro extremo hacia el ánodo del LED, el cátodo del LED conéctalo al negativo del circuito. o Del cátodo del LED conéctalo hacia el colector del transistor BC547 o sustituto, de la base del transistor conecta un extremo de la resistencia de 100 kΩ, realiza un nodo que quede en serie con el LDR, el otro extremo del LDR, conéctalo a negativo del circuito. o Conecta el otro extremo de la resistencia de 100kΩ al positivo del circuito. o Conecta el emisor del transistor BC547 o sustituto al negativo del circuito. o Conecta una pila de 9 v o fuente de alimentación a 9 v a las terminales positivo y negativo del protoboard. o Ilumina el LDR con una linterna, observa lo que ocurre. o Cubre el LDR (simulando obscuridad), observa lo que ocurre. o Si el circuito no funciona: ▪ Revisa la configuración eléctrica del transistor (datasheet, Google). ▪ Revisa sus conexiones. ▪ Verifica los valores de las resistencias por medio del código de colores o en su defecto con la ayuda del multímetro. ▪ Observa los valores de los voltajes de los componentes. ▪ Ajusta la resistencia fija para modificar la sensibilidad del circuito. 16 Material: 4. Funcionamiento del circuito: o Cuando hay luz, la LDR tiene una resistencia baja y el transistor permanece apagado (el LED no enciende). o Cuando hay oscuridad, la resistencia de la LDR aumenta, activando el transistor y encendiendo el LED. 5. Cálculo de resistencia de LED con la ley de Ohm: Datos Fórmula Voltaje de la fuente = Voltaje del LED = 2v 𝑅 = 𝑉𝑜𝑙𝑡𝑎𝑗𝑒 𝑑𝑒 𝑙𝑎 𝑓𝑢𝑒𝑛𝑡𝑒 −𝑣𝑜𝑙𝑡𝑎𝑗𝑒 𝑑𝑒𝑙 𝑙𝑒𝑑 𝐶𝑜𝑟𝑟𝑖𝑒𝑛𝑡𝑒 𝑑𝑒 𝑙𝑒𝑑 Corriente del LED = 0.02ª Nota: Estos valores varían de acuerdo con el color del LED. 6. Armar el siguiente circuito puedes guiarte con Tinkercard, antes de llevarlo a la protoboard. 17 Electrónica 7. Diagrama esquemático: 8. Analiza las siguientes cuestiones: o ¿Cómo afecta la luz en la resistencia de la LDR? o ¿Cómo podríamos mejorar este circuito para aplicaciones reales (Ej.: usar un relé para encender una lámpara real)? o Menciona algunas aplicaciones que tiene este circuito dentro de la vida cotidiana.",
+          "evidencias": []
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Electrónica Analógica",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Demuestra el funcionamiento de circuitos analógicos empleando las leyes de la electricidad y electrónica, a través de problemas prácticos que le permitan resolver de manera creativa situaciones de la vida cotidiana.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Análisis de circuitos analógicos",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Analiza circuitos electrónicos, tomando decisiones de manera consiente e informada para proponer soluciones creativas a problemas de su vida cotidiana.",
+          "actividadClave": "En equipo de tres, las y los estudiantes obtendrán los valores de las resistencias de un circuito por medio de las leyes de Kirchhoff, en esta ocasión la o el docente plantea el circuito que las y los estudiantes resolverán, cada equipo analizará el circuito para darle solución a lo planteado por el docente. Se fomenta el trabajo colaborativo mediante roles definidos (Personas diseñadora, instaladora y coordinadora). Desarrollo de la actividad: Familiarizar a las y los estudiantes con el propósito y la importancia de las leyes de Kirchhoff en el análisis de circuitos eléctricos y su aplicación dentro de su vida cotidiana. Se pueden retomar los siguientes ejemplos: Se visualiza en dispositivos electrónicos como televisores, microondas, ordenadores, los circuitos internos utilizan las leyes antes mencionadas, para distribuir el voltaje y la corriente de manera eficiente. En sistemas de paneles solares se utiliza para analizar la distribución de corriente y voltaje en módulos y baterías, en donde asegura que la corriente generada por los paneles se distribuye adecuadamente hacia el inversor y la batería de almacenamiento, de la misma forma ayuda a calcular la caída de voltaje en los cables y conexiones optimizando el sistema. La o el docente explica las y los estudiantes la aplicación en los circuitos eléctricos de la primera y segunda ley a la vez que presenta el circuito que se desarrollará en esta práctica, destaca el valor de las resistencias y la fuente de voltaje. Una vez comprendido las leyes de Kirchhoff el docente da a conocer los materiales que se requiere para la práctica, así como, el diagrama eléctrico. Material: • 3 resistencias de 4Ω, 10Ω y 5Ω. • Tres fuentes de alimentación de 15 v, 80 v y 40 v 20 Armado del circuito (en simuladores o de forma física). La o el docente entrega a cada equipo el diagrama eléctrico, posteriormente las y los estudiantes, con el apoyo de su protoboard, armarán el diagrama presentado. En la imagen se observa el circuito que se hará en protoboard o también se puede desarrollar en la siguiente página (https://masterplc.com/simulador/). La o el docente instruye a los y las estudiantes para que: • Identifiquen correctamente cada resistencia. • Monten el circuito en el protoboard o en algún simulador de electrónica. • Verifiquen las conexiones antes de encender la fuente de voltaje. • Asistan a los equipos de trabajo en caso de dudas o errores de montaje. • Calculen los valores de las corrientes que circulan por el circuito y anotan sus observaciones y las conclusiones sobre el desarrollo de esta práctica. o I1= o I2= o I3=",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Semiconductores",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Construye circuitos electrónicos simples utilizando semiconductores, con la finalidad de proponer soluciones a situaciones de su contexto.",
+          "actividadClave": "En equipo de tres, las y los estudiantes construirán una alarma contra robos utilizando un sensor PIR y un transistor NPN, aplicando conceptos de ganancia de corriente (β) del transistor y la Ley de Ohm para calcular los valores adecuados de resistencia de base del transistor. Además, cada equipo analizara su contexto para adaptar el diseño a sus necesidades específicas y con base a ellos construir el circuito solicitado por la o el docente. En la actualidad en nuestra vida cotidiana los sistemas de seguridad juegan un papel importante en la protección de hogares, escuelas, oficinas, negocios. La aplicación de este sirve para diseñar control de iluminación automática, monitoreo de patios, control de acceso a áreas restringidas, alarmas para automóviles y motocicletas, sistema de ayuda a personas de la tercera edad o con una discapacidad, protección de cultivos, iluminación de hospitales y clínicas. Desarrollo de la actividad: 1. En equipo de tres, las y los estudiantes diseñan y construyen una alarma contra robos utilizando el sensor PIR y un transistor de tipo NPN (puede ser 2N2222A, BC547, 2N3904,2N3906, BC337). 2. La o el docente presenta el diagrama a desarrollar al estudiante, en donde le ha explicado los conceptos fundamentales para el armado y el cálculo de los valores de resistencia de base del transistor. 3. Las y los estudiantes verificarán las terminales del transistor (datasheet del transistor, Google) y analizarán la lista de materiales de acuerdo con el diagrama que se les proporcionó y responderán las siguientes cuestiones: o ¿Cómo función el sensor PIR? 22 o ¿Por qué es necesario utilizar una resistencia de polarización en la base del transistor? o ¿Cómo afectan las leyes de Kirchhoff al análisis de corriente y voltaje en el circuito? o ¿Cuáles fueron las diferencias entre los valores teóricos y prácticos? Armado del circuito en el protoboard 1. Identificar en el protoboard las terminales de positivo y negativo. 2. Previamente identificar en el transistor emisor, base y colector se puede apoyar de Google, colocando el valor del transistor y solicitar el datasheet para saber con exactitud cuales es el emisor, base y colector. 3. Colocar en el protoboard el sensor PIR, identificando sus terminales cual es Vcc, tierra y salida. 4. Colocar el transistor en el protoboard de modo que las tres patitas queden en filas distintas identificando cual es emisor, base y colector. 5. Conectar la salida del PIR a un extremo de la resistencia R2 o Rb (resistencia de base). 6. Del otro extremo de la resistencia de base (Rb)conectarlo a la base del transistor. 7. Conectar el LED o buzzer al colector del transistor. 8. Conectar el colector del transistor a un extremo de la resistencia limitadora de 220Ω. 9. Conectar el otro extremo de la resistencia al ánodo (positivo) del LED o buzzer. 10. Conectar el cátodo(negativo) del LED o buzzer de la línea de GND en el protoboard. 11. Comprobar que el LED o buzzer se activa cuando el PIR detecta movimiento y encienda el transistor. 12. Conectar la fuente (pila de 9v) de alimentación al protoboard. 13. Revisa todas las conexiones para asegurarse que estén correctas y no haya corto circuito. 14. Enciende la fuente voltaje y observa lo que ocurre. Diagrama Electrónico Diagrama físico (uso de simulador tinkercard). 23 Electrónica Nota: El valor de la resistencia de base cambia de acuerdo con las características eléctricas del transistor por lo que es importante desarrollar los cálculos para la obtención de los valores. Fórmulas para el cálculo de la resistencia de base del transistor usando corriente de colector y la ganancia del transistor. 𝑅𝑏 = 𝑉𝑐𝑐 − 𝑉𝑏𝑒 𝐼𝑏 Donde: Vcc: voltaje de alimentación del circuito Vbe: voltaje base – emisor del transistor (usualmente 0.7 v para transistores de silicio) Ib: la corriente de base que se calcula como: 𝐼𝑏 = 𝐼𝑐 ℎ𝑓𝑒 Ic : corriente de colector, determinada por la carga conectada al transistor Hfe: la ganancia de la corriente del transistor (consultar la hoja de datos del transistor especifico) Lista de componentes Funcionamiento del circuito • Cuando el sensor PIR detecta movimiento, la salida se pone en alto. • Esto activa al transistor NPN, permitiendo el paso de corriente hacia el LED o Buzzer que se enciende o suena como alarma. • La alarma se apaga cuando el PIR deja de detectar movimiento y la señal de salida vuelva al estado bajo. Analiza la siguiente cuestión y anota sus observaciones y conclusiones: ¿Cómo podría adaptarse o mejorarse esta alarma para otras situaciones de seguridad? .",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (6 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Sobresaliente",
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Diseño de circuito",
+                  "puntos": 15,
+                  "descripcionNiveles": "Diseña el circuito correctamente con conexiones claras y ordenadas. Diseña el circuito con precisión, pero con pequeños errores de conexiones. Diseña el circuito con varios errores que afectan su funcionalidad. Diseña el circuito con errores evidentes que dificultan su análisis. Presenta el circuito un diseño incorrecto."
+                },
+                {
+                  "criterio": "24 Aplicación de las Leyes de Kirchhoff y la Ley de Ohm",
+                  "puntos": 20,
+                  "descripcionNiveles": "Aplica correctamente las Leyes de Kirchhoff y la Ley de Ohm en el análisis de voltajes y corrientes. Aplica las leyes con precisión con algunos errores menores. Aplica las leyes de manera incompleta o con errores importantes. Presenta un intento de aplicar las leyes, pero con cálculos erróneos. No aplica correctamente las leyes."
+                },
+                {
+                  "criterio": "Montaje del circuito en protoboard",
+                  "puntos": 20,
+                  "descripcionNiveles": "Monta el circuito correctamente en el protoboard, asegurando conexiones limpias y funcionales. Monta el circuito con algunas fallas menores que no afectan su funcionamiento. Monta el circuito con varios errores que requieren correcciones. Monta el circuito con errores que impiden su correcto funcionamiento. No logra montar el circuito correctamente. F"
+                },
+                {
+                  "criterio": "Funcionamiento del circuito",
+                  "puntos": 15,
+                  "descripcionNiveles": "La alarma responde correctamente, al sensor PIR y activa la salida (LED o buzzer) de manera adecuada. La alarma funciona, pero con algunas inconsistencias en la activación. La alarma funciona parcialmente o con fallas importantes. La alarma funciona con muchas fallas que afectan su operatividad. La alarma no funciona o no logra activarse. U"
+                },
+                {
+                  "criterio": "Uso del multímetro para mediciones",
+                  "puntos": 15,
+                  "descripcionNiveles": "Utiliza correctamente el multímetro para medir, voltajes y corrientes en el circuito. Utiliza el multímetro adecuadamente, con algunos errores menores. Usa el multímetro con dificultado con errores en las mediciones. Presenta dificultades serias para manejar el multímetro correctamente. No utiliza el multímetro o lo hace de manera incorrecta."
+                },
+                {
+                  "criterio": "Trabajo en equipo y organización",
+                  "puntos": 15,
+                  "descripcionNiveles": "Participa en el equipo de manera activa, colaborativa y organizada. Participa con contribuciones relevantes, pero con poca iniciativa. Participa ocasionalmente con aportaciones limitadas. Participa poco y depende de otros para completar la tarea. No participa en el equipo o muestra desinterés en la práctica."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "Electrónica Digital",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Construye proyectos con microcontroladores, microprocesadores y circuitos lógicos, favoreciendo su pensamiento creativo en la resolución de situaciones de la vida cotidiana.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Circuitos lógicos",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Comprende conceptos, leyes y teoremas de electrónica digital, haciendo uso de diversos compiladores para el análisis de circuitos combinacionales.",
+          "actividadClave": "En equipo de tres, las y los estudiantes construirán un circuito en el que se compruebe la tabla de verdad de las compuertas lógicas AND, OR y NOT aplicando principios del álgebra de Boole. Este circuito simulará un sistema de alarma, funcionando de acuerdo con su tabla de verdad e integrando sensores representados por un dipswitch, que actúa como un conjunto de interruptores para generar distintas combinaciones de entrada. La o el docente proporcionará a cada equipo información sobre las compuertas lógicas y sus respectivas tablas de verdad. Las y los estudiantes deberán analizar y comprobar el comportamiento de cada compuerta, adaptando el diseño a sus necesidades específicas y, con base a ello, construir el circuito solicitado. Se mencionan algunas aplicaciones: Alarmas contra robos, accesos no autorizados, control de iluminación automática, sistema de seguridad para automóviles y motocicletas, los circuitos lógicos combinaciones con compuertas AND, OR y NOT son la base de numerosos sistemas electrónicos en nuestra vida cotidiana, gracias a su capacidad de tomar decisiones en función de condiciones predefinidas, estos circuitos permiten el desarrollo de tecnologías en seguridad, automatización, control de acceso y eficiencia energética. Desarrollo de la actividad: En equipo de tres, las y los estudiantes diseñan y construyen el diagrama proporcionado por la o el docente utilizando compuertas AND, OR y NOT, en esta van a comprobar su funcionamiento de las compuertas, mediante su tabla de verdad, probaran el circuito de tal forma que validará su funcionamiento. La o el docente presenta el diagrama a desarrollar al estudiante, en donde le ha explicado los conceptos de las compuertas lógicas. Las y los estudiantes investigan las características eléctricas de las compuertas lógicas (datasheet del Compuertas lógicas [74LS08,74LS32,74LS04] Google), analizarán la lista de materiales de acuerdo con el diagrama que se proporcionó y responderán las siguientes cuestiones: o ¿Cómo función las compuertas lógicas AND, OR y NOT? o ¿Qué operación desarrolla la compuerta lógica AND? o ¿Qué operación desarrolla la compuerta lógica OR? o ¿Cuál es la diferencia entre estas compuertas? o ¿Cuáles fueron las diferencias entre valores teóricos y prácticos? 26 Armado del circuito en el protoboard 1. Identificar en el protoboard las terminales de positivo y negativo. 2. Previamente buscar sus características eléctricas de las compuertas AND, OR y NOT te puedes apoyar de Google, colocando los siguientes valores de circuitos integrados C.I 74LS08,74LS32, 74LS04, identifica las entradas, salidas, alimentación y tierra de los circuitos. 3. Colocar los circuitos integrados en el protoboard y conectar Vcc(pin 14) alimentación y tierra (GND) al pin 7. 4. Conectar los dipswitches o interruptores a las entradas de la compuerta AND pin (1) y pin (2) y pin (3) salida respectivamente. 5. La salida de la compuerta AND (pin 3) conectar una resistencia de 330Ωdel otro extremo de la resistencia conectar al ánodo del LED o buzzer y por último el cátodo del LED o buzzer conectarlo a GND. 6. Conectar alimentación en el protoboard. 7. Revisar todas las conexiones antes de encender la fuente de alimentación. 8. Encender la fuente y probar las condiciones de la tabla de verdad para cada compuerta. 9. Para el caso de la compuerta OR y NOT es importante que revisen las características eléctricas, ya que de ello depende las conexiones de entradas y salidas de cada compuerta, por ejemplo, en el caso de la compuerta NOT solo tiene una entrada y una salida. Diagrama físico (uso de simulador tinkercard) Diagrama esquemático 27 Electrónica Lista de componentes Funcionamiento del circuito Cuando la compuerta AND genera una salida alta (1) sólo cuando sus entradas están en alto (1), en cualquier otro caso, la salida es baja (0). Observa la siguiente tabla de verdad. A B Salida 0 0 0 0 1 0 1 0 0 1 1 1 De acuerdo con ello y a la práctica, las y los estudiantes deben comprobar que sólo cuando están en estado alto, su salida también debe ser alta y anotar sus observaciones y conclusiones.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Microcontroladores y microprocesadores",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Elabora de manera colaborativa programas para microcontroladores y microprocesadores, para la propuesta de proyectos electrónicos adaptados a su entorno.",
+          "actividadClave": "En equipo de tres, las y los estudiantes construirán un sistema de iluminación secuencial utilizando cuatro LEDs controlados por una placa Arduino. Aplicará conceptos de programación básica en Arduino, temporización con la función delay, y la ley de Ohm para calcular los valores adecuados de las resistencias de los LEDs. Además, cada equipo deberá analizar su contexto para adaptar el diseño a sus necesidades específicas y con base a ellos construir el circuito solicitado por la o el docente. En la actualidad, los sistemas de iluminación automatizada desempeñan un papel fundamental en diversos entornos, como el hogar, la educación y la industria. Su aplicación permite desarrollar soluciones como señales luminosas en vehículos, indicadores de procesos de fábricas, sistema de alerta visual, iluminación decorativa inteligente y control de luces en espacios públicos. Esta práctica ayudará a las y los estudiantes a comprender el funcionamiento básico de los circuitos electrónicos y la automatización mediante Arduino. Desarrollo de la actividad: La o el docente presentará el diagrama del circuito a desarrollar y explicará los conceptos fundamentales sobre la conexión de LEDs, la programación de secuencias en Arduino mediante el uso del digitalWrite y delay, así como el cálculo de las resistencias necesarias para proteger los LEDs y garantizar un funcionamiento adecuado del circuito. Las y los estudiantes deberán realizar las siguientes actividades: 1. Identificar los materiales necesarios para la construcción del circuito, incluyendo la placa Arduino, LEDs, resistencias y cables de conexión. 2. Consultar y analizar el diagrama del circuito proporcionado por la o el docente para entender la forma en que se conectan los LEDs y las resistencias a las salidas digitales del Arduino. 3. Calcular el valor de las resistencias en serie con los LEDs aplicando la ley de ohm, considerando el voltaje de salida de Arduino de 5v y el voltaje de operación de los LEDs. 4. Verificar la correcta conexión de los LEDs y resistencias, asegurándose de que los ánodos de los LEDs estén conectados a las salidas digitales del Arduino y los cátodos a GND. 5. Programar la secuencia de encendido y apagado de los LEDs en Arduino, utilizando las funciones de digitalWrite y delay para darle el efecto de secuencia. 6. Subir y probar el código en la placa Arduino para comprobar que los LEDs se encienden en el orden y los tiempos programados. Analizarán la práctica a través de las siguientes cuestiones: o ¿Cuál es la función de Arduino en este circuito y como se programan sus salidas digitales? o ¿Cuál es la función de Arduino en este circuito y como se programan sus salidas digitales? Armado del circuito en el protoboard 1. Coloca en el protoboard cuatro resistencias y cuatro LEDs según el circuito físico proporcionado. 2. Conecta el cátodo de cada LED (la pata más corta) a una línea de tierra en el protoboard. 3. Conecta las resistencias en serie con los LEDs, asegurándote de que un extremo de cada resistencia este unido al ánodo del LED y el otro conectado a los pines de salida del Arduino. 4. Establece la alimentación del protoboard, conectado los pines 5v y GND de la placa Arduino a las líneas de alimentación y tierra del protoboard respectivamente. 5. Conecta los pines digitales 5,4,3, y 2 de Arduino a los ánodos de los LEDs asegurándote de que cada uno tenga en serie una resistencia de 1kΩ o el valor que tu hayas calculado. 6. Verifica la conexión con el diagrama proporcionado antes de proceder con la programación y prueba del circuito. 30 Diagrama en físico (uso de simulador tinkercard) Diagrama electrónico Fórmulas para el cálculo de las resistencias que van en serie con los LEDs 𝑅 = 𝑉𝑓𝑢𝑒𝑛𝑡𝑒 − 𝑉𝑓 𝐼 Donde: Vf = Voltaje típico del LED, esto depende del color del LED, por ejemplo: rojo =2v o azul, verde y blanco = 3v. Vfuente= Voltaje de salida del Arduino 5v. I= Corriente 0.01 A (para asegurar larga vida del LED) Nota: Sustituye los valores de acuerdo con el color de LED que elija una vez calculada la resistencia toma en cuenta los valores comerciales de esta. Lista de componentes Nombre Cantidad Componente U1 1 Arduino Uno R3 D1 1 LED Rojo R1 1 Resistencia(1kΩ) R2 1 Resistencia(1kΩ) R3 1 Resistencia(1kΩ) R4 1 Resistencia(1kΩ) D2 1 LED Azul D3 1 LED blanco D4 1 LED verde C1 1 1 cable USB con conector tipo B P1 1 Protoboard Cables Varios Cables para conectar en protoboard. S1 1 Software Arduino 31 Electrónica Funcionamiento del circuito 1. La placa se conecta a una fuente de alimentación, en el puerto USB de un ordenador o adaptador 5v. 2. Se establece una conexión desde los pines 5v y GND de Arduino hacia las líneas de alimentación y tierra del protoboard. 3. En un sketch que te proporciona la plataforma de Arduino, se escribe un programa en el IDE de Arduino que configura los pines 2,3,4 y 5 como salidas digitales. Observa la siguiente imagen. 4. En el código, se utiliza la función digitalWrite declara el pin que utilizaras y con la palabra High indicaras encendido al LED, para apagado la palabra low. 5. Se implementa una secuencia en la que los LEDs se encienden y apagan uno tras otro con un intervalo de tiempo, creando un efecto visual de desplazamiento. 6. Se utiliza la función delay(milisegundos) para establecer el tiempo de espera entre cada encendido y apagado. 7. De acuerdo con la programación, se enciende el primer LED (pin 2) y permanece encendido por un tiempo determinado. 8. Se apaga el primer LED y se enciende el segundo (pin 3). 9. Se apaga el segundo LED y se enciende el tercero (pin 4). 10. Se apaga el tercero y se enciende el cuarto LED (pin 5). 11. Se repite continuamente el ciclo. Analiza la siguiente cuestión y anota tus observaciones y conclusiones: o ¿Cómo podría modificar el código para que los LEDs se enciendan en orden inverso después de completar la secuencia? 32",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (5 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Sobresaliente",
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Diseño de circuito",
+                  "puntos": 20,
+                  "descripcionNiveles": "Diseña el circuito correctamente con conexiones claras y ordenadas. Diseña el circuito con precisión, pero con pequeños errores de conexiones. Diseña el circuito con varios errores que afectan su funcionalidad. Diseña el circuito con errores evidentes que dificultan su análisis. Presenta el circuito un diseño incorrecto."
+                },
+                {
+                  "criterio": "Aplicación de la Ley de Ohm",
+                  "puntos": 20,
+                  "descripcionNiveles": "Aplica correctamente la ley de ohm en el cálculo de las resistencias. Aplica la ley con precisión, aunque con algunos errores menores. Aplica la ley de manera incompleta o con errores importantes. Presenta un intento de aplicar las leyes, pero con cálculos erróneos. No aplica correctamente las leyes."
+                },
+                {
+                  "criterio": "Montaje del circuito en protoboard",
+                  "puntos": 20,
+                  "descripcionNiveles": "Monta el circuito correctamente en el protoboard, asegurando conexiones limpias y funcionales. Monta el circuito con algunas fallas menores que no afectan su funcionamiento. Monta el circuito con varios errores que requieren correcciones. Monta el circuito con errores que impiden su correcto funcionamiento. No logra montar el circuito correctamente. F"
+                },
+                {
+                  "criterio": "Funcionamiento del circuito",
+                  "puntos": 20,
+                  "descripcionNiveles": "El encendido de los LEDs funciona correctamente en la secuencia programada. El circuito funciona, pero con algunas inconsistencias, en la secuencia del encendido. El circuito funciona parcialmente con fallas importantes. El circuito presenta muchas fallas que afectan su operatividad. El circuito no funciona o no logra activarse."
+                },
+                {
+                  "criterio": "Trabajo en equipo y organización",
+                  "puntos": 20,
+                  "descripcionNiveles": "Participa en el equipo de manera activa, colaborativa y organizada. Participa con contribuciones relevantes, pero con poca iniciativa. Participa ocasionalmente con aportaciones limitadas. Participa poco y depende de otros para completar la tarea. No participa en el equipo o muestra desinterés en la práctica."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "Introducción a la automatización",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Integra elementos de control y visión artificial mediante el uso de la electrónica, técnicas de automatización y procesamiento de imágenes, fomentando la generación de ideas creativas en diversos contextos: educativo e industrial, contribuyendo así al avance tecnológico y mejorando los procesos existentes.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Introducción a la visión artificial",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Integra los métodos básicos de programación del procesamiento de imágenes, utilizando técnicas de automatización de manera consciente para proponer soluciones de visión artificial en diversos contextos, educativos e industriales.",
+          "actividadClave": "En equipos de 3 integrantes, las y los estudiantes deberán implementar un sistema de detección de rostro utilizando Python y OpenCV aplicando la técnica de clasificadores en cascada Haar. Cada equipo deberá analizar diferentes escenarios de aplicación por ejemplo sistemas de seguridad, control de acceso, reconocimiento facial en dispositivos inteligentes y adaptar su código a un contexto especifico. Se fomentará el trabajo colaborativo mediante roles definidos dentro del equipo el cual será de personas programadora, analista y documentadora, así como el uso de herramientas en la nube para compartir avances y sesiones de retroalimentación entre equipos. La innovación se reflejará en a la capacidad de los equipos para mejorar la precisión del sistema, incluir detección de múltiples características como ojos o sonrisas y optimizar códigos para su mayor velocidad. Material y software OpenCV instalado (recomendado: usar Google colab o Júpiter Notebook si no tiene OpenCV instalado). • Acceso a software colaborativo (Google drive, GitHub, Google colab, etc.) • Cámara web o archivos de imágenes para realizar pruebas. • Clasificadores preentrenados Haar Cascades (descargables desde la instalación • OpenCV o de su sitio web). Desarrollo de la práctica En equipo de tres se asigna los roles que desempeñaran: • Analista: investiga la teoría detrás de Haar, Cascades y adapta los parámetros del código. • Programador: Implementa el código en Python y OpenCV. • Documentador: Redacta el reporte con resultados y capturas de pantalla. La o el docente presentará el diagrama de flujo de detección de rostro y explicará los conceptos fundamentales sobre el funcionamiento de los clasificadores en cascada Haar, el uso de la biblioteca OpenCV en Python y los parámetros clave para la detección de rostros y ojos. 34 En equipo, las y los estudiantes deberán realizar las siguientes actividades: 1. Identificar los materiales y herramientas necesarias para la implementación del sistema, incluyendo: o Ordenador con Python y OpenCV instalado. o Cámaras web o imágenes de pruebas. o Clasificadores Haar preentrenados(.xml) para detección de rostros y ojos. 2. Consultar y analizar la teoría de Haar Cascades, comprendiendo cómo funcionan los clasificadores en cascada para la detección de objetos en imágenes y video. 3. Definir el contexto de aplicación del sistema de detección de rostro, por ejemplo: o Sistema de seguridad basado en reconocimiento facial. o Detección de rostro para control de asistencia. o Implementación en dispositivos inteligentes. 4. Definir el contexto de aplicación del sistema de detección de rostros. o Escribir el código base en Python para la detección de rostros utilizando OpenCV. o Cargar la cámara o una imagen desde el almacenamiento. o Convertir la imagen a escala de grises. o Aplicar cv2 cascade Classifier para detectar rostro en la imagen. 5. Incorporar mejoras al código, como: o Ajuste de los parámetros (scaleFactor, minNeighbors) para mejorar la precisión de detección. o Implementación de detección de ojos y sonrisas usando clasificadores adicionales. o Optimización del código para hacerlo más eficiente y rápido. 6. Probar el código con diferentes imágenes y realizar ajustes según sea necesario para mejorar la detección. 7. Documentar el desarrollo del proyecto: o Código fuente con comentarios explicativos. o Captura de pantalla del sistema en funcionamiento. o Explicación teórica sobre Haar Cascades y la optimización del modelo. 8. Enviar el código y el reporte al correo del docente o subirlo a Google, drive o classroom. 9. Las y los estudiantes investigan de forma previa sobre detección de rostros y Haar Cascades. • ¿Cómo funcionan los clasificadores en cascada Haar? • ¿Qué aplicaciones utiliza los modelos Haar en la vida real? • ¿Qué mejoras le harías al modelo Haar? Armado del circuito 1. Cargue OpenCV (https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html 2. Implemente el siguiente código. 35 Electrónica 3. Adapta el código a un contexto en específico (sugerencia). 4. Ajusta parámetros de detección. 5. Ajusta el programa con base a las indicaciones del o la docente. 6. Genera observaciones, conclusiones y anota. 36",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (6 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Sobresaliente",
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Configuración del entorno de desarrollo",
+                  "puntos": 20,
+                  "descripcionNiveles": "Instala correctamente Python y OpenCV, asegurando un entorno funcional sin errores. Configura el entorno con pequeños errores que no afectan el funcionamiento. Representa errores en la configuración que afecta ligeramente la implementación. Se le dificulta la configuración y requiere asistencia constante. No logra configurar el entorno correctamente."
+                },
+                {
+                  "criterio": "Implementación del código de base en Python",
+                  "puntos": 20,
+                  "descripcionNiveles": "Implementa correctamente el código en Python y OpenCV, logrando detección precisa de rostros en tiempo real. Implementa el código con pequeños errores en la detección, pero funcional. La detección presenta errores en algunos casos y requiere ajustes. El código tiene errores que afectan el funcionamiento general. No logra implementar el código o no detecta rostros correctamente."
+                },
+                {
+                  "criterio": "Diagnóstico y corrección de errores en la detección",
+                  "puntos": 20,
+                  "descripcionNiveles": "Identifica y corrige errores en la detección de rostros de manera autónoma y eficiente. Corrige errores con ayuda mínima del docente. Requiere asistencia constante para corregir errores en la detección. No logra identificar ni corregir los errores sin ayuda del docente. No identifica ni corrige errores, entregando un código con fallas. E"
+                },
+                {
+                  "criterio": "Explicación del funcionamiento del código",
+                  "puntos": 20,
+                  "descripcionNiveles": "Explica claramente la lógica del código, el uso de Haar cascade, y su aplicación en visión artificial. Explica correctamente, aunque con errores menores en conceptos clave. La explicación es confusa y con fallas conceptuales. Explica de manera superficial y con poca seguridad. No logra explicar el funcionamiento del código. T"
+                },
+                {
+                  "criterio": "Trabajo en requipo y organización",
+                  "puntos": 10,
+                  "descripcionNiveles": "Participa activamente, colabora y se organiza eficientemente con su equipo. Trabaja bien en quipo, pero con participación desigual. Participa poco y no se distribuye bien las tareas. Solo realiza algunas tareas sin coordinarse con el equipo. No colabora o depende completamente de otros para completar la tarea. P"
+                },
+                {
+                  "criterio": "Presentación de la practica",
+                  "puntos": 10,
+                  "descripcionNiveles": "Entrega un informe bien estructurado con introducción, explicación del código, capturas de pantalla y conclusiones. Presenta el informe completa, pero con algunos errores de formato. La documentación es incompleta o poco detallada. El informe es poco claro y desorganizado. No entrega documentación o está incorrecta."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Controladores lógicos Programables",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Integra dispositivos electrónicos simples por medio de Controladores Lógicos Programables (PLC), identificando su aplicación en diversos contextos.",
+          "actividadClave": "En equipo de tres, las y los estudiantes programarán un sistema de encendido y apagado de luces con PLC utilizando un simulador. Aplicarán los conceptos de programación en escalera, el uso de contactos normalmente abiertos o cerrados, flip-flop y temporizadores para diseñar sistemas de iluminación automatizado. Comprendiendo como se controla la iluminación en fábricas, edificios inteligentes, espacios públicos y sistemas de señalización. Desarrollo de la actividad: La o el docente presentará el diagrama del circuito a desarrollar en el simulador de PLC y explicará los conceptos fundamentales sobre la conexión de luces, la programación en escalera y el uso de temporizadores y contactos normalmente cerrados y abiertos, los cuales permitirán encender y apagar las luces de forma automatizada. Las y los estudiantes realizarán las siguientes actividades: 1. Identificar los elementos necesarios para la simulación, incluyendo el simulador de PLC, entradas(pulsadores), salidas(luces) y temporizadores. 2. Consultar y analizar el diagrama del circuito proporcionado por el docene para comprender la lógica de encendido y apagado de luces en el PLC. 3. Configurar el entorno de simulación, asegurándose de asignar correctamente las entradas (pulsadores) y salidas(luces) digitales en el software del PLC. 4. Programar en escalera el sistema de encendido y apagado de luces usando contactos normalmente cerrados y abiertos, o flip-flop tipo T, de manera que con un pulsador se puede alternar el estado de la luz (encender /apagar). 5. Ejecutar la simulación en el software del PLC y verificar que las luces respondan correctamente al pulsador y a los tiempos programados. Analizarán la práctica a través de las siguientes preguntas: • ¿Cuál es la función del PLC en este circuito y como se programan sus salidas digitales? • ¿Cuál es la diferencia entre un sistema de control con Arduino y un sistema basado en PLC? • ¿Cómo se podría mejorar este sistema de iluminación automatizada en un contexto real (industria, hogar, transporte público)? Armado del circuito en el software 1. Abrir el software de simulación. 2. Seleccionar el PLC de forma virtual y configurar el número de entradas y salidas digitales necesarias. 3. Asignar las entradas digitales para los pulsadores. 4. Asignar las salidas digitales para las luces. 5. Colocar con etiquetas las salidas y las entradas. 6. Fuente de alimentación a 24 Vcd. 38 Programa en escalera de la Simulación del Encendido y Apagado de Luces con PLC I0.0-------|P|---------------|XOR|------------( )-------- Q0.0 Donde: |P| Detecta el flanco positivo del pulsador. XOR con Q0.0 Alterna entre encendido y apagado. Q0.0 Controla la salida de la luz en el simulador. Programación en escalera con el simulador (https://app.plcsimulator.online/). Nota: Para saber manejar el simulador PLC ver el tutorial (https://www.youtube.com/watch?v=Cgd_Or1Mcac) I0.0 ───|P|──────────()─── T1 (5s) T1 ───| |──────────()─── Q0.0 // LED 1 enciende T1 ───| |──────────()─── T2 (5s) T2 ───| |────────── () ─── Q0.1 // LED 2 enciende T2 ───| |────────── () ─── T3 (5s) T3 ───| |────────── () ─── Q0.2 // LED 3 enciende T3 ───| |────────── ()─── T4 (5s) T4 ───| |────────── ()─── Q0.3 // LED 4 enciende Programación en escalera • Cada luz se enciende tras un temporizador de 5 segundos. • Las luces se encienden en secuencia, simulando un sistema de iluminación automatizado. • Aplicable en semáforos, señalización en fábricas y control de iluminación inteligente. Funcionamiento del PLC 1. El PLC detecta el estado de los pulsadores (presionando/no presionando). Si el pulsador de encendido (I0.0) se activa, el PLC procesa la señal. 2. Se utiliza un flip-flop o una combinación de contactos para alternar el estado de la luz. 3. La programación en Ladder ejecuta una lógica condicional basada en las señales de entrada. 4. Si el programa determina que la luz debe encenderse, el PLC activa la salida. 5. La luz permanecerá encendida hasta que se reciba otra señal de apagado. 6. El PLC se queda monitoreando constantemente. 7. Si el pulsador de apagado es presionado, el PLC desactiva la salida Q0.0 y la luz se apaga. Analiza la siguiente cuestión y anota sus observaciones y conclusiones. • ¿Cuál es la función principal del PLC en el control de encendido y apagado de las luces? • ¿Qué tipo de entradas y salidas se utilizaron en la simulación? 39 Electrónica • ¿Qué sucedería si el pulsador estuviera presionado continuamente?",
+          "evidencias": []
+        }
+      ]
+    }
+  ],
+  "calidadExtraccion": "BUENA",
+  "coberturaInstrumentos": {
+    "conInstrumento": 4,
+    "total": 8
+  },
+  "avisos": [
+    "Módulo 1 submódulo 2: sin indicadores de evaluación",
+    "Módulo 2 submódulo 1: sin indicadores de evaluación",
+    "Módulo 3 submódulo 1: sin indicadores de evaluación",
+    "Módulo 4 submódulo 2: sin indicadores de evaluación"
+  ],
+  "extraidoEl": "2026-08-13T23:26:54.434Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/fa9OuHbJXt-Electronica.pdf"
+}

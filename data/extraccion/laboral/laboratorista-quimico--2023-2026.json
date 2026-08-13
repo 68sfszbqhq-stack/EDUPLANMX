@@ -1,0 +1,346 @@
+{
+  "nombre": "Laboratorista Químico",
+  "slug": "laboratorista-quimico--2023-2026",
+  "clave": "3071700003-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "Fundamentos básicos de un laboratorio",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Asiste en la operación de un laboratorio con el apoyo de manuales basados en las normas oficiales, trabajando de forma colaborativa, reflexiva y responsable en actividades experimentales.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Conocimiento y legislación de un laboratorio",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Registra los elementos básicos del funcionamiento de un laboratorio de ciencias experimentales, siguiendo procedimientos establecidos y con responsabilidad ética.",
+          "actividadClave": "El personal docente solicita, en equipos de trabajo, elaborar un video informativo de la evaluación del cumplimiento de la normatividad aplicable vigente y las buenas prácticas dentro de un laboratorio. Para lo cual, solicita al estudiante, conocer e identificar la clasificación y características de los diferentes tipos de laboratorio, las características de las sustancias químicas y su clasificación, los tipos de residuos generados y su disposición, los riesgos y peligros consultando las Normas oficiales aplicables vigentes a un laboratorio (NOM). Solicita investigar, a través de videos o si está dentro de sus posibilidades, visitar un laboratorio escolar, un laboratorio externo o una empresa; observando cómo están cumpliendo formalmente las normas y buenas prácticas de laboratorio en la estructura, organización, elementos, técnicas, manipulación de materiales, equipos y manejo de residuos generados. Solicita para grabar el vídeo integrar los diversos conocimientos desarrollando un experimento sencillo de manera colaborativa para evidenciar el aprendizaje, elaborando como apoyo listas de verificación para evaluar el cumplimiento de la normatividad y las buenas prácticas de laboratorio. Se espera que el estudiantado se comunique con claridad y buena dicción durante el desarrollo de la actividad, trabajando con responsabilidad, experimentando la actividad de manera científica, aplicando las normas oficiales aplicables vigentes en el laboratorio, minimizando la generación de residuos, cuidando los recursos y materias primas evitando el impacto al medio ambiente. Finalmente solicita reflexionar sobre la importancia de conocer y seguir las normas oficiales vigentes durante el trabajo en laboratorio. 14 Estructura para el producto de la actividad sugerida: video informativo ● Introducción: ● Mencionar brevemente las características y organización del laboratorio en el que se está trabajando. ● Mencionar los fundamentos del experimento que desarrollará y las sustancias que utilizará. ● Proporcionar información clara, precisa y organizada sobre las características de las sustancias químicas, los residuos que generan, como se almacenan. ● Identificación de elementos y normas: ● -Mencionar las normas de seguridad, el equipo de protección personal a utilizar, así como los materiales. ● Experimentación: ● Describir y desarrollar el experimento de manera científica, ● Mostrar la adecuada aplicación de las técnicas y manipulación de materiales y equipos. (si no se cuenta con ellos tendrán que sustituirlos de manera artesanal o casera) ● Evidenciar la importancia de la optimización del uso de materias primas y recursos, así como la reducir la generación de residuos y desperdicios. ● Análisis de los resultados: ● Mencionar de manera clara, accesible y coherente los resultados obtenidos, que el lenguaje sea comprendido por todo el público en general. Evaluar su actitud y ética durante el desarrollo. ● Conclusión: De manera resumida realzar la importancia de aplicar las buenas prácticas de laboratorio, así como, seguir las normas de seguridad e higiene.",
+          "evidencias": [
+            {
+              "nombre": "Evidencia 1",
+              "tipoInstrumento": "lista-cotejo",
+              "indicadores": [
+                {
+                  "numero": 1,
+                  "texto": "Identifica los conceptos básicos de un laboratorio (equipos, instrumentos, materiales)."
+                },
+                {
+                  "numero": 2,
+                  "texto": "Identifica los tipos de laboratorios y comprende sus funciones en diversos campos (químico, biológico, industrial, etc.)."
+                },
+                {
+                  "numero": 3,
+                  "texto": "Identifica las sustancias químicas y su clasificación."
+                },
+                {
+                  "numero": 4,
+                  "texto": "Identifica los tipos de residuos generados en un laboratorio (sólidos, líquidos, biológicos, peligrosos)."
+                },
+                {
+                  "numero": 5,
+                  "texto": "Identifica los riesgos y peligros en un laboratorio."
+                },
+                {
+                  "numero": 6,
+                  "texto": "Reconoce las Normas oficiales aplicables vigentes (NOM) y las buenas prácticas de laboratorio que son aplicables en el laboratorio escolar."
+                },
+                {
+                  "numero": 7,
+                  "texto": "Utiliza los recursos digitales disponibles para editar un video informativo que muestra la asociación de conocimiento durante el desarrollo de una actividad experimental en un laboratorio."
+                },
+                {
+                  "numero": 8,
+                  "texto": "Desarrolla colaborativamente un experimento siguiendo procedimientos y apoyándose en las normas oficiales aplicables vigentes (NOM) o listas de verificación, comunicándose con buena dicción y claridad durante el desarrollo de la actividad."
+                },
+                {
+                  "numero": 9,
+                  "texto": "Trabaja con responsabilidad, se conduce con soltura, seguridad y experimenta la actividad de manera científica aplicando las normas oficiales vigentes."
+                },
+                {
+                  "numero": 10,
+                  "texto": "Aplica el buen manejo y disposición de los residuos generados, cuidando los recursos y materias primas evitando el impacto al medio ambiente. Total"
+                }
+              ],
+              "niveles": [],
+              "criterios": []
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Componentes básicos de un laboratorio",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Clasifica materiales, reactivos y equipos básicos en laboratorios, siguiendo lineamientos y normas vigentes de manera ética y responsable.",
+          "actividadClave": "El personal docente solicita en equipos de trabajo la elaboración de un Manual de Procedimientos de la elaboración de un producto de uso cotidiano elaborado en el laboratorio tomando en cuenta las materias primas disponibles en la región (alimenticio, de limpieza o cosmético). Solicita identificar las materias primas de la región, las técnicas y procedimientos analíticos, delimitando los que pueda realizar para la determinación de parámetros fisicoquímicos (pH, Viscosidad, densidad, IR, entre otros) y microbiológicos necesarios; identificar materiales, equipos de laboratorio y reactivos químicos según sus características, uso, manejo y disposición, apoyándose en las normas oficiales aplicables vigentes (NOM) en el laboratorio. Solicita reafirmar conocimiento haciendo uso de recursos documentales, visuales, gráficos y los que tenga a su alcance para documentar las metodologías analíticas requeridas; visitando una empresa formalmente establecida en la región sea artesanal o industrial observando los procesos productivos, análisis, materiales y equipos utilizados, los residuos que generan y su tratamiento; interactuando así en el área laboral para mejorar la comprensión de la información. Posteriormente el personal docente solicita recopilar la información para el manual aplicando sus conocimientos y solicita elaborar el producto y los análisis acordados, utilizando las materias primas disponibles en la región, aplicando la metodología de los procedimientos y técnicas de elaboración, incluyendo diagramas de flujo de actividades de los procedimientos analíticos definidos, trabajando responsablemente y experimentando la actividad de manera científica, aplicando las normas oficiales aplicables vigentes en el laboratorio, minimizando la generación riesgos y residuos, cuidando los recursos y materias primas para evitar el impacto a la salud y medio ambiente. Para finalizar el personal docente solicita reflexionar sobre la importancia de hacer el buen uso y manejo de materiales, equipos, reactivos químicos, observando cuál es el impacto sobre un producto final y entregar el manual para su revisión y retroalimentación Características del Manual de Procedimientos: El producto solicitado puede variar según la perspectiva de cada docente y el contexto grupal y regional. En este caso la estructura de la actividad sugerida de un Manual de Procedimientos es la siguiente: Introducción: ● Portada. ● Índice ● Introducción (propósito del manual) ● Identificación de elementos y normas: • Código de ética y conducta • Normas de seguridad y uso del equipo • Reglas sobre manipulación de sustancias y desechos 16 Experimentación o procedimientos específicos: ● Objetivo ● Materiales y equipos necesarios ● Pasos detallados, explicación clara y ordenada (diagrama de actividades con evidencia fotográfica) ● Medidas de seguridad ● Manejo de residuos ● Roles y responsables de cada actividad dentro del laboratorio y durante el procedimiento ● Diagramas de flujo de actividades con evidencia fotográfica Referencias. • Normas oficiales, libros o fuentes consultadas.",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (8 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Retroalimentación y Sugerencias Identificación de materias primas",
+                  "puntos": 10,
+                  "descripcionNiveles": "Se identifican con precisión las materias primas de la región, explicando su origen, disponibilidad y propiedades. Se identifican las materias primas de la región, aunque con información parcial o faltante en algunos aspectos. Se identifican algunas materias primas, pero falta claridad en su origen y disponibilidad. No se identifican correctamente las materias primas o la información es insuficiente. Refuerza la investigación sobre los conceptos y teorías que sustentan el experimento. T"
+                },
+                {
+                  "criterio": "Técnicas y procedimientos analíticos",
+                  "puntos": 10,
+                  "descripcionNiveles": "Se seleccionan y justifican adecuadamente los procedimientos fisicoquímicos y microbiológicos, con explicaciones detalladas y referencias a normas oficiales. Se describen procedimientos adecuados, pero falta mayor justificación o relación con normas oficiales. Se mencionan procedimientos básicos, pero sin suficiente detalle o relación con la práctica. No se identifican procedimientos analíticos o la información es incorrecta. Reflexiona sobre la importancia de cada norma de seguridad y cómo previene accidentes. I"
+                },
+                {
+                  "criterio": "Identificación y uso de equipos y reactivos",
+                  "puntos": 10,
+                  "descripcionNiveles": "Se identifican y describen con precisión equipos y reactivos, explicando su función, uso y normas de seguridad. Se identifican los equipos y reactivos, pero con descripciones generales o incompletas. Se mencionan equipos y reactivos, pero sin explicación clara de su uso o manejo. No se identifican correctamente los equipos y reactivos o falta información relevante. Utiliza un lenguaje más sencillo y asegúrate de estructurar las ideas en un orden lógico. D"
+                },
+                {
+                  "criterio": "Documentación del Manual",
+                  "puntos": 20,
+                  "descripcionNiveles": "Manual bien estructurado, con metodología clara, diagramas de flujo detallados y bibliografía adecuada. Manual estructurado, pero con algunos detalles faltantes o diagramas poco claros. Manual con estructura poco clara y sin coherencia en la metodología. Manual incompleto o con información desorganizada y sin sustento técnico. Considera agregar gráficos o subtítulos para reforzar puntos clave y mejorar la fluidez visual. A"
+                },
+                {
+                  "criterio": "Aplicación de Normas Oficiales (NOM)",
+                  "puntos": 10,
+                  "descripcionNiveles": "Se aplican correctamente las NOM, justificando su uso y explicando su importancia. Se mencionan y aplican algunas NOM, pero sin una justificación detallada. Se mencionan algunas NOM, pero sin aplicarlas correctamente en el proceso. No se mencionan ni aplican las NOM en el desarrollo del manual. Asegúrate de distribuir tareas de manera equitativa para fomentar la cooperación entre todos. 1"
+                },
+                {
+                  "criterio": "17 Laboratorista Químico Trabajo en equipo y responsabilidad",
+                  "puntos": 10,
+                  "descripcionNiveles": "Se evidencia un alto nivel de colaboración, responsabilidad y organización en el equipo. Buena colaboración y responsabilidad, aunque con algunas dificultades organizativas. Se observa falta de coordinación o participación desigual en el equipo. No hubo trabajo en equipo efectivo, evidenciándose desorganización o conflictos. Reflexiona más sobre los resultados obtenidos y cómo se relacionan con los objetivos del experimento. C"
+                },
+                {
+                  "criterio": "Conciencia ambiental",
+                  "puntos": 10,
+                  "descripcionNiveles": "Prevé riesgos en la manipulación de materiales y reactivos, aplicando el buen manejo y disposición de los residuos generados, evitando el impacto en la salud y medio ambiente. Prevé riesgos en la manipulación de materiales y reactivos, aunque con dificultades hace un buen manejo y disposición de los residuos generados, evitando el impacto en la salud y medio ambiente. Se observa dificultad en la manipulación de materiales y reactivos haciendo un deficiente manejo de los residuos generando riesgos de impacto en la salud y medio ambiente. No hubo un buen manejo de materiales y reactivos, notando que no sabe manejar los residuos generados generando impacto a la salud y medio ambiente. E"
+                },
+                {
+                  "criterio": "Elaboración del producto y análisis",
+                  "puntos": 20,
+                  "descripcionNiveles": "Producto elaborado siguiendo procedimientos adecuados, con análisis correctos y bien documentados. Producto elaborado correctamente, pero con algunos análisis faltantes o poco detallados. Producto con deficiencias en la metodología o análisis incompletos. No se logró elaborar el producto correctamente o los análisis fueron incorrectos."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Química analítica",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Elabora productos de uso común de manera supervisada, aplicando técnicas de química analítica y cumpliendo con normas establecidas y criterios de calidad.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Análisis cualitativo y cuantitativo",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Realiza análisis químicos cualitativos y cuantitativos para contribuir a la solución de problemas asignados, de manera metódica y organizada.",
+          "actividadClave": "Resolver una lista de ejercicios donde se aplique el análisis cualitativo, cuantitativo y cálculos estequiométricos en la producción de productos, determinación de la calidad del agua, suelo, aire, productos alimenticios o las emisiones de contaminantes al medio ambiente en contextos reales. Instrucciones: Resolver una lista de ejercicios utilizando los métodos correctos, siguiendo pasos claros, bien definidos y un orden lógico; donde se aplique el análisis cualitativo, cuantitativo y cálculos estequiométricos en la producción de perfumes para evaluar la eficiencia de las reacciones químicas, la optimización de los ingredientes en la industria de la perfumería y su impacto ambiental. Características inherentes a la actividad. ● Conocimientos: Análisis cualitativo, cuantitativo y cálculos estequiométricos ● Destrezas: Análisis, evaluación. ● Habilidades: Identificación, producción, resolución. ● Valores y Actitudes: Optimización de recursos, reflexión de impacto ambiental.",
+          "evidencias": [
+            {
+              "nombre": "Evidencia 1",
+              "tipoInstrumento": "lista-cotejo",
+              "indicadores": [
+                {
+                  "numero": 1,
+                  "texto": "Presenta el ejercicio de manera estructurada y muestra los pasos de forma clara y ordenada."
+                },
+                {
+                  "numero": 2,
+                  "texto": "Identifica correctamente los datos proporcionados y las incógnitas del ejercicio."
+                },
+                {
+                  "numero": 3,
+                  "texto": "Establece y utiliza las relaciones estequiométricas adecuadas para evaluar la eficiencia de la reacción química."
+                },
+                {
+                  "numero": 4,
+                  "texto": "Realiza cálculos matemáticos de forma precisa y su resultado es correcto."
+                },
+                {
+                  "numero": 5,
+                  "texto": "La reflexión final menciona la importancia de los cálculos estequiométricos para la optimización de ingredientes (recursos) y/o para minimizar el impacto ambiental en los procesos de producción."
+                }
+              ],
+              "niveles": [],
+              "criterios": []
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Técnicas y tecnologías de laboratorio químico",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Elabora planes de trabajo supervisados para la producción de productos de uso cotidiano, siguiendo técnicas y estándares de calidad establecidos.",
+          "actividadClave": "El personal docente solicita que, en equipos de trabajo, se integre un plan para la elaboración de un producto (alimenticio, cosmético o químico) tomando en cuenta las materias primas disponibles en la región. El plan debe integrar conocimientos sobre: 1. Preparación de soluciones a diferentes concentraciones (ºBrix, unidades físicas y químicas). 2. Tipos de mezclas (homogéneas, heterogéneas). 3. Procedimiento de análisis de calidad (determinación de pH, textura, color, olor, viscosidad, solubilidad, ensayos microbiológicos de hongos y bacterias en alimentos y cosmético, según corresponda), cabe mencionar que los materiales, técnicas y equipos de análisis se pueden adecuar según su contexto y recursos disponibles. 4. Técnicas de elaboración de productos (Métodos de conservación de alimentos como; elaboración de mermeladas, salado de cárnicos, frutas en almíbar, cristalización de alimentos, entre otros, elaboración de productos químicos de limpieza como jabones líquidos y en barra, fabuloso, etc.). 5. Las regulaciones sanitarias para control de calidad de producto (FDA, COFEPRIS, NOM, etc.). Así mismo, se debe mostrar una buena organización en el desarrollo y calendarización de las actividades. Como actividad sugerida, según su contexto, las y los estudiantes deben visitar una planta manufacturera o el mercado de la región, observar a los productores artesanales y poner atención a los productos que elaboran, las técnicas de elaboración que aplican, los residuos que generan y cómo los tratan. Además, deberán investigar qué tipo de análisis de calidad realizan, como lo hacen, cuánto tiempo les toma, y que materiales y equipos utilizan, documentando toda esta información. Pueden complementar y documentar su investigación mediante videos. Posterior a analizar las actividades económicas y productivas de mayor beneficio en su entorno el estudiantado seleccionará una materia prima disponible en la región y el producto a elaborar. El personal docente solicita que las y los estudiantes comprueben lo plasmado en el plan de trabajo y elaboren el producto aplicando los procedimientos y técnicas, con el fin de realizar correcciones y recibir recomendaciones durante el desarrollo de los procedimientos. También deben tomar en cuenta la minimización de residuos y el uso eficiente de recursos para evitar impactos negativos en el medio ambiente. Finalmente, el personal docente solicita la entrega del plan de trabajo, ya sea de forma digital o impresa para su evaluación, retroalimentación y difusión correspondiente en el tiempo y forma establecidos. 20 Estructura sugerida para el Plan de trabajo ● Objetivo ● “Crear un jabón en barra, un dulce o un bálsamo medicinal a partir de materias primas de la región”. ● Alcance ● Especificar el tipo de producto a elabora y características esperadas (alimenticio, cosmético o químico). ● Regulaciones y normas aplicables (COFEPRIS, FDA, ISO). ● Recursos necesarios: materiales y equipos de laboratorio, recursos económicos, mano de obra ● Formulación y desarrollo: especificar el procedimiento a realizar y el tiempo de experimentación. ● Producción y análisis y envasado del producto (especificar tiempo): propiedades fisicoquímicas, (viscosidad, color, textura, estabilidad) análisis microbiológicos para alimentos y cosméticos, pruebas de estabilidad. ● Distribución y Comercialización (especificar tiempos).",
+          "evidencias": [
+            {
+              "nombre": "Evidencia 1",
+              "tipoInstrumento": "lista-cotejo",
+              "indicadores": [
+                {
+                  "numero": 1,
+                  "texto": "Establece los métodos de elaboración de producto, de separación de mezclas y preparación de soluciones requeridas para la realización del producto."
+                },
+                {
+                  "numero": 2,
+                  "texto": "El plan de trabajo muestra la información requerida de forma ordenada, clara y precisa de la secuencia y calendarización de cada procedimiento de las técnicas utilizadas para la elaboración y análisis del producto elaborado."
+                },
+                {
+                  "numero": 3,
+                  "texto": "Comprueba el plan de trabajo elaborando el producto obteniendo resultados favorables de los análisis de calidad realizados."
+                },
+                {
+                  "numero": 4,
+                  "texto": "Trabaja con responsabilidad experimentando la actividad de manera científica, reflexiva y procedimental aplicando las normas de seguridad vigentes en el laboratorio evitando riesgos."
+                },
+                {
+                  "numero": 5,
+                  "texto": "Emite resultados basándose en las regulaciones sanitarias correspondientes (FDA, COFEPRIS, ISO) optimizando los procesos productivos y minimizando desperdicios y residuos generados para evitar contaminación al medio ambiente."
+                }
+              ],
+              "niveles": [],
+              "criterios": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "Introducción a la estadística y microbiología",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Registra datos y aplica técnicas de estadística y microbiología supervisadas para contribuir a la solución de problemas asignados de manera responsable.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "La estadística y su aplicación en el laboratorio",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Registra conclusiones a partir de datos estadísticos y experimentales, con un pensamiento reflexivo y crítico, para apoyar la identificación de soluciones supervisadas.",
+          "actividadClave": "El personal docente solicita, en equipos, elaborar un informe estadístico sobre la calidad de una muestra que considere una problemática de salud, ambiental o industrial. El informe debe considerar además de la selección de la muestra (producto o sustancia que represente un impacto al ambiente, alimento, agua, suelo, entre otros), otros conocimientos como: 1. Técnicas de muestreo y tratamiento de la muestra. 2. Técnicas de análisis y medición (de color, olor, textura o pH, eligiendo los análisis según sea el objetivo y los recursos disponibles según su contexto, tomando en cuenta que con una variable se puede desarrollar el experimento). 3. Tratamiento estadístico de los datos utilizando las medidas de tendencia central y de dispersión (determinando media, mediana, moda, desviación estándar, rango, etc.). 4. Elaboración de tablas de frecuencia, elaboración de gráficos y diagramas de flujo. 5. Interpretación y análisis de resultados aplicando la estadística inferencial, tomando como referencia de apoyo las normas correspondientes (ISO, NOM, FDA, etc.). El personal docente solicita investigar en fuentes electrónicas, digitales y virtuales información complementaria según sea el tipo de muestra a analizar y documentar las técnicas de tratamiento, muestreo y análisis según sea el caso. Para elaborar el informe, el personal docente solicita realizar el análisis experimental de la muestra para la recolección de datos cualitativos/cuantitativos, utilizando adecuadamente materiales, equipos de laboratorio en el proceso de medición y determinación de valores en las técnicas de análisis utilizadas (se pueden adecuar según el contexto y experimento; haciendo uso de indicadores de pH caseros, determinación de materia orgánica con agua oxigenada, etc.,). Considerando la optimización de recursos para evitar una mayor generación de residuos y disminuir el impacto al medio ambiente. Finalmente aplicar pensamiento crítico y reflexivo en la inferencia e interpretación de resultados, gráficos, conclusiones y propuestas de mejora 22 basadas en evidencias comprobadas, usando la información con responsabilidad en la toma de decisiones o emisión de sugerencias y conclusiones. El informe deberá entregarse en forma digital o impresa para su evaluación y realimentación en el tiempo y forma establecidos.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Microbiología general",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Aplica técnicas microbiológicas en el análisis de problemáticas relacionadas con microorganismos, siguiendo lineamientos establecidos.",
+          "actividadClave": "El personal docente solicita, en equipos de trabajo elaborar un cartel científico sobre el análisis microbiológico de una muestra del entorno (agua, suelo, alimentos, etc.), considerando una problemática en salud, ambiental o de biotecnología. El cartel debe integrar conocimientos sobre: 1. Clasificación de microorganismos (procariotas, eucariotas o virus). 2. Metabolismo bacteriano (reacciones bioquímicas, patógenos). 3. Técnicas microbiológicas (de identificación, crecimiento celular). ● Elaboración de medios de cultivo. ● Técnicas de siembra. ● Pruebas bioquímicas etc. Para ello, el personal docente solicita investigar en fuentes documentales y virtuales, información complementaria para realizar su análisis. Como actividad complementaria, si es posible según su entorno y contexto, visitar un laboratorio clínico para observar el manejo de materiales, equipos, técnicas de análisis microbiológico utilizadas (crecimiento, identificación, reacciones bioquímicas), características e importancia de los microorganismos estudiados y medidas de bioseguridad, fomentando la interacción con el ámbito profesional. El personal docente solicita realizar el análisis microbiológico de la muestra de interés utilizando los medios y materiales disponibles según su contexto (es posible utilizar medios de cultivo caseros y pruebas sencillas a fin de realizar el experimento), esperando que trabajen con responsabilidad, ética y experimentación científica, elaborando así el cartel que aporte información valiosa a la población, resultados confiables que se apoyen en las Normas de seguridad, higiene y regulación (NOM, ISO, COFEPRIS, FDA según corresponda) que apoyen una propuesta o solución, así también que, evidencie el buen tratamiento y disposición adecuada de residuos para minimizar impactos en la salud y el medio ambiente El cartel deberá entregarse en formato digital o impreso para su exposición, evaluación y retroalimentación dentro del plazo establecido. 24",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (7 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Retroalimentación y Sugerencias Diferenciación de microorganismos",
+                  "puntos": 15,
+                  "descripcionNiveles": "Explica con precisión y profundidad las diferencias entre microorganismos, considerando su clasificación, características e impactos. Identifica diferencias entre microorganismos, pero con información parcial o poco detallada. Muestra diferencias básicas entre microorganismos, pero sin análisis crítico. No identifica ni explica las diferencias entre microorganismos. Refuerza la investigación sobre los conceptos y teorías que sustentan el experimento. I"
+                },
+                {
+                  "criterio": "Importancia de los microorganismos en el entorno",
+                  "puntos": 15,
+                  "descripcionNiveles": "Explica con claridad el papel de los microorganismos en su entorno, proporcionando ejemplos bien fundamentados. Muestra conocimiento sobre la importancia de los microorganismos, pero con ejemplos limitados o poco desarrollados. Menciona la importancia de los microorganismos, pero con poca profundidad y sin ejemplos claros. No reconoce la importancia de los microorganismos en el entorno. Reflexiona sobre la importancia de cada norma de seguridad y cómo previene accidentes. I"
+                },
+                {
+                  "criterio": "Identificación de problemáticas",
+                  "puntos": 15,
+                  "descripcionNiveles": "Identifica de manera clara y crítica una problemática real relacionada con microorganismos (salud, ambiente, biofiltro, composta etc.,), explicando su impacto en el entorno. Identifica una problemática relevante, pero con análisis superficial o incompleto. Muestra una problemática sin un análisis claro de su impacto. No identifica ninguna problemática relacionada con microorganismos. Utiliza un lenguaje más sencillo y asegúrate de estructurar las ideas en un orden lógico. D"
+                },
+                {
+                  "criterio": "Desempeño en laboratorio",
+                  "puntos": 15,
+                  "descripcionNiveles": "Aplica las técnicas microbiológicas en el análisis de una muestra del entorno para aislar e identificar microorganismos de acuerdo con sus características morfológicas. Aplica las técnicas microbiológicas en el análisis de una muestra del entorno sin aislar e identificar microorganismos de acuerdo con sus características morfológicas. Aplica las técnicas microbiológicas más no reconoce la funcionalidad de cada una de ellas. No aplica ninguna técnica de análisis microbiológico. P"
+                },
+                {
+                  "criterio": "Propuesta de solución",
+                  "puntos": 15,
+                  "descripcionNiveles": "Plantea recomendaciones o soluciones viables y bien argumentadas basadas en la aplicación de técnicas microbiológicas para prevenir daños al ecosistema. Propone soluciones adecuadas, pero sin una argumentación completa sobre su implementación. Sugiere soluciones poco desarrolladas o sin relación clara con las técnicas microbiológicas. No plantea ninguna solución a la problemática identificada. Considera agregar gráficos o subtítulos para reforzar puntos clave y mejorar la fluidez visual. C"
+                },
+                {
+                  "criterio": "Conducta ética",
+                  "puntos": 10,
+                  "descripcionNiveles": "Trabaja colaborativamente y expresa información de forma ética y fundamentada tomando como referencia la normativa aplicable (NOM, FDA, COFEPRIS) mostrando claridad en sus valores. Trabaja colaborativamente, expresa información de manera adecuada, con algunos aspectos poco fundamentados. Presenta dificultades para trabajar en equipo y expresa información de manera deliberada sin fundamentar sus resultados. No hay trabajo colaborativo, la información no es relevante, carece de fundamentos, experimentales y normativos. P"
+                },
+                {
+                  "criterio": "Presentación y organización del cartel",
+                  "puntos": 15,
+                  "descripcionNiveles": "Presenta un diseño claro, organizado y visualmente atractivo, con información precisa y bien estructurada. Presentación ordenada, aunque con detalles de diseño o contenido mejorables. Presentación poco organizada, con información dispersa o difícil de entender. Cartel desordenado, con información incompleta o confusa. Reflexiona más sobre los resultados obtenidos y cómo se relacionan con los objetivos del experimento."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "Procesos químicos y biotecnológicos aplicados en la industria",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Participa en actividades experimentales supervisadas aplicando conocimientos de biotecnología, con trabajo ético y en favor del desarrollo sustentable.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Introducción a la biotecnología",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Realiza actividades experimentales supervisadas para la producción biotecnológica, considerando normas y procedimientos establecidos. Actividad El personal docente solicita, en equipos de trabajo, realizar un informe experimental sobre la actividad enzimática de un producto elaborado (ablandador de carne, vinagre, suavizante de telas, enzimas digestivas, etc.,) a partir de una materia prima disponible en su región (piña, papaya, vinagre, limón, leche, etc.). Este ejercicio permitirá comprender conceptos clave de la biotecnología, enzimas, velocidad de reacción, fermentación y transgénicos, así como su impacto en la producción de bienes y servicios. El informe debe asociar conocimientos sobre: 1. Introducción a la biotecnología Definición y tipos (roja, verde, blanca, azul, gris). Relación con el producto desarrollado (por ejemplo, un ablandador de carnes, fermentador láctico, suavizante de telas). 2. Actividad enzimática Enzimas involucradas (papaína, bromelina, lactasa, etc.). Observaciones sobre su acción en diferentes sustratos (almidón, sacarosa, lactosa, proteína, glucosa, etc.,). Factores que afectan la velocidad de reacción (temperatura, pH, concentración). 3. Fermentación y microorganismos Tipos (alcohólica, acética, láctica, mixta). Microorganismos involucrados (como levaduras, bacterias ácido-lácticas, acéticas) y su aplicación industrial. 4. Impacto biotecnológico Relación con transgénicos y su papel en la producción de enzimas. Beneficios, implicaciones y dilemas éticos. 26 Como actividad complementaria según el contexto y recursos visitar si es posible, plantas de producción o productores artesanales para analizar el uso de la biotecnología en sus procesos (como la elaboración de queso, yogurt, vino, vinagre, panadería, el descrude de una tela, etc.,) identificando desafíos y oportunidades de mejora en los procesos. Complementar y documentar su investigación haciendo uso de fuentes digitales y tecnológicas. Para la elaboración del producto final, con base en su investigación, el estudiantado podrá seleccionar una materia prima y evaluar su actividad enzimática de manera experimental, (realizar observaciones cualitativas, haciendo uso de fuentes de calor o estufa para analizar el efecto de la temperatura, un cronometro para determinar el tiempo, jeringas o probetas para medir volumen de sustrato o enzima, entre otras, según sea el caso,) documentando cada etapa del análisis con un enfoque crítico, destacando el impacto que esta enzima genera en la mejora de un producto (cárnico, lácteos, textiles, etc.) presentando así, una propuesta de innovación biotecnológica viable y responsable (en forma de ablandador cárnico, fermentador láctico, suavizante telas, enzimas digestivas, etc.) que evidencie la mejora en la calidad de vida o en procesos productivos. Se espera que las y los estudiantes trabajen con responsabilidad, pensamiento crítico y reflexivo, plasmando en el informe la justificación de la viabilidad de la implementación de su propuesta biotecnológica, considerando los principios éticos, normativas (FDA, COFEPRIS, etc.) y principios de sustentabilidad (minimización de residuos y huella ecológica). La entrega del informe puede ser digital o impresa en la fecha establecida para evaluación y retroalimentación. Evidencia de evaluación Evidencia Informe experimental No. Criterios Logro Alto (✔) Logro Medio (✔) Logro Bajo (✔) Retroalimentación/ Observaciones 1 Análisis de posturas sobre la biotecnología Presenta una o varias perspectivas sobre la biotecnología, su impacto en diferentes ámbitos (industria alimentaria o, farmacéutica, ambiente, suelo, agua), con argumentos sólidos, considerando implicaciones éticas, sociales y ambientales. 2 Presentación y estructura del informe Organiza la información de manera clara y coherente, con evidencias visuales (gráficos, imágenes, tablas) que complementan los resultados y redacta la información de manera clara, fluida, ordenada y precisa expresando detalles y seguridad en las aportaciones y hallazgos del producto. 3 Desarrollo de la actividad experimental Aplica correctamente el procedimiento experimental de la técnica biotecnológica de la creación del producto documentando cada etapa y reflexionando sobre su impacto. 4 Propuesta de soluciones biotecnológicas Diseña una solución innovadora, creativa, bien definida, viable generada con materias primas disponibles para mejorar la calidad de vida en su entorno, con una justificación clara de su aplicación industrial y comercial. 27 Laboratorista Químico 5 Importancia, implicaciones y riesgos en la elaboración de productos Relaciona la biotecnología con la producción industrial, identificando beneficios y riesgos con fundamentos, basándose en las regulaciones sanitarias correspondientes (FDA, COFEPRIS, ISO), responsabilidad y buen juicio. 6 Conciencia ambiental Toma decisiones de manera consciente e informada y emite resultados orientadas a la sustentabilidad, reducción de la huella ecológica e impacto ambiental. Total",
+          "actividadClave": "",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Operaciones unitarias y biotecnológicas en la industria",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Participa en actividades rutinarias relacionadas con procesos industriales, aplicando conocimientos específicos de manera responsable y ambientalmente ética.",
+          "actividadClave": "Materiales necesarios: ● Muestras de suelo (pueden ser recolectadas por el estudiantado). ● Hidrocarburos (por ejemplo, diesel o aceite usado, en pequeñas cantidades y manejados con precaución). ● Nutrientes para estimular el crecimiento microbiano (como fertilizantes ricos en nitrógeno y fósforo). ● Recipientes o bandejas para contener las muestras de suelo. ● Equipo de laboratorio básico (microscopio, placas Petri, medios de cultivo, pipetas, etc.). ● Equipo de protección personal (guantes, bata, lentes de seguridad). Desarrollo de la actividad: ● Fase 1: Preparación. o Investigación del tema biorremediación (concepto, aplicaciones e importancia, casos de derrames y remediación en la comunidad, estado o país, ). o Diseño del protocolo para simular la contaminación del suelo con hidrocarburos y aplicar técnicas de biorremediación siguiendo los lineamientos establecidos de seguridad y buenas prácticas de laboratorio que conduzcan a la responsabilidad ambiental y sostenibilidad. ● Fase 2: Ejecución. o Llevar a cabo el protocolo, aplicar la técnica de biorremediación, monitoreo de las muestras, registrando cambios físicos (olor, color, textura). 28 ● Fase 3: Análisis y propuesta. o Realizarán análisis microbiológicos para comparar la población de microorganismos antes y después del tratamiento. o Evaluarán la eficacia de la biorremediación mediante indicadores como la reducción de hidrocarburos o el aumento de actividad microbiana. o Elaborar el poster científico. La estructura sugerida del poster científico es: 1. Título (parte superior central) ● Texto: Un título llamativo y descriptivo (ejemplo: \"Biorremediación en acción: Microorganismos al rescate de suelos contaminados por hidrocarburos\"). ● Diseño: Letras grandes y visibles desde lejos. Puedes usar colores llamativos pero profesionales. 2. Introducción (Parte superior izquierda). ● Breve descripción del problema: contaminación por hidrocarburos y su impacto ambiental. ● Objetivo del proyecto. ● Diseño: Texto breve (3-4 líneas) acompañado de una imagen relacionada (ejemplo: un derrame de petróleo o un suelo contaminado). 3. Metodología (parte central izquierda). ● Descripción de las tres etapas del proyecto: ● Preparación: Simulación de la contaminación en muestras de suelo. ● Ejecución: Aplicación de técnicas microbiológicas (siembra, observación, etc.). ● Análisis: Evaluación de la capacidad de los microorganismos para degradar hidrocarburos. ● Técnicas utilizadas: siembra en placas, observación al microscopio, etc. ● Lineamientos de seguridad y buenas prácticas de laboratorio. ● Diseño: Usar viñetas, imágenes o diagramas para ilustrar los pasos (ejemplo: fotos de las muestras de suelo o del proceso de siembra). 4. Resultados (Parte central derecha). ● Presentación de los hallazgos más importantes: ● Presencia o ausencia de microorganismos degradadores. ● Cambios observados en las muestras de suelo (reducción de hidrocarburos, crecimiento microbiano, etc.). ● Gráficas, tablas o imágenes que muestren los resultados (ejemplo: fotos de colonias microbianas o gráficas de degradación). ● Diseño: Usar gráficas claras y fotos con leyendas descriptivas. 5. Discusión (Parte inferior izquierda). ● Interpretación de los resultados: ¿Qué significan los datos obtenidos? ● Reflexión sobre la eficacia de la biorremediación y su importancia en la remediación ambiental. ● Limitaciones del proyecto y posibles mejoras. ● Diseño: Texto breve y conciso, acompañado de iconos o imágenes que refuercen las ideas. 29 Laboratorista Químico 6. Conclusiones (parte inferior central). ● Resumen de los hallazgos más importantes. ● Relevancia de la biorremediación como solución sostenible para la contaminación por hidrocarburos. ● Invitación a aprender más sobre microbiología y su aplicación en la remediación ambiental. ● Diseño: Texto breve y destacado, con un fondo que llame la atención. 7. Referencias (parte inferior derecha). ● Fuentes de información utilizadas (libros, artículos, páginas web, etc.). ● Diseño: Texto pequeño pero legible, en formato APA o similar. PRODUCTOS LOCALES O ALTERNATIVOS PARA LA OBTENCIÓN DE MICROORGANISMOS: Si no es posible adquirir productos comerciales, se pueden utilizar alternativas locales: ● Compost o lombricompost: Contiene microorganismos beneficiosos que pueden ayudar en la degradación de materia orgánica. ● Suelo de zonas contaminadas: Recolectar muestras de suelo de áreas con presencia natural de hidrocarburos (como cerca de estaciones de servicio o zonas industriales), ya que estos suelos suelen contener microorganismos adaptados a degradar contaminantes. ● Productos agrícolas: Algunos biofertilizantes o inoculantes agrícolas contienen bacterias como Pseudomonas o Bacillus, que también pueden degradar hidrocarburos.",
+          "evidencias": []
+        }
+      ]
+    }
+  ],
+  "calidadExtraccion": "PARCIAL",
+  "coberturaInstrumentos": {
+    "conInstrumento": 5,
+    "total": 8
+  },
+  "avisos": [
+    "Módulo 3 submódulo 1: sin indicadores de evaluación",
+    "Módulo 4 submódulo 1: sin actividad clave",
+    "Módulo 4 submódulo 1: sin indicadores de evaluación",
+    "Módulo 4 submódulo 2: sin indicadores de evaluación",
+    "Submódulo #7 (Introducción a la biotecnología): actividad clave incompleta"
+  ],
+  "extraidoEl": "2026-08-13T23:26:54.835Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/9wdCEzDaXd-Laboratorista-Quimico.pdf"
+}

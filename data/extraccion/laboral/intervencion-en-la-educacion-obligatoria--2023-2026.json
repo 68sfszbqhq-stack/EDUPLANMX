@@ -1,0 +1,393 @@
+{
+  "nombre": "Intervención en la Educación Obligatoria",
+  "slug": "intervencion-en-la-educacion-obligatoria--2023-2026",
+  "clave": "3011100001-25",
+  "generacion": "2023-2026",
+  "semestres": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "modulos": [
+    {
+      "numero": 1,
+      "nombre": "La educación y nociones de la intervención.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Examina el impacto de la educación en México, mediante el análisis histórico, las políticas educativas, la estructura del sistema, así como las nociones de intervención para considerarlas en su contexto.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Sistema Educativo Nacional.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Explica la normatividad y políticas vigentes aplicables al Sistema Educativo Nacional, para obtener una visión global general del contexto educativo y considerarlo en las propuestas de intervención.",
+          "actividadClave": "En equipos de 5 personas, el estudiantado deberá diseñar un periódico mural sobre los diferentes periodos de la educación en México y de la Normativa vigente del Sistema Educativo Nacional actual, (el personal docente a cargo asignará a cada equipo el tema a desarrollar entre las siguientes opciones; Proyecto educativo evangelizador (Época Colonial, 1521-1821), leyes de reforma (1857-1910), proyecto porfirista (1876-1911) y socialista (1934-1940), proyecto de reforma 1940-1950) y plan de 11 años (1959-1970), artículo tercero constitucional (1917- 1934), Ley General (1973) y su reforma a la ley general de educación (2000-2019) y Estatal de educación (2004- 2022) y la estructura del plan de 0 a los 23 años (2022). Cada equipo investigará en fuentes de información confiable (como libros, revistas científicas, artículos, antologías, etc.…) y examinará el impacto de la educación en nuestro país, mediante el análisis histórico, las políticas educativas y la estructura del sistema para tener una visión global del contexto, deberán resaltar características y momentos clave en los que se ha generado una transformación en la educación obligatoria con el paso del tiempo y los distintos cambios a las leyes en materia de educación. Apoyados de diversos materiales (texto, imágenes, figuras o gráficos) y guiados por su creatividad plasmarán los aspectos distintivos de cada uno de los periodos, se motivará a trabajar de manera colaborativa, con una participación activa y comprometida de las y los miembros, el equipo de trabajo deberá presentar avances de la información recopilada para brindar retroalimentación. 14 Material: 1. Historia de la educación en México. https://umov.mx/pdf/edumex/B5.pdf 2. Las reformas educativas en México. https://imced.edu.mx/Ethos/Archivo/49/49_4.pdf 3. ¿Es laica la educación en México? https://rediech.org/wp-content/uploads/2023/12/Debate-02-03.pdf 4. Leyes de reforma. http://web.segobver.gob.mx/juridico/var/presentacion.pdf 5. Modelo educativo para la educación obligatoria. https://www.gob.mx/cms/uploads/attachment/file/207252/Modelo_Educativo_OK.pdf Desarrollo: 1. Formar equipos de trabajo (5 integrantes). 2. Investigar en fuentes de información confiable la historia de la educación en nuestro país y el Modelo educativo vigente. 3. Identificar los elementos característicos y momentos clave de cada uno de los periodos. 4. Organizar la información en subtemas o secciones para presentar las ideas clave que identifican cada uno de los periodos (Secciones: Introducción al Datos o hechos clave, Imágenes o gráficos relacionados, Citas o frases, Conclusión). 5. Redactar de manera clara y concisa, destacando frases importantes o palabras clave en negritas o colores distintos. 6. Asegurar que el contenido esté relacionado directamente con el tema y no haya información redundante. 7. Utilizar elementos visuales como: Mapas, gráficos, diagramas para ilustrar ideas clave; Citas o datos curiosos en marcos o recuadros para resaltar, Cronologías si es necesario. 8. Montar el Periódico Mural: Utilice materiales adecuados como cartulina, papel kraft o cartón, pluma para montar el periódico mural, distribuye bien el espacio para que todo quede equilibrado, asegura las imágenes y textos con pegamento, cinta o chinchetas. 9. Colocar del Mural en la cancha cívica del plantel, colocando el periódico mural en un lugar visible y accesible para su audiencia. 15 Intervención en la Educación Obligatoria",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (8 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Debe mejorar",
+                "Suficiente",
+                "Adecuado",
+                "Óptimo",
+                "Sobresaliente"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Trabajo en equipo",
+                  "puntos": 10,
+                  "descripcionNiveles": "Falta de colaboración; pocos integrantes participaron. Participación desigual, algunos no contribuyeron. Participación equitativa, pero con dificultades. Buena colaboración, con roles definidos. Excelente trabajo en equipo, cooperación efectiva. I"
+                },
+                {
+                  "criterio": "Investigación",
+                  "puntos": 10,
+                  "descripcionNiveles": "Fuentes poco confiables o insuficientes. Fuentes limitadas y con poca profundidad. Fuentes confiables, pero con información incompleta. Fuentes variadas y confiables, con buena información. Investigación completa, con fuentes confiables y bien documentadas. I"
+                },
+                {
+                  "criterio": "Identificación de momentos clave",
+                  "puntos": 20,
+                  "descripcionNiveles": "No se identifican los momentos clave. Identificación parcial con omisiones importantes. Identificación adecuada, pero con información limitada. Buena identificación con detalles claros. Identificación precisa y detallada de cada periodo. O"
+                },
+                {
+                  "criterio": "Organización de la información",
+                  "puntos": 10,
+                  "descripcionNiveles": "Información desordenada y sin estructura. Organización poco clara y confusa. Estructura básica con algunas mejoras necesarias. Buena organización, con información clara. Organización excelente, con ideas bien presentadas. R"
+                },
+                {
+                  "criterio": "Redacción y uso de negritas o colores",
+                  "puntos": 10,
+                  "descripcionNiveles": "Redacción confusa y sin énfasis visual. Redacción mejorable, con poco uso de énfasis. Redacción aceptable, con algo de énfasis. Buena redacción con uso efectivo de negritas y colores. Redacción clara, concisa y con excelente uso de énfasis visual. R"
+                },
+                {
+                  "criterio": "Relevancia del contenido",
+                  "puntos": 20,
+                  "descripcionNiveles": "Información irrelevante o redundante, el escrito no describe el impacto de la educación en México. Información poco relacionada con el tema, además no incluye aspectos en donde ha impactado la educación en México. Información adecuada, pero con datos innecesarios, describe vagamente el impacto de la educación en nuestro país. Información clara y relevante, presenta el impacto de la educación en México, con énfasis en los aspectos que han propiciado un cambio en la educación en México. Contenido completo relacionado y bien desarrollado, describiendo claramente el impacto de la educación en nuestro país, argumentando los cambios que se han propiciado de manera nacional. U"
+                },
+                {
+                  "criterio": "Uso de elementos visuales",
+                  "puntos": 10,
+                  "descripcionNiveles": "No se incluyen elementos visuales. Pocos elementos visuales y poco claros. Elementos visuales presentes pero mejorables. Buenos elementos visuales que refuerzan la información. Elementos visuales bien utilizados y de alta calidad. M"
+                },
+                {
+                  "criterio": "Montaje del periódico mural",
+                  "puntos": 10,
+                  "descripcionNiveles": "Materiales inadecuados, mal montaje. Materiales poco apropiados, montaje deficiente. Materiales adecuados, pero montaje mejorable. Buen montaje con materiales apropiados. Montaje excelente, con materiales adecuados y distribución equilibrada. Total 16"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Nociones de la Intervención Educativa.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Identifica de manera colaborativa problemáticas que afectan los procesos escolares para elaborar diagnósticos básicos, reconociendo las necesidades fundamentales de algún centro educativo.",
+          "actividadClave": "A través de una lluvia de ideas el estudiantado deberá argumentar sobre los diversos instrumentos de recolección de datos que conozcan para posterior con la ayuda de el/la docente e integrados en equipos (4 integrantes) deberá elaborar instrumentos de Recolección de Datos (Encuestas, Guía de observación, Cuestionario para entrevistas etc.) utilizando correctamente la estructura y forma ( Encabezado, datos de identificación, instrucciones, preguntas: abiertas, cerradas, mixtas, apartado de comentarios, agradecimiento y cierre),según cada instrumento, así como también enfatizando en los ámbitos de la Intervención Escolar: sensibilización, prevención, divulgación. Cada equipo de trabajo diseñará preguntas acordes al contexto escolar con el fin de detectar problemáticas y las principales causas de la intervención escolar que se suscitan en la institución educativa de la comunidad previamente asignado por el personal docente, mismas que aplicarán en dicho centro educativo; esto como parte de las propuestas de intervención para posteriormente elaborar su diagnóstico educativo mismo que deberán compartir en plenaria grupal a través de una exposición frente a la clase. Se fomentará el trabajo de manera responsable y colaborativa, mediante la asignación de tareas a cada integrante que conforman el equipo. Materiales y software: 1. La guía de observación en el aula. https://editorial.inudi.edu.pe/index.php/editorialinudi/catalog/download/90/133/157?inline=1 2. Uso de Microsoft Word o Documentos de Google. Desarrollo: 1. Formar equipos de trabajo de 4 integrantes. 2. Investigar sobre los diversos instrumentos de recolección de datos (Encuesta, Guía de Observación, Cuestionario y los ámbitos de la intervención escolar (Sensibilización, Prevención, divulgación). 3. Realizar un boceto preliminar de cada instrumento para corrección de este (a mano). 4. Diseñar instrumentos de recolección de datos previamente elaborados en bocetos (a computadora y con las especificaciones por parte del personal docente). 5. Acudir a la institución educativa y aplicar instrumentos para detectar problemáticas en el plantel. 6. Analizar resultados obtenidos de los instrumentos. 7. Redactar diagnóstico Educativo según las problemáticas identificadas en el plantel escolar. 8. Dar a conocer ante sus compañeros, compañeras y docente su diagnóstico educativo terminado. 17 Intervención en la Educación Obligatoria",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (6 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Debe mejorar",
+                "Suficiente",
+                "Adecuado",
+                "Óptimo",
+                "Sobresaliente"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Estructura del Instrumento",
+                  "puntos": 20,
+                  "descripcionNiveles": "Elementos: -Encabezado datos de identificación -Instrucciones -Preguntas (abiertas, cerradas, mixtas) -Apartado de comentarios -Agradecimiento y cierre. No cumple con la estructura adecuada. Presenta errores en la estructura. Cumple en gran parte, pero con algunas fallas. Cumple con la estructura requerida. Cumple de manera excelente con la estructura y formato adecuado. C"
+                },
+                {
+                  "criterio": "Claridad y Coherencia de las Preguntas",
+                  "puntos": 30,
+                  "descripcionNiveles": "Preguntas confusas y mal formuladas. Algunas preguntas carecen de claridad. Preguntas comprensibles , pero con mejoras necesarias. Preguntas claras y bien formuladas. Preguntas muy bien estructuradas y pertinentes. R"
+                },
+                {
+                  "criterio": "Relevancia para la Intervención Escolar",
+                  "puntos": 20,
+                  "descripcionNiveles": "No se relaciona con los ámbitos de intervención. Relación mínima con los ámbitos de intervención. Relación aceptable, pero con mejoras posibles. Se ajusta a los ámbitos de intervención . Relevancia total para la intervención escolar. U"
+                },
+                {
+                  "criterio": "Uso Adecuado del Lenguaje",
+                  "puntos": 10,
+                  "descripcionNiveles": "Lenguaje inadecuado y poco formal. Lenguaje con errores y poco preciso. Lenguaje aceptable, con algunos detalles. Lenguaje correcto y apropiado. Lenguaje preciso, formal y profesional. T"
+                },
+                {
+                  "criterio": "Trabajo en Equipo y Colaboración",
+                  "puntos": 10,
+                  "descripcionNiveles": "No hubo colaboración ni responsabilidad . Hubo conflictos y poca organización . Participaron, pero con dificultades. Trabajaron de manera organizada y colaborativa. Mostraron un alto grado de colaboración y organización. I"
+                },
+                {
+                  "criterio": "Innovación y Originalidad",
+                  "puntos": 10,
+                  "descripcionNiveles": "No presenta ideas nuevas y creativas. Es poco original, con ideas repetitivas. Presenta algunas ideas creativas. Tiene ideas novedosas y originales. Es altamente innovador y aporta ideas creativas significativas. Total 18"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "nombre": "Aspectos de la Intervención Educativa.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Examina de manera crítica y propositiva los elementos que componen los centros escolares, los procesos educativos, así como programas de apoyo para la gestión escolar, a través de procesos teórico-prácticos, para situar propuestas de intervención, ya sea escolar o en el aula, conforme a las características del contexto.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Intervención Escolar.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Describe las características del estudiantado para promover la mejora de resultados académicos, al realizar las propuestas de intervención pertinentes.",
+          "actividadClave": "En plenaria grupal los y las estudiantes con la guía de el/la docente deberá leer y analizar las diferentes Teorías del Desarrollo Humano presentadas por los teóricos: Erik Erikson (Teoría del Desarrollo Psicosocial), Jean Piaget (Teoría del Desarrollo Cognitivo), Sigmund Freud (Teoría de Desarrollo Sexual), Henry Wallon (Teoría de la Personalidad) , Lawrence Kohlberg (Teoría del Desarrollo Moral) destacando las características Biopsicosociales de los alumnos de acuerdo a su edad y al nivel educativo que conforman la educación obligatoria en el que se ubican, (Preescolar, Primaria, Secundaria y Media Superior), posteriormente con una dinámica el/la docente deberá formar equipos de 4-5 integrantes para asignar a cada uno un teórico analizado. El estudiantado haciendo uso de las herramientas tecnológicas (Canva, Genially etc.) deberá diseñar de manera clara y concreta una infografía, que deberá contener información del tema, imágenes representativas y un diseño creativo; usando fuentes y colores para presentarla en una exposición al grupo. Se fomentará el trabajo de manera responsable y colaborativo, la disposición hacia el trabajo e innovación en las ideas de aportación. Materiales: 1. Piaget, J.; Inhelder, B (2008) Psicología del Niño. Madrid, Morota. 2. Freud, S. (1992) Psicoanálisis del desarrollo del niño y del adolescente. Barcelona, Paidós 3ª Edición. 3. Zabalza, Miguel (2008) Didáctica de la educación Infantil. España. Narcea. 4. Tann, Sarah. (2011). Diseño y Desarrollo de unidades didácticas en la escuela Primaria. Tercera Edición. España. Morata. 5. https://psicologiaymente.com/psicologia/etapas-desarrollo-psicosexual-sigmundfreudcentemarblog.blogspot.com/2015/01/exposicion-teoria-y-aportaciones-de.html 6. https://www.psicoactiva.com/blog/las-8-edades-del-hombre-la-teoria-del-desarrollopsicosocial-erik-erikson/#google_vignettefile:///C:/Users/Dell/Downloads/DialnetLaurenceKohlberg-117615.pdf 19 Intervención en la Educación Obligatoria Desarrollo: 1. Lectura del tema “Teorías del Desarrollo Humano” por algunos teóricos Erik Erikson, Jean Piaget, Sigmund Freud, Henry Wallon, Lawrence Kohlberg y Lev Vygotsky. 2. Identificar las características Biopsicosociales de los alumnos de Educación Obligatoria (Preescolar, Primaria, Secundaria y Media Superior). 3. Formar equipos de trabajo (4-5 integrantes). 4. Elegir alguna herramienta tecnológica (canva, genially, etc.) como apoyo para la realización de actividad. 5. Formados en equipos, seleccionan y analizan la información más pertinente para el diseño de su infografía. 6. Diseñar una infografía sobre un teórico (previamente asignado por el/la docente) y las características biopsicosociales del alumnado de educación básica y media superior. 7. Presentar su infografía por medio de una exposición por equipos antes formados a sus compañeros de clase y docente.",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (7 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Debe mejorar",
+                "Suficiente",
+                "Adecuado",
+                "Óptimo",
+                "Sobresaliente"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Claridad de la Información",
+                  "puntos": 20,
+                  "descripcionNiveles": "No es clara ni comprensible. Presenta poca claridad y coherencia. Es comprensible, pero con algunas imprecisiones. Es clara y bien organizada. Es muy clara, precisa y bien estructurada. U"
+                },
+                {
+                  "criterio": "Uso de Imágenes Representativas",
+                  "puntos": 10,
+                  "descripcionNiveles": "No hay imágenes o no son adecuadas. Son pocas y no relevantes. Son suficientes, pero poco explicativas. Son variadas y refuerzan el mensaje. Son creativas, bien seleccionadas y refuerzan el mensaje. D"
+                },
+                {
+                  "criterio": "Diseño Creativo",
+                  "puntos": 10,
+                  "descripcionNiveles": "No hay creatividad ni organización visual. Tiene un diseño pobre y desorganizado. Tiene diseño básico, pero aceptable. Es visualmente atractivo y organizado. Es altamente creativo, organizado y llamativo. U"
+                },
+                {
+                  "criterio": "Uso de Fuentes y Colores",
+                  "puntos": 10,
+                  "descripcionNiveles": "No hay variedad ni armonía. Presenta escasa variedad y mal uso del color. Tiene variedad, pero falta equilibrio. Presenta buena combinación y legibilidad. Uso excelente de fuentes y colores con armonía. E"
+                },
+                {
+                  "criterio": "Exposición Oral",
+                  "puntos": 30,
+                  "descripcionNiveles": "No explica la infografía o es poco claro. Explica con muchas imprecisiones. Explica con algunos errores, pero es comprensible. Explica con claridad y seguridad. Explica con fluidez, seguridad y dominio del tema. T"
+                },
+                {
+                  "criterio": "Trabajo en Equipo y Colaboración",
+                  "puntos": 10,
+                  "descripcionNiveles": "No hubo colaboración ni responsabilidad. Hubo conflictos y poca organización. Participaron, pero con dificultades. Trabajaron de manera organizada y colaborativa. Mostraron un alto grado de colaboración y organización. I"
+                },
+                {
+                  "criterio": "Innovación y Originalidad",
+                  "puntos": 10,
+                  "descripcionNiveles": "No presenta ideas nuevas y creativas. Es poco original, con ideas repetitivas. Presenta algunas ideas creativas. Tiene ideas novedosas y originales. Es altamente innovador y aporta ideas creativas significativas. Total 20"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "nombre": "Intervención en el aula.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Analiza los planes y programas de estudio de los niveles de Educación Obligatoria, con responsabilidad, para comprender sus elementos fundamentales y utilizarlos en propuestas básicas de intervención educativa.",
+          "actividadClave": "Por medio de la dinámica grupal de su elección, el personal docente recaba conocimientos previos del estudiantado en relación al modelo educativo vigente de la nueva escuela mexicana, hace énfasis en el hecho de que toda intervención educativa cuando se diseña por el profesorado para atender las necesidades específicas del grado escolar a su cargo tiene como base un plan y programa de estudios, en los cuales se establecen elementos que permite identificar lo que se desea lograr en el estudiante al término de los diferentes niveles educativos que forman parte de su trayectoria escolar (Educación obligatoria) que están establecidos en nuestro país. Organiza al estudiantado en 5 equipos, ya integrados los/las estudiantes, revisan de manera responsable y colaborativa el plan y programa del nivel educativo que se le asigne (educación básica y media superior), analizando aspectos como: filosofía y enfoque pedagógico de la Nueva Escuela Mexicana, competencias y aprendizajes clave, currículum integral y transversal, inclusión y equidad, evaluación del aprendizaje, metodología y estrategias de enseñanza y recursos didácticos y materiales educativos; posteriormente, de manera colaborativa y responsable elaboran un mapa mental con los elementos fundamentales de cada uno de ellos: Marco Curricular Común de la Ed. básica, Perfil de egreso, Campos Formativos ( Lenguajes, saberes y pensamiento científico, ética, naturaleza y sociedad, de lo humano y comunitario ) Ejes articuladores ( Inclusión, pensamiento crítico, interculturalidad crítica, igualdad de género, vida saludable, la lectura y la escritura en el acercamiento de las culturas, artes y experiencias estéticas) y las fases del aprendizaje. Los presentan en plenaria grupal para que, con la información obtenida posteriormente diseñen una propuesta de intervención educativa. Materiales y Software: 1. Secretaria de educación Pública: https://www.gob.mx/sep/documentos/nuevo-modeloeducativo-99339 2. Plan_de_Estudios_para_la_Educacion_Preescolar_Primaria_y_Secundaria: https://educacionbasica.sep.gob.mx/wpcontent/uploads/2023/07/Plan_de_Estudios_para_la_Educacion_Preescolar_Primaria_y_ Secundaria.pdf 3. Plan-de-Estudio-ISBN-ELECTRÓNICO:https://educacionbasica.sep.gob.mx/wpcontent/uploads/2024/06/Plan-de-Estudio-ISBN-ELECTRONICO.pdf 4. La Nueva Escuela Mexicana: principios y orientaciones pedagógicas, Subsecretaria de educación media superior: https://dfa.edomex.gob.mx/sites/dfa.edomex.gob.mx/files/files/NEM%20principios%20y %20orientacio%C3%ADn%20pedago%C3%ADgica.pdf 5. Propuesta del Nuevo Marco Curricular Común en Educación Media Superior: https://educacionmediasuperior.sep.gob.mx/propuestaMCCEMS 21 Intervención en la Educación Obligatoria 6. Planes de estudio de referencia del componente básico del Marco Curricular Común de la Educación Media Superior: https://www.gob.mx/sep/documentos/planes-de-estudioeducacion-media-superior 7. Revisión del Marco Curricular común de Educación Media Superior: https://desarrolloprofesionaldocente.sems.gob.mx/convocatoria2_2020/REVISI%C3%93 N%20DEL%20MARCO%20CURRICULAR-EMS.pdf 8. Uso de aplicaciones de internet como: Canva, Lucid chart, Bubbl.us., o cualquier otra herramienta digital que les permita crear mapas mentales. Desarrollo: 1. Análisis de conocimientos previos sobre el modelo educativo vigente. 2. Organización inicial del grupo (formación de 5 equipos). 3. Asignación de tareas a cada equipo: Los equipos revisan los documentos oficiales del plan y programa de estudios de su nivel educativo asignado, analizando los siguientes aspectos fundamentales: Filosofía y enfoque pedagógico de la Nueva Escuela Mexicana, Competencias y aprendizajes clave, Currículum integral y transversal, Inclusión y equidad, Evaluación del aprendizaje, Metodología y estrategias de enseñanza, Recursos didácticos y materiales educativos. 4. Análisis colaborativo del plan y programa: ● Distribución de roles dentro de cada equipo, el estudiantado puede asumir diferentes roles, como líder de discusión, encargado de tomar notas y responsable de la exposición final. ● Discusión y análisis de los elementos: El estudiantado colabora para analizar los aspectos clave del plan y programa educativo que se les asigna, destacando los puntos más importantes para cada categoría. 5. Elaboración del mapa mental colaborativo: Definición de categorías: Basándose en el análisis realizado, cada equipo deberá incluir en su mapa mental los elementos fundamentales: ● Marco Curricular Común de la Educación Básica. ● Perfil de egreso. ● Campos Formativos (Lenguajes, Saberes y pensamiento científico, Ética, Naturaleza y sociedad, De lo humano y lo comunitario). ● Ejes articuladores (Inclusión, Pensamiento crítico, Interculturalidad crítica, Igualdad de género, Vida saludable, La lectura y la escritura, Artes y experiencias estéticas). ● Fases del aprendizaje. 6. Utilización de recursos: Los equipos pueden utilizar diferentes materiales como: papel, marcadores o algún recurso digital (Canva, LucidChart, Bubbl.us., etc.) que les permita representar de forma visual las relaciones entre los conceptos analizados. 7. Plenaria Grupal: ● Exposición de equipos: Cada equipo presenta su producto final al grupo, explicando de manera sencilla y clara los elementos clave analizados y cómo se relacionan entre sí. ● Durante la actividad de exposición se promueve el intercambio de ideas, que permita enriquecer la discusión y la comprensión de los temas analizados. 22",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (10 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Debe mejorar",
+                "Suficiente",
+                "Adecuado",
+                "Óptimo",
+                "Sobresaliente"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Análisis de la filosofía y enfoque pedagógico de la Nueva Escuela Mexicana",
+                  "puntos": 10,
+                  "descripcionNiveles": "No identifican los principios ni el enfoque. Identifican pocos principios y sin claridad. Identifican algunos principios y su relación con la enseñanza. Identifican la mayoría de los principios con buena comprensión. Identifican todos los principios con claridad y profundidad. C"
+                },
+                {
+                  "criterio": "Competencias y aprendizajes clave",
+                  "puntos": 10,
+                  "descripcionNiveles": "No analizan ni relacionan las competencias. Analizan superficialmente las competencias. Analizan las competencias con algunos errores. Analizan correctamente las competencias y aprendizajes clave. Analizan y explican con profundidad las competencias y su aplicación. C"
+                },
+                {
+                  "criterio": "Currículum integral y transversal",
+                  "puntos": 10,
+                  "descripcionNiveles": "No identifican elementos curriculares. Identifican pocos elementos curriculares. Identifican y explican algunos elementos curriculares. Explican la mayoría de los elementos con claridad. Explican con profundidad la integración curricular. I"
+                },
+                {
+                  "criterio": "Inclusión y equidad",
+                  "puntos": 10,
+                  "descripcionNiveles": "No consideran la inclusión ni la equidad. Mencionan la inclusión y equidad sin explicarlas. Explican la importancia de la inclusión y equidad. Relacionan la inclusión y equidad con estrategias educativas. Profundizan en la inclusión y equidad con ejemplos claros. E"
+                },
+                {
+                  "criterio": "Evaluación del aprendizaje",
+                  "puntos": 10,
+                  "descripcionNiveles": "No identifican estrategias de evaluación. Identifican algunas estrategias sin explicarlas. Explican algunas estrategias de evaluación. Explican varias estrategias con claridad. Relacionan estrategias de evaluación con el aprendizaje y su aplicación. M"
+                },
+                {
+                  "criterio": "Metodología y estrategias de enseñanza",
+                  "puntos": 10,
+                  "descripcionNiveles": "No proponen metodologías ni estrategias. Mencionan estrategias sin explicarlas. Explican estrategias con ejemplos limitados. Explican metodologías y estrategias con aplicación. P"
+                },
+                {
+                  "criterio": "Proponen estrategias innovadoras con fundamentación Recursos didácticos y materiales educativos",
+                  "puntos": 10,
+                  "descripcionNiveles": "No incluye materiales didácticos. Mencionan materiales sin relación con la actividad. Utilizan materiales adecuados con poca creatividad. Usan materiales variados y adecuados. Utilizan materiales innovadores y pertinentes. C"
+                },
+                {
+                  "criterio": "Colaboración y responsabilidad",
+                  "puntos": 10,
+                  "descripcionNiveles": "No participan activamente en el equipo. Participan con limitaciones y poco compromiso. Contribuyen en la actividad con interés moderado. Trabajan de manera colaborativa con buena organización. Demuestran compromiso, respeto y colaboración efectiva. E"
+                },
+                {
+                  "criterio": "Elaboración del mapa mental",
+                  "puntos": 10,
+                  "descripcionNiveles": "No presentan el mapa mental El mapa mental es incompleto o desorganizado. Presentan un mapa mental básico con elementos esenciales. Presentan un mapa mental bien estructurado y organizado. Elaboran un mapa mental claro, estructurado y creativo. P"
+                },
+                {
+                  "criterio": "Presentación de la evidencia",
+                  "puntos": 10,
+                  "descripcionNiveles": "No se realiza la presentación o es deficiente en la organización del contenido. La presentación es confusa y falta claridad en la presentación del contenido. La presentación carece de una organización en el contenido. La presentación es comprensible, pero le falta organización al contenido. La presentación es clara, completa estructurada y contiene todos los elementos solicitados. 23 Intervención en la Educación Obligatoria"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "nombre": "Intervención Educativa en Preescolar y Primaria.",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Diseña de forma creativa e innovadora una intervención educativa en los niveles preescolar y primaria, mediante la instrumentación y análisis de problemas de su contexto relacionado con el proceso enseñanza-aprendizaje.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Intervención Educativa en Preescolar.",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Asiste en el diseño de una propuesta didáctica de intervención sencilla, de manera innovadora, para el desarrollo integral del estudiantado que cursa la Educación Obligatoria.",
+          "actividadClave": "A través de preguntas diagnósticas abiertas el estudiantado argumenta en clase los elementos a considerar en toda propuesta didáctica con la intención de que se recaben los conocimientos previos de los/las estudiantes, posteriormente con la ayuda de el/la docente e integrados en equipos (4 integrantes) identifican un contexto educativo de su comunidad donde tendrán oportunidad de realizar el proyecto de intervención educativa en el nivel preescolar que le permita indagar en las necesidades educativas del estudiantado del grado escolar asignado por el plantel educativo, para ello, deberán enfocarse en la realización de una serie de fases que constituyen la propuesta de intervención que permita el desarrollo integral de estudiantado que cursa la educación obligatoria. 1. Fase 1: Presentación del contexto escolar y de aula. 2. Fase 2: Diagnóstico escolar de las necesidades del estudiantado. 3. Fase 3: Diseña la secuencia didáctica. 4. Fase 4: Produce materiales didácticos e instrumentos de evaluación. 5. Fase 5: Implementa la secuencia didáctica. 6. Fase 6: Evaluación los resultados. 7. Fase 7: Propuesta de innovación. 8. Conclusiones y Recomendaciones. 24 Materiales y Software: 1. Psicología del desarrollo: https://www.mendoza.gov.ar/wpcontent/uploads/sites/16/2017/03/Psicologia-del-Desarrollo-PAPALIA-2009.pdf 2. Cuaderno de aprendizaje en preescolar: https://www.mejoredu.gob.mx/images/programa-formaciondocente/docenteseb/eb_cuaderno_aprendizaje_en_preescolar.pdf 3. Fichero de actividades didácticas para preescolar: https://educacionbasica.sep.gob.mx/multimedia/RSC/BASICA/Documento/201805/2018 05-RSC-TZrfIqpR4s-Fichero_Preescolar_2017_vsCorregida.pdf 4. ¿Cómo elaborar un proyecto de intervención educativa?: https://adipa.mx/content/uploads/2024/04/guia-educativa-mexico-v1.pdf 5. Elementos para tener en cuenta para realizar un diseño de intervención educativa: http://scielo.sld.cu/scielo.php?pid=S1684-18242011000400017&script=sci_arttext 6. Uso de software de aplicación: Microsoft Word. Desarrollo: Pasos de la actividad: 1. Forma equipos de 4 integrantes. 2. En esta primera fase se busca conocer el contexto donde se desarrollará el proyecto de la asignatura por lo que se van a investigar datos relacionados con el plantel de educación preescolar, para ello se programará una visita al centro educativo donde se entrevistarán con el director para presentar la carta solicitud/permiso que contiene el objetivo, fases y fechas del proyecto de intervención educativa, con la intención de que se les dé oportunidad de realizar la práctica educativa en un grado escolar del plantel. Una vez aceptados pondrán en marcha el desarrollo de su proyecto. 3. Fases del proyecto: a) Contexto: ● Escolar: Cada equipo recabará información sobre los datos de la escuela (nombre de la escuela, misión y visión, ubicación, director a cargo, infraestructura (edificios que conforman la estructura del plantel como salones, oficinas, biblioteca, sanitarios, etc.), tecnología, personal docente y de servicios, matrícula del plantel etc.). ● Del aula: se recaban datos generales del aula como: nombre del personal docente del grupo, número de estudiantes, distribución por género, edad promedio del estudiantado, grado escolar y grupo. b) Diagnóstico escolar: Los equipos realizarán un diagnóstico de las necesidades educativas del estudiantado del aula asignada en el plantel educativo donde el estudiantado realizará una observación en todo el plantel, teniendo la oportunidad de recabar datos que permitan conocer cómo se trabaja y organizan las actividades, el comportamiento del estudiantado en sus distintas actividades tanto escolares, como recreativas: utilizarán el formato de guía de observación (un formato por cada integrante de equipo) para apoyarse durante el proceso de la observación. Posteriormente, se entrevistará con el personal docente titular del grupo asignado para indagar si requiere apoyo en alguna necesidad o problemática especial de aula en la que pudiera contribuir con el estudiantado o bien pudiera otorgarle alguno de los contenidos establecidos en el plan sintético o en los campos formativos, (Lenguajes, Pensamiento científico, Ética, Naturaleza y Sociedad y de lo Humano y lo Comunitario). 25 Intervención en la Educación Obligatoria c) Diseño de la secuencia didáctica: d) Considerando los resultados del diagnóstico, cada equipo diseñará una secuencia didáctica que atienda las necesidades identificadas. Esta secuencia incluirá estrategias y técnicas de intervención pedagógica acordes a la situación observada. e) Producción de actividades y materiales: Cada equipo producirá actividades de enseñanza creativas e innovadoras, así como materiales didácticos e instrumentos de evaluación que apoyen la consolidación de los elementos teóricos y pedagógicos. f) Implementación de la secuencia didáctica: Los equipos implementarán la secuencia didáctica en el centro educativo seleccionado, aplicando la propuesta de intervención educativa. g) Evaluación de resultados: Posteriormente, los equipos evaluarán los resultados y hallazgos obtenidos en la implementación, basándose en la información recolectada con los instrumentos y actividades realizadas. h) Presentación de una propuesta de mejora: Los equipos presentarán una propuesta de mejora que busque innovar en los procesos educativos y elevar la calidad de los aprendizajes de los y las estudiantes. i) Conclusión de la intervención educativa: Finalmente, los equipos elaborarán una conclusión basada en los resultados de la intervención educativa, destacando los logros y los aprendizajes derivados de la experiencia. 26",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Intervención Educativa en Primaria.",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Define estrategias básicas de enseñanza y aprendizaje de manera colaborativa, para intervenir en la mejora del logro académico en la Educación Obligatoria.",
+          "actividadClave": "El personal docente deberá solicitar a los/las educandos que indaguen en distintas fuentes confiables de información (libros, revistas, artículos, antologías, etc.) sobre cómo se elabora una secuencia didáctica y cuáles son sus elementos. El estudiantado, en plenaria deberán argumentar lo referente al tema indagado para posterior partiendo del diagnóstico elaborado en centros educativo de educación primaria de la comunidad, y ya integrados en equipos previamente por planteles según las necesidades del estudiantado y de su entorno ; las y los estudiantes y con la guía del personal docente deberán trabajar de forma responsable y colaborativa en la elaboración de una secuencia didáctica, ideando estrategias de enseñanzaaprendizaje considerando el contexto escolar (características del estudiantado, estilos de aprendizaje, ambiente áulico y escolar etc.), Actividades a implementar, los momentos de una sesión (inicio, desarrollo, cierre) e instrumentos (lista de cotejos, rúbricas, exámenes etc.) y formas de evaluación (diagnóstica, formativa y sumativa) que serán parte esencial para su propuesta de intervención a utilizar en que garantice una mejora en el logro académico del estudiantado En plenaria socializar a sus compañeros para la retroalimentación de esta. Materiales y software: 1. Monereo, C. (Coord.). (1998). Estrategias de enseñanza y aprendizaje. Formación del profesorado y aplicación en el aula. España: SEP-Cooperación Española, Biblioteca del Normalista. Esta obra colectiva ofrece una visión amplia sobre diversas estrategias de enseñanza y aprendizaje, enfocándose en la formación docente y su aplicación práctica en el aula. 2. Guía de métodos y estrategias de enseñanza y aprendizaje. Este documento está dirigido a docentes y ofrece una variedad de métodos y estrategias para mejorar el proceso de enseñanza-aprendizaje en educación superior. Disponible en: docencia.udla.cl 3. Díaz Barriga, F., & Hernández, G. (2002). *Estrategias docentes para un aprendizaje significativo: una interpretación constructivista. México 4. http://euroinnova.com/blog/estrategias-de-ensenanza-aprendizaje 5. Herramientas tecnológicas (PowerPoint, canva). 28 Desarrollo: 1. Investigar en fuentes confiables de información sobre secuencia didáctica y sus elementos. 2. Socializar ante sus compañeros y el personal docente sus respuestas u opiniones pertinentes sobre el tópico. 3. Reunir equipos de trabajos antes formados (Por planteles de su comunidad). 4. Analizar Diagnóstico Educativo previamente elaborado en el submódulo II “Nociones de la Intervención Educativa” referente a las problemáticas identificadas en un plantel de su comunidad. 5. Identificar y seleccionar la problemática más común que afecta el aprendizaje según el diagnóstico educativo antes analizado. 6. Cada equipo de trabajo completa su secuencia didáctica según los elementos que la componen. 7. Cada integrante del equipo deberá redactar estrategias de enseñanza y aprendizaje que se puedan aplicar a la problemática elegida 8. Por equipo de trabajo por planteles educativos, discuten de manera óptima y seleccionan la estrategia más viable, justificando su elección. 9. Con base a las estrategias de enseñanza y aprendizaje seleccionadas, diseñan actividades concretas para aplicarla en el aula, en donde debe de idear de acuerdo con los tres momentos de una clase. 10. Elaborar instrumentos de evaluación acorde a los criterios estipulados en cada actividad previamente diseñada. 11. Cada equipo de trabajo dará a conocer su secuencia didáctica con las propuestas planteadas según la problemática seleccionada. Los equipos seleccionan las herramientas tecnológicas (PowerPoint, canva etc.) para su presentación. 12. Los demás equipos y el/la docente brindarán retroalimentación y sugerencias de mejora. 29 Intervención en la Educación Obligatoria",
+          "evidencias": [
+            {
+              "nombre": "Rúbrica (6 criterios)",
+              "tipoInstrumento": "rubrica",
+              "indicadores": [],
+              "niveles": [
+                "Óptimo",
+                "Adecuado",
+                "Suficiente",
+                "Debe mejorar"
+              ],
+              "criterios": [
+                {
+                  "criterio": "Identificación de la problemática",
+                  "puntos": 5,
+                  "descripcionNiveles": "Identifica y selecciona de manera clara y precisa la problemática más común basada en un análisis profundo del diagnóstico educativo. Identifica y selecciona una problemática relevante, aunque con algunas imprecisiones. Identifica una problemática, pero no está fundamentada en el diagnóstico educativo."
+                },
+                {
+                  "criterio": "No identifica o selecciona una problemática acorde al diagnóstico Elaboración de la secuencia didáctica",
+                  "puntos": 20,
+                  "descripcionNiveles": "La secuencia está completa, organizada y contiene todos los elementos requeridos. La secuencia está bien estructurada, pero carece de algunos elementos. La secuencia didáctica está incompleta o presenta fallas estructurales. La secuencia está desorganizada y no cumple con los requisitos."
+                },
+                {
+                  "criterio": "Estrategias de enseñanza y aprendizaje",
+                  "puntos": 20,
+                  "descripcionNiveles": "Se redactan estrategias claras, innovadoras y aplicables a la problemática seleccionada. Se redactan estrategias adecuadas, pero falta claridad o profundidad. Se presentan estrategias poco aplicables o desarrolladas. No se redactan estrategias o no son coherentes con la problemática."
+                },
+                {
+                  "criterio": "Diseño de actividades según los tres momentos de la clase",
+                  "puntos": 20,
+                  "descripcionNiveles": "Las actividades son concretas, variadas y alineadas con los tres momentos de la clase. Las actividades están bien diseñadas, pero falta variedad o conexión con los momentos de la clase. Las actividades presentan fallas en su estructura o aplicabilidad. Las actividades no están diseñadas adecuadamente o no están alineadas con los tres momentos."
+                },
+                {
+                  "criterio": "Elaboración de instrumentos de evaluación",
+                  "puntos": 20,
+                  "descripcionNiveles": "Los instrumentos son pertinentes y están alineados con las actividades y criterios establecidos. Los instrumentos son adecuados, aunque falta mayor alineación con las actividades. Los instrumentos de evaluación son válidos, pero no completamente adecuados. No se presentan instrumentos de evaluación o son inadecuados. P"
+                },
+                {
+                  "criterio": "Presentación de la secuencia didáctica",
+                  "puntos": 15,
+                  "descripcionNiveles": "La presentación es clara, estructurada y se utilizan herramientas tecnológicas adecuadas. La presentación es comprensible, pero le falta organización o el uso adecuado de herramientas. La presentación es confusa o no utiliza herramientas tecnológicas adecuadas. No se realiza la presentación o es deficiente. Total 30"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "nombre": "Intervención Educativa en Secundaria y Media Superior",
+      "horasMediacionDocente": 112,
+      "horasEstudioIndependiente": 28,
+      "proposito": "Elabora de manera creativa e innovadora una intervención en la educación secundaria y media superior, mediante la instrumentación y análisis de problemas relacionados con los procesos de enseñanza-aprendizaje en su comunidad.",
+      "submodulos": [
+        {
+          "numero": 1,
+          "nombre": "Intervención Educativa en Secundaria",
+          "horasMediacionDocente": 48,
+          "horasEstudioIndependiente": 12,
+          "competenciaLaboralBasica": "Organiza de manera sencilla los conocimientos, habilidades, actitudes y valores al colaborar en el diseño de propuestas básicas de intervención en los procesos educativos.",
+          "actividadClave": "Tomando como conocimiento previo el diagnóstico educativo, la elaboración de los instrumentos de investigación (Encuesta, guía de observación, cuestionarios, etc.) para recolectar datos y conociendo las características de los y las estudiantes de educación secundaria y los elementos de los planes y programas de estudio con enfoque humanista de la Nueva escuela mexicana, las y los estudiantes integrados en equipos previamente formados por planteles de la comunidad educativa; de manera colaborativa, respetuosa y creativa deberán participar en el diseño de una propuesta de intervención que incluya los siguientes elementos y necesidades del plantel educativo antes seleccionado del nivel secundaria , contemplando las fases para elaborar una propuesta de intervención. Materiales: 1. Piaget, J.; Inhelder, B (2008) Psicología del Niño. Madrid, Morota. 2. Freud, S. (1992) Psicoanálisis del desarrollo del niño y del adolescente. Barcelona, Paidós 3ª Edición. 3. https://psicologiaymente.com/psicologia/etapas-desarrollo-psicosexual-sigmund-freud centemarblog.blogspot.com/2015/01/exposicion-teoria-y-aportaciones-de.html https://www.psicoactiva.com/blog/las-8-edades-del-hombre-la-teoria-del-desarrollopsicosocial-erik-erikson/#google_vignette file:///C:/Users/Dell/Downloads/Dialnet-LaurenceKohlberg-117615.pdf 4. https://www.gob.mx/sep/acciones-y-programas/secundaria-programas-de-estudio 31 Intervención en la Educación Obligatoria Desarrollo: 1. Formar equipos de trabajo (4 -5 integrantes) según las necesidades de la/el estudiante. (Planteles de Nivel Secundaria de su comunidad). 2. Solicitar a las Autoridades educativas del tu centro escolar oficio de permiso para llevar a cabo la intervención educativa en dicha institución antes seleccionada. 3. Acudir al centro escolar seleccionado (Nivel secundaria) para presentar oficio de permiso para la autorización de parte del director del plantel. Esto con la intención de darles la apertura de llevar a cabo su proyecto de intervención en algún grado escolar de ese nivel educativo. Una vez dada la oportunidad ponen en marcha su propuesta de acuerdo con las fases proporcionadas por el/la docente. A continuación, se presentan las fases: Fase 1 Presentación del contexto escolar y de aula (datos de la escuela). ● Contexto escolar: Cada equipo recabará información sobre los datos de la escuela (nombre de la escuela, misión y visión, ubicación, director a cargo, infraestructura (edificios que conforman la estructura del plantel como salones, oficinas, biblioteca, sanitarios, etc.), tecnología, personal docente y de servicios, matrícula del plantel etc.) ● Contexto del aula: se recaban datos generales del aula como: nombre del personal docente del grupo, número de estudiantes, distribución por género, edad promedio del estudiantado, grado escolar y grupo. Fase 2 Diagnóstico escolar. ● Las y los estudiantes conformados en equipos por planteles, deberán realizar un diagnóstico escolar del ámbito escolar y áulico, donde el estudiantado mediante la observación y haciendo uso de su diario de campo escribirá todo lo observado del centro escolar y aula, donde recabará todos los datos pertinentes de la escuela (actividades deportivas, el contexto escolar, la infraestructura, la organización del centro) así como del aula (manera de trabajar de los jóvenes y maestros , el ambiente áulico, formas de aprender de los/las estudiantes, comportamiento etc.) esto con el fin de conocer el contexto escolar y de aula. Una vez, recabada información en diario de campo, acudir con algún docente de alguna asignatura según los campos formativos de la educación básica (nivel secundario), solicitar alguna necesidad de apoyo o problemática en la cual puedan intervenir. Fase 3 Diseña la secuencia didáctica. ● Las y los educandos deberán idear estrategias de enseñanza considerando el contexto y características de los alumnos que atienda a las necesidades identificadas dentro del diagnóstico educativo. Fase 4 Producción y elaboración de materiales. ● Los equipos de trabajo deberán producir actividades de enseñanza creativas e innovadoras, materiales didácticos e instrumentos de evaluación que favorezcan la consolidación de los elementos teóricos pedagógicos. Fase 5 Implementación. ● Las/los estudiantes deberán acudir al centro educativo seleccionado para ejecutar su propuesta de intervención educativa. Fase 6 Evaluación de resultados. ● Las y los alumnos evalúan los resultados y hallazgos encontrados tomando como base la información recolectada de los instrumentos y actividades aplicadas en el aula. Fase 7 Presentación de las propuestas. ● Los y las estudiantes presentan sus propuestas de mejora para elevar la calidad educativa y los aprendizajes de los y las educandos. 32 4. Los equipos de trabajo elaborarán conclusiones basados en los resultados obtenidos de la intervención educativa y de las experiencias vivenciales experimentadas en el centro escolar.",
+          "evidencias": []
+        },
+        {
+          "numero": 2,
+          "nombre": "Intervención Educativa en el Nivel Medio Superior",
+          "horasMediacionDocente": 64,
+          "horasEstudioIndependiente": 16,
+          "competenciaLaboralBasica": "Contribuye en el diseño de proyectos básicos de intervención educativa desde una perspectiva crítica para identificar oportunidades de mejora.",
+          "actividadClave": "A través de una lluvia de ideas las/los alumnos argumentan en clase los elementos a considerar en toda propuesta didáctica con la intención de que se recaben los conocimientos previos de los/las estudiantes, posteriormente con la ayuda de el/la docente e integrados en equipos (5 integrantes) identifican un contexto educativo de su comunidad donde tendrán oportunidad de realizar el proyecto de intervención educativa en el nivel medio superior que le permita indagar en las necesidades educativas del estudiantado del grupo/materia asignado por el plantel educativo, para ello, deberán enfocarse en la realización de una serie de fases que constituyen la propuesta de intervención que permita el desarrollo integral de estudiantado que cursa la educación media superior. 33 Intervención en la Educación Obligatoria 1. Fase 1: Presentación del contexto escolar y de aula. 2. Fase 2: Diagnóstico escolar de las necesidades del estudiantado. 3. Fase 3: Diseña la secuencia didáctica. 4. Fase 4: Produce materiales didácticos e instrumentos de evaluación. 5. Fase 5: Implementa la secuencia didáctica. 6. Fase 6: Evaluación los resultados. 7. Fase 7: Propuesta de innovación. 8. Conclusiones y Recomendaciones. Materiales y Software: 1. Psicología del desarrollo Adolescente. https://www.mendoza.gov.ar/wp-content/uploads/sites/16/2017/03/Psicologia-del-DesarrolloPAPALIA-2009.pdf 2. Adolescencia. Aspectos físicos, psicológicos y sociales. https://www.elsevier.es/es-revista-anales-pediatria-continuada-51-articulo-adolescenciaaspectos-fisicos-psicologicos-sociales-S1696281814701672?utm_source=chatgpt.com 3. Crecimiento y comportamiento en la adolescencia. https://scielo.isciii.es/scielo.php?pid=S0211- 57352004000200005&script=sci_arttext&utm_source=chatgpt.com 4. Desarrollo psicológico del adolescente: una revisión sistemática. https://journalprosciences.com/index.php/ps/article/view/498?utm_source=chatgpt.com 5. Desarrollo durante la adolescencia. Aspectos físicos, psicológicos y sociales. https://www.adolescenciasema.org/ficheros/PEDIATRIA%20INTEGRAL/Desarrollo%20durante% 20la%20Adolescencia.pdf?utm_source=chatgpt.com 6. Libro: La Educación Media Superior ante la Nueva Escuela Mexicana. https://www.uv.mx/personal/albramirez/files/2023/01/Libro-EMS-anteNEM.pdf?utm_source=chatgpt.com 7. Documento base para el bachillerato general. https://dgb.sep.gob.mx/storage/recursos/2024/02/FsPNWZjKIZDocumento%20Base%20para%20el%20Bachillerato%20General.pdf?utm_source=chatgpt.com 8. Papalia, D. E., & Feldman, R. D. (2021). Desarrollo humano (12a ed.). México: McGraw-Hill. 9. Uso de software de aplicación: Microsoft Word. Desarrollo: Pasos de la actividad: 1. Forma equipos de 5 integrantes. 2. En esta primera fase se busca conocer el contexto donde se desarrollará el proyecto de la asignatura por lo que se van a investigar datos relacionados con el plantel de educación media superior, para ello se programará una visita al centro educativo donde se entrevistarán con el director para presentar la carta solicitud/permiso que contiene el objetivo, fases y fechas del proyecto de intervención educativa, con la intención de que se les dé oportunidad de realizar la práctica educativa en un grado escolar del plantel. Una vez aceptados pondrán en marcha el desarrollo de su proyecto. Fase 1: Contexto: ● Escolar: Cada equipo recabará información sobre los datos de la escuela (nombre de la escuela, misión y visión, ubicación, director a cargo, infraestructura (edificios que conforman la estructura del plantel como salones, oficinas, biblioteca, sanitarios, etc.), tecnología, personal docente y de servicios, matrícula del plantel etc.). 34 ● Del aula: se recaban datos generales del aula como: nombre del personal docente del grupo, número de estudiantes, distribución por género, edad promedio del estudiantado, semestre. Fase 2 Diagnóstico escolar: Los equipos realizarán un diagnóstico de las necesidades educativas del estudiantado del grupo y materia asignada en el plantel educativo donde el estudiantado realizará una observación en todo el plantel, teniendo la oportunidad de recabar datos que permitan conocer cómo se trabaja y organizan las actividades, el comportamiento de los estudiantes en sus distintas actividades tanto escolares, como recreativas: utilizarán el formato de guía de observación (un formato por cada integrante de equipo) para apoyarse durante el proceso de la observación. Posteriormente, se entrevistará con el personal docente titular del grupo/materia asignada para indagar si requiere apoyo en alguna necesidad o problemática especial de aula en la que pudiera contribuir con el estudiantado o bien pudiera otorgarle alguno de los contenidos en las UAC (Unidad de Aprendizaje Curricular) establecidos en el programa de estudios de educación media superior del Modelo Educativo Vigente. Fase 3 Diseño de la secuencia didáctica: Considerando los resultados del diagnóstico, cada equipo diseñará una secuencia didáctica que atienda las necesidades identificadas. Esta secuencia incluirá temática, progresión, categoría, subcategoría, aprendizaje de trayectoria y meta de aprendizaje, así como estrategias y técnicas de intervención pedagógica acordes a la situación observada. Fase 4 Producción de actividades y materiales: Cada equipo producirá actividades de enseñanza creativas e innovadoras, así como materiales didácticos e instrumentos de evaluación que apoyen la consolidación de los elementos teóricos y pedagógicos. Fase 5 Implementación de la secuencia didáctica: Los equipos implementarán la secuencia didáctica en el centro educativo seleccionado, aplicando la propuesta de intervención educativa. Fase 6 Evaluación de resultados: Posteriormente, los equipos evaluarán los resultados y hallazgos obtenidos en la implementación, basándose en la información recolectada con los instrumentos y actividades realizadas. Fase 7 Presentación de una propuesta de mejora: Los equipos presentarán una propuesta de mejora que busque innovar en los procesos educativos y elevar la calidad de los aprendizajes de los y las estudiantes. 3.- Conclusión de la intervención educativa: Finalmente, los equipos elaborarán una conclusión basada en los resultados de la intervención educativa, destacando los logros y los aprendizajes derivados de la experiencia. 35 Intervención en la Educación Obligatoria",
+          "evidencias": []
+        }
+      ]
+    }
+  ],
+  "calidadExtraccion": "BUENA",
+  "coberturaInstrumentos": {
+    "conInstrumento": 5,
+    "total": 8
+  },
+  "avisos": [
+    "Módulo 3 submódulo 1: sin indicadores de evaluación",
+    "Módulo 4 submódulo 1: sin indicadores de evaluación",
+    "Módulo 4 submódulo 2: sin indicadores de evaluación"
+  ],
+  "extraidoEl": "2026-08-13T23:26:54.672Z",
+  "urlFuente": "https://dgb.sep.gob.mx/storage/recursos/2025/06/911gc3eoLo-Intervencion-en-la-Educacion-Obligatoria.pdf"
+}

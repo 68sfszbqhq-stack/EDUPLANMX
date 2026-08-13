@@ -10,6 +10,7 @@
     "deploy": "./deploy.sh",
     "respaldo": "tsx scripts/respaldo_firestore.ts",
     "prueba:generacion": "tsx scripts/prueba-generacion.ts",
+    "extraer:laboral": "tsx scripts/extraer_laboral.ts",
     "prueba:fusion": "tsx scripts/prueba-fusion-bitacora.ts"
   },
   "dependencies": {
