@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "deploy": "./deploy.sh",
     "respaldo": "tsx scripts/respaldo_firestore.ts",
+    "prueba:generacion": "tsx scripts/prueba-generacion.ts",
     "prueba:fusion": "tsx scripts/prueba-fusion-bitacora.ts"
   },
   "dependencies": {
