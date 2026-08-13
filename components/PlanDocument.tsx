@@ -1,5 +1,10 @@
 import React from 'react';
 import { LessonPlan } from '../types';
+import {
+    vocabularioCurricular,
+    familiaDesdeCategoria,
+    COMPONENTES_FORMACION,
+} from '../data/vocabularioCurricular';
 
 interface PlanDocumentProps {
     plan: LessonPlan;
@@ -9,6 +14,16 @@ interface PlanDocumentProps {
 }
 
 const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, teacherName, schoolName, cct }, ref) => {
+    // Las etiquetas curriculares dependen de la generación del programa y de la familia
+    // de la UAC. Ver data/vocabularioCurricular.ts para el porqué.
+    const vocab = vocabularioCurricular(
+        plan.meta?.modelo,
+        familiaDesdeCategoria(plan.meta?.areaOrRecurso)
+    );
+    const componente = plan.meta?.componente
+        ? COMPONENTES_FORMACION[plan.meta.componente]
+        : 'Currículum Fundamental';
+
     return (
         <article ref={ref} className="bg-white border border-slate-200 shadow-2xl rounded-none md:rounded-3xl p-10 print:p-0 print:border-none print:shadow-none font-serif text-sm print:w-full print:m-0 max-w-[216mm] mx-auto">
 
@@ -49,14 +64,34 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                         <span className="font-bold text-slate-900">{plan.meta?.cycle || '2024-2025'}</span>
                     </div>
                 </div>
-                <div className="grid grid-cols-3 text-xs divide-x divide-slate-300">
+                <div className="grid grid-cols-4 text-xs divide-x divide-slate-300 border-b border-slate-300">
                     <div className="p-2">
-                        <span className="block font-bold text-slate-500 uppercase text-[9px]">UAC (Unidad de Aprendizaje)</span>
+                        <span className="block font-bold text-slate-500 uppercase text-[9px]">Componente de Formación</span>
+                        <span className="font-bold text-slate-900">{componente}</span>
+                    </div>
+                    <div className="p-2 col-span-2">
+                        <span className="block font-bold text-slate-500 uppercase text-[9px]">
+                            Área de Conocimiento / Recurso Sociocognitivo / Ámbito Socioemocional
+                        </span>
+                        <span className="font-bold text-slate-900">{plan.meta?.areaOrRecurso || 'Por registrar'}</span>
+                    </div>
+                    <div className="p-2">
+                        <span className="block font-bold text-slate-500 uppercase text-[9px]">Generación / Plan</span>
+                        <span className="font-bold text-slate-900">{vocab.generacion}</span>
+                    </div>
+                </div>
+                <div className="grid grid-cols-4 text-xs divide-x divide-slate-300">
+                    <div className="p-2">
+                        <span className="block font-bold text-slate-500 uppercase text-[9px]">{vocab.unidad}</span>
                         <span className="font-bold text-slate-900 bg-yellow-50 px-1">{plan.subject}</span>
                     </div>
                     <div className="p-2">
-                        <span className="block font-bold text-slate-500 uppercase text-[9px]">Grupo / Semestre</span>
-                        <span className="font-bold text-slate-900">{plan.meta?.gradeGroup}</span>
+                        <span className="block font-bold text-slate-500 uppercase text-[9px]">Semestre</span>
+                        <span className="font-bold text-slate-900">{plan.meta?.semester ?? 'Por registrar'}</span>
+                    </div>
+                    <div className="p-2">
+                        <span className="block font-bold text-slate-500 uppercase text-[9px]">Grado / Grupo</span>
+                        <span className="font-bold text-slate-900">{plan.meta?.group || plan.meta?.gradeGroup || 'Por registrar'}</span>
                     </div>
                     <div className="p-2">
                         <span className="block font-bold text-slate-500 uppercase text-[9px]">Metodología Activa</span>
@@ -87,9 +122,9 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                     <div>
                         <div className="flex items-baseline gap-2 mb-1">
                             <span className="text-[10px] font-bold text-white bg-slate-800 px-2 py-0.5 rounded">
-                                {plan.curricularElements?.progressionId || 'Progresión'}
+                                {plan.curricularElements?.progressionId || vocab.progresion}
                             </span>
-                            <span className="text-[10px] uppercase font-bold text-slate-400">Descripción de la Progresión:</span>
+                            <span className="text-[10px] uppercase font-bold text-slate-400">Descripción de la {vocab.progresion}:</span>
                         </div>
                         <p className="text-xs text-slate-900 italic bg-slate-50 p-2 border border-slate-200 rounded text-justify">
                             "{plan.curricularElements?.progression || plan.progression}"
@@ -97,37 +132,70 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                     </div>
 
                     <div className="grid grid-cols-2 gap-6">
-                        {/* Categorías */}
+                        {/* Contenido nivel 1: Categorías (recursos) o Conceptos centrales (áreas) */}
                         <div>
-                            <p className="text-[10px] font-bold text-slate-500 uppercase mb-1 border-b border-slate-200">Categorías (Conceptos Centrales)</p>
+                            <p className="text-[10px] font-bold text-slate-500 uppercase mb-1 border-b border-slate-200">{vocab.contenidoNivel1}</p>
                             <ul className="list-disc list-inside text-xs text-slate-800">
-                                {plan.curricularElements?.categories?.map((cat, i) => (
-                                    <li key={i}>{cat}</li>
-                                )) || <li className="text-red-500">Sin categorías definidas</li>}
+                                {plan.curricularElements?.categories?.length
+                                    ? plan.curricularElements.categories.map((cat, i) => <li key={i}>{cat}</li>)
+                                    : <li className="text-red-500">Sin {vocab.contenidoNivel1.toLowerCase()} definidas</li>}
                             </ul>
                         </div>
-                        {/* Subcategorías */}
+                        {/* Contenido nivel 2: Subcategorías (recursos) o Conceptos transversales (áreas) */}
                         <div>
-                            <p className="text-[10px] font-bold text-slate-500 uppercase mb-1 border-b border-slate-200">Subcategorías (Conceptos Transversales)</p>
+                            <p className="text-[10px] font-bold text-slate-500 uppercase mb-1 border-b border-slate-200">{vocab.contenidoNivel2}</p>
                             <ul className="list-disc list-inside text-xs text-slate-800">
-                                {plan.curricularElements?.subcategories?.map((sub, i) => (
-                                    <li key={i}>{sub}</li>
-                                )) || <li>Se aborda de forma integradora.</li>}
+                                {plan.curricularElements?.subcategories?.length
+                                    ? plan.curricularElements.subcategories.map((sub, i) => <li key={i}>{sub}</li>)
+                                    : <li>Se aborda de forma integradora.</li>}
                             </ul>
                         </div>
                     </div>
 
-                    {/* Metas de Aprendizaje */}
+                    {/* Metas de aprendizaje / Metas educativas según la generación */}
                     <div>
-                        <p className="text-[10px] font-bold text-slate-500 uppercase mb-1">Metas de Aprendizaje:</p>
+                        <p className="text-[10px] font-bold text-slate-500 uppercase mb-1">{vocab.metas}:</p>
                         <div className="flex flex-wrap gap-1">
-                            {plan.curricularElements?.learningGoals.map((goal, i) => (
+                            {plan.curricularElements?.learningGoals?.map((goal, i) => (
                                 <span key={i} className="bg-indigo-50 text-indigo-800 text-[10px] px-2 py-1 rounded border border-indigo-100">
                                     {goal}
                                 </span>
                             ))}
                         </div>
                     </div>
+
+                    {/* Aprendizajes de trayectoria / Perfil de egreso */}
+                    {!!plan.curricularElements?.trajectoryLearning?.length && (
+                        <div>
+                            <p className="text-[10px] font-bold text-slate-500 uppercase mb-1 border-b border-slate-200">{vocab.trayectoria}</p>
+                            <ul className="list-disc list-inside text-xs text-slate-800">
+                                {plan.curricularElements.trajectoryLearning.map((t, i) => <li key={i}>{t}</li>)}
+                            </ul>
+                        </div>
+                    )}
+
+                    {/* Contenidos a abordar */}
+                    <div>
+                        <p className="text-[10px] font-bold text-slate-500 uppercase mb-1 border-b border-slate-200">
+                            Contenidos a abordar
+                            <span className="font-normal normal-case text-slate-400 ml-1">
+                                (del análisis de {vocab.progresionPlural.toLowerCase()} y {vocab.metas.toLowerCase()})
+                            </span>
+                        </p>
+                        <ul className="list-disc list-inside text-xs text-slate-800">
+                            {plan.curricularElements?.contents?.length
+                                ? plan.curricularElements.contents.map((c, i) => <li key={i}>{c}</li>)
+                                : <li className="text-slate-400 italic">Sin contenidos registrados</li>}
+                        </ul>
+                    </div>
+
+                    {/* Elementos propios de la UAC (dimensión, práctica de ciencia e ingeniería…) */}
+                    {plan.curricularElements?.uacSpecificElements && (
+                        <div>
+                            <p className="text-[10px] font-bold text-slate-500 uppercase mb-1">Elementos específicos de la {vocab.unidad.split(' ')[0]}</p>
+                            <p className="text-xs text-slate-800">{plan.curricularElements.uacSpecificElements}</p>
+                        </div>
+                    )}
                 </div>
             </div>
 
@@ -144,6 +212,10 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                     {plan.paec?.isLinked ? (
                         <div className="space-y-2 text-xs">
                             <div>
+                                <span className="font-bold text-slate-600 block text-[10px] uppercase">Nombre del Proyecto Escolar Comunitario (PEC):</span>
+                                <span className="font-bold text-slate-900">{plan.paec.pecName || 'Por registrar'}</span>
+                            </div>
+                            <div>
                                 <span className="font-bold text-slate-600 block text-[10px] uppercase">Problemática Comunitaria:</span>
                                 {plan.paec.communityProblem}
                             </div>
@@ -151,6 +223,14 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                                 <span className="font-bold text-slate-600 block text-[10px] uppercase">Proyecto / Acción:</span>
                                 {plan.paec.projectTrigger}
                             </div>
+                            {!!plan.paec.pecProducts?.length && (
+                                <div>
+                                    <span className="font-bold text-slate-600 block text-[10px] uppercase">Productos que evidencian el aprendizaje en el PEC:</span>
+                                    <ul className="list-disc list-inside">
+                                        {plan.paec.pecProducts.map((p, i) => <li key={i}>{p}</li>)}
+                                    </ul>
+                                </div>
+                            )}
                         </div>
                     ) : (
                         <p className="text-xs text-slate-400 italic">No se vincula directamente con un proyecto comunitario en esta sesión.</p>
@@ -366,6 +446,35 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                     </table>
                 </div>
             )}
+
+            {/* 8b-2. PRODUCTOS Y TRABAJO COLABORATIVO
+                Son dos puntos separados de la lista de cotejo. Antes las evidencias solo
+                aparecían dispersas dentro de cada momento de la secuencia. */}
+            <div className="mb-6 border border-slate-500 rounded-sm avoid-break">
+                <div className="bg-slate-700 text-white px-3 py-2 border-b border-slate-500 font-bold text-sm uppercase text-center print:bg-slate-800 print:text-white">
+                    VIII-D. Productos y Trabajo Colaborativo
+                </div>
+                <div className="p-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                    <div>
+                        <p className="font-bold text-slate-600 text-[10px] uppercase mb-1 border-b border-slate-200">
+                            Productos a realizar (evidencias del estudiantado)
+                        </p>
+                        <ul className="list-disc list-inside text-slate-800 space-y-0.5">
+                            {plan.products?.length
+                                ? plan.products.map((p, i) => <li key={i}>{p}</li>)
+                                : <li className="text-slate-400 italic">Sin productos registrados</li>}
+                        </ul>
+                    </div>
+                    <div>
+                        <p className="font-bold text-slate-600 text-[10px] uppercase mb-1 border-b border-slate-200">
+                            Dinámicas de trabajo colaborativo
+                        </p>
+                        <p className="text-slate-800">
+                            {plan.collaborativeWork || <span className="text-slate-400 italic">Sin dinámicas registradas</span>}
+                        </p>
+                    </div>
+                </div>
+            </div>
 
             {/* 8c. MATERIALES, RECURSOS Y REFERENCIAS
                 La lista de cotejo pide los tres. plan.resources ya se calculaba en

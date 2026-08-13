@@ -10,7 +10,7 @@ interface PedagogicalAuditorProps {
 }
 
 type AuditStatus = 'pass' | 'warning' | 'fail';
-type AuditGroup = 'estructura' | 'nem' | 'evaluacion' | 'equidad';
+type AuditGroup = 'estructura' | 'nem' | 'evaluacion' | 'equidad' | 'cotejo';
 
 interface AuditItem {
     id: string;
@@ -27,6 +27,7 @@ const GRUPOS: Record<AuditGroup, { titulo: string; fuente: string }> = {
     nem: { titulo: 'Enfoque NEM Modelo 2025', fuente: 'Ficha 01 · así lo revisa supervisión' },
     evaluacion: { titulo: 'Evaluación formativa', fuente: 'Fichas 03 y 18 · ciclo de retroalimentación' },
     equidad: { titulo: 'Equidad e inclusión', fuente: 'Fichas 08 y 13 · BAP y perspectiva de género' },
+    cotejo: { titulo: 'Lista de cotejo de la ATP', fuente: 'Asesoría Técnico-Pedagógica · así se revisa la entrega' },
 };
 
 /** Une todo el texto de la secuencia para buscar evidencias de enfoque pedagógico. */
@@ -222,6 +223,107 @@ export const PedagogicalAuditor: React.FC<PedagogicalAuditorProps> = ({ plan, su
             'Usa lenguaje incluyente ("el estudiantado", "las y los")',
             'Predomina el masculino genérico ("los alumnos")',
             'La Ficha 13 pide lenguaje no sexista: cambia "los alumnos" por "el estudiantado" o "las y los estudiantes".');
+
+        // ─── 5. LISTA DE COTEJO DE LA ATP ───────────────────────────
+        // Un punto por renglón de la lista con que se revisa la planeación entregada.
+        // Aquí solo va lo que se puede verificar leyendo el plan; lo pedagógico ya
+        // quedó cubierto en los grupos anteriores.
+
+        const meta = plan.meta;
+        const identificacionCompleta =
+            !!meta?.componente && !!meta?.areaOrRecurso?.trim() && meta?.semester != null;
+        addCheck('cotejo', 'Datos de identificación', identificacionCompleta,
+            'Componente de formación, área/recurso y semestre están declarados',
+            'Faltan datos de identificación (componente de formación, área o recurso, semestre)',
+            'Genera de nuevo desde el formulario: estos datos salen del programa oficial, no se escriben a mano.');
+
+        const ce = plan.curricularElements;
+        addCheck('cotejo', 'Contenidos a abordar', !!ce?.contents?.length,
+            `${ce?.contents?.length} contenidos declarados`,
+            'No se especifican los contenidos que se abordan',
+            'La lista pide los contenidos derivados del análisis de las progresiones y las metas.');
+
+        addCheck('cotejo', 'Aprendizajes de trayectoria', !!ce?.trajectoryLearning?.length,
+            'Se declaran los aprendizajes de trayectoria',
+            'No se declaran aprendizajes de trayectoria',
+            'Se toman del programa oficial de la UAC. Si no vienen ahí, captúralos a mano antes de entregar.');
+
+        if (plan.paec?.isLinked) {
+            addCheck('cotejo', 'Nombre del PEC', !!plan.paec.pecName?.trim(),
+                `PEC: "${plan.paec.pecName}"`,
+                'La planeación se vincula al PAEC pero no nombra el Proyecto Escolar Comunitario',
+                'Escribe el nombre del PEC en la sección PAEC del formulario.');
+
+            addCheck('cotejo', 'Productos que evidencian el PEC', !!plan.paec.pecProducts?.length,
+                'Declara los productos con que se evidencia el aprendizaje en el PEC',
+                'Faltan los productos que evidencian el aprendizaje dentro del PEC',
+                'Es un punto aparte de los productos de la secuencia: qué entrega el estudiantado para el proyecto comunitario.');
+        }
+
+        addCheck('cotejo', 'Transversalidad', !!plan.fundamento?.transversalityLink?.trim(),
+            'Declara el vínculo con otras UAC y con el PEC',
+            'No se declara la transversalidad',
+            'Indica brevemente cómo se vincula con otras UAC, con el PEC y con el ámbito socioemocional.');
+
+        addCheck('cotejo', 'Estudio independiente', !!plan.independentStudy?.activities?.trim(),
+            'Declara actividades de estudio independiente',
+            'No hay actividades de estudio independiente',
+            'Deben corresponder al tiempo semanal (HI) de la estructura del programa.');
+
+        // Debe decir DOS cosas: si es individual o grupal, y cuándo.
+        const estrategia = (plan.independentStudy?.feedbackStrategy || '').toLowerCase();
+        const diceModalidad = contieneAlguna(estrategia, ['individual', 'grupal', 'grupo', 'equipo', 'pares']);
+        const diceMomento = contieneAlguna(estrategia, [
+            'sesión', 'sesion', 'clase', 'cierre', 'inicio', 'semana', 'antes', 'después', 'despues', 'al final', 'durante'
+        ]);
+        addCheck('cotejo', 'Retroalimentación: modalidad y momento', diceModalidad && diceMomento,
+            'Especifica si es individual o grupal y en qué momento',
+            !estrategia
+                ? 'No se declara la estrategia de retroalimentación'
+                : `Falta ${!diceModalidad ? 'decir si es individual o grupal' : 'decir en qué momento se realiza'}`,
+            'La ATP revisa las dos cosas por separado. Ejemplo: "Grupal al cierre de cada sesión e individual por escrito al devolver el reporte en la sesión 4".');
+
+        addCheck('cotejo', 'Dinámicas de trabajo colaborativo', !!plan.collaborativeWork?.trim(),
+            'Declara dinámicas concretas de trabajo colaborativo',
+            'No se declaran dinámicas de trabajo colaborativo',
+            'No basta con decir "trabajo en equipo": describe cómo se forman los equipos y qué rol tiene cada quien.');
+
+        addCheck('cotejo', 'Productos a realizar', !!plan.products?.length,
+            `${plan.products?.length} productos declarados`,
+            'No hay una lista de productos del estudiantado',
+            'Son las evidencias que elabora el estudiantado: mapa conceptual, reporte, maqueta, coreografía…');
+
+        // Ponderación, momento y agente: la lista los revisa como un solo punto pero
+        // con tres condiciones, así que se separan para que el docente sepa cuál falla.
+        const tabla = plan.evaluationTable || [];
+        const suma = tabla.reduce((s, f) => s + (f.percentage || 0), 0);
+        addCheck('cotejo', 'La ponderación suma 100%', tabla.length > 0 && suma === 100,
+            'Los porcentajes suman exactamente 100%',
+            tabla.length === 0 ? 'No hay tabla de evaluación' : `Los porcentajes suman ${suma}%, no 100%`,
+            'Ajusta los porcentajes en la tabla de evaluación antes de entregar.',
+            true);
+
+        const moment0 = tabla.every(f => !!f.moment?.trim() && f.moment !== 'Por definir');
+        addCheck('cotejo', 'Momento de evaluación en cada renglón', tabla.length > 0 && moment0,
+            'Cada instrumento indica si es diagnóstica, formativa o sumativa',
+            'Algún instrumento no declara su momento de evaluación',
+            'Cada renglón debe decir si es diagnóstica, formativa o sumativa.');
+
+        const agentesValidos = tabla.every(f => contieneAlguna((f.agent || '').toLowerCase(), ['auto', 'co', 'hetero']));
+        addCheck('cotejo', 'Agente de evaluación en cada renglón', tabla.length > 0 && agentesValidos,
+            'Cada instrumento declara su agente evaluador',
+            'Algún instrumento no declara agente (autoevaluación, coevaluación o heteroevaluación)',
+            'El agente es QUIÉN evalúa. No pongas "Docente": pon "Heteroevaluación".');
+
+        addCheck('cotejo', 'Materiales y recursos', !!plan.resources?.length,
+            `${plan.resources?.length} recursos enunciados`,
+            'No se enuncian materiales ni recursos',
+            'La lista pide enunciar materiales, recursos y referencias.');
+
+        addCheck('cotejo', 'Referencias', !!plan.references?.length,
+            `${plan.references?.length} referencias enunciadas`,
+            'No se enuncian referencias',
+            'Cita al menos el programa de estudios oficial de la UAC.');
 
         const finalScore = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
         const criticosFallidos = results.filter(r => r.status === 'fail').length;

@@ -42,15 +42,34 @@ export interface LessonPlan {
     startDate: string;    // NUEVO
     endDate: string;      // NUEVO
     methodology?: string; // NUEVO: Metodología Activa (ABP, ABPr, etc.)
+
+    // Datos de identificación que exige la lista de cotejo de la ATP.
+    // No los inventa la IA: salen del programa oficial y del formulario.
+    componente?: 'fundamental' | 'ampliado' | 'laboral';
+    areaOrRecurso?: string; // Área de conocimiento, recurso sociocognitivo o ámbito socioemocional
+    semester?: number;      // separado del grupo: la lista los pide como datos distintos
+    group?: string;
+    modelo?: '2024' | '2025'; // generación curricular; define el vocabulario del documento
   };
 
   // 2. Progresiones Detalladas
+  // OJO con los nombres: en el modelo 2024 estos campos son Categorías/Subcategorías
+  // para los recursos sociocognitivos y Conceptos centrales/transversales para las
+  // áreas de conocimiento; en el modelo 2025 todo se llama Contenidos formativos.
+  // Las etiquetas visibles salen de data/vocabularioCurricular.ts, no de aquí.
   curricularElements?: {
-    progression: string; // Texto completo
+    progression: string; // Texto completo (o propósito formativo en el modelo 2025)
     progressionId?: string; // Ej. 1.2
     learningGoals: string[];
-    categories: string[]; // Conceptos Centrales
-    subcategories: string[]; // Conceptos Transversales
+    categories: string[];
+    subcategories: string[];
+    /** Aprendizajes de trayectoria (modelo 2024) o perfil de egreso (modelo 2025) */
+    trajectoryLearning?: string[];
+    /** Contenidos a abordar, derivados del análisis de progresiones y metas */
+    contents?: string[];
+    /** Elementos propios de ciertas UAC: dimensión (Humanidades), práctica de
+     *  ciencia e ingeniería (CNEyT), etc. La lista de cotejo los pide cuando aplican. */
+    uacSpecificElements?: string;
   };
 
   // Compatibilidad hacia atrás (legacy)
@@ -62,7 +81,19 @@ export interface LessonPlan {
     isLinked: boolean;
     communityProblem: string; // Problemática comunitaria atendida
     projectTrigger: string; // Vinculo con PEC
+    /** Nombre del Proyecto Escolar Comunitario. La lista de cotejo lo pide como
+     *  punto propio; antes dependía de que la IA lo escribiera dentro de projectTrigger. */
+    pecName?: string;
+    /** Productos que evidencian el aprendizaje en el desarrollo del PEC. Es un
+     *  punto distinto al de los productos de la secuencia. */
+    pecProducts?: string[];
   };
+
+  // 3b. Productos y trabajo colaborativo (dos puntos separados de la lista de cotejo)
+  /** Lista consolidada de productos/evidencias que elabora el estudiantado */
+  products?: string[];
+  /** Dinámicas concretas que promueven el trabajo colaborativo */
+  collaborativeWork?: string;
 
   // 4. Fundamento (La justificación pedagógica)
   fundamento?: {

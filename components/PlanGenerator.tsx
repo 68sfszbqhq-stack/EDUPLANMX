@@ -440,6 +440,9 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           cycle: plan.meta?.cycle || '2025-2026',
           period: plan.meta?.period || 'Semestral',
           gradeGroup: plan.meta?.gradeGroup || 'General',
+          // El semestre lo sabe el formulario (viene del programa oficial), no la IA.
+          // La lista de cotejo lo pide como dato separado del grupo.
+          semester: semestre ?? plan.meta?.semester,
           totalSessions: numSessions,
           hoursPerWeek: hoursPerWeek,
           startDate: startDate || 'Por definir',

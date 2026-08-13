@@ -3,6 +3,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { SchoolContext, SubjectContext, LessonPlan } from "../types";
 import { programasSEPService } from "../src/services/programasSEPService";
 import { perfilDocenteService } from "../src/services/perfilDocenteService";
+import { familiaDesdeCategoria } from "../data/vocabularioCurricular";
 
 /**
  * NO se incrusta ninguna clave de Gemini en el código.
@@ -116,6 +117,23 @@ export const generateLessonPlan = async (
         de estudios oficial de la UAC y materiales de la propia escuela.
     15. RECURSOS — "resources" es la lista maestra de materiales de toda la planeación,
         no solo de una sesión.
+    16. CONTENIDOS — llena "curricularElements.contents" con los contenidos concretos
+        que se abordan, derivados del análisis de la progresión y las metas. Son los
+        temas del saber, no las actividades.
+    17. APRENDIZAJES DE TRAYECTORIA — llena "curricularElements.trajectoryLearning"
+        con los del área o recurso al que pertenece la UAC, tomados del programa
+        oficial que se te proporcionó. Si no aparecen ahí, deja el arreglo vacío:
+        NO los inventes.
+    18. TRABAJO COLABORATIVO — "collaborativeWork" describe la dinámica concreta
+        (equipos de cuántos, cómo se forman, qué rol tiene cada quien, cómo se
+        reparte la responsabilidad). No basta decir "trabajo en equipo".
+    19. PRODUCTOS — "products" es la lista de evidencias que elabora el estudiantado
+        a lo largo de la planeación (mapa conceptual, maqueta, reporte, coreografía…).
+        Deben coincidir con las evidencias declaradas en las sesiones.
+    20. PEC — si la planeación se vincula a un Proyecto Escolar Comunitario, escribe
+        su nombre en "paec.pecName" y en "paec.pecProducts" los productos con que el
+        estudiantado evidencia su aprendizaje DENTRO del PEC (son distintos de los
+        productos de la secuencia).
 
     INFORMACIÓN OFICIAL: ${contextoOficial.substring(0, 800)}...
     CONTEXTO ESCUELA: ${school.schoolName}, ${school.vision}.
@@ -166,18 +184,25 @@ export const generateLessonPlan = async (
                 progressionId: { type: Type.STRING },
                 learningGoals: { type: Type.ARRAY, items: { type: Type.STRING } },
                 categories: { type: Type.ARRAY, items: { type: Type.STRING } },
-                subcategories: { type: Type.ARRAY, items: { type: Type.STRING } }
+                subcategories: { type: Type.ARRAY, items: { type: Type.STRING } },
+                trajectoryLearning: { type: Type.ARRAY, items: { type: Type.STRING } },
+                contents: { type: Type.ARRAY, items: { type: Type.STRING } },
+                uacSpecificElements: { type: Type.STRING }
               },
-              required: ["progression", "learningGoals", "categories"]
+              required: ["progression", "learningGoals", "categories", "contents", "trajectoryLearning"]
             },
             paec: {
               type: Type.OBJECT,
               properties: {
                 isLinked: { type: Type.BOOLEAN },
                 communityProblem: { type: Type.STRING },
-                projectTrigger: { type: Type.STRING }
+                projectTrigger: { type: Type.STRING },
+                pecName: { type: Type.STRING },
+                pecProducts: { type: Type.ARRAY, items: { type: Type.STRING } }
               }
             },
+            products: { type: Type.ARRAY, items: { type: Type.STRING } },
+            collaborativeWork: { type: Type.STRING },
             fundamento: {
               type: Type.OBJECT,
               properties: {
@@ -335,9 +360,25 @@ export const generateLessonPlan = async (
       }));
     }
 
+    // --- DATOS DE IDENTIFICACIÓN QUE NO DEBE INVENTAR LA IA ---
+    // Componente, área/recurso y generación curricular salen del programa oficial y del
+    // catálogo, no del modelo. La lista de cotejo los revisa como datos duros y un error
+    // aquí invalida la planeación entera.
+    const familia = familiaDesdeCategoria(subject.mccemsCategory);
+    const componente: 'fundamental' | 'ampliado' | 'laboral' =
+      familia === 'laboral' ? 'laboral' : 'fundamental';
+
+    parsedData.meta = {
+      ...parsedData.meta,
+      componente,
+      areaOrRecurso: subject.mccemsCategory || parsedData.meta?.areaOrRecurso || '',
+      modelo: (programaOficial?.modelo === '2025' ? '2025' : '2024'),
+    };
+
     // Compatibilidad con campos legacy
     const lessonPlan: LessonPlan = {
       ...parsedData,
+      date: parsedData.date || new Date().toLocaleDateString('es-MX', { day: '2-digit', month: 'long', year: 'numeric' }),
       learningGoal: parsedData.curricularElements?.learningGoals?.[0] || '',
       progression: parsedData.curricularElements?.progression || '',
       sequence: parsedData.sequence?.opening ? parsedData.sequence : {
