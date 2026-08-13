@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network, Sparkles, ChevronDown, CheckCircle2, Menu, X, Compass, NotebookPen } from 'lucide-react';
+import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network, Sparkles, ChevronDown, CheckCircle2, Menu, X, Compass, NotebookPen, ClipboardList } from 'lucide-react';
 import { useAuth } from '../src/contexts/AuthContext';
 import { analyticsService } from '../src/services/analyticsService';
 
@@ -46,7 +46,10 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
     const { contextoListo, tienePlaneaciones, flujoCompleto, tieneBitacora } = getStepProgress();
 
     // Ruta principal del docente, en el orden en que debe recorrerla
+    const tienePerfil = Boolean(localStorage.getItem('perfilDocente'));
+
     const pasos = [
+        { id: 'perfil-docente', label: 'Cómo doy clase', icon: ClipboardList, step: 0, done: tienePerfil },
         { id: 'flujo', label: 'Flujo de Contextualización', icon: Compass, step: 1, done: flujoCompleto },
         { id: 'context', label: 'Contexto Escolar', icon: Settings, step: 2, done: contextoListo },
         { id: 'diagnostico', label: 'Diagnóstico del Grupo', icon: Users, step: 3, done: false },

@@ -6,6 +6,7 @@ import { useAuth } from './src/contexts/AuthContext';
 import { AppView, SchoolContext, SubjectContext, LessonPlan } from './types';
 import ContextManager from './components/ContextManager';
 import PlanGenerator from './components/PlanGenerator';
+import CuestionarioDocente from './components/CuestionarioDocente';
 import Dashboard from './components/Dashboard';
 import PlansLibrary from './components/PlansLibrary';
 import DiagnosticoDashboard from './components/DiagnosticoDashboard';
@@ -168,6 +169,8 @@ const App: React.FC = () => {
             onNavigate={handleNavigate}
           />
         );
+      case 'perfil-docente':
+        return <CuestionarioDocente userId={user?.id} />;
       case 'plans':
         return <PlansLibrary />;
       case 'diagnostico':

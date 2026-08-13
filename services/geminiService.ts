@@ -2,6 +2,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { SchoolContext, SubjectContext, LessonPlan } from "../types";
 import { programasSEPService } from "../src/services/programasSEPService";
+import { perfilDocenteService } from "../src/services/perfilDocenteService";
 
 /**
  * NO se incrusta ninguna clave de Gemini en el código.
@@ -21,7 +22,8 @@ export const generateLessonPlan = async (
   prompt: string,
   school: SchoolContext,
   subject: SubjectContext,
-  customApiKey?: string
+  customApiKey?: string,
+  userId?: string
 ): Promise<LessonPlan> => {
 
   // 1. La clave la pone el docente; no hay ninguna de respaldo (ver nota de arriba)
@@ -51,6 +53,17 @@ export const generateLessonPlan = async (
     contextoOficial = programasSEPService.generarContextoIA(programaOficial.materia, programaOficial.semestre);
   } else {
     contextoOficial = "No se encontró programa oficial específico. Usar lineamientos generales del MCCEMS 2024.";
+  }
+
+  // Perfil del docente: cómo da clase, con qué recursos cuenta y qué le revisan.
+  // Si nunca contestó el cuestionario, el bloque va vacío y el prompt queda igual que antes.
+  let bloquePerfil = '';
+  try {
+    const perfil = await perfilDocenteService.obtener(userId);
+    bloquePerfil = perfilDocenteService.generarBloquePrompt(perfil);
+    if (bloquePerfil) console.log('👤 Planeación personalizada con el perfil del docente');
+  } catch (e) {
+    console.warn('No se pudo cargar el perfil docente; se genera sin personalizar.', e);
   }
 
   const systemInstruction = `
@@ -84,6 +97,7 @@ export const generateLessonPlan = async (
     INFORMACIÓN OFICIAL: ${contextoOficial.substring(0, 800)}...
     CONTEXTO ESCUELA: ${school.schoolName}, ${school.vision}.
     SOLICITUD: "${prompt}"
+    ${bloquePerfil}
   `;
 
   try {
@@ -147,7 +161,13 @@ export const generateLessonPlan = async (
                 progressionJustification: { type: Type.STRING },
                 sociocognitiveLink: { type: Type.STRING },
                 socioemotionalLink: { type: Type.STRING },
-                transversalityLink: { type: Type.STRING }
+                transversalityLink: { type: Type.STRING },
+                // Sin estos tres, PlanDocument imprime un ámbito genérico de relleno
+                // ("Bienestar socioemocional general / Fomentar la autorregulación")
+                // que no corresponde a la planeación. Deben ser coherentes entre sí.
+                socioemotionalScope: { type: Type.STRING },
+                socioemotionalMeta: { type: Type.STRING },
+                socioemotionalContent: { type: Type.STRING }
               },
               required: ["progressionJustification", "sociocognitiveLink"]
             },

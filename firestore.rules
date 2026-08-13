@@ -89,6 +89,12 @@ service cloud.firestore {
     // -------------------------------------------------------------------------
     //  5. PLANEACIONES (el docente es dueño de las suyas)
     // -------------------------------------------------------------------------
+    // Perfil docente: cómo da clase cada quien. Es privado — solo su dueño lo lee y escribe.
+    match /perfiles_docentes/{userId} {
+      allow read, write: if isAuthenticated() && request.auth.uid == userId;
+      allow read: if isSuperAdmin();
+    }
+
     match /planeaciones/{planId} {
       // Leer: cualquier docente autenticado (permite compartir dentro de la escuela)
       allow read: if isAuthenticated();

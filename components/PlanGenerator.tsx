@@ -429,7 +429,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     try {
       // PRESERVADO: Pasamos la apiKey manual (si existe) al servicio
       const generationStart = Date.now();
-      const plan = await generateLessonPlan(promptEstructurado, school, subject, apiKey);
+      const plan = await generateLessonPlan(promptEstructurado, school, subject, apiKey, user?.id);
       analyticsService.trackPlaneacionGenerada(subject.subjectName, (Date.now() - generationStart) / 1000);
 
       const finalPlan: LessonPlan = {
