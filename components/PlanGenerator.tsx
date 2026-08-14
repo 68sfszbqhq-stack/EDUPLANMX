@@ -4,6 +4,7 @@ import { useReactToPrint } from 'react-to-print';
 import { generateLessonPlan } from '../services/geminiService';
 import { analyticsService } from '../src/services/analyticsService';
 import { programasSEPService } from '../src/services/programasSEPService';
+import { programasLaboralesService } from '../src/services/programasLaboralesService';
 import { SchoolContext, SubjectContext, LessonPlan } from '../types';
 import { getStudentContextSummary } from '../src/services/studentStatsService';
 import { flujoContextoService } from '../src/services/flujoContextoService';
@@ -73,6 +74,23 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   };
   const [progresionesDisponibles, setProgresionesDisponibles] = useState<{ id: number, descripcion: string }[]>([]);
   const [selectedProgression, setSelectedProgression] = useState<string>('');
+
+  // Formación Laboral: la planeación se construye sobre un submódulo del programa
+  // oficial, no sobre una progresión. Se decide por la UAC seleccionada.
+  const programaLaboral = React.useMemo(
+    () => programasLaboralesService.buscarPorNombre(subject.subjectName),
+    [subject.subjectName]
+  );
+  const esLaboral = !!programaLaboral;
+  const submodulosLaborales = React.useMemo(
+    () => (esLaboral ? programasLaboralesService.submodulos(subject.subjectName) : []),
+    [esLaboral, subject.subjectName]
+  );
+  const [submoduloLaboralId, setSubmoduloLaboralId] = useState<string>('');
+  const submoduloElegido = React.useMemo(
+    () => (submoduloLaboralId ? programasLaboralesService.buscarSubmodulo(submoduloLaboralId) : null),
+    [submoduloLaboralId]
+  );
   const [specificTopic, setSpecificTopic] = useState('');
   const [numSessions, setNumSessions] = useState(1);
   const [sessionDuration, setSessionDuration] = useState(50);
@@ -252,7 +270,14 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   }, [user?.schoolId]);
 
   const handleGenerate = async () => {
-    if (!selectedProgression && !specificTopic) {
+    // En Formación Laboral la planeación se arma sobre la Actividad Clave del
+    // submódulo, así que sin submódulo no hay nada que desarrollar.
+    if (esLaboral) {
+      if (!submoduloLaboralId) {
+        setError("Elige el módulo y submódulo que vas a planear: la planeación se construye sobre su Actividad Clave oficial.");
+        return;
+      }
+    } else if (!selectedProgression && !specificTopic) {
       setError("Por favor selecciona una progresión o escribe un tema.");
       return;
     }
@@ -429,7 +454,9 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     try {
       // PRESERVADO: Pasamos la apiKey manual (si existe) al servicio
       const generationStart = Date.now();
-      const plan = await generateLessonPlan(promptEstructurado, school, subject, apiKey, user?.id);
+      const plan = await generateLessonPlan(
+        promptEstructurado, school, subject, apiKey, user?.id, submoduloLaboralId || undefined
+      );
       analyticsService.trackPlaneacionGenerada(subject.subjectName, (Date.now() - generationStart) / 1000);
 
       const finalPlan: LessonPlan = {
@@ -574,25 +601,92 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
               </div>
             )}
 
-            <select
-              value={selectedProgression}
-              onChange={(e) => setSelectedProgression(e.target.value)}
-              className="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-indigo-500 text-sm"
-            >
-              <option value="">-- Selecciona progresión oficial SEP --</option>
-              {progresionesDisponibles.map(p => (
-                <option key={p.id} value={p.descripcion}>
-                  {p.id}. {p.descripcion.substring(0, 120)}...
-                </option>
-              ))}
-            </select>
-            <input
-              type="text"
-              value={specificTopic}
-              onChange={(e) => setSpecificTopic(e.target.value)}
-              placeholder="O escribe un tema específico..."
-              className="w-full mt-2 p-3 rounded-xl border border-slate-200 text-sm"
-            />
+            {esLaboral ? (
+              /* FORMACIÓN LABORAL: se planea un submódulo, no una progresión.
+                 La Actividad Clave del programa oficial es el eje de la planeación. */
+              <>
+                <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 leading-relaxed">
+                  <span className="font-bold">🔧 Formación Laboral Básica en {programaLaboral!.nombre}.</span>{' '}
+                  Aquí no hay progresiones: la planeación se construye sobre la <strong>Actividad Clave</strong> del
+                  submódulo, tal como viene en el programa oficial de la DGB.
+                </div>
+
+                <select
+                  value={submoduloLaboralId}
+                  onChange={(e) => setSubmoduloLaboralId(e.target.value)}
+                  className="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-indigo-500 text-sm"
+                >
+                  <option value="">-- Elige el módulo y submódulo a planear --</option>
+                  {submodulosLaborales.map(s => (
+                    <option key={s.id} value={s.id}>
+                      Módulo {s.modulo.numero} · Submódulo {s.submodulo.numero} — {s.submodulo.nombre}
+                    </option>
+                  ))}
+                </select>
+
+                {submoduloElegido && (
+                  <div className="mt-2 p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-xs">
+                    <div className="flex flex-wrap gap-2">
+                      <span className="bg-slate-800 text-white px-2 py-0.5 rounded font-bold">
+                        Módulo {submoduloElegido.modulo.numero}: {submoduloElegido.modulo.nombre}
+                      </span>
+                      <span className="bg-white border border-slate-300 px-2 py-0.5 rounded text-slate-700">
+                        {submoduloElegido.submodulo.horasMediacionDocente} h con docente ·{' '}
+                        {submoduloElegido.submodulo.horasEstudioIndependiente} h independientes
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-slate-500 uppercase text-[10px]">
+                        Competencia Laboral Básica <span className="font-normal normal-case">(lo que la ATP llama Resultado de Aprendizaje)</span>
+                      </p>
+                      <p className="text-slate-800">{submoduloElegido.submodulo.competenciaLaboralBasica}</p>
+                    </div>
+                    <div>
+                      <p className="font-bold text-slate-500 uppercase text-[10px]">Actividad Clave oficial</p>
+                      <p className="text-slate-800 max-h-32 overflow-y-auto">{submoduloElegido.submodulo.actividadClave}</p>
+                    </div>
+                    {(() => {
+                      const conInstrumento = submoduloElegido.submodulo.evidencias.filter(
+                        e => e.indicadores.length > 0 || e.criterios.length > 0
+                      );
+                      return conInstrumento.length ? (
+                        <p className="text-emerald-700">
+                          ✓ Se usará el instrumento oficial del programa:{' '}
+                          {conInstrumento.map(e => e.nombre).join(', ')}
+                        </p>
+                      ) : (
+                        <p className="text-amber-700">
+                          ⚠ El instrumento de evaluación de este submódulo no se pudo leer del PDF oficial.
+                          La IA propondrá uno: <strong>cotéjalo con tu programa impreso antes de entregar.</strong>
+                        </p>
+                      );
+                    })()}
+                  </div>
+                )}
+              </>
+            ) : (
+              <>
+                <select
+                  value={selectedProgression}
+                  onChange={(e) => setSelectedProgression(e.target.value)}
+                  className="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-indigo-500 text-sm"
+                >
+                  <option value="">-- Selecciona progresión oficial SEP --</option>
+                  {progresionesDisponibles.map(p => (
+                    <option key={p.id} value={p.descripcion}>
+                      {p.id}. {p.descripcion.substring(0, 120)}...
+                    </option>
+                  ))}
+                </select>
+                <input
+                  type="text"
+                  value={specificTopic}
+                  onChange={(e) => setSpecificTopic(e.target.value)}
+                  placeholder="O escribe un tema específico..."
+                  className="w-full mt-2 p-3 rounded-xl border border-slate-200 text-sm"
+                />
+              </>
+            )}
           </div>
 
           {/* --- NUEVA SECCIÓN: DIAGNÓSTICO DE NECESIDAD (Actividad PDF) --- */}

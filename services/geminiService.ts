@@ -5,6 +5,8 @@ import { programasSEPService } from "../src/services/programasSEPService";
 import { perfilDocenteService } from "../src/services/perfilDocenteService";
 import { familiaDesdeCategoria } from "../data/vocabularioCurricular";
 import { PLAN_RESPONSE_SCHEMA, construirSystemInstruction } from "./planSchema";
+import { PLAN_LABORAL_RESPONSE_SCHEMA, construirSystemInstructionLaboral } from "./planSchemaLaboral";
+import { programasLaboralesService } from "../src/services/programasLaboralesService";
 
 // Se re-exportan para no romper a quien ya los importaba desde aquí.
 export { PLAN_RESPONSE_SCHEMA, construirSystemInstruction };
@@ -28,7 +30,13 @@ export const generateLessonPlan = async (
   school: SchoolContext,
   subject: SubjectContext,
   customApiKey?: string,
-  userId?: string
+  userId?: string,
+  /**
+   * Submódulo de Formación Laboral a planear (id de programasLaboralesService).
+   * Si viene, se usa el modelo curricular laboral en lugar del fundamental: son
+   * estructuras distintas y mezclarlas produce planeaciones que la ATP rechaza.
+   */
+  submoduloLaboralId?: string
 ): Promise<LessonPlan> => {
 
   // 1. La clave la pone el docente; no hay ninguna de respaldo (ver nota de arriba)
@@ -48,13 +56,29 @@ export const generateLessonPlan = async (
   const model = 'gemini-2.5-flash';
   console.log('🤖 Usando modelo Gemini (v2.5):', model);
 
+  // ¿Esta planeación es de Formación Laboral? Se decide por el submódulo elegido en el
+  // formulario y, si no vino, por el nombre de la UAC.
+  const ctxLaboral = submoduloLaboralId
+    ? programasLaboralesService.buscarSubmodulo(submoduloLaboralId)
+    : null;
+  const esLaboral = !!ctxLaboral || programasLaboralesService.esFormacionLaboral(subject.subjectName);
+
   const programasOficiales = programasSEPService.buscarPorMateria(subject.subjectName);
   // Solo tratamos como "oficial" un programa con progresiones verificadas de la DGB;
   // los borradores (esqueletos provisionales) no deben alimentar a la IA como currículo real.
   const programaOficial = programasOficiales.find(p => p.estado !== 'borrador') || null;
 
   let contextoOficial = "";
-  if (programaOficial) {
+  if (ctxLaboral) {
+    contextoOficial = programasLaboralesService.generarContextoIA(submoduloLaboralId!);
+  } else if (esLaboral) {
+    // Es laboral pero el docente no eligió submódulo: no hay actividad clave que
+    // desarrollar, así que se le pide que la elija en vez de inventarle una.
+    throw new Error(
+      `📋 "${subject.subjectName}" es de Formación Laboral. Elige el módulo y submódulo ` +
+      `que vas a planear: la planeación se construye sobre la Actividad Clave del programa oficial.`
+    );
+  } else if (programaOficial) {
     contextoOficial = programasSEPService.generarContextoIA(programaOficial.materia, programaOficial.semestre);
   } else {
     contextoOficial = "No se encontró programa oficial específico. Usar lineamientos generales del MCCEMS 2024.";
@@ -71,17 +95,25 @@ export const generateLessonPlan = async (
     console.warn('No se pudo cargar el perfil docente; se genera sin personalizar.', e);
   }
 
-  const systemInstruction = construirSystemInstruction({ contextoOficial, school, prompt, bloquePerfil });
+  const systemInstruction = ctxLaboral
+    ? construirSystemInstructionLaboral({ contextoOficial, school, prompt, bloquePerfil })
+    : construirSystemInstruction({ contextoOficial, school, prompt, bloquePerfil });
+
+  if (ctxLaboral) {
+    console.log(`🔧 Formación Laboral: ${ctxLaboral.programa.nombre} · Módulo ${ctxLaboral.modulo.numero} · Submódulo ${ctxLaboral.submodulo.numero}`);
+  }
 
   try {
     const response = await ai.models.generateContent({
       model,
-      contents: `Genera la planeación completa para ${subject.subjectName} basándote en el prompt estructurado. Respeta el número de sesiones solicitado.`,
+      contents: ctxLaboral
+        ? `Genera la planeación completa del submódulo "${ctxLaboral.submodulo.nombre}" desarrollando su Actividad Clave oficial. Respeta el número de sesiones solicitado.`
+        : `Genera la planeación completa para ${subject.subjectName} basándote en el prompt estructurado. Respeta el número de sesiones solicitado.`,
       config: {
         systemInstruction,
         responseMimeType: "application/json",
         maxOutputTokens: 16384,
-        responseSchema: PLAN_RESPONSE_SCHEMA
+        responseSchema: ctxLaboral ? PLAN_LABORAL_RESPONSE_SCHEMA : PLAN_RESPONSE_SCHEMA
       }
     });
 
@@ -92,7 +124,7 @@ export const generateLessonPlan = async (
       console.error("Error al procesar JSON (Posible respuesta trunca):", e);
       throw new Error("La planeación es muy extensa y se cortó. Intenta generar menos sesiones (ej. reducir a 3) o ser más específico.");
     }
-    return construirLessonPlan(parsedData, { prompt, model, subject, programaOficial });
+    return construirLessonPlan(parsedData, { prompt, model, subject, programaOficial, ctxLaboral });
 
   } catch (error: any) {
     console.error("Error Gemini:", error);
@@ -128,9 +160,12 @@ export const generateLessonPlan = async (
  */
 function construirLessonPlan(
   parsedData: any,
-  ctx: { prompt: string; model: string; subject: SubjectContext; programaOficial: any }
+  ctx: {
+    prompt: string; model: string; subject: SubjectContext; programaOficial: any;
+    ctxLaboral?: ReturnType<typeof programasLaboralesService.buscarSubmodulo>;
+  }
 ): LessonPlan {
-  const { prompt, model, subject, programaOficial } = ctx;
+  const { prompt, model, subject, programaOficial, ctxLaboral } = ctx;
 
     // --- LÓGICA DE NORMALIZACIÓN ---
     if (parsedData.sessions && Array.isArray(parsedData.sessions)) {
@@ -180,9 +215,17 @@ function construirLessonPlan(
     // La lista de cotejo pide "materiales, recursos Y referencias". Si el modelo no las
     // devuelve, citamos el programa oficial: es la fuente que el docente sí puede defender.
     if (!Array.isArray(parsedData.references) || parsedData.references.length === 0) {
-      parsedData.references = programaOficial
-        ? [`Programa de estudios oficial de ${programaOficial.materia} (DGB/SEP). ${programaOficial.url_fuente}`]
-        : ['Programa de estudios oficial de la UAC (DGB/SEP), MCCEMS.'];
+      if (ctxLaboral) {
+        parsedData.references = [
+          `Programa de Estudios de la Formación Laboral Básica en ${ctxLaboral.programa.nombre} ` +
+          `(DGB/SEP)${ctxLaboral.programa.clave ? `, clave ${ctxLaboral.programa.clave}` : ''}.` +
+          `${ctxLaboral.programa.urlFuente ? ` ${ctxLaboral.programa.urlFuente}` : ''}`,
+        ];
+      } else {
+        parsedData.references = programaOficial
+          ? [`Programa de estudios oficial de ${programaOficial.materia} (DGB/SEP). ${programaOficial.url_fuente}`]
+          : ['Programa de estudios oficial de la UAC (DGB/SEP), MCCEMS.'];
+      }
     }
 
     // --- NORMALIZACIÓN DE LA TABLA DE EVALUACIÓN ---
@@ -203,14 +246,57 @@ function construirLessonPlan(
     // aquí invalida la planeación entera.
     const familia = familiaDesdeCategoria(subject.mccemsCategory);
     const componente: 'fundamental' | 'ampliado' | 'laboral' =
-      familia === 'laboral' ? 'laboral' : 'fundamental';
+      ctxLaboral ? 'laboral' : (familia === 'laboral' ? 'laboral' : 'fundamental');
 
     parsedData.meta = {
       ...parsedData.meta,
       componente,
-      areaOrRecurso: subject.mccemsCategory || parsedData.meta?.areaOrRecurso || '',
+      areaOrRecurso: ctxLaboral
+        ? `Formación Laboral Básica en ${ctxLaboral.programa.nombre}`
+        : (subject.mccemsCategory || parsedData.meta?.areaOrRecurso || ''),
       modelo: (programaOficial?.modelo === '2025' ? '2025' : '2024'),
+      // El programa oficial da las horas por submódulo; no se le preguntan a la IA.
+      ...(ctxLaboral ? { hoursPerWeek: parsedData.meta?.hoursPerWeek } : {}),
     };
+
+    // --- FORMACIÓN LABORAL: LOS DATOS OFICIALES MANDAN ---
+    // Competencia, actividad clave, nombres y horas se copian del programa de la DGB,
+    // pisando lo que haya devuelto el modelo. Son el texto que la ATP coteja contra el
+    // programa impreso: si la IA lo reformula "para que suene mejor", ya no coincide.
+    if (ctxLaboral) {
+      const { programa, modulo, submodulo } = ctxLaboral;
+      const tieneInstrumentoOficial = submodulo.evidencias.some(
+        e => e.indicadores.length > 0 || e.criterios.length > 0
+      );
+
+      parsedData.laboral = {
+        ...parsedData.laboral,
+        programa: programa.nombre,
+        moduloNumero: modulo.numero,
+        moduloNombre: modulo.nombre,
+        submoduloNumero: submodulo.numero,
+        submoduloNombre: submodulo.nombre,
+        competenciaLaboralBasica: submodulo.competenciaLaboralBasica,
+        actividadClave: submodulo.actividadClave,
+        horasMediacionDocente: submodulo.horasMediacionDocente,
+        horasEstudioIndependiente: submodulo.horasEstudioIndependiente,
+        competenciasLaborales: parsedData.laboral?.competenciasLaborales || [],
+        contenidos: parsedData.laboral?.contenidos || [],
+        habilidadesVidaTrabajo: parsedData.laboral?.habilidadesVidaTrabajo || '',
+        desarrolloSostenible: parsedData.laboral?.desarrolloSostenible || '',
+        instrumentoOficial: tieneInstrumentoOficial,
+      };
+
+      // La lista de cotejo laboral no pide estudio independiente: se descarta para que
+      // no aparezca una sección que ahí no va.
+      delete parsedData.independentStudy;
+
+      // En el esquema laboral la estrategia de retroalimentación es un campo suelto;
+      // el documento la lee del mismo lugar en ambos componentes.
+      if (parsedData.feedbackStrategy) {
+        parsedData.independentStudy = { feedbackStrategy: parsedData.feedbackStrategy };
+      }
+    }
 
     // Compatibilidad con campos legacy
     const lessonPlan: LessonPlan = {

@@ -237,16 +237,57 @@ export const PedagogicalAuditor: React.FC<PedagogicalAuditorProps> = ({ plan, su
             'Faltan datos de identificación (componente de formación, área o recurso, semestre)',
             'Genera de nuevo desde el formulario: estos datos salen del programa oficial, no se escriben a mano.');
 
+        // Formación Laboral y Currículum Fundamental se revisan con listas distintas:
+        // la laboral pide Actividad Clave y competencias laborales donde la otra pide
+        // progresiones y aprendizajes de trayectoria.
+        const esLaboral = plan.meta?.componente === 'laboral';
         const ce = plan.curricularElements;
-        addCheck('cotejo', 'Contenidos a abordar', !!ce?.contents?.length,
-            `${ce?.contents?.length} contenidos declarados`,
-            'No se especifican los contenidos que se abordan',
-            'La lista pide los contenidos derivados del análisis de las progresiones y las metas.');
+        const lab = plan.laboral;
 
-        addCheck('cotejo', 'Aprendizajes de trayectoria', !!ce?.trajectoryLearning?.length,
-            'Se declaran los aprendizajes de trayectoria',
-            'No se declaran aprendizajes de trayectoria',
-            'Se toman del programa oficial de la UAC. Si no vienen ahí, captúralos a mano antes de entregar.');
+        if (esLaboral) {
+            addCheck('cotejo', 'Actividad Clave', !!lab?.actividadClave?.trim(),
+                'Se declara la Actividad Clave del programa oficial',
+                'Falta la Actividad Clave',
+                'Es el eje de la planeación laboral. Elige el submódulo en el formulario para que se copie del programa oficial.',
+                true);
+
+            addCheck('cotejo', 'Resultado de Aprendizaje (Competencia Laboral Básica)',
+                !!lab?.competenciaLaboralBasica?.trim(),
+                'Se declara la Competencia Laboral Básica',
+                'Falta la Competencia Laboral Básica',
+                'Se copia literal del programa oficial: es el texto que la ATP coteja.',
+                true);
+
+            addCheck('cotejo', 'Competencias laborales', !!lab?.competenciasLaborales?.length,
+                `${lab?.competenciasLaborales?.length} competencias laborales declaradas`,
+                'No se declaran las competencias laborales que se desarrollan',
+                'La lista de cotejo laboral las pide junto a la Actividad Clave y el Resultado de Aprendizaje.');
+
+            addCheck('cotejo', 'Contenidos a abordar', !!lab?.contenidos?.length,
+                `${lab?.contenidos?.length} contenidos declarados`,
+                'No se especifican los contenidos que se abordan',
+                'Se derivan del análisis de las actividades para el desarrollo de la competencia laboral.');
+
+            addCheck('cotejo', 'Habilidades para la Vida y el Trabajo', !!lab?.habilidadesVidaTrabajo?.trim(),
+                'Declara el vínculo con Habilidades para la Vida y el Trabajo',
+                'Falta el vínculo con Habilidades para la Vida y el Trabajo',
+                'La transversalidad del componente laboral lo pide explícitamente.');
+
+            addCheck('cotejo', 'Educación para el Desarrollo Sostenible', !!lab?.desarrolloSostenible?.trim(),
+                'Declara el vínculo con conceptos de desarrollo sostenible',
+                'Falta el vínculo con la educación para el desarrollo sostenible',
+                'La lista de cotejo laboral lo pide dentro de la transversalidad curricular.');
+        } else {
+            addCheck('cotejo', 'Contenidos a abordar', !!ce?.contents?.length,
+                `${ce?.contents?.length} contenidos declarados`,
+                'No se especifican los contenidos que se abordan',
+                'La lista pide los contenidos derivados del análisis de las progresiones y las metas.');
+
+            addCheck('cotejo', 'Aprendizajes de trayectoria', !!ce?.trajectoryLearning?.length,
+                'Se declaran los aprendizajes de trayectoria',
+                'No se declaran aprendizajes de trayectoria',
+                'Se toman del programa oficial de la UAC. Si no vienen ahí, captúralos a mano antes de entregar.');
+        }
 
         if (plan.paec?.isLinked) {
             addCheck('cotejo', 'Nombre del PEC', !!plan.paec.pecName?.trim(),
@@ -265,10 +306,13 @@ export const PedagogicalAuditor: React.FC<PedagogicalAuditorProps> = ({ plan, su
             'No se declara la transversalidad',
             'Indica brevemente cómo se vincula con otras UAC, con el PEC y con el ámbito socioemocional.');
 
-        addCheck('cotejo', 'Estudio independiente', !!plan.independentStudy?.activities?.trim(),
-            'Declara actividades de estudio independiente',
-            'No hay actividades de estudio independiente',
-            'Deben corresponder al tiempo semanal (HI) de la estructura del programa.');
+        // La lista de cotejo de Formación Laboral no pide estudio independiente.
+        if (!esLaboral) {
+            addCheck('cotejo', 'Estudio independiente', !!plan.independentStudy?.activities?.trim(),
+                'Declara actividades de estudio independiente',
+                'No hay actividades de estudio independiente',
+                'Deben corresponder al tiempo semanal (HI) de la estructura del programa.');
+        }
 
         // Debe decir DOS cosas: si es individual o grupal, y cuándo.
         const estrategia = (plan.independentStudy?.feedbackStrategy || '').toLowerCase();

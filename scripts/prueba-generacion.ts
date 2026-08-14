@@ -10,8 +10,9 @@
  *   2. que vengan los campos que exige la lista de cotejo de la ATP
  *
  * USO
- *   npm run prueba:generacion                 # 5 sesiones (el caso pesado)
+ *   npm run prueba:generacion                 # fundamental, 5 sesiones (caso pesado)
  *   npm run prueba:generacion -- 3            # con otro número de sesiones
+ *   npm run prueba:generacion -- 3 laboral    # Formación Laboral
  *
  * La clave sale de VITE_API_KEY en .env y nunca se imprime.
  * Consume cuota de la API: no lo corras en bucle.
@@ -21,6 +22,8 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { GoogleGenAI } from '@google/genai';
 import { PLAN_RESPONSE_SCHEMA, construirSystemInstruction } from '../services/planSchema';
+import { PLAN_LABORAL_RESPONSE_SCHEMA, construirSystemInstructionLaboral } from '../services/planSchemaLaboral';
+import type { ProgramaLaboral } from '../types/formacionLaboral';
 
 const raiz = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -37,20 +40,35 @@ function leerApiKey(): string {
     return clave;
 }
 
-/** Campos que la lista de cotejo de la ATP revisa y que el modelo debe llenar. */
-const CAMPOS_COTEJO: Array<{ ruta: string; etiqueta: string }> = [
-    { ruta: 'curricularElements.contents', etiqueta: 'Contenidos a abordar' },
-    { ruta: 'curricularElements.trajectoryLearning', etiqueta: 'Aprendizajes de trayectoria' },
-    { ruta: 'curricularElements.learningGoals', etiqueta: 'Metas de aprendizaje' },
+/** Campos que la lista de cotejo de la ATP revisa, según el componente de formación. */
+const CAMPOS_COMUNES: Array<{ ruta: string; etiqueta: string }> = [
     { ruta: 'products', etiqueta: 'Productos a realizar' },
     { ruta: 'collaborativeWork', etiqueta: 'Trabajo colaborativo' },
     { ruta: 'references', etiqueta: 'Referencias' },
     { ruta: 'resources', etiqueta: 'Materiales y recursos' },
-    { ruta: 'independentStudy.feedbackStrategy', etiqueta: 'Retroalimentación (modalidad y momento)' },
-    { ruta: 'independentStudy.activities', etiqueta: 'Estudio independiente' },
     { ruta: 'fundamento.transversalityLink', etiqueta: 'Transversalidad' },
     { ruta: 'evaluationTable', etiqueta: 'Tabla de evaluación' },
     { ruta: 'feedbackCycle.howToGetThere', etiqueta: 'Ciclo de retroalimentación' },
+];
+
+const CAMPOS_FUNDAMENTAL = [
+    ...CAMPOS_COMUNES,
+    { ruta: 'curricularElements.contents', etiqueta: 'Contenidos a abordar' },
+    { ruta: 'curricularElements.trajectoryLearning', etiqueta: 'Aprendizajes de trayectoria' },
+    { ruta: 'curricularElements.learningGoals', etiqueta: 'Metas de aprendizaje' },
+    { ruta: 'independentStudy.feedbackStrategy', etiqueta: 'Retroalimentación (modalidad y momento)' },
+    { ruta: 'independentStudy.activities', etiqueta: 'Estudio independiente' },
+];
+
+const CAMPOS_LABORAL = [
+    ...CAMPOS_COMUNES,
+    { ruta: 'laboral.competenciaLaboralBasica', etiqueta: 'Competencia Laboral Básica (Resultado de Aprendizaje)' },
+    { ruta: 'laboral.actividadClave', etiqueta: 'Actividad Clave' },
+    { ruta: 'laboral.competenciasLaborales', etiqueta: 'Competencias laborales' },
+    { ruta: 'laboral.contenidos', etiqueta: 'Contenidos a abordar' },
+    { ruta: 'laboral.habilidadesVidaTrabajo', etiqueta: 'Habilidades para la Vida y el Trabajo' },
+    { ruta: 'laboral.desarrolloSostenible', etiqueta: 'Educación para el Desarrollo Sostenible' },
+    { ruta: 'feedbackStrategy', etiqueta: 'Retroalimentación (modalidad y momento)' },
 ];
 
 const valorEn = (obj: any, ruta: string) =>
@@ -59,13 +77,40 @@ const valorEn = (obj: any, ruta: string) =>
 const tieneContenido = (v: any) =>
     Array.isArray(v) ? v.length > 0 : typeof v === 'string' ? v.trim().length > 0 : v != null;
 
+/** Contexto oficial de un submódulo laboral, igual que el que arma el servicio. */
+function contextoLaboralDePrueba(): { contexto: string; uac: string; submodulo: string } {
+    const programas: ProgramaLaboral[] = JSON.parse(
+        readFileSync(resolve(raiz, 'data/programas_laborales.json'), 'utf8')
+    );
+    const programa = programas.find(p => p.calidadExtraccion === 'BUENA') || programas[0];
+    const modulo = programa.modulos[0];
+    const submodulo = modulo.submodulos[0];
+
+    const partes = [
+        `PROGRAMA OFICIAL: Formación Laboral Básica en ${programa.nombre}`,
+        `MÓDULO ${modulo.numero}: ${modulo.nombre}`,
+        `  Propósito del módulo: ${modulo.proposito}`,
+        `SUBMÓDULO ${submodulo.numero}: ${submodulo.nombre}`,
+        `  Horas: ${submodulo.horasMediacionDocente} de mediación docente, ${submodulo.horasEstudioIndependiente} de estudio independiente.`,
+        `COMPETENCIA LABORAL BÁSICA A DESARROLLAR (texto oficial, no lo reformules):`,
+        `  "${submodulo.competenciaLaboralBasica}"`,
+        `ACTIVIDAD CLAVE (texto oficial, la planeación debe desarrollarla, no sustituirla):`,
+        `  "${submodulo.actividadClave}"`,
+    ];
+    return { contexto: partes.join('\n'), uac: programa.nombre, submodulo: submodulo.nombre };
+}
+
 async function main() {
     const sesiones = Number(process.argv[2]) || 5;
+    const esLaboral = (process.argv[3] || '').toLowerCase().startsWith('lab');
     const ai = new GoogleGenAI({ apiKey: leerApiKey() });
     const model = 'gemini-2.5-flash';
 
+    const lab = esLaboral ? contextoLaboralDePrueba() : null;
+    const uac = lab ? lab.uac : 'Humanidades I';
+
     const prompt = `
-      Genera una planeación didáctica para "Humanidades I" (Semestre 1).
+      Genera una planeación didáctica para "${uac}"${lab ? '' : ' (Semestre 1)'}.
       CONFIGURACIÓN TÉCNICA:
       - Sesiones: ${sesiones} (Duración estricta: 50 min por sesión).
       - Estrategia Base: "Aprendizaje Basado en Proyectos"
@@ -73,26 +118,37 @@ async function main() {
       La planeación se vincula al Proyecto Escolar Comunitario del plantel.
     `;
 
-    const systemInstruction = construirSystemInstruction({
-        contextoOficial:
-            'Humanidades I. Progresión 1: Explora a partir de la pregunta "¿Por qué estoy aquí?" ' +
-            'para acercarse a los saberes, recursos, prácticas y aplicaciones de las humanidades.',
-        school: { schoolName: 'Bachillerato General Oficial de prueba', vision: 'Formación integral con sentido comunitario' },
-        prompt,
-    });
+    const escuela = {
+        schoolName: 'Bachillerato General Oficial de prueba',
+        vision: 'Formación integral con sentido comunitario',
+    };
 
+    const systemInstruction = lab
+        ? construirSystemInstructionLaboral({ contextoOficial: lab.contexto, school: escuela, prompt })
+        : construirSystemInstruction({
+            contextoOficial:
+                'Humanidades I. Progresión 1: Explora a partir de la pregunta "¿Por qué estoy aquí?" ' +
+                'para acercarse a los saberes, recursos, prácticas y aplicaciones de las humanidades.',
+            school: escuela,
+            prompt,
+        });
+
+    console.log(`Componente: ${lab ? 'FORMACIÓN LABORAL' : 'Currículum Fundamental'}`);
+    if (lab) console.log(`UAC: ${lab.uac} · Submódulo: ${lab.submodulo}`);
     console.log(`Generando planeación de ${sesiones} sesiones…`);
     console.log(`Tamaño del prompt de sistema: ${systemInstruction.length} caracteres\n`);
 
     const inicio = Date.now();
     const response = await ai.models.generateContent({
         model,
-        contents: 'Genera la planeación completa para Humanidades I basándote en el prompt estructurado. Respeta el número de sesiones solicitado.',
+        contents: lab
+            ? `Genera la planeación completa del submódulo "${lab.submodulo}" desarrollando su Actividad Clave oficial. Respeta el número de sesiones solicitado.`
+            : 'Genera la planeación completa para Humanidades I basándote en el prompt estructurado. Respeta el número de sesiones solicitado.',
         config: {
             systemInstruction,
             responseMimeType: 'application/json',
             maxOutputTokens: 16384,
-            responseSchema: PLAN_RESPONSE_SCHEMA as any,
+            responseSchema: (lab ? PLAN_LABORAL_RESPONSE_SCHEMA : PLAN_RESPONSE_SCHEMA) as any,
         },
     });
     const segundos = ((Date.now() - inicio) / 1000).toFixed(1);
@@ -126,7 +182,7 @@ async function main() {
     // 2) ¿Trae lo que revisa la ATP?
     console.log('Campos de la lista de cotejo:');
     const faltantes: string[] = [];
-    for (const { ruta, etiqueta } of CAMPOS_COTEJO) {
+    for (const { ruta, etiqueta } of (lab ? CAMPOS_LABORAL : CAMPOS_FUNDAMENTAL)) {
         const ok = tieneContenido(valorEn(plan, ruta));
         console.log(`  ${ok ? 'OK  ' : 'FALTA'} ${etiqueta}`);
         if (!ok) faltantes.push(etiqueta);
@@ -147,7 +203,7 @@ async function main() {
     console.log(`  ${momentosOk ? 'OK  ' : 'FALTA'} Todos los renglones declaran momento`);
     console.log(`  ${agentesOk ? 'OK  ' : 'FALTA'} Todos los renglones declaran agente`);
 
-    const estrategia = (plan.independentStudy?.feedbackStrategy || '').toLowerCase();
+    const estrategia = (plan.independentStudy?.feedbackStrategy || plan.feedbackStrategy || '').toLowerCase();
     const modalidadOk = /individual|grupal|grupo|equipo|pares/.test(estrategia);
     const momentoOk = /sesión|sesion|clase|cierre|inicio|semana|antes|después|despues|al final|durante/.test(estrategia);
     console.log(`  ${modalidadOk && momentoOk ? 'OK  ' : 'FALTA'} La retroalimentación dice modalidad y momento`);

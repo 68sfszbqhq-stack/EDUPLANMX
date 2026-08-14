@@ -89,6 +89,34 @@ export interface LessonPlan {
     pecProducts?: string[];
   };
 
+  // 2b. Elementos curriculares de FORMACIÓN LABORAL
+  // Van aparte a propósito: es otro modelo curricular, no una variante del fundamental.
+  // Cuando meta.componente === 'laboral' se llena esto y NO curricularElements.
+  laboral?: {
+    programa: string;        // "Asistencia Infantil"
+    moduloNumero: number;
+    moduloNombre: string;
+    submoduloNumero: number;
+    submoduloNombre: string;
+    /** Texto oficial. La ATP lo pide como "Resultado de Aprendizaje". */
+    competenciaLaboralBasica: string;
+    /** Texto oficial del programa: la planeación lo desarrolla, no lo sustituye. */
+    actividadClave: string;
+    /** Competencias laborales que se desarrollan en la secuencia */
+    competenciasLaborales: string[];
+    horasMediacionDocente: number;
+    horasEstudioIndependiente: number;
+    /** Contenidos derivados del análisis de las actividades de la competencia laboral */
+    contenidos: string[];
+    /** Transversalidad propia del componente laboral (la lista de cotejo laboral la
+     *  pide además de la vinculación con otras UAC y el PEC) */
+    habilidadesVidaTrabajo: string;
+    desarrolloSostenible: string;
+    /** Si el instrumento salió del programa oficial o lo propuso la IA. Se imprime,
+     *  para que el docente sepa cuál debe cotejar contra el programa impreso. */
+    instrumentoOficial?: boolean;
+  };
+
   // 3b. Productos y trabajo colaborativo (dos puntos separados de la lista de cotejo)
   /** Lista consolidada de productos/evidencias que elabora el estudiantado */
   products?: string[];

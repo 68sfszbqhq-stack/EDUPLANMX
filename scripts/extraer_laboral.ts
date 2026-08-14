@@ -538,6 +538,19 @@ async function main() {
 
     writeFileSync(resolve(DIR_SALIDA, '_reporte.md'), lineas.join('\n'), 'utf8');
 
+    // Consolidado que consume la app. Se deja junto a programas_sep.json para que el
+    // servicio lo importe igual que los del Currículum Fundamental.
+    if (!filtro) {
+        writeFileSync(
+            resolve(raiz, 'data/programas_laborales.json'),
+            JSON.stringify(resultados, null, 1),
+            'utf8'
+        );
+        console.log('Consolidado en data/programas_laborales.json');
+    } else {
+        console.log('(Con filtro no se regenera el consolidado; corre sin filtro para actualizarlo.)');
+    }
+
     const buenas = resultados.filter(p => p.calidadExtraccion === 'BUENA').length;
     console.log(`\n${buenas} de ${resultados.length} con extracción BUENA.`);
     console.log(`Salida en data/extraccion/laboral/`);
