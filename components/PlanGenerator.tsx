@@ -1,6 +1,9 @@
+import { listarFuentes } from '../src/features/cuaderno/storage';
+import { recuperarContexto } from '../src/features/cuaderno/model';
 import React, { useState, useEffect, useRef } from 'react';
 import { Sparkles, Loader2, Save, Send, Copy, Download, CheckCircle2, Calendar, BookOpen, Clock, List, Target, Brain, Layers, Eye, FileText, User, Users, Table as TableIcon, ExternalLink, ShieldCheck } from 'lucide-react';
 import { useReactToPrint } from 'react-to-print';
+import ContextoCuadernoPlan, { SeleccionCuadernoPlan } from './ContextoCuadernoPlan';
 import { generateLessonPlan } from '../services/geminiService';
 import { analyticsService } from '../src/services/analyticsService';
 import { programasSEPService } from '../src/services/programasSEPService';
@@ -48,6 +51,7 @@ Aquí está el CSV:
 
 const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherName, onSave, onNavigate }) => {
   const { user } = useAuth();
+  const [cuaderno, setCuaderno] = useState<SeleccionCuadernoPlan | null>(null);
 
   // Contexto capturado en el Flujo de Contextualización (panel "flujo").
   // Se lee al montar: si el docente lo edita, al volver aquí se recarga.
@@ -270,6 +274,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   }, [user?.schoolId]);
 
   const handleGenerate = async () => {
+    if (cuaderno && !cuaderno.ready) { setError('Completa el grupo, ciclo y carga las fuentes del cuaderno antes de generar.'); return; }
     // En Formación Laboral la planeación se arma sobre la Actividad Clave del
     // submódulo, así que sin submódulo no hay nada que desarrollar.
     if (esLaboral) {
@@ -392,7 +397,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     // Construcción de instrucciones condicionales
     const sectionsInstructions = `
       SECCIONES REQUERIDAS:
-      ${includeSections.paecLinks ? '- VINCULACIÓN PAEC: Obligatoria.' : '- VINCULACIÓN PAEC: Omitir o reducir.'}
+      ${includeSections.paecLinks ? '- VINCULACIÓN PAEC: Sólo con proyecto acordado y pertinente; si falta, marcar pendiente, sin inventar aprobación.' : '- VINCULACIÓN PAEC: Omitir o reducir.'}
       ${includeSections.resourcesList ? '- RECURSOS: Generar lista detallada.' : ''}
       ${includeSections.socioemotional ? '- SOCIOEMOCIONAL: Incluir desglose completo (Ámbito, Meta, Contenidos).' : '- SOCIOEMOCIONAL: Solo mención breve.'}
       ${includeSections.homework ? '- ESTUDIO INDEPENDIENTE: Incluir tarea con tiempo y retroalimentación.' : '- ESTUDIO INDEPENDIENTE: No asignar tarea.'}
@@ -454,8 +459,15 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     try {
       // PRESERVADO: Pasamos la apiKey manual (si existe) al servicio
       const generationStart = Date.now();
+      let contextoActual = cuaderno?.context;
+      if (cuaderno) {
+        const schoolId = user?.schoolId || (user?.rol === 'guest' ? 'demo' : '');
+        const fuentes = await listarFuentes({ schoolId, userId: user?.id || '', mode: cuaderno.mode });
+        contextoActual = recuperarContexto(fuentes, { schoolId, cycle: school.cycle, group: cuaderno.group, subject: subject.subjectName, date: startDate || new Date().toLocaleDateString('en-CA') }, specificTopic || selectedProgression);
+        if (!contextoActual.fragments.length) throw new Error('No hay fuentes revisadas aplicables al grupo, ciclo y fecha. Revisa el cuaderno o desactiva su uso.');
+      }
       const plan = await generateLessonPlan(
-        promptEstructurado, school, subject, apiKey, user?.id, submoduloLaboralId || undefined
+        promptEstructurado, school, subject, apiKey, user?.id, submoduloLaboralId || undefined, contextoActual
       );
       analyticsService.trackPlaneacionGenerada(subject.subjectName, (Date.now() - generationStart) / 1000);
 
@@ -464,9 +476,9 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
         meta: {
           ...plan.meta,
           teacher: teacherName || plan.meta?.teacher || '',
-          cycle: plan.meta?.cycle || '2025-2026',
+          cycle: school.cycle || plan.meta?.cycle || '',
           period: plan.meta?.period || 'Semestral',
-          gradeGroup: plan.meta?.gradeGroup || 'General',
+          gradeGroup: cuaderno?.group || plan.meta?.gradeGroup || 'General',
           // El semestre lo sabe el formulario (viene del programa oficial), no la IA.
           // La lista de cotejo lo pide como dato separado del grupo.
           semester: semestre ?? plan.meta?.semester,
@@ -526,6 +538,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
 
   return (
     <div className="space-y-8 pb-20">
+      <div className="no-print"><ContextoCuadernoPlan cycle={school.cycle} subject={subject.subjectName} topic={specificTopic || selectedProgression} date={startDate} onChange={setCuaderno} onOpen={() => onNavigate?.('cuaderno')} /></div>
 
       {/* --- CUESTIONARIO CONFIGURADOR --- */}
       <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm no-print">
@@ -535,6 +548,15 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
         </h3>
 
         {/* 0. API KEY DEL DOCENTE — obligatoria: la app no incrusta ninguna clave */}
+        {import.meta.env.VITE_MOTOR_IA === 'terminal' ? (
+          <div className="mb-6 p-4 rounded-xl border bg-violet-50 border-violet-200 text-sm text-violet-900 flex items-start gap-2">
+            <Sparkles className="w-4 h-4 mt-0.5 flex-shrink-0" />
+            <span>
+              <b>Versión 2:</b> la planeación la genera <b>Claude desde la terminal de esta Mac</b>, con tu suscripción.
+              No necesitas clave de Gemini. Tarda de 1 a 5 minutos y se respalda sola en <span className="font-mono">planeaciones-generadas/</span>.
+            </span>
+          </div>
+        ) : (
         <div className={`mb-6 p-4 rounded-xl border ${apiKey.trim()
           ? 'bg-indigo-50 border-indigo-100'
           : 'bg-amber-50 border-amber-300'}`}>
@@ -575,6 +597,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             </span>
           </p>
         </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 
@@ -1118,7 +1141,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             />
           </div>
           <p className="text-[11px] text-indigo-400 mt-2 text-right">
-            Esto suele tardar entre 20 y 40 segundos ({loadingSeconds}s)
+            {import.meta.env.VITE_MOTOR_IA === 'terminal' ? 'Con Claude por terminal tarda de 1 a 5 minutos' : 'Esto suele tardar entre 20 y 40 segundos'} ({loadingSeconds}s)
           </p>
         </div>
       ) : (

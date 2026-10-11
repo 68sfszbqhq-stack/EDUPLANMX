@@ -87,6 +87,10 @@ export function construirSystemInstruction(args: {
         su nombre en "paec.pecName" y en "paec.pecProducts" los productos con que el
         estudiantado evidencia su aprendizaje DENTRO del PEC (son distintos de los
         productos de la secuencia).
+    21. FORMATO DEL PLANTEL — en cada momento de cada sesión escribe en "technique" la
+        técnica didáctica en 2 a 5 palabras (ej. "Lluvia de ideas", "Rompecabezas",
+        "Debate", "Análisis de caso"). Llena "curricularElements.centralConcept" con
+        el concepto central de la secuencia en una frase.
 
     INFORMACIÓN OFICIAL: ${contextoOficial.substring(0, 800)}...
     CONTEXTO ESCUELA: ${school.schoolName}, ${school.vision}.
@@ -140,7 +144,8 @@ export const PLAN_RESPONSE_SCHEMA = {
                 subcategories: { type: Type.ARRAY, items: { type: Type.STRING } },
                 trajectoryLearning: { type: Type.ARRAY, items: { type: Type.STRING } },
                 contents: { type: Type.ARRAY, items: { type: Type.STRING } },
-                uacSpecificElements: { type: Type.STRING }
+                uacSpecificElements: { type: Type.STRING },
+                centralConcept: { type: Type.STRING }
               },
               required: ["progression", "learningGoals", "categories", "contents", "trajectoryLearning"]
             },
@@ -196,9 +201,9 @@ export const PLAN_RESPONSE_SCHEMA = {
                   sequence: {
                     type: Type.OBJECT,
                     properties: {
-                      opening: { type: Type.OBJECT, properties: { activity: { type: Type.STRING }, studentActivity: { type: Type.STRING }, time: { type: Type.STRING }, evidence: { type: Type.STRING } } },
-                      development: { type: Type.OBJECT, properties: { activity: { type: Type.STRING }, studentActivity: { type: Type.STRING }, time: { type: Type.STRING }, evidence: { type: Type.STRING } } },
-                      closing: { type: Type.OBJECT, properties: { activity: { type: Type.STRING }, studentActivity: { type: Type.STRING }, time: { type: Type.STRING }, evidence: { type: Type.STRING } } }
+                      opening: { type: Type.OBJECT, properties: { activity: { type: Type.STRING }, studentActivity: { type: Type.STRING }, time: { type: Type.STRING }, evidence: { type: Type.STRING }, technique: { type: Type.STRING } } },
+                      development: { type: Type.OBJECT, properties: { activity: { type: Type.STRING }, studentActivity: { type: Type.STRING }, time: { type: Type.STRING }, evidence: { type: Type.STRING }, technique: { type: Type.STRING } } },
+                      closing: { type: Type.OBJECT, properties: { activity: { type: Type.STRING }, studentActivity: { type: Type.STRING }, time: { type: Type.STRING }, evidence: { type: Type.STRING }, technique: { type: Type.STRING } } }
                     },
                     required: ["opening", "development", "closing"]
                   },

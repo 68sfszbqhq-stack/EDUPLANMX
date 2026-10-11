@@ -28,3 +28,8 @@ backups/
 
 # Temporales de Microsoft Office
 ~$*
+
+# Versión 2: respaldos locales de planeaciones generadas por la IA de la terminal
+planeaciones-generadas/
+firestore-debug.log
+*-debug.log

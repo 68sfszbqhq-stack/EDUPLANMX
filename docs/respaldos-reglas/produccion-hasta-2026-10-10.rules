@@ -1,0 +1,171 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // -------------------------------------------------------------------------
+    //  FUNCIONES DE APOYO (HELPERS)
+    // -------------------------------------------------------------------------
+
+    // Verifica si el usuario ha iniciado sesión
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Obtiene el documento del usuario actual desde la colección 'users'
+    // IMPORTANTE: Esto consume 1 lectura por cada evaluación de regla.
+    // Solo usarla donde sea indispensable (plan Spark).
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    // Verifica si el usuario es SUPER ADMIN leyendo su documento en 'users'
+    function isSuperAdmin() {
+      return isAuthenticated() && getUserData().rol == 'superadmin';
+    }
+
+    // Verifica si el documento pertenece al usuario actual (gratis, no consume lecturas)
+    function isOwner() {
+      return isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+
+    // -------------------------------------------------------------------------
+    //  1. USUARIOS
+    // -------------------------------------------------------------------------
+    match /users/{userId} {
+      // Regla de Oro: un usuario SIEMPRE puede leer/escribir su propio perfil
+      allow read, create, update: if isAuthenticated() && request.auth.uid == userId;
+
+      // SuperAdmin: gestión total de usuarios
+      allow read, write: if isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  2. ESCUELAS
+    // -------------------------------------------------------------------------
+    match /schools/{schoolId} {
+      // Lectura: PÚBLICA. La página pública /registro busca el plantel por CCT
+      // para ligar al alumno a su escuela (sin sesión iniciada). Los datos de una
+      // escuela (nombre, CCT, municipio) no son personales ni sensibles; los datos
+      // de menores viven en /alumnos, que sí está protegido por escuela.
+      allow read: if true;
+
+      // Crear/actualizar: cualquier autenticado
+      // (el onboarding crea escuelas y actualiza estadísticas al unirse un docente)
+      allow create, update: if isAuthenticated();
+
+      // Borrar: solo SuperAdmin
+      allow delete: if isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  3. ALUMNOS (datos sensibles de menores: CURP, teléfonos, situación familiar)
+    // -------------------------------------------------------------------------
+    match /alumnos/{alumnoId} {
+      // Crear: PÚBLICO — la página /registro la llenan alumnos sin cuenta.
+      // Se exige schoolId para que ningún expediente nazca huérfano: sin dueño,
+      // el registro no pertenece a ninguna escuela y nadie puede resguardarlo.
+      allow create: if request.resource.data.schoolId is string
+                    && request.resource.data.schoolId.size() > 0;
+
+      // Leer/editar/borrar: SOLO personal de la misma escuela.
+      //
+      // Son datos personales de menores (CURP, teléfonos, situación familiar), así
+      // que el aislamiento no puede depender de que el frontend recuerde filtrar.
+      // Con esta regla, Firestore RECHAZA cualquier consulta a /alumnos que no
+      // venga acotada con where('schoolId','==', <la escuela del usuario>).
+      allow read, update, delete: if isSuperAdmin()
+                                  || (isAuthenticated()
+                                      && resource.data.schoolId == getUserData().schoolId);
+    }
+
+    // -------------------------------------------------------------------------
+    //  4. CUESTIONARIOS SOCIOEDUCATIVOS (mismo criterio que alumnos)
+    // -------------------------------------------------------------------------
+    match /cuestionariosSocioEducativos/{cuestionarioId} {
+      allow create: if true;
+      allow read, update, delete: if isAuthenticated();
+    }
+
+    // -------------------------------------------------------------------------
+    //  5. PLANEACIONES (el docente es dueño de las suyas)
+    // -------------------------------------------------------------------------
+    match /planeaciones/{planId} {
+      // Leer: cualquier docente autenticado (permite compartir dentro de la escuela)
+      allow read: if isAuthenticated();
+
+      // Crear: cualquier autenticado
+      allow create: if isAuthenticated();
+
+      // Editar/borrar: el dueño de la planeación, o SuperAdmin
+      allow update, delete: if isOwner() || isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  6. FICHAS 12 (taller reflexivo personal del docente)
+    // -------------------------------------------------------------------------
+    match /fichas12/{fichaId} {
+      allow read, create: if isAuthenticated();
+      allow update, delete: if isOwner() || isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  7. GESTIÓN DE USUARIOS (panel de administración)
+    // -------------------------------------------------------------------------
+    // OJO: colección 'usuarios' (con o) — distinta de 'users' (perfiles de auth).
+    // La consultan las asignaciones para resolver el nombre del maestro, por eso
+    // la lectura es para cualquier autenticado; alta/edición/baja, solo SuperAdmin.
+    match /usuarios/{usuarioId} {
+      allow read: if isAuthenticated();
+      allow write: if isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  8. CATÁLOGO E INSUMOS INSTITUCIONALES (no son datos personales de menores)
+    // -------------------------------------------------------------------------
+    // Materias, grupos, asignaciones de materia, diagnósticos de grupo y la
+    // Planeación de la Mejora Continua. Datos operativos del plantel: cualquier
+    // docente autenticado los usa. No hay lectura pública.
+    match /materias/{id}            { allow read, write: if isAuthenticated(); }
+    match /grupos/{id}              { allow read, write: if isAuthenticated(); }
+    match /asignaciones/{id}        { allow read, write: if isAuthenticated(); }
+    match /diagnosticos_grupo/{id}  { allow read, write: if isAuthenticated(); }
+    match /pmc/{id}                 { allow read, write: if isAuthenticated(); }
+    match /pmc_diagnosis/{id}       { allow read, write: if isAuthenticated(); }
+    match /pmc_metas/{id}           { allow read, write: if isAuthenticated(); }
+
+    // -------------------------------------------------------------------------
+    //  9. HERRAMIENTAS GENERADAS (historial personal de cada docente)
+    // -------------------------------------------------------------------------
+    // Cada documento lleva userId; la app lee filtrando por él. Editar o borrar,
+    // solo el dueño (o SuperAdmin).
+    match /herramientas_generadas/{id} {
+      allow read, create: if isAuthenticated();
+      allow update, delete: if isOwner() || isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  10. TELEMETRÍA DE USO DE IA (control de cuotas)
+    // -------------------------------------------------------------------------
+    // Los agregados los consulta el SuperAdmin; cada docente puede registrar su
+    // propio consumo (el documento va indexado por su uid).
+    match /api_usage/{userId} {
+      allow read: if isSuperAdmin() || (isAuthenticated() && request.auth.uid == userId);
+      allow write: if isAuthenticated() && request.auth.uid == userId;
+    }
+    match /api_quotas/{id} {
+      allow read: if isAuthenticated();
+      allow write: if isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  CIERRE — DENEGAR POR DEFECTO
+    // -------------------------------------------------------------------------
+    // Cualquier colección no declarada arriba queda BLOQUEADA. Antes había una
+    // regla comodín que la abría a cualquier autenticado: eso hacía que toda
+    // colección nueva naciera accesible sin querer. Con este deny explícito, una
+    // colección nueva no funciona hasta que se le escriba una regla a conciencia.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

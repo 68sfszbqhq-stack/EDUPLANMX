@@ -9,6 +9,7 @@ import { collection, query, where, getDocs, limit, updateDoc, doc } from 'fireba
 import { db } from '../../src/config/firebase';
 import StatsCard from '../../components/admin/StatsCard';
 import SchoolIndicators from '../../components/director/SchoolIndicators';
+import CuadernoEscolar from '../../components/CuadernoEscolar';
 import PAECManager from '../../components/director/PAECManager';
 
 interface SchoolStats {
@@ -27,7 +28,7 @@ const DirectorDashboard: React.FC = () => {
         planeaciones: 0,
         grupos: 0
     });
-    const [activeTab, setActiveTab] = useState<'general' | 'pmc' | 'paec'>('general');
+    const [activeTab, setActiveTab] = useState<'general' | 'pmc' | 'paec' | 'cuaderno'>('general');
     const [loading, setLoading] = useState(true);
 
     // Debug states
@@ -230,8 +231,10 @@ const DirectorDashboard: React.FC = () => {
             {/* Contenido Principal */}
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
+                {activeTab === 'cuaderno' && <CuadernoEscolar />}
                 {/* Navegación por Pestañas */}
                 <div className="flex border-b border-slate-200 mb-8 overflow-x-auto">
+                    <button onClick={() => setActiveTab('cuaderno')} className="px-6 py-3 font-medium text-sm text-indigo-700 whitespace-nowrap">Cuaderno escolar · CAPEMS</button>
                     <button
                         onClick={() => setActiveTab('general')}
                         className={`px-6 py-3 font-medium text-sm transition-colors border-b-2 whitespace-nowrap ${activeTab === 'general'

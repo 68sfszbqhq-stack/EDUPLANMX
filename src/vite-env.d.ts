@@ -1,12 +1,16 @@
+/// <reference types="vite/client" />
 declare module '*.json' {
     const value: any;
     export default value;
 }
 
-/// <reference types="vite/client" />
+
 
 interface ImportMetaEnv {
     readonly VITE_API_KEY: string;
+    readonly VITE_EMULADOR?: string;
+    /** 'terminal' en la versión 2: genera con Claude vía scripts/puente-ia.ts. */
+    readonly VITE_MOTOR_IA?: string;
     readonly VITE_FIREBASE_API_KEY: string;
     readonly VITE_FIREBASE_AUTH_DOMAIN: string;
     readonly VITE_FIREBASE_PROJECT_ID: string;

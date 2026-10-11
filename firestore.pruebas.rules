@@ -1,0 +1,1305 @@
+// GENERADO por scripts/combinar-reglas.mjs — no editar a mano.
+// Reglas del proyecto compartido "eduplanmx-pruebas": EduPlan v2 + Antología v2.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===================== EduPlan v2 =====================
+
+
+    // -------------------------------------------------------------------------
+    //  FUNCIONES DE APOYO (HELPERS)
+    // -------------------------------------------------------------------------
+
+    // Verifica si el usuario ha iniciado sesión
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Obtiene el documento del usuario actual desde la colección 'users'
+    // IMPORTANTE: Esto consume 1 lectura por cada evaluación de regla.
+    // Solo usarla donde sea indispensable (plan Spark).
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    // Verifica si el usuario es SUPER ADMIN leyendo su documento en 'users'
+    function isSuperAdmin() {
+      return isAuthenticated() && getUserData().rol == 'superadmin';
+    }
+
+    // Verifica si el documento pertenece al usuario actual (gratis, no consume lecturas)
+    function isOwner() {
+      return isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+
+    // -------------------------------------------------------------------------
+    //  1. USUARIOS
+    // -------------------------------------------------------------------------
+    // El perfil es autoeditable, así que nada de lo que el propio usuario escribe
+    // puede darle privilegios: el rol queda limitado a los que la app asigna sola
+    // (nunca 'superadmin') y una cuenta desactivada no puede reactivarse sola.
+    function rolPropioPermitido() {
+      return request.resource.data.get('rol', 'maestro') in ['maestro', 'directivo', 'alumno', 'guest'];
+    }
+
+    match /users/{userId} {
+      // Regla de Oro: un usuario SIEMPRE puede leer su propio perfil
+      allow read: if isAuthenticated() && request.auth.uid == userId;
+      allow create: if isAuthenticated() && request.auth.uid == userId
+                    && rolPropioPermitido()
+                    && request.resource.data.get('activo', true) == true;
+      allow update: if isAuthenticated() && request.auth.uid == userId
+                    && rolPropioPermitido()
+                    && request.resource.data.get('activo', true) == resource.data.get('activo', true);
+
+      // SuperAdmin: gestión total de usuarios
+      allow read, write: if isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  2. ESCUELAS
+    // -------------------------------------------------------------------------
+    match /schools/{schoolId} {
+      // Lectura: PÚBLICA. La página pública /registro busca el plantel por CCT
+      // para ligar al alumno a su escuela (sin sesión iniciada). Los datos de una
+      // escuela (nombre, CCT, municipio) no son personales ni sensibles; los datos
+      // de menores viven en /alumnos, que sí está protegido por escuela.
+      allow read: if true;
+
+      // Crear/actualizar: cualquier autenticado
+      // (el onboarding crea escuelas y actualiza estadísticas al unirse un docente)
+      allow create, update: if isAuthenticated();
+
+      // Borrar: solo SuperAdmin
+      allow delete: if isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  3. ALUMNOS (datos sensibles de menores: CURP, teléfonos, situación familiar)
+    // -------------------------------------------------------------------------
+    match /alumnos/{alumnoId} {
+      // Crear: PÚBLICO — la página /registro la llenan alumnos sin cuenta.
+      // Se exige schoolId para que ningún expediente nazca huérfano: sin dueño,
+      // el registro no pertenece a ninguna escuela y nadie puede resguardarlo.
+      allow create: if request.resource.data.schoolId is string
+                    && request.resource.data.schoolId.size() > 0;
+
+      // Leer/editar/borrar: SOLO personal de la misma escuela.
+      //
+      // Son datos personales de menores (CURP, teléfonos, situación familiar), así
+      // que el aislamiento no puede depender de que el frontend recuerde filtrar.
+      // Con esta regla, Firestore RECHAZA cualquier consulta a /alumnos que no
+      // venga acotada con where('schoolId','==', <la escuela del usuario>).
+      allow read, update, delete: if isSuperAdmin()
+                                  || (isAuthenticated()
+                                      && resource.data.schoolId == getUserData().schoolId);
+    }
+
+    // -------------------------------------------------------------------------
+    //  4. CUESTIONARIOS SOCIOEDUCATIVOS
+    // -------------------------------------------------------------------------
+    // Salud, discapacidad, ingresos y dinámica familiar de menores. Los documentos
+    // no llevan schoolId, así que no hay forma de acotarlos por escuela: solo el
+    // SuperAdmin los consulta. Ninguna pantalla activa de la app los lee.
+    match /cuestionariosSocioEducativos/{cuestionarioId} {
+      allow create: if true;
+      allow read, update, delete: if isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  5. PLANEACIONES (el docente es dueño de las suyas)
+    // -------------------------------------------------------------------------
+    // Perfil docente: cómo da clase cada quien. Es privado — solo su dueño lo lee y escribe.
+    match /perfiles_docentes/{userId} {
+      allow read, write: if isAuthenticated() && request.auth.uid == userId;
+      allow read: if isSuperAdmin();
+    }
+
+    match /planeaciones/{planId} {
+      // Leer: cualquier docente autenticado (permite compartir dentro de la escuela)
+      allow read: if isAuthenticated();
+
+      // Crear: cualquier autenticado
+      allow create: if isAuthenticated();
+
+      // Editar/borrar: el dueño de la planeación, o SuperAdmin
+      allow update, delete: if isOwner() || isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  6. FICHAS 12 (taller reflexivo personal del docente)
+    // -------------------------------------------------------------------------
+    match /fichas12/{fichaId} {
+      allow read, create: if isAuthenticated();
+      allow update, delete: if isOwner() || isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  7. GESTIÓN DE USUARIOS (panel de administración)
+    // -------------------------------------------------------------------------
+    // OJO: colección 'usuarios' (con o) — distinta de 'users' (perfiles de auth).
+    // La consultan las asignaciones para resolver el nombre del maestro, por eso
+    // la lectura es para cualquier autenticado; alta/edición/baja, solo SuperAdmin.
+    match /usuarios/{usuarioId} {
+      allow read: if isAuthenticated();
+      allow write: if isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  8. CATÁLOGO E INSUMOS INSTITUCIONALES (no son datos personales de menores)
+    // -------------------------------------------------------------------------
+    // Materias, grupos, asignaciones de materia, diagnósticos de grupo y la
+    // Planeación de la Mejora Continua. Datos operativos del plantel: cualquier
+    // docente autenticado los usa. No hay lectura pública.
+    match /materias/{id}            { allow read, write: if isAuthenticated(); }
+    match /grupos/{id}              { allow read, write: if isAuthenticated(); }
+    match /asignaciones/{id}        { allow read, write: if isAuthenticated(); }
+    match /diagnosticos_grupo/{id}  { allow read, write: if isAuthenticated(); }
+    match /pmc/{id}                 { allow read, write: if isAuthenticated(); }
+    match /pmc_diagnosis/{id}       { allow read, write: if isAuthenticated(); }
+    match /pmc_metas/{id}           { allow read, write: if isAuthenticated(); }
+
+    // -------------------------------------------------------------------------
+    //  9. HERRAMIENTAS GENERADAS (historial personal de cada docente)
+    // -------------------------------------------------------------------------
+    // Cada documento lleva userId; la app lee filtrando por él. Editar o borrar,
+    // solo el dueño (o SuperAdmin).
+    match /herramientas_generadas/{id} {
+      allow read, create: if isAuthenticated();
+      allow update, delete: if isOwner() || isSuperAdmin();
+    }
+
+    // -------------------------------------------------------------------------
+    //  10. TELEMETRÍA DE USO DE IA (control de cuotas)
+    // -------------------------------------------------------------------------
+    // Los agregados los consulta el SuperAdmin; cada docente puede registrar su
+    // propio consumo (el documento va indexado por su uid).
+    match /api_usage/{userId} {
+      allow read: if isSuperAdmin() || (isAuthenticated() && request.auth.uid == userId);
+      allow write: if isAuthenticated() && request.auth.uid == userId;
+    }
+    match /api_quotas/{id} {
+      allow read: if isAuthenticated();
+      allow write: if isSuperAdmin();
+    }
+
+    // Cuaderno escolar: membresías verificadas administradas exclusivamente por
+    // consola/Admin SDK. No confiar en rol/schoolId del perfil autoeditable.
+    match /schoolNotebooks/{schoolId} {
+      function member() {
+        return isAuthenticated() && exists(/databases/$(database)/documents/schoolNotebooks/$(schoolId)/members/$(request.auth.uid));
+      }
+      function reviewer() {
+        return member() && get(/databases/$(database)/documents/schoolNotebooks/$(schoolId)/members/$(request.auth.uid)).data.role == 'reviewer';
+      }
+      function writer() {
+        return member() && get(/databases/$(database)/documents/schoolNotebooks/$(schoolId)/members/$(request.auth.uid)).data.role in ['contributor', 'reviewer'];
+      }
+      match /members/{uid} {
+        allow get: if isAuthenticated() && request.auth.uid == uid;
+        allow list, write: if false;
+      }
+      match /sources/{sourceId} {
+        allow read: if member();
+        allow create: if writer()
+          && request.resource.data.keys().hasOnly(['id', 'schoolId', 'authorId', 'title', 'text', 'kind', 'cycle', 'group', 'subject', 'meeting', 'date', 'validUntil', 'origin', 'status', 'createdAt', 'reviewedBy', 'reviewedAt'])
+          && request.resource.data.id == sourceId
+          && request.resource.data.schoolId == schoolId
+          && request.resource.data.authorId == request.auth.uid
+          && request.resource.data.status == 'borrador'
+          && request.resource.data.reviewedBy == '' && request.resource.data.reviewedAt == ''
+          && request.resource.data.title is string && request.resource.data.title.size() > 0 && request.resource.data.title.size() <= 200
+          && request.resource.data.text is string && request.resource.data.text.size() > 0 && request.resource.data.text.size() <= 80000
+          && request.resource.data.cycle is string && request.resource.data.cycle.size() > 0 && request.resource.data.cycle.size() <= 500
+          && request.resource.data.group is string && request.resource.data.group.size() <= 500
+          && request.resource.data.subject is string && request.resource.data.subject.size() <= 500
+          && request.resource.data.meeting is string && request.resource.data.meeting.size() <= 500
+          && request.resource.data.origin is string && request.resource.data.origin.size() > 0 && request.resource.data.origin.size() <= 500
+          && request.resource.data.date is string && request.resource.data.date.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+          && request.resource.data.validUntil is string && (request.resource.data.validUntil == '' || (request.resource.data.validUntil.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$') && request.resource.data.validUntil >= request.resource.data.date))
+          && request.resource.data.createdAt is string && request.resource.data.createdAt.size() <= 40
+          && request.resource.data.kind in ['documento', 'acuerdo', 'actividad', 'diagnostico', 'pmc', 'paec', 'antologia']
+          && (!(request.resource.data.kind in ['actividad', 'diagnostico']) || request.resource.data.group.size() > 0);
+        // Texto inmutable: una corrección se registra como otra versión. Se archiva
+        // explícitamente la anterior para evitar reemplazos silenciosos.
+        allow update: if reviewer()
+          && resource.data.status != 'archivada'
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'reviewedBy', 'reviewedAt'])
+          && request.resource.data.status in ['revisada', 'archivada']
+          && request.resource.data.reviewedBy == request.auth.uid
+          && request.resource.data.reviewedAt is string && request.resource.data.reviewedAt.size() <= 40;
+        allow delete: if false;
+      }
+    }
+
+    // -------------------------------------------------------------------------
+    //  11. MIS GRUPOS — compartido con Antología v2 (misma base de datos)
+    // -------------------------------------------------------------------------
+    // El acceso NO depende de rol ni de schoolId (ambos autoeditables): cada grupo
+    // tiene un dueño, docenteUid, y solo él ve su lista y sus resultados.
+    // La lista usa la matrícula normalizada como ID: importar dos veces no duplica.
+    // El alumno (cuenta de Antología en /cuentasAlumno) solo puede reclamar SU
+    // matrícula una vez y entregar SUS resultados; nunca leer a sus compañeros.
+    function cuentaDelAlumno() {
+      return get(/databases/$(database)/documents/cuentasAlumno/$(request.auth.uid)).data;
+    }
+    function esLaMatriculaDelAlumno(matricula) {
+      return isAuthenticated()
+        && exists(/databases/$(database)/documents/cuentasAlumno/$(request.auth.uid))
+        && cuentaDelAlumno().get('matricula', '') == matricula
+        && cuentaDelAlumno().get('activo', false) == true;
+    }
+    // Alumno con cuenta de Antología que ya reclamó su lugar activo en la lista.
+    function alumnoDelGrupo(grupoId) {
+      return isAuthenticated()
+        && exists(/databases/$(database)/documents/cuentasAlumno/$(request.auth.uid))
+        && cuentaDelAlumno().get('activo', false) == true
+        && cuentaDelAlumno().get('matricula', '') != ''
+        && get(/databases/$(database)/documents/misGrupos/$(grupoId)/lista/$(cuentaDelAlumno().matricula)).data.cuentaUid == request.auth.uid
+        && get(/databases/$(database)/documents/misGrupos/$(grupoId)/lista/$(cuentaDelAlumno().matricula)).data.estado == 'activo';
+    }
+    function duenoDelGrupo(grupoId) {
+      return isAuthenticated()
+        && get(/databases/$(database)/documents/misGrupos/$(grupoId)).data.docenteUid == request.auth.uid;
+    }
+    function textoCorto(v, max) {
+      return v is string && v.size() <= max;
+    }
+
+    match /misGrupos/{grupoId} {
+      function grupoBienFormado() {
+        let d = request.resource.data;
+        return d.keys().hasOnly(['docenteUid', 'nombre', 'asignaturaClave', 'asignaturaNombre', 'ciclo', 'creadoEn', 'archivado', 'vaciasCuentanCero', 'ponderacion', 'parciales'])
+          && d.docenteUid == request.auth.uid
+          && d.nombre is string && d.nombre.size() >= 1 && d.nombre.size() <= 60
+          && textoCorto(d.asignaturaClave, 60) && textoCorto(d.asignaturaNombre, 120)
+          && textoCorto(d.ciclo, 20) && textoCorto(d.creadoEn, 40)
+          && d.archivado is bool
+          && d.get('ponderacion', {}) is map
+          && d.get('parciales', []) is list && d.get('parciales', []).size() <= 6;
+      }
+      // Las consultas deben filtrar where('docenteUid','==', uid).
+      allow read: if isAuthenticated() && resource.data.docenteUid == request.auth.uid;
+      allow create: if isAuthenticated() && grupoBienFormado();
+      allow update: if isAuthenticated() && resource.data.docenteUid == request.auth.uid && grupoBienFormado();
+      allow delete: if false; // se archiva; borrar dejaría listas y resultados huérfanos
+
+      match /lista/{matricula} {
+        function filaBienFormada() {
+          let d = request.resource.data;
+          return d.keys().hasOnly(['matricula', 'nombre', 'estado', 'cuentaUid', 'cuentaCorreo', 'vinculadoEn', 'actualizadoEn', 'generada'])
+            && d.matricula == matricula && matricula.matches('^[a-z0-9]{1,20}$')
+            && d.nombre is string && d.nombre.size() >= 1 && d.nombre.size() <= 120
+            && d.estado in ['activo', 'baja']
+            && textoCorto(d.cuentaUid, 128) && textoCorto(d.cuentaCorreo, 200)
+            && textoCorto(d.actualizadoEn, 40);
+        }
+        allow read: if duenoDelGrupo(grupoId);
+        // El docente crea y corrige filas. Puede desvincular una cuenta (dejarla
+        // vacía), pero no asignarle a nadie una cuenta ajena.
+        allow create: if duenoDelGrupo(grupoId) && filaBienFormada()
+          && request.resource.data.cuentaUid == '' && request.resource.data.cuentaCorreo == '';
+        allow update: if duenoDelGrupo(grupoId) && filaBienFormada()
+          && (request.resource.data.cuentaUid == resource.data.cuentaUid
+              || (request.resource.data.cuentaUid == '' && request.resource.data.cuentaCorreo == ''));
+        allow delete: if false; // se da de baja con estado: 'baja'
+
+        // El alumno ve solo su propia fila y la reclama una vez, si nadie lo hizo.
+        allow get: if esLaMatriculaDelAlumno(matricula);
+        allow update: if esLaMatriculaDelAlumno(matricula)
+          && resource.data.cuentaUid == ''
+          && resource.data.estado == 'activo'
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['cuentaUid', 'cuentaCorreo', 'vinculadoEn'])
+          && request.resource.data.cuentaUid == request.auth.uid
+          && request.resource.data.cuentaCorreo == request.auth.token.get('email', '')
+          && request.resource.data.vinculadoEn == request.time;
+      }
+
+      match /resultados/{resultadoId} {
+        function resultadoBienFormado() {
+          let d = request.resource.data;
+          return d.keys().hasOnly(['matricula', 'instrumento', 'titulo', 'aciertos', 'total', 'porcentaje', 'porEje', 'cuentaUid', 'enviado'])
+            && resultadoId == d.instrumento + '_' + d.matricula
+            && d.instrumento is string && d.instrumento.matches('^[a-z0-9.-]{1,80}$')
+            && textoCorto(d.titulo, 120)
+            && d.total is int && d.total > 0 && d.total <= 200
+            && d.aciertos is int && d.aciertos >= 0 && d.aciertos <= d.total
+            && d.porcentaje is int && d.porcentaje >= 0 && d.porcentaje <= 100
+            && d.porEje is map
+            && d.cuentaUid == request.auth.uid
+            && d.enviado == request.time;
+        }
+        allow read: if duenoDelGrupo(grupoId);
+        // Solo quien reclamó la matrícula en ESTA lista, y una sola vez (sin update).
+        allow create: if resultadoBienFormado()
+          && esLaMatriculaDelAlumno(request.resource.data.matricula)
+          && get(/databases/$(database)/documents/misGrupos/$(grupoId)/lista/$(request.resource.data.matricula)).data.cuentaUid == request.auth.uid
+          && get(/databases/$(database)/documents/misGrupos/$(grupoId)/lista/$(request.resource.data.matricula)).data.estado == 'activo';
+        allow update: if false;
+        allow delete: if duenoDelGrupo(grupoId); // para dejar que el alumno repita
+      }
+
+      // --- Cuaderno de notas: solo el docente dueño ---------------------------
+      match /columnas/{colId} {
+        allow read, delete: if duenoDelGrupo(grupoId);
+        allow create, update: if duenoDelGrupo(grupoId)
+          && request.resource.data.keys().hasOnly(['nombre', 'tipo', 'max', 'peso', 'fecha', 'orden', 'rubrica', 'examenId'])
+          && request.resource.data.nombre is string && request.resource.data.nombre.size() >= 1 && request.resource.data.nombre.size() <= 80
+          && request.resource.data.tipo in ['tarea', 'proyecto', 'examen', 'participacion', 'otro']
+          && request.resource.data.max is number && request.resource.data.max > 0 && request.resource.data.max <= 1000
+          && request.resource.data.peso is number && request.resource.data.peso >= 0 && request.resource.data.peso <= 100;
+      }
+      match /notas/{matricula} {
+        allow read, delete: if duenoDelGrupo(grupoId);
+        allow create, update: if duenoDelGrupo(grupoId)
+          && request.resource.data.keys().hasOnly(['matricula', 'valores', 'estados', 'comentarios', 'rubricas'])
+          && request.resource.data.matricula == matricula
+          && request.resource.data.get('valores', {}) is map && request.resource.data.get('estados', {}) is map;
+      }
+
+      // --- Asistencia, diario de clase y anotaciones: solo el docente dueño ---
+      match /asistencia/{fecha} {
+        allow read, delete: if duenoDelGrupo(grupoId);
+        allow create, update: if duenoDelGrupo(grupoId)
+          && fecha.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+          && request.resource.data.keys().hasOnly(['fecha', 'marcas', 'actualizadoEn'])
+          && request.resource.data.fecha == fecha
+          && request.resource.data.marcas is map;
+      }
+      match /diario/{fecha} {
+        allow read, delete: if duenoDelGrupo(grupoId);
+        allow create, update: if duenoDelGrupo(grupoId)
+          && fecha.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+          && request.resource.data.keys().hasOnly(['fecha', 'texto', 'actualizadoEn'])
+          && request.resource.data.fecha == fecha
+          && textoCorto(request.resource.data.texto, 8000);
+      }
+      match /anotaciones/{anotacionId} {
+        allow read, delete: if duenoDelGrupo(grupoId);
+        allow create, update: if duenoDelGrupo(grupoId)
+          && request.resource.data.keys().hasOnly(['matricula', 'fecha', 'tipo', 'texto'])
+          && request.resource.data.tipo in ['positiva', 'atencion', 'accion', 'nota']
+          && textoCorto(request.resource.data.matricula, 20)
+          && textoCorto(request.resource.data.fecha, 40)
+          && textoCorto(request.resource.data.texto, 1000);
+      }
+
+      // --- Exámenes -----------------------------------------------------------
+      // El examen (sin respuestas) lo lee el alumno del grupo cuando está abierto.
+      // La clave vive aparte, en /privado, y solo la lee el docente: así nunca
+      // llega al celular del alumno. Se califica en la pantalla del docente.
+      match /examenes/{examenId} {
+        function examen() {
+          return get(/databases/$(database)/documents/misGrupos/$(grupoId)/examenes/$(examenId)).data;
+        }
+        allow read: if duenoDelGrupo(grupoId)
+          || (alumnoDelGrupo(grupoId) && resource.data.estado in ['abierto', 'cerrado']);
+        allow create, update: if duenoDelGrupo(grupoId)
+          && request.resource.data.keys().hasOnly(['titulo', 'instrucciones', 'minutos', 'estado', 'preguntas', 'columnaId', 'descripcionClase', 'creadoEn', 'actualizadoEn'])
+          && request.resource.data.estado in ['borrador', 'abierto', 'cerrado']
+          && request.resource.data.preguntas is list && request.resource.data.preguntas.size() <= 60
+          && request.resource.data.minutos is int && request.resource.data.minutos >= 0 && request.resource.data.minutos <= 240;
+        allow delete: if duenoDelGrupo(grupoId);
+
+        match /privado/{docId} {
+          allow read, write: if duenoDelGrupo(grupoId);
+        }
+
+        match /intentos/{matricula} {
+          function esSuIntento() {
+            return alumnoDelGrupo(grupoId) && cuentaDelAlumno().matricula == matricula;
+          }
+          // Con minutos > 0 el reloj lo lleva el servidor (+2 de gracia), no el celular.
+          function aTiempo() {
+            return examen().minutos == 0
+              || request.time < resource.data.inicio + duration.value(examen().minutos + 2, 'm');
+          }
+          allow read: if duenoDelGrupo(grupoId);
+          allow get: if esSuIntento();
+          allow create: if esSuIntento()
+            && examen().estado == 'abierto'
+            && request.resource.data.keys().hasOnly(['matricula', 'cuentaUid', 'estado', 'respuestas', 'inicio', 'guardadoEn'])
+            && request.resource.data.matricula == matricula
+            && request.resource.data.cuentaUid == request.auth.uid
+            && request.resource.data.estado == 'en curso'
+            && request.resource.data.respuestas is map
+            && request.resource.data.inicio == request.time
+            && request.resource.data.guardadoEn == request.time;
+          // El alumno guarda mientras está "en curso"; al entregar, queda sellado.
+          allow update: if esSuIntento()
+            && resource.data.estado == 'en curso'
+            && examen().estado == 'abierto'
+            && aTiempo()
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['respuestas', 'estado', 'fin', 'guardadoEn'])
+            && request.resource.data.respuestas is map
+            && request.resource.data.estado in ['en curso', 'entregado']
+            && request.resource.data.guardadoEn == request.time
+            && (request.resource.data.estado == 'en curso' || request.resource.data.fin == request.time);
+          // El docente registra su revisión; no puede cambiar lo que contestó el alumno.
+          allow update: if duenoDelGrupo(grupoId)
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['revision', 'calificacion', 'calificadoEn']);
+          allow delete: if duenoDelGrupo(grupoId); // para dejar que repita
+        }
+      }
+    }
+
+    // Índice: en qué grupos aparece una matrícula. Lo escribe el docente al
+    // importar; lo lee solo el alumno dueño de esa matrícula (o el docente).
+    match /matriculas/{matricula}/grupos/{grupoId} {
+      allow read: if esLaMatriculaDelAlumno(matricula) || duenoDelGrupo(grupoId);
+      allow create, update: if duenoDelGrupo(grupoId)
+        && request.resource.data.keys().hasOnly(['asignaturaClave', 'grupoNombre', 'docenteUid'])
+        && request.resource.data.docenteUid == request.auth.uid
+        && textoCorto(request.resource.data.asignaturaClave, 60)
+        && textoCorto(request.resource.data.grupoNombre, 60);
+      allow delete: if duenoDelGrupo(grupoId);
+    }
+
+    // -------------------------------------------------------------------------
+    //  CIERRE — DENEGAR POR DEFECTO
+    // -------------------------------------------------------------------------
+    // Cualquier colección no declarada arriba queda BLOQUEADA. Antes había una
+    // regla comodín que la abría a cualquier autenticado: eso hacía que toda
+    // colección nueva naciera accesible sin querer. Con este deny explícito, una
+    // colección nueva no funciona hasta que se le escriba una regla a conciencia.
+
+    // ===================== Antología v2 =====================
+
+
+    // ─── Quién es quién ────────────────────────────────────────────────────
+
+    // UID del profesor. Es fijo a propósito: lo asigna
+    // scripts/alta-profesor.mjs al crear la cuenta, en vez de ser un
+    // identificador aleatorio que habría que ir a copiar a mano.
+    function profesores() {
+      return ['profesor'];
+    }
+
+    // Correos que también entran como profesor, pensado para el botón de
+    // Google en /profesor. Google asigna un UID aleatorio, distinto del UID
+    // fijo de arriba, así que por ahí el reconocimiento tiene que ser por
+    // correo. Se exige email_verified: sin eso, cualquiera podría crear una
+    // cuenta declarando este correo y entrar. Google siempre lo trae en true.
+    function correosDeProfesor() {
+      return ['jose.mendoza.buap@gmail.com'];
+    }
+
+    function esProfesor() {
+      return request.auth != null && (
+        request.auth.uid in profesores() ||
+        (request.auth.token.email_verified == true &&
+         request.auth.token.email in correosDeProfesor())
+      );
+    }
+
+    function fichaAlumno() {
+      return get(/databases/$(database)/documents/cuentasAlumno/$(request.auth.uid)).data;
+    }
+
+    function alumnoActivo() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/cuentasAlumno/$(request.auth.uid))
+        && fichaAlumno().activo == true;
+    }
+
+    function moduloAbierto(dia) {
+      return exists(/databases/$(database)/documents/config/modulos)
+        && dia in get(/databases/$(database)/documents/config/modulos).data.abiertos;
+    }
+
+    // ─── Fichas de alumno ──────────────────────────────────────────────────
+    // Hay dos formas de tener ficha, y las dos acaban en el mismo lugar:
+    //
+    //   · LA CREA EL PROFESOR desde su Mac con scripts/alta-alumnos.mjs, para
+    //     quien entra con matrícula y código. Ese script usa el Admin SDK y
+    //     pasa por encima de estas reglas.
+    //   · LA CREA EL PROPIO ALUMNO al entrar con Google la primera vez. Es el
+    //     camino normal desde 2026-2027: el alumno ya tiene esa cuenta de la
+    //     evaluación diagnóstica de inicio de ciclo, así que no hay códigos que
+    //     repartir ni que reponer.
+    //
+    // Que el alumno escriba su propia ficha NO afloja el candado de las
+    // calificaciones: `intentos` sigue exigiendo ficha activa y módulo abierto,
+    // y sigue siendo de un solo intento. Lo que sí hay que vigilar es lo que
+    // escribe, y de eso se encarga fichaDeGoogleBienFormada(): el correo tiene
+    // que ser el de su propia cuenta —no uno tecleado—, y nadie puede darse de
+    // alta a nombre de otro UID.
+
+    function entroConGoogle() {
+      return request.auth != null
+        && request.auth.token.firebase.sign_in_provider == 'google.com'
+        && request.auth.token.email_verified == true;
+    }
+
+    function fichaDeGoogleBienFormada() {
+      let d = request.resource.data;
+      return d.keys().hasOnly(['matricula', 'nombre', 'grupo', 'activo', 'correo', 'origen'])
+        && d.keys().hasAll(['matricula', 'nombre', 'grupo', 'activo', 'correo', 'origen'])
+        && d.nombre is string && d.nombre.size() >= 3 && d.nombre.size() <= 80
+        && d.grupo is string  && d.grupo.size() >= 1  && d.grupo.size() <= 30
+        && d.matricula is string && d.matricula.matches('^[a-z0-9]{0,20}$')
+        && d.correo == request.auth.token.email
+        && d.activo == true
+        && d.origen == 'google';
+    }
+
+    match /cuentasAlumno/{alumnoId} {
+      // El profesor ve a todo el grupo; cada alumno, solo su propia ficha.
+      //
+      // OJO con el nombre del comodín: mientras se llamó {uid} —chocando con
+      // request.auth.uid— el profesor podía listar `intentos` pero NO `alumnos`,
+      // y el panel salía vacío sin ningún error visible. Renombrarlo a
+      // {alumnoId} lo arregló. No volver a llamarlo `uid`.
+      allow get: if esProfesor() || (request.auth != null && request.auth.uid == alumnoId);
+      allow list: if esProfesor();
+
+      allow create: if esProfesor()
+        || (request.auth != null
+            && request.auth.uid == alumnoId
+            && entroConGoogle()
+            && fichaDeGoogleBienFormada());
+
+      // Corregir el propio nombre o grupo, sí; reactivarse después de que el
+      // profesor lo desactivó, no. Por eso se exige que la ficha esté activa
+      // ANTES del cambio, además de que el resultado siga siendo válido.
+      allow update: if esProfesor()
+        || (request.auth != null
+            && request.auth.uid == alumnoId
+            && entroConGoogle()
+            && resource.data.get('origen', '') == 'google'
+            && resource.data.activo == true
+            && fichaDeGoogleBienFormada());
+
+      allow delete: if esProfesor();
+    }
+
+    // ─── Intentos de diagnóstico ───────────────────────────────────────────
+
+    function intentoBienFormado() {
+      let d = request.resource.data;
+      return d.keys().hasOnly(['uid', 'dia', 'aciertos', 'total', 'porcentaje',
+                               'porEje', 'respuestas', 'enviado'])
+        && d.uid is string
+        && d.dia is int      && d.dia >= 1      && d.dia <= 8
+        && d.total is int    && d.total > 0     && d.total <= 50
+        && d.aciertos is int && d.aciertos >= 0 && d.aciertos <= d.total
+        && d.porcentaje is int && d.porcentaje >= 0 && d.porcentaje <= 100
+        && d.respuestas is list
+        && d.porEje is map
+        && d.enviado == request.time;
+    }
+
+    match /intentos/{intentoId} {
+      // El alumno puede releer SU intento (para volver a ver su calificación),
+      // pero no puede pedir la colección: eso destaparía las notas del grupo.
+      //
+      // El `resource == null` es imprescindible: la página pregunta "¿ya
+      // contesté este módulo?" ANTES de contestarlo, o sea sobre un documento
+      // que todavía no existe. Sin esta parte, esa consulta se denegaba y el
+      // sitio acababa mostrando el cuestionario de un módulo cerrado.
+      // No filtra nada: si el documento no existe, no hay dato que devolver;
+      // y si existe, sigue mandando la comparación de uid.
+      allow get: if esProfesor()
+        || (request.auth != null
+            && (resource == null || resource.data.uid == request.auth.uid));
+      allow list: if esProfesor();
+
+      // Un solo intento por alumno y módulo. El candado es el nombre del
+      // documento: al llamarse "<uid>_<dia>", un segundo envío choca con el
+      // primero, y en Firestore un `create` sobre algo que ya existe falla.
+      allow create: if alumnoActivo()
+        && intentoId == request.auth.uid + '_' + string(request.resource.data.dia)
+        && request.resource.data.uid == request.auth.uid
+        && moduloAbierto(request.resource.data.dia)
+        && intentoBienFormado();
+
+      // Corregir o borrar una calificación: solo el profesor.
+      allow update, delete: if esProfesor();
+    }
+
+    // ─── Test de los Anillos de Landolt (atención concentrada) ─────────────
+    //
+    // Este test lo aplican alumnos de bachillerato de NUEVO INGRESO, que
+    // todavía no tienen ficha ni código. Por eso aquí no se usa alumnoActivo():
+    // entran con una sesión anónima de Firebase y se registran con un
+    // formulario. Lo que sostiene el permiso, ya que no hay contraseña:
+    //
+    //   1. Tiene que haber una aplicación ABIERTA. La abre y la cierra el
+    //      profesor con scripts/abrir-landolt.mjs. Cerrada, no entra nada.
+    //   2. Hay que estar autenticado, aunque sea de forma anónima.
+    //   3. Los conteos tienen que cuadrar entre sí.
+    //   4. Los textos tienen tope de longitud, para que nadie use esto como
+    //      almacenamiento gratis.
+    //
+    // Mientras el test esté abierto, quien tenga el enlace puede mandar un
+    // registro: es el precio de que un grupo entero entre sin repartir
+    // contraseñas. Por eso importa cerrarlo al acabar la sesión.
+    //
+    // LEER es otra cosa: los resultados llevan nombre y fecha de nacimiento de
+    // menores de edad. Nadie más que el profesor los lee, ni siquiera quien los
+    // acaba de escribir.
+
+    function landoltAbierta(ap) {
+      return exists(/databases/$(database)/documents/config/landolt)
+        && get(/databases/$(database)/documents/config/landolt).data.abierta == ap
+        && ap > 0;
+    }
+
+    function fichaLandoltBienFormada() {
+      let d = request.resource.data;
+      return d.nombre is string     && d.nombre.size() >= 5 && d.nombre.size() <= 80
+        && d.nacimiento is string   && d.nacimiento.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        && d.genero is string       && d.genero in ['Mujer', 'Hombre', 'Prefiero no decirlo']
+        && d.semestre is int        && d.semestre >= 1 && d.semestre <= 6
+        && d.grupo is string        && d.grupo.size() >= 1 && d.grupo.size() <= 4
+        && d.turno is string        && d.turno in ['Matutino', 'Vespertino']
+        && d.procedencia is string  && d.procedencia.size() <= 80;
+    }
+
+    // La aritmética del propio protocolo. Sin esto, cualquiera podría llamar a
+    // guardarLandolt() desde la consola con un resultado perfecto.
+    function conteosLandoltCuadran() {
+      let d = request.resource.data;
+      return d.objetivo is int && d.objetivo >= 1 && d.objetivo <= 8
+        && d.semilla is int
+        // La hoja del protocolo es de 35 renglones × 30 anillos.
+        && d.N is int      && d.N >= 0      && d.N <= 1050
+        && d.CA is int     && d.CA >= 0
+        && d.CT is int     && d.CT >= 0     && d.CT <= d.N
+        && d.falsos is int && d.falsos >= 0
+        && d.CA <= d.CT
+        && d.CA + d.falsos <= d.N
+        && d.omisiones == d.CT - d.CA
+        && d.n == d.falsos + d.omisiones
+        && d.T is int && d.T > 0 && d.T <= 3600
+        && d.S is number
+        && d.IA is number
+        && d.variante in ['1min', '5min']
+        && d.curva is list && d.curva.size() <= 60;
+    }
+
+    match /landolt/{registroId} {
+      // Solo el profesor. Son datos personales de menores: ni siquiera quien
+      // acaba de entregar puede volver a leerlos, porque sin cuentas no hay
+      // forma de comprobar que sigue siendo la misma persona.
+      allow get, list: if esProfesor();
+
+      allow create: if request.auth != null
+        && landoltAbierta(request.resource.data.aplicacion)
+        && request.resource.data.keys().hasOnly([
+             'aplicacion', 'nombre', 'nacimiento', 'genero', 'semestre', 'grupo',
+             'turno', 'procedencia', 'objetivo', 'semilla', 'N', 'CA', 'CT',
+             'falsos', 'omisiones', 'n', 'T', 'S', 'IA', 'variante', 'curva',
+             'enviado'])
+        && request.resource.data.aplicacion is int
+        && fichaLandoltBienFormada()
+        && conteosLandoltCuadran()
+        && request.resource.data.enviado == request.time;
+
+      // Corregir o borrar un registro: solo el profesor.
+      allow update, delete: if esProfesor();
+    }
+
+    // ─── Diagnóstico integral (atención + temperamento + evaluación) ──────
+    //
+    // AQUÍ SE ENTRA CON CUENTA DE GOOGLE, a diferencia de /landolt. El contraste
+    // es deliberado: aquel test se aplica en un rato, vigilado, y lo único que
+    // guarda son anillos tachados. Este dura hasta hora y media, el alumno
+    // puede dejarlo a medias y volver otro día, y hay que saber de quién es
+    // cada entrega sin depender de que escriba bien su nombre. Para eso hace
+    // falta una identidad de verdad.
+    //
+    // Lo que eso permite, y que con acceso anónimo era imposible:
+    //
+    //   · Retomar. El documento se llama `<uid>_<aplicación>`, así que al
+    //     volver a entrar el alumno cae sobre el mismo y sigue donde iba.
+    //   · Guardar conforme avanza, en vez de todo al final.
+    //   · Dejar la evaluación abierta toda la semana sin que eso signifique que
+    //     cualquiera con el enlace pueda mandar basura.
+    //
+    // EL CANDADO NO ES "SOLO CREAR", COMO EN EL RESTO DEL SITIO. Aquí hay que
+    // permitir `update`, porque sin eso no se puede retomar nada. El candado es
+    // otro y está abajo: en cuanto `estado` pasa a 'entregado', las reglas
+    // dejan de aceptar cambios. Se corrige lo que aún no se entrega, y nada más.
+
+    function diagnosticoAbierto(ap) {
+      return exists(/databases/$(database)/documents/config/diagnostico)
+        && get(/databases/$(database)/documents/config/diagnostico).data.abierta == ap
+        && ap > 0;
+    }
+
+    function fichaDiagnosticoBienFormada() {
+      let d = request.resource.data;
+      return d.nombre is string     && d.nombre.size() >= 5 && d.nombre.size() <= 80
+        && d.nacimiento is string   && d.nacimiento.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        && d.genero is string       && d.genero in ['Mujer', 'Hombre', 'Prefiero no decirlo']
+        && d.grado is string        && d.grado in ['1ero', '2do', '3ero']
+        && d.grupo is string        && d.grupo.size() >= 1 && d.grupo.size() <= 4
+        && d.turno is string        && d.turno in ['Matutino', 'Vespertino']
+        && d.procedencia is string  && d.procedencia.size() <= 80
+        && d.correo is string       && d.correo.size() <= 120;
+    }
+
+    // Cada bloque puede venir nulo: se llenan uno por uno, conforme el alumno
+    // avanza, y el profesor puede aplicar solo una parte. Lo que NO puede venir
+    // es un bloque con forma inventada, porque estos documentos se exportan a
+    // hoja de cálculo sin volver a revisarlos.
+
+    function bloqueAtencionValido() {
+      let a = request.resource.data.atencion;
+      return a == null || (
+        a.objetivo is int  && a.objetivo >= 1 && a.objetivo <= 8
+        && a.N is int      && a.N >= 0      && a.N <= 1050
+        && a.CA is int     && a.CA >= 0
+        && a.CT is int     && a.CT >= 0     && a.CT <= a.N
+        && a.falsos is int && a.falsos >= 0
+        && a.CA <= a.CT
+        && a.CA + a.falsos <= a.N
+        && a.omisiones == a.CT - a.CA
+        && a.n == a.falsos + a.omisiones
+        && a.T is int && a.T > 0 && a.T <= 3600
+        && a.variante in ['1min', '5min']
+      );
+    }
+
+    function bloqueTemperamentoValido() {
+      let t = request.resource.data.temperamento;
+      return t == null || (
+        t.puntos is map
+        && t.porcentaje is map
+        && t.dominante in ['sanguineo', 'colerico', 'melancolico', 'flematico']
+        && t.secundario in ['sanguineo', 'colerico', 'melancolico', 'flematico']
+        && t.empatado is bool
+        && t.respuestas is map && t.respuestas.keys().size() <= 40
+      );
+    }
+
+    function bloqueAcademicaValido() {
+      let a = request.resource.data.academica;
+      return a == null || (
+        a.grado is string
+        && a.total is int    && a.total > 0     && a.total <= 100
+        && a.aciertos is int && a.aciertos >= 0 && a.aciertos <= a.total
+        && a.porcentaje is int && a.porcentaje >= 0 && a.porcentaje <= 100
+        && a.materias is map
+        && a.respuestas is map && a.respuestas.keys().size() <= 100
+      );
+    }
+
+    // El cuadernillo de ingreso NO trae calificación: no tiene clave de
+    // respuestas. Por eso aquí no hay `aciertos` que validar, solo que lo
+    // contestado no exceda el total.
+    function bloqueCuadernilloValido() {
+      let c = request.resource.data.cuadernillo;
+      return c == null || (
+        c.cuadernillo is string && c.cuadernillo.size() <= 40
+        && c.total is int       && c.total > 0 && c.total <= 200
+        && c.contestadas is int && c.contestadas >= 0 && c.contestadas <= c.total
+        && c.respuestas is map  && c.respuestas.keys().size() <= 200
+      );
+    }
+
+    function bloquesValidos() {
+      return bloqueAtencionValido()
+        && bloqueTemperamentoValido()
+        && bloqueAcademicaValido()
+        && bloqueCuadernilloValido();
+    }
+
+    match /diagnosticos/{sesionId} {
+      // El alumno lee LO SUYO. Es imprescindible: sin esto no puede retomar,
+      // porque retomar es exactamente leer lo que ya llevaba. No destapa nada
+      // de nadie más, y el `resource == null` deja preguntar "¿ya empecé?"
+      // sobre un documento que todavía no existe.
+      allow get: if esProfesor()
+        || (request.auth != null
+            && (resource == null || resource.data.uid == request.auth.uid));
+      // Pedir la colección entera sigue siendo solo del profesor: eso sí
+      // destaparía al grupo completo.
+      allow list: if esProfesor();
+
+      // Abrir la sesión. El nombre del documento amarra al alumno con su propia
+      // cuenta: no puede crear la de otro aunque lo intente desde la consola.
+      allow create: if request.auth != null
+        && sesionId == request.auth.uid + '_' + string(request.resource.data.aplicacion)
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.correo == request.auth.token.email
+        && request.resource.data.estado == 'en curso'
+        && diagnosticoAbierto(request.resource.data.aplicacion)
+        && request.resource.data.keys().hasOnly([
+             'aplicacion', 'uid', 'correo', 'estado', 'nombre', 'nacimiento',
+             'genero', 'grado', 'grupo', 'turno', 'procedencia', 'atencion',
+             'temperamento', 'academica', 'cuadernillo', 'iniciado', 'actualizado'])
+        && request.resource.data.aplicacion is int
+        && fichaDiagnosticoBienFormada()
+        && bloquesValidos()
+        && request.resource.data.iniciado == request.time
+        && request.resource.data.actualizado == request.time;
+
+      // Avanzar y entregar.
+      //
+      // Las tres condiciones que sostienen esto, en orden de importancia:
+      //
+      //   1. El documento TIENE que estar 'en curso'. Uno ya entregado no se
+      //      vuelve a tocar: ese es el reemplazo del "solo crear" que usa el
+      //      resto del sitio.
+      //   2. Ni el dueño, ni su correo, ni la aplicación pueden cambiar. Sin
+      //      esto, un alumno podría reescribir el documento a nombre de otro.
+      //   3. La evaluación tiene que seguir abierta.
+      allow update: if esProfesor() || (
+        request.auth != null
+        && resource.data.uid == request.auth.uid
+        && resource.data.estado == 'en curso'
+        && diagnosticoAbierto(resource.data.aplicacion)
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.correo == resource.data.correo
+        && request.resource.data.aplicacion == resource.data.aplicacion
+        && request.resource.data.iniciado == resource.data.iniciado
+        && request.resource.data.estado in ['en curso', 'entregado']
+        // Sin esto, un alumno podría colgarle campos inventados a su propio
+        // documento y usar la base como almacén gratis.
+        && request.resource.data.keys().hasOnly([
+             'aplicacion', 'uid', 'correo', 'estado', 'nombre', 'nacimiento',
+             'genero', 'grado', 'grupo', 'turno', 'procedencia', 'atencion',
+             'temperamento', 'academica', 'cuadernillo', 'iniciado',
+             'actualizado', 'entregado'])
+        && fichaDiagnosticoBienFormada()
+        && bloquesValidos()
+        && request.resource.data.actualizado == request.time
+      );
+
+      // Borrar un registro: solo el profesor.
+      allow delete: if esProfesor();
+    }
+
+    // ─── Perfil: socioemocional y condiciones de estudio ──────────────────
+    //
+    // POR QUÉ ES OTRA COLECCIÓN Y NO UN CAMPO MÁS DE /diagnosticos.
+    //
+    // Un diagnóstico entregado queda congelado, y eso no se afloja: es lo que
+    // impide repetir el test de atención, que solo mide bien la primera vez.
+    // Pero este bloque llegó DESPUÉS, cuando 41 alumnos ya habían entregado, y
+    // todos tienen que poder contestarlo. Descongelar sus documentos habría
+    // abierto también todo lo demás. Así que el perfil vive aparte, con su
+    // propio ciclo: se abre, se va guardando y se entrega, sin tocar nada de lo
+    // de ayer.
+    //
+    // El candado es el mismo de allá: en cuanto pasa a 'entregado', no se
+    // vuelve a aceptar un cambio.
+
+    function perfilBienFormado() {
+      let d = request.resource.data;
+      return d.nombre is string && d.nombre.size() <= 80
+        && d.grado is string  && d.grado in ['1ero', '2do', '3ero']
+        && d.grupo is string  && d.grupo.size() <= 6
+        && d.correo is string && d.correo.size() <= 120
+        && d.respuestasA is map      && d.respuestasA.keys().size() <= 22
+        && d.respuestasB is map      && d.respuestasB.keys().size() <= 12
+        && d.respuestasApoyo is map  && d.respuestasApoyo.keys().size() <= 4;
+    }
+
+    match /perfiles/{perfilId} {
+      // El alumno lee el suyo: sin eso no puede retomar. El `resource == null`
+      // deja preguntar "¿ya empecé?" sobre algo que todavía no existe.
+      allow get: if esProfesor()
+        || (request.auth != null
+            && (resource == null || resource.data.uid == request.auth.uid));
+      allow list: if esProfesor();
+
+      allow create: if request.auth != null
+        && perfilId == request.auth.uid + '_' + string(request.resource.data.aplicacion)
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.correo == request.auth.token.email
+        && request.resource.data.estado == 'en curso'
+        && diagnosticoAbierto(request.resource.data.aplicacion)
+        && request.resource.data.aplicacion is int
+        && perfilBienFormado()
+        && request.resource.data.iniciado == request.time
+        && request.resource.data.actualizado == request.time;
+
+      allow update: if esProfesor() || (
+        request.auth != null
+        && resource.data.uid == request.auth.uid
+        && resource.data.estado == 'en curso'
+        && diagnosticoAbierto(resource.data.aplicacion)
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.correo == resource.data.correo
+        && request.resource.data.aplicacion == resource.data.aplicacion
+        && request.resource.data.estado in ['en curso', 'entregado']
+        && request.resource.data.keys().hasOnly([
+             'aplicacion', 'uid', 'correo', 'estado', 'nombre', 'grado', 'grupo',
+             'puntajes', 'banderas', 'rojas', 'amarillas', 'respuestasA',
+             'respuestasB', 'respuestasApoyo', 'iniciado', 'actualizado', 'entregado'])
+        && perfilBienFormado()
+        && request.resource.data.actualizado == request.time
+      );
+
+      allow delete: if esProfesor();
+    }
+
+    // ─── Test vocacional CHASIDE ──────────────────────────────────────────
+    //
+    // Su propia colección, igual que /perfiles y por lo mismo: los instrumentos
+    // llegan de uno en uno, y quien ya entregó lo anterior tiene que poder
+    // contestar lo nuevo sin descongelar nada. El candado es el de siempre: en
+    // cuanto pasa a 'entregado', no se acepta un cambio más.
+
+    function vocacionalBienFormado() {
+      let d = request.resource.data;
+      return d.nombre is string && d.nombre.size() <= 80
+        // Solo tercero. Va en las reglas y no solo en la pantalla: esconder el
+        // botón no impide que alguien mande el documento desde la consola, y un
+        // CHASIDE de segundo ensuciaría el informe vocacional del plantel.
+        && d.grado == '3ero'
+        && d.grupo is string  && d.grupo.size() <= 6
+        && d.correo is string && d.correo.size() <= 120
+        && d.respuestas is map && d.respuestas.keys().size() <= 98;
+    }
+
+    match /vocacional/{registroId} {
+      allow get: if esProfesor()
+        || (request.auth != null
+            && (resource == null || resource.data.uid == request.auth.uid));
+      allow list: if esProfesor();
+
+      allow create: if request.auth != null
+        && registroId == request.auth.uid + '_' + string(request.resource.data.aplicacion)
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.correo == request.auth.token.email
+        && request.resource.data.estado == 'en curso'
+        && diagnosticoAbierto(request.resource.data.aplicacion)
+        && request.resource.data.aplicacion is int
+        && vocacionalBienFormado()
+        && request.resource.data.iniciado == request.time
+        && request.resource.data.actualizado == request.time;
+
+      allow update: if esProfesor() || (
+        request.auth != null
+        && resource.data.uid == request.auth.uid
+        && resource.data.estado == 'en curso'
+        && diagnosticoAbierto(resource.data.aplicacion)
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.correo == resource.data.correo
+        && request.resource.data.aplicacion == resource.data.aplicacion
+        && request.resource.data.estado in ['en curso', 'entregado']
+        && request.resource.data.keys().hasOnly([
+             'aplicacion', 'uid', 'correo', 'estado', 'nombre', 'grado', 'grupo',
+             'respuestas', 'puntajes', 'dominantes', 'empateEnSegundo',
+             'iniciado', 'actualizado', 'entregado'])
+        && vocacionalBienFormado()
+        && request.resource.data.actualizado == request.time
+      );
+
+      allow delete: if esProfesor();
+    }
+
+    // ─── Expediente de nuevo ingreso (cuestionario a padres) ───────────────
+    //
+    // Aquí sí hay credencial: cada familia entra con un folio que reparte la
+    // escuela, y ese folio es una cuenta de Firebase Authentication de verdad.
+    // El contraste con /landolt es deliberado. Allá se entra sin cuenta porque
+    // lo único que se guarda son anillos tachados. Este cuestionario recoge
+    // salud del alumno, violencia dentro de la casa, consumo de sustancias en
+    // el hogar e ingresos familiares: datos personales sensibles de menores.
+    // Una puerta abierta no es aceptable para eso, ni por comodidad.
+    //
+    // Se entrega UNA vez. El candado es el mismo de siempre: el documento se
+    // llama como el folio y solo se concede `create`, nunca `update`.
+
+    match /folios/{folioId} {
+      // La ficha del folio (a qué alumno se le asignó). La escribe el profesor
+      // con scripts/alta-folios.mjs; la familia solo lee la suya.
+      allow get: if esProfesor()
+        || (request.auth != null && request.auth.uid == folioId);
+      allow list: if esProfesor();
+      allow write: if esProfesor();
+    }
+
+    match /expedientes/{folioId} {
+      // Nadie más que el profesor los lee, ni siquiera la familia que acaba de
+      // contestar: al ser el folio a la vez usuario y contraseña, cualquiera que
+      // lo viera de reojo podría volver a entrar y leer lo que se declaró sobre
+      // violencia o salud. Se escribe y no se vuelve a mostrar.
+      //
+      // El `resource == null` deja preguntar "¿ya contestamos?" sobre un
+      // documento que todavía no existe, sin destapar ningún dato.
+      allow get: if esProfesor()
+        || (request.auth != null && request.auth.uid == folioId && resource == null);
+      allow list: if esProfesor();
+
+      allow create: if request.auth != null
+        && folioId == request.auth.uid
+        && request.resource.data.folio == request.auth.uid
+        && request.resource.data.enviado == request.time
+        // Un tope generoso pero finito: son ~50 preguntas, no un almacén.
+        && request.resource.data.keys().size() <= 60
+        && request.resource.data.curp is string
+        && request.resource.data.curp.size() == 18;
+
+      // Corregir o borrar: solo el profesor.
+      allow update, delete: if esProfesor();
+    }
+
+    // ─── Lengua y Comunicación: votaciones en vivo y quizzes ───────────────
+    //
+    // La introducción de Lengua y Comunicación se da con la presentación en el
+    // proyector y los celulares de los alumnos. El profesor escribe en
+    // config/lyc qué pregunta está abierta (`activa`) y qué quizzes se pueden
+    // contestar (`quizzes`); los celulares lo escuchan.
+    //
+    // Mismos candados que en /intentos: ficha activa, algo abierto y un solo
+    // documento por alumno, que solo se puede crear.
+
+    function lycConfig() {
+      return get(/databases/$(database)/documents/config/lyc).data;
+    }
+
+    function lycExiste() {
+      return exists(/databases/$(database)/documents/config/lyc);
+    }
+
+    // VOTOS. No califican: son las barras que se proyectan. Aun así, uno por
+    // alumno y por ronda (el nombre del documento lleva el uid y la ronda), y
+    // solo en la pregunta que el profesor tiene abierta en ese momento: con la
+    // votación cerrada no entra nada, ni desde la consola.
+    //
+    // Leer la colección entera es solo del profesor. Sin eso, un alumno podría
+    // ver quién votó qué.
+    match /lyc_votos/{votoId} {
+      allow get: if esProfesor()
+        || (request.auth != null
+            && (resource == null || resource.data.uid == request.auth.uid));
+      allow list: if esProfesor();
+
+      allow create: if alumnoActivo()
+        && votoId == request.auth.uid + '_' + request.resource.data.pregunta
+        && request.resource.data.keys().hasOnly(['uid', 'pregunta', 'opcion', 'enviado'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.pregunta is string
+        && request.resource.data.pregunta.size() <= 60
+        && lycExiste()
+        && lycConfig().get('activa', '') == request.resource.data.pregunta
+        && request.resource.data.opcion is int
+        && request.resource.data.opcion >= 0
+        && request.resource.data.opcion <= 5
+        && request.resource.data.enviado == request.time;
+
+      allow update, delete: if esProfesor();
+    }
+
+    // QUIZZES. Estos sí califican, así que el candado es el de /intentos: el
+    // documento se llama "<uid>_<quiz>" y solo se concede `create`. Un segundo
+    // envío choca con el primero. El profesor puede borrar uno para que el
+    // alumno repita.
+    match /lyc_quizzes/{quizId} {
+      allow get: if esProfesor()
+        || (request.auth != null
+            && (resource == null || resource.data.uid == request.auth.uid));
+      allow list: if esProfesor();
+
+      allow create: if alumnoActivo()
+        && quizId == request.auth.uid + '_' + string(request.resource.data.quiz)
+        && request.resource.data.keys().hasOnly(['uid', 'quiz', 'aciertos', 'total',
+                                                 'porcentaje', 'respuestas', 'enviado'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.quiz is int
+        && lycExiste()
+        && request.resource.data.quiz in lycConfig().get('quizzes', [])
+        && request.resource.data.total is int
+        && request.resource.data.total > 0
+        && request.resource.data.total <= 20
+        && request.resource.data.aciertos is int
+        && request.resource.data.aciertos >= 0
+        && request.resource.data.aciertos <= request.resource.data.total
+        && request.resource.data.porcentaje is int
+        && request.resource.data.porcentaje >= 0
+        && request.resource.data.porcentaje <= 100
+        && request.resource.data.respuestas is list
+        && request.resource.data.respuestas.size() == request.resource.data.total
+        && request.resource.data.enviado == request.time;
+
+      allow update, delete: if esProfesor();
+    }
+
+    // ─── Taller 3D del Módulo 1.1: armar una PC o una laptop ───────────────
+    //
+    // No es calificación: es una práctica con cronómetro. Se guarda el MEJOR
+    // tiempo de cada alumno por armado (escritorio / laptop) y modo (guía /
+    // reto), con una captura de la pantalla final como evidencia, y el
+    // profesor ve el ranking en /profesor.
+    //
+    // A diferencia de /intentos, aquí SÍ se permite `update`, porque el
+    // alumno puede volver a armar para mejorar su tiempo. El candado es que
+    // solo entra un tiempo MENOR al guardado: repetir para empeorar, o para
+    // reescribir otra cosa, se rechaza.
+    //
+    // Lo que las reglas NO pueden saber es si el tiempo es real: alguien
+    // hábil podría mandar un número desde la consola. Por eso el piso de 20
+    // segundos y, sobre todo, la captura: un tiempo sospechoso se compara con
+    // su imagen. El profesor puede borrar un registro.
+    //
+    // Nombre y grupo se copian de la ficha, y las reglas lo comprueban contra
+    // la ficha misma: nadie aparece en el ranking con un nombre inventado.
+
+    function tallerBienFormado() {
+      let d = request.resource.data;
+      return d.keys().hasOnly(['uid', 'nombre', 'grupo', 'armado', 'reto',
+                               'segundos', 'errores', 'enviado'])
+        && d.uid == request.auth.uid
+        && d.nombre == fichaAlumno().nombre
+        && d.grupo == fichaAlumno().grupo
+        && d.armado in ['escritorio', 'laptop']
+        && d.reto is bool
+        && d.segundos is int && d.segundos >= 20 && d.segundos <= 7200
+        && d.errores is int  && d.errores >= 0   && d.errores <= 500
+        && d.enviado == request.time;
+    }
+
+    function idTaller() {
+      return request.auth.uid + '_' + request.resource.data.armado
+        + (request.resource.data.reto ? '_reto' : '');
+    }
+
+    match /taller3d/{registroId} {
+      // Cada alumno lee su propio récord (para saber si mejoró); la lista
+      // completa, con nombres, solo el profesor.
+      allow get: if esProfesor()
+        || (request.auth != null
+            && (resource == null || resource.data.uid == request.auth.uid));
+      allow list: if esProfesor();
+
+      allow create: if alumnoActivo()
+        && registroId == idTaller()
+        && tallerBienFormado();
+
+      allow update: if esProfesor() || (
+        alumnoActivo()
+        && registroId == idTaller()
+        && resource.data.uid == request.auth.uid
+        && request.resource.data.segundos < resource.data.segundos
+        && tallerBienFormado()
+      );
+
+      allow delete: if esProfesor();
+    }
+
+    // La captura va en su propio documento, con el mismo nombre que el
+    // récord. Así el ranking del profesor se carga sin descargar decenas de
+    // imágenes; cada una se pide solo al darle "ver".
+    //
+    // Solo se escribe JUNTO con su récord, en el mismo lote: getAfter() mira
+    // cómo queda /taller3d al terminar la operación y exige que ese récord
+    // sea del alumno y se haya escrito en este mismo instante. Como el récord
+    // solo acepta tiempos que mejoran, la captura tampoco se puede cambiar
+    // por otra sin haber mejorado de verdad.
+    match /taller3d_capturas/{registroId} {
+      allow get: if esProfesor()
+        || (request.auth != null
+            && (resource == null || resource.data.uid == request.auth.uid));
+      allow list: if esProfesor();
+
+      allow create, update: if request.auth != null
+        && request.resource.data.keys().hasOnly(['uid', 'captura', 'enviado'])
+        && request.resource.data.uid == request.auth.uid
+        && getAfter(/databases/$(database)/documents/taller3d/$(registroId)).data.uid == request.auth.uid
+        && getAfter(/databases/$(database)/documents/taller3d/$(registroId)).data.enviado == request.time
+        // Una JPEG pequeña en texto. El tope evita usar esto como almacén.
+        && request.resource.data.captura is string
+        && request.resource.data.captura.size() <= 400000
+        && request.resource.data.captura.matches('data:image/jpeg;base64,[A-Za-z0-9+/=]+')
+        && request.resource.data.enviado == request.time;
+
+      allow delete: if esProfesor();
+    }
+
+    // ─── Exámenes de parcial (/examen/<id>) ─────────────────────────────────
+    //
+    // Un documento por alumno y examen, "<uid>_<examen>", que vive así:
+    //
+    //   create  →  "en curso", con la hora del servidor. Ya gastó su intento:
+    //              un segundo create choca con el primero.
+    //   update  →  UNA sola vez, de "en curso" a "entregado" o "cancelado",
+    //              con sus respuestas. Entregar solo se puede dentro del tiempo
+    //              (25 min + 2 de gracia por la red); cancelar, siempre.
+    //   update  →  si fue cancelado, el alumno puede anotar UNA vez la hora en
+    //              que regresó, para que el profesor vea cuánto estuvo fuera.
+    //
+    // Que salió de la página lo detecta el navegador, no estas reglas: un
+    // alumno hábil podría no reportarlo. Lo que sí garantizan las reglas es el
+    // intento único, el reloj y que nadie escriba en el examen de otro.
+    //
+    // Nombre y grupo se copian de la ficha y se comprueban contra ella. Las
+    // calificaciones de texto (`puntos`) solo las escribe el profesor, que
+    // también puede borrar un intento para que el alumno repita.
+
+    function examenAbierto(examen) {
+      return exists(/databases/$(database)/documents/config/examenes)
+        && examen in get(/databases/$(database)/documents/config/examenes).data.get('abiertos', []);
+    }
+
+    match /examenes/{registroId} {
+      allow get: if esProfesor()
+        || (request.auth != null
+            && (resource == null || resource.data.uid == request.auth.uid));
+      allow list: if esProfesor();
+
+      allow create: if alumnoActivo()
+        && registroId == request.auth.uid + '_' + request.resource.data.examen
+        && request.resource.data.keys().hasOnly(['uid', 'nombre', 'grupo', 'examen', 'estado', 'inicio'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.nombre == fichaAlumno().nombre
+        && request.resource.data.grupo == fichaAlumno().grupo
+        && request.resource.data.examen is string
+        && examenAbierto(request.resource.data.examen)
+        && request.resource.data.estado == 'en curso'
+        && request.resource.data.inicio == request.time;
+
+      // Cerrar: una vez, desde "en curso".
+      allow update: if request.auth != null
+        && resource.data.uid == request.auth.uid
+        && resource.data.estado == 'en curso'
+        && request.resource.data.diff(resource.data).affectedKeys()
+             .hasOnly(['estado', 'motivo', 'respuestas', 'fin'])
+        && request.resource.data.fin == request.time
+        && request.resource.data.motivo is string
+        && request.resource.data.motivo.size() <= 40
+        && request.resource.data.respuestas is map
+        && request.resource.data.respuestas.size() <= 40
+        && (request.resource.data.estado == 'cancelado'
+            || (request.resource.data.estado == 'entregado'
+                && request.time <= resource.data.inicio + duration.value(27, 'm')));
+
+      // Anotar el regreso: una vez, solo en uno cancelado.
+      allow update: if request.auth != null
+        && resource.data.uid == request.auth.uid
+        && resource.data.estado == 'cancelado'
+        && !('regreso' in resource.data)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['regreso'])
+        && request.resource.data.regreso == request.time;
+
+      allow update, delete: if esProfesor();
+    }
+
+    // ─── Cuaderno de notas de los parciales ─────────────────────────────────
+
+    // Las calificaciones que el profesor pone a mano en /calificaciones, con
+    // los nombres de la lista oficial. Nadie más las lee ni las escribe: ni
+    // siquiera el propio alumno ve su renglón desde aquí.
+    match /cuadernos/{cuadernoId} {
+      allow read, write: if esProfesor();
+    }
+
+    // ─── Qué módulos están abiertos ────────────────────────────────────────
+
+    match /config/{doc} {
+      allow read: if request.auth != null;
+      allow write: if esProfesor();
+    }
+
+    // ─── Todo lo demás queda cerrado ───────────────────────────────────────
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

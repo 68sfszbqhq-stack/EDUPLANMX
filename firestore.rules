@@ -31,9 +31,22 @@ service cloud.firestore {
     // -------------------------------------------------------------------------
     //  1. USUARIOS
     // -------------------------------------------------------------------------
+    // El perfil es autoeditable, así que nada de lo que el propio usuario escribe
+    // puede darle privilegios: el rol queda limitado a los que la app asigna sola
+    // (nunca 'superadmin') y una cuenta desactivada no puede reactivarse sola.
+    function rolPropioPermitido() {
+      return request.resource.data.get('rol', 'maestro') in ['maestro', 'directivo', 'alumno', 'guest'];
+    }
+
     match /users/{userId} {
-      // Regla de Oro: un usuario SIEMPRE puede leer/escribir su propio perfil
-      allow read, create, update: if isAuthenticated() && request.auth.uid == userId;
+      // Regla de Oro: un usuario SIEMPRE puede leer su propio perfil
+      allow read: if isAuthenticated() && request.auth.uid == userId;
+      allow create: if isAuthenticated() && request.auth.uid == userId
+                    && rolPropioPermitido()
+                    && request.resource.data.get('activo', true) == true;
+      allow update: if isAuthenticated() && request.auth.uid == userId
+                    && rolPropioPermitido()
+                    && request.resource.data.get('activo', true) == resource.data.get('activo', true);
 
       // SuperAdmin: gestión total de usuarios
       allow read, write: if isSuperAdmin();
@@ -79,11 +92,14 @@ service cloud.firestore {
     }
 
     // -------------------------------------------------------------------------
-    //  4. CUESTIONARIOS SOCIOEDUCATIVOS (mismo criterio que alumnos)
+    //  4. CUESTIONARIOS SOCIOEDUCATIVOS
     // -------------------------------------------------------------------------
+    // Salud, discapacidad, ingresos y dinámica familiar de menores. Los documentos
+    // no llevan schoolId, así que no hay forma de acotarlos por escuela: solo el
+    // SuperAdmin los consulta. Ninguna pantalla activa de la app los lee.
     match /cuestionariosSocioEducativos/{cuestionarioId} {
       allow create: if true;
-      allow read, update, delete: if isAuthenticated();
+      allow read, update, delete: if isSuperAdmin();
     }
 
     // -------------------------------------------------------------------------
@@ -161,6 +177,278 @@ service cloud.firestore {
     match /api_quotas/{id} {
       allow read: if isAuthenticated();
       allow write: if isSuperAdmin();
+    }
+
+    // Cuaderno escolar: membresías verificadas administradas exclusivamente por
+    // consola/Admin SDK. No confiar en rol/schoolId del perfil autoeditable.
+    match /schoolNotebooks/{schoolId} {
+      function member() {
+        return isAuthenticated() && exists(/databases/$(database)/documents/schoolNotebooks/$(schoolId)/members/$(request.auth.uid));
+      }
+      function reviewer() {
+        return member() && get(/databases/$(database)/documents/schoolNotebooks/$(schoolId)/members/$(request.auth.uid)).data.role == 'reviewer';
+      }
+      function writer() {
+        return member() && get(/databases/$(database)/documents/schoolNotebooks/$(schoolId)/members/$(request.auth.uid)).data.role in ['contributor', 'reviewer'];
+      }
+      match /members/{uid} {
+        allow get: if isAuthenticated() && request.auth.uid == uid;
+        allow list, write: if false;
+      }
+      match /sources/{sourceId} {
+        allow read: if member();
+        allow create: if writer()
+          && request.resource.data.keys().hasOnly(['id', 'schoolId', 'authorId', 'title', 'text', 'kind', 'cycle', 'group', 'subject', 'meeting', 'date', 'validUntil', 'origin', 'status', 'createdAt', 'reviewedBy', 'reviewedAt'])
+          && request.resource.data.id == sourceId
+          && request.resource.data.schoolId == schoolId
+          && request.resource.data.authorId == request.auth.uid
+          && request.resource.data.status == 'borrador'
+          && request.resource.data.reviewedBy == '' && request.resource.data.reviewedAt == ''
+          && request.resource.data.title is string && request.resource.data.title.size() > 0 && request.resource.data.title.size() <= 200
+          && request.resource.data.text is string && request.resource.data.text.size() > 0 && request.resource.data.text.size() <= 80000
+          && request.resource.data.cycle is string && request.resource.data.cycle.size() > 0 && request.resource.data.cycle.size() <= 500
+          && request.resource.data.group is string && request.resource.data.group.size() <= 500
+          && request.resource.data.subject is string && request.resource.data.subject.size() <= 500
+          && request.resource.data.meeting is string && request.resource.data.meeting.size() <= 500
+          && request.resource.data.origin is string && request.resource.data.origin.size() > 0 && request.resource.data.origin.size() <= 500
+          && request.resource.data.date is string && request.resource.data.date.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+          && request.resource.data.validUntil is string && (request.resource.data.validUntil == '' || (request.resource.data.validUntil.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$') && request.resource.data.validUntil >= request.resource.data.date))
+          && request.resource.data.createdAt is string && request.resource.data.createdAt.size() <= 40
+          && request.resource.data.kind in ['documento', 'acuerdo', 'actividad', 'diagnostico', 'pmc', 'paec', 'antologia']
+          && (!(request.resource.data.kind in ['actividad', 'diagnostico']) || request.resource.data.group.size() > 0);
+        // Texto inmutable: una corrección se registra como otra versión. Se archiva
+        // explícitamente la anterior para evitar reemplazos silenciosos.
+        allow update: if reviewer()
+          && resource.data.status != 'archivada'
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'reviewedBy', 'reviewedAt'])
+          && request.resource.data.status in ['revisada', 'archivada']
+          && request.resource.data.reviewedBy == request.auth.uid
+          && request.resource.data.reviewedAt is string && request.resource.data.reviewedAt.size() <= 40;
+        allow delete: if false;
+      }
+    }
+
+    // -------------------------------------------------------------------------
+    //  11. MIS GRUPOS — compartido con Antología v2 (misma base de datos)
+    // -------------------------------------------------------------------------
+    // El acceso NO depende de rol ni de schoolId (ambos autoeditables): cada grupo
+    // tiene un dueño, docenteUid, y solo él ve su lista y sus resultados.
+    // La lista usa la matrícula normalizada como ID: importar dos veces no duplica.
+    // El alumno (cuenta de Antología en /cuentasAlumno) solo puede reclamar SU
+    // matrícula una vez y entregar SUS resultados; nunca leer a sus compañeros.
+    function cuentaDelAlumno() {
+      return get(/databases/$(database)/documents/cuentasAlumno/$(request.auth.uid)).data;
+    }
+    function esLaMatriculaDelAlumno(matricula) {
+      return isAuthenticated()
+        && exists(/databases/$(database)/documents/cuentasAlumno/$(request.auth.uid))
+        && cuentaDelAlumno().get('matricula', '') == matricula
+        && cuentaDelAlumno().get('activo', false) == true;
+    }
+    // Alumno con cuenta de Antología que ya reclamó su lugar activo en la lista.
+    function alumnoDelGrupo(grupoId) {
+      return isAuthenticated()
+        && exists(/databases/$(database)/documents/cuentasAlumno/$(request.auth.uid))
+        && cuentaDelAlumno().get('activo', false) == true
+        && cuentaDelAlumno().get('matricula', '') != ''
+        && get(/databases/$(database)/documents/misGrupos/$(grupoId)/lista/$(cuentaDelAlumno().matricula)).data.cuentaUid == request.auth.uid
+        && get(/databases/$(database)/documents/misGrupos/$(grupoId)/lista/$(cuentaDelAlumno().matricula)).data.estado == 'activo';
+    }
+    function duenoDelGrupo(grupoId) {
+      return isAuthenticated()
+        && get(/databases/$(database)/documents/misGrupos/$(grupoId)).data.docenteUid == request.auth.uid;
+    }
+    function textoCorto(v, max) {
+      return v is string && v.size() <= max;
+    }
+
+    match /misGrupos/{grupoId} {
+      function grupoBienFormado() {
+        let d = request.resource.data;
+        return d.keys().hasOnly(['docenteUid', 'nombre', 'asignaturaClave', 'asignaturaNombre', 'ciclo', 'creadoEn', 'archivado', 'vaciasCuentanCero', 'ponderacion', 'parciales'])
+          && d.docenteUid == request.auth.uid
+          && d.nombre is string && d.nombre.size() >= 1 && d.nombre.size() <= 60
+          && textoCorto(d.asignaturaClave, 60) && textoCorto(d.asignaturaNombre, 120)
+          && textoCorto(d.ciclo, 20) && textoCorto(d.creadoEn, 40)
+          && d.archivado is bool
+          && d.get('ponderacion', {}) is map
+          && d.get('parciales', []) is list && d.get('parciales', []).size() <= 6;
+      }
+      // Las consultas deben filtrar where('docenteUid','==', uid).
+      allow read: if isAuthenticated() && resource.data.docenteUid == request.auth.uid;
+      allow create: if isAuthenticated() && grupoBienFormado();
+      allow update: if isAuthenticated() && resource.data.docenteUid == request.auth.uid && grupoBienFormado();
+      allow delete: if false; // se archiva; borrar dejaría listas y resultados huérfanos
+
+      match /lista/{matricula} {
+        function filaBienFormada() {
+          let d = request.resource.data;
+          return d.keys().hasOnly(['matricula', 'nombre', 'estado', 'cuentaUid', 'cuentaCorreo', 'vinculadoEn', 'actualizadoEn', 'generada'])
+            && d.matricula == matricula && matricula.matches('^[a-z0-9]{1,20}$')
+            && d.nombre is string && d.nombre.size() >= 1 && d.nombre.size() <= 120
+            && d.estado in ['activo', 'baja']
+            && textoCorto(d.cuentaUid, 128) && textoCorto(d.cuentaCorreo, 200)
+            && textoCorto(d.actualizadoEn, 40);
+        }
+        allow read: if duenoDelGrupo(grupoId);
+        // El docente crea y corrige filas. Puede desvincular una cuenta (dejarla
+        // vacía), pero no asignarle a nadie una cuenta ajena.
+        allow create: if duenoDelGrupo(grupoId) && filaBienFormada()
+          && request.resource.data.cuentaUid == '' && request.resource.data.cuentaCorreo == '';
+        allow update: if duenoDelGrupo(grupoId) && filaBienFormada()
+          && (request.resource.data.cuentaUid == resource.data.cuentaUid
+              || (request.resource.data.cuentaUid == '' && request.resource.data.cuentaCorreo == ''));
+        allow delete: if false; // se da de baja con estado: 'baja'
+
+        // El alumno ve solo su propia fila y la reclama una vez, si nadie lo hizo.
+        allow get: if esLaMatriculaDelAlumno(matricula);
+        allow update: if esLaMatriculaDelAlumno(matricula)
+          && resource.data.cuentaUid == ''
+          && resource.data.estado == 'activo'
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['cuentaUid', 'cuentaCorreo', 'vinculadoEn'])
+          && request.resource.data.cuentaUid == request.auth.uid
+          && request.resource.data.cuentaCorreo == request.auth.token.get('email', '')
+          && request.resource.data.vinculadoEn == request.time;
+      }
+
+      match /resultados/{resultadoId} {
+        function resultadoBienFormado() {
+          let d = request.resource.data;
+          return d.keys().hasOnly(['matricula', 'instrumento', 'titulo', 'aciertos', 'total', 'porcentaje', 'porEje', 'cuentaUid', 'enviado'])
+            && resultadoId == d.instrumento + '_' + d.matricula
+            && d.instrumento is string && d.instrumento.matches('^[a-z0-9.-]{1,80}$')
+            && textoCorto(d.titulo, 120)
+            && d.total is int && d.total > 0 && d.total <= 200
+            && d.aciertos is int && d.aciertos >= 0 && d.aciertos <= d.total
+            && d.porcentaje is int && d.porcentaje >= 0 && d.porcentaje <= 100
+            && d.porEje is map
+            && d.cuentaUid == request.auth.uid
+            && d.enviado == request.time;
+        }
+        allow read: if duenoDelGrupo(grupoId);
+        // Solo quien reclamó la matrícula en ESTA lista, y una sola vez (sin update).
+        allow create: if resultadoBienFormado()
+          && esLaMatriculaDelAlumno(request.resource.data.matricula)
+          && get(/databases/$(database)/documents/misGrupos/$(grupoId)/lista/$(request.resource.data.matricula)).data.cuentaUid == request.auth.uid
+          && get(/databases/$(database)/documents/misGrupos/$(grupoId)/lista/$(request.resource.data.matricula)).data.estado == 'activo';
+        allow update: if false;
+        allow delete: if duenoDelGrupo(grupoId); // para dejar que el alumno repita
+      }
+
+      // --- Cuaderno de notas: solo el docente dueño ---------------------------
+      match /columnas/{colId} {
+        allow read, delete: if duenoDelGrupo(grupoId);
+        allow create, update: if duenoDelGrupo(grupoId)
+          && request.resource.data.keys().hasOnly(['nombre', 'tipo', 'max', 'peso', 'fecha', 'orden', 'rubrica', 'examenId'])
+          && request.resource.data.nombre is string && request.resource.data.nombre.size() >= 1 && request.resource.data.nombre.size() <= 80
+          && request.resource.data.tipo in ['tarea', 'proyecto', 'examen', 'participacion', 'otro']
+          && request.resource.data.max is number && request.resource.data.max > 0 && request.resource.data.max <= 1000
+          && request.resource.data.peso is number && request.resource.data.peso >= 0 && request.resource.data.peso <= 100;
+      }
+      match /notas/{matricula} {
+        allow read, delete: if duenoDelGrupo(grupoId);
+        allow create, update: if duenoDelGrupo(grupoId)
+          && request.resource.data.keys().hasOnly(['matricula', 'valores', 'estados', 'comentarios', 'rubricas'])
+          && request.resource.data.matricula == matricula
+          && request.resource.data.get('valores', {}) is map && request.resource.data.get('estados', {}) is map;
+      }
+
+      // --- Asistencia, diario de clase y anotaciones: solo el docente dueño ---
+      match /asistencia/{fecha} {
+        allow read, delete: if duenoDelGrupo(grupoId);
+        allow create, update: if duenoDelGrupo(grupoId)
+          && fecha.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+          && request.resource.data.keys().hasOnly(['fecha', 'marcas', 'actualizadoEn'])
+          && request.resource.data.fecha == fecha
+          && request.resource.data.marcas is map;
+      }
+      match /diario/{fecha} {
+        allow read, delete: if duenoDelGrupo(grupoId);
+        allow create, update: if duenoDelGrupo(grupoId)
+          && fecha.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+          && request.resource.data.keys().hasOnly(['fecha', 'texto', 'actualizadoEn'])
+          && request.resource.data.fecha == fecha
+          && textoCorto(request.resource.data.texto, 8000);
+      }
+      match /anotaciones/{anotacionId} {
+        allow read, delete: if duenoDelGrupo(grupoId);
+        allow create, update: if duenoDelGrupo(grupoId)
+          && request.resource.data.keys().hasOnly(['matricula', 'fecha', 'tipo', 'texto'])
+          && request.resource.data.tipo in ['positiva', 'atencion', 'accion', 'nota']
+          && textoCorto(request.resource.data.matricula, 20)
+          && textoCorto(request.resource.data.fecha, 40)
+          && textoCorto(request.resource.data.texto, 1000);
+      }
+
+      // --- Exámenes -----------------------------------------------------------
+      // El examen (sin respuestas) lo lee el alumno del grupo cuando está abierto.
+      // La clave vive aparte, en /privado, y solo la lee el docente: así nunca
+      // llega al celular del alumno. Se califica en la pantalla del docente.
+      match /examenes/{examenId} {
+        function examen() {
+          return get(/databases/$(database)/documents/misGrupos/$(grupoId)/examenes/$(examenId)).data;
+        }
+        allow read: if duenoDelGrupo(grupoId)
+          || (alumnoDelGrupo(grupoId) && resource.data.estado in ['abierto', 'cerrado']);
+        allow create, update: if duenoDelGrupo(grupoId)
+          && request.resource.data.keys().hasOnly(['titulo', 'instrucciones', 'minutos', 'estado', 'preguntas', 'columnaId', 'descripcionClase', 'creadoEn', 'actualizadoEn'])
+          && request.resource.data.estado in ['borrador', 'abierto', 'cerrado']
+          && request.resource.data.preguntas is list && request.resource.data.preguntas.size() <= 60
+          && request.resource.data.minutos is int && request.resource.data.minutos >= 0 && request.resource.data.minutos <= 240;
+        allow delete: if duenoDelGrupo(grupoId);
+
+        match /privado/{docId} {
+          allow read, write: if duenoDelGrupo(grupoId);
+        }
+
+        match /intentos/{matricula} {
+          function esSuIntento() {
+            return alumnoDelGrupo(grupoId) && cuentaDelAlumno().matricula == matricula;
+          }
+          // Con minutos > 0 el reloj lo lleva el servidor (+2 de gracia), no el celular.
+          function aTiempo() {
+            return examen().minutos == 0
+              || request.time < resource.data.inicio + duration.value(examen().minutos + 2, 'm');
+          }
+          allow read: if duenoDelGrupo(grupoId);
+          allow get: if esSuIntento();
+          allow create: if esSuIntento()
+            && examen().estado == 'abierto'
+            && request.resource.data.keys().hasOnly(['matricula', 'cuentaUid', 'estado', 'respuestas', 'inicio', 'guardadoEn'])
+            && request.resource.data.matricula == matricula
+            && request.resource.data.cuentaUid == request.auth.uid
+            && request.resource.data.estado == 'en curso'
+            && request.resource.data.respuestas is map
+            && request.resource.data.inicio == request.time
+            && request.resource.data.guardadoEn == request.time;
+          // El alumno guarda mientras está "en curso"; al entregar, queda sellado.
+          allow update: if esSuIntento()
+            && resource.data.estado == 'en curso'
+            && examen().estado == 'abierto'
+            && aTiempo()
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['respuestas', 'estado', 'fin', 'guardadoEn'])
+            && request.resource.data.respuestas is map
+            && request.resource.data.estado in ['en curso', 'entregado']
+            && request.resource.data.guardadoEn == request.time
+            && (request.resource.data.estado == 'en curso' || request.resource.data.fin == request.time);
+          // El docente registra su revisión; no puede cambiar lo que contestó el alumno.
+          allow update: if duenoDelGrupo(grupoId)
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['revision', 'calificacion', 'calificadoEn']);
+          allow delete: if duenoDelGrupo(grupoId); // para dejar que repita
+        }
+      }
+    }
+
+    // Índice: en qué grupos aparece una matrícula. Lo escribe el docente al
+    // importar; lo lee solo el alumno dueño de esa matrícula (o el docente).
+    match /matriculas/{matricula}/grupos/{grupoId} {
+      allow read: if esLaMatriculaDelAlumno(matricula) || duenoDelGrupo(grupoId);
+      allow create, update: if duenoDelGrupo(grupoId)
+        && request.resource.data.keys().hasOnly(['asignaturaClave', 'grupoNombre', 'docenteUid'])
+        && request.resource.data.docenteUid == request.auth.uid
+        && textoCorto(request.resource.data.asignaturaClave, 60)
+        && textoCorto(request.resource.data.grupoNombre, 60);
+      allow delete: if duenoDelGrupo(grupoId);
     }
 
     // -------------------------------------------------------------------------

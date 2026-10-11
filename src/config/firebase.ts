@@ -3,8 +3,9 @@ import {
   initializeFirestore,
   persistentLocalCache,
   persistentMultipleTabManager,
+  connectFirestoreEmulator,
 } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import { getAuth, connectAuthEmulator } from 'firebase/auth';
 
 // Configuración de Firebase
 // NOTA: Las API Keys de Firebase son públicas por diseño.
@@ -35,6 +36,14 @@ export const db = initializeFirestore(app, {
 });
 
 export const auth = getAuth(app);
+
+// Versión 2: con VITE_EMULADOR=1 la app habla con el simulador local de Firebase
+// (npm run emulador), no con ninguna base en la nube. Solo para probar con datos
+// sintéticos; en un build normal esta variable no existe.
+if (import.meta.env.VITE_EMULADOR === '1') {
+  connectFirestoreEmulator(db, '127.0.0.1', 8080);
+  connectAuthEmulator(auth, 'http://127.0.0.1:9099', { disableWarnings: true });
+}
 
 export default app;
 

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network, Sparkles, ChevronDown, CheckCircle2, Menu, X, Compass, NotebookPen, ClipboardList } from 'lucide-react';
+import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network, Sparkles, ChevronDown, CheckCircle2, Menu, X, Compass, NotebookPen, ClipboardList, ListChecks } from 'lucide-react';
 import { useAuth } from '../src/contexts/AuthContext';
 import { analyticsService } from '../src/services/analyticsService';
 
@@ -48,17 +48,23 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
     // Ruta principal del docente, en el orden en que debe recorrerla
     const tienePerfil = Boolean(localStorage.getItem('perfilDocente'));
 
-    const pasos = [
-        { id: 'perfil-docente', label: 'Cómo doy clase', icon: ClipboardList, step: 0, done: tienePerfil },
-        { id: 'flujo', label: 'Flujo de Contextualización', icon: Compass, step: 1, done: flujoCompleto },
+    // Lo de todos los días va arriba; lo que se llena una sola vez, abajo. Cada dato se
+    // captura en un solo lugar: lista, asistencia, diario y calificaciones viven en Mis clases.
+    const diario = [
+        { id: 'grupos', label: 'Mis clases', icon: ListChecks, step: '•', done: false, destacado: true },
+        { id: 'generator', label: 'Generar Planeación', icon: PlusCircle, step: '•', done: false, destacado: true },
+        { id: 'plans', label: 'Mis Planeaciones', icon: History, step: '•', done: tienePlaneaciones },
+    ];
+    const unaVez = [
+        { id: 'perfil-docente', label: 'Cómo doy clase', icon: ClipboardList, step: 1, done: tienePerfil },
         { id: 'context', label: 'Contexto Escolar', icon: Settings, step: 2, done: contextoListo },
-        { id: 'diagnostico', label: 'Diagnóstico del Grupo', icon: Users, step: 3, done: false },
-        { id: 'generator', label: 'Generar Planeación', icon: PlusCircle, step: 4, done: false, destacado: true },
-        { id: 'plans', label: 'Mis Planeaciones', icon: History, step: 5, done: tienePlaneaciones },
-        { id: 'bitacora', label: 'Bitácora de Sesiones', icon: NotebookPen, step: 6, done: tieneBitacora },
+        { id: 'flujo', label: 'Flujo de Contextualización', icon: Compass, step: 3, done: flujoCompleto },
+        { id: 'cuaderno', label: 'Cuaderno escolar · CAPEMS', icon: BookOpen, step: 4, done: false },
     ];
 
     const masHerramientas = [
+        { id: 'diagnostico', label: 'Diagnóstico (formulario anterior)', icon: Users },
+        { id: 'bitacora', label: 'Bitácora (anterior al Diario de clase)', icon: NotebookPen },
         { id: 'guia-curricular', label: 'Guía Curricular', icon: BookOpen },
         { id: 'herramientas', label: 'Herramientas', icon: Sparkles },
         { id: 'ficha12', label: 'Ficha 12 (Taller)', icon: BookOpen },
@@ -103,11 +109,12 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
                     <span className="font-medium">Inicio</span>
                 </button>
 
-                {/* Ruta numerada: el camino del docente */}
+                {[['Tu día a día', diario], ['Se llena una sola vez', unaVez]].map(([titulo, pasos]) => (
+                <React.Fragment key={titulo as string}>
                 <p className="text-[10px] uppercase font-bold text-indigo-400 tracking-widest px-4 pt-4 pb-1">
-                    Tu ciclo completo, paso a paso
+                    {titulo as string}
                 </p>
-                {pasos.map((item) => {
+                {(pasos as typeof diario).map((item) => {
                     const Icon = item.icon;
                     const isActive = activeView === item.id;
                     return (
@@ -135,6 +142,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
                         </button>
                     );
                 })}
+                </React.Fragment>
+                ))}
 
                 {/* Más herramientas (plegable) */}
                 <button

@@ -17,6 +17,9 @@ import AsignacionMaterias from './pages/admin/AsignacionMaterias';
 import GestionAlumnos from './pages/admin/GestionAlumnos';
 import { PersonalizedDashboard } from './components/PersonalizedDashboard';
 
+import CuadernoEscolar from './components/CuadernoEscolar';
+import MisClases from './components/clase/MisClases';
+
 import PMCDashboard from './pages/directivo/PMCDashboard';
 import PAECDashboard from './pages/plantel/PAECDashboard';
 
@@ -25,7 +28,7 @@ const App: React.FC = () => {
   const location = useLocation();
   const { user, logout } = useAuth();
 
-  const [view, setView] = useState<AppView>(() => {
+  const [view, setView] = useState<AppView | 'cuaderno'>(() => {
     // @ts-ignore
     return location.state?.view || 'dashboard';
   });
@@ -135,6 +138,8 @@ const App: React.FC = () => {
         return <PMCDashboard />;
       case 'paec':
         return <PAECDashboard />;
+      case 'cuaderno':
+        return <CuadernoEscolar cycle={schoolContext.cycle} subject={subjectContext.subjectName} />;
       case 'context':
         return (
           <ContextManager
@@ -175,6 +180,8 @@ const App: React.FC = () => {
         return <PlansLibrary />;
       case 'diagnostico':
         return <DiagnosticoDashboard />;
+      case 'grupos':
+        return <MisClases onNavigate={handleNavigate} />;
       default:
         return <Dashboard setView={setView} recentPlansCount={savedPlans.length} />;
     }
@@ -188,7 +195,7 @@ const App: React.FC = () => {
       <main className="flex-1 overflow-y-auto h-screen">
         <header className="bg-white border-b border-slate-200 sticky top-0 z-10 px-8 py-4 flex justify-between items-center">
           <h2 className="text-lg font-semibold capitalize text-slate-700">
-            {view === 'dashboard' ? 'Bienvenido, Docente' : view.replace('_', ' ')}
+            {view === 'dashboard' ? 'Bienvenido, Docente' : view === 'grupos' ? 'Mis clases' : view.replace('_', ' ')}
           </h2>
           <div className="flex items-center gap-4">
             <div className="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium border border-indigo-100">

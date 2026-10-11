@@ -26,6 +26,17 @@ export interface SubjectContext {
   mccemsCategory: string;
 }
 
+/** Un momento (apertura, desarrollo o cierre) de una sesión. */
+export interface SessionPhase {
+  activity: string;
+  studentActivity: string;
+  time: string;
+  evidence: string;
+  /** Técnica didáctica (lluvia de ideas, rompecabezas, debate…). El formato del
+   *  BGO la pide en su propia columna, separada de las actividades. */
+  technique?: string;
+}
+
 export interface LessonPlan {
   title: string;
   date: string; // Fecha de creación
@@ -70,6 +81,9 @@ export interface LessonPlan {
     /** Elementos propios de ciertas UAC: dimensión (Humanidades), práctica de
      *  ciencia e ingeniería (CNEyT), etc. La lista de cotejo los pide cuando aplican. */
     uacSpecificElements?: string;
+    /** Concepto central de la secuencia. El formato de planeación del BGO lo pide
+     *  como casilla propia, arriba de las progresiones. */
+    centralConcept?: string;
   };
 
   // Compatibilidad hacia atrás (legacy)
@@ -187,6 +201,9 @@ export interface LessonPlan {
     criteria: string;
   }>;
 
+  /** Criterios de la rúbrica del producto principal, con su peso (suman 100). */
+  rubric?: Array<{ criterion: string; weight: number }>;
+
   // 9b. Materiales, recursos y REFERENCIAS (la lista de cotejo pide los tres)
   references?: string[]; // bibliografía y fuentes consultadas
 
@@ -228,9 +245,9 @@ export interface LessonPlan {
     date: string;
     topic: string;
     sequence: {
-      opening: { activity: string; studentActivity: string; time: string; evidence: string };
-      development: { activity: string; studentActivity: string; time: string; evidence: string };
-      closing: { activity: string; studentActivity: string; time: string; evidence: string };
+      opening: SessionPhase;
+      development: SessionPhase;
+      closing: SessionPhase;
     };
     resources: string[];
   }>;
@@ -243,7 +260,7 @@ export interface LessonPlan {
   };
 }
 
-export type AppView = 'dashboard' | 'context' | 'generator' | 'plans' | 'diagnostico' | 'admin-asignacion' | 'admin-alumnos' | 'pmc' | 'paec' | 'flujo' | 'bitacora' | 'perfil-docente';
+export type AppView = 'dashboard' | 'context' | 'generator' | 'plans' | 'diagnostico' | 'admin-asignacion' | 'admin-alumnos' | 'pmc' | 'paec' | 'flujo' | 'bitacora' | 'perfil-docente' | 'grupos';
 
 // --- FLUJO DE CONTEXTUALIZACIÓN (fases que alimentan la planeación) ---
 
