@@ -5,6 +5,7 @@
 //
 // Deja listo:
 //   docente@prueba.mx / prueba123      → EduPlan v2 (docente con escuela)
+//   admin@prueba.mx / prueba123        → superadmin (para ensayar la migración de membresías)
 //   matrícula 2024001 / código ABC234  → Antología v2 (alumno, entra sin Google)
 //   módulos 1 a 8 de Antología abiertos
 const PROYECTO = 'eduplanmx-pruebas';
@@ -53,7 +54,11 @@ try {
 }
 
 const docente = await cuenta('docente@prueba.mx', 'prueba123');
-await documento('schools/escuela-prueba', { nombre: 'BGO Plantel de Prueba', cct: '21EBH0000X', municipio: 'Puebla' });
+// Como estaba en producción antes de la membresía verificada: código público = inicio del CCT.
+await documento('schools/escuela-prueba', { nombre: 'BGO Plantel de Prueba', cct: '21EBH0000X', municipio: 'Puebla', codigoAcceso: '21EBH000', createdBy: 'fundador', activa: true, estadisticas: { totalDocentes: 1 } });
+await documento('alumnos/alumno-sintetico-1', { schoolId: 'escuela-prueba', nombre: 'Alumno Sintético Uno', curp: 'CURP-SINTETICA-1', fechaRegistro: '2026-09-01' });
+const admin = await cuenta('admin@prueba.mx', 'prueba123');
+await documento(`users/${admin}`, { email: 'admin@prueba.mx', nombre: 'Admin', rol: 'superadmin', activo: true, schoolId: 'system' });
 await documento(`users/${docente}`, {
   email: 'docente@prueba.mx', nombre: 'Docente', apellidoPaterno: 'De Prueba', rol: 'maestro', activo: true,
   schoolId: 'escuela-prueba', schoolName: 'BGO Plantel de Prueba', puesto: 'Docente',

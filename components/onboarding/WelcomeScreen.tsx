@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GraduationCap, KeyRound, ArrowRight, Search, PlusCircle, CheckCircle2, Loader2 } from 'lucide-react';
 import { schoolService } from '../../src/services/schoolService';
+import { CodigoEscuela } from './CodigoEscuela';
 
 interface WelcomeScreenProps {
     userName: string;
@@ -37,12 +38,8 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ userName, onChoice
         setEscuela(null);
 
         try {
-            // 1º intento: código de acceso; 2º intento: CCT completo
-            // (el CCT viene impreso en cualquier documento oficial de la escuela)
-            let found = await schoolService.getSchoolByCode(clave);
-            if (!found) {
-                found = await schoolService.getSchoolByCCT(clave);
-            }
+            // Encontrar la escuela es público (por CCT); entrar pide el código secreto.
+            const found = await schoolService.getSchoolByCCT(clave);
 
             if (found) {
                 setEscuela({
@@ -52,7 +49,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ userName, onChoice
                     turno: found.turno
                 });
             } else {
-                setError('No encontramos una escuela con esa clave. Verifica el código con tu director, o usa las opciones de abajo.');
+                setError('No encontramos una escuela con ese CCT. Verifícalo, o usa las opciones de abajo.');
             }
         } catch (e) {
             console.error('Error buscando escuela:', e);
@@ -88,7 +85,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ userName, onChoice
                 <div className="mb-6">
                     <label className="text-sm font-bold text-gray-700 mb-2 flex items-center gap-2">
                         <KeyRound className="w-4 h-4 text-blue-500" />
-                        Escribe el código de tu escuela (o su CCT)
+                        Escribe el CCT de tu escuela
                     </label>
                     <div className="flex gap-2">
                         <input
@@ -113,7 +110,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ userName, onChoice
                         </button>
                     </div>
                     <p className="text-xs text-gray-500 mt-2">
-                        Pídeselo a tu director(a). El CCT aparece en cualquier documento oficial de tu plantel.
+                        Aparece en cualquier documento oficial de tu plantel. Después te pediremos el código de acceso que da tu director(a).
                     </p>
                 </div>
 
@@ -136,13 +133,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ userName, onChoice
                                 </p>
                             </div>
                         </div>
-                        <button
-                            onClick={handleConfirmar}
-                            className="w-full py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl font-semibold flex items-center justify-center gap-2 hover:from-emerald-600 hover:to-emerald-700 transition-all"
-                        >
-                            Sí, esta es mi escuela — Continuar
-                            <ArrowRight className="w-5 h-5" />
-                        </button>
+                        <CodigoEscuela schoolId={escuela.id} schoolName={escuela.nombre} onListo={handleConfirmar} />
                     </div>
                 )}
 
@@ -153,7 +144,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ userName, onChoice
                         className="w-full flex items-center gap-3 p-3 rounded-xl text-left text-sm text-gray-600 hover:bg-gray-50 transition-colors"
                     >
                         <Search className="w-4 h-4 text-gray-400 flex-shrink-0" />
-                        <span>No tengo código: <span className="font-semibold text-blue-600">buscar mi escuela por nombre</span></span>
+                        <span>No sé el CCT: <span className="font-semibold text-blue-600">buscar mi escuela por nombre</span></span>
                     </button>
                     <button
                         onClick={() => onChoice('create')}

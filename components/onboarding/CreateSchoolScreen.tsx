@@ -73,7 +73,7 @@ export const CreateSchoolScreen: React.FC<CreateSchoolScreenProps> = ({
                 throw new Error('No se pudo obtener el ID del usuario');
             }
 
-            const school = await schoolService.createSchool(formData, userId);
+            const school = await schoolService.createSchool({ ...formData, nombreCreador: auth.currentUser?.displayName ?? '', emailCreador: auth.currentUser?.email ?? '' }, userId);
             onSchoolCreated(school.id, school.nombre, formData.puestoCreador);
         } catch (error: any) {
             console.error('Error al crear escuela:', error);

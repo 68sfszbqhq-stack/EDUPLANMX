@@ -6,6 +6,7 @@ import {
     addDoc,
     updateDoc,
     setDoc,
+    deleteDoc,
     query,
     where,
     orderBy,
@@ -22,6 +23,18 @@ import type {
 } from '../../types/school';
 
 const SCHOOLS_COLLECTION = 'schools';
+
+export interface Membresia {
+    uid: string;
+    nombre: string;
+    email: string;
+    rol: 'docente' | 'directivo';
+    estado: 'pendiente' | 'aprobado' | 'rechazado';
+    codigo?: string;
+    creadoEn: string;
+    revisadoPor?: string;
+    revisadoEn?: string;
+}
 const USERS_COLLECTION = 'users';
 
 /**
@@ -32,10 +45,16 @@ class SchoolService {
     /**
      * Generar código de acceso único para la escuela
      */
-    private generateAccessCode(cct: string): string {
-        // Ejemplo: "15ECT0001A" → "15ECT001"
-        const clean = cct.replace(/[^A-Z0-9]/gi, '').toUpperCase();
-        return clean.substring(0, 8);
+    /**
+     * Código secreto de la escuela: 8 caracteres al azar, sin 0/O/1/I/L para
+     * que se dicte sin confusiones. Antes era el inicio del CCT, que es público:
+     * cualquiera lo adivinaba. Vive en schools/{id}/privado/acceso y solo lo ven
+     * los directivos de esa escuela.
+     */
+    generarCodigo(): string {
+        const alfabeto = '23456789ABCDEFGHJKMNPQRSTUVWXYZ';
+        const azar = crypto.getRandomValues(new Uint32Array(8));
+        return Array.from(azar, n => alfabeto[n % alfabeto.length]).join('');
     }
 
     /**
@@ -43,7 +62,7 @@ class SchoolService {
      */
     async createSchool(data: CreateSchoolData, userId: string): Promise<School> {
         try {
-            const codigoAcceso = this.generateAccessCode(data.cct);
+            const codigo = this.generarCodigo();
 
             // Verificar que no exista una escuela con el mismo CCT
             const existing = await this.getSchoolByCCT(data.cct);
@@ -57,7 +76,6 @@ class SchoolService {
                 municipio: data.municipio,
                 estado: data.estado,
                 turno: data.turno,
-                codigoAcceso,
                 createdAt: new Date().toISOString(),
                 createdBy: userId,
                 activa: true,
@@ -70,11 +88,17 @@ class SchoolService {
             };
 
             const docRef = await addDoc(collection(db, SCHOOLS_COLLECTION), schoolData);
+            // Quien registra la escuela queda como su directivo, con el código para invitar.
+            await setDoc(doc(db, SCHOOLS_COLLECTION, docRef.id, 'privado', 'acceso'), { codigo });
+            await setDoc(doc(db, SCHOOLS_COLLECTION, docRef.id, 'miembros', userId), {
+                uid: userId, nombre: data.nombreCreador ?? '', email: data.emailCreador ?? '',
+                rol: 'directivo', estado: 'aprobado', creadoEn: new Date().toISOString(),
+            });
 
             return {
                 id: docRef.id,
                 ...schoolData
-            };
+            } as School;
         } catch (error) {
             console.error('Error al crear escuela:', error);
             throw error;
@@ -105,34 +129,6 @@ class SchoolService {
             } as School;
         } catch (error) {
             console.error('Error al buscar escuela por CCT:', error);
-            throw error;
-        }
-    }
-
-    /**
-     * Buscar escuela por código de acceso
-     */
-    async getSchoolByCode(codigo: string): Promise<School | null> {
-        try {
-            const q = query(
-                collection(db, SCHOOLS_COLLECTION),
-                where('codigoAcceso', '==', codigo.toUpperCase()),
-                limit(1)
-            );
-
-            const snapshot = await getDocs(q);
-
-            if (snapshot.empty) {
-                return null;
-            }
-
-            const doc = snapshot.docs[0];
-            return {
-                id: doc.id,
-                ...doc.data()
-            } as School;
-        } catch (error) {
-            console.error('Error al buscar escuela por código:', error);
             throw error;
         }
     }
@@ -172,7 +168,6 @@ class SchoolService {
                 cct: school.cct,
                 municipio: school.municipio,
                 turno: school.turno,
-                codigoAcceso: school.codigoAcceso,
                 totalDocentes: school.estadisticas.totalDocentes
             }));
         } catch (error) {
@@ -300,6 +295,60 @@ class SchoolService {
     /**
      * Verificar si usuario necesita onboarding
      */
+    // ─── Membresía verificada ──────────────────────────────────────────────
+
+    async miMembresia(schoolId: string, uid: string): Promise<Membresia | null> {
+        const s = await getDoc(doc(db, SCHOOLS_COLLECTION, schoolId, 'miembros', uid));
+        return s.exists() ? (s.data() as Membresia) : null;
+    }
+
+    /**
+     * Pide entrar a una escuela. Con el código correcto entra aprobado al
+     * instante; sin código queda pendiente hasta que un directivo lo apruebe.
+     * Lanza 'codigo-incorrecto' si el código no coincide (lo decide Firestore).
+     */
+    async unirseAEscuela(schoolId: string, u: { uid: string; nombre: string; email: string }, codigo?: string): Promise<Membresia> {
+        const previa = await this.miMembresia(schoolId, u.uid).catch(() => null);
+        if (previa && !(previa.estado === 'pendiente' && codigo)) return previa;
+        const m: Membresia = {
+            uid: u.uid, nombre: u.nombre.slice(0, 120), email: u.email.slice(0, 200), rol: 'docente',
+            estado: codigo ? 'aprobado' : 'pendiente', creadoEn: new Date().toISOString(),
+            ...(codigo ? { codigo: codigo.trim().toUpperCase().replace(/[^A-Z0-9]/g, '') } : {}),
+        };
+        try {
+            await setDoc(doc(db, SCHOOLS_COLLECTION, schoolId, 'miembros', u.uid), m);
+        } catch (e: any) {
+            if (codigo && e?.code === 'permission-denied') throw new Error('codigo-incorrecto');
+            throw e;
+        }
+        return m;
+    }
+
+    async listarMiembros(schoolId: string): Promise<Membresia[]> {
+        const s = await getDocs(collection(db, SCHOOLS_COLLECTION, schoolId, 'miembros'));
+        return s.docs.map(d => d.data() as Membresia).sort((a, b) => (a.estado === 'pendiente' ? -1 : 1) - (b.estado === 'pendiente' ? -1 : 1) || a.nombre.localeCompare(b.nombre, 'es'));
+    }
+
+    async revisarMiembro(schoolId: string, m: Membresia, cambios: Pick<Membresia, 'estado' | 'rol'>, revisor: string) {
+        await setDoc(doc(db, SCHOOLS_COLLECTION, schoolId, 'miembros', m.uid), { ...m, ...cambios, revisadoPor: revisor, revisadoEn: new Date().toISOString() });
+    }
+
+    async quitarMiembro(schoolId: string, uid: string) {
+        await deleteDoc(doc(db, SCHOOLS_COLLECTION, schoolId, 'miembros', uid));
+    }
+
+    async leerCodigo(schoolId: string): Promise<string | null> {
+        const s = await getDoc(doc(db, SCHOOLS_COLLECTION, schoolId, 'privado', 'acceso'));
+        return s.exists() ? (s.data().codigo as string) : null;
+    }
+
+    /** Código nuevo (por si el anterior circuló de más). Quien ya entró no pierde su acceso. */
+    async cambiarCodigo(schoolId: string): Promise<string> {
+        const codigo = this.generarCodigo();
+        await setDoc(doc(db, SCHOOLS_COLLECTION, schoolId, 'privado', 'acceso'), { codigo });
+        return codigo;
+    }
+
     async needsOnboarding(userId: string): Promise<boolean> {
         try {
             const profile = await this.getUserProfile(userId);

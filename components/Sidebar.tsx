@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network, Sparkles, ChevronDown, CheckCircle2, Menu, X, Compass, NotebookPen, ClipboardList, ListChecks } from 'lucide-react';
+import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network, Sparkles, ChevronDown, CheckCircle2, Menu, X, Compass, NotebookPen, ClipboardList, ListChecks, Building2 } from 'lucide-react';
 import { useAuth } from '../src/contexts/AuthContext';
 import { analyticsService } from '../src/services/analyticsService';
 
@@ -63,6 +63,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
     ];
 
     const masHerramientas = [
+        { id: 'mi-escuela', label: 'Mi escuela y su personal', icon: Building2 },
         { id: 'diagnostico', label: 'Diagnóstico (formulario anterior)', icon: Users },
         { id: 'bitacora', label: 'Bitácora (anterior al Diario de clase)', icon: NotebookPen },
         { id: 'guia-curricular', label: 'Guía Curricular', icon: BookOpen },

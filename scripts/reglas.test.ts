@@ -15,7 +15,7 @@ import {
   assertSucceeds,
   RulesTestEnvironment,
 } from '@firebase/rules-unit-testing';
-import { doc, getDoc, setDoc, updateDoc, addDoc, collection } from 'firebase/firestore';
+import { doc, getDoc, getDocs, setDoc, updateDoc, addDoc, collection, query, where } from 'firebase/firestore';
 
 let env: RulesTestEnvironment;
 
@@ -37,6 +37,13 @@ beforeEach(async () => {
     await setDoc(doc(db, 'alumnos/alumnoA'), { schoolId: 'escuelaA', curp: 'CURP-SINTETICA-A' });
     await setDoc(doc(db, 'alumnos/alumnoB'), { schoolId: 'escuelaB', curp: 'CURP-SINTETICA-B' });
     await setDoc(doc(db, 'cuestionariosSocioEducativos/c1'), { curp: 'CURP-SINTETICA-A', saludEmocional: 'x' });
+    // Escuelas con membresía verificada: la maestra A es miembro aprobado de A; la directora de A también.
+    await setDoc(doc(db, 'schools/escuelaA'), { nombre: 'Escuela A', cct: '21EBH0001A', createdBy: 'directoraA', estadisticas: { totalDocentes: 2 } });
+    await setDoc(doc(db, 'schools/escuelaB'), { nombre: 'Escuela B', cct: '21EBH0002B', createdBy: 'otro', estadisticas: { totalDocentes: 1 } });
+    await setDoc(doc(db, 'schools/escuelaA/privado/acceso'), { codigo: 'K7M2QP9R' });
+    await setDoc(doc(db, 'schools/escuelaA/miembros/maestraA'), { uid: 'maestraA', rol: 'docente', estado: 'aprobado' });
+    await setDoc(doc(db, 'schools/escuelaA/miembros/directoraA'), { uid: 'directoraA', rol: 'directivo', estado: 'aprobado' });
+    await setDoc(doc(db, 'users/directoraA'), { rol: 'directivo', schoolId: 'escuelaA', activo: true });
   });
 });
 
@@ -68,9 +75,64 @@ test('ataque: un maestro no puede leer alumnos de otra escuela', async () => {
   await assertFails(getDoc(doc(como('maestraA'), 'alumnos/alumnoB')));
 });
 
-// Hueco conocido, se cierra con la membresía verificada (punto 3): hoy un usuario
-// puede escoger cualquier escuela en el onboarding y leer sus alumnos.
-test.todo('ataque: unirse a una escuela ajena y leer sus alumnos');
+// --- Membresía verificada (cierra el hueco de escoger cualquier escuela) ---------
+const miembro = (uid: string, extra: Record<string, unknown>) => ({ uid, nombre: 'X', email: `${uid}@ejemplo.com`, creadoEn: 'x', ...extra });
+
+test('ataque: poner una escuela ajena en el perfil ya no da acceso a sus alumnos', async () => {
+  const db = como('intruso');
+  await setDoc(doc(db, 'users/intruso'), { rol: 'maestro', activo: true, schoolId: 'escuelaA' });
+  await assertFails(getDoc(doc(db, 'alumnos/alumnoA')));
+  await assertFails(getDocs(query(collection(db, 'alumnos'), where('schoolId', '==', 'escuelaA'))));
+});
+test('ataque: unirse aprobado sin código, con código falso o con el CCT', async () => {
+  const db = como('intruso');
+  await assertFails(setDoc(doc(db, 'schools/escuelaA/miembros/intruso'), miembro('intruso', { rol: 'docente', estado: 'aprobado' })));
+  await assertFails(setDoc(doc(db, 'schools/escuelaA/miembros/intruso'), miembro('intruso', { rol: 'docente', estado: 'aprobado', codigo: 'XXXXXXXX' })));
+  await assertFails(setDoc(doc(db, 'schools/escuelaA/miembros/intruso'), miembro('intruso', { rol: 'docente', estado: 'aprobado', codigo: '21EBH000' })));
+});
+test('ataque: hacerse directivo de una escuela ajena, o aprobarse solo', async () => {
+  const db = como('intruso');
+  await assertFails(setDoc(doc(db, 'schools/escuelaA/miembros/intruso'), miembro('intruso', { rol: 'directivo', estado: 'aprobado' })));
+  await assertSucceeds(setDoc(doc(db, 'schools/escuelaA/miembros/intruso'), miembro('intruso', { rol: 'docente', estado: 'pendiente' })));
+  await assertFails(updateDoc(doc(db, 'schools/escuelaA/miembros/intruso'), { estado: 'aprobado', revisadoPor: 'intruso' }));
+  await assertFails(getDoc(doc(db, 'alumnos/alumnoA'))); // pendiente no ve nada
+});
+test('ataque: nadie fuera de la dirección lee el código secreto ni se apodera de la escuela', async () => {
+  await assertFails(getDoc(doc(como('intruso'), 'schools/escuelaA/privado/acceso')));
+  await assertFails(getDoc(doc(como('maestraA'), 'schools/escuelaA/privado/acceso')));
+  await assertFails(setDoc(doc(como('intruso'), 'schools/escuelaA/privado/acceso'), { codigo: 'MIOMIOMIO' }));
+  await assertFails(updateDoc(doc(como('intruso'), 'schools/escuelaA'), { createdBy: 'intruso' }));
+  await assertFails(updateDoc(doc(como('maestraA'), 'schools/escuelaA'), { nombre: 'Otra' }));
+});
+test('ataque: ver la lista de miembros de otra escuela', async () => {
+  await assertFails(getDoc(doc(como('maestraA'), 'schools/escuelaA/miembros/directoraA')));
+  await assertFails(getDocs(collection(como('intruso'), 'schools/escuelaA/miembros')));
+});
+
+test('uso normal: con el código correcto se entra aprobado y se ven los alumnos', async () => {
+  const db = como('nuevo');
+  await assertSucceeds(setDoc(doc(db, 'schools/escuelaA/miembros/nuevo'), miembro('nuevo', { rol: 'docente', estado: 'aprobado', codigo: 'K7M2QP9R' })));
+  await assertSucceeds(getDocs(query(collection(db, 'alumnos'), where('schoolId', '==', 'escuelaA'))));
+});
+test('uso normal: la directora ve el código, aprueba solicitudes y el aprobado ve alumnos', async () => {
+  await env.withSecurityRulesDisabled(async ctx => { await setDoc(doc(ctx.firestore(), 'schools/escuelaA/miembros/pend'), miembro('pend', { rol: 'docente', estado: 'pendiente' })); });
+  const dir = como('directoraA');
+  await assertSucceeds(getDoc(doc(dir, 'schools/escuelaA/privado/acceso')));
+  await assertSucceeds(getDocs(collection(dir, 'schools/escuelaA/miembros')));
+  await assertSucceeds(updateDoc(doc(dir, 'schools/escuelaA/miembros/pend'), { estado: 'aprobado', revisadoPor: 'directoraA', revisadoEn: 'x' }));
+  await assertSucceeds(getDoc(doc(como('pend'), 'alumnos/alumnoA')));
+  await assertSucceeds(updateDoc(doc(dir, 'schools/escuelaA/privado/acceso'), { codigo: 'NUEVO2345' }));
+});
+test('uso normal: quien crea una escuela nueva queda como su directivo con su código', async () => {
+  const db = como('fundadora');
+  await assertSucceeds(setDoc(doc(db, 'schools/escuelaC'), { nombre: 'Escuela C', cct: '21EBH0003C', createdBy: 'fundadora', estadisticas: { totalDocentes: 1 } }));
+  await assertSucceeds(setDoc(doc(db, 'schools/escuelaC/privado/acceso'), { codigo: 'ABCD2345' }));
+  await assertSucceeds(setDoc(doc(db, 'schools/escuelaC/miembros/fundadora'), miembro('fundadora', { rol: 'directivo', estado: 'aprobado' })));
+  await assertFails(setDoc(doc(db, 'schools/escuelaD'), { nombre: 'D', createdBy: 'fundadora', codigoAcceso: '21EBH000' }));
+});
+test('uso normal: el contador de docentes lo mueve cualquier docente', async () => {
+  await assertSucceeds(updateDoc(doc(como('maestraA'), 'schools/escuelaA'), { 'estadisticas.totalDocentes': 3 }));
+});
 
 // --- Usos normales que deben seguir funcionando --------------------------------
 
@@ -104,4 +166,24 @@ test('uso normal: el superadmin lee cuestionarios', async () => {
 
 test('uso normal: un alumno sin cuenta envía su cuestionario', async () => {
   await assertSucceeds(addDoc(collection(env.unauthenticatedContext().firestore(), 'cuestionariosSocioEducativos'), { curp: 'X' }));
+});
+
+test('uso normal: quien pidió acceso sin código entra después escribiéndolo (y no con uno falso)', async () => {
+  const db = como('tarde');
+  await assertSucceeds(setDoc(doc(db, 'schools/escuelaA/miembros/tarde'), miembro('tarde', { rol: 'docente', estado: 'pendiente' })));
+  await assertFails(setDoc(doc(db, 'schools/escuelaA/miembros/tarde'), miembro('tarde', { rol: 'docente', estado: 'aprobado', codigo: 'FALSO2345' })));
+  await assertFails(setDoc(doc(db, 'schools/escuelaA/miembros/tarde'), miembro('tarde', { rol: 'directivo', estado: 'aprobado', codigo: 'K7M2QP9R' })));
+  await assertSucceeds(setDoc(doc(db, 'schools/escuelaA/miembros/tarde'), miembro('tarde', { rol: 'docente', estado: 'aprobado', codigo: 'K7M2QP9R' })));
+});
+test('ataque: un rechazado no se reaprueba solo con el código', async () => {
+  await env.withSecurityRulesDisabled(async ctx => { await setDoc(doc(ctx.firestore(), 'schools/escuelaA/miembros/rech'), miembro('rech', { rol: 'docente', estado: 'rechazado' })); });
+  await assertFails(setDoc(doc(como('rech'), 'schools/escuelaA/miembros/rech'), miembro('rech', { rol: 'docente', estado: 'aprobado', codigo: 'K7M2QP9R' })));
+});
+
+test('uso normal: la migración del SuperAdmin registra docentes y quita el código público', async () => {
+  await env.withSecurityRulesDisabled(async ctx => { await setDoc(doc(ctx.firestore(), 'schools/escuelaB'), { nombre: 'Escuela B', createdBy: 'otro', codigoAcceso: '21EBH000', estadisticas: {} }); });
+  const db = como('jose');
+  await assertSucceeds(setDoc(doc(db, 'schools/escuelaB/miembros/maestraB'), miembro('maestraB', { rol: 'docente', estado: 'aprobado', revisadoPor: 'jose', revisadoEn: 'x' })));
+  await assertSucceeds(setDoc(doc(db, 'schools/escuelaB/privado/acceso'), { codigo: 'NUEVOB234' }));
+  await assertSucceeds(setDoc(doc(db, 'schools/escuelaB'), { nombre: 'Escuela B', createdBy: 'otro', estadisticas: {} }));
 });

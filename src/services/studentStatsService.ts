@@ -58,10 +58,8 @@ export const getStudentContextSummary = async (schoolId?: string): Promise<strin
         console.error("Error fetching student stats", e);
         // Fallback para modo invitado o error de permisos
         if (e.code === 'permission-denied' || e.message?.includes('Missing or insufficient permissions')) {
-            return `GRUPO DEMOSTRATIVO (MOCK):
-            Perfil de Aprendizaje: 10 Visuales, 5 Auditivos, 15 Kinestésicos.
-            Contexto: Grupo activo y participativo, intereses en tecnología y deportes.
-            Nivel: Promedio 8.5.`;
+            // Nunca inventar un grupo: la planeación se entrega como documento real.
+            return "Sin acceso verificado a los datos de alumnos del plantel: no se usaron datos del alumnado. Usa el diagnóstico de tu grupo en Mis clases.";
         }
         return "Grupo estándar (Sin datos específicos).";
     }

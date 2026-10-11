@@ -55,19 +55,100 @@ service cloud.firestore {
     // -------------------------------------------------------------------------
     //  2. ESCUELAS
     // -------------------------------------------------------------------------
+    // Membresía VERIFICADA. El schoolId del perfil es autoeditable, así que no
+    // prueba nada: quien puede ver datos de una escuela es quien tiene una
+    // membresía aprobada en schools/{id}/miembros/{uid}. Se aprueba sola si el
+    // docente trae el código secreto de la escuela; si no, queda pendiente hasta
+    // que un directivo de esa escuela (o el SuperAdmin) la apruebe.
+    function miembroDe(sid) {
+      return get(/databases/$(database)/documents/schools/$(sid)/miembros/$(request.auth.uid)).data;
+    }
+    function esMiembroAprobado(sid) {
+      return isAuthenticated()
+        && exists(/databases/$(database)/documents/schools/$(sid)/miembros/$(request.auth.uid))
+        && miembroDe(sid).estado == 'aprobado';
+    }
+    function esDirectivoDe(sid) {
+      return esMiembroAprobado(sid) && miembroDe(sid).rol == 'directivo';
+    }
+
     match /schools/{schoolId} {
       // Lectura: PÚBLICA. La página pública /registro busca el plantel por CCT
-      // para ligar al alumno a su escuela (sin sesión iniciada). Los datos de una
-      // escuela (nombre, CCT, municipio) no son personales ni sensibles; los datos
-      // de menores viven en /alumnos, que sí está protegido por escuela.
+      // para ligar al alumno a su escuela (sin sesión iniciada). Por eso aquí NO
+      // va nada secreto: el código de acceso vive en /privado.
       allow read: if true;
 
-      // Crear/actualizar: cualquier autenticado
-      // (el onboarding crea escuelas y actualiza estadísticas al unirse un docente)
-      allow create, update: if isAuthenticated();
+      // Crear: quien la crea queda como su creador (y puede hacerse su directivo).
+      allow create: if isAuthenticated()
+        && request.resource.data.createdBy == request.auth.uid
+        && !('codigoAcceso' in request.resource.data);
+
+      // Actualizar: cualquiera puede mover las estadísticas (contador de docentes);
+      // el resto solo un directivo de la escuela o el SuperAdmin, y nadie cambia
+      // al creador ni vuelve a poner un código público.
+      allow update: if isAuthenticated() && (
+          request.resource.data.diff(resource.data).affectedKeys().hasOnly(['estadisticas'])
+          || (esDirectivoDe(schoolId)
+              && request.resource.data.get('createdBy', '') == resource.data.get('createdBy', '')
+              && request.resource.data.get('codigoAcceso', '') == resource.data.get('codigoAcceso', ''))
+          // El SuperAdmin además puede quitar el código público viejo (migración).
+          || (isSuperAdmin() && request.resource.data.get('createdBy', '') == resource.data.get('createdBy', ''))
+        );
 
       // Borrar: solo SuperAdmin
       allow delete: if isSuperAdmin();
+
+      // Código secreto para unirse. Lo ven los directivos para compartirlo con
+      // sus docentes; lo crea quien creó la escuela (una sola vez).
+      match /privado/{docId} {
+        allow read: if esDirectivoDe(schoolId) || isSuperAdmin();
+        allow create: if isAuthenticated() && docId == 'acceso'
+          && (isSuperAdmin() || get(/databases/$(database)/documents/schools/$(schoolId)).data.createdBy == request.auth.uid)
+          && request.resource.data.keys().hasOnly(['codigo'])
+          && request.resource.data.codigo is string && request.resource.data.codigo.size() >= 8;
+        allow update: if (esDirectivoDe(schoolId) || isSuperAdmin())
+          && request.resource.data.keys().hasOnly(['codigo'])
+          && request.resource.data.codigo is string && request.resource.data.codigo.size() >= 8;
+        allow delete: if isSuperAdmin();
+      }
+
+      match /miembros/{uid} {
+        function datosBien() {
+          let d = request.resource.data;
+          return d.keys().hasOnly(['uid', 'nombre', 'email', 'rol', 'estado', 'codigo', 'creadoEn', 'revisadoPor', 'revisadoEn'])
+            && d.uid == uid
+            && d.rol in ['docente', 'directivo']
+            && d.estado in ['pendiente', 'aprobado', 'rechazado']
+            && d.get('nombre', '') is string && d.get('nombre', '').size() <= 120
+            && d.get('email', '') is string && d.get('email', '').size() <= 200;
+        }
+        function codigoCorrecto() {
+          return exists(/databases/$(database)/documents/schools/$(schoolId)/privado/acceso)
+            && request.resource.data.get('codigo', '') == get(/databases/$(database)/documents/schools/$(schoolId)/privado/acceso).data.codigo;
+        }
+        allow read: if (isAuthenticated() && request.auth.uid == uid) || esDirectivoDe(schoolId) || isSuperAdmin();
+        // El propio docente pide entrar: pendiente, o aprobado si trae el código
+        // correcto, o directivo si él creó la escuela.
+        allow create: if isAuthenticated() && request.auth.uid == uid && datosBien()
+          && !('revisadoPor' in request.resource.data)
+          && ((request.resource.data.estado == 'pendiente' && request.resource.data.rol == 'docente')
+              || (request.resource.data.estado == 'aprobado' && request.resource.data.rol == 'docente' && codigoCorrecto())
+              || (request.resource.data.estado == 'aprobado' && request.resource.data.rol == 'directivo'
+                  && get(/databases/$(database)/documents/schools/$(schoolId)).data.createdBy == request.auth.uid));
+        // El SuperAdmin registra a los docentes que ya usaban la plataforma (migración).
+        allow create: if isSuperAdmin() && datosBien() && request.resource.data.revisadoPor == request.auth.uid;
+        // Quien pidió acceso sin código puede entrar después escribiéndolo.
+        allow update: if isAuthenticated() && request.auth.uid == uid && datosBien()
+          && resource.data.estado == 'pendiente'
+          && request.resource.data.estado == 'aprobado' && request.resource.data.rol == 'docente'
+          && !('revisadoPor' in request.resource.data)
+          && codigoCorrecto();
+        // Aprobar, rechazar o nombrar directivo: solo directivos de esa escuela o SuperAdmin.
+        allow update: if (esDirectivoDe(schoolId) || isSuperAdmin()) && datosBien()
+          && request.resource.data.revisadoPor == request.auth.uid;
+        // Salirse uno mismo, o que lo quite un directivo.
+        allow delete: if (isAuthenticated() && request.auth.uid == uid) || esDirectivoDe(schoolId) || isSuperAdmin();
+      }
     }
 
     // -------------------------------------------------------------------------
@@ -80,15 +161,13 @@ service cloud.firestore {
       allow create: if request.resource.data.schoolId is string
                     && request.resource.data.schoolId.size() > 0;
 
-      // Leer/editar/borrar: SOLO personal de la misma escuela.
+      // Leer/editar/borrar: SOLO miembros APROBADOS de esa escuela.
       //
-      // Son datos personales de menores (CURP, teléfonos, situación familiar), así
-      // que el aislamiento no puede depender de que el frontend recuerde filtrar.
-      // Con esta regla, Firestore RECHAZA cualquier consulta a /alumnos que no
-      // venga acotada con where('schoolId','==', <la escuela del usuario>).
-      allow read, update, delete: if isSuperAdmin()
-                                  || (isAuthenticated()
-                                      && resource.data.schoolId == getUserData().schoolId);
+      // Antes bastaba con que el schoolId del perfil coincidiera, pero el perfil
+      // lo edita su dueño: cualquiera podía escoger una escuela y leer las CURP de
+      // sus alumnos. Ahora se exige membresía verificada. Las consultas deben ir
+      // acotadas con where('schoolId','==', <escuela>).
+      allow read, update, delete: if isSuperAdmin() || esMiembroAprobado(resource.data.schoolId);
     }
 
     // -------------------------------------------------------------------------

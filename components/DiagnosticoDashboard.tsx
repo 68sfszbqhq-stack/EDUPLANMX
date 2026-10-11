@@ -14,6 +14,7 @@ const DiagnosticoDashboard: React.FC = () => {
     const [diagnostico, setDiagnostico] = useState<DiagnosticoGrupal | null>(null);
     const [cargando, setCargando] = useState(false);
     const [cargandoAlumnos, setCargandoAlumnos] = useState(true);
+    const [sinAcceso, setSinAcceso] = useState('');
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
     const [showPlanFactible, setShowPlanFactible] = useState(false);
 
@@ -39,7 +40,10 @@ const DiagnosticoDashboard: React.FC = () => {
             }
         } catch (error) {
             console.error('❌ CRÍTICO: Error al conectar con Firebase:', error);
-            alert('Error de conexión con la base de datos de alumnos.');
+            setAlumnos([]);
+            setSinAcceso((error as any)?.code === 'permission-denied'
+                ? 'Tu acceso a los datos de alumnos de tu escuela aún no está verificado. Pide el código a la dirección (menú: Mi escuela y su personal).'
+                : 'No se pudo conectar con la base de datos de alumnos.');
         } finally {
             setCargandoAlumnos(false);
         }
@@ -99,6 +103,7 @@ const DiagnosticoDashboard: React.FC = () => {
 
     return (
         <div className="space-y-6">
+            {sinAcceso && <p role="alert" className="p-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-sm">{sinAcceso}</p>}
             {/* Header */}
             <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-8 text-white">
                 <h2 className="text-3xl font-bold mb-2">Diagnóstico Socioeducativo</h2>

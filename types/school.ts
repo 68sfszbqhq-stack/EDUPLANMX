@@ -23,7 +23,8 @@ export interface School {
     municipio: string;
     estado: string;
     turno: Turno;
-    codigoAcceso: string; // Para que otros se unan (ej: "CBT001")
+    /** Ya no se usa: el código vive en schools/{id}/privado/acceso (era público y adivinable). */
+    codigoAcceso?: string;
 
     // Contexto escolar (lo que ya tienes)
     vision?: string;
@@ -95,6 +96,9 @@ export interface CreateSchoolData {
     estado: string;
     turno: Turno;
     puestoCreador: Puesto;
+    /** Para su membresía de directivo */
+    nombreCreador?: string;
+    emailCreador?: string;
 }
 
 // ============================================
@@ -122,7 +126,6 @@ export interface SchoolSearchResult {
     cct: string;
     municipio: string;
     turno: Turno;
-    codigoAcceso: string;
     totalDocentes: number;
 }
 

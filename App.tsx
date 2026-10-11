@@ -19,6 +19,7 @@ import { PersonalizedDashboard } from './components/PersonalizedDashboard';
 
 import CuadernoEscolar from './components/CuadernoEscolar';
 import MisClases from './components/clase/MisClases';
+import MiEscuela, { AvisoAccesoEscuela } from './components/MiEscuela';
 
 import PMCDashboard from './pages/directivo/PMCDashboard';
 import PAECDashboard from './pages/plantel/PAECDashboard';
@@ -182,6 +183,8 @@ const App: React.FC = () => {
         return <DiagnosticoDashboard />;
       case 'grupos':
         return <MisClases onNavigate={handleNavigate} />;
+      case 'mi-escuela':
+        return <MiEscuela />;
       default:
         return <Dashboard setView={setView} recentPlansCount={savedPlans.length} />;
     }
@@ -195,7 +198,7 @@ const App: React.FC = () => {
       <main className="flex-1 overflow-y-auto h-screen">
         <header className="bg-white border-b border-slate-200 sticky top-0 z-10 px-8 py-4 flex justify-between items-center">
           <h2 className="text-lg font-semibold capitalize text-slate-700">
-            {view === 'dashboard' ? 'Bienvenido, Docente' : view === 'grupos' ? 'Mis clases' : view.replace('_', ' ')}
+            {view === 'dashboard' ? 'Bienvenido, Docente' : view === 'grupos' ? 'Mis clases' : view === 'mi-escuela' ? 'Mi escuela' : view.replace('_', ' ')}
           </h2>
           <div className="flex items-center gap-4">
             <div className="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium border border-indigo-100">
@@ -227,6 +230,7 @@ const App: React.FC = () => {
             })()}
           </div>
         </header>
+        <AvisoAccesoEscuela onAbrir={() => handleNavigate('mi-escuela')} />
 
         <div className="p-8 max-w-5xl mx-auto pb-24">
           {renderView()}

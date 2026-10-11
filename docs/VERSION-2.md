@@ -121,8 +121,17 @@ publica en pruebas. Pruebas: `npm run test:reglas`, `npm run test:reglas-compart
 
 ## Pendiente conocido
 
-- Un usuario aún puede escoger cualquier escuela en el onboarding y leer los `alumnos`
-  (registro con CURP) de esa escuela. Se cierra con membresía verificada por escuela.
+- **Cerrado en v2 (2026-10-10), falta llevarlo a producción:** cualquiera podía escoger una
+  escuela y leer las CURP de sus alumnos (el "código de acceso" era el inicio del CCT y además
+  se mostraba en la búsqueda). Ahora hay **membresía verificada** en `schools/{id}/miembros/{uid}`:
+  se entra aprobado con el código secreto (`schools/{id}/privado/acceso`, 8 caracteres al azar,
+  solo lo ven directivos) o se pide acceso y un directivo aprueba en **Mi escuela y su personal**.
+  `/alumnos` solo lo lee un miembro aprobado. Se quitó el "grupo demostrativo" inventado que se
+  metía en la planeación cuando no había permiso.
+  **Orden para producción:** 1) `npm run respaldo`; 2) publicar reglas; 3) en seguida
+  `npx tsx scripts/migrar-membresias.ts` (ensayo) y `--aplicar` (registra a los docentes actuales,
+  crea códigos y borra el código público); 4) publicar la app. Entre 2 y 3 los docentes no ven
+  alumnos unos minutos (falla cerrado, no abierto). Ensayado completo en el simulador.
 - Un alumno que entra con Google podría teclear una matrícula ajena si nadie la ha
   reclamado. El docente ve el correo ligado a cada matrícula, se marca en rojo si una
   cuenta aparece en dos matrículas y puede desvincularla.

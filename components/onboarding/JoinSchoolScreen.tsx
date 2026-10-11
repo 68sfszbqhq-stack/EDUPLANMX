@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search, Building2, MapPin, Users, ArrowLeft, ArrowRight, Loader2 } from 'lucide-react';
 import { schoolService } from '../../src/services/schoolService';
+import { CodigoEscuela } from './CodigoEscuela';
 import type { SchoolSearchResult } from '../../types/school';
 
 interface JoinSchoolScreenProps {
@@ -18,7 +19,7 @@ export const JoinSchoolScreen: React.FC<JoinSchoolScreenProps> = ({ onBack, onSc
 
     const handleSearchByCode = async () => {
         if (!searchTerm.trim()) {
-            setError('Por favor ingresa un código de acceso');
+            setError('Escribe el CCT de tu escuela');
             return;
         }
 
@@ -26,7 +27,7 @@ export const JoinSchoolScreen: React.FC<JoinSchoolScreenProps> = ({ onBack, onSc
         setError('');
 
         try {
-            const school = await schoolService.getSchoolByCode(searchTerm.trim());
+            const school = await schoolService.getSchoolByCCT(searchTerm.trim());
 
             if (school) {
                 setResults([{
@@ -35,11 +36,10 @@ export const JoinSchoolScreen: React.FC<JoinSchoolScreenProps> = ({ onBack, onSc
                     cct: school.cct,
                     municipio: school.municipio,
                     turno: school.turno,
-                    codigoAcceso: school.codigoAcceso,
                     totalDocentes: school.estadisticas.totalDocentes
                 }]);
             } else {
-                setError('No se encontró ninguna escuela con ese código');
+                setError('No se encontró ninguna escuela con ese CCT');
                 setResults([]);
             }
         } catch (err) {
@@ -128,7 +128,7 @@ export const JoinSchoolScreen: React.FC<JoinSchoolScreenProps> = ({ onBack, onSc
                                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                             }`}
                     >
-                        Buscar por Código
+                        Buscar por CCT
                     </button>
                     <button
                         onClick={() => {
@@ -149,7 +149,7 @@ export const JoinSchoolScreen: React.FC<JoinSchoolScreenProps> = ({ onBack, onSc
                 {/* Search Input */}
                 <div className="mb-6">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                        {searchMode === 'code' ? 'Código de Acceso' : 'Nombre de la Escuela'}
+                        {searchMode === 'code' ? 'CCT de la escuela' : 'Nombre de la Escuela'}
                     </label>
                     <div className="flex gap-2">
                         <div className="flex-1 relative">
@@ -159,7 +159,7 @@ export const JoinSchoolScreen: React.FC<JoinSchoolScreenProps> = ({ onBack, onSc
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                                placeholder={searchMode === 'code' ? 'Ej: CBT001' : 'Ej: CBT No. 1 Dr. Gustavo Baz'}
+                                placeholder={searchMode === 'code' ? 'Ej: 21EBH0026G' : 'Ej: CBT No. 1 Dr. Gustavo Baz'}
                                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                             />
                         </div>
@@ -222,9 +222,6 @@ export const JoinSchoolScreen: React.FC<JoinSchoolScreenProps> = ({ onBack, onSc
                                                 <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
                                                     Turno {school.turno}
                                                 </span>
-                                                <span className="inline-block ml-2 px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-mono">
-                                                    {school.codigoAcceso}
-                                                </span>
                                             </div>
                                         </div>
                                         <div className="ml-4">
@@ -244,18 +241,13 @@ export const JoinSchoolScreen: React.FC<JoinSchoolScreenProps> = ({ onBack, onSc
                     </div>
                 )}
 
-                {/* Continue Button */}
-                <button
-                    onClick={handleContinue}
-                    disabled={!selectedSchool}
-                    className={`w-full py-4 rounded-xl font-semibold text-lg transition-all duration-200 flex items-center justify-center ${selectedSchool
-                            ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white hover:from-blue-600 hover:to-indigo-700 shadow-lg hover:shadow-xl'
-                            : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                        }`}
-                >
-                    Unirme a esta Escuela
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                </button>
+                {/* Paso final: el código secreto (o pedir acceso) */}
+                {selectedSchool && (
+                    <div className="mb-4 p-4 border-2 border-blue-200 rounded-xl">
+                        <CodigoEscuela key={selectedSchool.id} schoolId={selectedSchool.id} schoolName={selectedSchool.nombre} onListo={handleContinue} />
+                    </div>
+                )}
+
             </div>
         </div>
     );
