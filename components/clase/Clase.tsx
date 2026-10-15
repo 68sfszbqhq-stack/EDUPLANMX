@@ -91,7 +91,7 @@ export default function Clase({ grupo: inicial, onSalir, onNavigate }: { grupo: 
         <button onClick={() => sincronizar(false)} disabled={sincronizando} className={`${boton} text-slate-600 border border-slate-200`} title="Revisar exámenes entregados y calificarlos">
           <RefreshCw className={`w-4 h-4 ${sincronizando ? 'animate-spin' : ''}`} /> Actualizar
         </button>
-        <button onClick={() => setPlaneacion(true)} className={`${boton} bg-emerald-600 text-white`}><Send className="w-4 h-4" /> Llevar a mi planeación</button>
+        <button onClick={() => setPlaneacion(true)} className={`${boton} bg-indigo-600 text-white`}><Send className="w-4 h-4" /> Llevar a mi planeación</button>
       </header>
 
       <nav className="flex flex-wrap gap-1 border-b border-slate-200" aria-label="Secciones de la clase">

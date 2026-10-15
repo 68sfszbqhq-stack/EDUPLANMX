@@ -119,7 +119,7 @@ export const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ on
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 p-6">
+        <div className="min-h-screen md:p-6">
             <div className="max-w-7xl mx-auto">
                 {/* Header Personalizado */}
                 <DashboardHeader user={user} />

@@ -24,6 +24,18 @@ npm run dev:emulador                                            # http://localho
 ```
 Cuentas sintéticas: docente@prueba.mx / prueba123 · alumno 2024001 / código ABC234.
 
+**Grupo de demostración (ponencia EIIE):** después de `sembrar-emulador.mjs`, correr
+`node scripts/sembrar-demo.mjs`. Agrega «1º A Vespertino» (Cultura Digital I) con 24 alumnos
+inventados, 9 actividades en dos parciales, 15 sesiones de asistencia, diario, anotaciones,
+resultados de Antología y 3 alumnos en riesgo; además deja al docente como miembro aprobado
+(sin la franja de «verifica tu acceso») y con nombre José Roberto Mendoza. No correrlo si se va a
+ensayar la migración de membresías. Hoja de revisión: `docs/PRUEBA-RUTA-PROFESOR.md`.
+
+**Estilo (2026-10-14):** paleta neutral estilo Apple definida en `tailwind.config.js` (grises
+neutros, un solo azul `#0071e3`; verde, rojo y naranja solo para estados) y degradados
+aplanados en `index.css`. Menú lateral e inicio rediseñados claros. Volver a los colores
+anteriores = vaciar `colors` en `tailwind.config.js` y quitar la regla de degradados.
+
 ## Cómo se conectan
 
 - **Mis grupos** (EduPlan): el docente crea un grupo e importa su lista. Cada alumno se
@@ -141,3 +153,33 @@ publica en pruebas. Pruebas: `npm run test:reglas`, `npm run test:reglas-compart
   Google no se puede manejar desde la automatización).
 - La clave generada vale por docente: si dos maestros distintos tienen al mismo alumno sin
   matrícula, recibe dos claves y Antología solo guarda una. Con matrícula no pasa.
+
+## Decidido para después del congreso (2026-10-14)
+
+- **Diagnóstico de inicio (EDIEMS) dentro de EduPlan.** Lo activa la dirección desde «Mi escuela»
+  (abrir/cerrar, subir la clave oficial). Cada profesor ve en Mis clases el avance y los
+  resultados por grupo y por alumno, y los lleva a la planeación. Los alumnos siguen en Antología
+  con Google. Reemplaza los scripts `abrir-diagnostico.mjs` / `exportar-diagnostico.mjs`.
+- **«Crea tu página de clases».** ✅ Construida el 2026-10-14 (ver sección «Mi página de clases»).
+
+## Mi página de clases (2026-10-14)
+
+Menú → «Se llena una sola vez» → **5. Mi página de clases**. Código: `components/pagina/MiPagina.tsx`,
+`pages/PaginaClase.tsx` y `src/features/pagina/`. Pruebas: `npm run test:pagina` y las de reglas.
+
+1. **Cuestionario de 4 pasos**: nombre, escuela, presentación e ícono → color y dirección (revisa en
+   vivo que esté libre) → qué grupos de Mis clases aparecen → secciones (avisos, materiales,
+   exámenes, diagnóstico, asesoría).
+2. **Panel**: copiar enlace, ver la página, ocultar/publicar, publicar avisos, agregar materiales por
+   tema, editar (si cambia la dirección, la vieja deja de funcionar y se avisa).
+3. **Página pública** `/clase/{dirección}`: sin cuenta, pensada para celular. Los botones de exámenes
+   y diagnóstico llevan a Antología, donde el alumno entra con Google y sus resultados llegan al
+   cuaderno del docente. La página **no guarda ni muestra datos de alumnos**.
+4. **Modo avanzado**: prompt para pedirle a una IA un sitio propio, con la regla de no guardar datos
+   de alumnos y los enlaces a Antología.
+
+Seguridad (`paginasClase/{slug}` en `firestore.rules`): lectura pública solo si está publicada;
+crear/editar/borrar solo el dueño; campos y tamaños revisados; la dirección debe coincidir con el
+documento. Las reglas no pueden revisar cada enlace de una lista, así que la página solo convierte
+en enlace lo que empieza con `https://` (un `javascript:` se muestra como texto) y el panel lo
+rechaza antes de guardar. En producción la ruta funciona en GitHub Pages gracias a `404.html`.

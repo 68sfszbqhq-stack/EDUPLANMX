@@ -96,10 +96,10 @@ const CuestionarioDocente: React.FC<Props> = ({ userId, onListo }) => {
         </div>;
     }
 
-    const Texto = ({ campo, etiqueta, ayuda, filas = 2 }: {
+    const texto = ({ campo, etiqueta, ayuda, filas = 2 }: {
         campo: keyof PerfilDocente; etiqueta: string; ayuda?: string; filas?: number;
     }) => (
-        <div className="mb-4">
+        <div key={String(campo)} className="mb-4">
             <label className="block text-sm font-semibold text-slate-700 mb-1">{etiqueta}</label>
             {ayuda && <span className="block text-xs text-slate-400 mb-1">{ayuda}</span>}
             <textarea
@@ -127,13 +127,13 @@ const CuestionarioDocente: React.FC<Props> = ({ userId, onListo }) => {
             {/* Bloque 1 y 2 */}
             <section className="bg-white border border-slate-200 rounded-xl p-5 mb-4">
                 <h2 className="font-bold text-slate-800 mb-3">Quién eres y qué das</h2>
-                <Texto campo="nombre" etiqueta="Nombre, como debe aparecer en el documento" filas={1} />
-                <Texto campo="formacion" etiqueta="Formación de origen" filas={1} />
-                <Texto campo="anios" etiqueta="Años dando clase, y de esos cuántos en Media Superior" filas={1} />
-                <Texto campo="funcion" etiqueta="¿Tienes otra función además de la docencia?" ayuda="tutoría, jefatura, academia, ATP" filas={1} />
-                <Texto campo="materias" etiqueta="Asignaturas de este semestre, con su semestre y horas" />
-                <Texto campo="grupos" etiqueta="Número de grupos y estudiantes por grupo" filas={1} />
-                <Texto campo="fueraPerfil" etiqueta="¿Alguna te queda fuera de tu formación? ¿Cuál te cuesta más preparar?" />
+                {texto({ campo: 'nombre', etiqueta: 'Nombre, como debe aparecer en el documento', filas: 1 })}
+                {texto({ campo: 'formacion', etiqueta: 'Formación de origen', filas: 1 })}
+                {texto({ campo: 'anios', etiqueta: 'Años dando clase, y de esos cuántos en Media Superior', filas: 1 })}
+                {texto({ campo: 'funcion', etiqueta: '¿Tienes otra función además de la docencia?', ayuda: 'tutoría, jefatura, academia, ATP', filas: 1 })}
+                {texto({ campo: 'materias', etiqueta: 'Asignaturas de este semestre, con su semestre y horas' })}
+                {texto({ campo: 'grupos', etiqueta: 'Número de grupos y estudiantes por grupo', filas: 1 })}
+                {texto({ campo: 'fueraPerfil', etiqueta: '¿Alguna te queda fuera de tu formación? ¿Cuál te cuesta más preparar?' })}
             </section>
 
             {/* Bloque 3 */}
@@ -143,12 +143,12 @@ const CuestionarioDocente: React.FC<Props> = ({ userId, onListo }) => {
                     Es el bloque que más cambia lo que se te genera: de aquí sale qué actividades
                     son posibles en tu aula y cuáles no.
                 </p>
-                <Texto campo="proyector" etiqueta="¿Hay proyector en tu salón? ¿Fijo o hay que pedirlo?" filas={1} />
-                <Texto campo="internetAula" etiqueta="¿Hay internet en el aula? ¿Cuántos dispositivos aguanta?" filas={1} />
-                <Texto campo="salaComputo" etiqueta="¿Hay sala de cómputo? ¿Cuántos equipos y cómo se aparta?" filas={1} />
-                <Texto campo="equipoPropio" etiqueta="¿Llevas equipo propio al salón?" filas={1} />
-                <Texto campo="accesoCasa" etiqueta="¿Qué proporción de tu grupo tiene equipo y conexión en casa?" filas={1} />
-                <Texto campo="ajustes" etiqueta="¿Hay estudiantes que requieran ajustes?" ayuda="neurodivergencia, discapacidad, trabajo, situación familiar" />
+                {texto({ campo: 'proyector', etiqueta: '¿Hay proyector en tu salón? ¿Fijo o hay que pedirlo?', filas: 1 })}
+                {texto({ campo: 'internetAula', etiqueta: '¿Hay internet en el aula? ¿Cuántos dispositivos aguanta?', filas: 1 })}
+                {texto({ campo: 'salaComputo', etiqueta: '¿Hay sala de cómputo? ¿Cuántos equipos y cómo se aparta?', filas: 1 })}
+                {texto({ campo: 'equipoPropio', etiqueta: '¿Llevas equipo propio al salón?', filas: 1 })}
+                {texto({ campo: 'accesoCasa', etiqueta: '¿Qué proporción de tu grupo tiene equipo y conexión en casa?', filas: 1 })}
+                {texto({ campo: 'ajustes', etiqueta: '¿Hay estudiantes que requieran ajustes?', ayuda: 'neurodivergencia, discapacidad, trabajo, situación familiar' })}
             </section>
 
             {/* Bloque 4 */}
@@ -201,15 +201,15 @@ const CuestionarioDocente: React.FC<Props> = ({ userId, onListo }) => {
                 <p className="text-xs text-slate-500 mb-3">
                     Las preguntas que más peso tienen: de aquí sale lo que distingue tus planeaciones.
                 </p>
-                {ABIERTAS.map(p => <Texto key={String(p.campo)} {...p} />)}
+                {ABIERTAS.map(p => texto(p))}
             </section>
 
             {/* Bloque 7 */}
             <section className="bg-white border border-slate-200 rounded-xl p-5 mb-4">
                 <h2 className="font-bold text-slate-800 mb-3">Lo entregable</h2>
-                <Texto campo="formatoEntrega" etiqueta="¿Qué formato exige tu supervisión o academia?" filas={1} />
-                <Texto campo="queRevisan" etiqueta="¿Quién revisa tus planeaciones y qué es lo primero que te observan?" />
-                <Texto campo="cuandoEntrega" etiqueta="¿Cuándo las entregas: por sesión, por parcial, por semestre?" filas={1} />
+                {texto({ campo: 'formatoEntrega', etiqueta: '¿Qué formato exige tu supervisión o academia?', filas: 1 })}
+                {texto({ campo: 'queRevisan', etiqueta: '¿Quién revisa tus planeaciones y qué es lo primero que te observan?' })}
+                {texto({ campo: 'cuandoEntrega', etiqueta: '¿Cuándo las entregas: por sesión, por parcial, por semestre?', filas: 1 })}
             </section>
 
             {/* Barra de guardado */}

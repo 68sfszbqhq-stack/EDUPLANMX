@@ -187,3 +187,48 @@ test('uso normal: la migración del SuperAdmin registra docentes y quita el cód
   await assertSucceeds(setDoc(doc(db, 'schools/escuelaB/privado/acceso'), { codigo: 'NUEVOB234' }));
   await assertSucceeds(setDoc(doc(db, 'schools/escuelaB'), { nombre: 'Escuela B', createdBy: 'otro', estadisticas: {} }));
 });
+
+// --- Mi página de clases --------------------------------------------------------
+
+const pagina = (uid: string, slug: string, extra: Record<string, unknown> = {}) => ({
+  slug, docenteUid: uid, publicada: true, nombre: 'Mtra. Ana', escuela: 'Escuela A', presentacion: '',
+  icono: '📚', color: 'azul', materias: [], secciones: { avisos: true }, avisos: [], materiales: [],
+  asesoria: '', actualizadoEn: '2026-10-14T00:00:00Z', ...extra,
+});
+
+test('uso normal: la maestra crea su página y cualquiera (sin cuenta) la lee', async () => {
+  await assertSucceeds(setDoc(doc(como('maestraA'), 'paginasClase/mtra-ana'), pagina('maestraA', 'mtra-ana')));
+  await assertSucceeds(getDoc(doc(env.unauthenticatedContext().firestore(), 'paginasClase/mtra-ana')));
+});
+
+test('uso normal: revisar si una dirección está libre', async () => {
+  await assertSucceeds(getDoc(doc(como('maestraA'), 'paginasClase/libre-aun')));
+});
+
+test('ataque: quedarse con la página de otra maestra (o editarla)', async () => {
+  await env.withSecurityRulesDisabled(async ctx => { await setDoc(doc(ctx.firestore(), 'paginasClase/mtra-ana'), pagina('maestraA', 'mtra-ana')); });
+  await assertFails(setDoc(doc(como('intruso'), 'paginasClase/mtra-ana'), pagina('intruso', 'mtra-ana')));
+  await assertFails(updateDoc(doc(como('intruso'), 'paginasClase/mtra-ana'), { nombre: 'Hackeada' }));
+});
+
+test('ataque: crear una página a nombre de otra cuenta', async () => {
+  await assertFails(setDoc(doc(como('intruso'), 'paginasClase/falsa'), pagina('maestraA', 'falsa')));
+});
+
+test('ataque: dirección con caracteres raros, o que no coincide con el documento', async () => {
+  await assertFails(setDoc(doc(como('maestraA'), 'paginasClase/Mtra Ana'), pagina('maestraA', 'Mtra Ana')));
+  await assertFails(setDoc(doc(como('maestraA'), 'paginasClase/ana-dos'), pagina('maestraA', 'otra-cosa')));
+});
+
+test('ataque: campos extra o color inventado', async () => {
+  await assertFails(setDoc(doc(como('maestraA'), 'paginasClase/mtra-ana'), pagina('maestraA', 'mtra-ana', { curps: ['X'] })));
+  await assertFails(setDoc(doc(como('maestraA'), 'paginasClase/mtra-ana'), pagina('maestraA', 'mtra-ana', { color: 'url(javascript:x)' })));
+});
+
+test('ataque: leer una página no publicada de otra maestra, o listar las de otras', async () => {
+  await env.withSecurityRulesDisabled(async ctx => { await setDoc(doc(ctx.firestore(), 'paginasClase/oculta'), pagina('maestraA', 'oculta', { publicada: false })); });
+  await assertFails(getDoc(doc(como('intruso'), 'paginasClase/oculta')));
+  await assertSucceeds(getDoc(doc(como('maestraA'), 'paginasClase/oculta')));
+  await assertFails(getDocs(query(collection(como('intruso'), 'paginasClase'), where('docenteUid', '==', 'maestraA'))));
+  await assertSucceeds(getDocs(query(collection(como('maestraA'), 'paginasClase'), where('docenteUid', '==', 'maestraA'))));
+});

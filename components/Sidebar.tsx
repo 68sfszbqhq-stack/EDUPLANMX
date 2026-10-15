@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network, Sparkles, ChevronDown, CheckCircle2, Menu, X, Compass, NotebookPen, ClipboardList, ListChecks, Building2 } from 'lucide-react';
+import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network, Sparkles, ChevronDown, CheckCircle2, Menu, X, Compass, NotebookPen, ClipboardList, ListChecks, Building2, Globe } from 'lucide-react';
 import { useAuth } from '../src/contexts/AuthContext';
 import { analyticsService } from '../src/services/analyticsService';
 
@@ -60,6 +60,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
         { id: 'context', label: 'Contexto Escolar', icon: Settings, step: 2, done: contextoListo },
         { id: 'flujo', label: 'Flujo de Contextualización', icon: Compass, step: 3, done: flujoCompleto },
         { id: 'cuaderno', label: 'Cuaderno escolar · CAPEMS', icon: BookOpen, step: 4, done: false },
+        { id: 'mi-pagina', label: 'Mi página de clases', icon: Globe, step: 5, done: false },
     ];
 
     const masHerramientas = [
@@ -89,12 +90,12 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
 
     const NavContent = () => (
         <>
-            <div className="p-6 border-b border-indigo-800">
+            <div className="p-6 border-b border-slate-200">
                 <div className="flex items-center gap-3">
-                    <GraduationCap className="w-8 h-8 text-indigo-300" />
-                    <h1 className="font-bold text-xl tracking-tight">EduPlan MX</h1>
+                    <GraduationCap className="w-8 h-8 text-indigo-600" />
+                    <h1 className="font-semibold text-xl tracking-tight text-slate-900">EduPlan MX</h1>
                 </div>
-                <p className="text-xs text-indigo-300 mt-2 uppercase font-semibold">Bachillerato Oficial</p>
+                <p className="text-xs text-slate-500 mt-2 uppercase font-medium tracking-wide">Bachillerato Oficial</p>
             </div>
 
             <nav className="flex-1 p-4 space-y-1 mt-2 overflow-y-auto">
@@ -102,17 +103,17 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
                 <button
                     onClick={() => handleNavigate('dashboard')}
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${activeView === 'dashboard'
-                        ? 'bg-indigo-800 text-white shadow-lg shadow-indigo-900/50'
-                        : 'hover:bg-indigo-800/50 text-indigo-100'
+                        ? 'bg-slate-200/70 text-slate-900'
+                        : 'hover:bg-slate-200/50 text-slate-700'
                         }`}
                 >
-                    <Layout className={`w-5 h-5 ${activeView === 'dashboard' ? 'text-indigo-300' : ''}`} />
+                    <Layout className="w-5 h-5 text-indigo-600" />
                     <span className="font-medium">Inicio</span>
                 </button>
 
                 {[['Tu día a día', diario], ['Se llena una sola vez', unaVez]].map(([titulo, pasos]) => (
                 <React.Fragment key={titulo as string}>
-                <p className="text-[10px] uppercase font-bold text-indigo-400 tracking-widest px-4 pt-4 pb-1">
+                <p className="text-[11px] uppercase font-semibold text-slate-400 tracking-wider px-4 pt-4 pb-1">
                     {titulo as string}
                 </p>
                 {(pasos as typeof diario).map((item) => {
@@ -123,22 +124,22 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
                             key={item.id}
                             onClick={() => handleNavigate(item.id)}
                             className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl transition-colors ${isActive
-                                ? 'bg-indigo-800 text-white shadow-lg shadow-indigo-900/50'
+                                ? 'bg-slate-200/70 text-slate-900'
                                 : item.destacado
-                                    ? 'bg-indigo-600/40 hover:bg-indigo-600/60 text-white border border-indigo-500/50'
-                                    : 'hover:bg-indigo-800/50 text-indigo-100'
+                                    ? 'hover:bg-slate-200/50 text-slate-900 font-semibold'
+                                    : 'hover:bg-slate-200/50 text-slate-700'
                                 }`}
                         >
                             {/* Número de paso o palomita de completado */}
                             {item.done ? (
-                                <CheckCircle2 className="w-6 h-6 text-emerald-400 flex-shrink-0" />
+                                <CheckCircle2 className="w-6 h-6 text-emerald-500 flex-shrink-0" />
                             ) : (
-                                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${isActive || item.destacado ? 'bg-white text-indigo-700' : 'bg-indigo-800 text-indigo-200 border border-indigo-600'
+                                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${isActive || item.destacado ? 'bg-indigo-600 text-white' : 'bg-white text-slate-500 border border-slate-300'
                                     }`}>
                                     {item.step}
                                 </span>
                             )}
-                            <Icon className={`w-4 h-4 ${isActive ? 'text-indigo-300' : 'text-indigo-300/70'}`} />
+                            <Icon className="w-4 h-4 text-indigo-600" />
                             <span className="font-medium text-sm text-left flex-1">{item.label}</span>
                         </button>
                     );
@@ -149,9 +150,9 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
                 {/* Más herramientas (plegable) */}
                 <button
                     onClick={() => setShowMore(!showMore)}
-                    className="w-full flex items-center justify-between px-4 py-3 mt-4 rounded-xl hover:bg-indigo-800/50 text-indigo-200 transition-colors"
+                    className="w-full flex items-center justify-between px-4 py-3 mt-4 rounded-xl hover:bg-slate-200/50 text-slate-500 transition-colors"
                 >
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-indigo-400">Más herramientas</span>
+                    <span className="text-[11px] uppercase font-semibold tracking-wider text-slate-400">Más herramientas</span>
                     <ChevronDown className={`w-4 h-4 transition-transform ${(showMore || moreIsActive) ? 'rotate-180' : ''}`} />
                 </button>
                 {(showMore || moreIsActive) && (
@@ -164,11 +165,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
                                     key={item.id}
                                     onClick={() => handleNavigate(item.id)}
                                     className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl transition-colors ${isActive
-                                        ? 'bg-indigo-800 text-white shadow-lg shadow-indigo-900/50'
-                                        : 'hover:bg-indigo-800/50 text-indigo-200'
+                                        ? 'bg-slate-200/70 text-slate-900'
+                                        : 'hover:bg-slate-200/50 text-slate-700'
                                         }`}
                                 >
-                                    <Icon className={`w-4 h-4 ${isActive ? 'text-indigo-300' : 'text-indigo-300/60'}`} />
+                                    <Icon className="w-4 h-4 text-slate-500" />
                                     <span className="font-medium text-sm">{item.label}</span>
                                 </button>
                             );
@@ -177,15 +178,15 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
                 )}
             </nav>
 
-            <div className="p-4 border-t border-indigo-800">
+            <div className="p-4 border-t border-slate-200">
                 <button
                     onClick={logout}
-                    className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-500/10 text-indigo-200 hover:text-red-200 transition-colors"
+                    className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 text-slate-600 hover:text-red-600 transition-colors"
                 >
                     <LogOut className="w-5 h-5" />
                     <span className="font-medium">Cerrar Sesión</span>
                 </button>
-                <div className="mt-4 text-xs text-indigo-400 text-center">
+                <div className="mt-4 text-xs text-slate-400 text-center">
                     v1.0.0 - Hecho para México
                 </div>
             </div>
@@ -195,14 +196,14 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
     return (
         <>
             {/* Sidebar de escritorio */}
-            <aside className="w-64 bg-indigo-900 text-white flex-shrink-0 flex-col hidden md:flex h-screen sticky top-0">
+            <aside className="w-64 bg-slate-50 border-r border-slate-200 text-slate-900 flex-shrink-0 flex-col hidden md:flex h-screen sticky top-0">
                 <NavContent />
             </aside>
 
             {/* Botón hamburguesa (solo móvil) */}
             <button
                 onClick={() => setMobileOpen(true)}
-                className="md:hidden fixed bottom-5 left-5 z-40 p-3.5 bg-indigo-700 text-white rounded-full shadow-xl shadow-indigo-900/40 active:scale-95 transition-transform"
+                className="md:hidden fixed bottom-5 left-5 z-40 p-3.5 bg-indigo-600 text-white rounded-full shadow-lg shadow-slate-900/20 active:scale-95 transition-transform"
                 aria-label="Abrir menú"
             >
                 <Menu className="w-6 h-6" />
@@ -213,13 +214,13 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
                 <div className="md:hidden fixed inset-0 z-50 flex">
                     {/* Fondo oscuro: cierra al tocar */}
                     <div
-                        className="absolute inset-0 bg-black/60"
+                        className="absolute inset-0 bg-black/30 backdrop-blur-sm"
                         onClick={() => setMobileOpen(false)}
                     />
-                    <aside className="relative w-72 max-w-[85vw] bg-indigo-900 text-white flex flex-col h-full shadow-2xl">
+                    <aside className="relative w-72 max-w-[85vw] bg-slate-50 text-slate-900 flex flex-col h-full shadow-2xl">
                         <button
                             onClick={() => setMobileOpen(false)}
-                            className="absolute top-4 right-4 p-2 text-indigo-300 hover:text-white z-10"
+                            className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-700 z-10"
                             aria-label="Cerrar menú"
                         >
                             <X className="w-5 h-5" />

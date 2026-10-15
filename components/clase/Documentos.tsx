@@ -23,7 +23,7 @@ export default function Documentos({ grupo, alumnos, columnas, notas, sesiones, 
   const guardados = (() => { try { return JSON.parse(localStorage.getItem(CLAVE_DATOS) || '{}'); } catch { return {}; } })();
   const [escuela, setEscuela] = useState<string>(guardados.escuela ?? (user as any)?.schoolName ?? '');
   const [cct, setCct] = useState<string>(guardados.cct ?? (user as any)?.schoolCct ?? '');
-  const [docente, setDocente] = useState<string>(guardados.docente ?? user?.nombre ?? '');
+  const [docente, setDocente] = useState<string>(guardados.docente ?? [user?.nombre, (user as any)?.apellidoPaterno, (user as any)?.apellidoMaterno].filter(Boolean).join(' '));
   const [generando, setGenerando] = useState('');
 
   const recordar = () => { try { localStorage.setItem(CLAVE_DATOS, JSON.stringify({ escuela, cct, docente })); } catch { /* sin almacenamiento: no pasa nada */ } };

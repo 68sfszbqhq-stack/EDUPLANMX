@@ -19,50 +19,50 @@ export const StatsCards: React.FC<StatsCardsProps> = ({
             title: 'Planeaciones',
             value: totalPlaneaciones,
             icon: FileText,
-            color: 'bg-blue-500',
-            textColor: 'text-blue-600'
+            color: 'bg-indigo-50 text-indigo-600',
+            textColor: 'text-slate-900'
         },
         {
             title: 'Materias',
             value: totalMaterias,
             icon: BookOpen,
-            color: 'bg-green-500',
-            textColor: 'text-green-600'
+            color: 'bg-indigo-50 text-indigo-600',
+            textColor: 'text-slate-900'
         },
         {
             title: 'Semestres',
             value: totalSemestres,
             icon: GraduationCap,
-            color: 'bg-purple-500',
-            textColor: 'text-purple-600'
+            color: 'bg-indigo-50 text-indigo-600',
+            textColor: 'text-slate-900'
         },
         {
             title: 'Promedio Semanal',
             value: promedioSemanal.toFixed(1),
             icon: TrendingUp,
-            color: 'bg-orange-500',
-            textColor: 'text-orange-600'
+            color: 'bg-indigo-50 text-indigo-600',
+            textColor: 'text-slate-900'
         }
     ];
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-6">
             {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
                     <div
                         key={index}
-                        className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+                        className="bg-white rounded-2xl border border-slate-200 p-4 md:p-6"
                     >
                         <div className="flex items-center justify-between">
                             <div>
                                 <p className="text-sm text-gray-600 mb-1">{stat.title}</p>
-                                <p className={`text-3xl font-bold ${stat.textColor}`}>
+                                <p className={`text-3xl font-semibold tracking-tight ${stat.textColor}`}>
                                     {stat.value}
                                 </p>
                             </div>
-                            <div className={`${stat.color} p-3 rounded-lg`}>
-                                <Icon className="w-8 h-8 text-white" />
+                            <div className={`${stat.color} p-2 md:p-3 rounded-xl hidden sm:block`}>
+                                <Icon className="w-6 h-6" />
                             </div>
                         </div>
                     </div>

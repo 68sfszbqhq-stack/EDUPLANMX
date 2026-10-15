@@ -20,7 +20,8 @@
     "emulador": "node scripts/combinar-reglas.mjs && PATH=/opt/homebrew/opt/openjdk/bin:$PATH firebase emulators:start --config firebase.emulador.json --project eduplanmx-pruebas",
     "dev:v2:emulador": "VITE_EMULADOR=1 vite --config vite.v2.config.ts",
     "test:evaluacion": "node --import tsx --test scripts/evaluacion.test.ts",
-    "test:clase": "node --import tsx --test scripts/clase.test.ts"
+    "test:clase": "node --import tsx --test scripts/clase.test.ts",
+    "test:pagina": "node --import tsx --test scripts/pagina.test.ts"
   },
   "dependencies": {
     "@google/genai": "^1.35.0",

@@ -260,7 +260,7 @@ export interface LessonPlan {
   };
 }
 
-export type AppView = 'dashboard' | 'context' | 'generator' | 'plans' | 'diagnostico' | 'admin-asignacion' | 'admin-alumnos' | 'pmc' | 'paec' | 'flujo' | 'bitacora' | 'perfil-docente' | 'grupos' | 'mi-escuela';
+export type AppView = 'dashboard' | 'context' | 'generator' | 'plans' | 'diagnostico' | 'admin-asignacion' | 'admin-alumnos' | 'pmc' | 'paec' | 'flujo' | 'bitacora' | 'perfil-docente' | 'grupos' | 'mi-escuela' | 'mi-pagina';
 
 // --- FLUJO DE CONTEXTUALIZACIÓN (fases que alimentan la planeación) ---
 

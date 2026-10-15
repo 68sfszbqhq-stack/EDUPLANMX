@@ -19,35 +19,35 @@ export const QuickActions: React.FC<QuickActionsProps> = ({
             title: 'Nueva Planeación',
             description: 'Crear una nueva planeación didáctica',
             icon: Plus,
-            color: 'bg-indigo-600 hover:bg-indigo-700',
+            color: 'text-indigo-600',
             onClick: onNewPlaneacion
         },
         {
             title: 'Ver Planeaciones',
             description: 'Consultar planeaciones guardadas',
             icon: FileText,
-            color: 'bg-green-600 hover:bg-green-700',
+            color: 'text-indigo-600',
             onClick: onViewPlaneaciones
         },
         {
             title: 'Herramientas',
             description: 'Acceder a herramientas didácticas',
             icon: Wrench,
-            color: 'bg-purple-600 hover:bg-purple-700',
+            color: 'text-indigo-600',
             onClick: onHerramientas
         },
         {
             title: 'Contexto Escolar',
             description: 'Configurar contexto de la escuela',
             icon: Settings,
-            color: 'bg-orange-600 hover:bg-orange-700',
+            color: 'text-indigo-600',
             onClick: onContexto
         }
     ];
 
     return (
         <div className="mb-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">🚀 Acciones Rápidas</h3>
+            <h3 className="text-xl font-semibold tracking-tight text-gray-900 mb-4">Acciones rápidas</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {actions.map((action, index) => {
                     const Icon = action.icon;
@@ -55,11 +55,11 @@ export const QuickActions: React.FC<QuickActionsProps> = ({
                         <button
                             key={index}
                             onClick={action.onClick}
-                            className={`${action.color} text-white rounded-lg p-6 text-left transition-all transform hover:scale-105 shadow-md hover:shadow-lg`}
+                            className="bg-white border border-slate-200 rounded-2xl p-6 text-left transition-all hover:shadow-md hover:-translate-y-0.5"
                         >
-                            <Icon className="w-8 h-8 mb-3" />
-                            <h4 className="text-lg font-bold mb-1">{action.title}</h4>
-                            <p className="text-sm opacity-90">{action.description}</p>
+                            <Icon className={`w-7 h-7 mb-3 ${action.color}`} />
+                            <h4 className="text-base font-semibold text-slate-900 mb-1">{action.title}</h4>
+                            <p className="text-sm text-slate-500">{action.description}</p>
                         </button>
                     );
                 })}

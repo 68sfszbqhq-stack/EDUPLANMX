@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { LogOut } from 'lucide-react';
+import MiPagina from './components/pagina/MiPagina';
 import { useAuth } from './src/contexts/AuthContext';
 import { AppView, SchoolContext, SubjectContext, LessonPlan } from './types';
 import ContextManager from './components/ContextManager';
@@ -23,6 +24,26 @@ import MiEscuela, { AvisoAccesoEscuela } from './components/MiEscuela';
 
 import PMCDashboard from './pages/directivo/PMCDashboard';
 import PAECDashboard from './pages/plantel/PAECDashboard';
+
+// Título que se muestra arriba de cada pantalla
+const TITULOS_VISTA: Record<string, string> = {
+  dashboard: 'Bienvenido, Docente',
+  grupos: 'Mis clases',
+  generator: 'Generar planeación',
+  plans: 'Mis planeaciones',
+  'perfil-docente': 'Cómo doy clase',
+  context: 'Contexto escolar',
+  flujo: 'Flujo de contextualización',
+  cuaderno: 'Cuaderno escolar · CAPEMS',
+  'mi-escuela': 'Mi escuela y su personal',
+  'mi-pagina': 'Mi página de clases',
+  diagnostico: 'Diagnóstico',
+  bitacora: 'Bitácora',
+  pmc: 'PMC directivo',
+  paec: 'Comité PAEC',
+  'admin-asignacion': 'Asignar materias',
+  'admin-alumnos': 'Gestión de alumnos',
+};
 
 const App: React.FC = () => {
   const navigate = useNavigate();
@@ -175,6 +196,8 @@ const App: React.FC = () => {
             onNavigate={handleNavigate}
           />
         );
+      case 'mi-pagina':
+        return <MiPagina />;
       case 'perfil-docente':
         return <CuestionarioDocente userId={user?.id} />;
       case 'plans':
@@ -196,19 +219,19 @@ const App: React.FC = () => {
 
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto h-screen">
-        <header className="bg-white border-b border-slate-200 sticky top-0 z-10 px-8 py-4 flex justify-between items-center">
-          <h2 className="text-lg font-semibold capitalize text-slate-700">
-            {view === 'dashboard' ? 'Bienvenido, Docente' : view === 'grupos' ? 'Mis clases' : view === 'mi-escuela' ? 'Mi escuela' : view.replace('_', ' ')}
+        <header className="bg-white border-b border-slate-200 sticky top-0 z-10 px-4 md:px-8 py-3 md:py-4 flex justify-between items-center gap-3">
+          <h2 className="text-lg font-semibold tracking-tight text-slate-800">
+            {TITULOS_VISTA[view] ?? view.replace(/[-_]/g, ' ')}
           </h2>
           <div className="flex items-center gap-4">
-            <div className="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium border border-indigo-100">
+            <div className="hidden sm:block bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium border border-indigo-100">
               {schoolContext.schoolName}
             </div>
             {(() => {
               // useAuth ya está llamado arriba
               return user ? (
                 <>
-                  <div className="text-right">
+                  <div className="hidden sm:block text-right">
                     <div className="text-sm font-semibold text-slate-700">
                       {user.nombre} {user.apellidoPaterno}
                     </div>
@@ -232,7 +255,7 @@ const App: React.FC = () => {
         </header>
         <AvisoAccesoEscuela onAbrir={() => handleNavigate('mi-escuela')} />
 
-        <div className="p-8 max-w-5xl mx-auto pb-24">
+        <div className="p-4 md:p-8 max-w-5xl mx-auto pb-24">
           {renderView()}
         </div>
       </main>

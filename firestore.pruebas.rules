@@ -534,6 +534,42 @@ service cloud.firestore {
       allow delete: if duenoDelGrupo(grupoId);
     }
 
+    // Mi página de clases: pública para leer si está publicada; solo su dueño la
+    // edita. No lleva datos de alumnos. Las reglas no pueden recorrer listas, así
+    // que cada enlace de material lo revisa también la página antes de mostrarlo
+    // (solo https; ver src/features/pagina/modelo.ts → urlSegura).
+    match /paginasClase/{slug} {
+      function paginaBienFormada() {
+        let d = request.resource.data;
+        return d.keys().hasOnly(['slug', 'docenteUid', 'publicada', 'nombre', 'escuela', 'presentacion', 'icono', 'color', 'materias', 'secciones', 'avisos', 'materiales', 'asesoria', 'actualizadoEn'])
+          && d.docenteUid == request.auth.uid
+          && d.slug == slug
+          && slug.size() >= 3 && slug.size() <= 40 && slug.matches('^[a-z0-9]+(-[a-z0-9]+)*$')
+          && d.publicada is bool
+          && d.nombre is string && d.nombre.size() >= 1 && d.nombre.size() <= 80
+          && textoCorto(d.get('escuela', ''), 120)
+          && textoCorto(d.get('presentacion', ''), 600)
+          && textoCorto(d.get('icono', ''), 8)
+          && textoCorto(d.get('asesoria', ''), 300)
+          && textoCorto(d.get('actualizadoEn', ''), 40)
+          && d.color in ['azul', 'verde', 'naranja', 'rojo', 'morado', 'grafito']
+          && d.get('materias', []) is list && d.get('materias', []).size() <= 8
+          && d.get('secciones', {}) is map
+          && d.get('avisos', []) is list && d.get('avisos', []).size() <= 20
+          && d.get('materiales', []) is list && d.get('materiales', []).size() <= 40;
+      }
+      function esDuena() {
+        return isAuthenticated() && resource.data.docenteUid == request.auth.uid;
+      }
+      // resource == null: la dirección está libre (así se revisa antes de crearla).
+      allow get: if resource == null || resource.data.publicada == true || esDuena();
+      // Las consultas deben filtrar where('docenteUid','==', uid).
+      allow list: if esDuena();
+      allow create: if isAuthenticated() && paginaBienFormada();
+      allow update: if esDuena() && paginaBienFormada();
+      allow delete: if esDuena();
+    }
+
     // -------------------------------------------------------------------------
     //  CIERRE — DENEGAR POR DEFECTO
     // -------------------------------------------------------------------------
