@@ -31,8 +31,11 @@ const app = initializeApp(firebaseConfig);
 // persistentMultipleTabManager evita que se rompa si el docente abre la app en
 // varias pestañas. Si el navegador no soporta IndexedDB (modo privado antiguo),
 // Firestore cae solo a memoria, así que no hace falta un try/catch.
+// ignoreUndefinedProperties: un campo opcional vacío (p. ej. pecLinkage cuando el PEC es
+// manual) hacía fallar todo el guardado; así simplemente se omite.
 export const db = initializeFirestore(app, {
   localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() }),
+  ignoreUndefinedProperties: true,
 });
 
 export const auth = getAuth(app);

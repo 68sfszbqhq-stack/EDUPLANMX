@@ -11,7 +11,7 @@
  * Contestarlo es OPCIONAL: sin perfil, la generación funciona exactamente como antes.
  */
 
-import { doc, getDoc, setDoc, Timestamp } from 'firebase/firestore';
+import { deleteField, doc, getDoc, setDoc, Timestamp } from 'firebase/firestore';
 import { db } from '../config/firebase';
 
 const COLECCION = 'perfiles_docentes';
@@ -117,8 +117,12 @@ export const perfilDocenteService = {
         } catch { /* sin localStorage, se sigue */ }
 
         if (userId) {
+            // Firestore rechaza campos undefined (quedan así al desmarcar una opción):
+            // se mandan como deleteField para que también se borren de la cuenta.
+            const limpio = Object.fromEntries(Object.entries(conFecha)
+                .map(([k, v]) => [k, v === undefined ? deleteField() : v]));
             await setDoc(doc(db, COLECCION, userId), {
-                ...conFecha,
+                ...limpio,
                 userId,
                 actualizadoTimestamp: Timestamp.now(),
             }, { merge: true });
