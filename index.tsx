@@ -3,6 +3,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Router from './Router';
 import './index.css';
+import { aislarAlmacenamiento } from './src/demo/modoMuestra';
+
+// Modo muestra: sus datos van con prefijo propio en localStorage, antes de que React lea nada
+aislarAlmacenamiento();
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {

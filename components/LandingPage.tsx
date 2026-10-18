@@ -53,7 +53,7 @@ const LandingPage: React.FC = () => {
                         onClick={probarDemo}
                         className="px-8 py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg hover:bg-indigo-700 shadow-lg shadow-indigo-200 flex items-center justify-center gap-2 transition-all active:scale-95"
                     >
-                        <Sparkles className="w-5 h-5" /> Probar la demo sin cuenta
+                        <Sparkles className="w-5 h-5" /> Probar con datos de muestra
                     </button>
                     <button
                         onClick={() => navigate('/login')}

@@ -67,6 +67,17 @@ const PlansLibrary: React.FC = () => {
   const loadPlans = async () => {
     if (!user?.id || !user?.schoolId) return;
 
+    // Modo muestra: solo lo guardado en este navegador, sin tocar Firebase
+    if (user.rol === 'guest') {
+      const locales: LessonPlan[] = vista === 'escuela' ? [] : JSON.parse(localStorage.getItem('savedPlans') || '[]');
+      setPlans(locales.map((p: any, i) => ({
+        id: p.id || `muestra-${i}`, userId: user.id, schoolId: user.schoolId, title: p.title || p.subject,
+        subject: p.subject, semester: p.meta?.semester, content: p, createdAt: p.meta?.startDate || new Date().toISOString(),
+      } as any)));
+      setLoading(false);
+      return;
+    }
+
     try {
       setLoading(true);
 

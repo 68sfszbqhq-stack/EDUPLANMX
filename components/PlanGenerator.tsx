@@ -20,6 +20,7 @@ import { useAuth } from '../src/contexts/AuthContext';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from '../src/config/firebase';
 import { descargarPlaneacionWord } from '../src/services/wordService';
+import { PLAN_MUESTRA } from '../src/demo/modoMuestra';
 
 interface PlanGeneratorProps {
   school: SchoolContext;
@@ -254,8 +255,8 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   }, [subject.subjectName]);
 
   useEffect(() => {
-    // Depende de schoolId: al inicio puede no estar cargado todavía
-    if (!user?.schoolId) return;
+    // Depende de schoolId: al inicio puede no estar cargado todavía. El modo muestra no lee Firebase.
+    if (!user?.schoolId || user.rol === 'guest') return;
     const loadStudentStats = async () => {
       const stats = await getStudentContextSummary(user.schoolId);
       setStudentContextSummary(stats);
@@ -1156,6 +1157,19 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           <Sparkles className="w-5 h-5" />
           Generar Planeación Personalizada
         </button>
+      )}
+
+      {/* Modo muestra: ver el resultado sin llave de IA, con una planeación hecha antes con estos mismos datos */}
+      {user?.rol === 'guest' && PLAN_MUESTRA && !isLoading && (
+        <div className="-mt-2 mb-2 p-4 rounded-xl border border-blue-200 bg-blue-50 text-sm text-blue-900 flex flex-wrap items-center gap-3">
+          <span className="flex-1 min-w-[16rem]">¿No tienes llave de IA? Mira una planeación que EduPlan ya generó con los datos de esta escuela de muestra.</span>
+          <button
+            onClick={() => { setError(null); setResult(PLAN_MUESTRA); }}
+            className="px-4 py-2 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700"
+          >
+            Ver planeación de ejemplo
+          </button>
+        </div>
       )}
 
       {

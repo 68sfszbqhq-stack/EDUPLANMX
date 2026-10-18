@@ -183,3 +183,23 @@ crear/editar/borrar solo el dueño; campos y tamaños revisados; la dirección d
 documento. Las reglas no pueden revisar cada enlace de una lista, así que la página solo convierte
 en enlace lo que empieza con `https://` (un `javascript:` se muestra como texto) y el panel lo
 rechaza antes de guardar. En producción la ruta funciona en GitHub Pages gracias a `404.html`.
+
+## Modo muestra (2026-10-17)
+
+Inicio → **«Probar con datos de muestra»**. Pensado para el QR de la ponencia y para quien quiera
+conocer EduPlan sin cuenta. Código en `src/demo/modoMuestra.ts` y `components/AvisoMuestra.tsx`.
+
+- Abre una escuela ficticia («Bachillerato General Oficial de Muestra», grupo 1º A Vespertino, 30
+  estudiantes inventados) con «Cómo doy clase» contestado, contexto escolar, flujo 4/4, cuaderno con
+  3 fuentes revisadas (PAEC, metas, diagnóstico) y una planeación de ejemplo en Mis planeaciones.
+- **No toca Firebase**: cero lecturas y escrituras (probado contando peticiones). Todo vive en el
+  navegador. Mientras la pestaña está en modo muestra, cada clave de localStorage lleva el prefijo
+  `muestra:` para no pisar los datos de un docente real que use el mismo navegador. Al iniciar
+  sesión con una cuenta real se borra la bandera y la app vuelve a las claves normales.
+- En Generar: «Ver planeación de ejemplo» muestra `src/demo/planMuestra.json` (generada con estos
+  mismos datos ficticios, sin datos reales). Para generar de verdad, el visitante pega su propia
+  llave de Gemini; nunca se usa la del proyecto.
+- Mis clases no entra en la muestra (guarda datos de alumnos reales): muestra un aviso.
+- «Volver a empezar» borra solo las claves `muestra:` y vuelve a sembrar.
+- Para cambiar los datos ficticios: editar `sembrarMuestra()`; si cambian, subir `SEMBRADO` a v2
+  para que los visitantes que ya entraron reciban los nuevos.

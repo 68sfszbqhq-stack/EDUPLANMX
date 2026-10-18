@@ -3,26 +3,28 @@ import { User as FirebaseUser } from 'firebase/auth';
 import { authService } from '../services/authService';
 import { analyticsService } from '../services/analyticsService';
 import type { Usuario, AuthContextType, LoginCredentials } from '../../types/auth';
+import { BANDERA_MUESTRA, ESCUELA_MUESTRA, sembrarMuestra } from '../demo/modoMuestra';
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Modo demo (QR del congreso, links compartidos): vive en sessionStorage para que
+// Modo muestra (QR del congreso, links compartidos): vive en sessionStorage para que
 // sobreviva al callback de Firebase y a un refresh, y se borre al cerrar la pestaña.
-const GUEST_FLAG = 'eduplan_modo_invitado';
+const GUEST_FLAG = BANDERA_MUESTRA;
 
 const USUARIO_INVITADO = {
     id: 'guest',
     email: 'invitado@eduplan.mx',
-    nombre: 'Maestro',
-    apellidoPaterno: 'Invitado',
+    nombre: 'Docente',
+    apellidoPaterno: 'de Muestra',
     apellidoMaterno: '',
     rol: 'guest',
     activo: true,
     fechaCreacion: new Date().toISOString(),
     ultimoAcceso: new Date().toISOString(),
     onboardingCompleto: true, // Saltamos onboarding
-    schoolName: 'Escuela Demo',
-    schoolId: 'demo'
+    schoolName: ESCUELA_MUESTRA,
+    schoolId: 'demo',
+    materias: ['Cultura Digital I']
 } as Usuario;
 
 const hayModoInvitado = () => {
@@ -42,6 +44,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         // Observar cambios en el estado de autenticación
         const unsubscribe = authService.onAuthStateChanged(async (firebaseUser: FirebaseUser | null) => {
             if (firebaseUser) {
+                // Una cuenta real nunca debe quedar leyendo los datos de muestra
+                try { sessionStorage.removeItem(GUEST_FLAG); } catch { /* sin sessionStorage no hay modo muestra */ }
                 try {
                     // 1. Obtener datos básicos del usuario desde Firestore
                     const userData = await authService.getUserData(firebaseUser.uid);
@@ -161,6 +165,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         } catch {
             // Sin sessionStorage el demo sigue funcionando hasta el próximo refresh
         }
+        sembrarMuestra();
         setUser(USUARIO_INVITADO);
         setLoading(false);
     };

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../src/contexts/AuthContext';
 import { ContextoCuaderno, FuenteEscolar, recuperarContexto } from '../src/features/cuaderno/model';
+import { esModoMuestra, GRUPO_MUESTRA } from '../src/demo/modoMuestra';
 import { listarFuentes } from '../src/features/cuaderno/storage';
 export interface SeleccionCuadernoPlan { context: ContextoCuaderno; group: string; mode: 'local' | 'escuela'; cycle: string; ready: boolean }
 export default function ContextoCuadernoPlan({ cycle, subject, topic, date, onChange, onOpen }: { cycle: string; subject: string; topic: string; date: string; onChange: (s: SeleccionCuadernoPlan | null) => void; onOpen: () => void }) {
   const { user } = useAuth();
-  const [enabled, setEnabled] = useState(false); const [group, setGroup] = useState(''); const [mode, setMode] = useState<'local' | 'escuela'>('local');
+  const [enabled, setEnabled] = useState(false); const [group, setGroup] = useState(() => esModoMuestra() ? GRUPO_MUESTRA : ''); const [mode, setMode] = useState<'local' | 'escuela'>('local');
   const [items, setItems] = useState<FuenteEscolar[]>([]); const [error, setError] = useState('');
   const [revision, setRevision] = useState(0); const [ready, setReady] = useState(false);
   const schoolId = user?.schoolId || (user?.rol === 'guest' ? 'demo' : '');

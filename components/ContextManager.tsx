@@ -28,7 +28,8 @@ const ContextManager: React.FC<ContextManagerProps> = ({ school, setSchool, subj
 
   useEffect(() => {
     const loadSchoolData = async () => {
-      if (user && user.schoolId) {
+      // El modo muestra ya trae su escuela ficticia y no consulta Firebase
+      if (user && user.schoolId && user.rol !== 'guest') {
         // Pre-fill basic data from user profile
         setSchool(prev => ({
           ...prev,

@@ -21,6 +21,7 @@ import { PersonalizedDashboard } from './components/PersonalizedDashboard';
 import CuadernoEscolar from './components/CuadernoEscolar';
 import MisClases from './components/clase/MisClases';
 import MiEscuela, { AvisoAccesoEscuela } from './components/MiEscuela';
+import AvisoMuestra from './components/AvisoMuestra';
 
 import PMCDashboard from './pages/directivo/PMCDashboard';
 import PAECDashboard from './pages/plantel/PAECDashboard';
@@ -120,8 +121,8 @@ const App: React.FC = () => {
     // Guardar en localStorage (fallback)
     setSavedPlans(prev => [plan, ...prev]);
 
-    // Guardar en Firestore con schoolId
-    if (user?.id && user?.schoolId) {
+    // Guardar en Firestore con schoolId (el modo muestra nunca toca Firebase)
+    if (user?.id && user?.schoolId && user.rol !== 'guest') {
       try {
         const { planeacionesService } = await import('./src/services/planeacionesService');
         await planeacionesService.crear(plan, user.id, user.schoolId);
@@ -199,7 +200,7 @@ const App: React.FC = () => {
       case 'mi-pagina':
         return <MiPagina />;
       case 'perfil-docente':
-        return <CuestionarioDocente userId={user?.id} />;
+        return <CuestionarioDocente userId={user?.rol === 'guest' ? undefined : user?.id} />;
       case 'plans':
         return <PlansLibrary />;
       case 'diagnostico':
@@ -254,6 +255,7 @@ const App: React.FC = () => {
           </div>
         </header>
         <AvisoAccesoEscuela onAbrir={() => handleNavigate('mi-escuela')} />
+        <AvisoMuestra />
 
         <div className="p-4 md:p-8 max-w-5xl mx-auto pb-24">
           {renderView()}

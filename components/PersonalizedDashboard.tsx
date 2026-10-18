@@ -33,6 +33,8 @@ export const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ on
             setLoading(false);
             return;
         }
+        // Modo muestra: nada de Firebase; el historial vive en Mis planeaciones
+        if (user.rol === 'guest') { setPlaneaciones([]); setLoading(false); return; }
 
         try {
             setLoading(true);

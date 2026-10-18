@@ -11,7 +11,9 @@ const COLORES_TARJETA = ['from-indigo-500 to-violet-500', 'from-sky-500 to-cyan-
 
 export default function MisClases({ onNavigate }: { onNavigate?: (view: string) => void }) {
   const { user } = useAuth();
-  const uid = user?.id || '';
+  const esMuestra = user?.rol === 'guest';
+  // En modo muestra no se lee Firebase: el cuaderno de clases necesita una cuenta
+  const uid = esMuestra ? '' : (user?.id || '');
   const [grupos, setGrupos] = useState<Grupo[]>([]);
   const [activo, setActivo] = useState<Grupo | null>(null);
   const [creando, setCreando] = useState(false);
@@ -24,6 +26,14 @@ export default function MisClases({ onNavigate }: { onNavigate?: (view: string) 
   };
   useEffect(() => { recargar(); }, [uid]);
 
+  if (esMuestra) return (
+    <div className="max-w-2xl mx-auto p-8 bg-white rounded-2xl border border-slate-200 space-y-3">
+      <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2"><Users className="w-5 h-5" /> Mis clases no está en el modo muestra</h2>
+      <p className="text-slate-600">Aquí cada docente lleva su lista, asistencia, calificaciones y diario, y manda el resumen del grupo a su planeación. Como guarda datos de alumnos reales, necesita una cuenta.</p>
+      <p className="text-slate-600">En la muestra, el diagnóstico del grupo ya está cargado en <b>Generar planeación</b> y en el <b>Flujo de contextualización</b>.</p>
+      <button onClick={() => onNavigate?.('generator')} className={`${boton} bg-indigo-600 text-white`}>Ir a Generar planeación <ArrowRight className="w-4 h-4" /></button>
+    </div>
+  );
   if (!uid) return <p className="p-8 text-slate-600">Inicia sesión para ver tus clases.</p>;
   if (activo) return <Clase grupo={activo} onSalir={() => { setActivo(null); recargar(); }} onNavigate={onNavigate} />;
 
