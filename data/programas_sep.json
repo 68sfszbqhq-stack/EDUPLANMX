@@ -10169,8 +10169,7 @@
           "Bioética como campo interdisciplinario",
           "Límites del planteamiento ético. Antropocentrismo",
           "Enfoques bioéticos",
-          "Dilemas de la bioética",
-          "Antecedentes e instrumentos de"
+          "Dilemas de la bioética"
         ]
       },
       {
@@ -10180,11 +10179,11 @@
           "Reflexione sobre los vínculos entre distintas formas de vida, mediante el análisis de problemas situados, para construir un posicionamiento ético y de ciudadanía crítica orientado a la justicia social, el reconocimiento y el cuidado de la biodiversidad."
         ],
         "tematicas": [
-          "regulación bioética",
+          "Antecedentes e instrumentos de regulación bioética",
           "Modelos bioéticos: Principialismo, Medicina basada en evidencias, Consecuencialismo y Principios de calidad en Salud",
           "CONBIOÉTICA",
           "Comités hospitalarios de bioética",
-          "Análisis de casos. Algunas sugerencias:; Interrupción voluntaria del embarazo; Eutanasia y Suicidio medicamente asistido; Cirugía de reasignación sexual; El problema de la eugenesia"
+          "Análisis de casos. Algunas sugerencias:; Interrupción voluntaria del embarazo; Eutanasia y Suicidio medicamente asistido; Cirugía de reasignación sexual; El problema de la eugenesia; Transhumanismo"
         ]
       },
       {
@@ -10194,7 +10193,6 @@
           "Reflexione sobre los vínculos entre distintas formas de vida, mediante el análisis de problemas situados, para construir un posicionamiento ético y de ciudadanía crítica orientado a la justicia social, el reconocimiento y el cuidado de la biodiversidad."
         ],
         "tematicas": [
-          "- Transhumanismo",
           "Seguridad, soberanía y justicia alimentaria",
           "La biodiversidad",
           "Los Organismos Genéticamente Modificados (OGM) y su relación con la pobreza y la hambruna",
@@ -10239,7 +10237,7 @@
       ],
       "propositos_formativos": [
         "Reconoce la ciencia como actividad creativa, social y colectiva que involucra el planteamiento de preguntas y la búsqueda de explicaciones sobre fenómenos naturales de su entorno, a través de la experimentación y el análisis.",
-        "Comprende fenólos que menos de la naturaleza están interrelacionados, pueden y estudiarse en su conjunto o de especializada, forma la para generación de conocimiento o innovación tecnológica.",
+        "Comprende que los fenómenos de la naturaleza están interrelacionados, y pueden estudiarse en su conjunto o de forma especializada, para la generación de conocimiento o innovación tecnológica.",
         "Comprende los conceptos de materia, cuerpo, masa y densidad, a partir de los objetos del entorno perceptible, para describirlos y analizarlos.",
         "Comprende los conceptos de sustancia, sustancia pura, elemento compuesto y mezcla, y los aplica para clasificar de forma práctica o analítica distintos tipos de materia y reconocer sus propiedades físicas y químicas.",
         "Comprende el átomo y su composición eléctrica como la partícula microscópica que estructura la materia.",
@@ -10264,7 +10262,7 @@
       },
       {
         "id": 2,
-        "descripcion": "Comprende fenólos que menos de la naturaleza están interrelacionados, pueden y estudiarse en su conjunto o de especializada, forma la para generación de conocimiento o innovación tecnológica.",
+        "descripcion": "Comprende que los fenómenos de la naturaleza están interrelacionados, y pueden estudiarse en su conjunto o de forma especializada, para la generación de conocimiento o innovación tecnológica.",
         "metas": [
           "Comprenda el carácter creativo, social y colectivo de las ciencias naturales, a través de la apropiación de conceptos que permiten la construcción de explicaciones en torno a la naturaleza intrínseca de la materia. ​"
         ],
@@ -10323,8 +10321,7 @@
         ],
         "tematicas": [
           "Enlace químico",
-          "Electronegatividad y fuerzas intramoleculares",
-          "Iones y moléculas"
+          "Electronegatividad y fuerzas intramoleculares Iones y moléculas"
         ]
       },
       {
@@ -10337,7 +10334,7 @@
           "Concepto de energía",
           "Noción intuitiva de movimiento y conceptos de energía cinética, potencial e interna",
           "Teoría cinética de la materia",
-          "Estados de agregación de la materia y (sólidos, cambios gases líquidos, sus y plasma)"
+          "Estados de agregación de la materia y sus cambios (sólidos, líquidos, gases y plasma)"
         ]
       },
       {
@@ -10375,7 +10372,7 @@
       ],
       "propositos_formativos": [
         "Comprende, a partir del análisis de fenómenos naturales cotidianos, que la energía puede transformarse y transferirse sin destruirse.",
-        "Analiza el cambio de posición de un cuerpo al interactuar comprencon otro, para der los conceptos de fuerza, movimiento y su relación con la energía mecánica.",
+        "Analiza el cambio de posición de un cuerpo al interactuar con otro, para comprender los conceptos de fuerza, movimiento y su relación con la energía mecánica.",
         "Analiza el intercambio de calor entre cuerpos y con el entorno, para comprender su concepto, el de temperatura y su diferencia.",
         "Analiza la interacción entre la energía y la estructura de la materia para comprender las formas de propagación de calor.",
         "Analiza el vínculo entre trabajo mecánico y calor, para comprender el concepto de termodinámica.",
@@ -10400,13 +10397,13 @@
       },
       {
         "id": 2,
-        "descripcion": "Analiza el cambio de posición de un cuerpo al interactuar comprencon otro, para der los conceptos de fuerza, movimiento y su relación con la energía mecánica.",
+        "descripcion": "Analiza el cambio de posición de un cuerpo al interactuar con otro, para comprender los conceptos de fuerza, movimiento y su relación con la energía mecánica.",
         "metas": [
           "Comprenda la importancia de la energía para construir explicaciones sobre diversos fenómenos naturales."
         ],
         "tematicas": [
           "Concepto de fuerza",
-          "Conceptos de movimiento posición, y velocidad",
+          "Conceptos de posición, movimiento y velocidad",
           "Concepto de energía mecánica",
           "Cálculo de la energía cinética de un cuerpo o partícula"
         ]
@@ -10420,8 +10417,7 @@
         "tematicas": [
           "Calor y temperatura",
           "Medición de calor",
-          "Escalas termométricas absolutas y relativa",
-          "Equilibrio térmico"
+          "Escalas termométricas absolutas y relativa Equilibrio térmico"
         ]
       },
       {
@@ -10431,9 +10427,8 @@
           "Comprenda la importancia de la energía para construir explicaciones sobre diversos fenómenos naturales."
         ],
         "tematicas": [
-          "Propagación de calor: conducción y convección",
-          "Transferencia de calor por radiación",
-          "Conductividad calorífica capacidad y térmica específica"
+          "Propagación de calor: conducción y convección Transferencia de calor por radiación",
+          "Conductividad calorífica y capacidad térmica específica"
         ]
       },
       {
@@ -10550,12 +10545,8 @@
         ],
         "tematicas": [
           "Concepto de ecosistema y biodiversidad; relación con la biósfera",
-          "Componentes abióticos bióticos del y ecosistema",
-          "Cadena trófica",
-          "Biomasa concepto de productividad y primaria",
-          "Eficiencia ecológica",
-          "Ciclo biogeoquímico del carbono y aspectos generales de los ciclos del nitrógeno y del fósforo",
-          "Concepto de equilibrio ecológico"
+          "Componentes bióticos y abióticos del ecosistema",
+          "Cadena trófica"
         ]
       },
       {
@@ -10565,6 +10556,10 @@
           "Construya explicaciones sobre fenómenos naturales que subyacen a la estructura y función de sistemas o esferas terrestres, y comprenda su importancia para la existencia de la vida en la Tierra, así como la relevancia de las acciones humanas para su cuidado."
         ],
         "tematicas": [
+          "Biomasa y concepto de productividad primaria",
+          "Eficiencia ecológica",
+          "Ciclo biogeoquímico del carbono y aspectos generales de los ciclos del nitrógeno y del fósforo",
+          "Concepto de equilibrio ecológico",
           "Concepto de reacción química",
           "Estructura de una reacción química",
           "Ecuación química como forma de representar una reacción",
@@ -10602,8 +10597,7 @@
         ],
         "tematicas": [
           "Concepto de deterioro ambiental",
-          "Deterioro a nivel global: el calentamiento y su relación con el efecto invernadero y el cambio climático; pérdida de la biodiversidad",
-          "Deterioro a nivel local: deforestación",
+          "Deterioro a nivel global: el calentamiento y su relación con el efecto invernadero y el cambio climático; pérdida de la biodiversidad Deterioro a nivel local: deforestación",
           "Contaminación antropogénica, atmosférica y del agua"
         ]
       },
@@ -10659,10 +10653,9 @@
           "Comprenda la química como el estudio de la estructura, propiedades y transformación de la materia, para construir explicaciones sobre diversos fenómenos naturales."
         ],
         "tematicas": [
-          "reactivos y productos; reorganización de átomos; liberación y absorción de energía",
+          "Características de las reacciones químicas: reactivos y productos; reorganización de átomos; liberación y absorción de energía",
           "Energía química",
-          "Clasificación de las reacciones químicas",
-          "(exotérmicas, endotérmicas, de síntesis, de descomposición, de desplazamiento y neutralización)",
+          "Clasificación de las reacciones químicas (exotérmicas, endotérmicas, de síntesis, de descomposición, de desplazamiento y neutralización)",
           "Identificación de reacciones químicas en la naturaleza y el desarrollo tecnológico"
         ]
       },
@@ -10749,8 +10742,7 @@
           "Comprenda la química como el estudio de la estructura, propiedades y transformación de la materia, para construir explicaciones sobre diversos fenómenos naturales."
         ],
         "tematicas": [
-          "Aspectos químicos de la glucólisis, ciclo de Krebs y cadena transportadora de electrones",
-          "Aspectos químicos de la fermentación",
+          "Aspectos químicos de la glucólisis, ciclo de Krebs y cadena transportadora de electrones Aspectos químicos de la fermentación",
           "Desarrollos tecnológicos vinculados con la respiración aerobia y anaerobia"
         ]
       }
@@ -10800,8 +10792,7 @@
           "Movimiento uniforme y uniformemente acelerado",
           "Representación gráfica del movimiento y cálculo de velocidad y aceleración",
           "Carácter vectorial de una fuerza. Vectores y parámetros",
-          "Conceptos de fuerza neta, fricción e inercia",
-          "Primera y segunda leyes de Newton"
+          "Conceptos de fuerza neta, fricción e inercia Primera y segunda leyes de Newton"
         ]
       },
       {
@@ -10836,8 +10827,7 @@
         ],
         "tematicas": [
           "Movimiento ondulatorio",
-          "Tipos de ondas: armónicas, mecánicas, electromagnéticas, transversales y longitudinales",
-          "Características de las ondas",
+          "Tipos de ondas: armónicas, mecánicas, electromagnéticas, transversales y longitudinales Características de las ondas",
           "Velocidad de propagación"
         ]
       },
@@ -10863,8 +10853,7 @@
         "tematicas": [
           "Principio de Pascal y de Arquímedes",
           "Tensión superficial y capilaridad",
-          "Ecuación de continuidad y de Bernoulli",
-          "Viscosidad"
+          "Ecuación de continuidad y de Bernoulli Viscosidad"
         ]
       },
       {
@@ -10879,8 +10868,7 @@
           "Ley de Ohm-Coulomb",
           "Ley de Ampere-Maxwell",
           "Ley de Faraday-Henry",
-          "Aplicaciones tecnológicas vinculadas al electromagnetismo",
-          "Divulgación de temas de interés sobre estas"
+          "Aplicaciones tecnológicas vinculadas al electromagnetismo"
         ]
       },
       {
@@ -10890,7 +10878,7 @@
           "Cuestione los fenómenos naturales que observa en su realidad inmediata, para la construcción de explicaciones sobre aquellos de carácter mecánico, ondulatorio, óptico y gravitatorio, a partir de su análisis conceptual y matemático."
         ],
         "tematicas": [
-          "sugerencias: a) Teoría de la relatividad especial y general de Einstein b) Mecánica Cuántica c) Física de partículas y nuclear d) Condensado de Bose-Einstein e) Teleportación y computación cuántica f) Cosmología moderna g) Superconductores"
+          "Divulgación de temas de interés sobre estas sugerencias: a) Teoría de la relatividad especial y general de Einstein b) Mecánica Cuántica c) Física de partículas y nuclear d) Condensado de Bose-Einstein e) Teleportación y computación cuántica f) Cosmología moderna g) Superconductores"
         ]
       }
     ],
@@ -10988,8 +10976,7 @@
           "Fases e importancia de la mitosis",
           "Fases e importancia de la meiosis",
           "Importancia de la recombinación genética como factor de biodiversidad",
-          "Procesos fundamentales de la división celular y situaciones de interés en donde la reproducción celular está implicada",
-          "Conceptos de fenotipo y genotipo"
+          "Procesos fundamentales de la división celular y situaciones de interés en donde la reproducción celular está implicada"
         ]
       },
       {
@@ -10999,6 +10986,7 @@
           "Comprenda los rasgos que caracterizan a los seres vivos para construir explicaciones sobre fenómenos naturales, mediados por el funcionamiento celular, la herencia y la evolución biológica."
         ],
         "tematicas": [
+          "Conceptos de fenotipo y genotipo",
           "Leyes de Mendel y cuadros de Punnett",
           "Codominancia",
           "Teoría cromosómica de la herencia",
@@ -11072,8 +11060,7 @@
         "tematicas": [
           "Concepto de Estado",
           "El Estado como garante de derechos y la perspectiva de derechos humanos",
-          "Sistema jurídico mexicano",
-          "Estado y ciudadanía:"
+          "Sistema jurídico mexicano"
         ]
       },
       {
@@ -11083,6 +11070,7 @@
           "Problematice la ciudadanía como un derecho y su relación con el Estado, así como la construcción de la democracia."
         ],
         "tematicas": [
+          "Estado y ciudadanía:",
           "Política",
           "Civil",
           "Económica",
@@ -11111,7 +11099,8 @@
           "Problematice la ciudadanía como un derecho y su relación con el Estado, así como la construcción de la democracia."
         ],
         "tematicas": [
-          "Inclusión e igualdad, adelantos y pendientes: Acciones afirmativas",
+          "Inclusión e igualdad, adelantos y pendientes:",
+          "Acciones afirmativas",
           "La edad como clave de discriminación (edadismo)",
           "¿Derechos para todas las personas?: accesos diferenciados y claves de exclusión social"
         ]
@@ -11234,14 +11223,12 @@
           "Analice su papel en contextos de crisis y conflictividad social, para reconocerse con capacidad de transformación."
         ],
         "tematicas": [
-          "Desigualdad de oportunidades y desigualdad de resultados desde la perspectiva estudiantil",
-          "-joven-adulto",
+          "Desigualdad de oportunidades y desigualdad de resultados desde la perspectiva estudiantil -joven-adulto",
           "Calidad de vida, bienestar social y bienestar subjetivo",
           "Distribución inequitativa del bienestar social en el marco de la movilidad social",
           "Causas e impactos multidimensionales de problemáticas sociales: medioambientales, contextos de violencia o diversidades culturales",
           "Responsabilidades desde la óptica de diversos actores, con y hacia las juventudes",
-          "Propuestas y alternativas a las problemáticas abordadas",
-          "Énfasis en problematizaciones multidimensionales, colocando al estudiantado en el centro"
+          "Propuestas y alternativas a las problemáticas abordadas"
         ]
       },
       {
@@ -11251,7 +11238,8 @@
           "Analice su papel en contextos de crisis y conflictividad social, para reconocerse con capacidad de transformación."
         ],
         "tematicas": [
-          "del análisis: Guerras y conflictos contemporáneos",
+          "Énfasis en problematizaciones multidimensionales, colocando al estudiantado en el centro del análisis:",
+          "Guerras y conflictos contemporáneos",
           "Actuación de organismos e instituciones internacionales",
           "Papel del gobierno mexicano en el ámbito internacional",
           "Narcotráfico y globalización",
@@ -11267,7 +11255,8 @@
           "Analice su papel en contextos de crisis y conflictividad social, para reconocerse con capacidad de transformación."
         ],
         "tematicas": [
-          "Las juventudes: Cultura e identidades",
+          "Las juventudes:",
+          "Cultura e identidades",
           "Diversidades sexogenéricas",
           "Cuerpo y afectividades",
           "Redes sociales y brecha digital",
@@ -11315,8 +11304,7 @@
           "Formule problemas históricos a partir del análisis de los conceptos y categorías fundamentales de la Historia como disciplina, para fortalecer una mirada crítica, situada y reflexiva sobre el pasado, presente, y futuro como parte fundamental de la conciencia histórica."
         ],
         "tematicas": [
-          "La relación entre Historia y Conciencia",
-          "Histórica",
+          "La relación entre Historia y Conciencia Histórica",
           "Tiempo histórico",
           "Tiempo cronológico",
           "Espacio histórico",
@@ -11398,8 +11386,7 @@
           "Descubra su propia historicidad y la del entorno social al que pertenece a partir de distinguir las dimensiones política, económica, social y cultural de los procesos históricos."
         ],
         "tematicas": [
-          "La historicidad como categoría analítica",
-          "Hipótesis histórica",
+          "La historicidad como categoría analítica Hipótesis histórica",
           "Contexto e identidad"
         ]
       },
@@ -11424,7 +11411,7 @@
         ],
         "tematicas": [
           "Sentido histórico",
-          "Dimensiones de hechos históricos los (política, económica, social, cultural)"
+          "Dimensiones de los hechos históricos (política, económica, social, cultural)"
         ]
       },
       {
@@ -11462,22 +11449,21 @@
         "Construya narraciones históricas partiendo de la evaluación de fuentes, para problematizar y argumentar sobre los procesos históricos, respondiendo a preguntas de investigación."
       ],
       "propositos_formativos": [
-        "Identifica la diversidad de fuentes históricas para construir contextualizadas explicaciones del pasado, reconociendo el carácter del conocimiento humano.",
+        "Identifica la diversidad de fuentes históricas para construir explicaciones contextualizadas del pasado, reconociendo el carácter del conocimiento humano.",
         "Examina de manera crítica las evidencias y evalúa su validez, considerando los criterios de procedencia, intencionalidad y contexto, así como el uso ético de la información y los posicionamientos.",
-        "Argumenta la validez de sus interpretaciones propias sobre acontecimientos, fenómenos y procesos históricos, mediante el diálogo, la contrastación con otras perspectivas y el uso fundamentado de fuentes.",
+        "Argumenta la validez de sus propias interpretaciones sobre acontecimientos, fenómenos y procesos históricos, mediante el diálogo, la contrastación con otras perspectivas y el uso fundamentado de fuentes.",
         "Elabora argumentos e interpretaciones históricas con base en fuentes variadas y pertinentes, integrando el uso de información."
       ]
     },
     "progresiones": [
       {
         "id": 1,
-        "descripcion": "Identifica la diversidad de fuentes históricas para construir contextualizadas explicaciones del pasado, reconociendo el carácter del conocimiento humano.",
+        "descripcion": "Identifica la diversidad de fuentes históricas para construir explicaciones contextualizadas del pasado, reconociendo el carácter del conocimiento humano.",
         "metas": [
           "Construya narraciones históricas partiendo de la evaluación de fuentes, para problematizar y argumentar sobre los procesos históricos, respondiendo a preguntas de investigación."
         ],
         "tematicas": [
-          "Distinción entre fuentes por su naturaleza",
-          "(primaria y secundaria), objetivo (directo e indirecto) y forma (escrita, oral y material)",
+          "Distinción entre fuentes por su naturaleza (primaria y secundaria), objetivo (directo e indirecto) y forma (escrita, oral y material)",
           "Contraste de fuentes históricas"
         ]
       },
@@ -11495,13 +11481,12 @@
       },
       {
         "id": 3,
-        "descripcion": "Argumenta la validez de sus interpretaciones propias sobre acontecimientos, fenómenos y procesos históricos, mediante el diálogo, la contrastación con otras perspectivas y el uso fundamentado de fuentes.",
+        "descripcion": "Argumenta la validez de sus propias interpretaciones sobre acontecimientos, fenómenos y procesos históricos, mediante el diálogo, la contrastación con otras perspectivas y el uso fundamentado de fuentes.",
         "metas": [
           "Construya narraciones históricas partiendo de la evaluación de fuentes, para problematizar y argumentar sobre los procesos históricos, respondiendo a preguntas de investigación."
         ],
         "tematicas": [
-          "Contextualización de las fuentes históricas: contraste del contexto de producción y el contexto de recepción de las fuentes históricas",
-          "Corroboración de fuentes históricas: diversidad narrativa, comparación, tipos de argumentos y evidencias"
+          "Contextualización de las fuentes históricas: contraste del contexto de producción y el contexto de recepción de las fuentes históricas Corroboración de fuentes históricas: diversidad narrativa, comparación, tipos de argumentos y evidencias"
         ]
       },
       {
@@ -11571,8 +11556,7 @@
           "Igualdad sustantiva",
           "Feminismo e Interseccionalidad",
           "La diversidad de los feminismos: ¿Uno o varios feminismos?",
-          "Derechos sexuales y derechos reproductivos en perspectiva de género",
-          "Subjetividad, género y poder."
+          "Derechos sexuales y derechos reproductivos en perspectiva de género"
         ]
       },
       {
@@ -11582,6 +11566,7 @@
           "Explique, desde una perspectiva crítica, la construcción de las corporalidades y las identidades sexo-genéricas para propiciar vínculos basados en la equidad, la justicia, el respeto y la inclusión"
         ],
         "tematicas": [
+          "Subjetividad, género y poder.",
           "Diversidad sexo-genérica, patologización y prácticas discriminatorias.",
           "Movimientos por la diversidad sexo-genérica: LGBTTTIQA+, movimiento marica, movimientos indígenas por la diversidad sexo-genérica, entre otros.",
           "Políticas públicas para la protección y garantía de los derechos de las diversidades sexo-genéricas",
@@ -11626,9 +11611,9 @@
       ],
       "propositos_formativos": [
         "Identifica el conjunto de elementos físicos que componen un dispositivo electrónico, así como el conjunto de programas, instrucciones y reglas que permiten que funcione, para analizar críticamente su evolución a lo largo del tiempo.",
-        "Conoce los requerimientos, tipos de licenciamiento del hardware para software y acceder a servicios tecnológicos, al ciberespacio y a los servicios digitales (licencias de uso privativo y licencias libres).",
+        "Conoce los requerimientos, tipos de licenciamiento del software y hardware para acceder a servicios tecnológicos, al ciberespacio y a los servicios digitales (licencias de uso privativo y licencias libres).",
         "Analiza de manera crítica el impacto que tienen el uso de las tecnologías digitales —y las políticas relacionadas con la disponibilidad y gestión de la información— en las personas y en las comunidades.",
-        "Utiliza de herramientas software libre y experimenta con alternativas a los programas de patente y del software como servicio.",
+        "Utiliza herramientas de software libre y experimenta con alternativas a los programas de patente y del software como servicio.",
         "Identifica y aplica la normatividad que regula el uso del ciberespacio y servicios digitales para cuidar su seguridad digital y la de otros.",
         "Utiliza los recursos digitales a su alcance con fines personales, académicos y sociales para interactuar con seguridad y con consideración al medio ambiente.",
         "Reconoce las posibles formas de comprensión y resolución de problemas algorítmicos para desarrollar una estrategia frente a una situación, fenómeno o problemática, utilizando medios tecnológicos y digitales.",
@@ -11650,7 +11635,7 @@
       },
       {
         "id": 2,
-        "descripcion": "Conoce los requerimientos, tipos de licenciamiento del hardware para software y acceder a servicios tecnológicos, al ciberespacio y a los servicios digitales (licencias de uso privativo y licencias libres).",
+        "descripcion": "Conoce los requerimientos, tipos de licenciamiento del software y hardware para acceder a servicios tecnológicos, al ciberespacio y a los servicios digitales (licencias de uso privativo y licencias libres).",
         "metas": [
           "Conozca y utilice de manera crítica y responsable el ciberespacio y los distintos recursos digitales, apegándose a su marco normativo para ejercer una ciudadanía digital, acceder al conocimiento y resolver situaciones, fenómenos o problemas de su contexto."
         ],
@@ -11675,12 +11660,12 @@
           "Colonialismo de datos",
           "Mercantilización de la atención de las personas usuarias",
           "Dependencia tecnológica",
-          "Desigualdad en el acceso a las tecnolo- (socioeconómica, digitales gías regional o de género)"
+          "Desigualdad en el acceso a las tecnologías digitales (socioeconómica, regional o de género)"
         ]
       },
       {
         "id": 4,
-        "descripcion": "Utiliza de herramientas software libre y experimenta con alternativas a los programas de patente y del software como servicio.",
+        "descripcion": "Utiliza herramientas de software libre y experimenta con alternativas a los programas de patente y del software como servicio.",
         "metas": [
           "Conozca y utilice de manera crítica y responsable el ciberespacio y los distintos recursos digitales, apegándose a su marco normativo para ejercer una ciudadanía digital, acceder al conocimiento y resolver situaciones, fenómenos o problemas de su contexto."
         ],
@@ -11703,8 +11688,7 @@
           "Privacidad de la información",
           "Seguridad digital",
           "Protección de datos",
-          "Uso responsable y ético de la Inteligencia",
-          "Artificial (IA)",
+          "Uso responsable y ético de la Inteligencia Artificial (IA)",
           "Licenciamientos copyleft"
         ]
       },
@@ -11728,12 +11712,12 @@
           "Conozca y utilice de manera crítica y responsable el ciberespacio y los distintos recursos digitales, apegándose a su marco normativo para ejercer una ciudadanía digital, acceder al conocimiento y resolver situaciones, fenómenos o problemas de su contexto."
         ],
         "tematicas": [
-          "Pasos para solucionar un problema: Identificar el problema por resolver",
+          "Pasos para solucionar un problema:",
+          "Identificar el problema por resolver",
           "Comprender el problema",
           "Analizar alternativas de solución",
           "Seleccionar la mejor alternativa de solución",
-          "Utilizar métodos, técnicas o diagramas de flujo para resolver problemas",
-          "Dato"
+          "Utilizar métodos, técnicas o diagramas de flujo para resolver problemas"
         ]
       },
       {
@@ -11743,6 +11727,7 @@
           "Conozca y utilice de manera crítica y responsable el ciberespacio y los distintos recursos digitales, apegándose a su marco normativo para ejercer una ciudadanía digital, acceder al conocimiento y resolver situaciones, fenómenos o problemas de su contexto."
         ],
         "tematicas": [
+          "Dato",
           "Información",
           "Variables",
           "Constantes",
@@ -11792,7 +11777,7 @@
         ],
         "tematicas": [
           "Trabajo colaborativo digital",
-          "Herramientas colaborativo de trabajo digital libre (Cryptpad, Riseup pad, entre otras)"
+          "Herramientas de trabajo colaborativo digital libre (Cryptpad, Riseup pad, entre otras)"
         ]
       },
       {
@@ -11812,7 +11797,7 @@
           "Interactúe con las TICCAD para potenciar su aprendizaje autónomo y colaborativo, de una forma creativa e innovadora, de acuerdo con las características y necesidades de su contexto."
         ],
         "tematicas": [
-          "Técnicas de investigación métodos y digital (Ciberetnografía, análisis en línea de contenido, grupo focal, entrevista, observación, entre otros)"
+          "Técnicas y métodos de investigación digital (Ciberetnografía, análisis en línea de contenido, grupo focal, entrevista, observación, entre otros)"
         ]
       },
       {
@@ -11874,7 +11859,7 @@
         ],
         "tematicas": [
           "Alcance: inalámbrico y alámbrico",
-          "Medios de inalámbricos transmisión: y alámbricos"
+          "Medios de transmisión: inalámbricos y alámbricos"
         ]
       },
       {
@@ -11884,7 +11869,7 @@
           "Interactúe con las TICCAD para ampliar su conocimiento y vincularse con su entorno de una manera crítica, creativa e innovadora."
         ],
         "tematicas": [
-          "(Signal, Comunicación digital directa Telegram, WhatsApp, Messenger, Jitsi, Zoom, Google Meet, entre otras).",
+          "Comunicación digital directa (Signal, Telegram, WhatsApp, Messenger, Jitsi, Zoom, Google Meet, entre otras).",
           "Emisión y descarga continua (PeerTube, You- Tube, Twitch, Facebook Gaming, entre otras)",
           "Transmisión por secuencias (Wirecast, vMix, OBS Studio, entre otras)",
           "Lectura y difusión continuas (Zotero, Evernote, Google Keep, entre otras)"
@@ -11897,7 +11882,8 @@
           "Interactúe con las TICCAD para ampliar su conocimiento y vincularse con su entorno de una manera crítica, creativa e innovadora."
         ],
         "tematicas": [
-          "Contenido digital: Didáctico",
+          "Contenido digital:",
+          "Didáctico",
           "Documental",
           "Demostrativo",
           "Entretenimiento e informativo"
@@ -11910,7 +11896,8 @@
           "Interactúe con las TICCAD para ampliar su conocimiento y vincularse con su entorno de una manera crítica, creativa e innovadora."
         ],
         "tematicas": [
-          "Vocaciones tecnológico-digitales con perspectiva de género y de las desigualdades socioeconómicas: Inteligencia Artificial",
+          "Vocaciones tecnológico-digitales con perspectiva de género y de las desigualdades socioeconómicas:",
+          "Inteligencia Artificial",
           "Internet de las cosas",
           "Industria 4.0",
           "Ciberseguridad",
@@ -11946,7 +11933,7 @@
         "Sigue indicaciones y participa en interacciones básicas dentro del aula (pide permiso, aclara dudas y responde a instrucciones).",
         "Identifica y describe objetos y espacios cotidianos del hogar o la escuela (reconoce características como forma, color y tamaño).",
         "Solicita y proporciona información personal básica en contextos escolares y comunitarios (nombre, edad, nacionalidad, teléfono, dirección, correo).",
-        "Hace preguntas sencillas para general información obtener (ubicación, horarios).",
+        "Hace preguntas sencillas para obtener información general (ubicación, horarios).",
         "Describe personas, vestimenta y clima en contextos cotidianos, respetando la diversidad (identificación y ubicación en el entorno).",
         "Expresa gustos y opiniones simples en situaciones cotidianas (habla sobre preferencias y razones de forma empática).",
         "Expresa pertenencia de forma clara y respetuosa (pregunta y responde sobre posesión con el genitivo y los pronombres posesivos)."
@@ -11963,8 +11950,7 @@
           "Verbo to be (forma afirmativa)",
           "Pronombres personales",
           "Sustantivos: comunes y propios; singulares y plurales",
-          "Información personal (name, age, nationality)",
-          "Números cardinales y ordinales",
+          "Información personal (name, age, nationality) Números cardinales y ordinales",
           "Países, nacionalidades",
           "Saludos formales e informales"
         ]
@@ -11978,10 +11964,8 @@
         "tematicas": [
           "Imperativos (formas afirmativa y negativa)",
           "Instrucciones y materiales comunes del aula",
-          "Verbos frecuentes para actividades escolares",
-          "(open, close, read, listen)",
-          "Expresiones útiles para la interacción en clase",
-          "(How do you say… in English?; May I go to the bathroom?; Can you repeat that, please?)"
+          "Verbos frecuentes para actividades escolares (open, close, read, listen)",
+          "Expresiones útiles para la interacción en clase (How do you say… in English?; May I go to the bathroom?; Can you repeat that, please?)"
         ]
       },
       {
@@ -11993,8 +11977,7 @@
         "tematicas": [
           "Adjetivos comunes",
           "Demostrativos (this, that, these, those)",
-          "Artículos definidos e indefinidos (the, a, an)",
-          "Objetos del aula y del hogar",
+          "Artículos definidos e indefinidos (the, a, an) Objetos del aula y del hogar",
           "Muebles",
           "Colores y tamaños"
         ]
@@ -12006,29 +11989,27 @@
           "Reconozca y comprenda palabras, frases y expresiones básicas para presentarse, interactuar en el aula y hablar de su entorno inmediato."
         ],
         "tematicas": [
-          "Verbo to be (formas interrogativa y negativa)",
-          "Preguntas cerradas (yes/no)",
+          "Verbo to be (formas interrogativa y negativa) Preguntas cerradas (yes/no)",
           "Adjetivos posesivos (my, your, his, etc.)",
           "Números de teléfono y direcciones",
           "Alfabeto y deletreo básico (para aclarar su nombre y apellido y dar correo electrónico)",
-          "Profesiones comunes en contexto (teacher, doctor, cook, driver, etc.) y vocabulario escolar",
-          "Preguntas abiertas con wh- (what, where, when,"
+          "Profesiones comunes en contexto (teacher, doctor, cook, driver, etc.) y vocabulario escolar"
         ]
       },
       {
         "id": 5,
-        "descripcion": "Hace preguntas sencillas para general información obtener (ubicación, horarios).",
+        "descripcion": "Hace preguntas sencillas para obtener información general (ubicación, horarios).",
         "metas": [
           "Reconozca y comprenda palabras, frases y expresiones básicas para presentarse, interactuar en el aula y hablar de su entorno inmediato."
         ],
         "tematicas": [
-          "who, how)",
-          "Verbo to be (revisión de la forma interrogativa)",
-          "Orden de las palabras en preguntas",
+          "Preguntas abiertas con wh- (what, where, when, who, how)",
+          "Verbo to be (revisión de la forma interrogativa) Orden de las palabras en preguntas",
           "Preposiciones de tiempo (in, on, at)",
           "Años, días y meses",
           "Horas y momentos del día",
-          "Lugares en la comunidad"
+          "Lugares en la comunidad",
+          "Materias escolares"
         ]
       },
       {
@@ -12038,14 +12019,11 @@
           "Reconozca y comprenda palabras, frases y expresiones básicas para presentarse, interactuar en el aula y hablar de su entorno inmediato."
         ],
         "tematicas": [
-          "Materias escolares",
           "There is/are",
           "Preposiciones de lugar (in, on, under)",
           "Características físicas (tall, short, etc.)",
-          "Lugares de la localidad (park, school, hospital, etc.)",
-          "Habitaciones de la casa",
-          "Objetos cotidianos",
-          "Revisión de preguntas abiertas con wh- (what,"
+          "Lugares de la localidad (park, school, hospital, etc.) Habitaciones de la casa",
+          "Objetos cotidianos"
         ]
       },
       {
@@ -12055,15 +12033,13 @@
           "Reconozca y comprenda palabras, frases y expresiones básicas para presentarse, interactuar en el aula y hablar de su entorno inmediato."
         ],
         "tematicas": [
-          "where, when, who, how, why)",
-          "Uso de favorite en frases simples y uso de prefer",
-          "(My favorite color is blue; I prefer coffee.)",
+          "Revisión de preguntas abiertas con wh- (what, where, when, who, how, why)",
+          "Uso de favorite en frases simples y uso de prefer (My favorite color is blue; I prefer coffee.)",
           "Verbo-ing (gerundio)",
           "Intensificadores básicos (very)",
           "Adjetivos (big/small, hot/cold)",
-          "Actividades y eventos comunes (party, study, etc.)",
-          "Pasatiempos",
-          "Conjunciones: because, and, so (para responder"
+          "Actividades y eventos comunes (party, study, etc.) Pasatiempos",
+          "Conjunciones: because, and, so (para responder y dar razones)"
         ]
       },
       {
@@ -12073,7 +12049,6 @@
           "Reconozca y comprenda palabras, frases y expresiones básicas para presentarse, interactuar en el aula y hablar de su entorno inmediato."
         ],
         "tematicas": [
-          "y dar razones)",
           "Pronombres posesivos (mine, yours, his, hers)",
           "Genitivo sajón (‘s) con nombres propios en singular (It’s María’s)",
           "Preguntas con whose (Whose pencil is this?)",
@@ -12125,8 +12100,7 @@
         "tematicas": [
           "Presente simple (forma afirmativa)",
           "Adverbios de frecuencia (always, usually, sometimes, never)",
-          "Verbos comunes en tercera persona (he/she)",
-          "Rutinas diarias",
+          "Verbos comunes en tercera persona (he/she) Rutinas diarias",
           "Actividades escolares y del hogar",
           "Expresiones de tiempo y horarios"
         ]
@@ -12183,8 +12157,7 @@
           "Intercambie información básica sobre su vida cotidiana y su entorno. Participe en interacciones breves y comprensibles que impliquen rutinas sociales, gustos, descripciones simples y necesidades básicas, en contextos escolares y comunitarios."
         ],
         "tematicas": [
-          "Comparativos (bigger than, more interesting than)",
-          "Adjetivos de una y dos sílabas",
+          "Comparativos (bigger than, more interesting than) Adjetivos de una y dos sílabas",
           "Personas, lugares y objetos",
           "Preferencias y elecciones"
         ]
@@ -12227,8 +12200,7 @@
         "tematicas": [
           "Presente simple (revisión general: singular vs. plural, primera y tercera persona)",
           "Vocabulario complementario",
-          "Números cardinales (hasta centenas o millares)",
-          "Números ordinales (1st, 2nd, 3rd...)",
+          "Números cardinales (hasta centenas o millares) Números ordinales (1st, 2nd, 3rd...)",
           "Deletreo de nombres y palabras comunes"
         ]
       }
@@ -12286,10 +12258,8 @@
           "Participe en intercambios sociales básicos, exprese ideas sobre experiencias personales y amplíe su repertorio comunicativo en contextos cotidianos escolares y comunitarios."
         ],
         "tematicas": [
-          "Presente perfecto (Have/has + past participle)",
-          "(introducción) para experiencias personales",
-          "Actividades con amigos, familia o comunidad",
-          "Eventos escolares o culturales"
+          "Presente perfecto (Have/has + past participle) (introducción) para experiencias personales",
+          "Actividades con amigos, familia o comunidad Eventos escolares o culturales"
         ]
       },
       {
@@ -12328,10 +12298,8 @@
         "tematicas": [
           "Must / mustn’t",
           "Have to / don’t have to",
-          "Reglas del aula (más complejas)",
-          "Tareas del hogar",
-          "Convivencia comunitaria",
-          "Imperativos para dar indicaciones"
+          "Reglas del aula (más complejas) Tareas del hogar",
+          "Convivencia comunitaria"
         ]
       },
       {
@@ -12341,10 +12309,10 @@
           "Participe en intercambios sociales básicos, exprese ideas sobre experiencias personales y amplíe su repertorio comunicativo en contextos cotidianos escolares y comunitarios."
         ],
         "tematicas": [
-          "(Walk straight until you see the park; Don’t forget to bring your ID; Speak clearly.)",
+          "Imperativos para dar indicaciones (Walk straight until you see the park; Don’t forget to bring your ID; Speak clearly.)",
           "Conectores secuenciales (first, then, after that, finally)",
           "Indicaciones y procesos simples (recetas, instrucciones digitales, tareas prácticas)",
-          "Rutinas cotidianas o procedimientos escolares/comunitarios (cómo registrarse, cómo re-"
+          "Rutinas cotidianas o procedimientos escolares/comunitarios (cómo registrarse, cómo reciclar, cómo usar una aplicación digital escolar)"
         ]
       },
       {
@@ -12354,10 +12322,8 @@
           "Participe en intercambios sociales básicos, exprese ideas sobre experiencias personales y amplíe su repertorio comunicativo en contextos cotidianos escolares y comunitarios."
         ],
         "tematicas": [
-          "ciclar, cómo usar una aplicación digital escolar)",
           "Pasado simple (verbos irregulares básicos)",
-          "Conectores narrativos (then, after, later, suddenly)",
-          "Anécdotas personales",
+          "Conectores narrativos (then, after, later, suddenly) Anécdotas personales",
           "Experiencias escolares"
         ]
       },
@@ -12452,8 +12418,7 @@
         ],
         "tematicas": [
           "Should / shouldn’t",
-          "Imperativos afirmativos y negativos (revisión)",
-          "Problemas frecuentes en casa o la escuela",
+          "Imperativos afirmativos y negativos (revisión) Problemas frecuentes en casa o la escuela",
           "Recomendaciones cotidianas"
         ]
       },
@@ -12477,10 +12442,8 @@
         ],
         "tematicas": [
           "Expresiones de cortesía (Would you like to…?; Can I help you…?; That’s great!; Nice to meet you.)",
-          "Revisión de preguntas y respuestas comunes",
-          "(How are you?; What do you do?; Do you live around here?; I’m fine, thanks.)",
-          "Conversaciones en eventos o espacios compartidos (Small talk: The weather is nice today; This place is really interesting; I like your shirt.)",
-          "Pasado simple y pasado continuo"
+          "Revisión de preguntas y respuestas comunes (How are you?; What do you do?; Do you live around here?; I’m fine, thanks.)",
+          "Conversaciones en eventos o espacios compartidos (Small talk: The weather is nice today; This place is really interesting; I like your shirt.)"
         ]
       },
       {
@@ -12490,10 +12453,10 @@
           "Fortalezca su autonomía comunicativa en tareas sociales y académicas sencillas, ampliando el uso del lenguaje para describir, explicar, comparar y argumentar ideas simples en contextos cotidianos."
         ],
         "tematicas": [
-          "Uso narrativo de adverbios de tiempo",
-          "(yesterday, last week, then, after that, later, finally, in the end) y de lugar (here, there, at school, in the kitchen, outside, near: I saw her near the river yesterday)",
+          "Pasado simple y pasado continuo",
+          "Uso narrativo de adverbios de tiempo (yesterday, last week, then, after that, later, finally, in the end) y de lugar (here, there, at school, in the kitchen, outside, near: I saw her near the river yesterday)",
           "Experiencias reales o imaginadas",
-          "Historias personales con emociones (happy, excited, nervous, surprised, worried, confused,"
+          "Historias personales con emociones (happy, excited, nervous, surprised, worried, confused, sad, angry, proud)"
         ]
       },
       {
@@ -12503,7 +12466,6 @@
           "Fortalezca su autonomía comunicativa en tareas sociales y académicas sencillas, ampliando el uso del lenguaje para describir, explicar, comparar y argumentar ideas simples en contextos cotidianos."
         ],
         "tematicas": [
-          "sad, angry, proud)",
           "Revisión general: presente, pasado, futuro",
           "Estructura de párrafos y secuencia de ideas (conectores)",
           "Textos funcionales: notas, correos, relatos breves",
@@ -12587,8 +12549,7 @@
           "Desarrolle habilidades comunicativas que le permitan comprender y producir textos orales y escritos sobre temas de interés académico, técnico, profesional o comunitario, para fortalecer su agencia lingüística, su pensamiento crítico y su colaboración."
         ],
         "tematicas": [
-          "Modales para sugerencias, hipótesis o duda",
-          "(should, could, might)",
+          "Modales para sugerencias, hipótesis o duda (should, could, might)",
           "Conectores de causa y efecto (because, so, even though)",
           "Temas sociales, dilemas éticos, sostenibilidad, justicia"
         ]
@@ -12698,8 +12659,7 @@
           "Estructura del protocolo de investigación.",
           "Delimitación y formulación de la problemática.",
           "Preguntas, objetivos, justificación, hipótesis o supuestos de investigación.",
-          "Cronograma y planificación del proceso de investigación.",
-          "Métodos de investigación: inductivo, deductivo,"
+          "Cronograma y planificación del proceso de investigación."
         ]
       },
       {
@@ -12709,12 +12669,12 @@
           "Emplea la metodología de investigación social para proponer alternativas de atención a problemáticas de su comunidad, desde distintos abordajes que abonen a la construcción de una sociedad justa y equitativa para sistematizar de manera reflexiva, analítica y critica los datos de la realidad social que le permita percibirse como agente de transformación social, política, económica y cultural."
         ],
         "tematicas": [
-          "análisis–síntesis, comparativo, histórico.",
+          "Métodos de investigación: inductivo, deductivo, análisis–síntesis, comparativo, histórico.",
           "Diseño de investigación: experimental y no experimental.",
           "Enfoques de investigación: cualitativo, cuantitativo y mixto.",
           "Criterios para la elección del enfoque y método según el objeto de estudio.",
           "La “caja de herramientas” en la investigación social.",
-          "Diseño metodológico: paradigma, enfoque, método, sujetos de estudio, población, muestra,"
+          "Diseño metodológico: paradigma, enfoque, método, sujetos de estudio, población, muestra, técnicas e instrumentos."
         ]
       },
       {
@@ -12724,11 +12684,9 @@
           "Emplea la metodología de investigación social para proponer alternativas de atención a problemáticas de su comunidad, desde distintos abordajes que abonen a la construcción de una sociedad justa y equitativa para sistematizar de manera reflexiva, analítica y critica los datos de la realidad social que le permita percibirse como agente de transformación social, política, económica y cultural."
         ],
         "tematicas": [
-          "técnicas e instrumentos.",
           "Marco teórico: conceptual, histórico y referencial.",
           "Normas APA.",
-          "Estado del arte: revisión y análisis de antecedentes.",
-          "Técnicas de recolección de datos: entrevistas,"
+          "Estado del arte: revisión y análisis de antecedentes."
         ]
       },
       {
@@ -12738,14 +12696,12 @@
           "Emplea la metodología de investigación social para proponer alternativas de atención a problemáticas de su comunidad, desde distintos abordajes que abonen a la construcción de una sociedad justa y equitativa para sistematizar de manera reflexiva, analítica y critica los datos de la realidad social que le permita percibirse como agente de transformación social, política, económica y cultural."
         ],
         "tematicas": [
-          "encuestas, observación, grupos focales.",
+          "Técnicas de recolección de datos: entrevistas, encuestas, observación, grupos focales.",
           "Instrumentos: cuestionarios, guías de entrevista, listas de cotejo, diarios de campo.",
           "Diferencias entre técnicas cuantitativas y cualitativas.",
           "Criterios de validez y confiabilidad en la recolección de datos.",
           "Etapas del procesamiento de datos: recolección, organización, sistematización y análisis.",
-          "Ética en el manejo de la información y la relación con los sujetos de estudio.",
-          "Diseño y aplicación de técnicas e instrumentos para recolección de datos.",
-          "Análisis e interpretación de datos:"
+          "Ética en el manejo de la información y la relación con los sujetos de estudio."
         ]
       },
       {
@@ -12755,10 +12711,12 @@
           "Emplea la metodología de investigación social para proponer alternativas de atención a problemáticas de su comunidad, desde distintos abordajes que abonen a la construcción de una sociedad justa y equitativa para sistematizar de manera reflexiva, analítica y critica los datos de la realidad social que le permita percibirse como agente de transformación social, política, económica y cultural."
         ],
         "tematicas": [
-          "sistematización y categorización de información.",
+          "Diseño y aplicación de técnicas e instrumentos para recolección de datos.",
+          "Análisis e interpretación de datos: sistematización y categorización de información.",
           "Elaboración de conclusiones y recomendaciones.",
           "Formulación de propuestas de solución viables y contextualizadas.",
-          "Características y tipos de productos de investigación."
+          "Características y tipos de productos de investigación.",
+          "Alcances y limitaciones de la transformación social."
         ]
       },
       {
@@ -12768,7 +12726,6 @@
           "Emplea la metodología de investigación social para proponer alternativas de atención a problemáticas de su comunidad, desde distintos abordajes que abonen a la construcción de una sociedad justa y equitativa para sistematizar de manera reflexiva, analítica y critica los datos de la realidad social que le permita percibirse como agente de transformación social, política, económica y cultural."
         ],
         "tematicas": [
-          "Alcances y limitaciones de la transformación social.",
           "Estrategias de comunicación y presentación de resultados.",
           "Ética en la divulgación de resultados de investigación.",
           "Criterios de evaluación de una investigación social.",
@@ -12840,7 +12797,8 @@
           "Identifique la lectura y la escritura como actos colectivos de la experiencia humana útiles en la reflexión, comunicación y problematización del mundo circundante, y utilice algunos rasgos importantes para la escritura de textos propios."
         ],
         "tematicas": [
-          "Introducción a las propiedades del texto: Claridad",
+          "Introducción a las propiedades del texto:",
+          "Claridad",
           "Coherencia",
           "Concordancia",
           "Escritura de ideas relacionadas con un tema específico"
@@ -12853,11 +12811,11 @@
           "Identifique la lectura y la escritura como actos colectivos de la experiencia humana útiles en la reflexión, comunicación y problematización del mundo circundante, y utilice algunos rasgos importantes para la escritura de textos propios."
         ],
         "tematicas": [
-          "Párrafos: Descriptivos",
+          "Párrafos:",
+          "Descriptivos",
           "Narrativos",
           "Argumentativos",
-          "Escritura de comentarios",
-          "Puntuación y sintaxis"
+          "Escritura de comentarios Puntuación y sintaxis"
         ]
       },
       {
@@ -12879,8 +12837,8 @@
           "Identifique la lectura y la escritura como actos colectivos de la experiencia humana útiles en la reflexión, comunicación y problematización del mundo circundante, y utilice algunos rasgos importantes para la escritura de textos propios."
         ],
         "tematicas": [
-          "Concordancia del texto",
-          "Conectores: Causales",
+          "Concordancia del texto Conectores:",
+          "Causales",
           "Comparativos",
           "Adición"
         ]
@@ -12894,8 +12852,7 @@
         "tematicas": [
           "Apreciaciones orales y escritas del texto",
           "Elementos paralingüísticos",
-          "Escritura de elementos paralingüísticos que se perciben cuando comunican sus ideas",
-          "Preparación y exposición de un texto de su"
+          "Escritura de elementos paralingüísticos que se perciben cuando comunican sus ideas"
         ]
       },
       {
@@ -12905,7 +12862,7 @@
           "Identifique la lectura y la escritura como actos colectivos de la experiencia humana útiles en la reflexión, comunicación y problematización del mundo circundante, y utilice algunos rasgos importantes para la escritura de textos propios."
         ],
         "tematicas": [
-          "preferencia",
+          "Preparación y exposición de un texto de su preferencia",
           "Seleccionar el contenido",
           "Decidir la forma (individual o grupal)",
           "Establecer las etapas (planeación, acompañamiento y ejecución)",
@@ -12966,8 +12923,7 @@
         "tematicas": [
           "Organización de ideas para la escritura de un texto",
           "Delimitación del sentido comunicativo en un texto",
-          "Ficción y realidad",
-          "Narrativas populares de acuerdo con el con-"
+          "Ficción y realidad"
         ]
       },
       {
@@ -12977,9 +12933,10 @@
           "Reconozca sus capacidades creativas y comunicativas en la elaboración de textos libres."
         ],
         "tematicas": [
-          "texto e interés estudiantil",
+          "Narrativas populares de acuerdo con el contexto e interés estudiantil",
           "Narración y oralidad",
-          "Adaptaciones modernas de narrativas tradicionales: Cómics",
+          "Adaptaciones modernas de narrativas tradicionales:",
+          "Cómics",
           "Creepypastas",
           "Cuentos",
           "Obras de teatro",
@@ -13009,8 +12966,7 @@
           "Diferencia entre tema e idea principal",
           "Ideas secundarias y su función en la narrativa",
           "Comparación de un mismo tema en diferentes narrativas populares",
-          "Palabras o frases que marcan jerarquías en la narración: conectores textuales",
-          "Trama, conflicto o situación"
+          "Palabras o frases que marcan jerarquías en la narración: conectores textuales"
         ]
       },
       {
@@ -13020,12 +12976,15 @@
           "Reconozca sus capacidades creativas y comunicativas en la elaboración de textos libres."
         ],
         "tematicas": [
-          "Narración: Realista",
+          "Trama, conflicto o situación Narración:",
+          "Realista",
           "Fantástica",
           "Histórica",
           "Autobiográfica",
-          "Tonos narrativos: Humorístico",
-          "Dramático"
+          "Tonos narrativos:",
+          "Humorístico",
+          "Dramático",
+          "Irónico"
         ]
       },
       {
@@ -13035,7 +12994,6 @@
           "Reconozca sus capacidades creativas y comunicativas en la elaboración de textos libres."
         ],
         "tematicas": [
-          "Irónico",
           "Intercambio de experiencias",
           "Diálogo entre pares",
           "Construcción de textos narrativos colaborativos"
@@ -13094,10 +13052,8 @@
           "Explore y experimente con los movimientos y géneros literarios como manifestaciones culturales, para apropiarse de los diferentes elementos discursivos."
         ],
         "tematicas": [
-          "Sentido global del texto",
-          "Intención del autor",
-          "Pensamiento crítico",
-          "Conceptualización de literatura (movimien-"
+          "Sentido global del texto Intención del autor",
+          "Pensamiento crítico"
         ]
       },
       {
@@ -13107,7 +13063,8 @@
           "Explore y experimente con los movimientos y géneros literarios como manifestaciones culturales, para apropiarse de los diferentes elementos discursivos."
         ],
         "tematicas": [
-          "tos artísticos): Barroco",
+          "Conceptualización de literatura (movimientos artísticos):",
+          "Barroco",
           "Neoclasicismo",
           "Romanticismo",
           "Realismo",
@@ -13129,8 +13086,7 @@
           "Cuento",
           "Poesía",
           "Drama",
-          "Ensayo",
-          "Subgéneros narrativos:"
+          "Ensayo"
         ]
       },
       {
@@ -13140,13 +13096,12 @@
           "Explore y experimente con los movimientos y géneros literarios como manifestaciones culturales, para apropiarse de los diferentes elementos discursivos."
         ],
         "tematicas": [
+          "Subgéneros narrativos:",
           "Suspenso",
           "Terror",
           "Ciencia ficción",
-          "Narrativas del cuerpo y autoficción",
-          "Neorrealismo urbano",
-          "Literaturas del antropoceno",
-          "Género lírico: estructura y subgéneros"
+          "Narrativas del cuerpo y autoficción Neorrealismo urbano",
+          "Literaturas del antropoceno"
         ]
       },
       {
@@ -13156,13 +13111,15 @@
           "Explore y experimente con los movimientos y géneros literarios como manifestaciones culturales, para apropiarse de los diferentes elementos discursivos."
         ],
         "tematicas": [
-          "Figuras retóricas: Metáfora",
+          "Género lírico: estructura y subgéneros",
+          "Figuras retóricas:",
+          "Metáfora",
           "Hipérbaton",
           "Hipérbole",
           "Ironía",
           "Prosopopeya (personificación)",
           "Rima y métrica",
-          "Análisis de figuras retóricas a partir de la"
+          "Análisis de figuras retóricas a partir de la lectura"
         ]
       },
       {
@@ -13172,7 +13129,6 @@
           "Explore y experimente con los movimientos y géneros literarios como manifestaciones culturales, para apropiarse de los diferentes elementos discursivos."
         ],
         "tematicas": [
-          "lectura",
           "Características de la idea principal y secundaria",
           "Interpretación de información",
           "Escritura de una reseña crítica"
@@ -13186,8 +13142,7 @@
         ],
         "tematicas": [
           "Organización del coloquio, foro o simposio",
-          "Planeación de logística (orden, espacio, fecha)",
-          "Ejecución de presentaciones orales",
+          "Planeación de logística (orden, espacio, fecha) Ejecución de presentaciones orales",
           "Seguimiento"
         ]
       }
@@ -13256,9 +13211,8 @@
         ],
         "tematicas": [
           "¿Qué es un problema filosófico?",
-          "La experiencia de categorizar y conceptualizar",
-          "Devenir, Problemas",
-          "Realidad, filosóficos: Tiempo, Muerte, Libertad, Felicidad, Lenguaje, Sentido de la vida, entre otros"
+          "La experiencia de categorizar y conceptualizar Problemas filosóficos:",
+          "Realidad, Devenir, Tiempo, Muerte, Libertad, Felicidad, Lenguaje, Sentido de la vida, entre otros"
         ]
       },
       {
@@ -13285,8 +13239,7 @@
         "tematicas": [
           "¿Para qué dialogamos?",
           "Características del diálogo filosófico con perspectiva humanista",
-          "Actitudes y posturas del diálogo filosófico",
-          "Reglas para la discusión filosófica",
+          "Actitudes y posturas del diálogo filosófico Reglas para la discusión filosófica",
           "La controversia como posibilidad de diálogo filosófico"
         ]
       }
@@ -13328,10 +13281,8 @@
           "Desarrolle la capacidad de problematizar el conocimiento desde una actitud filosófica, asumiendo que conocer implica posicionarse, interpretar y dialogar con distintos marcos de sentido."
         ],
         "tematicas": [
-          "El asombro como origen de la Filosofía",
-          "Límites del pensamiento filosófico",
-          "Ontología y Metafísica: ¿qué es el Ser?",
-          "Realidad y apariencia",
+          "El asombro como origen de la Filosofía Límites del pensamiento filosófico",
+          "Ontología y Metafísica: ¿qué es el Ser? Realidad y apariencia",
           "El ser humano y su existencia"
         ]
       },
@@ -13343,11 +13294,9 @@
         ],
         "tematicas": [
           "Fundamentos de la Ética",
-          "Criterios morales y conductuales",
-          "Fundamentos de la Moral",
+          "Criterios morales y conductuales Fundamentos de la Moral",
           "La relación entre Ética y Política",
-          "La Justicia, la Libertad y la Igualdad",
-          "Dilemas morales",
+          "La Justicia, la Libertad y la Igualdad Dilemas morales",
           "Debates filosóficos"
         ]
       },
@@ -13361,8 +13310,7 @@
           "Perspectivas bioéticas",
           "Posturas bioéticas sobre la tecnología y la ciencia",
           "La inteligencia artificial y los debates sobre la naturaleza del Ser",
-          "Problemas medioambientales, una postura",
-          "Ética",
+          "Problemas medioambientales, una postura Ética",
           "Filosofía de la animalidad"
         ]
       },
@@ -13418,7 +13366,7 @@
         "Fortalece con rigor su capacidad argumentativa al aplicar herramientas filosóficas para la construcción, análisis y evaluación de argumentos. Además, propicia espacios de debate en donde ensaya la persuasión argumentativa.",
         "Desarrolla una comprensión crítica sobre los problemas de Filosofía política, a través de un análisis argumentado, para cuestionar las situaciones de la realidad social contemporánea.",
         "Promueve una reflexión crítica sobre la cultura contemporánea y su influencia en la vida cotidiana, a partir del análisis del Arte y las categorías estéticas desde la perspectiva filosófica.",
-        "Integra saberes filosóficos y humanistas para perspectivas elaborar reflexiones argumentadas sobre problemas contemporáneos, considerando sus implicaciones éticas, sociales y culturales, reconociéndose como capaz de transformar la realidad a través de los ejercicios de pensamiento."
+        "Integra saberes filosóficos y perspectivas humanistas para elaborar reflexiones argumentadas sobre problemas contemporáneos, considerando sus implicaciones éticas, sociales y culturales, reconociéndose como capaz de transformar la realidad a través de los ejercicios de pensamiento."
       ]
     },
     "progresiones": [
@@ -13430,8 +13378,7 @@
         ],
         "tematicas": [
           "La lógica del pensamiento",
-          "Construcción de argumentos filosóficos",
-          "Persuasión argumentativa",
+          "Construcción de argumentos filosóficos Persuasión argumentativa",
           "Detectar falacias",
           "Debate filosófico",
           "Filosofías del lenguaje"
@@ -13459,8 +13406,7 @@
         ],
         "tematicas": [
           "Filosofía y Arte",
-          "Análisis crítico a las categorías estéticas",
-          "El arte como acto disruptivo",
+          "Análisis crítico a las categorías estéticas El arte como acto disruptivo",
           "Economía y Política del Arte",
           "Semiótica del Arte",
           "Arte digital",
@@ -13470,7 +13416,7 @@
       },
       {
         "id": 4,
-        "descripcion": "Integra saberes filosóficos y humanistas para perspectivas elaborar reflexiones argumentadas sobre problemas contemporáneos, considerando sus implicaciones éticas, sociales y culturales, reconociéndose como capaz de transformar la realidad a través de los ejercicios de pensamiento.",
+        "descripcion": "Integra saberes filosóficos y perspectivas humanistas para elaborar reflexiones argumentadas sobre problemas contemporáneos, considerando sus implicaciones éticas, sociales y culturales, reconociéndose como capaz de transformar la realidad a través de los ejercicios de pensamiento.",
         "metas": [
           "Desarrolle capacidades para analizar, debatir e intervenir en su realidad desde una praxis que problematice el hacer como expresión de autonomía, cuidado y creación. Se promueve una comprensión crítica que posibilite la transformación de la vida en común, que cuestione el poder y abra posibilidades de justicia, de expresión artística y de sentido en la existencia."
         ],
@@ -13522,10 +13468,10 @@
         ],
         "tematicas": [
           "¿Qué es arte? La literatura como una de las bellas artes. Intención comunicativa de la literatura:",
-          "Contextos de producción, recepción e intersecciones con otras manifestaciones artísticas. Funciones comunicativas: Social o Ideológica o Características de la literatura:",
+          "Contextos de producción, recepción e intersecciones con otras manifestaciones artísticas. Funciones comunicativas:; Social; Ideológica Características de la literatura:",
           "Finalidad estética",
           "Ficcionalidad y verosimilitud",
-          "Marcas de literariedad: Lenguajes connotativo y denotativo o Subjetividad versus objetividad o Polisemia o Polifonía o Funciones del lenguaje: o Función emotiva ▪ Función poética ▪"
+          "Marcas de literariedad:; Lenguajes connotativo y denotativo; Subjetividad versus objetividad; Polisemia; Polifonía; Funciones del lenguaje: Función emotiva ▪ Función poética ▪"
         ]
       },
       {
@@ -13536,7 +13482,7 @@
         ],
         "tematicas": [
           "Experiencia lectora:",
-          "Elementos de interpretación literaria (persona lectora): Voces del relato (tipos de narrador) o Estilos (directo e indirecto) o Modos discursivos (monólogo interior, o narrativo y descriptivo) Relación entre literatura, cultura e identidad Contexto histórico y social de las obras (persona autora) Elementos que dan estructura al relato:"
+          "Elementos de interpretación literaria (persona lectora):; Voces del relato (tipos de narrador); Estilos (directo e indirecto); Modos discursivos (monólogo interior, narrativo y descriptivo) Relación entre literatura, cultura e identidad Contexto histórico y social de las obras (persona autora)"
         ]
       },
       {
@@ -13546,6 +13492,7 @@
           "Desarrolle el pensamiento literario mediante la lectura, el análisis, la creación y la socialización de textos literarios, para reflexionar sobre diversas visiones del mundo, expresar una voz propia y reconocer el valor de la literatura como práctica artística, cultural y social."
         ],
         "tematicas": [
+          "Elementos que dan estructura al relato:",
           "Personaje",
           "Espacio",
           "Tiempo",
@@ -13553,7 +13500,7 @@
           "Acción",
           "Estructuras narrativas (abiertas, cerradas y circulares)",
           "Desarrollo de tramas",
-          "Focalización Escritura, revisión y corrección entre pares Socialización de los textos creados en diferentes formatos Lenguaje teatral"
+          "Focalización Escritura, revisión y corrección entre pares Socialización de los textos creados en diferentes formatos"
         ]
       },
       {
@@ -13563,10 +13510,10 @@
           "Desarrolle el pensamiento literario mediante la lectura, el análisis, la creación y la socialización de textos literarios, para reflexionar sobre diversas visiones del mundo, expresar una voz propia y reconocer el valor de la literatura como práctica artística, cultural y social."
         ],
         "tematicas": [
-          "Texto dramático:",
+          "Lenguaje teatral Texto dramático:",
           "Diálogo, monólogo y soliloquio",
           "Acotaciones (carácter, iluminación, escenografía, acción…)",
-          "Estructura de texto: Conflicto o Destinador o Sujeto /Protagonista o Destinatario o Ayudante o Objeto / Objetivo o Oponente / Antagonista o Función social, artística y cultural Representación teatral"
+          "Estructura de texto:; Conflicto; Destinador; Sujeto /Protagonista; Destinatario; Ayudante; Objeto / Objetivo; Oponente / Antagonista Función social, artística y cultural"
         ]
       },
       {
@@ -13576,7 +13523,7 @@
           "Desarrolle el pensamiento literario mediante la lectura, el análisis, la creación y la socialización de textos literarios, para reflexionar sobre diversas visiones del mundo, expresar una voz propia y reconocer el valor de la literatura como práctica artística, cultural y social."
         ],
         "tematicas": [
-          "Estrategias de interpretación:",
+          "Representación teatral Estrategias de interpretación:",
           "Lectura dramatizada",
           "Expresión corporal y verbal",
           "Improvisación: Personaje, Relación, Objetivo y Lugar (PROL) Teatro alternativo:",
@@ -13713,8 +13660,7 @@
           "Concepto de unidad y de los números racionales como fracciones (estructura)",
           "Equivalencias entre fracciones y entre números enteros y fracciones",
           "Simplificación de fracciones",
-          "Proporción, proporción inversa y porcentaje",
-          "Componentes de una potencia"
+          "Proporción, proporción inversa y porcentaje"
         ]
       },
       {
@@ -13724,11 +13670,12 @@
           "Comprenda las matemáticas como expresión del pensamiento humano para aplicar los elementos esenciales de la aritmética y el pensamiento lógico en situaciones de interés."
         ],
         "tematicas": [
+          "Componentes de una potencia",
           "Operaciones con potenciación (reglas)",
           "Explicación de exponentes negativos como el inverso multiplicativo de la base",
           "Operaciones con exponentes (reglas)",
           "Definición de raíz cuadrada (enunciación de sus partes) y radicando diferente de 2",
-          "Raíz cuadrada como inverso de potencias de números positivos y cancelación de poten-"
+          "Raíz cuadrada como inverso de potencias de números positivos y cancelación de potencias y raíces"
         ]
       },
       {
@@ -13738,12 +13685,9 @@
           "Comprenda las matemáticas como expresión del pensamiento humano para aplicar los elementos esenciales de la aritmética y el pensamiento lógico en situaciones de interés."
         ],
         "tematicas": [
-          "cias y raíces",
           "Concepto de medición",
-          "Unidades de medida y sistema internacional",
-          "Magnitudes y notación científica",
-          "Razón y proporción",
-          "Técnicas para la resolución de operaciones"
+          "Unidades de medida y sistema internacional Magnitudes y notación científica",
+          "Razón y proporción"
         ]
       },
       {
@@ -13753,7 +13697,7 @@
           "Comprenda las matemáticas como expresión del pensamiento humano para aplicar los elementos esenciales de la aritmética y el pensamiento lógico en situaciones de interés."
         ],
         "tematicas": [
-          "combinadas (jerarquía de operaciones)",
+          "Técnicas para la resolución de operaciones combinadas (jerarquía de operaciones)",
           "Uso de símbolos para resolución de operaciones combinadas (paréntesis, corchetes, llaves y puntos)",
           "Resolución de restas de números enteros como la suma con el opuesto de otro",
           "Operaciones combinadas con adición, sustracción, multiplicación, división, potencias y raíces"
@@ -13812,8 +13756,7 @@
           "Entienda al lenguaje algebraico como un medio de representación de situaciones cotidianas y escolares para estimular el pensamiento abstracto."
         ],
         "tematicas": [
-          "Clasificación de expresiones algebraicas",
-          "(monomio, binomio, trinomio y polinomio)",
+          "Clasificación de expresiones algebraicas (monomio, binomio, trinomio y polinomio)",
           "Componentes de un monomio: coeficiente, variable, exponente positivo y grado",
           "Representación de situaciones reales con monomios y polinomios"
         ]
@@ -13953,7 +13896,7 @@
         "tematicas": [
           "Ecuaciones cuadráticas",
           "Forma general de la ecuación cuadrática",
-          "Resolución completar de método por cuadrados",
+          "Resolución por método de completar cuadrados",
           "Aplicación de fórmula general para ecuaciones cuadráticas (Bhaskara)",
           "Representación gráfica"
         ]
@@ -14026,8 +13969,7 @@
         "tematicas": [
           "Concepto de punto",
           "Concepto de recta",
-          "Tipos de recta (tangente, secante)",
-          "Construcción de figuras",
+          "Tipos de recta (tangente, secante) Construcción de figuras",
           "Circunferencia"
         ]
       },
@@ -14072,8 +14014,7 @@
         ],
         "tematicas": [
           "Propiedades analíticas de la parábola",
-          "Ecuación ordinaria de parábolas verticales y horizontales, con vértice en y fuera del origen.",
-          "Modelado"
+          "Ecuación ordinaria de parábolas verticales y horizontales, con vértice en y fuera del origen. Modelado"
         ]
       },
       {
@@ -14083,8 +14024,7 @@
           "Resuelva problemas a partir del planteamiento y análisis de funciones trigonométricas, ecuaciones de primer y segundo grado, considerando la pertinencia y conocimiento de las variables y relaciones para explicar una situación o fenómeno."
         ],
         "tematicas": [
-          "Ecuación de la circunferencia",
-          "Leyes de Kepler",
+          "Ecuación de la circunferencia Leyes de Kepler",
           "Elipse y coplanaridad"
         ]
       },
@@ -14126,7 +14066,7 @@
         "Investiga el origen y evolución del cálculo diferencial y el procedimiento de resolución de una función de la recta tangente a una curva en un punto dado, para la explicación de fenómenos físicos.",
         "Revisa situaciones o fenómenos donde el cambio es la parte central en su estudio y aplica funciones de variable real para modelarlas e identificar simetrías en su representación gráfica.",
         "Comprende el concepto de límite e identifica la continuidad de funciones de variable real para interpretar y modelar fenómenos naturales y sociales.",
-        "Practica funciones exponencia les, logarítmicas trigonoméy tricas para describir sus propiedades y ejemplificar fenómenos en los que son aplicables.",
+        "Practica funciones exponencia les, logarítmicas y trigonométricas para describir sus propiedades y ejemplificar fenómenos en los que son aplicables.",
         "Aplica métodos para derivar funciones lineales y polinomiales, comprendiendo intuitivamente su utilidad como herramienta de análisis en fenómenos de cambio de las ciencias naturales y sociales.",
         "Aplica conocimientos de la derivada para resolver problemas de optimización, o situaciones de su entorno o de otras áreas del conocimiento.",
         "Comprende intuitivamente el Teorema Fundamental del Cálculo como conexión entre derivadas e integrales y su utilidad para analizar fenómenos de acumulación de cambios continuos."
@@ -14142,8 +14082,7 @@
         "tematicas": [
           "Introducción al cálculo diferencial",
           "Inicios del pensamiento variacional",
-          "Arquímedes y la aproximación al área",
-          "Paradoja de Zenón",
+          "Arquímedes y la aproximación al área Paradoja de Zenón",
           "Variación promedio e instantánea"
         ]
       },
@@ -14154,7 +14093,7 @@
           "Analice fenómenos donde el cambio es parte central de su estudio con la finalidad de encontrar soluciones óptimas a problemas o situaciones en su entorno u otras áreas del conocimiento."
         ],
         "tematicas": [
-          "Antecedentes del históricos origen y cálculo diferencial",
+          "Antecedentes históricos y origen del cálculo diferencial",
           "Función de la regla tangente y explicación de fenómenos físicos (movimiento)"
         ]
       },
@@ -14186,16 +14125,14 @@
       },
       {
         "id": 5,
-        "descripcion": "Practica funciones exponencia les, logarítmicas trigonoméy tricas para describir sus propiedades y ejemplificar fenómenos en los que son aplicables.",
+        "descripcion": "Practica funciones exponencia les, logarítmicas y trigonométricas para describir sus propiedades y ejemplificar fenómenos en los que son aplicables.",
         "metas": [
           "Analice fenómenos donde el cambio es parte central de su estudio con la finalidad de encontrar soluciones óptimas a problemas o situaciones en su entorno u otras áreas del conocimiento."
         ],
         "tematicas": [
           "Funciones logarítmicas",
-          "Funciones trigonométricas",
-          "(seno, coseno, tangente)",
-          "Propiedades de las funciones trigonométricas",
-          "(periodicidad, paridad, reciprocidad)"
+          "Funciones trigonométricas (seno, coseno, tangente)",
+          "Propiedades de las funciones trigonométricas (periodicidad, paridad, reciprocidad)"
         ]
       },
       {
@@ -14276,8 +14213,7 @@
           "Aplique procedimientos, técnicas y lenguaje matemático para plantear posibles soluciones a problemas derivados de fenómenos naturales o sociales, cuyo comportamiento puede describirse probabilísticamente y contribuir a una toma de decisiones fundamentada."
         ],
         "tematicas": [
-          "Eventos deterministas y aleatorios",
-          "Recolección de datos"
+          "Eventos deterministas y aleatorios Recolección de datos"
         ]
       },
       {
@@ -14287,8 +14223,7 @@
           "Aplique procedimientos, técnicas y lenguaje matemático para plantear posibles soluciones a problemas derivados de fenómenos naturales o sociales, cuyo comportamiento puede describirse probabilísticamente y contribuir a una toma de decisiones fundamentada."
         ],
         "tematicas": [
-          "Simulaciones probabilísticas",
-          "Equiprobabilidad",
+          "Simulaciones probabilísticas Equiprobabilidad",
           "Frecuencia de los eventos"
         ]
       },
@@ -14314,8 +14249,7 @@
         ],
         "tematicas": [
           "Técnicas de conteo",
-          "Probabilidad dependiente e independiente",
-          "Probabilidad condicionada"
+          "Probabilidad dependiente e independiente Probabilidad condicionada"
         ]
       },
       {
@@ -14326,8 +14260,7 @@
         ],
         "tematicas": [
           "Variables estadísticas",
-          "Gráficas y su interpretación",
-          "Gráficas y tendencias"
+          "Gráficas y su interpretación Gráficas y tendencias"
         ]
       },
       {
@@ -14348,7 +14281,8 @@
           "Aplique procedimientos, técnicas y lenguaje matemático para plantear posibles soluciones a problemas derivados de fenómenos naturales o sociales, cuyo comportamiento puede describirse probabilísticamente y contribuir a una toma de decisiones fundamentada."
         ],
         "tematicas": [
-          "Población y muestra secundarias y terciarias)",
+          "Población y muestra",
+          "Fuentes de información (primarias, secundarias y terciarias)",
           "Métodos de muestreo: aleatorio simple y sistemático"
         ]
       },
@@ -14360,8 +14294,7 @@
         ],
         "tematicas": [
           "Distribución normal",
-          "Medidas de tendencia central",
-          "Medidas de dispersión"
+          "Medidas de tendencia central Medidas de dispersión"
         ]
       }
     ],
@@ -14407,8 +14340,7 @@
           "Las y los estudiantes como agentes de alfabetización científica.",
           "Finalidades de la observación en la ciencia.",
           "Tipos de observación: directa, indirecta, de campo, de laboratorio, participante, no participante.",
-          "Fenómenos y procesos naturales que involucran flujos de energía (factores que afectan al crecimiento de las plantas, efectos ecológicos de los huracanes, insecticidas caseros, factores que afectan la germinación de las semillas, manejo de residuos sólidos y orgánicos, entre otros). 8",
-          "Elaboración de preguntas de investigación."
+          "Fenómenos y procesos naturales que involucran flujos de energía (factores que afectan al crecimiento de las plantas, efectos ecológicos de los huracanes, insecticidas caseros, factores que afectan la germinación de las semillas, manejo de residuos sólidos y orgánicos, entre otros)."
         ]
       },
       {
@@ -14418,7 +14350,8 @@
           "Utiliza la metodología científica aplicando el pensamiento crítico para construir su propio conocimiento fáctico, respecto a fenómenos o procesos naturales relacionados con la transferencia de energía en los sistemas, en contextos cotidianos, y contribuye a la promoción de la alfabetización científica en su comunidad."
         ],
         "tematicas": [
-          "Marco teórico: o secundarias. Tipos de Hipótesis. o Identificación de las variables en el o proceso de investigación. Validación de la información. o Referencias bibliográficas: modelos, o normativas, artículos científicos, ente"
+          "Elaboración de preguntas de investigación.",
+          "Marco teórico:; Fuentes de información: primarias y secundarias.; Tipos de Hipótesis.; Identificación de las variables en el proceso de investigación.; Validación de la información.; Referencias bibliográficas: modelos, normativas, artículos científicos, ente otros."
         ]
       },
       {
@@ -14428,7 +14361,6 @@
           "Utiliza la metodología científica aplicando el pensamiento crítico para construir su propio conocimiento fáctico, respecto a fenómenos o procesos naturales relacionados con la transferencia de energía en los sistemas, en contextos cotidianos, y contribuye a la promoción de la alfabetización científica en su comunidad."
         ],
         "tematicas": [
-          "otros.",
           "Tipos de diseños: experimentales y no experimentales.",
           "Estructura del modelo experimental: fases, pasos, materiales, instrumentos e insumos.",
           "Tipos de Variables: dependientes, independientes y controladas."
@@ -14456,7 +14388,7 @@
           "Diferencias entre paradigmas, teorías y leyes.",
           "Comparación de variables.",
           "Interpretación de resultados; subjetividad y objetividad.",
-          "Ética en la investigación. 9"
+          "Ética en la investigación."
         ]
       },
       {
@@ -14479,7 +14411,7 @@
         ],
         "tematicas": [
           "Estrategias de comunicación y presentación de resultados.",
-          "Códigos de Ética en la divulgación científica. 10"
+          "Códigos de Ética en la divulgación científica."
         ]
       }
     ],
