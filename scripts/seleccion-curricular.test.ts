@@ -44,3 +44,9 @@ test('borrador no alimenta la IA como fuente oficial', () => {
   assert.ok(texto.includes('PROPUESTA GENERAL'));
   assert.ok(!texto.includes(p.progresiones[0].descripcion));
 });
+test('progresión oficial sin metas no rompe la generación', () => {
+  const p = programa('2024');
+  delete (p.progresiones[0] as { metas?: string[] }).metas;
+  const texto = contextoPrograma(p, { modelo: '2024', programaId: idPrograma(p), progresionId: 9 });
+  assert.ok(texto.includes('Metas asociadas: Cotejo pendiente'));
+});

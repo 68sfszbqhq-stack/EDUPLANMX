@@ -387,7 +387,7 @@ function construirLessonPlan(
       // La selección curricular permanece literal aunque el modelo la reformule.
       const progresion = programaOficial?.progresiones.find((p: { id: number }) => p.id === seleccionCurricular?.progresionId);
       if (progresion) {
-        lessonPlan.curricularElements = { categories: [], subcategories: [], ...lessonPlan.curricularElements, progression: progresion.descripcion, progressionId: String(progresion.id), learningGoals: progresion.metas,
+        lessonPlan.curricularElements = { categories: [], subcategories: [], ...lessonPlan.curricularElements, progression: progresion.descripcion, progressionId: String(progresion.id), learningGoals: progresion.metas ?? [],
           ...(progresion.categorias ? { categories: progresion.categorias } : {}),
           ...(progresion.subcategorias ? { subcategories: progresion.subcategorias } : {}),
           ...(programaOficial?.aprendizajes_trayectoria ? { trajectoryLearning: programaOficial.aprendizajes_trayectoria } : {}) };
