@@ -389,6 +389,8 @@ function construirLessonPlan(
       if (progresion) {
         lessonPlan.curricularElements = { categories: [], subcategories: [], ...lessonPlan.curricularElements, progression: progresion.descripcion, progressionId: String(progresion.id), learningGoals: progresion.metas ?? [],
           ...(progresion.categorias ? { categories: progresion.categorias } : {}),
+          // En el Modelo 2025 los contenidos formativos oficiales del propósito ocupan el lugar de las categorías
+          ...(programaOficial?.modelo === '2025' && progresion.tematicas?.length ? { categories: progresion.tematicas } : {}),
           ...(progresion.subcategorias ? { subcategories: progresion.subcategorias } : {}),
           ...(programaOficial?.aprendizajes_trayectoria ? { trajectoryLearning: programaOficial.aprendizajes_trayectoria } : {}) };
         lessonPlan.progression = progresion.descripcion;

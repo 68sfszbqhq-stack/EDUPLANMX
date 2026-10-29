@@ -36,3 +36,6 @@ firestore-debug.log
 .firebase/
 serviceAccountKey.json
 firebase-service-account.json
+
+# Respaldos locales del catálogo antes de cada actualización
+data/programas_sep.backup-2026-10-*.json

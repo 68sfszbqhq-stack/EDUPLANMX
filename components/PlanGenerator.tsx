@@ -2,6 +2,7 @@ import { obtenerAlmacenCuenta } from '../src/security/almacenCuenta';
 import { fechasSesiones } from '../src/features/planeacion/presentacionPlan';
 import { instruccionesEvaluacion, instruccionesPAEC, conservarPAEC, DecisionPAEC } from '../src/features/planeacion/decisionesPlan';
 import { idPrograma, generacionPlan, ModeloPlan, SeleccionCurricular } from '../src/features/planeacion/seleccionCurricular';
+import { conPlan, etiquetaElemento } from '../data/vocabularioCurricular';
 import RevisionContextoIA from './RevisionContextoIA';
 import { crearRevisionContexto, contextoAutorizado, RevisionContexto } from '../src/features/planeacion/revisionContexto';
 import { perfilDocenteService } from '../src/services/perfilDocenteService';
@@ -627,17 +628,17 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
               <div className="grid sm:grid-cols-2 gap-3">
                 <label className="text-sm font-medium">Modelo del grupo
                   <select aria-label="Modelo del grupo" value={modeloPlan} onChange={e => cambiarModelo(e.target.value as ModeloPlan)} className="mt-1 w-full border rounded-lg p-2 bg-white">
-                    <option value="2024">MCCEMS 2024</option>
-                    <option value="2025">Modelo 2025</option>
+                    <option value="2024">Plan 2023 · MCCEMS (generación 2023-2026)</option>
+                    <option value="2025">Plan 2025 · Modelo Educativo 2025 (generación 2025-2028)</option>
                   </select>
                   <span className="block mt-1 text-xs font-normal text-slate-500">Generación de referencia: {generacionPlan(modeloPlan)}</span>
                 </label>
                 {opcionesPrograma.length > 1 ? <label className="text-sm font-medium">Programa
                   <select aria-label="Programa curricular" value={programaId} onChange={e => { setProgramaId(e.target.value); setSelectedProgression(''); }} className="mt-1 w-full border rounded-lg p-2 bg-white">
                     <option value="">Elige el programa</option>
-                    {opcionesPrograma.map(p => <option key={idPrograma(p)} value={idPrograma(p)}>{p.materia} · semestre {p.semestre}{p.estado === 'oficial' ? '' : ' · Borrador'}</option>)}
+                    {opcionesPrograma.map(p => <option key={idPrograma(p)} value={idPrograma(p)}>{conPlan(p.materia, p.modelo)} · semestre {p.semestre}{p.estado === 'oficial' ? '' : ' · Borrador'}</option>)}
                   </select>
-                </label> : <div className="text-sm self-center"><strong>{programaElegido?.materia || subject.subjectName}</strong>{programaElegido && <p>Semestre {programaElegido.semestre}</p>}</div>}
+                </label> : <div className="text-sm self-center"><strong>{programaElegido ? conPlan(programaElegido.materia, programaElegido.modelo) : subject.subjectName}</strong>{programaElegido && <p>Semestre {programaElegido.semestre}</p>}</div>}
               </div>
               {programaElegido?.estado === 'oficial' ? <p className="text-sm text-emerald-700">✓ Programa verificado en el catálogo</p> : <p className="text-sm text-amber-800">{opcionesPrograma.length > 1 && !programaElegido ? 'Elige un programa para ver su contenido.' : programaElegido ? 'Borrador sin verificar. Se generará una propuesta general.' : 'Sin programa verificado para este modelo. Se generará una propuesta general.'}</p>}
               {programaElegido?.url_fuente?.startsWith('https://') && <a className="text-sm text-blue-700 underline" href={programaElegido.url_fuente} target="_blank" rel="noopener noreferrer">Consultar fuente del programa</a>}
@@ -718,7 +719,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
                   <option value="">{modeloPlan === '2025' ? 'Elige un propósito formativo' : 'Elige una progresión oficial'}</option>
                   {progresionesDisponibles.map(p => (
                     <option key={p.id} value={p.descripcion}>
-                      {p.id}. {p.descripcion.substring(0, 120)}...
+                      {p.id}. {p.descripcion.length > 120 ? `${p.descripcion.substring(0, 120)}…` : p.descripcion} {etiquetaElemento(modeloPlan)}
                     </option>
                   ))}
                 </select>}

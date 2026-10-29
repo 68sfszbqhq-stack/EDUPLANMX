@@ -1,0 +1,622 @@
+{
+ "Análisis de Fenómenos Físicos II": [
+  {
+   "id": 1,
+   "descripcion": "En la naturaleza existen vibraciones las cuales se desplazan en el espacio-tiempo a través de un movimiento ondulatorio."
+  },
+  {
+   "id": 2,
+   "descripcion": "Las ondas presentan frecuencia, periodo, nodo, elongación, amplitud, velocidad de propagación y longitud de onda. Dependiendo de la forma que se propagan se clasifican en mecánicas o electromagnéticas."
+  },
+  {
+   "id": 3,
+   "descripcion": "El sonido es una onda mecánica que viaja por diferentes materiales. Su desplazamiento depende de la densidad y la elasticidad de ellos, produciendo frecuencias, intensidad de sonido, niveles de intensidad y pulsaciones con cambios aparentes que se pueden percibir en nuestro entorno."
+  },
+  {
+   "id": 4,
+   "descripcion": "Las ondas mecánicas presentan el fenómeno de reflexión que implica un cambio en la dirección de las ondas sonoras en una superficie, y de la refracción, que modifica su velocidad y longitud de la onda original cuando pasa de un medio a otro."
+  },
+  {
+   "id": 5,
+   "descripcion": "Las ondas electromagnéticas son clasificadas por sus diferentes longitudes de onda y frecuencias dentro del espectro electromagnético."
+  },
+  {
+   "id": 6,
+   "descripcion": "La luz como energía viaja en forma de radiación electromagnética y su comportamiento dual explica los fenómenos de reflexión, refracción y difracción."
+  },
+  {
+   "id": 7,
+   "descripcion": "Un espejo es una superficie que refleja los rayos de luz en el mismo medio del cual provino cumpliendo las leyes de reflexión."
+  },
+  {
+   "id": 8,
+   "descripcion": "Las lentes son cuerpos transparentes limitados por dos superficies. Se emplean para desviar los rayos luminosos cumpliendo las leyes de la refracción."
+  },
+  {
+   "id": 9,
+   "descripcion": "Al comprender los fenómenos ondulatorios, se pueden desarrollar múltiples tecnologías aplicadas a fines particulares para satisfacer necesidades de diferentes contextos (medicina, calidad de vida, seguridad, uso de recursos, entre otros)."
+  }
+ ],
+ "Análisis de Fenómenos y Procesos Biológicos": [
+  {
+   "id": 1,
+   "descripcion": "Toda la materia está formada por moléculas. En los seres vivos, estas moléculas interactúan entre sí realizando funciones específicas."
+  },
+  {
+   "id": 2,
+   "descripcion": "Los seres vivos conforman niveles de organización desde el punto de vista microscópico hasta el macroscópico."
+  },
+  {
+   "id": 3,
+   "descripcion": "Los seres vivos pueden ser unicelulares o pluricelulares, ambos presentan un ciclo de vida en el cuál algunos nacen, pero todos crecen, se reproducen y mueren."
+  },
+  {
+   "id": 4,
+   "descripcion": "La vida depende de un conjunto de reacciones químicas que permiten a los organismos nutrirse, respirar y lograr el equilibrio para responder a los estímulos del ambiente, logrando la supervivencia a partir de la adaptación."
+  },
+  {
+   "id": 5,
+   "descripcion": "La información genética se transmite de las células progenitoras a las células hijas a través de la reproducción de los seres vivos."
+  },
+  {
+   "id": 6,
+   "descripcion": "Los genes son los responsables de almacenar y transmitir la información genética de una generación a otra."
+  },
+  {
+   "id": 7,
+   "descripcion": "La biotecnología aprovecha el conocimiento de los procesos biológicos para la innovación y el rediseño de productos y servicios."
+  },
+  {
+   "id": 8,
+   "descripcion": "La ciencia como un esfuerzo humano para el bienestar parte 5. La bioética como estudio de la conducta humana en el ámbito de la aplicación de las ciencias."
+  }
+ ],
+ "Espacio y Sociedad": [
+  {
+   "id": 1,
+   "descripcion": "Las características geomorfológicas de la tierra y su posición en el sistema solar determinan las condiciones físicas del planeta, así como sus ciclos naturales, mismos que influyen en el desarrollo de la vida y las actividades humanas."
+  },
+  {
+   "id": 2,
+   "descripcion": "El Análisis de las esferas de la Tierra y su interacción con la sociedad, considera su ubicación, estudio y componentes claves, así como los factores de transformación y cómo repercuten en las dinámicas sociales."
+  },
+  {
+   "id": 3,
+   "descripcion": "Los recursos geográficos son herramientas necesarias para interpretar las dinámicas terrestres y humanas; permiten estudiar y analizar su impacto en la sociedad, para favorecer la comprensión del entorno físico y social."
+  },
+  {
+   "id": 4,
+   "descripcion": "Los patrones de distribución global del clima influyen en la ubicación y desarrollo de los grupos sociales y permiten comprender su impacto en las actividades económicas, políticas y culturales."
+  },
+  {
+   "id": 5,
+   "descripcion": "La distribución de las regiones y recursos naturales influyen en el aprovechamiento y la sustentabilidad en el desarrollo de los países."
+  },
+  {
+   "id": 6,
+   "descripcion": "Los seres humanos conforman poblaciones con una estructura y características particulares en su espacio físico, y poseen características biológicas, sociales, políticas y culturales diversas."
+  },
+  {
+   "id": 7,
+   "descripcion": "El desarrollo y transformación del planeta derivan de la evolución de las actividades humanas para satisfacer sus necesidades."
+  },
+  {
+   "id": 8,
+   "descripcion": "Las regiones naturales son determinantes en el tipo de organización económica, política y social de un país, por lo que, tienen una interrelación con las actividades productivas que ahí se desarrollan."
+  },
+  {
+   "id": 9,
+   "descripcion": "Los fenómenos naturales y antropogénicos, pueden causar daños que pongan en peligro la vida de las personas; por lo que fomentar la cultura de la prevención es fundamental para la protección de todas las personas."
+  },
+  {
+   "id": 10,
+   "descripcion": "La ciencia como un esfuerzo humano para el bienestar, parte 3.5. Discusión de la aplicación de las ciencias naturales, los recursos geográficos y la tecnología en el aprovechamiento de recursos y la transformación del espacio con una mirada sustentable."
+  }
+ ],
+ "Organización del flujo de materia y energía en los organismos I": [
+  {
+   "id": 1,
+   "descripcion": "Muchos compuestos tienen como elemento fundamental el carbono. La forma en la que se une consigo mismo y con otros elementos debido a sus características y propiedades únicas le permite la formación de enlaces muy estables."
+  },
+  {
+   "id": 2,
+   "descripcion": "Los átomos de carbono se pueden unir entre sí en cadenas de varias longitudes y cuando se unen al hidrógeno forman compuestos llamados hidrocarburos, que tienen diferentes propiedades según el tipo de enlace."
+  },
+  {
+   "id": 3,
+   "descripcion": "Los hidrocarburos pueden formar ciclos cuando el último carbono de una cadena abierta se une con el primero. Estos son la base para la producción de diversos productos."
+  },
+  {
+   "id": 4,
+   "descripcion": "La disposición estructural de ciertos átomos que se unen a los compuestos del carbono es la responsable de su comportamiento químico, ya que le confiere propiedades características. A ésta disposición específica se denomina grupos funcionales."
+  },
+  {
+   "id": 5,
+   "descripcion": "Uno o varios grupos funcionales pueden estar presentes en las moléculas biológicas. Las combinaciones de estos determinan sus propiedades y reactividad."
+  },
+  {
+   "id": 6,
+   "descripcion": "Los grupos funcionales son la parte de una molécula que le permite interactuar con otras moléculas a través de diversas reacciones para formar compuestos, en estas reacciones existe un balance en el flujo de la materia y energía."
+  },
+  {
+   "id": 7,
+   "descripcion": "Las moléculas basadas en carbono se pueden unir repetidamente mediante reacciones de adición y condensación para formar macromoléculas, también conocidas como polímeros."
+  },
+  {
+   "id": 8,
+   "descripcion": "Los polímeros son compuestos de gran utilidad en la vida cotidiana y en la industria. Algunos se desestabilizan y descomponen con facilidad permitiendo desarrollar procesos para minimizar su impacto ambiental."
+  }
+ ],
+ "Organización del flujo de materia y energía en los organismos II": [
+  {
+   "id": 1,
+   "descripcion": "La versatilidad entre el átomo del carbono e hidrógeno permite la existencia de moléculas orgánicas que conforman a los organismos."
+  },
+  {
+   "id": 2,
+   "descripcion": "El agua es un compuesto indispensable para la vida ya que está presente en la formación de biomoléculas y actúa como disolvente."
+  },
+  {
+   "id": 3,
+   "descripcion": "Dentro de las principales biomoléculas se encuentran los carbohidratos, los cuales son compuestos que contienen carbono, hidrógeno y oxígeno. Estos, junto con los lípidos son las principales fuentes de energía para todos los organismos."
+  },
+  {
+   "id": 4,
+   "descripcion": "Los organismos poseen moléculas encargadas de almacenar energía, siendo los lípidos los más abundantes en las células. Estas biomoléculas están formadas principalmente por carbono e hidrógeno, lo que impide que sean solubles en agua, dándoles diferentes propiedades y funciones dentro de los organismos."
+  },
+  {
+   "id": 5,
+   "descripcion": "Una de las principales fuentes de energía es la glucosa, la cual puede provenir de moléculas como los polisacáridos. La glucosa se procesa a través de una serie de reacciones como la glucólisis."
+  },
+  {
+   "id": 6,
+   "descripcion": "La energía liberada durante algunas reacciones puede utilizarse en la formación de polímeros, por ejemplo, en la síntesis de proteínas."
+  },
+  {
+   "id": 7,
+   "descripcion": "Los procesos celulares requieren de la participación de las moléculas que se sintetizan en el organismo, como las proteínas, cuyas funciones dependen de su secuencia de aminoácidos."
+  },
+  {
+   "id": 8,
+   "descripcion": "La secuencia de aminoácidos en las proteínas está determinada por los ácidos nucleicos, cuya participación regula el funcionamiento de los organismos debido a su estructura."
+  },
+  {
+   "id": 9,
+   "descripcion": "Al estar presentes en la naturaleza, las biomoléculas permiten disponer de la materia y energía para satisfacer los requerimientos de los organismos. El estudio de su estructura y función puede ser aprovechado tecnológicamente."
+  }
+ ],
+ "Temas Selectos de Biología": [
+  {
+   "id": 1,
+   "descripcion": "Los procesos biológicos de las plantas, como la comunicación y la transpiración, influyen en el funcionamiento de los ecosistemas."
+  },
+  {
+   "id": 2,
+   "descripcion": "Los procesos biológicos de los animales influyen en el funcionamiento de los ecosistemas. La relación entre los organismos modifica el ambiente y a ellos mismos."
+  },
+  {
+   "id": 3,
+   "descripcion": "La biodiversidad es la variedad de la vida. Existen tres niveles de variedad biológica: genética, de especies y de ecosistemas."
+  },
+  {
+   "id": 4,
+   "descripcion": "México es un país megadiverso. Las especies son determinadas por las características físicas y geográficas del territorio nacional."
+  },
+  {
+   "id": 5,
+   "descripcion": "Los ecosistemas locales son unidades geográficas con características propias por lo que existen especies que se encuentran única y exclusivamente en esa región. Las especies endémicas juegan un papel primordial en el entorno."
+  },
+  {
+   "id": 6,
+   "descripcion": "El desarrollo sustentable promueve el progreso económico y social, garantizando que se utilicen de forma eficiente y respetuosa los recursos. El bienestar humano, depende de atender las necesidades económicas, ecológicas, sociales y culturales para asegurar la calidad de vida de las generaciones actuales y futuras."
+  },
+  {
+   "id": 7,
+   "descripcion": "Existen leyes y normas que protegen el medio ambiente y los recursos naturales salvaguardando los ecosistemas. En México, esta interrelación asegura que el progreso económico y social se logre sin destruir los ecosistemas que son fundamentales para el bienestar humano y ambiental."
+  },
+  {
+   "id": 8,
+   "descripcion": "Las 5R como estrategia es clave para el equilibrio ambiental. El impacto ambiental está relacionado con los factores naturales, económicos y sociales."
+  }
+ ],
+ "Conciencia Histórica II": [
+  {
+   "id": 1,
+   "descripcion": "El estudiantado explica las circunstancias y condiciones que provocaron la lucha insurgente que dio origen a la independencia de México para que interprete los diversos proyectos de emancipación que surgieron."
+  }
+ ],
+ "Conciencia Histórica III": [
+  {
+   "id": 1,
+   "descripcion": "El estudiantado explica la crisis de 1929, la emergencia de los sistemas totalitarios y la Segunda Guerra Mundial para que valore la importancia de vivir en una cultura de paz."
+  }
+ ],
+ "_reemplazar": [
+  "La materia y sus interacciones CNEYT I",
+  "Conservación de la energía y su interacción con la materia CNEYT II",
+  "Ecosistemas, interacciones, energia y dinamica CNEYT III",
+  "Reacciones químicas conservación de la materia CNEYT IV",
+  "La energía en los procesos de la vida diaria CNEYT V",
+  "Organismos, estructuras y procesos CNEYT VI"
+ ],
+ "La materia y sus interacciones CNEYT I": [
+  {
+   "id": 1,
+   "descripcion": "La materia es todo lo que ocupa un lugar en el espacio y tiene masa. Todas las sustancias están formadas por alguno o varios de los más de 100 elementos químicos, que se unen entre sí mediante diferentes tipos de enlaces."
+  },
+  {
+   "id": 2,
+   "descripcion": "Las moléculas están formadas por átomos, que pueden ser desde dos hasta miles. Las sustancias puras están constituidas por un solo tipo de átomo, molécula o iones. Una sustancia pura tiene propiedades físicas y químicas características y a través de ellas es posible identificarla."
+  },
+  {
+   "id": 3,
+   "descripcion": "Los gases y los líquidos están constituidos por átomos o moléculas que tienen libertad de movimiento."
+  },
+  {
+   "id": 4,
+   "descripcion": "En un gas las moléculas están muy separadas, exceptuando cuando colisionan. En un líquido las moléculas se encuentran en contacto unas con otras."
+  },
+  {
+   "id": 5,
+   "descripcion": "En un sólido, los átomos están estrechamente espaciados y vibran en su posición, pero no cambian de ubicación relativa."
+  },
+  {
+   "id": 6,
+   "descripcion": "El mundo natural es grande y complejo, por lo que para estudiarlo se definen partes pequeñas denominadas sistemas. Dentro de un sistema el número total de átomos no cambia en una reacción química y, por lo tanto, se conserva la masa."
+  },
+  {
+   "id": 7,
+   "descripcion": "Los sistemas pueden ser muy variados, por ejemplo, galaxias, máquinas, organismos o partículas fundamentales. Los sistemas se caracterizan por tener recursos, componentes, límites, flujos y retroalimentaciones, en estos siempre se conservan la energía y la materia."
+  },
+  {
+   "id": 8,
+   "descripcion": "La temperatura de un sistema es proporcional a la energía potencial por átomo o moléc.ula o ion y la energía cinética interna promedio. La magnitud de esta relación depende del tipo de átomo o molécula o ion y de las interacciones entre las partículas del material."
+  },
+  {
+   "id": 9,
+   "descripcion": "Utilizando los modelos de la materia es posible comprender, describir y predecir los cambios de estado físico que suceden con las variaciones de temperatura o presión."
+  },
+  {
+   "id": 10,
+   "descripcion": "La estructura, propiedades, transformaciones de la materia y las fuerzas de contacto entre objetos materiales se explican a partir de la atracción y repulsión entre cargas eléctricas a escala atómica."
+  },
+  {
+   "id": 11,
+   "descripcion": "La energía térmica total de un sistema depende conjuntamente del número total de átomos en el sistema, el estado físico del material y el ambiente circundante. La temperatura está en función de la energía total de un sistema."
+  },
+  {
+   "id": 12,
+   "descripcion": "Para cambiar la temperatura de una muestra de materia en una cantidad determinada, es necesario transferir una cantidad de energía que depende de la naturaleza de la materia, el tamaño de la muestra y el entorno."
+  },
+  {
+   "id": 13,
+   "descripcion": "Los sistemas en la naturaleza evolucionan hacia estados más estables en los que la distribución de energía es más uniforme, por ejemplo, el agua fluye cuesta abajo, los objetos más calientes que el entorno que los rodea se enfrían y el efecto invernadero que contribuye al equilibrio térmico de la Tierra."
+  },
+  {
+   "id": 14,
+   "descripcion": "Algunas sustancias permiten el paso de la luz a través de ellos, otros únicamente un poco, porque en las sustancias los átomos de cada elemento emiten y absorben frecuencias características de luz, lo que permite identificar la presencia de un elemento, aún en cantidades microscópicas."
+  },
+  {
+   "id": 15,
+   "descripcion": "Reunir y dar sentido a la información para describir que los materiales sintéticos provienen de recursos naturales e impactan a la sociedad."
+  },
+  {
+   "id": 16,
+   "descripcion": "La ciencia como un esfuerzo humano para el bienestar, parte 1. Discusión de la aplicación de las ciencias naturales: la nanotecnología."
+  }
+ ],
+ "Conservación de la energía y su interacción con la materia CNEYT II": [
+  {
+   "id": 1,
+   "descripcion": "La energía puede ser transferida de un objeto en movimiento a otro objeto cuando colisionan. La energía está presente cuando hay objetos en movimiento, hay sonido, hay luz o hay calor."
+  },
+  {
+   "id": 2,
+   "descripcion": "La energía tiene diferentes manifestaciones (por ejemplo, energía en campos electromagnéticos, energía térmica, energía de movimiento)."
+  },
+  {
+   "id": 3,
+   "descripcion": "La energía se puede transferir de distintas formas y entre objetos o sistemas, así como al interior de ellos."
+  },
+  {
+   "id": 4,
+   "descripcion": "Cuando la energía fluye es posible detectar la transferencia de energía a través de un objeto o sistema."
+  },
+  {
+   "id": 5,
+   "descripcion": "El cambio de estado y/o el movimiento de la materia en un sistema es promovido por la transferencia de energía."
+  },
+  {
+   "id": 6,
+   "descripcion": "La temperatura de un sistema se da en función de la energía cinética promedio y a la energía potencial por partícula. La relación depende del tipo de átomo o molécula del material y sus interacciones."
+  },
+  {
+   "id": 7,
+   "descripcion": "La energía requerida para cambiar la temperatura de un objeto está en función de su masa y naturaleza, así como del medio."
+  },
+  {
+   "id": 8,
+   "descripcion": "La energía se transfiere de sistemas u objetos más calientes a otros más fríos."
+  },
+  {
+   "id": 9,
+   "descripcion": "La energía no puede ser creada o destruida, pero puede ser transportada de un lugar a otro y transferida entre sistemas."
+  },
+  {
+   "id": 10,
+   "descripcion": "La energía no se puede destruir, sin embargo, se puede convertir en otras formas de menor utilidad (por ejemplo, cuando hay pérdidas por calor)."
+  },
+  {
+   "id": 11,
+   "descripcion": "El funcionamiento de los sistemas depende de su disponibilidad de energía."
+  },
+  {
+   "id": 12,
+   "descripcion": "En los sistemas cerrados las cantidades totales de materia y energía se conservan."
+  },
+  {
+   "id": 13,
+   "descripcion": "Los cambios de energía y materia en un sistema se pueden rastrear a través de sus flujos hacía, desde y dentro del mismo."
+  },
+  {
+   "id": 14,
+   "descripcion": "Emplear el principio de conservación en el que la energía no se crea ni se destruye, significa que el cambio total de energía en cualquier sistema es siempre igual al total de energía transferida dentro o fuera del sistema."
+  },
+  {
+   "id": 15,
+   "descripcion": "A través del concepto de conservación de la energía es posible describir y predecir el comportamiento de un sistema."
+  },
+  {
+   "id": 16,
+   "descripcion": "La ciencia como un esfuerzo humano para el bienestar, parte 2. Discusión de la aplicación de las ciencias naturales: sobre la generación de energía eléctrica."
+  }
+ ],
+ "Ecosistemas, interacciones, energia y dinamica CNEYT III": [
+  {
+   "id": 1,
+   "descripcion": "Dentro de las células de los organismos fotosintéticos hay estructuras responsables que facilitan que la energía del Sol sea capturada por las plantas durante el proceso y se forme la materia vegetal."
+  },
+  {
+   "id": 2,
+   "descripcion": "A través de las reacciones químicas involucradas en la respiración celular de plantas y animales, las moléculas de los alimentos se rompen y se libera energía útil para los seres vivos."
+  },
+  {
+   "id": 3,
+   "descripcion": "Durante la fotosíntesis el dióxido de carbono y el agua se combinan para formar moléculas orgánicas que contienen carbono y liberar oxígeno, estas reacciones requieren energía solar y producen azúcares."
+  },
+  {
+   "id": 4,
+   "descripcion": "La energía solar se distribuye en el planeta, las condiciones físicas del ambiente (temperatura y la precipitación) dan lugar a diferentes formas de vida."
+  },
+  {
+   "id": 5,
+   "descripcion": "Los biomas son las grandes regiones de vegetación a nivel mundial en función de la distribución de la energía en las distintas regiones de la Tierra."
+  },
+  {
+   "id": 6,
+   "descripcion": "Las redes tróficas tienen diferentes niveles y el uno de los primeros está formado por plantas y algas. En los flujos de materia y energía, que se presentan en los niveles de las redes tróficas, solo una pequeña fracción de la materia consumida en el nivel inferior se transfiere al nivel superior, para producir crecimiento y liberar energía durante la respiración celular. Dada esta ineficiencia, generalmente hay menos organismos en los niveles más altos de una cadena trófica."
+  },
+  {
+   "id": 7,
+   "descripcion": "La energía solar captada por las plantas fluye a través de la biomasa, al ser consumida por los herbívoros y los demás integrantes de la red trófica. En este proceso también no toda la energía de las plantas llega a los siguientes niveles."
+  },
+  {
+   "id": 8,
+   "descripcion": "En las redes tróficas disminuyen los niveles debido a que la cantidad de energía disponible que se transfiere al siguiente nivel es cada vez menor."
+  },
+  {
+   "id": 9,
+   "descripcion": "El grado en el que sucede la fotosíntesis varía conforme a la cantidad de energía solar, lo que origina diferencias en el crecimiento de las plantas (productividad). De la misma forma, en los ecosistemas y en sus comunidades también se presentan diferencias de productividad."
+  },
+  {
+   "id": 10,
+   "descripcion": "En cualquier ecosistema, los organismos y poblaciones con necesidades similares de alimentos, agua, oxígeno u otros recursos pueden competir entre sí, limitando su crecimiento y su reproducción."
+  },
+  {
+   "id": 11,
+   "descripcion": "En los ecosistemas y comunidades la estabilidad y madurez varía, lo cual origina diferentes productividades. Los ecosistemas inestables e inmaduros son más vulnerables a perturbaciones y esto afecta su productividad."
+  },
+  {
+   "id": 12,
+   "descripcion": "Las sustancias presentes en los organismos vivos intervienen en las redes tróficas, en ellas se combinan y recombinan de diferentes formas y fluyen entre los organismos, la atmósfera y el suelo. En cada nivel de la cadena trófica, la materia y la energía se conservan. Por ejemplo, en una etapa del ciclo del carbono sucede la fotosíntesis y la respiración celular, en ella se dan procesos químicos, físicos y biológicos, en los que se intercambia el carbono entre la biosfera, la atmósfera y los océanos."
+  },
+  {
+   "id": 13,
+   "descripcion": "Los servicios ecosistémicos o ambientales son aquellos que la naturaleza o los procesos ecológicos proveen a los seres vivos y al planeta y son considerados el motor del medio ambiente."
+  },
+  {
+   "id": 14,
+   "descripcion": "La ciencia como un esfuerzo humano para el bienestar, parte 3. Discusión de la aplicación de las ciencias naturales: Desequilibrio ecológico."
+  }
+ ],
+ "Reacciones químicas conservación de la materia CNEYT IV": [
+  {
+   "id": 1,
+   "descripcion": "Las sustancias reaccionan químicamente de formas características. En un proceso químico, los átomos que componen las sustancias originales llamadas reactivos se reagrupan formando diferentes sustancias, denominadas productos, que se caracterizan por tener propiedades distintas a las de los reactivos."
+  },
+  {
+   "id": 2,
+   "descripcion": "Algunas reacciones químicas liberan energía, otras absorben energía."
+  },
+  {
+   "id": 3,
+   "descripcion": "Cada átomo tiene una subestructura con cargas eléctricas, que consiste en un núcleo con protones y neutrones, rodeado de electrones."
+  },
+  {
+   "id": 4,
+   "descripcion": "La tabla periódica ordena los elementos químicos horizontalmente por el número de protones en el núcleo del átomo y coloca aquellos con propiedades químicas similares en columnas. Los patrones repetitivos de esta tabla se asocian a los patrones de la configuración de electrones externos."
+  },
+  {
+   "id": 5,
+   "descripcion": "Los ejemplos de propiedades que son predecibles a partir de patrones incluyen la reactividad de los metales, los tipos de enlaces formados, la cantidad de enlaces formados y las reacciones con el oxígeno."
+  },
+  {
+   "id": 6,
+   "descripcion": "La atracción y repulsión entre cargas eléctricas a escala atómica explica la estructura, propiedades y transformaciones de la materia, así como las fuerzas de contacto entre los objetos materiales."
+  },
+  {
+   "id": 7,
+   "descripcion": "El hecho de que los átomos se conserven, aunado al conocimiento de las propiedades químicas de los elementos involucrados, puede usarse para describir y predecir reacciones químicas."
+  },
+  {
+   "id": 8,
+   "descripcion": "Una molécula estable tiene menos energía que el mismo conjunto de átomos cuando están separados, se debe proporcionar al menos esta energía para romper los enlaces de la molécula."
+  },
+  {
+   "id": 9,
+   "descripcion": "Es posible establecer relaciones proporcionales entre las masas de los átomos en los reactivos y los productos, y la traducción de estas relaciones a la escala macroscópica usando el concepto de mol como la conversión de la escala atómica a la escala macroscópica."
+  },
+  {
+   "id": 10,
+   "descripcion": "Un equilibrio dinámico ocurre cuando dos procesos reversibles suceden a la misma velocidad. Diversos procesos (como determinadas reacciones químicas) son reversibles y cuando están en un equilibrio dinámico, la reacción inversa ocurre a la misma velocidad"
+  },
+  {
+   "id": 11,
+   "descripcion": "Los procesos químicos, sus velocidades y si requieren energía o la liberan, pueden entenderse en términos de colisiones de átomos o moléculas y reordenamiento de átomos para formar distintas sustancias, con los consiguientes cambios en la suma de las energías de enlace de todas las moléculas y los cambios correspondientes en la energía cinética."
+  },
+  {
+   "id": 12,
+   "descripcion": "Si un sistema en equilibrio es perturbado, el sistema evoluciona para contrarrestar dicha perturbación, llegando a un nuevo estado de equilibrio."
+  },
+  {
+   "id": 13,
+   "descripcion": "Los procesos nucleares, incluida la fusión, la fisión y la desintegración radiactiva de núcleos inestables, implican la liberación o absorción de energía. El número total de neutrones más protones no cambia en ningún proceso nuclear."
+  },
+  {
+   "id": 14,
+   "descripcion": "La ciencia como un esfuerzo humano para el bienestar, parte 4. La química del aire ¿cómo mejorar lo que respiramos?"
+  }
+ ],
+ "La energía en los procesos de la vida diaria CNEYT V": [
+  {
+   "id": 1,
+   "descripcion": "Relación entre energía y fuerzas. Cuando dos objetos interactúan, cada uno ejerce una fuerza sobre el otro que puede causar que la energía se transfiera hacia o desde el objeto."
+  },
+  {
+   "id": 2,
+   "descripcion": "El movimiento de un objeto está determinado por la suma de las fuerzas que actúan sobre él; si la fuerza total sobre el objeto no es cero, su estado de movimiento cambiará. Cuanto mayor sea la masa del objeto, mayor será la fuerza requerida para lograr el mismo cambio de estado de movimiento. Para cualquier objeto dado, una fuerza mayor provoca un cambio mayor en el estado de movimiento."
+  },
+  {
+   "id": 3,
+   "descripcion": "El momento lineal se define para un marco de referencia particular como la masa por la velocidad del objeto. En cualquier sistema, el momento lineal total siempre se conserva."
+  },
+  {
+   "id": 4,
+   "descripcion": "La segunda ley de Newton predice con precisión los cambios en el movimiento de los objetos macroscópicos."
+  },
+  {
+   "id": 5,
+   "descripcion": "Cuando dos objetos o sistemas interactúan, sus momentos lineales pueden cambiar. La suma de los momentos lineales de ambos sistemas es la misma antes y después de la interacción."
+  },
+  {
+   "id": 6,
+   "descripcion": "La radiación electromagnética se puede modelar como una onda de campos eléctricos y magnéticos cambiantes o como partículas llamadas fotones. Ambos modelos permiten explicar las interacciones de la radiación con la materia."
+  },
+  {
+   "id": 7,
+   "descripcion": "La ley de gravitación universal de Newton y la ley de Coulomb proporcionan los modelos matemáticos para describir y predecir los efectos de las fuerzas gravitatorias y electrostáticas entre objetos distantes."
+  },
+  {
+   "id": 8,
+   "descripcion": "La energía no se crea ni se destruye, solo se mueve entre un lugar y otro, así como entre objetos y/o campos, o entre sistemas."
+  },
+  {
+   "id": 9,
+   "descripcion": "Las fuerzas a distancia se explican por campos que se encuentran en el espacio y que pueden transferir energía a través del mismo. Los imanes o las corrientes eléctricas generan campos magnéticos; las cargas eléctricas o los campos magnéticos cambiantes producen campos eléctricos."
+  },
+  {
+   "id": 10,
+   "descripcion": "Las fuerzas eléctricas y magnéticas (electromagnéticas) pueden ser atractivas o repulsivas, y sus tamaños dependen de las magnitudes de las cargas, corrientes o fuerzas magnéticas involucradas y de las distancias entre los objetos que interactúan."
+  },
+  {
+   "id": 11,
+   "descripcion": "Cuando dos objetos que interactúan a través de un campo cambian de posición relativa, la energía almacenada en el campo cambia."
+  },
+  {
+   "id": 12,
+   "descripcion": "“Energía eléctrica”, puede significar energía almacenada en una batería o energía transmitida por corrientes eléctricas."
+  },
+  {
+   "id": 13,
+   "descripcion": "La energía se puede transferir de un lugar a otro mediante, corrientes eléctricas, que luego se pueden usar para producir movimiento, sonido, luz o calor. Las corrientes pueden haberse producido al principio transformando la energía del movimiento en energía eléctrica."
+  },
+  {
+   "id": 14,
+   "descripcion": "Como resultado de reacciones químicas, la energía se transfiere de un sistema de moléculas en interacción a otro. La respiración celular es un proceso químico en el que se rompen los enlaces de las moléculas de oxígeno y se forman nuevos compuestos que pueden transportar energía a los músculos. La respiración celular también libera la energía necesaria para mantener la temperatura corporal a pesar de la continua transferencia de energía al entorno circundante"
+  },
+  {
+   "id": 15,
+   "descripcion": "Todos los procesos de la Tierra son el resultado del flujo de energía y el ciclo de la materia dentro y entre los sistemas del planeta. La energía del Sol es la principal fuente de la energía que sustenta las condiciones y procesos físicos, químicos y biológicos de la Tierra."
+  },
+  {
+   "id": 16,
+   "descripcion": "El movimiento de las placas tectónicas forma parte de los ciclos de convección del manto terrestre. Los movimientos del manto, y de las placas tectónicas, ocurren principalmente a través de la convección térmica que produce el movimiento de la materia debido al flujo de energía hacia el exterior, desde el interior de la Tierra y hacia el interior, por el movimiento gravitacional de los materiales más densos"
+  }
+ ],
+ "Organismos, estructuras y procesos CNEYT VI": [
+  {
+   "id": 1,
+   "descripcion": "La célula es la unidad estructural y funcional de todos los organismos vivos. Los organismos pueden estar formados por una sola célula (unicelular) o por millones de células diferentes (pluricelular) que realizan, en conjunto, sus funciones vitales."
+  },
+  {
+   "id": 2,
+   "descripcion": "Dentro de las células, existen estructuras especializadas que son responsables de funciones específicas. La membrana celular constituye la frontera que controla lo que entra y sale de la célula."
+  },
+  {
+   "id": 3,
+   "descripcion": "Los organismos multicelulares tienen una organización estructural jerárquica (célula, tejido, órgano, y sistema); en la que cada nivel de organización está formado por conjuntos de células que llevan a cabo funciones específicas."
+  },
+  {
+   "id": 4,
+   "descripcion": "Dentro de los organismos, durante la respiración celular, los alimentos se descomponen y reorganizan a través de una serie de reacciones químicas en presencia de oxígeno. Durante este proceso se sintetizan nuevas moléculas que contribuyen al crecimiento y se libera energía."
+  },
+  {
+   "id": 5,
+   "descripcion": "Por medio de reacciones químicas entre diferentes tipos de moléculas orgánicas, los sistemas de células especializadas dentro de los organismos permiten realizar las funciones esenciales para la vida."
+  },
+  {
+   "id": 6,
+   "descripcion": "Todas las células contienen información genética en forma de moléculas de ácidos nucleicos. Los genes son regiones del ADN que contienen la información necesaria para sintetizar proteínas."
+  },
+  {
+   "id": 7,
+   "descripcion": "Los organismos se reproducen, de forma sexual o asexual, y transfieren su información genética a su descendencia."
+  },
+  {
+   "id": 8,
+   "descripcion": "Los genes se encuentran en los cromosomas de las células. Cada gen distinto contiene la información para la producción de proteínas específicas, que a su vez afecta a los rasgos del individuo."
+  },
+  {
+   "id": 9,
+   "descripcion": "Cada cromosoma consta de una sola molécula de ADN muy larga, y cada gen en un cromosoma es un segmento particular de ese ADN. La información genética que determina las características de las especies se encuentra en el ADN."
+  },
+  {
+   "id": 10,
+   "descripcion": "La variabilidad entre individuos de la misma especie se debe a factores genéticos que resultan del subconjunto de cromosomas heredados."
+  },
+  {
+   "id": 11,
+   "descripcion": "Los individuos de una especie tienen genes similares, pero no idénticos. En la reproducción sexual, cada padre aporta la mitad de los cromosomas del individuo. La variabilidad de los rasgos entre los padres y su descendencia surgen del conjunto particular de cromosomas heredados."
+  },
+  {
+   "id": 12,
+   "descripcion": "Las similitudes y diferencias anatómicas entre organismos actuales y fósiles permiten reconstruir la historia evolutiva e inferir las líneas de descendencia evolutiva."
+  },
+  {
+   "id": 13,
+   "descripcion": "La información genética proporciona evidencia de la evolución. Las secuencias de ADN varían entre especies, pero existen similitudes que permiten inferir las líneas de descendencia entre organismos."
+  },
+  {
+   "id": 14,
+   "descripcion": "La evolución es una consecuencia de la relación entre cuatro factores: potencial reproductivo, variabilidad genética, interacciones intraespecíficas e interespecíficas, y selección natural."
+  },
+  {
+   "id": 15,
+   "descripcion": "La selección natural conduce a que ciertos rasgos en la población de una especie, que permiten con mayor éxito la reproducción y la supervivencia, se vuelvan predominantes y más comunes."
+  },
+  {
+   "id": 16,
+   "descripcion": "La adaptación por selección natural que actúa durante generaciones es un proceso importante por el cual las especies evolucionan con el tiempo en respuesta a cambios en las condiciones ambientales, esto ha contribuido considerablemente a la biodiversidad del planeta."
+  }
+ ]
+}

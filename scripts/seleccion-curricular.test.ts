@@ -50,3 +50,30 @@ test('progresión oficial sin metas no rompe la generación', () => {
   const texto = contextoPrograma(p, { modelo: '2024', programaId: idPrograma(p), progresionId: 9 });
   assert.ok(texto.includes('Metas asociadas: Cotejo pendiente'));
 });
+test('materia y progresión llevan el plan entre paréntesis', async () => {
+  const { conPlan, etiquetaElemento } = await import('../data/vocabularioCurricular');
+  assert.equal(conPlan('Pensamiento Matemático I', '2024'), 'Pensamiento Matemático I (Plan 2023)');
+  assert.equal(conPlan('Pensamiento Matemático I', '2025'), 'Pensamiento Matemático I (Plan 2025)');
+  assert.equal(etiquetaElemento('2024'), '(Progresión · Plan 2023)');
+  assert.equal(etiquetaElemento('2025'), '(Propósito formativo · Plan 2025)');
+});
+test('en el Modelo 2025 la IA recibe el propósito formativo y sus contenidos formativos', () => {
+  const p = programa('2025');
+  p.progresiones[0].tematicas = ['Tiempo histórico', 'Espacio histórico'];
+  const texto = contextoPrograma(p, { modelo: '2025', programaId: idPrograma(p), progresionId: 9 });
+  assert.ok(texto.includes('PROPÓSITO FORMATIVO SELECCIONADO (9) · Plan 2025'));
+  assert.ok(texto.includes('Contenidos formativos de este propósito: Tiempo histórico; Espacio histórico'));
+});
+test('catálogo: programas oficiales vigentes sin números ni textos repetidos', async () => {
+  const { default: catalogo } = await import('../data/programas_sep.json', { with: { type: 'json' } });
+  const vigentes = (catalogo as ProgramaSEP[]).filter(p => p.estado === 'oficial' && (p.modelo === '2025' || p.semestre >= 5));
+  assert.ok(vigentes.filter(p => p.modelo === '2025').length >= 37);
+  for (const p of vigentes) {
+    const ids = p.progresiones.map(g => g.id);
+    assert.equal(new Set(ids).size, ids.length, `${p.materia}: número repetido`);
+    assert.equal(new Set(p.progresiones.map(g => g.descripcion)).size, ids.length, `${p.materia}: texto repetido`);
+    for (let i = 1; i <= Math.max(...ids); i++) assert.ok(ids.includes(i), `${p.materia}: falta la ${i}`);
+    for (const g of p.progresiones) assert.ok(g.descripcion.length >= 40 && !/\.{6}|^Momento \d|enganch/i.test(g.descripcion), `${p.materia} #${g.id}: no parece progresión`);
+    if (p.modelo === '2025') assert.ok(p.progresiones.every(g => g.tematicas?.length), `${p.materia}: propósito sin contenidos formativos`);
+  }
+});

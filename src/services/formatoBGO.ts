@@ -20,7 +20,7 @@ import {
     VerticalAlign, LevelFormat, PageBreak, TableLayoutType,
 } from 'docx';
 import type { LessonPlan, SessionPhase } from '../../types';
-import { vocabularioCurricular, COMPONENTES_FORMACION } from '../../data/vocabularioCurricular';
+import { vocabularioCurricular, COMPONENTES_FORMACION, conPlan, etiquetaElemento } from '../../data/vocabularioCurricular';
 
 export interface FormatoPlantel {
     escuela: string;
@@ -163,9 +163,8 @@ function textoPAEC(plan: LessonPlan): string[] {
 function textoProgresion(plan: LessonPlan, modelo?: string): string[] {
     const ce = plan.curricularElements;
     const voc = vocabularioCurricular(modelo);
-    const lineas: string[] = [`**${voc.progresion}:**`];
     const etiqueta = ce?.progressionId ? `${voc.progresion} ${ce.progressionId}` : voc.progresion;
-    lineas.push(`**${etiqueta}:**`);
+    const lineas: string[] = [`**${etiqueta} ${etiquetaElemento(modelo).replace(`${voc.progresion} · `, '')}:**`];
     lineas.push(ce?.progression || plan.progression || '');
     if (ce?.learningGoals?.length) {
         lineas.push(`**${voc.metas}:** ${ce.learningGoals.join(' ')}`);
@@ -272,7 +271,7 @@ export function construirFormatoBGO(plan: LessonPlan, opciones: OpcionesFormatoB
         new TableRow({ children: [
             casilla('ESCUELA:', `${plantel.escuela}${plantel.turno ? ', ' + plantel.turno : ''}. CCT ${plantel.cct}`, A1[0]),
             casilla('Nombre del Docente:', m?.teacher || '', A1[1]),
-            casilla('Asignatura:', plan.subject || '', A1[2]),
+            casilla('Asignatura:', conPlan(plan.subject || '', modelo), A1[2]),
             casilla('Componente:', componente, A1[3]),
             casilla('Ciclo Escolar:', m?.cycle || '', A1[4]),
             casilla('Grupo:', m?.group || m?.gradeGroup || '', A1[5]),

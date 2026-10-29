@@ -7,6 +7,8 @@ import {
     vocabularioCurricular,
     familiaDesdeCategoria,
     COMPONENTES_FORMACION,
+    conPlan,
+    etiquetaElemento,
 } from '../data/vocabularioCurricular';
 
 interface PlanDocumentProps {
@@ -19,10 +21,8 @@ interface PlanDocumentProps {
 const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, teacherName, schoolName, cct }, ref) => {
     // Las etiquetas curriculares dependen de la generación del programa y de la familia
     // de la UAC. Ver data/vocabularioCurricular.ts para el porqué.
-    const vocab = vocabularioCurricular(
-        plan.curricularSource?.model || plan.meta?.modelo,
-        familiaDesdeCategoria(plan.meta?.areaOrRecurso)
-    );
+    const modelo = plan.curricularSource?.model || plan.meta?.modelo;
+    const vocab = vocabularioCurricular(modelo, familiaDesdeCategoria(plan.meta?.areaOrRecurso));
     const componente = plan.meta?.componente
         ? COMPONENTES_FORMACION[plan.meta.componente]
         : 'Por registrar';
@@ -91,7 +91,7 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                 <div className="grid grid-cols-4 text-xs divide-x divide-slate-300">
                     <div className="p-2">
                         <span className="block font-bold text-slate-500 uppercase text-[9px]">{vocab.unidad}</span>
-                        <span className="font-bold text-slate-900 bg-yellow-50 px-1">{plan.subject}</span>
+                        <span className="font-bold text-slate-900 bg-yellow-50 px-1">{conPlan(plan.subject, modelo)}</span>
                     </div>
                     <div className="p-2">
                         <span className="block font-bold text-slate-500 uppercase text-[9px]">Semestre</span>
@@ -132,7 +132,7 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                             <span className="text-[10px] font-bold text-white bg-slate-800 px-2 py-0.5 rounded">
                                 {plan.curricularElements?.progressionId || vocab.progresion}
                             </span>
-                            <span className="text-[10px] uppercase font-bold text-slate-400">Descripción de la {vocab.progresion}:</span>
+                            <span className="text-[10px] uppercase font-bold text-slate-400">Descripción {etiquetaElemento(modelo)}:</span>
                         </div>
                         <p className="text-xs text-slate-900 italic bg-slate-50 p-2 border border-slate-200 rounded text-justify">
                             "{plan.curricularElements?.progression || plan.progression}"

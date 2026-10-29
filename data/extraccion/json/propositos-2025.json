@@ -1,0 +1,2850 @@
+{
+ "bioetica": [
+  {
+   "pagina": 8,
+   "titulo_tabla": "Tabla 1. Propósitos y contenidos formativos de Bioética, más allá de lo humano.",
+   "nombre": "Bioética, más allá de lo humano.",
+   "semestre": 5,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Reflexione sobre los vínculos entre distintas formas de vida, mediante el análisis de problemas situados, para construir un posicionamiento ético y de ciudadanía crítica orientado a la justicia social, el reconocimiento y el cuidado de la biodiversidad.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Identifique diversos enfoques para comprender la Bioética como un campo interdisciplinario que aporta herramientas para reflexionar problemáticas de su contexto.",
+     "contenidos": [
+      "Bioética como campo interdisciplinario",
+      "Límites del planteamiento ético. Antropocentrismo",
+      "Enfoques bioéticos",
+      "Dilemas de la bioética",
+      "Antecedentes e instrumentos de"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Analiza las ciencias de la salud como uno de los ámbitos de desarrollo de la bioética para reflexionar sobre la necesidad de generar modelos, criterios y organismos interdisciplinarios que orienten y regulen la investigación, la promoción y el cuidado.",
+     "contenidos": [
+      "regulación bioética",
+      "Modelos bioéticos: Principialismo, Medicina basada en evidencias, Consecuencialismo y Principios de calidad en Salud",
+      "CONBIOÉTICA",
+      "Comités hospitalarios de bioética",
+      "Análisis de casos. Algunas sugerencias:; Interrupción voluntaria del embarazo; Eutanasia y Suicidio medicamente asistido; Cirugía de reasignación sexual; El problema de la eugenesia"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Contraste las dinámicas de los sistemas alimentarios para reconocer las implicaciones geopolíticas que los regulan, a partir de los conceptos de seguridad, soberanía y justicia alimentaria.",
+     "contenidos": [
+      "- Transhumanismo",
+      "Seguridad, soberanía y justicia alimentaria",
+      "La biodiversidad",
+      "Los Organismos Genéticamente Modificados (OGM) y su relación con la pobreza y la hambruna",
+      "Filosofía de la animalidad y derechos animales",
+      "Ecofeminismos"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Reflexione sobre el desarrollo y uso de la tecnología, mediante el análisis de las implicaciones en su contexto, para construir una postura crítica y de justicia social que favorezca una implementación responsable e incluyente.",
+     "contenidos": [
+      "Análisis crítico de los conceptos de progreso, tecnología y civilización",
+      "Pertinencia de la creación, uso y distribución de la IA",
+      "Objetivos de Desarrollo Sostenible (ODS)",
+      "Tecnología y relaciones de poder: Sesgos algorítmicos."
+     ]
+    }
+   ]
+  }
+ ],
+ "ciencias-naturales": [
+  {
+   "pagina": 14,
+   "titulo_tabla": "Tabla 1. Propósitos y contenidos formativos de CNEyT I. Invitación a la ciencia. Naturaleza de la materia",
+   "nombre": "Ciencias Naturales, Experimentales y Tecnología I Invitación a la ciencia. Naturaleza de la materia",
+   "semestre": 1,
+   "horas": "Horas/semana: 4 horas",
+   "meta": "Comprenda el carácter creativo, social y colectivo de las ciencias naturales, a través de la apropiación de conceptos que permiten la construcción de explicaciones en torno a la naturaleza intrínseca de la materia. ​",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Reconoce la ciencia como actividad creativa, social y colectiva que involucra el planteamiento de preguntas y la búsqueda de explicaciones sobre fenómenos naturales de su entorno, a través de la experimentación y el análisis.",
+     "contenidos": [
+      "Concepto de ciencia",
+      "Relatos sobre la historia de los descubrimientos científicos y la ciencia en México",
+      "El método científico y el conocimiento empírico y tradicional, como formas de comprensión de la naturaleza",
+      "Medición: concepto de medición, magnitudes y unidad de medida, y su aplicación en las ciencias naturales"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Comprende fenólos que menos de la naturaleza están interrelacionados, pueden y estudiarse en su conjunto o de especializada, forma la para generación de conocimiento o innovación tecnológica.",
+     "contenidos": [
+      "Objetivos de estudio de la Física, la Química y la Biología; elementos en común y sus diferencias",
+      "Ejemplos de ciencias naturales derivadas e interdisciplinares: ecología, ciencias de la Tierra, entre otros",
+      "Concepto de tecnología y su vínculo con las ciencias naturales"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Comprende los conceptos de materia, cuerpo, masa y densidad, a partir de los objetos del entorno perceptible, para describirlos y analizarlos.",
+     "contenidos": [
+      "Concepto de materia y cuerpo",
+      "Concepto de masa como cantidad de materia, unidad de medida y su diferencia con el concepto de peso",
+      "Concepto de densidad",
+      "Cálculo de volumen y densidad"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Comprende los conceptos de sustancia, sustancia pura, elemento compuesto y mezcla, y los aplica para clasificar de forma práctica o analítica distintos tipos de materia y reconocer sus propiedades físicas y químicas.",
+     "contenidos": [
+      "Clasificación de la materia",
+      "Propiedades físicas y químicas de la materia",
+      "Tipos y características de las mezclas; métodos de separación",
+      "Cálculo de concentración de disoluciones: masa-masa, masa-volumen, volumenvolumen y partes por millón",
+      "Clasificación periódica de los elementos"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Comprende el átomo y su composición eléctrica como la partícula microscópica que estructura la materia.",
+     "contenidos": [
+      "Teoría Atómica: Dalton, Thomson, Rutherford, Bohr y Schrödinger",
+      "Modelos atómicos y carga eléctrica",
+      "Número y masa atómica",
+      "Isótopos",
+      "Concepto de configuración electrónica y valencia"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Analiza la formación de iones, moléculas y sustancias, a partir de la unión de dos o más átomos que tienden a la estabilidad energética, para explicar la formación de enlaces químicos.",
+     "contenidos": [
+      "Enlace químico",
+      "Electronegatividad y fuerzas intramoleculares",
+      "Iones y moléculas"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Explica las propiedades físicas de los estados de agregación de la materia en función del movimiento, separación y fuerzas de atracción o repulsión de las partículas internas, y las vincula con los conceptos de energía cinética, potencial e interna.",
+     "contenidos": [
+      "Concepto de energía",
+      "Noción intuitiva de movimiento y conceptos de energía cinética, potencial e interna",
+      "Teoría cinética de la materia",
+      "Estados de agregación de la materia y (sólidos, cambios gases líquidos, sus y plasma)"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Construye explicaciones sobre la naturaleza energética y corpuscular de la materia, y explora aplicaciones tecnológicas relacionadas.",
+     "contenidos": [
+      "Fenómenos naturales donde participa la actividad eléctrica de la materia",
+      "Aplicaciones tecnológicas vinculadas con la materia"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 16,
+   "titulo_tabla": "Tabla 2. Propósitos y contenidos formativos de CNEyT II. El poder de la energía",
+   "nombre": "Ciencias Naturales, Experimentales y Tecnología II El poder de la energía",
+   "semestre": 2,
+   "horas": "Horas/semana: 4 horas",
+   "meta": "Comprenda la importancia de la energía para construir explicaciones sobre diversos fenómenos naturales.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Comprende, a partir del análisis de fenómenos naturales cotidianos, que la energía puede transformarse y transferirse sin destruirse.",
+     "contenidos": [
+      "Definición de energía",
+      "Manifestaciones, tipos y transformación de la energía",
+      "Ley de conservación de la energía",
+      "Medición de la energía y unidades de medida"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Analiza el cambio de posición de un cuerpo al interactuar comprencon otro, para der los conceptos de fuerza, movimiento y su relación con la energía mecánica.",
+     "contenidos": [
+      "Concepto de fuerza",
+      "Conceptos de movimiento posición, y velocidad",
+      "Concepto de energía mecánica",
+      "Cálculo de la energía cinética de un cuerpo o partícula"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Analiza el intercambio de calor entre cuerpos y con el entorno, para comprender su concepto, el de temperatura y su diferencia.",
+     "contenidos": [
+      "Calor y temperatura",
+      "Medición de calor",
+      "Escalas termométricas absolutas y relativa",
+      "Equilibrio térmico"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Analiza la interacción entre la energía y la estructura de la materia para comprender las formas de propagación de calor.",
+     "contenidos": [
+      "Propagación de calor: conducción y convección",
+      "Transferencia de calor por radiación",
+      "Conductividad calorífica capacidad y térmica específica"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Analiza el vínculo entre trabajo mecánico y calor, para comprender el concepto de termodinámica.",
+     "contenidos": [
+      "Trabajo mecánico",
+      "Concepto de termodinámica",
+      "Vínculo del trabajo mecánico con la termodinámica",
+      "Equivalencia entre una caloría y un Joule",
+      "Principio cero de la termodinámica"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Analiza tanto la producción de calor que se genera por procesos mecánicos como las propiedades de un gas ideal, para comprender la primera ley de la termodinámica.",
+     "contenidos": [
+      "Dinámica y ecuación de un gas ideal",
+      "Características de un sistema termodinámico: fronteras, sistemas abiertos o cerrados, y variables de estado",
+      "Primera ley de la termodinámica"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Analiza las aplicaciones de la primera ley de la termodinámica en situaciones de interés, para comprender el concepto de entropía, entalpía, así como la segunda y tercera leyes de la termodinámica.",
+     "contenidos": [
+      "Concepto de Entropía",
+      "Concepto de Entalpía",
+      "Segunda y tercera leyes de la termodinámica"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Construye explicaciones sobre fenómenos naturales en donde intervienen distintos tipos de energía, y explora aplicaciones tecnológicas relacionadas.",
+     "contenidos": [
+      "Fenómenos naturales donde interviene la energía",
+      "Aplicaciones tecnológicas de la energía"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 18,
+   "titulo_tabla": "Tabla 3. Propósitos y contenidos formativos de CNEyT III. Nuestro hogar. El sistema terrestre",
+   "nombre": "Ciencias Naturales, Experimentales y Tecnología III Nuestro hogar. El sistema terrestre",
+   "semestre": 3,
+   "horas": "Horas/semana: 4 horas",
+   "meta": "Construya explicaciones sobre fenómenos naturales que subyacen a la estructura y función de sistemas o esferas terrestres, y comprenda su importancia para la existencia de la vida en la Tierra, así como la relevancia de las acciones humanas para su cuidado.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Comprende a la Tierra como un sistema, a partir del análisis de los subsistemas que lo conforman y sus interacciones.",
+     "contenidos": [
+      "La Tierra como sistema y características generales de la hidrósfera, atmósfera, litósfera y la biósfera"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Aplica el conocimiento sobre los estados de agregación y clasificación de la materia; propiedades de los cuerpos y temperatura para explicar las capas, composición e interacción de la hidrósfera y atmósfera.",
+     "contenidos": [
+      "Capas y composición química de la hidrósfera y la atmósfera",
+      "Conceptos involucrados: aire, agua, densidad, presión, temperatura y compuestos químicos",
+      "Ciclo biogeoquímico del agua",
+      "Concepto de clima y tiempo atmosférico"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Analiza los flujos de materia y energía que suceden en los ecosistemas y entre las esferas terrestres, para compreder la importancia de la cadena trófica y el concepto de equilibrio ecológico.",
+     "contenidos": [
+      "Concepto de ecosistema y biodiversidad; relación con la biósfera",
+      "Componentes abióticos bióticos del y ecosistema",
+      "Cadena trófica",
+      "Biomasa concepto de productividad y primaria",
+      "Eficiencia ecológica",
+      "Ciclo biogeoquímico del carbono y aspectos generales de los ciclos del nitrógeno y del fósforo",
+      "Concepto de equilibrio ecológico"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Analiza la estructura de una reacción química para comprender su importancia como proceso de transformación de la materia.",
+     "contenidos": [
+      "Concepto de reacción química",
+      "Estructura de una reacción química",
+      "Ecuación química como forma de representar una reacción",
+      "Simbología utilizada en fórmulas y reacciones químicas"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Comprende la importancia del oxígeno para la vida en la Tierra, a partir del análisis del proceso de oxigenación de la atmósfera primitiva y la intervención de los organismos fotosintéticos.",
+     "contenidos": [
+      "Composición química de la atmósfera reductora según Oparin-Haldane y las diferencias con la atmósfera actual",
+      "Ciclo biogeoquímico del oxígeno",
+      "Formación de óxidos básicos y ácidos"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Comprende el proceso general de la fotosíntesis y su importancia para la transferencia de energía en la cadena trófica, así como para la captura del dióxido de carbono y la liberación de oxígeno.",
+     "contenidos": [
+      "Fotosíntesis: aspectos generales de la fase luminosa y el ciclo de Calvin; ecuación y productos de la fotosíntesis",
+      "Importancia de los organismos autótrofos para la vida en la Tierra"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Analiza la dinámica de los subsistemas terrestres y la actividad humana, para comprender el concepto de deterioro ambiental, sus escalas y manifestaciones.",
+     "contenidos": [
+      "Concepto de deterioro ambiental",
+      "Deterioro a nivel global: el calentamiento y su relación con el efecto invernadero y el cambio climático; pérdida de la biodiversidad",
+      "Deterioro a nivel local: deforestación",
+      "Contaminación antropogénica, atmosférica y del agua"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Construye explicaciones sobre innovaciones tecnológicas que utilizan el conocimiento de los subsistemas terrestres para reducir el deterioro ambiental.",
+     "contenidos": [
+      "Restauración de ecosistemas",
+      "Aplicaciones tecnológicas para la reducción del deterioro ambiental"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 20,
+   "titulo_tabla": "Tabla 4. Propósitos y contenidos formativos de CNEyT IV. El poder de la química",
+   "nombre": "Ciencias Naturales, Experimentales y Tecnología IV El poder de la química",
+   "semestre": 4,
+   "horas": "Horas/semana: 4 horas",
+   "meta": "Comprenda la química como el estudio de la estructura, propiedades y transformación de la materia, para construir explicaciones sobre diversos fenómenos naturales.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Comprende las características de las reacciones químicas para clasificarlas e identificarlas en distintos fenómenos naturales de interés.",
+     "contenidos": [
+      "reactivos y productos; reorganización de átomos; liberación y absorción de energía",
+      "Energía química",
+      "Clasificación de las reacciones químicas",
+      "(exotérmicas, endotérmicas, de síntesis, de descomposición, de desplazamiento y neutralización)",
+      "Identificación de reacciones químicas en la naturaleza y el desarrollo tecnológico"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Aplica el método de tanteo para el balanceo de ecuaciones, como una forma de verificación de la ley de conservación de la masa en las reacciones químicas.",
+     "contenidos": [
+      "Ley de conservación de la masa",
+      "Mol y Masa molar",
+      "Balanceo de ecuaciones por el método de tanteo",
+      "Mención de los métodos algebraico y redox para balanceo"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Comprende el concepto de equilibrio químico y la dinámica de las reacciones reversibles e irreversibles, para identificarlas en fenómenos naturales cotidianos o de interés.",
+     "contenidos": [
+      "Reacciones reversibles e irreversibles",
+      "Constante y ecuación de equilibrio químico",
+      "Identificación de reacciones reversibles e irreversibles en la naturaleza"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Analiza las propiedades físicas y químicas de sustancias ácidas y básicas de interés, así como su diferenciación de acuerdo con el potencial de Hidrógeno, para su identificación en la naturaleza o la vida cotidiana.",
+     "contenidos": [
+      "Teorías sobre los ácidos y las bases de Arrhenius, Bronsted-Lowry y Lewis",
+      "Clasificación de acuerdo con su conductividad",
+      "Potencial de Hidrógeno (pH) y diferenciación de las sustancias de interés de acuerdo con su valor"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Comprende las reacciones químicas de óxido-reducción y combustión para identificar su ocurrencia en la naturaleza, la vida cotidiana, así como su importancia para los seres vivos y la industria.",
+     "contenidos": [
+      "Reacciones de oxidación-reducción",
+      "Reacciones de combustión",
+      "Reacciones redox y de combustión en la naturaleza y la vida cotidiana",
+      "Importancia de las reacciones redox y de combustión para los seres vivos y la industria"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Comprende la importancia de los compuestos orgánicos para el bienestar humano, así como su estructura, propiedades y nomenclatura para clasificarlos de forma analítica.",
+     "contenidos": [
+      "Importancia de los compuestos orgánicos para el bienestar humano",
+      "Estructura del carbono y sus tipos de enlace",
+      "Clasificación de los compuestos orgánicos, grupos funcionales y su nomenclatura",
+      "Definición de monómeros y polímeros"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Analiza las características y funciones de las biomoléculas, para comprender la importancia de los compuestos orgánicos en los seres vivos.",
+     "contenidos": [
+      "Funciones y características de los carbohidratos, lípidos, proteínas y ácidos nucleicos",
+      "Clasificación de los carbohidratos: monosacáridos, disacáridos y polisacáridos",
+      "Clasificación de los lípidos: aceites, grasas, fosfolípidos y esteroides",
+      "Aminoácidos esenciales y no esenciales"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Comprende los procesos químicos involucrados en la respiración aerobia y anaerobia, para identificar su importancia para los seres vivos y el bienestar humano y desarrollos tecnológicos vinculados.",
+     "contenidos": [
+      "Aspectos químicos de la glucólisis, ciclo de Krebs y cadena transportadora de electrones",
+      "Aspectos químicos de la fermentación",
+      "Desarrollos tecnológicos vinculados con la respiración aerobia y anaerobia"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 22,
+   "titulo_tabla": "Tabla 5. Propósitos y contenidos formativos de CNEyT V. Del átomo al universo. Fuerza y Energía",
+   "nombre": "Ciencias Naturales, Experimentales y Tecnología V Del átomo al universo. Fuerza y Energía",
+   "semestre": 5,
+   "horas": "Horas/semana: 4 horas",
+   "meta": "Cuestione los fenómenos naturales que observa en su realidad inmediata, para la construcción de explicaciones sobre aquellos de carácter mecánico, ondulatorio, óptico y gravitatorio, a partir de su análisis conceptual y matemático.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Analiza la caída libre de los objetos y el movimiento rectilíneo uniforme de los cuerpos, en presencia y ausencia de la intervención de fuerzas, para construir explicaciones sobre la dinámica del movimiento uniforme y uniformemente acelerado, considerando las dos primeras leyes de Newton.",
+     "contenidos": [
+      "Concepto de fuerza, sus efectos y manifestaciones en fenómenos naturales cotidianos",
+      "Concepto de peso, unidad escalar de una fuerza y su diferencia con el concepto de masa",
+      "Movimiento uniforme y uniformemente acelerado",
+      "Representación gráfica del movimiento y cálculo de velocidad y aceleración",
+      "Carácter vectorial de una fuerza. Vectores y parámetros",
+      "Conceptos de fuerza neta, fricción e inercia",
+      "Primera y segunda leyes de Newton"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Construye explicaciones sobre los fenómenos de acción y reacción en la interacción de los cuerpos, a partir de la comprensión de la tercera ley de Newton.",
+     "contenidos": [
+      "Representación vectorial de las fuerzas analizadas",
+      "Tercera ley de Newton"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Construye explicaciones sobre la caída libre de objetos con diferente masa y las órbitas de los cuerpos celestes, a partir de la comprensión de la ley de la gravitación universal y el movimiento planetario.",
+     "contenidos": [
+      "Fuerza gravitacional: masa, distancia y aceleración",
+      "Ley de la gravitación universal: ecuación matemática",
+      "Constante de Cavendish",
+      "Leyes del movimiento planetario de Kepler"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Explica el comportamiento de fenómenos ondulatorios de interés, a partir de la comprensión de las propiedades físicas que los afectan.",
+     "contenidos": [
+      "Movimiento ondulatorio",
+      "Tipos de ondas: armónicas, mecánicas, electromagnéticas, transversales y longitudinales",
+      "Características de las ondas",
+      "Velocidad de propagación"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Comprende el comportamiento de la luz para explicar fenómenos naturales de carácter óptico.",
+     "contenidos": [
+      "Modelo de rayos de luz",
+      "Reflexión y refracción de la luz",
+      "Lentes convergentes y divergentes",
+      "Modelo corpuscular y ondulatorio de la luz"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Analiza el comportamiento de fluidos para comprender sus propiedades físicas.",
+     "contenidos": [
+      "Principio de Pascal y de Arquímedes",
+      "Tensión superficial y capilaridad",
+      "Ecuación de continuidad y de Bernoulli",
+      "Viscosidad"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Comprende los fundamentos del magnetismo y la electricidad, así como su relación para construir explicaciones sobre fenómenos electromagnéticos y explorar aplicaciones tecnológicas vinculadas.",
+     "contenidos": [
+      "Caracterización de fenómenos eléctricos y magnéticos",
+      "Campos magnéticos y eléctricos",
+      "Ley de Ohm-Coulomb",
+      "Ley de Ampere-Maxwell",
+      "Ley de Faraday-Henry",
+      "Aplicaciones tecnológicas vinculadas al electromagnetismo",
+      "Divulgación de temas de interés sobre estas"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Discute con carácter divulgativo temas de interés de la física moderna y contemporánea.",
+     "contenidos": [
+      "sugerencias: a) Teoría de la relatividad especial y general de Einstein b) Mecánica Cuántica c) Física de partículas y nuclear d) Condensado de Bose-Einstein e) Teleportación y computación cuántica f) Cosmología moderna g) Superconductores"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 24,
+   "titulo_tabla": "Tabla 6. Propósitos y contenidos formativos de CNEyT VI. ¿Qué es la vida? Evolución y diversidad biológica",
+   "nombre": "Ciencias Naturales, Experimentales y Tecnología VI ¿Qué es la vida? Evolución y diversidad biológica",
+   "semestre": 6,
+   "horas": "Horas/semana: 4 horas",
+   "meta": "Comprenda los rasgos que caracterizan a los seres vivos para construir explicaciones sobre fenómenos naturales, mediados por el funcionamiento celular, la herencia y la evolución biológica.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Analiza las interacciones entre materia y energía de la Tierra primitiva, así como la estructura de las biomoléculas para comprender la teoría quimiosintética del origen de la vida.",
+     "contenidos": [
+      "Teorías sobre el origen de la vida: creacionismo, generación espontánea y panspermia",
+      "Concepto de quimiosíntesis",
+      "Teoría quimiosintética de Oparin-Haldane sobre el origen de la vida",
+      "Experimento de Miller-Urey"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Analiza los procesos históricos que llevaron al descubrimiento de la célula y el desarrollo de la teoría celular, como unidad fundamental de los organismos vivos.",
+     "contenidos": [
+      "Procesos históricos que llevaron al descubrimiento de la célula",
+      "Teoría celular"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Analiza las moléculas orgánicas y organelos celulares para comprender su estructura y función, y reconocer entre células procariotas, eucariotas y su relevancia en la naturaleza o el bienestar humano.",
+     "contenidos": [
+      "Moléculas orgánicas de las células y su función",
+      "Organelos celulares, su estructura y su función",
+      "Diferencias entre células procariotas y eucariotas",
+      "Teoría endosimbiótica de Lynn Margulis",
+      "Relevancia de las células procariotas y eucariotas: salud, fotosíntesis, oxigenación, entre otras"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Analiza la estructura molecular y las funciones del ADN y el ARN, así como las características de los cromosomas, para comprender las bases moleculares de la herencia biológica y su utilidad como herramienta de análisis genético.",
+     "contenidos": [
+      "Concepto de herencia biológica y gen",
+      "Estructura del ADN y el ARN; nucleótidos presentes",
+      "Características de los cromosomas",
+      "Aplicaciones del ADN como herramienta de análisis genético"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Identifica las fases de la mitosis y la meiosis para comprender su importancia como mecanismos de reproducción celular, y reconocer los procesos fundamentales de la división celular, así como las situaciones de interés en donde está implicada.",
+     "contenidos": [
+      "Fases e importancia de la mitosis",
+      "Fases e importancia de la meiosis",
+      "Importancia de la recombinación genética como factor de biodiversidad",
+      "Procesos fundamentales de la división celular y situaciones de interés en donde la reproducción celular está implicada",
+      "Conceptos de fenotipo y genotipo"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Analiza los mecanismos de herencia biológica e identifica sus manifestaciones en situaciones reales, para comprender la importancia de la genética.",
+     "contenidos": [
+      "Leyes de Mendel y cuadros de Punnett",
+      "Codominancia",
+      "Teoría cromosómica de la herencia",
+      "Características debidas a la herencia biológica",
+      "Concepto de mutación, ejemplos e importancia evolutiva",
+      "Relevancia de la herencia genética para los seres vivos"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Comprende el proceso de evolución por selección natural, para construir explicaciones sobre la diversidad biológica y las adaptaciones de especies de interés.",
+     "contenidos": [
+      "Concepto de evolución biológica",
+      "Teoría evolutiva de Lamarck",
+      "Teoría evolutiva de Darwin-Wallace por selección natural",
+      "Aspectos generales de la síntesis evolutiva moderna",
+      "Diversidad de especies, su relación con la evolución y ejemplos de adaptaciones en las especies actuales"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Comprende las características que identifican a los seres vivos, para construir explicaciones sobre fenómenos biológicos vinculados a los contenidos formativos, y analiza aplicaciones tecnológicas relacionadas.",
+     "contenidos": [
+      "Características que identifican a los seres vivos",
+      "Fenómenos naturales biológicos vinculados a los temas revisados",
+      "Desarrollos tecnológicos vinculados a la célula, su estructura y función, a la genética o a la biodiversidad"
+     ]
+    }
+   ]
+  }
+ ],
+ "ciencias-sociales": [
+  {
+   "pagina": 14,
+   "titulo_tabla": "Tabla 1. Propósitos y contenidos formativos de Ciencias Sociales I. Estado, ciudadanía y relaciones de poder",
+   "nombre": "Ciencias Sociales I Estado, ciudadanía y relaciones de poder",
+   "semestre": 1,
+   "horas": "Horas/semana: 2 horas",
+   "meta": "Problematice la ciudadanía como un derecho y su relación con el Estado, así como la construcción de la democracia.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Comprende la conformación e importancia del concepto de Estado, para repensar la construcción de una ciudadanía crítica y reflexiva.",
+     "contenidos": [
+      "Concepto de Estado",
+      "El Estado como garante de derechos y la perspectiva de derechos humanos",
+      "Sistema jurídico mexicano",
+      "Estado y ciudadanía:"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Analiza el devenir del concepto de ciudadanía, para la conformación de un Estado democrático e incluyente.",
+     "contenidos": [
+      "Política",
+      "Civil",
+      "Económica",
+      "Cultural",
+      "Concepto de ciudadanía, democracia participativa y representativa: espacios para el ejercicio de la ciudadanía",
+      "Concepto de justicia social",
+      "Políticas públicas y derechos ciudadanos"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Comprende y contrasta las normas sociales para explicar su rol en la vida cotidiana.",
+     "contenidos": [
+      "Normas sociales, normatividad consuetudinaria como fuente de derechos",
+      "Contrato social con perspectiva de género e intercultural",
+      "Funciones y obligaciones de las instituciones federales, estatales y municipales"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Discute y reconoce que la diversidad forma parte del espacio democrático.",
+     "contenidos": [
+      "Inclusión e igualdad, adelantos y pendientes: Acciones afirmativas",
+      "La edad como clave de discriminación (edadismo)",
+      "¿Derechos para todas las personas?: accesos diferenciados y claves de exclusión social"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 16,
+   "titulo_tabla": "Tabla 2. Propósitos y contenidos formativos de Ciencias Sociales II. Organización, relaciones sociales y económicas",
+   "nombre": "Ciencias Sociales II Organización, relaciones sociales y económicas",
+   "semestre": 2,
+   "horas": "Horas/semana: 2 horas",
+   "meta": "Comprenda la forma en que las personas participan en los procesos de organización social, producción y distribución, y analice el origen de las desigualdades económicas y sociales desde su entorno familiar y comunitario.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Identifica sus necesidades y satisfactores materiales, personales, familiares y las de su comunidad, para debatir sobre las formas en que se organiza la sociedad.",
+     "contenidos": [
+      "Bienestar social desde el enfoque de los derechos: diferentes formas de satisfacer las necesidades económicas y sociales de las personas",
+      "Dimensiones de los procesos de desigualdad",
+      "Necesidades vitales de las personas, y las diferentes formas de satisfacerlas"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Analiza las características y formas de organización social, para comparar y explicar las relaciones entre personas, grupos, comunidades e instituciones.",
+     "contenidos": [
+      "Formas de organización social: comunitaria, personal y familiar en el contexto económico nacional y local",
+      "Diversidad cultural y exclusión: la discriminación y el racismo",
+      "Disidencias, luchas y resistencias",
+      "Diferentes manifestaciones de la discriminación: subordinación, exclusión y dominación"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Relaciona los procesos y factores de producción, para explicar las formas de distribución desigual de los bienes en la sociedad.",
+     "contenidos": [
+      "Contextos locales, nacionales y globales: intercambios desiguales",
+      "Diferencias regionales, urbano-rural",
+      "Factores de producción y bienes: tierra, trabajo, capital, organización y tiempo",
+      "Modos de producción y modelos de desarrollo: procesos económicos, incluyendo trabajos del hogar y cuidados"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Reconoce y problematiza las relaciones de poder para explicar su función dentro de la diversidad en el funcionamiento de la organización social.",
+     "contenidos": [
+      "Instituciones y prácticas sociales (roles sociales)",
+      "Hegemonía, consensos y negociación",
+      "Interseccionalidad: clase social, género, raza, origen étnico, orientación sexual, entre otros",
+      "Desafíos de los procesos demográficos y su impacto en el ámbito económico, social y político",
+      "Relación sociedad, naturaleza, y degradación ambiental: diferencias regionales y locales"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 18,
+   "titulo_tabla": "Tabla 3. Propósitos y contenidos formativos de Ciencias Sociales III. Las dinámicas de la realidad actual: la condición estudiantil al centro",
+   "nombre": "Ciencias Sociales III Las dinámicas de la realidad actual: la condición estudiantil al centro",
+   "semestre": 4,
+   "horas": "Horas/semana: 2 horas",
+   "meta": "Analice su papel en contextos de crisis y conflictividad social, para reconocerse con capacidad de transformación.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Analiza las políticas públicas para explicar las desigualdades, así como las contradicciones y omisiones en la satisfacción de las necesidades materiales y sociales de las personas.",
+     "contenidos": [
+      "Desigualdad de oportunidades y desigualdad de resultados desde la perspectiva estudiantil",
+      "-joven-adulto",
+      "Calidad de vida, bienestar social y bienestar subjetivo",
+      "Distribución inequitativa del bienestar social en el marco de la movilidad social",
+      "Causas e impactos multidimensionales de problemáticas sociales: medioambientales, contextos de violencia o diversidades culturales",
+      "Responsabilidades desde la óptica de diversos actores, con y hacia las juventudes",
+      "Propuestas y alternativas a las problemáticas abordadas",
+      "Énfasis en problematizaciones multidimensionales, colocando al estudiantado en el centro"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Problematiza el papel de los diferentes actores sociales para explicar, contrastar e interpretar dinámicas y sucesos recientes.",
+     "contenidos": [
+      "del análisis: Guerras y conflictos contemporáneos",
+      "Actuación de organismos e instituciones internacionales",
+      "Papel del gobierno mexicano en el ámbito internacional",
+      "Narcotráfico y globalización",
+      "Migraciones nacionales e internacionales",
+      "Movilizaciones y justicia social",
+      "Discriminación, xenofobia y exclusión"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Reflexiona sobre las juventudes en las sociedades actuales, para reconocerse como un agente crítico y de transformación social.",
+     "contenidos": [
+      "Las juventudes: Cultura e identidades",
+      "Diversidades sexogenéricas",
+      "Cuerpo y afectividades",
+      "Redes sociales y brecha digital",
+      "Derecho a la salud",
+      "Derecho a la educación",
+      "Trabajo digno",
+      "Expresiones y alternativas de participación de las juventudes",
+      "Políticas públicas y estructura gubernamental"
+     ]
+    }
+   ]
+  }
+ ],
+ "conciencia-historica": [
+  {
+   "pagina": 14,
+   "titulo_tabla": "Tabla 1. Propósitos y contenidos formativos de Conciencia Histórica I. Coordenadas de la Historia",
+   "nombre": "Conciencia Histórica I Coordenadas de la Historia",
+   "semestre": 4,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Formule problemas históricos a partir del análisis de los conceptos y categorías fundamentales de la Historia como disciplina, para fortalecer una mirada crítica, situada y reflexiva sobre el pasado, presente, y futuro como parte fundamental de la conciencia histórica.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Problematiza el pasado, presente y futuro a partir de procesos históricos, con el fin de comprender críticamente su continuidad y cambio.",
+     "contenidos": [
+      "La relación entre Historia y Conciencia",
+      "Histórica",
+      "Tiempo histórico",
+      "Tiempo cronológico",
+      "Espacio histórico",
+      "Cambio-continuidad"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Establece conexiones entre fenómenos, acontecimientos y procesos de la realidad, con el fin de fortalecer la comprensión del devenir histórico.",
+     "contenidos": [
+      "Proceso histórico",
+      "Causalidad (antecedentes, causas, desarrollo y consecuencias de los hechos)",
+      "Distinción entre hechos y acontecimientos",
+      "Lo trascendental en la historia"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Plantea preguntas a partir de problemáticas actuales en diversos contextos, implementando los conceptos y categorías históricas para el análisis.",
+     "contenidos": [
+      "Identificación de los problemas",
+      "Delimitación geográfica",
+      "Situar el problema en el contexto histórico",
+      "Formulación de preguntas para la indagación histórica"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Reconoce el valor de la diversidad de discursos para la construcción de explicaciones históricas.",
+     "contenidos": [
+      "Descripción de datos históricos",
+      "Organización y análisis de la información",
+      "Intenciones discursivas sobre el pasado, presente, y futuro"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 16,
+   "titulo_tabla": "Tabla 2. Propósitos y contenidos formativos de Conciencia Histórica II. La experiencia histórica",
+   "nombre": "Conciencia Histórica II La experiencia histórica",
+   "semestre": 5,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Descubra su propia historicidad y la del entorno social al que pertenece a partir de distinguir las dimensiones política, económica, social y cultural de los procesos históricos.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Construye hipótesis para cuestionar las interpretaciones del pasado y su impacto en la construcción de identidades.",
+     "contenidos": [
+      "La historicidad como categoría analítica",
+      "Hipótesis histórica",
+      "Contexto e identidad"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Desarrolla explicaciones históricas que guarden relación con sus preguntas para comprender los cambios y continuidades expresadas en los procesos históricos de la humanidad.",
+     "contenidos": [
+      "Coherencia entre las preguntas y las explicaciones históricas",
+      "Sujetos históricos",
+      "Construcción de argumentos históricos",
+      "Orígenes del conflicto humano"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Comprende el sentido histórico de los acontecimientos y los significados en diversos contextos, para analizar críticamente las explicaciones históricas.",
+     "contenidos": [
+      "Sentido histórico",
+      "Dimensiones de hechos históricos los (política, económica, social, cultural)"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Construye un vínculo ético con las personas, sujetos históricos, por medio de la reflexión sobre la diversidad de contextos.",
+     "contenidos": [
+      "Ética en la historia",
+      "Memoria cultural",
+      "Memoria nacional"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 18,
+   "titulo_tabla": "Tabla 3. Propósitos y contenidos formativos de Conciencia Histórica III. Navegar en el tiempo: investigaciones históricas",
+   "nombre": "Conciencia Histórica III Navegar en el tiempo: investigaciones históricas",
+   "semestre": 6,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Construya narraciones históricas partiendo de la evaluación de fuentes, para problematizar y argumentar sobre los procesos históricos, respondiendo a preguntas de investigación.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Identifica la diversidad de fuentes históricas para construir contextualizadas explicaciones del pasado, reconociendo el carácter del conocimiento humano.",
+     "contenidos": [
+      "Distinción entre fuentes por su naturaleza",
+      "(primaria y secundaria), objetivo (directo e indirecto) y forma (escrita, oral y material)",
+      "Contraste de fuentes históricas"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Examina de manera crítica las evidencias y evalúa su validez, considerando los criterios de procedencia, intencionalidad y contexto, así como el uso ético de la información y los posicionamientos.",
+     "contenidos": [
+      "Recolección de fuentes de acuerdo con la pregunta de investigación",
+      "La lectura de fuentes históricas: ideas principales, afirmaciones, lenguaje y perspectiva",
+      "Aplicación de la información de fuentes históricas: autoría, perspectiva, intención, contexto de producción, credibilidad, neutralidad"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Argumenta la validez de sus interpretaciones propias sobre acontecimientos, fenómenos y procesos históricos, mediante el diálogo, la contrastación con otras perspectivas y el uso fundamentado de fuentes.",
+     "contenidos": [
+      "Contextualización de las fuentes históricas: contraste del contexto de producción y el contexto de recepción de las fuentes históricas",
+      "Corroboración de fuentes históricas: diversidad narrativa, comparación, tipos de argumentos y evidencias"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Elabora argumentos e interpretaciones históricas con base en fuentes variadas y pertinentes, integrando el uso de información.",
+     "contenidos": [
+      "Proceso narrativo (introducción, desarrollo, conclusiones, uso de evidencias)",
+      "Proceso de escritura de argumentos (diferenciar postura personal respecto de la fuente)"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 29,
+   "titulo_tabla": "Tabla 4. Propósitos y contenidos formativos de Conciencia Histórica III. Navegar en el tiempo: investigaciones históricas",
+   "nombre": null,
+   "semestre": null,
+   "horas": null,
+   "meta": null,
+   "propositos": []
+  }
+ ],
+ "corporalidades": [
+  {
+   "pagina": 8,
+   "titulo_tabla": "Tabla 1. Propósitos y contenidos formativos de Corporalidades, género y diversidad sexual.",
+   "nombre": "Corporalidades, género y diversidad sexual",
+   "semestre": 6,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Explique, desde una perspectiva crítica, la construcción de las corporalidades y las identidades sexo-genéricas para propiciar vínculos basados en la equidad, la justicia, el respeto y la inclusión",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Analiza las categorías sexo-genéricas para entender su papel en la construcción de las corporalidades e identidades, a partir de una mirada crítica y ética con la que pueda problematizar la normativa que las rige.",
+     "contenidos": [
+      "Sistema sexo-género",
+      "¿Qué se entiende por corporalidades? (Dimensión física, subjetiva y social)",
+      "Relación naturaleza-cultura y su vínculo con la construcción de las corporalidades, los roles y estereotipos de género",
+      "Binarismo y heteronormatividad"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Reconoce la importancia de la labor histórica de los movimientos feministas para comprender cómo las desigualdades de género y otras formas de discriminación atraviesan las corporalidades y la vida de las personas, desde una perspectiva crítica e interseccional.",
+     "contenidos": [
+      "Feminismo ¿para qué? (Concepto, historia y aportaciones)",
+      "¿Qué es el patriarcado?",
+      "Desigualdades y violencias de género",
+      "Igualdad sustantiva",
+      "Feminismo e Interseccionalidad",
+      "La diversidad de los feminismos: ¿Uno o varios feminismos?",
+      "Derechos sexuales y derechos reproductivos en perspectiva de género",
+      "Subjetividad, género y poder."
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Reflexiona, desde una perspectiva de género, sobre las diversidades sexo-genéricas y las distintas formas en que se construyen las identidades y subjetividades, para desarrollar una postura crítica y ética que promueva la dignidad humana y la inclusión.",
+     "contenidos": [
+      "Diversidad sexo-genérica, patologización y prácticas discriminatorias.",
+      "Movimientos por la diversidad sexo-genérica: LGBTTTIQA+, movimiento marica, movimientos indígenas por la diversidad sexo-genérica, entre otros.",
+      "Políticas públicas para la protección y garantía de los derechos de las diversidades sexo-genéricas",
+      "Organismos e instituciones vinculados con la protección de los derechos de las mujeres y las diversidades sexo-genéricas",
+      "Libre desarrollo de la personalidad"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Promueve narrativas, representaciones y vínculos basados en el respeto a la diversidad corporal e identitaria para contribuir a la justicia social desde su contexto, a partir de soluciones situadas a problemas de desigualdad",
+     "contenidos": [
+      "Estereotipos y violencia simbólica en los medios de comunicación",
+      "Micromachismos",
+      "Deconstrucción de Masculinidad hegemónica y nuevas masculinidades o Problematización de narrativas contemporáneas (incels, \"hombres y mujeres de valor\", trad wives, entre otras).",
+      "El consentimiento y las relaciones de poder en los vínculos sexuales y vínculos afectivos. o Análisis de casos: violencia sexual, psicológica, económica digital, entre otros."
+     ]
+    }
+   ]
+  }
+ ],
+ "cultura-digital": [
+  {
+   "pagina": 14,
+   "titulo_tabla": "Tabla 1. Propósitos y contenidos formativos de Cultura Digital I. Ciudadanía digital",
+   "nombre": "Cultura Digital I Ciudadanía digital",
+   "semestre": 1,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Conozca y utilice de manera crítica y responsable el ciberespacio y los distintos recursos digitales, apegándose a su marco normativo para ejercer una ciudadanía digital, acceder al conocimiento y resolver situaciones, fenómenos o problemas de su contexto.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Identifica el conjunto de elementos físicos que componen un dispositivo electrónico, así como el conjunto de programas, instrucciones y reglas que permiten que funcione, para analizar críticamente su evolución a lo largo del tiempo.",
+     "contenidos": [
+      "Introducción al hardware y software",
+      "Historia crítica del desarrollo de tecnología digital",
+      "Historia del software libre"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Conoce los requerimientos, tipos de licenciamiento del hardware para software y acceder a servicios tecnológicos, al ciberespacio y a los servicios digitales (licencias de uso privativo y licencias libres).",
+     "contenidos": [
+      "Licencia GPL (General Public License)",
+      "Creative Commons y otras licencias libres",
+      "Conectividad",
+      "Navegadores",
+      "Sistemas operativos",
+      "Niveles de acceso",
+      "Unidades de medida (velocidad, procesamiento y almacenamiento)"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Analiza de manera crítica el impacto que tienen el uso de las tecnologías digitales —y las políticas relacionadas con la disponibilidad y gestión de la información— en las personas y en las comunidades.",
+     "contenidos": [
+      "Corporaciones de innovación tecnológica",
+      "Colonialismo de datos",
+      "Mercantilización de la atención de las personas usuarias",
+      "Dependencia tecnológica",
+      "Desigualdad en el acceso a las tecnolo- (socioeconómica, digitales gías regional o de género)"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Utiliza de herramientas software libre y experimenta con alternativas a los programas de patente y del software como servicio.",
+     "contenidos": [
+      "Las 4 libertades del software libre",
+      "GNU/ Linux",
+      "Cultura hacker y el “Hazlo tú mismx” en la tecnología",
+      "Software libre vs. open source",
+      "Procesadores de texto, hojas de cálculo y presentaciones electrónicas"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Identifica y aplica la normatividad que regula el uso del ciberespacio y servicios digitales para cuidar su seguridad digital y la de otros.",
+     "contenidos": [
+      "Normatividad en el uso del ciberespacio y servicios digitales",
+      "Privacidad de la información",
+      "Seguridad digital",
+      "Protección de datos",
+      "Uso responsable y ético de la Inteligencia",
+      "Artificial (IA)",
+      "Licenciamientos copyleft"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Utiliza los recursos digitales a su alcance con fines personales, académicos y sociales para interactuar con seguridad y con consideración al medio ambiente.",
+     "contenidos": [
+      "Ciudadanía e identidad digital",
+      "Credenciales de acceso",
+      "Plataformas de uso cotidiano",
+      "Contaminación digital y tecnológica"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Reconoce las posibles formas de comprensión y resolución de problemas algorítmicos para desarrollar una estrategia frente a una situación, fenómeno o problemática, utilizando medios tecnológicos y digitales.",
+     "contenidos": [
+      "Pasos para solucionar un problema: Identificar el problema por resolver",
+      "Comprender el problema",
+      "Analizar alternativas de solución",
+      "Seleccionar la mejor alternativa de solución",
+      "Utilizar métodos, técnicas o diagramas de flujo para resolver problemas",
+      "Dato"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Conoce los elementos del lenguaje algorítmico a través de medios digitales, para resolver situaciones, fenómenos o problemáticas presentes en las diferentes asignaturas.",
+     "contenidos": [
+      "Información",
+      "Variables",
+      "Constantes",
+      "Expresiones",
+      "Operadores lógicos",
+      "Operaciones relacionales",
+      "Operadores aritméticos",
+      "Estructuras condicionales, selectivas y repetitivas"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 16,
+   "titulo_tabla": "Tabla 2. Propósitos y contenidos formativos de Cultura Digital II. Aprendizaje individual y colaborativo",
+   "nombre": "Cultura Digital II Aprendizaje individual y colaborativo",
+   "semestre": 2,
+   "horas": "Horas/semana: 2 horas",
+   "meta": "Interactúe con las TICCAD para potenciar su aprendizaje autónomo y colaborativo, de una forma creativa e innovadora, de acuerdo con las características y necesidades de su contexto.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Utiliza herramientas digitales de una manera innovadora y eficiente para acceder al conocimiento y la experiencia de aprendizaje de las diferentes asignaturas.",
+     "contenidos": [
+      "Trabajo colaborativo digital",
+      "Herramientas colaborativo de trabajo digital libre (Cryptpad, Riseup pad, entre otras)"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Utiliza las TICCAD para interactuar y comunicase con equipos colaborativos de trabajo, e investigar, buscar, discriminar y gestionar información de una situación, fenómeno o problemática personal, social o ambiental.",
+     "contenidos": [
+      "Tecnologías de Información, Comunicación, Conocimiento y Aprendizajes Digitales de libre acceso (Cryptpad, Riseup pad, entre otras)"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Aplica técnicas y métodos de investigación digital para buscar, recopilar, extraer, organizar y difundir información de una situación, fenómeno o problemática personal, social o ambiental.",
+     "contenidos": [
+      "Técnicas de investigación métodos y digital (Ciberetnografía, análisis en línea de contenido, grupo focal, entrevista, observación, entre otros)"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Procesa datos relacionados con una situación, fenómeno o problemática de índole personal, social o ambiental, utilizando herramientas de software que permitan calcular medidas de tendencia central y dispersión, así como generar representaciones gráficas que contribuyan a su análisis.",
+     "contenidos": [
+      "Licencias permisivas (Cryptpad, Riseup pad, Libre office, entre otras)",
+      "Software estadístico libre (Jamovi, XLSTAT Free, JASP, entre otros)"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Utiliza las páginas web para ayudar a difundir información sobre una situación, fenómeno o problemática personal, social o ambiental relacionada con otras asignaturas.",
+     "contenidos": [
+      "Páginas web (que impliquen un diseño simple, por ejemplo: Wordpress, Blogspot, entre otras)"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 18,
+   "titulo_tabla": "Tabla 3. Propósitos y contenidos formativos de Cultura Digital III. Uso y difusión del conocimiento",
+   "nombre": "Cultura Digital III Uso y difusión del conocimiento",
+   "semestre": 6,
+   "horas": "Horas/semana: 1 hora",
+   "meta": "Interactúe con las TICCAD para ampliar su conocimiento y vincularse con su entorno de una manera crítica, creativa e innovadora.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Conoce la comunicación digital por su alcance y por sus medios de transmisión, para conectar dispositivos tecnológicos conforme a sus recursos y contexto.",
+     "contenidos": [
+      "Alcance: inalámbrico y alámbrico",
+      "Medios de inalámbricos transmisión: y alámbricos"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Utiliza herramientas de comunicación digital para difundir información, conocimientos, experiencias y aprendizajes, de acuerdo con su contexto personal, académico, social y ambiental.",
+     "contenidos": [
+      "(Signal, Comunicación digital directa Telegram, WhatsApp, Messenger, Jitsi, Zoom, Google Meet, entre otras).",
+      "Emisión y descarga continua (PeerTube, You- Tube, Twitch, Facebook Gaming, entre otras)",
+      "Transmisión por secuencias (Wirecast, vMix, OBS Studio, entre otras)",
+      "Lectura y difusión continuas (Zotero, Evernote, Google Keep, entre otras)"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Utiliza dispositivos tecnológicos, servicios de difusión y herramientas de software para crear y editar contenido digital, conforme a sus recursos y contextos.",
+     "contenidos": [
+      "Contenido digital: Didáctico",
+      "Documental",
+      "Demostrativo",
+      "Entretenimiento e informativo"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Analiza críticamente las desigualdades de género y socioeconómicas que influyen en las vocaciones del estudiantado en campos relacionados con las tecnologías digitales, con el fin de orientar sus decisiones personales, educativas o laborales.",
+     "contenidos": [
+      "Vocaciones tecnológico-digitales con perspectiva de género y de las desigualdades socioeconómicas: Inteligencia Artificial",
+      "Internet de las cosas",
+      "Industria 4.0",
+      "Ciberseguridad",
+      "Ciencia de datos",
+      "Robótica",
+      "Ingeniería computacional, entre otras"
+     ]
+    }
+   ]
+  }
+ ],
+ "ingles": [
+  {
+   "pagina": 14,
+   "titulo_tabla": "Tabla 1. Propósitos y contenidos formativos de Inglés I. To Be, or Not to Be, That Is the Question",
+   "nombre": "Inglés I (A1) To Be, or Not to Be, That Is the Question",
+   "semestre": 1,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Reconozca y comprenda palabras, frases y expresiones básicas para presentarse, interactuar en el aula y hablar de su entorno inmediato.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Se presenta y presenta a otras personas en distintos contextos sociales y culturales (saluda y comparte información básica con respeto e inclusión).",
+     "contenidos": [
+      "Verbo to be (forma afirmativa)",
+      "Pronombres personales",
+      "Sustantivos: comunes y propios; singulares y plurales",
+      "Información personal (name, age, nationality)",
+      "Números cardinales y ordinales",
+      "Países, nacionalidades",
+      "Saludos formales e informales"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Sigue indicaciones y participa en interacciones básicas dentro del aula (pide permiso, aclara dudas y responde a instrucciones).",
+     "contenidos": [
+      "Imperativos (formas afirmativa y negativa)",
+      "Instrucciones y materiales comunes del aula",
+      "Verbos frecuentes para actividades escolares",
+      "(open, close, read, listen)",
+      "Expresiones útiles para la interacción en clase",
+      "(How do you say… in English?; May I go to the bathroom?; Can you repeat that, please?)"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Identifica y describe objetos y espacios cotidianos del hogar o la escuela (reconoce características como forma, color y tamaño).",
+     "contenidos": [
+      "Adjetivos comunes",
+      "Demostrativos (this, that, these, those)",
+      "Artículos definidos e indefinidos (the, a, an)",
+      "Objetos del aula y del hogar",
+      "Muebles",
+      "Colores y tamaños"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Solicita y proporciona información personal básica en contextos escolares y comunitarios (nombre, edad, nacionalidad, teléfono, dirección, correo).",
+     "contenidos": [
+      "Verbo to be (formas interrogativa y negativa)",
+      "Preguntas cerradas (yes/no)",
+      "Adjetivos posesivos (my, your, his, etc.)",
+      "Números de teléfono y direcciones",
+      "Alfabeto y deletreo básico (para aclarar su nombre y apellido y dar correo electrónico)",
+      "Profesiones comunes en contexto (teacher, doctor, cook, driver, etc.) y vocabulario escolar",
+      "Preguntas abiertas con wh- (what, where, when,"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Hace preguntas sencillas para general información obtener (ubicación, horarios).",
+     "contenidos": [
+      "who, how)",
+      "Verbo to be (revisión de la forma interrogativa)",
+      "Orden de las palabras en preguntas",
+      "Preposiciones de tiempo (in, on, at)",
+      "Años, días y meses",
+      "Horas y momentos del día",
+      "Lugares en la comunidad"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Describe personas, vestimenta y clima en contextos cotidianos, respetando la diversidad (identificación y ubicación en el entorno).",
+     "contenidos": [
+      "Materias escolares",
+      "There is/are",
+      "Preposiciones de lugar (in, on, under)",
+      "Características físicas (tall, short, etc.)",
+      "Lugares de la localidad (park, school, hospital, etc.)",
+      "Habitaciones de la casa",
+      "Objetos cotidianos",
+      "Revisión de preguntas abiertas con wh- (what,"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Expresa gustos y opiniones simples en situaciones cotidianas (habla sobre preferencias y razones de forma empática).",
+     "contenidos": [
+      "where, when, who, how, why)",
+      "Uso de favorite en frases simples y uso de prefer",
+      "(My favorite color is blue; I prefer coffee.)",
+      "Verbo-ing (gerundio)",
+      "Intensificadores básicos (very)",
+      "Adjetivos (big/small, hot/cold)",
+      "Actividades y eventos comunes (party, study, etc.)",
+      "Pasatiempos",
+      "Conjunciones: because, and, so (para responder"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Expresa pertenencia de forma clara y respetuosa (pregunta y responde sobre posesión con el genitivo y los pronombres posesivos).",
+     "contenidos": [
+      "y dar razones)",
+      "Pronombres posesivos (mine, yours, his, hers)",
+      "Genitivo sajón (‘s) con nombres propios en singular (It’s María’s)",
+      "Preguntas con whose (Whose pencil is this?)",
+      "Objetos personales y escolares",
+      "Colores y materiales",
+      "Frases simples para indicar pertenencia (It’s"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 16,
+   "titulo_tabla": "Tabla 2. Propósitos y contenidos formativos de Inglés II. These Are a Few of My Favorite Things",
+   "nombre": "Inglés II (A1+) These Are a Few of My Favorite Things",
+   "semestre": 2,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Intercambie información básica sobre su vida cotidiana y su entorno. Participe en interacciones breves y comprensibles que impliquen rutinas sociales, gustos, descripciones simples y necesidades básicas, en contextos escolares y comunitarios.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Describe rutinas diarias y actividades cotidianas en casa, la escuela o la comunidad (reconoce acciones frecuentes y las organiza en el tiempo).",
+     "contenidos": [
+      "Presente simple (forma afirmativa)",
+      "Adverbios de frecuencia (always, usually, sometimes, never)",
+      "Verbos comunes en tercera persona (he/she)",
+      "Rutinas diarias",
+      "Actividades escolares y del hogar",
+      "Expresiones de tiempo y horarios"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Habla sobre lo que hacen otras personas en su tiempo libre y cuándo lo hacen (relaciona actividades con momentos del día o la semana).",
+     "contenidos": [
+      "Presente simple (forma negativa)",
+      "Preguntas con do/does",
+      "Respuestas cortas",
+      "Pasatiempos y actividades de ocio",
+      "Revisión de días de la semana",
+      "Momentos del día (in the morning, at night)"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Expresa habilidades y pide o da permiso en situaciones cotidianas (reconoce lo que se puede o no se puede hacer).",
+     "contenidos": [
+      "Can / Can’t (habilidad y permiso)",
+      "Preguntas y respuestas con can",
+      "Habilidades comunes (play the guitar, swim, cook)",
+      "Normas del aula y del hogar",
+      "Actividades escolares y reglas"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Describe personas, vestimenta y clima respetando la diversidad y el contexto cultural (usa el lenguaje para observar sin juzgar).",
+     "contenidos": [
+      "Verbo to be (revisión)",
+      "Have/has",
+      "Adjetivos posesivos (his, her, their)",
+      "Present continuous para descripciones",
+      "Características físicas y vestimenta",
+      "Clima y estaciones",
+      "Adjetivos relacionados con el clima y la ropa"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Compara personas, lugares y objetos en contextos cercanos (usa adjetivos para expresar diferencias con respeto).",
+     "contenidos": [
+      "Comparativos (bigger than, more interesting than)",
+      "Adjetivos de una y dos sílabas",
+      "Personas, lugares y objetos",
+      "Preferencias y elecciones"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Pregunta cómo llegar a un lugar y orienta a otras personas en su comunidad (da y sigue referencias para ubicarse).",
+     "contenidos": [
+      "Imperativos (go straight, turn left)",
+      "There is/are (revisión)",
+      "Preposiciones de movimiento (into, across, next to)",
+      "Lugares en la ciudad",
+      "Medios de transporte",
+      "Indicaciones de ubicación"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Participa en intercambios cotidianos sobre necesidades personales o comunitarias (expresa deseos, elige y muestra empatía).",
+     "contenidos": [
+      "Would like + sustantivo/infinitivo (I’d like a coffee; I’d like to go to the park.)",
+      "How much / How many",
+      "Sustantivos contables e incontables",
+      "Alimentos y bebidas",
+      "Precios y cantidades"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Consolida aprendizajes clave en contextos escolares y comunitarios (revisa estructuras y vocabulario mediante actividades guiadas e integradoras).",
+     "contenidos": [
+      "Presente simple (revisión general: singular vs. plural, primera y tercera persona)",
+      "Vocabulario complementario",
+      "Números cardinales (hasta centenas o millares)",
+      "Números ordinales (1st, 2nd, 3rd...)",
+      "Deletreo de nombres y palabras comunes"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 18,
+   "titulo_tabla": "Tabla 3. Propósitos y contenidos formativos de Inglés III. What We Were, We Share",
+   "nombre": "Inglés III (A2) What We Were, We Share",
+   "semestre": 3,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Participe en intercambios sociales básicos, exprese ideas sobre experiencias personales y amplíe su repertorio comunicativo en contextos cotidianos escolares y comunitarios.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Habla sobre rutinas pasadas y recientes en la vida cotidiana (describe lo que hizo en días recientes o durante la semana).",
+     "contenidos": [
+      "Pasado simple (verbos regulares)",
+      "Expresiones de tiempo pasado (yesterday, last week)",
+      "Actividades diarias",
+      "Rutinas escolares y del hogar"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Comparte experiencias personales recientes (cuenta qué ha hecho y con quién).",
+     "contenidos": [
+      "Presente perfecto (Have/has + past participle)",
+      "(introducción) para experiencias personales",
+      "Actividades con amigos, familia o comunidad",
+      "Eventos escolares o culturales"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Describe lugares conocidos y actividades que se pueden realizar ahí (da información y recomendaciones básicas).",
+     "contenidos": [
+      "There is/are (revisión)",
+      "Can para expresar posibilidad (formas afirmativa y negativa)",
+      "Preposiciones de lugar (between, next to, in front of, behind)",
+      "Lugares públicos y naturales (city hall, forest, river, etc.)",
+      "Actividades recreativas"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Habla sobre hábitos, frecuencia y preferencias en la vida cotidiana (compara lo que hacen, eligen o prefieren las personas en diferentes momentos o contextos).",
+     "contenidos": [
+      "Adverbios de frecuencia (revisión y expansión: often, sometimes, rarely)",
+      "Comparativos y superlativos",
+      "Uso de like + noun / verb-ing (I like music; He likes playing football; They don’t like studying at night.)",
+      "Comida, música, deportes, uso del tiempo libre"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Habla sobre responsabilidades y normas en la casa, la escuela o la comunidad (expresa obligación y prohibición).",
+     "contenidos": [
+      "Must / mustn’t",
+      "Have to / don’t have to",
+      "Reglas del aula (más complejas)",
+      "Tareas del hogar",
+      "Convivencia comunitaria",
+      "Imperativos para dar indicaciones"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Pide, da y entiende instrucciones más completas (orienta a otra persona para hacer algo o llegar a un lugar).",
+     "contenidos": [
+      "(Walk straight until you see the park; Don’t forget to bring your ID; Speak clearly.)",
+      "Conectores secuenciales (first, then, after that, finally)",
+      "Indicaciones y procesos simples (recetas, instrucciones digitales, tareas prácticas)",
+      "Rutinas cotidianas o procedimientos escolares/comunitarios (cómo registrarse, cómo re-"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Relata eventos cotidianos y su secuencia (cuenta algo que pasó usando conectores simples).",
+     "contenidos": [
+      "ciclar, cómo usar una aplicación digital escolar)",
+      "Pasado simple (verbos irregulares básicos)",
+      "Conectores narrativos (then, after, later, suddenly)",
+      "Anécdotas personales",
+      "Experiencias escolares"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Consolida lo aprendido mediante actividades significativas y producción guiada (aplica estructuras clave en tareas contextualizadas, orales y escritas).",
+     "contenidos": [
+      "Revisión de presente perfecto y pasado simple",
+      "Uso integrado de conectores, verbos modales y descripciones",
+      "Textos breves orales y escritos (experiencias, descripciones, recomendaciones)",
+      "Tareas integradoras (diálogos, cartas, historias cortas)"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 20,
+   "titulo_tabla": "Tabla 4. Propósitos y contenidos formativos del de Inglés IV. Should I Stay or Should I Go?",
+   "nombre": "Inglés IV (A2+) Should I Stay or Should I Go?",
+   "semestre": 4,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Fortalezca su autonomía comunicativa en tareas sociales y académicas sencillas, ampliando el uso del lenguaje para describir, explicar, comparar y argumentar ideas simples en contextos cotidianos.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Describe experiencias pasadas con mayor detalle y conexión (narra lo que ocurrió, dónde y cómo).",
+     "contenidos": [
+      "Pasado simple (verbos regulares e irregulares)",
+      "Conectores de secuencia (first, then, after that, in the end)",
+      "Viajes, celebraciones comunitarias, eventos escolares"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Expresa y justifica preferencias de forma respetuosa (compara elecciones personales en contextos cotidianos).",
+     "contenidos": [
+      "Comparativos y superlativos (revisión y expansión)",
+      "Conjunciones coordinantes (and / so / but)",
+      "Ropa, comida, transporte, lugares públicos"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Describe rutinas y hábitos con conciencia del contexto (explica lo que se hace y por qué, en la escuela, la casa o la comunidad).",
+     "contenidos": [
+      "Presente simple (revisión completa)",
+      "Conectores lógicos (because) para expresar causa y justificar ideas (I’m tired because I studied all night.)",
+      "Hábitos saludables, organización del tiempo, rutinas semanales"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Solicita y da consejos de forma empática y contextualizada (relacionados con la salud, el estudio o la convivencia diaria).",
+     "contenidos": [
+      "Should / shouldn’t",
+      "Imperativos afirmativos y negativos (revisión)",
+      "Problemas frecuentes en casa o la escuela",
+      "Recomendaciones cotidianas"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Habla sobre planes y propósitos personales o comunitarios (expresa lo que se piensa hacer y por qué es importante).",
+     "contenidos": [
+      "Futuro idiomático (be going to)",
+      "Futuro simple (Will - introducción)",
+      "Planes para vacaciones, metas personales y proyectos escolares o comunitarios"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Participa en conversaciones sociales breves con expresiones de cortesía (inicia, mantiene y cierra intercambios breves con respeto y empatía).",
+     "contenidos": [
+      "Expresiones de cortesía (Would you like to…?; Can I help you…?; That’s great!; Nice to meet you.)",
+      "Revisión de preguntas y respuestas comunes",
+      "(How are you?; What do you do?; Do you live around here?; I’m fine, thanks.)",
+      "Conversaciones en eventos o espacios compartidos (Small talk: The weather is nice today; This place is really interesting; I like your shirt.)",
+      "Pasado simple y pasado continuo"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Cuenta una anécdota o experiencia significativa (narra de forma clara y organizada lo que se vivió o aprendió).",
+     "contenidos": [
+      "Uso narrativo de adverbios de tiempo",
+      "(yesterday, last week, then, after that, later, finally, in the end) y de lugar (here, there, at school, in the kitchen, outside, near: I saw her near the river yesterday)",
+      "Experiencias reales o imaginadas",
+      "Historias personales con emociones (happy, excited, nervous, surprised, worried, confused,"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Consolida estrategias para comprender y expresar ideas de forma clara y estructurada (aplica lo aprendido en tareas orales y escritas con sentido y propósito).",
+     "contenidos": [
+      "sad, angry, proud)",
+      "Revisión general: presente, pasado, futuro",
+      "Estructura de párrafos y secuencia de ideas (conectores)",
+      "Textos funcionales: notas, correos, relatos breves",
+      "Interacciones extendidas: conversaciones, presentaciones o diálogos guiados"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 22,
+   "titulo_tabla": "Tabla 5. Propósitos y contenidos formativos de Inglés V. We Are the Champions",
+   "nombre": "Inglés V (A2+ / B1) We Are the Champions",
+   "semestre": 5,
+   "horas": "Horas/semana: 5 horas",
+   "meta": "Desarrolle habilidades comunicativas que le permitan comprender y producir textos orales y escritos sobre temas de interés académico, técnico, profesional o comunitario, para fortalecer su agencia lingüística, su pensamiento crítico y su colaboración.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Explora y describe el área de estudio, ocupación o interés del grupo (introduce el campo o tema, y su relevancia).",
+     "contenidos": [
+      "Presente simple y presente continuo (revisión aplicada)",
+      "Verbos comunes en contextos específicos: comunitarios, académicos o técnicos",
+      "Campos como la tecnología, la salud, el medioambiente, etcétera."
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Comparte experiencias personales o escolares relacionadas con el campo de estudio elegido (narra por qué le interesa).",
+     "contenidos": [
+      "Present perfect",
+      "Tiempos verbales narrativos (past simple, past continuous, present perfect) y conectores de secuencia (first, then, later, finally)",
+      "Trayectorias escolares, influencias personales, experiencias previas"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Formula y responde preguntas sobre procesos, conceptos o procedimientos básicos (entrevistas simuladas, demostraciones, explicaciones).",
+     "contenidos": [
+      "Formas interrogativas (How does it work?; What happens when...?)",
+      "Voz pasiva (introducción)",
+      "Procedimientos, reglas, pasos básicos"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Expresa opiniones, preferencias y preocupaciones sobre temas relacionados con el campo de estudio o la comunidad.",
+     "contenidos": [
+      "Modales para sugerencias, hipótesis o duda",
+      "(should, could, might)",
+      "Conectores de causa y efecto (because, so, even though)",
+      "Temas sociales, dilemas éticos, sostenibilidad, justicia"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Lee y analiza textos breves vinculados con el campo temático o el campo de estudio (comprensión, resumen, opinión).",
+     "contenidos": [
+      "Estrategias de lectura (skimming, scanning, identifying fact and opinion)",
+      "Vocabulario técnico básico contextualizado",
+      "Artículos, infografías, entrevistas, blogs"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Redacta textos funcionales para informar, solicitar o proponer acciones (correos, solicitudes, propuestas breves).",
+     "contenidos": [
+      "Registro formal e informal",
+      "Patrones verbales (want to, plan to, suggest + verb-ing)",
+      "Textos: notas, correos, formularios, invitaciones, propuestas"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Participa en una interacción oral semiestructurada (entrevista, presentación breve, panel).",
+     "contenidos": [
+      "Estrategias de participación oral (turn-taking strategies: Can I say something?; What do you think?; Sorry to interrupt, but...)",
+      "Frases guía para interacción (In my opinion; I agree/disagree; What do you think?)",
+      "Situaciones prácticas: ferias escolares o eventos comunitarios, debates, juegos de rol"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Explora y describe el área de estudio, ocupación o interés del grupo (el campo o tema y su relevancia).",
+     "contenidos": [
+      "Revisión integrada de estructuras y vocabulario relevante",
+      "Organización de ideas para presentaciones o informes",
+      "Productos finales: cartel, miniartículo, podcast, video"
+     ]
+    }
+   ]
+  }
+ ],
+ "laboratorio-investigacion": [
+  {
+   "pagina": 8,
+   "titulo_tabla": "Tabla 1. Propósitos y contenidos formativos de Laboratorio de Investigación",
+   "nombre": "Laboratorio de Investigación",
+   "semestre": 1,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Emplea la metodología de investigación social para proponer alternativas de atención a problemáticas de su comunidad, desde distintos abordajes que abonen a la construcción de una sociedad justa y equitativa para sistematizar de manera reflexiva, analítica y critica los datos de la realidad social que le permita percibirse como agente de transformación social, política, económica y cultural.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Selecciona una problemática social de su comunidad desde un enfoque pertinente para su estudio, considerando las características, tipos y paradigmas de investigación en Ciencias Sociales.",
+     "contenidos": [
+      "Concepto de investigación social y sus características.",
+      "Tipos de investigación: exploratoria, descriptiva, explicativa, participativa, etc.",
+      "Principales paradigmas de investigación: positivista, interpretativo, crítico.",
+      "Importancia de la investigación en el acercamiento, reconocimiento y análisis de problemáticas sociales.",
+      "Relación entre la investigación y el contexto comunitario."
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Construye de manera gradual los elementos teóricos y metodológicos fundamentales del proceso de investigación a partir del esbozo de un protocolo.",
+     "contenidos": [
+      "Estructura del protocolo de investigación.",
+      "Delimitación y formulación de la problemática.",
+      "Preguntas, objetivos, justificación, hipótesis o supuestos de investigación.",
+      "Cronograma y planificación del proceso de investigación.",
+      "Métodos de investigación: inductivo, deductivo,"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Define el objeto de estudio con base en un método, enfoque teórico-metodológico y herramientas pertinentes a su contexto, conforme a su utilidad y aplicación en el análisis de la problemática seleccionada.",
+     "contenidos": [
+      "análisis–síntesis, comparativo, histórico.",
+      "Diseño de investigación: experimental y no experimental.",
+      "Enfoques de investigación: cualitativo, cuantitativo y mixto.",
+      "Criterios para la elección del enfoque y método según el objeto de estudio.",
+      "La “caja de herramientas” en la investigación social.",
+      "Diseño metodológico: paradigma, enfoque, método, sujetos de estudio, población, muestra,"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Fundamenta el estudio de la problemática social de la comunidad con los elementos teóricos desde la perspectiva crítica y reflexiva, a través de la elaboración del estado del arte.",
+     "contenidos": [
+      "técnicas e instrumentos.",
+      "Marco teórico: conceptual, histórico y referencial.",
+      "Normas APA.",
+      "Estado del arte: revisión y análisis de antecedentes.",
+      "Técnicas de recolección de datos: entrevistas,"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Recolecta datos relacionados con la problemática y el objeto de estudio, a través de técnicas e instrumentos de investigación en las Ciencias Sociales",
+     "contenidos": [
+      "encuestas, observación, grupos focales.",
+      "Instrumentos: cuestionarios, guías de entrevista, listas de cotejo, diarios de campo.",
+      "Diferencias entre técnicas cuantitativas y cualitativas.",
+      "Criterios de validez y confiabilidad en la recolección de datos.",
+      "Etapas del procesamiento de datos: recolección, organización, sistematización y análisis.",
+      "Ética en el manejo de la información y la relación con los sujetos de estudio.",
+      "Diseño y aplicación de técnicas e instrumentos para recolección de datos.",
+      "Análisis e interpretación de datos:"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Propone soluciones basadas en los hallazgos, que contribuyan a la transformación de la comunidad.",
+     "contenidos": [
+      "sistematización y categorización de información.",
+      "Elaboración de conclusiones y recomendaciones.",
+      "Formulación de propuestas de solución viables y contextualizadas.",
+      "Características y tipos de productos de investigación."
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Comunica los resultados de la investigación social, que permita identificar nuevas áreas de estudio y el impacto en la comunidad.",
+     "contenidos": [
+      "Alcances y limitaciones de la transformación social.",
+      "Estrategias de comunicación y presentación de resultados.",
+      "Ética en la divulgación de resultados de investigación.",
+      "Criterios de evaluación de una investigación social.",
+      "Proyección a futuro de la investigación: Nuevas líneas de estudio."
+     ]
+    }
+   ]
+  }
+ ],
+ "lengua-y-comunicacion": [
+  {
+   "pagina": 14,
+   "titulo_tabla": "Tabla 1. Propósitos y contenidos formativos de Lengua y Comunicación I. Leer y escribir para pensarnos",
+   "nombre": "Lengua y Comunicación I Leer y escribir para pensarnos",
+   "semestre": 1,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Identifique la lectura y la escritura como actos colectivos de la experiencia humana útiles en la reflexión, comunicación y problematización del mundo circundante, y utilice algunos rasgos importantes para la escritura de textos propios.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Reflexiona sobre los vínculos entre la escritura y la lectura para dar sentido a la necesidad humana por comunicar información, ideas, pensamientos u opiniones.",
+     "contenidos": [
+      "La escritura como posibilidad de desarrollo del pensamiento humano, la empatía, la creación individual y colectiva, la comunicación y la estimulación del avance científico",
+      "La lectura como experiencia de diálogo entre las personas de diversos contextos sociales, históricos y culturales",
+      "La lectura como experiencia de placer individual o compartido"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Investiga los gustos y las inclinaciones de las personas de su comunidad escolar respecto de la lectura y la escritura para conocer la diversidad de textos.",
+     "contenidos": [
+      "Diversidad de textos escritos, soportes y formatos",
+      "Características generales de los textos escritos",
+      "Situaciones de la vida cotidiana donde son necesarios los textos escritos"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Analiza en textos de su elección la información, ideas, pensamientos y opiniones, para comprender la importancia de transmitir con claridad las ideas en textos escritos.",
+     "contenidos": [
+      "Introducción a las propiedades del texto: Claridad",
+      "Coherencia",
+      "Concordancia",
+      "Escritura de ideas relacionadas con un tema específico"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Reconoce los tipos de párrafos a partir de la exploración de diversos textos, para contrastar su estructura y diferenciar sus rasgos.",
+     "contenidos": [
+      "Párrafos: Descriptivos",
+      "Narrativos",
+      "Argumentativos",
+      "Escritura de comentarios",
+      "Puntuación y sintaxis"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Identifica información de un texto que lee para resaltar los elementos significativos.",
+     "contenidos": [
+      "Ideas principales y secundarias",
+      "Elementos paratextuales",
+      "Escritura de ideas principales y secundarias"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Analiza la concordancia y el uso de conectores a partir de la lectura de un texto para destacar su importancia.",
+     "contenidos": [
+      "Concordancia del texto",
+      "Conectores: Causales",
+      "Comparativos",
+      "Adición"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Practica la lectura en voz alta de algunos textos para luego emitir opiniones al respecto.",
+     "contenidos": [
+      "Apreciaciones orales y escritas del texto",
+      "Elementos paralingüísticos",
+      "Escritura de elementos paralingüísticos que se perciben cuando comunican sus ideas",
+      "Preparación y exposición de un texto de su"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Identifica las características de una exposición oral para conocer su desarrollo y ponerlo en práctica.",
+     "contenidos": [
+      "preferencia",
+      "Seleccionar el contenido",
+      "Decidir la forma (individual o grupal)",
+      "Establecer las etapas (planeación, acompañamiento y ejecución)",
+      "Asignar los recursos (diapositivas, mapas mentales)"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 16,
+   "titulo_tabla": "Tabla 2. Propósitos y contenidos formativos de Lengua y Comunicación II. Libertad para imaginar, poder para comunicar",
+   "nombre": "Lengua y Comunicación II Libertad para imaginar, poder para comunicar",
+   "semestre": 2,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Reconozca sus capacidades creativas y comunicativas en la elaboración de textos libres.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Narra situaciones de su historia de vida para compartir cómo han dejado una huella en su persona.",
+     "contenidos": [
+      "Narración y descripción de situaciones vividas",
+      "Diálogo y reflexión colectiva a partir de ideas prioritarias y secundarias de una narración"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Escribe un texto descriptivo o narrativo de su autoría.",
+     "contenidos": [
+      "Organización de ideas para la escritura de un texto",
+      "Delimitación del sentido comunicativo en un texto",
+      "Ficción y realidad",
+      "Narrativas populares de acuerdo con el con-"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Identifica características lingüísticas a partir de la lectura de narrativas populares.",
+     "contenidos": [
+      "texto e interés estudiantil",
+      "Narración y oralidad",
+      "Adaptaciones modernas de narrativas tradicionales: Cómics",
+      "Creepypastas",
+      "Cuentos",
+      "Obras de teatro",
+      "Leyendas y mitos",
+      "Reescritura de alguna narración breve"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Comprende, a partir de la exploración de diversos textos, la relevancia de personajes y escenarios en la narrativa popular, para desarrollar elementos que pueda integrar en sus propios escritos.",
+     "contenidos": [
+      "Caracterización de personajes y sus relaciones, de inicio a fin, en la narrativa",
+      "Clasificación de los personajes",
+      "Construcción de personajes de las narrativas"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Distingue los temas y las ideas centrales y secundarias en las narrativas populares, para reconocer su papel en las distintas expresiones.",
+     "contenidos": [
+      "Diferencia entre tema e idea principal",
+      "Ideas secundarias y su función en la narrativa",
+      "Comparación de un mismo tema en diferentes narrativas populares",
+      "Palabras o frases que marcan jerarquías en la narración: conectores textuales",
+      "Trama, conflicto o situación"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Reescribe un texto para integrar los elementos lingüísticos y narrativos que considere pertinentes.",
+     "contenidos": [
+      "Narración: Realista",
+      "Fantástica",
+      "Histórica",
+      "Autobiográfica",
+      "Tonos narrativos: Humorístico",
+      "Dramático"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Colabora en el análisis de textos para conocer, aprovechar o corregir los procedimientos narrativos.",
+     "contenidos": [
+      "Irónico",
+      "Intercambio de experiencias",
+      "Diálogo entre pares",
+      "Construcción de textos narrativos colaborativos"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Integra prácticas de lectura, escritura y oralidad en proyectos creativos para presentar el texto elaborado.",
+     "contenidos": [
+      "Análisis del pódcast u otro formato digital",
+      "Elementos sobre guion (texto creado), grabación y edición",
+      "Elementos extralingüísticos",
+      "Producción y ejecución de un guion narrativo"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 18,
+   "titulo_tabla": "Tabla 3. Propósitos y contenidos formativos de Lengua y Comunicación III. Descubrir culturas, apropiarse de las palabras",
+   "nombre": "Lengua y Comunicación III Descubrir culturas, apropiarse de las palabras",
+   "semestre": 3,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Explore y experimente con los movimientos y géneros literarios como manifestaciones culturales, para apropiarse de los diferentes elementos discursivos.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Analiza la información extraída de un texto para darle sentido desde sus conocimientos previos y toma postura frente a lo expuesto por quien lo escribió.",
+     "contenidos": [
+      "Sentido global del texto",
+      "Intención del autor",
+      "Pensamiento crítico",
+      "Conceptualización de literatura (movimien-"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Reconoce, mediante la lectura, los diversos movimientos literarios para comprender sus particularidades.",
+     "contenidos": [
+      "tos artísticos): Barroco",
+      "Neoclasicismo",
+      "Romanticismo",
+      "Realismo",
+      "Modernismo",
+      "Vanguardias",
+      "Realismo mágico",
+      "Literaturas disidentes y digitales",
+      "Paráfrasis de una lectura"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Lee los géneros literarios para analizar su papel como forma de involucrar perspectivas de diversa índole.",
+     "contenidos": [
+      "Géneros literarios: Novela",
+      "Cuento",
+      "Poesía",
+      "Drama",
+      "Ensayo",
+      "Subgéneros narrativos:"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Identifica lecturas de subgéneros narrativos y sus elementos discursivos a partir de la lectura.",
+     "contenidos": [
+      "Suspenso",
+      "Terror",
+      "Ciencia ficción",
+      "Narrativas del cuerpo y autoficción",
+      "Neorrealismo urbano",
+      "Literaturas del antropoceno",
+      "Género lírico: estructura y subgéneros"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Analiza fragmentos de poesía, a los que da lectura en voz alta, para valorar las figuras retóricas.",
+     "contenidos": [
+      "Figuras retóricas: Metáfora",
+      "Hipérbaton",
+      "Hipérbole",
+      "Ironía",
+      "Prosopopeya (personificación)",
+      "Rima y métrica",
+      "Análisis de figuras retóricas a partir de la"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Comprende las características de la reseña crítica para realizar una composición basada en uno de los movimientos literarios.",
+     "contenidos": [
+      "lectura",
+      "Características de la idea principal y secundaria",
+      "Interpretación de información",
+      "Escritura de una reseña crítica"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Realiza la exposición oral formal (en un coloquio, un simposio o en foros presenciales o virtuales) de una reseña, para explicar y compartir su análisis crítico.",
+     "contenidos": [
+      "Organización del coloquio, foro o simposio",
+      "Planeación de logística (orden, espacio, fecha)",
+      "Ejecución de presentaciones orales",
+      "Seguimiento"
+     ]
+    }
+   ]
+  }
+ ],
+ "pensamiento-filosofico": [
+  {
+   "pagina": 14,
+   "titulo_tabla": "Tabla 1. Propósitos y contenidos formativos de Pensamiento Filosófico y Humanidades I. El ejercicio de filosofar y la perspectiva humanista",
+   "nombre": "Pensamiento Filosófico y Humanidades I El ejercicio de filosofar y la perspectiva humanista",
+   "semestre": 1,
+   "horas": "Horas/semana: 4 horas",
+   "meta": "Desarrolle la capacidad de formular preguntas filosóficas y de participar en diálogos argumentativos. Para ello, aplica métodos de razonamiento y considera diversos enfoques filosóficos, lo que le permite analizar los desafíos de su entorno desde una perspectiva humanista.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Reconoce la posibilidad del pensamiento propio a partir de experiencias cotidianas, identificando la práctica filosófica como un modo de problematizar la realidad.",
+     "contenidos": [
+      "¿Para qué reflexionar sobre el pensamiento?",
+      "Naturaleza del pensamiento filosófico y perspectiva humanista",
+      "Introducción a la argumentación filosófica y comunidades de diálogo"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Formula preguntas significativas sobre la vida a partir de un ejercicio filosófico que genere pensamiento crítico, creativo y cuidadoso con el fin de cuestionar lo que comúnmente se considera cierto y explorar diversas respuestas que enriquezcan la visión del mundo.",
+     "contenidos": [
+      "¿Por qué y para qué preguntar?",
+      "Tipos de preguntas",
+      "Importancia de preguntar",
+      "Validez de las preguntas",
+      "La formulación de preguntas filosóficas"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Analiza la cotidianidad desde las normas, valores, creencias y visiones del mundo, para comprender el sentido de la vida desde distintas perspectivas filosóficas, cuestionando lo dado.",
+     "contenidos": [
+      "¿Qué es un problema filosófico?",
+      "La experiencia de categorizar y conceptualizar",
+      "Devenir, Problemas",
+      "Realidad, filosóficos: Tiempo, Muerte, Libertad, Felicidad, Lenguaje, Sentido de la vida, entre otros"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Formula preguntas filosóficas en torno al Conocimiento, Ciencia y grados de Verdad para reconocer su relevancia en la vida cotidiana, desarrollando una comprensión crítica sobre cómo se construye el conocimiento.",
+     "contenidos": [
+      "Encuentros y desencuentros entre el conocimiento científico y los saberes sociales y humanísticos",
+      "Teorías del Conocimiento",
+      "El Problema de la Verdad",
+      "Percepción y Razón",
+      "Posverdad",
+      "¿Qué implica interpretar?"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Integra la formulación de preguntas para participar con mayor rigor en comunidades de diálogo centradas en problemas filosóficos contemporáneos.",
+     "contenidos": [
+      "¿Para qué dialogamos?",
+      "Características del diálogo filosófico con perspectiva humanista",
+      "Actitudes y posturas del diálogo filosófico",
+      "Reglas para la discusión filosófica",
+      "La controversia como posibilidad de diálogo filosófico"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 16,
+   "titulo_tabla": "Tabla 2. Propósitos y contenidos formativos de Pensamiento Filosófico y Humanidades II. Las reflexiones filosóficas sobre el Conocer",
+   "nombre": "Pensamiento Filosófico y Humanidades II Las reflexiones filosóficas sobre el Conocer",
+   "semestre": 2,
+   "horas": "Horas/semana: 4 horas",
+   "meta": "Desarrolle la capacidad de problematizar el conocimiento desde una actitud filosófica, asumiendo que conocer implica posicionarse, interpretar y dialogar con distintos marcos de sentido.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Desarrolla la capacidad de cuestionar y reflexionar sobre los fundamentos del Ser, desplegando un pensamiento crítico acerca de las nociones de Existencia, Ser y Conocimiento, a partir del análisis filosófico-ontológico.",
+     "contenidos": [
+      "El asombro como origen de la Filosofía",
+      "Límites del pensamiento filosófico",
+      "Ontología y Metafísica: ¿qué es el Ser?",
+      "Realidad y apariencia",
+      "El ser humano y su existencia"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Promueve la comprensión de los fundamentos éticos y su aplicación en la vida cotidiana, fomentando la reflexión crítica sobre dilemas morales y el papel de la Filosofía en la toma de decisiones.",
+     "contenidos": [
+      "Fundamentos de la Ética",
+      "Criterios morales y conductuales",
+      "Fundamentos de la Moral",
+      "La relación entre Ética y Política",
+      "La Justicia, la Libertad y la Igualdad",
+      "Dilemas morales",
+      "Debates filosóficos"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Desarrolla una conciencia crítica en torno a los desafíos éticos que plantean los avances de la ciencia y la tecnología en nuestro país.",
+     "contenidos": [
+      "Perspectivas bioéticas",
+      "Posturas bioéticas sobre la tecnología y la ciencia",
+      "La inteligencia artificial y los debates sobre la naturaleza del Ser",
+      "Problemas medioambientales, una postura",
+      "Ética",
+      "Filosofía de la animalidad"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Analiza las desigualdades de género desde una mirada filosófica, contrastando diversas perspectivas feministas, para promover la reflexión, el diálogo y la postura política frente a los problemas de género.",
+     "contenidos": [
+      "Feminismos en México",
+      "Experiencias de desigualdad de género",
+      "Perspectivas filosóficas sobre la desigualdad de género",
+      "Subjetividades trans"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Integra saberes filosóficos y perspectivas humanistas para elaborar reflexiones argumentadas sobre los problemas contemporáneos de la Ontología, la Ética, la Bioética, la perspectiva de género y la interculturalidad.",
+     "contenidos": [
+      "Construyendo el futuro desde la praxis transformadora",
+      "Hacia un mundo habitable y justo",
+      "Perspectiva del Humanismo Mexicano",
+      "La Ética del pensamiento"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 18,
+   "titulo_tabla": "Tabla 3. Propósitos y contenidos formativos de Pensamiento Filosófico y Humanidades III. Las reflexiones filosóficas sobre el Hacer",
+   "nombre": "Pensamiento Filosófico y Humanidades III Las reflexiones filosóficas sobre el Hacer",
+   "semestre": 3,
+   "horas": "Horas/semana: 5 horas",
+   "meta": "Desarrolle capacidades para analizar, debatir e intervenir en su realidad desde una praxis que problematice el hacer como expresión de autonomía, cuidado y creación. Se promueve una comprensión crítica que posibilite la transformación de la vida en común, que cuestione el poder y abra posibilidades de justicia, de expresión artística y de sentido en la existencia.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Fortalece con rigor su capacidad argumentativa al aplicar herramientas filosóficas para la construcción, análisis y evaluación de argumentos. Además, propicia espacios de debate en donde ensaya la persuasión argumentativa.",
+     "contenidos": [
+      "La lógica del pensamiento",
+      "Construcción de argumentos filosóficos",
+      "Persuasión argumentativa",
+      "Detectar falacias",
+      "Debate filosófico",
+      "Filosofías del lenguaje"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Desarrolla una comprensión crítica sobre los problemas de Filosofía política, a través de un análisis argumentado, para cuestionar las situaciones de la realidad social contemporánea.",
+     "contenidos": [
+      "El origen y las formas de la organización del poder político",
+      "El Estado",
+      "Las leyes",
+      "Análisis biopolítico del Estado",
+      "Sexo, género, raza, clase, entre otras categorías de sujeción política"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Promueve una reflexión crítica sobre la cultura contemporánea y su influencia en la vida cotidiana, a partir del análisis del Arte y las categorías estéticas desde la perspectiva filosófica.",
+     "contenidos": [
+      "Filosofía y Arte",
+      "Análisis crítico a las categorías estéticas",
+      "El arte como acto disruptivo",
+      "Economía y Política del Arte",
+      "Semiótica del Arte",
+      "Arte digital",
+      "Fenomenología de la corporalidad",
+      "La poética del lenguaje de las artes"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Integra saberes filosóficos y humanistas para perspectivas elaborar reflexiones argumentadas sobre problemas contemporáneos, considerando sus implicaciones éticas, sociales y culturales, reconociéndose como capaz de transformar la realidad a través de los ejercicios de pensamiento.",
+     "contenidos": [
+      "¿Para qué sirve el pensamiento complejo?",
+      "Filosofías de la corporalidad, prácticas de libertad",
+      "Reflexionar, ¿para qué?"
+     ]
+    }
+   ]
+  }
+ ],
+ "pensamiento-literario": [
+  {
+   "pagina": 8,
+   "titulo_tabla": "Tabla 1. Propósitos y contenidos formativos",
+   "nombre": "Pensamiento Literario",
+   "semestre": 4,
+   "horas": "Horas/semana: 3 horas",
+   "meta": "Desarrolle el pensamiento literario mediante la lectura, el análisis, la creación y la socialización de textos literarios, para reflexionar sobre diversas visiones del mundo, expresar una voz propia y reconocer el valor de la literatura como práctica artística, cultural y social.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Reconoce a la literatura como una de las bellas artes mediante la identificación de sus características, la valoración de su carácter estético y comunicativo, para valorar la manifestación de experiencias, emociones y pensamientos que le ayudan a construir su identidad.",
+     "contenidos": [
+      "¿Qué es arte? La literatura como una de las bellas artes. Intención comunicativa de la literatura:",
+      "Contextos de producción, recepción e intersecciones con otras manifestaciones artísticas. Funciones comunicativas: Social o Ideológica o Características de la literatura:",
+      "Finalidad estética",
+      "Ficcionalidad y verosimilitud",
+      "Marcas de literariedad: Lenguajes connotativo y denotativo o Subjetividad versus objetividad o Polisemia o Polifonía o Funciones del lenguaje: o Función emotiva ▪ Función poética ▪"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Analiza textos narrativos mediante el diálogo entre la obra, su contexto de producción y la experiencia propia, para construir pensamiento crítico sobre su entorno social y cultural actual.",
+     "contenidos": [
+      "Experiencia lectora:",
+      "Elementos de interpretación literaria (persona lectora): Voces del relato (tipos de narrador) o Estilos (directo e indirecto) o Modos discursivos (monólogo interior, o narrativo y descriptivo) Relación entre literatura, cultura e identidad Contexto histórico y social de las obras (persona autora) Elementos que dan estructura al relato:"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Produce textos narrativos propios mediante procesos de escritura guiada, considerando su intención comunicativa y los contextos de creación y de recepción, para socializar experiencias, ideas y posturas con creatividad y sentido crítico.",
+     "contenidos": [
+      "Personaje",
+      "Espacio",
+      "Tiempo",
+      "Unidad",
+      "Acción",
+      "Estructuras narrativas (abiertas, cerradas y circulares)",
+      "Desarrollo de tramas",
+      "Focalización Escritura, revisión y corrección entre pares Socialización de los textos creados en diferentes formatos Lenguaje teatral"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Entiende al género dramático como texto escrito para ser representado en escena, a través de la lectura o apreciación de obras teatrales para identificar su función artística, comunicativa y social.",
+     "contenidos": [
+      "Texto dramático:",
+      "Diálogo, monólogo y soliloquio",
+      "Acotaciones (carácter, iluminación, escenografía, acción…)",
+      "Estructura de texto: Conflicto o Destinador o Sujeto /Protagonista o Destinatario o Ayudante o Objeto / Objetivo o Oponente / Antagonista o Función social, artística y cultural Representación teatral"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Representa situaciones y problemas cercanos a su entorno por medio del lenguaje teatral, utilizando recursos expresivos, corporales y verbales para fortalecer la comunicación, la empatía y el trabajo colaborativo.",
+     "contenidos": [
+      "Estrategias de interpretación:",
+      "Lectura dramatizada",
+      "Expresión corporal y verbal",
+      "Improvisación: Personaje, Relación, Objetivo y Lugar (PROL) Teatro alternativo:",
+      "Sensorial e incluyente",
+      "Sombras",
+      "Títeres",
+      "Performance",
+      "Puesta en escena"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Explora la lírica como una manifestación de experiencias, emociones y pensamientos mediante el contacto con producciones textuales y orales, correspondientes a distintos movimientos artísticos para reconocer la diversidad de visiones en torno a la realidad social y política.",
+     "contenidos": [
+      "Propósito comunicativo (contenido/qué dice)",
+      "Género discursivo (forma/cómo se dice)",
+      "Dimensión histórica y social (quién lo dice y a quién se lo dice)",
+      "Lírica popular (canciones, refranes, proverbios y humorismos)",
+      "Lírica vanguardista (caligrama, poemínimos, epigramas, poemas colectivos, freestyle, batallas escritas y slam poético)"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Expresa sus emociones o experiencias mediante producciones líricas orales, escritas o digitales haciendo uso de los recursos poéticos para situarse creativamente.",
+     "contenidos": [
+      "Creación individual o colectiva de textos líricos:",
+      "Recursos poéticos",
+      "Conciencia emocional",
+      "Percepción del mundo Revisión y corrección entre pares Difusión en formatos:",
+      "Escritos",
+      "Orales",
+      "Digitales"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Identifica la estructura argumentativa y los recursos del ensayo literario mediante la lectura y análisis para expresar ideas y opiniones sobre sus experiencias personales.",
+     "contenidos": [
+      "Características del ensayo literario:",
+      "Lenguaje estético",
+      "Voz propia",
+      "Subjetividad",
+      "Reflexivo Expresión de ideas y argumentos propios. Reflexión y socialización de sus experiencias literarias."
+     ]
+    }
+   ]
+  }
+ ],
+ "pensamiento-matematico": [
+  {
+   "pagina": 14,
+   "titulo_tabla": "Tabla 1. Propósitos y contenidos formativos de Pensamiento Matemático I. Pensamiento aritmético",
+   "nombre": "Pensamiento Matemático I Pensamiento aritmético",
+   "semestre": 1,
+   "horas": "Horas/semana: 4 horas",
+   "meta": "Comprenda las matemáticas como expresión del pensamiento humano para aplicar los elementos esenciales de la aritmética y el pensamiento lógico en situaciones de interés.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Aplica conceptos básicos de lógica matemática en situaciones de su contexto para desarrollar esquemas de razonamiento estructurado.",
+     "contenidos": [
+      "Conceptualización de lógica matemática",
+      "Tablas de verdad",
+      "Proposiciones compuestas y operadores lógicos: conjunción (y) y disyunción (o)",
+      "Proposiciones condicionales y bicondicionales"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Comprende el concepto de conteo a partir del análisis de los procesos sociales que llevaron a su desarrollo para aplicarlo en situaciones de interés.",
+     "contenidos": [
+      "Sistemas de conteo en Mesopotamia, Egipto, América, India y Arabia; importancia del cero en los pueblos olmeca y maya",
+      "Concepto de número y números naturales",
+      "Leonardo de Pisa y el sistema numeral indoarábigo",
+      "Concepto y uso del ábaco"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Analiza distintas situaciones cotidianas en donde intervenga el proceso de contar, para comprender la clasificación de los números y realizar operaciones básicas entre números naturales y enteros.",
+     "contenidos": [
+      "Clasificación de los números reales",
+      "Operaciones aritméticas y sus operaciones inversas con números enteros",
+      "Propiedades de las operaciones aritméticas: cerradura, conmutación, asociación y distribución; neutros e inversos aditivo y multiplicativo",
+      "Factorización de números naturales (teorema fundamental de la aritmética Máximo común divisor y mínimo común múltiplo"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Comprende el concepto de unidad y la relación entre números fraccionarios y enteros, para realizar operaciones con fracciones y porcentajes.",
+     "contenidos": [
+      "Concepto de unidad y de los números racionales como fracciones (estructura)",
+      "Equivalencias entre fracciones y entre números enteros y fracciones",
+      "Simplificación de fracciones",
+      "Proporción, proporción inversa y porcentaje",
+      "Componentes de una potencia"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Comprende los conceptos de potenciación y radicación para realizar operaciones con exponentes y radicales.",
+     "contenidos": [
+      "Operaciones con potenciación (reglas)",
+      "Explicación de exponentes negativos como el inverso multiplicativo de la base",
+      "Operaciones con exponentes (reglas)",
+      "Definición de raíz cuadrada (enunciación de sus partes) y radicando diferente de 2",
+      "Raíz cuadrada como inverso de potencias de números positivos y cancelación de poten-"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Comprende el concepto de medición a partir del análisis de los procesos sociales que llevaron a su desarrollo para aplicarlo en situaciones de interés.",
+     "contenidos": [
+      "cias y raíces",
+      "Concepto de medición",
+      "Unidades de medida y sistema internacional",
+      "Magnitudes y notación científica",
+      "Razón y proporción",
+      "Técnicas para la resolución de operaciones"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Aplica los elementos de la aritmética para resolver cálculos combinados con números reales.",
+     "contenidos": [
+      "combinadas (jerarquía de operaciones)",
+      "Uso de símbolos para resolución de operaciones combinadas (paréntesis, corchetes, llaves y puntos)",
+      "Resolución de restas de números enteros como la suma con el opuesto de otro",
+      "Operaciones combinadas con adición, sustracción, multiplicación, división, potencias y raíces"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 16,
+   "titulo_tabla": "Tabla 2. Propósitos y contenidos formativos de Pensamiento Matemático II. Introducción al álgebra",
+   "nombre": "Pensamiento Matemático II Introducción al álgebra",
+   "semestre": 2,
+   "horas": "Horas/semana: 4 horas",
+   "meta": "Entienda al lenguaje algebraico como un medio de representación de situaciones cotidianas y escolares para estimular el pensamiento abstracto.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Representa operaciones aritméticas utilizadas en situaciones de interés, mediante letras y símbolos, para comprender el lenguaje algebraico.",
+     "contenidos": [
+      "Definición de: suma, producto, razón, cociente, diferencia y residuo",
+      "Símbolos y letras utilizados en el lenguaje algebraico",
+      "Concepto de incógnita",
+      "Términos y expresiones algebraicas",
+      "Representación de expresiones de lenguaje común a expresiones algebraicas"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Comprende la clasificación de las expresiones algebraicas para construir e identificar monomios, binomios, trinomios y polinomios.",
+     "contenidos": [
+      "Clasificación de expresiones algebraicas",
+      "(monomio, binomio, trinomio y polinomio)",
+      "Componentes de un monomio: coeficiente, variable, exponente positivo y grado",
+      "Representación de situaciones reales con monomios y polinomios"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Aplica la aritmética y el manejo del álgebra para realizar operaciones con monomios y binomios, referentes a situaciones de interés, a partir del análisis de sus componentes.",
+     "contenidos": [
+      "Suma, resta, multiplicación y división con monomios",
+      "Aplicación de las reglas de los exponentes y los signos",
+      "Aplicación de operaciones con fracciones",
+      "Factorización de monomios",
+      "Binomio y trinomio simple"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Aplica la aritmética y el manejo del álgebra para realizar operaciones con trinomios y polinomios, referentes a situaciones de interés, a partir del análisis de sus componentes.",
+     "contenidos": [
+      "Suma, resta, multiplicación y división con polinomios",
+      "Aplicación de las reglas de los exponentes y los signos",
+      "Aplicación de operaciones con fracciones",
+      "Productos notables",
+      "Factorización de polinomios",
+      "Trinomio cuadrado perfecto"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Aplica el álgebra en situaciones de interés para comprender su relevancia en otras áreas del conocimiento, fenómenos naturales o en distintas esferas de la vida humana.",
+     "contenidos": [
+      "Cálculo de un presupuesto personal (ingresos, gastos, ahorros, etc.)",
+      "Ajuste de proporciones en recetas según número de personas",
+      "Hallar precios finales aplicando porcentajes y ecuaciones en compras con descuento"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Comprende el concepto de ecuación a partir de las igualdades matemáticas para encontrar el valor de una incógnita utilizando situaciones de interés.",
+     "contenidos": [
+      "Concepto de igualdad e identidad algebraica",
+      "Relaciones de igualdad entre números reales",
+      "Propiedades de igualdad: reflexiva, simétrica, transitiva, uniformidad"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 18,
+   "titulo_tabla": "Tabla 3. Propósitos y contenidos formativos de Pensamiento Matemático III. Pensamiento algebraico e introducción a geometría plana",
+   "nombre": "Pensamiento Matemático III Pensamiento algebraico e introducción a geometría plana",
+   "semestre": 3,
+   "horas": "Horas/semana: 4 horas",
+   "meta": "Aplique el lenguaje algebraico como herramienta para describir situaciones de la realidad y expresar relaciones matemáticas, y mediante procesos de intuición y razonamiento, logre explicar y resolver problemas.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Aplica la aritmética y el manejo del álgebra para encontrar el valor de una incógnita en ecuaciones lineales que refieran a situaciones de interés.",
+     "contenidos": [
+      "Concepto de ecuación y sus partes",
+      "Ecuaciones lineales de primer grado",
+      "Procedimiento para encontrar el valor de una incógnita",
+      "Forma estándar de las ecuaciones lineales"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Aplica la aritmética y el manejo del álgebra para resolver ecuaciones lineales con dos incógnitas que refieran a situaciones de interés.",
+     "contenidos": [
+      "Ecuaciones lineales con dos incógnitas",
+      "Procedimiento para solucionar ecuaciones lineales con dos incógnitas",
+      "Ecuación de la recta",
+      "Concepto de plano cartesiano: ejes perpendiculares: horizontal (X) y vertical (Y)",
+      "Representación gráfica de la ecuación de la recta"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Aplica la aritmética, el manejo del álgebra y el método gráfico para resolver sistemas de ecuaciones lineales que refieran a situaciones de interés",
+     "contenidos": [
+      "Método de igualación",
+      "Método de sustitución",
+      "Método de reducción",
+      "Método gráfico",
+      "Método por determinantes"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Aplica la aritmética y el manejo del álgebra para resolver ecuaciones cuadráticas que refieran a situaciones de interés.",
+     "contenidos": [
+      "Ecuaciones cuadráticas",
+      "Forma general de la ecuación cuadrática",
+      "Resolución completar de método por cuadrados",
+      "Aplicación de fórmula general para ecuaciones cuadráticas (Bhaskara)",
+      "Representación gráfica"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Expresa y resuelve diversas situaciones de interés a través de distintos tipos de ecuaciones para comprender su relevancia en otras áreas del conocimiento, fenómenos naturales o en distintas esferas de la vida humana.",
+     "contenidos": [
+      "Cálculo de intereses simples y compuestos en finanzas personales",
+      "Descripción del crecimiento poblacional o propagación de fenómenos (ej. epidemia)",
+      "Determinar medidas o cantidades de material en proyectos de arquitectura"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Revisa el teorema del triángulo de Napoleón, considerándolo como un problema-meta para aplicar resultados de la geometría euclidiana.",
+     "contenidos": [
+      "Introducción a la geometría plana",
+      "Ángulos, definición, tipos y componentes",
+      "Teorema de Pitágoras",
+      "Construcción de triángulos rectángulos",
+      "Criterios de congruencia y semejanza de triángulos"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 20,
+   "titulo_tabla": "Tabla 4. Propósitos y contenidos formativos de Pensamiento Matemático IV. Trigonometría y geometría analítica",
+   "nombre": "Pensamiento Matemático IV Trigonometría y geometría analítica",
+   "semestre": 4,
+   "horas": "Horas/semana: 4 horas",
+   "meta": "Resuelva problemas a partir del planteamiento y análisis de funciones trigonométricas, ecuaciones de primer y segundo grado, considerando la pertinencia y conocimiento de las variables y relaciones para explicar una situación o fenómeno.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Comprende el concepto de recta y de punto para su representación y análisis algebraico.",
+     "contenidos": [
+      "Concepto de punto",
+      "Concepto de recta",
+      "Tipos de recta (tangente, secante)",
+      "Construcción de figuras",
+      "Circunferencia"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Analiza la relación entre los lados y los ángulos de un triángulo rectángulo para establecer razones trigonométricas.",
+     "contenidos": [
+      "Razones trigonométricas",
+      "Demostraciones de identidades trigonométricas"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Gráfica en el plano cartesiano polinomios de dos variables con coeficientes reales, con el fin de deducir la simetría y la extensión.",
+     "contenidos": [
+      "Polinomios de dos variables con coeficientes reales",
+      "Propiedades geométricas (simetría, extensión, etc.)"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Observa el comportamiento de dos variables en relación de proporcionalidad directa para deducir la ecuación de la recta.",
+     "contenidos": [
+      "Comportamiento de dos variables",
+      "Ecuación de la recta (forma punto-pendiente, pendiente-ordenada al origen, simétrica)"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Analiza situaciones o fenómenos que involucren en su modelado de funciones cuadráticas para deducir propiedades analíticas de la parábola.",
+     "contenidos": [
+      "Propiedades analíticas de la parábola",
+      "Ecuación ordinaria de parábolas verticales y horizontales, con vértice en y fuera del origen.",
+      "Modelado"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Estudia movimientos circulares, de elipse, y coplanaridad mediante elementos como la ecuación de la circunferencia, las leyes de Kepler, y el pensamiento variacional, para entenderlos.",
+     "contenidos": [
+      "Ecuación de la circunferencia",
+      "Leyes de Kepler",
+      "Elipse y coplanaridad"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Aplica conocimientos sobre ecuaciones con dos variables para realizar estimaciones sencillas, para consolidar los aprendizajes.",
+     "contenidos": [
+      "Modelado y estimación",
+      "Aplicación de las secciones cónicas: elipse, parábola, hipérbola y circunferencia"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 22,
+   "titulo_tabla": "Tabla 5. Propósitos y contenidos formativos de Pensamiento Matemático V. Cálculo diferencial",
+   "nombre": "Pensamiento Matemático V Cálculo diferencial",
+   "semestre": 5,
+   "horas": "Horas/semana: 5 horas",
+   "meta": "Analice fenómenos donde el cambio es parte central de su estudio con la finalidad de encontrar soluciones óptimas a problemas o situaciones en su entorno u otras áreas del conocimiento.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Entiende de manera intuitiva los conceptos de variación promedio y variación instantánea para aproximarse al origen del cálculo.",
+     "contenidos": [
+      "Introducción al cálculo diferencial",
+      "Inicios del pensamiento variacional",
+      "Arquímedes y la aproximación al área",
+      "Paradoja de Zenón",
+      "Variación promedio e instantánea"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Investiga el origen y evolución del cálculo diferencial y el procedimiento de resolución de una función de la recta tangente a una curva en un punto dado, para la explicación de fenómenos físicos.",
+     "contenidos": [
+      "Antecedentes del históricos origen y cálculo diferencial",
+      "Función de la regla tangente y explicación de fenómenos físicos (movimiento)"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Revisa situaciones o fenómenos donde el cambio es la parte central en su estudio y aplica funciones de variable real para modelarlas e identificar simetrías en su representación gráfica.",
+     "contenidos": [
+      "Funciones de variable real",
+      "Representación gráfica de funciones de variable real",
+      "Conceptos de continuidad, crecimiento, decrecimiento, máximos y mínimos",
+      "Desigualdades"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Comprende el concepto de límite e identifica la continuidad de funciones de variable real para interpretar y modelar fenómenos naturales y sociales.",
+     "contenidos": [
+      "Introducción al concepto de límite",
+      "Noción intuitiva del límite",
+      "Propiedades del límite",
+      "Aplicación del concepto de límite en la continuidad de funciones y el modelado de situaciones reales"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Practica funciones exponencia les, logarítmicas trigonoméy tricas para describir sus propiedades y ejemplificar fenómenos en los que son aplicables.",
+     "contenidos": [
+      "Funciones logarítmicas",
+      "Funciones trigonométricas",
+      "(seno, coseno, tangente)",
+      "Propiedades de las funciones trigonométricas",
+      "(periodicidad, paridad, reciprocidad)"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Aplica métodos para derivar funciones lineales y polinomiales, comprendiendo intuitivamente su utilidad como herramienta de análisis en fenómenos de cambio de las ciencias naturales y sociales.",
+     "contenidos": [
+      "Concepto de la derivada (como límite)",
+      "Regla de los cuatro pasos",
+      "Derivada de funciones constantes, lineales y polinomiales",
+      "Reglas de derivación",
+      "Análisis de la función derivada",
+      "Resolución de problemas del entorno aplicando la derivada"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Aplica conocimientos de la derivada para resolver problemas de optimización, o situaciones de su entorno o de otras áreas del conocimiento.",
+     "contenidos": [
+      "Aplicación del cálculo de derivada en distintas áreas del conocimiento o esferas de la vida humana"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Comprende intuitivamente el Teorema Fundamental del Cálculo como conexión entre derivadas e integrales y su utilidad para analizar fenómenos de acumulación de cambios continuos.",
+     "contenidos": [
+      "Integral como función inversa de la derivada",
+      "Área bajo la curva de una función dentro de un intervalo",
+      "Representación gráfica"
+     ]
+    }
+   ]
+  },
+  {
+   "pagina": 24,
+   "titulo_tabla": "Tabla 6. Propósitos y contenidos formativos de Pensamiento Matemático VI. Pensamiento estadístico y probabilístico",
+   "nombre": "Pensamiento Matemático VI Pensamiento estadístico y probabilístico",
+   "semestre": 6,
+   "horas": "Horas/semana: 5 horas",
+   "meta": "Aplique procedimientos, técnicas y lenguaje matemático para plantear posibles soluciones a problemas derivados de fenómenos naturales o sociales, cuyo comportamiento puede describirse probabilísticamente y contribuir a una toma de decisiones fundamentada.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Entiende la importancia de la recolección y organización de datos en la elaboración de una muestra aleatoria para la explicación de fenómenos naturales y sociales.",
+     "contenidos": [
+      "Eventos deterministas y aleatorios",
+      "Recolección de datos"
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Identifica la incertidumbre como consecuencia de la variabilidad y, a través de simulaciones, plantea una hipótesis de trabajo para obtener la frecuencia y probabilidad de que suceda un evento.",
+     "contenidos": [
+      "Simulaciones probabilísticas",
+      "Equiprobabilidad",
+      "Frecuencia de los eventos"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Comprende los conceptos básicos de la teoría de conjuntos para aplicarlos en problemas que le sean presentados.",
+     "contenidos": [
+      "Concepto general de conjunto",
+      "Notación e igualdad de conjuntos",
+      "Subconjunto, conjunto universal y subconjuntos",
+      "Representación de conjuntos con diagramas de Venn",
+      "Leyes de Morgan"
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Selecciona y aplica una técnica de conteo (permutaciones, combinaciones, reemplazo con y sin orden) para calcular probabilidad en eventos simples y apoyar la toma de decisiones.",
+     "contenidos": [
+      "Técnicas de conteo",
+      "Probabilidad dependiente e independiente",
+      "Probabilidad condicionada"
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Analiza los datos categóricos y cuantitativos a través de algunas de sus representaciones, para realizar gráficas de barras (variables cualitativas) o gráficos de puntos e histogramas (variables cuantitativas).",
+     "contenidos": [
+      "Variables estadísticas",
+      "Gráficas y su interpretación",
+      "Gráficas y tendencias"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Reconoce algunas problemáticas o fenómenos de interés, para identificar cómo se relacionan entre sí dos o más variables categóricas y dos o más variables cuantitativas.",
+     "contenidos": [
+      "Independencia de variables cualitativas",
+      "Correlación de variables cuantitativas"
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Extrae información a través del empleo de técnicas de muestreo, valora la importancia de la aleatoriedad al tomar la muestra.",
+     "contenidos": [
+      "Población y muestra secundarias y terciarias)",
+      "Métodos de muestreo: aleatorio simple y sistemático"
+     ]
+    },
+    {
+     "id": 8,
+     "descripcion": "Explica un evento aleatorio cuyo comportamiento puede describirse a través del estudio de la distribución normal, para calcular la probabilidad.",
+     "contenidos": [
+      "Distribución normal",
+      "Medidas de tendencia central",
+      "Medidas de dispersión"
+     ]
+    }
+   ]
+  }
+ ],
+ "taller-ciencias": [
+  {
+   "pagina": 8,
+   "titulo_tabla": "Tabla 1. Propósitos y contenidos formativos de Taller de Ciencias.",
+   "nombre": "Taller de Ciencias",
+   "semestre": 2,
+   "horas": "Horas/semana: 4 horas",
+   "meta": "Utiliza la metodología científica aplicando el pensamiento crítico para construir su propio conocimiento fáctico, respecto a fenómenos o procesos naturales relacionados con la transferencia de energía en los sistemas, en contextos cotidianos, y contribuye a la promoción de la alfabetización científica en su comunidad.",
+   "propositos": [
+    {
+     "id": 1,
+     "descripcion": "Identifica en su entorno un fenómeno o proceso natural que sea observable, medible y que involucre el flujo de energía en los sistemas físicos, biológicos, químicos o ecológicos, tales como plantas, objetos en movimiento, reacciones químicas, etc.",
+     "contenidos": [
+      "Las y los estudiantes como agentes de alfabetización científica.",
+      "Finalidades de la observación en la ciencia.",
+      "Tipos de observación: directa, indirecta, de campo, de laboratorio, participante, no participante.",
+      "Fenómenos y procesos naturales que involucran flujos de energía (factores que afectan al crecimiento de las plantas, efectos ecológicos de los huracanes, insecticidas caseros, factores que afectan la germinación de las semillas, manejo de residuos sólidos y orgánicos, entre otros). 8",
+      "Elaboración de preguntas de investigación."
+     ]
+    },
+    {
+     "id": 2,
+     "descripcion": "Formula hipótesis que expliquen las causas del fenómeno que observó a partir de preguntas empíricas y la consulta de información pertinente y confiable.",
+     "contenidos": [
+      "Marco teórico: o secundarias. Tipos de Hipótesis. o Identificación de las variables en el o proceso de investigación. Validación de la información. o Referencias bibliográficas: modelos, o normativas, artículos científicos, ente"
+     ]
+    },
+    {
+     "id": 3,
+     "descripcion": "Diseña un modelo experimental que explique a detalle las actividades que se llevarán a cabo para comprobar la hipótesis formulada, además de que pueda ser replicado y controlado.",
+     "contenidos": [
+      "otros.",
+      "Tipos de diseños: experimentales y no experimentales.",
+      "Estructura del modelo experimental: fases, pasos, materiales, instrumentos e insumos.",
+      "Tipos de Variables: dependientes, independientes y controladas."
+     ]
+    },
+    {
+     "id": 4,
+     "descripcion": "Implementa el modelo experimental siguiendo su diseño y manipulando las variables identificadas para recopilar, registrar y analizar los resultados obtenidos.",
+     "contenidos": [
+      "Análisis de datos: identificación de patrones, tendencias y excepciones en los resultados experimentales.",
+      "Estadística descriptiva: organización, sistematización y medición de datos.",
+      "Tabulación, interpretación gráfica y visualización de datos."
+     ]
+    },
+    {
+     "id": 5,
+     "descripcion": "Contrasta los resultados obtenidos en la observación y la recolección de información para determinar si responden a las preguntas iniciales.",
+     "contenidos": [
+      "Diferencias entre paradigmas, teorías y leyes.",
+      "Comparación de variables.",
+      "Interpretación de resultados; subjetividad y objetividad.",
+      "Ética en la investigación. 9"
+     ]
+    },
+    {
+     "id": 6,
+     "descripcion": "Formula conclusiones que validan o rechazan la hipótesis planteada.",
+     "contenidos": [
+      "Comprobación de Hipótesis.",
+      "Criterios de evaluación de una investigación.",
+      "Alcances y limitaciones de la investigación científica en México."
+     ]
+    },
+    {
+     "id": 7,
+     "descripcion": "Comunica los resultados de la investigación científica y la utilidad de estos en su contexto con el fin de acercar a las personas a la ciencia.",
+     "contenidos": [
+      "Estrategias de comunicación y presentación de resultados.",
+      "Códigos de Ética en la divulgación científica. 10"
+     ]
+    }
+   ]
+  }
+ ]
+}

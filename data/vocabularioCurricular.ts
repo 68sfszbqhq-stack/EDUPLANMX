@@ -95,6 +95,27 @@ export function vocabularioCurricular(
 }
 
 /**
+ * Plan de estudios del programa, para escribirlo entre paréntesis después de la
+ * materia y de la progresión / propósito formativo: así el docente y la ATP ven de
+ * un vistazo si el grupo va con el plan 2023 (generación 2023-2026) o con el
+ * Modelo 2025 (generación 2025-2028). Sin modelo se asume el plan 2023, igual que
+ * en vocabularioCurricular().
+ */
+export function etiquetaPlan(modeloRaw?: string): string {
+    return modeloRaw === '2025' ? 'Plan 2025' : 'Plan 2023';
+}
+
+/** "Pensamiento Matemático I" -> "Pensamiento Matemático I (Plan 2023)" */
+export function conPlan(texto: string, modeloRaw?: string): string {
+    return texto ? `${texto} (${etiquetaPlan(modeloRaw)})` : texto;
+}
+
+/** "(Progresión · Plan 2023)" o "(Propósito formativo · Plan 2025)" */
+export function etiquetaElemento(modeloRaw?: string): string {
+    return `(${vocabularioCurricular(modeloRaw).progresion} · ${etiquetaPlan(modeloRaw)})`;
+}
+
+/**
  * Deduce la familia de la UAC a partir de la categoría MCCEMS que ya guarda
  * SubjectContext.mccemsCategory (viene del catálogo en data/mccemsCatalogo.ts).
  */
