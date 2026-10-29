@@ -1,3 +1,5 @@
+import { obtenerAlmacenCuenta } from '../src/security/almacenCuenta';
+import { fechaVisible } from '../src/features/planeacion/decisionesPlan';
 import React, { useState, useRef, useEffect } from 'react';
 import { LessonPlan } from '../types';
 import { FileText, Calendar, ArrowRight, Trash2, ArrowLeft, Download, BookOpen, Search, Filter, Loader } from 'lucide-react';
@@ -9,6 +11,7 @@ import { descargarPlaneacionWord } from '../src/services/wordService';
 
 const PlansLibrary: React.FC = () => {
   const { user } = useAuth();
+  const almacen = obtenerAlmacenCuenta();
   const [plans, setPlans] = useState<PlaneacionFirestore[]>([]);
   const [filteredPlans, setFilteredPlans] = useState<PlaneacionFirestore[]>([]);
   const [selectedPlan, setSelectedPlan] = useState<PlaneacionFirestore | null>(null);
@@ -40,13 +43,13 @@ const PlansLibrary: React.FC = () => {
 
   /**
    * Rescate único: sube a Firestore las planeaciones que quedaron atrapadas
-   * solo en localStorage (guardados previos a la nube, o fallos de red).
+   * solo en localStorage (borradores de esta cuenta, o fallos de red).
    * Sin esto, limpiar el navegador o cambiar de equipo las pierde para siempre.
    */
   const sincronizarLocalesPendientes = async (nubeActual: PlaneacionFirestore[]) => {
-    if (!user?.id || !user?.schoolId) return false;
+    if (!user?.id || !user?.schoolId || !almacen.vigente()) return false;
     try {
-      const locales: LessonPlan[] = JSON.parse(localStorage.getItem('savedPlans') || '[]');
+      const locales: LessonPlan[] = JSON.parse(almacen.getItem('savedPlans') || '[]');
       if (!Array.isArray(locales) || locales.length === 0) return false;
 
       const enNube = new Set(nubeActual.map(p => `${p.title}|${p.subject}`));
@@ -55,6 +58,7 @@ const PlansLibrary: React.FC = () => {
 
       console.log(`☁️ Rescatando ${pendientes.length} planeaciones locales hacia Firestore...`);
       for (const plan of pendientes) {
+        if (!almacen.vigente()) return false;
         await planeacionesService.crear(plan, user.id, user.schoolId);
       }
       return true;
@@ -69,10 +73,10 @@ const PlansLibrary: React.FC = () => {
 
     // Modo muestra: solo lo guardado en este navegador, sin tocar Firebase
     if (user.rol === 'guest') {
-      const locales: LessonPlan[] = vista === 'escuela' ? [] : JSON.parse(localStorage.getItem('savedPlans') || '[]');
+      const locales: LessonPlan[] = vista === 'escuela' ? [] : JSON.parse(almacen.getItem('savedPlans') || '[]');
       setPlans(locales.map((p: any, i) => ({
         id: p.id || `muestra-${i}`, userId: user.id, schoolId: user.schoolId, title: p.title || p.subject,
-        subject: p.subject, semester: p.meta?.semester, content: p, createdAt: p.meta?.startDate || new Date().toISOString(),
+        subject: p.subject, semester: p.meta?.semester, content: p, createdAt: p.date || p.meta?.startDate || '',
       } as any)));
       setLoading(false);
       return;
@@ -100,7 +104,7 @@ const PlansLibrary: React.FC = () => {
     } catch (error) {
       console.error('Error al cargar planeaciones:', error);
       // Fallback a localStorage si falla Firestore
-      const savedPlans = localStorage.getItem('savedPlans');
+      const savedPlans = almacen.getItem('savedPlans');
       if (savedPlans) {
         const localPlans = JSON.parse(savedPlans);
         setPlans(localPlans.map((p: any) => ({
@@ -111,7 +115,7 @@ const PlansLibrary: React.FC = () => {
           subject: p.subject,
           semester: p.meta?.semester,
           content: p,
-          createdAt: p.meta?.startDate || new Date().toISOString()
+          createdAt: p.date || p.meta?.startDate || ''
         })));
       }
     } finally {
@@ -160,11 +164,11 @@ const PlansLibrary: React.FC = () => {
       setPlans(prev => prev.filter(p => p.id !== planId));
 
       // También actualizar localStorage
-      const savedPlans = localStorage.getItem('savedPlans');
+      const savedPlans = almacen.getItem('savedPlans');
       if (savedPlans) {
         const localPlans = JSON.parse(savedPlans);
         const updated = localPlans.filter((p: any) => p.id !== planId);
-        localStorage.setItem('savedPlans', JSON.stringify(updated));
+        almacen.setItem('savedPlans', JSON.stringify(updated));
       }
 
       console.log('✅ Planeación eliminada:', planId);
@@ -230,6 +234,8 @@ const PlansLibrary: React.FC = () => {
             ref={printRef}
             plan={selectedPlan.content as LessonPlan}
             teacherName={selectedPlan.content?.meta?.teacher}
+            schoolName={(selectedPlan.content as LessonPlan).institution?.name}
+            cct={(selectedPlan.content as LessonPlan).institution?.cct}
           />
         </div>
       </div>
@@ -266,7 +272,7 @@ const PlansLibrary: React.FC = () => {
 
       {vista === 'escuela' && (
         <p className="text-xs text-slate-500 bg-indigo-50 border border-indigo-100 rounded-xl px-4 py-2.5">
-          💡 Memoria pedagógica del plantel: consulta cómo planean tus colegas. Puedes verlas, imprimirlas
+          💡 Aquí aparecen únicamente las planeaciones que sus autores comparten con el plantel. Puedes verlas, imprimirlas
           o bajarlas a Word como referencia — solo cada autor puede eliminar las suyas.
         </p>
       )}
@@ -371,7 +377,7 @@ const PlansLibrary: React.FC = () => {
                       </span>
                     )}
                     <span className="text-xs text-slate-400">
-                      {new Date(plan.createdAt as string).toLocaleDateString('es-MX')}
+                      {fechaVisible(plan.createdAt)}
                     </span>
                   </div>
                 </div>

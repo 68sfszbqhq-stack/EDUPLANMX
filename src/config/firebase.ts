@@ -1,8 +1,8 @@
 import { initializeApp } from 'firebase/app';
 import {
   initializeFirestore,
-  persistentLocalCache,
-  persistentMultipleTabManager,
+  memoryLocalCache,
+  clearIndexedDbPersistence,
   connectFirestoreEmulator,
 } from 'firebase/firestore';
 import { getAuth, connectAuthEmulator } from 'firebase/auth';
@@ -23,19 +23,14 @@ const firebaseConfig = {
 // Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 
-// Firestore con caché offline persistente.
-//
-// Los planteles trabajan con internet intermitente: con esto, las planeaciones,
-// materias y demás datos ya vistos siguen disponibles sin conexión, y las
-// escrituras hechas offline se sincronizan solas al volver la red.
-// persistentMultipleTabManager evita que se rompa si el docente abre la app en
-// varias pestañas. Si el navegador no soporta IndexedDB (modo privado antiguo),
-// Firestore cae solo a memoria, así que no hace falta un try/catch.
-// ignoreUndefinedProperties: un campo opcional vacío (p. ej. pecLinkage cuando el PEC es
-// manual) hacía fallar todo el guardado; así simplemente se omite.
+// En equipos compartidos, los expedientes no deben persistir en IndexedDB.
 export const db = initializeFirestore(app, {
-  localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() }),
+  localCache: memoryLocalCache(),
   ignoreUndefinedProperties: true,
+});
+
+void clearIndexedDbPersistence(db).catch(() => {
+  console.warn('Cierra las otras pestañas de EduPlan y vuelve a abrirlo para retirar la caché antigua.');
 });
 
 export const auth = getAuth(app);

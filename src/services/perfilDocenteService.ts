@@ -1,3 +1,4 @@
+import { obtenerAlmacenCuenta } from '../security/almacenCuenta';
 /**
  * PERFIL DOCENTE
  *
@@ -91,6 +92,7 @@ export const perfilDocenteService = {
 
     /** Trae el perfil del docente. Devuelve null si nunca contestó el cuestionario. */
     async obtener(userId?: string): Promise<PerfilDocente | null> {
+        const almacen = obtenerAlmacenCuenta();
         if (userId) {
             try {
                 const snap = await getDoc(doc(db, COLECCION, userId));
@@ -101,7 +103,7 @@ export const perfilDocenteService = {
         }
         // Sin cuenta (demo) o si Firestore falló: se intenta el navegador.
         try {
-            const local = localStorage.getItem(CLAVE_LOCAL);
+            const local = almacen.getItem(CLAVE_LOCAL);
             if (local) return JSON.parse(local) as PerfilDocente;
         } catch { /* localStorage no disponible */ }
 
@@ -110,10 +112,11 @@ export const perfilDocenteService = {
 
     /** Guarda el perfil. Siempre deja copia en el navegador, aunque haya cuenta. */
     async guardar(perfil: PerfilDocente, userId?: string): Promise<void> {
+        const almacen = obtenerAlmacenCuenta();
         const conFecha = { ...perfil, actualizadoEn: new Date().toISOString() };
 
         try {
-            localStorage.setItem(CLAVE_LOCAL, JSON.stringify(conFecha));
+            almacen.setItem(CLAVE_LOCAL, JSON.stringify(conFecha));
         } catch { /* sin localStorage, se sigue */ }
 
         if (userId) {

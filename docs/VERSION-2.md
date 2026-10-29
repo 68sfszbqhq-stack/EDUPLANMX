@@ -203,3 +203,166 @@ conocer EduPlan sin cuenta. Código en `src/demo/modoMuestra.ts` y `components/A
 - «Volver a empezar» borra solo las claves `muestra:` y vuelve a sembrar.
 - Para cambiar los datos ficticios: editar `sembrarMuestra()`; si cambian, subir `SEMBRADO` a v2
   para que los visitantes que ya entraron reciban los nuevos.
+
+## Revisión del contexto antes de generar (2026-10-25)
+
+Implementado localmente como primer cambio autorizado para la ponencia; pendiente de publicar.
+
+- «Revisar información antes de generar» prepara una copia de los textos, sin llamar al modelo.
+- Permite editar/excluir diagnóstico, diario importado desde Mis clases, flujo de contextualización,
+  perfil docente y cada fragmento del cuaderno (incluidos título y procedencia).
+- El diario se separa cuando conserva el encabezado que produce Mis clases. Un diagnóstico pegado
+  manualmente sin ese encabezado se revisa íntegro en el campo de diagnóstico.
+- «Enviar lo revisado y generar» usa esa copia. No recarga perfiles, diagnósticos ni fuentes originales
+  después de confirmar. Las fuentes del cuaderno se recuperan antes de mostrar la revisión.
+- Cancelar mantiene el formulario y la selección del cuaderno. Un error de IA conserva las ediciones
+  para reintentar. Los originales de diagnóstico y cuaderno no se modifican con esta revisión.
+- No hay anonimización automática. El usuario debe revisar los textos. El currículo, los esquemas
+  de salida y el contexto escolar que utiliza el servicio siguen formando parte de la solicitud.
+
+Validación: TypeScript y build de producción correctos (avisos existentes de tamaño/importaciones);
+70 pruebas locales correctas. Prueba de navegador en Chrome con datos ficticios y respuesta de IA
+interceptada: ausencia de solicitud antes de confirmar, cancelar, excluir diario/flujo/perfil/cuaderno,
+editar diagnóstico, conservar originales, error/reintento y visualización de la planeación completa.
+Revisión visual en escritorio y móvil. No se invocó un proveedor real ni se desplegó. Antes de publicar,
+falta la prueba de generación real completa requerida por CLAUDE.md.
+
+Pruebas nuevas: `node --import tsx --test scripts/revision-contexto.test.ts`.
+Prueba de navegador: iniciar v2 en puerto 3012 y ejecutar `node scripts/revision-contexto.browser.cjs`
+con Playwright disponible mediante NODE_PATH; utiliza Chrome instalado. Se puede cambiar la URL
+con EDUPLAN_TEST_URL. La ruta de IA se intercepta y no consume cuota.
+
+### Ajuste de sencillez de la revisión
+
+La pantalla abre con «Revisa qué compartes», una indicación breve y vistas de hasta tres líneas
+del diagnóstico y diario. «Editar» abre el texto completo; «Listo» vuelve a la vista breve.
+«No compartir» excluye el contenido y «Compartir» permite recuperarlo sin perder su texto.
+El resto queda plegado en «Más información que se compartirá», con el número de elementos
+adicionales seleccionados. Los botones principales son «Volver» y «Generar planeación».
+
+Se conserva la preparación y el envío del cambio anterior. Verificado con TypeScript y prueba
+de navegador actualizada: edición desplegable, sección adicional cerrada inicialmente, exclusión
+y reincorporación, cancelación, error/reintento y contenido de la petición interceptada. Revisado
+visualmente a 1280 px y 390 px de ancho. Cambio local, sin publicar ni avanzar al punto 2.
+
+## Selección curricular explícita (paso 2)
+
+Implementación local autorizada, sin publicación:
+
+- El generador muestra modelo, generación de referencia del catálogo, asignatura, semestre,
+  estado de verificación y enlace a la fuente cuando está registrado.
+- Si hay varios programas para la asignatura/modelo, el docente elige uno. Si hay uno solo,
+  se propone ese. Cambiar modelo o programa limpia la progresión previa.
+- La selección viaja al servicio por identidad de materia/semestre/modelo; no se vuelve a
+  elegir el primer programa por nombre. Una selección inválida falla sin sustitución silenciosa.
+- Borradores y modelos sin programa generan una propuesta general por tema. No se incorporan
+  sus progresiones provisionales ni se reutiliza otro modelo como fuente oficial.
+- El contexto contiene la progresión elegida completa (también si es posterior a la quinta).
+  El esquema ya no recorta ese contexto a 800 caracteres. El resultado conserva el texto literal.
+- La fuente seleccionada se guarda en curricularSource y aparece en la impresión y en Word.
+  mccemsAlignment.validated queda false: disponer de una fuente no valida la planeación.
+- Formación Laboral conserva la selección de módulo/submódulo y muestra generación/fuente propia.
+- «Verificado en el catálogo» refleja el estado existente en los datos. Este cambio no añade
+  programas ni constituye un cotejo nuevo de todos los PDF. Las generaciones se muestran como
+  referencia del catálogo, no se infieren de la fecha del ciclo escolar.
+
+Validación: TypeScript, compilación de producción y 76 pruebas locales correctas. Pruebas de
+navegador con transporte de IA interceptado: cambio de modelo, exclusión de currículo anterior,
+propuesta general visible, progresión completa en petición y resultado, metadatos exactos,
+exportación Word con estado/modelo y continuidad del paso 1. Inspección visual de escritorio y
+móvil. Pendiente la generación real completa antes de cualquier despliegue, conforme a CLAUDE.md.
+
+Pruebas nuevas: scripts/seleccion-curricular.test.ts y scripts/seleccion-curricular.browser.cjs.
+
+## Experimento local con Codex — 25 de octubre de 2026
+
+Por petición del usuario se conectó Codex para completar cinco recorridos de agentes con
+perfiles docentes y de acompañamiento escolar. Claude no pudo generar por un bloqueo de
+autorización organizacional. El conector experimental se inicia con:
+
+```sh
+npx vite --config vite.experimento.config.ts
+```
+
+Escucha en `http://127.0.0.1:3014/`, exige el proyecto Firebase `eduplanmx-pruebas` y usa
+la sesión autorizada del CLI Codex. No necesita clave Gemini ni modifica el despliegue.
+Recibe el prompt real armado por Eduplan y devuelve el JSON generado, sin respuestas de muestra.
+Usa directorio temporal, CLI efímero sin configuración personal, sandbox de solo lectura,
+shell y búsqueda web desactivadas. Respalda cada respuesta con nombre único en
+`planeaciones-generadas/codex-*.json`; el modelo efectivo se devuelve en los metadatos.
+
+Conexión y primeras planeaciones reales comprobadas con `gpt-6.1-sol`; TypeScript del
+producto y del conector y compilación de producción correctos. Evaluaciones y documentos
+exportados en el proyecto de ponencia, carpeta `evaluaciones-usuarios/`. La revisión detectó
+pendientes en auditoría curricular, composición del PAEC y presentación de instrumentos;
+una generación exitosa no equivale a validación pedagógica ni autoriza publicación.
+
+## Mejora 1 de la evaluación: confianza de la auditoría
+
+Implementada localmente el 25 de octubre de 2026. El componente ahora recibe solo la
+planeación: el formulario no puede cambiar retroactivamente el modelo auditado.
+Se resuelve la fuente por materia, semestre, modelo, estado oficial y URL registrados
+en `curricularSource`; no se usa el primer programa ni se infiere procedencia de planes antiguos.
+Fuentes ausentes, generales, incompletas, ambiguas o retiradas del catálogo quedan
+«no evaluables». Formación Laboral no se coteja contra progresiones del componente fundamental.
+Se compara el texto íntegro de la progresión, sin atribuir por ello alineación de actividades.
+
+Se retiraron porcentaje global, dictamen «lista para entregar», equivalencia con supervisión
+y encabezado fijo Modelo 2025. La vista «Revisa antes de usar» muestra conteos descriptivos,
+procedencia del resultado y observaciones desplegables. Las búsquedas textuales se presentan
+como orientativas; no encontrar una palabra no acredita lenguaje excluyente.
+
+Validación: 20 pruebas (9 nuevas de auditoría y 11 previas de selección/revisión), TypeScript
+y build correctos. Vista comprobada en navegador con dos resultados reales ya guardados
+del experimento: fuente oficial 2024 y propuesta general 2025; enlace exacto, ausencia de
+fuente heredada, detalle desplegable y ancho móvil. No hubo nueva generación: el cambio
+afecta la revisión de resultados, no los prompts ni el proveedor. Sin despliegue.
+
+## Cierre de las cinco mejoras de la evaluación — 25 de octubre de 2026
+
+Se completó la conservación de instrumento y contexto actual, con fuentes anteriores
+opcionales y comprobación explícita de compatibilidad. PAEC distingue solo aula,
+pendiente y vinculado, conserva nombre/productos y no convierte una propuesta manual
+en aprobación institucional. La auditoría marca «no aplica» para solo aula.
+
+El resumen previo presenta decisiones docentes; las opciones complementarias quedan
+plegadas. El resultado muestra instrumento completo y materiales desarrollados.
+Ambos esquemas de generación requieren un paquete mínimo de materiales con caso,
+consignas, respuestas orientativas separadas y logística ajustada al tiempo y recursos.
+
+Word exporta la matriz y los materiales, separa material estudiantil de guía docente,
+usando tablas por momento con filas indivisibles y cabeceras repetidas. Las nuevas
+planeaciones conservan plantel/CCT en `institution`, también al exportar desde biblioteca.
+Los planes históricos sin esa información no se completan con datos supuestos.
+Las fechas inválidas tienen texto alternativo. La portada ya no promete ahorro fijo
+ni cumplimiento automático de supervisión.
+
+Validación final: 31 pruebas de esta funcionalidad correctas, TypeScript/build y diff
+sin errores; dos generaciones reales por Codex, fuente 2024 y propuesta general 2025,
+guardadas y exportadas desde la interfaz. Word revisado íntegramente (6 y 7 páginas).
+Pruebas anteriores de navegador para selección/revisión y casos de error también
+correctas. Evidencias en el proyecto de ponencia:
+`evaluaciones-usuarios/mejoras/CIERRE-CINCO-MEJORAS.md` y `validacion-final/`.
+Cambios locales, sin despliegue. Las pruebas con agentes no son validación en aula.
+
+## Seguridad — octubre de 2026
+
+Correcciones y pruebas locales en [SEGURIDAD-2026-10.md](SEGURIDAD-2026-10.md). Las nuevas reglas compartidas requieren publicación explícita en `eduplanmx-pruebas`; no se han aplicado al Firebase remoto ni al sitio de producción.
+
+## Revisión posterior a los cinco perfiles — cuatro ajustes
+
+Implementados localmente: cotejo específico de Cultura Digital I, fechas/horas/periodo comunes entre web y Word, lista de cotejo sin conversión a escala, instrucciones de coherencia y turnos, portada/auditoría precisas y fichas separadas por momento con espacio de respuesta. Dos generaciones reales y Word renderizado. Detalles y alcance en [CUATRO-AJUSTES-2026-10.md](CUATRO-AJUSTES-2026-10.md). No publicado.
+
+## Publicación v2 y formato institucional restaurado (2026-10-25)
+
+Publicado por autorización de José en https://eduplanmx-pruebas.web.app/ con Firebase Hosting del proyecto `eduplanmx-pruebas`. GitHub Pages y Firebase de v1 no se modificaron. Configuración independiente: `firebase.hosting-v2.json`; despliegue exclusivamente de Hosting. La web utiliza Gemini con la clave del docente; el puente Codex sigue siendo local.
+
+Word vuelve a usar `formatoBGO.ts`: tres logos originales, oficio horizontal, barras guinda, casillas y tabla de sesiones, evaluación y cuatro espacios de firmas. Los nombres del plantel y CCT se toman del documento; no se copian los nombres de directivos de la plantilla a otras escuelas. Conserva instrumento completo, estado PAEC, datos curriculares cotejados, fechas/horas, fichas por sesión, guía y constancia de revisión. Se reexportó la respuesta real anterior mediante reproducción controlada en navegador, sin otra llamada de IA. Diez páginas renderizadas y revisadas visualmente.
+
+Para volver a publicar, comprobar primero que el entorno de build corresponde a `eduplanmx-pruebas`, sin motor terminal ni emulador ni claves privadas incorporadas. Compilar con `npm run build -- --base /`, copiar `dist/index.html` a `dist/registro.html` para retirar la entrada antigua con hashes fijos y ejecutar:
+
+```sh
+firebase deploy --only hosting --config firebase.hosting-v2.json --project eduplanmx-pruebas --account alemarci2202@gmail.com
+```
+
+Las comprobaciones de Word ahora verifican los tres PNG embebidos, orientación horizontal, color institucional, conservación del plantel y del contenido actual.

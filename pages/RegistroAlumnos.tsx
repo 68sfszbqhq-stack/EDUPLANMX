@@ -1,3 +1,4 @@
+import { consultarInvitacion, registrarConInvitacion } from '../src/services/invitacionesRegistro';
 import React, { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { CheckCircle, UserPlus, School, AlertCircle } from 'lucide-react';
@@ -12,34 +13,18 @@ const RegistroAlumnos: React.FC = () => {
     const [guardando, setGuardando] = useState(false);
     const [nombreAlumno, setNombreAlumno] = useState('');
 
-    // El plantel llega en el enlace que comparte el docente: /registro?escuela=<CCT>.
-    // Sin plantel el expediente quedaría huérfano y visible para cualquier escuela,
-    // así que se pide el CCT antes de abrir el formulario.
-    const [params] = useSearchParams();
-    const [cct, setCct] = useState(() => (params.get('escuela') || '').toUpperCase());
-    const [cctEscrito, setCctEscrito] = useState('');
+    const [token] = useState(() => new URLSearchParams(location.hash.slice(1)).get('invitacion') || '');
     const [escuela, setEscuela] = useState<{ id: string; nombre: string; cct: string } | null>(null);
-    const [buscandoEscuela, setBuscandoEscuela] = useState(Boolean(params.get('escuela')));
+    const [buscandoEscuela, setBuscandoEscuela] = useState(true);
     const [errorEscuela, setErrorEscuela] = useState('');
-
     useEffect(() => {
-        if (!cct.trim()) return;
         let cancelado = false;
-        setBuscandoEscuela(true);
-        setErrorEscuela('');
-        schoolService.getSchoolByCCT(cct.trim())
-            .then(s => {
-                if (cancelado) return;
-                if (s) {
-                    setEscuela({ id: s.id, nombre: s.nombre, cct: s.cct });
-                } else {
-                    setErrorEscuela(`No encontramos un plantel con la clave ${cct.trim()}. Verifícala con tu maestro.`);
-                }
-            })
-            .catch(() => { if (!cancelado) setErrorEscuela('No se pudo verificar el plantel. Revisa tu conexión.'); })
-            .finally(() => { if (!cancelado) setBuscandoEscuela(false); });
+        consultarInvitacion(token).then(id => schoolService.getSchoolById(id)).then(s => {
+            if (!cancelado && s) setEscuela({ id: s.id, nombre: s.nombre, cct: s.cct });
+        }).catch(e => { if (!cancelado) setErrorEscuela(e.message || 'No se pudo validar tu enlace.'); })
+          .finally(() => { if (!cancelado) setBuscandoEscuela(false); });
         return () => { cancelado = true; };
-    }, [cct]);
+    }, [token]);
 
     const handleGuardarAlumno = async (alumno: Alumno) => {
         if (!escuela) return;
@@ -48,7 +33,7 @@ const RegistroAlumnos: React.FC = () => {
 
         try {
             // Guardar en Firebase, siempre ligado a un plantel
-            await alumnosService.guardarAlumno({
+            await registrarConInvitacion(token, {
                 datosAdministrativos: alumno.datosAdministrativos,
                 datosNEM: alumno.datosNEM,
                 fechaRegistro: alumno.fechaRegistro,
@@ -65,7 +50,7 @@ const RegistroAlumnos: React.FC = () => {
             }, 5000);
         } catch (error) {
             console.error('Error al guardar alumno:', error);
-            alert('Hubo un error al guardar tu información. Por favor, intenta de nuevo.');
+            alert('No se pudo enviar el registro. Verifica la conexión; si el enlace ya se utilizó o venció, solicita uno nuevo a tu docente.');
         } finally {
             setGuardando(false);
         }
@@ -123,48 +108,9 @@ const RegistroAlumnos: React.FC = () => {
                                             <span className="block text-xs text-emerald-700">CCT: {escuela.cct}</span>
                                         </p>
                                     </div>
-                                    <button
-                                        type="button"
-                                        onClick={() => { setEscuela(null); setCct(''); setCctEscrito(''); }}
-                                        className="mt-2 text-xs text-slate-500 underline hover:text-slate-700"
-                                    >
-                                        No es mi plantel, cambiarlo
-                                    </button>
                                 </div>
                             ) : (
-                                <div className="max-w-md mx-auto mb-8 text-left">
-                                    <label className="block text-sm font-bold text-slate-700 mb-1.5">
-                                        Clave de tu plantel (CCT)
-                                    </label>
-                                    <p className="text-xs text-slate-500 mb-2">
-                                        Tu maestro o maestra te la puede dar. Sirve para que tu registro llegue
-                                        a tu escuela y no a otra.
-                                    </p>
-                                    <div className="flex gap-2">
-                                        <input
-                                            type="text"
-                                            value={cctEscrito}
-                                            onChange={e => setCctEscrito(e.target.value.toUpperCase())}
-                                            onKeyDown={e => { if (e.key === 'Enter') setCct(cctEscrito); }}
-                                            placeholder="Ej. 21EBH0026G"
-                                            className="flex-1 p-3 rounded-xl border border-slate-300 font-mono uppercase focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400"
-                                        />
-                                        <button
-                                            type="button"
-                                            onClick={() => setCct(cctEscrito)}
-                                            disabled={!cctEscrito.trim() || buscandoEscuela}
-                                            className="px-5 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 disabled:bg-slate-300 disabled:cursor-not-allowed"
-                                        >
-                                            {buscandoEscuela ? '…' : 'Verificar'}
-                                        </button>
-                                    </div>
-                                    {errorEscuela && (
-                                        <p className="mt-2 text-xs text-red-600 flex items-start gap-1.5">
-                                            <AlertCircle className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
-                                            {errorEscuela}
-                                        </p>
-                                    )}
-                                </div>
+                                <p role="status" className="mb-6 text-slate-700">{buscandoEscuela ? 'Verificando enlace…' : errorEscuela || 'Solicita a tu docente un enlace individual de registro.'}</p>
                             )}
 
                             <button
@@ -234,15 +180,7 @@ const RegistroAlumnos: React.FC = () => {
                             las clases y ofrecerte una mejor experiencia educativa.
                         </p>
 
-                        <button
-                            onClick={() => {
-                                setRegistroExitoso(false);
-                                setMostrarFormulario(true);
-                            }}
-                            className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
-                        >
-                            Registrar Otro Alumno
-                        </button>
+                        <p className="text-sm text-slate-600">Ya puedes cerrar esta página. Para otro alumno, solicita otro enlace.</p>
                     </div>
                 )}
 

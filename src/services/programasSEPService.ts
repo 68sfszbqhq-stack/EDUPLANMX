@@ -11,6 +11,8 @@ export interface MetasAprendizaje {
     descripcion: string;
     metas: string[];
     tematicas?: string[];
+    categorias?: string[];
+    subcategorias?: string[];
 }
 
 export interface OrganizadorCurricular {
@@ -27,9 +29,11 @@ export interface ProgramaSEP {
         semestre?: number;
         creditos?: number;
         horas_semanales?: number;
+        area_recurso?: string;
     };
     organizador_curricular: OrganizadorCurricular;
     progresiones: MetasAprendizaje[];
+    aprendizajes_trayectoria?: string[];
     url_fuente: string;
     fecha_extraccion: string;
 

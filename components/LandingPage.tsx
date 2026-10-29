@@ -40,12 +40,12 @@ const LandingPage: React.FC = () => {
                     Hecha por un docente, para docentes de Bachillerato General Oficial
                 </span>
                 <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-5">
-                    Tu planeación didáctica del MCCEMS,
-                    <span className="text-indigo-600"> de 50 minutos a 5</span>
+                    Prepara tu próxima clase
+                    <span className="text-indigo-600"> con apoyo de IA</span>
                 </h1>
                 <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-9">
-                    EduPlan MX genera planeaciones alineadas a las progresiones oficiales de la DGB,
-                    con el formato que pide tu supervisión y adaptadas al diagnóstico real de tu grupo.
+                    EduPlan MX te ayuda a elaborar un borrador con actividades, materiales y evaluación
+                    a partir de tu grupo y del programa disponible. Tú lo revisas y ajustas antes de usarlo.
                     Gratis, desde tu navegador.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -89,7 +89,7 @@ const LandingPage: React.FC = () => {
                         <div className="w-11 h-11 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
                             <Clock className="w-5 h-5 text-amber-600" />
                         </div>
-                        <h3 className="font-bold text-slate-900 mb-2">Lista para entregar</h3>
+                        <h3 className="font-bold text-slate-900 mb-2">Borrador para revisar</h3>
                         <p className="text-sm text-slate-600">
                             Secuencia didáctica, evaluación, DUA, vinculación PAEC y currículum ampliado — imprime y entrega.
                         </p>
@@ -114,7 +114,7 @@ const LandingPage: React.FC = () => {
                         ['1', 'Configura tu escuela', 'Una sola vez, con el código de tu plantel'],
                         ['2', 'Carga tu diagnóstico', 'El perfil de tu grupo, desde tus Google Forms'],
                         ['3', 'Genera con IA', 'Elige progresión, metodología y necesidad del día'],
-                        ['4', 'Imprime y entrega', 'Formato listo para supervisión y CTE'],
+                        ['4', 'Revisa y adapta', 'Exporta a Word para tu revisión docente'],
                     ].map(([n, titulo, desc]) => (
                         <div key={n} className="p-4">
                             <div className="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold mx-auto mb-3">{n}</div>

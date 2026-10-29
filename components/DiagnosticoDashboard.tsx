@@ -1,3 +1,4 @@
+import InvitacionRegistro from './InvitacionRegistro';
 import React, { useState, useEffect } from 'react';
 import { Users, AlertTriangle, Target, TrendingUp, Wifi, WifiOff, Plus, FileText } from 'lucide-react';
 import type { Alumno, DiagnosticoGrupal } from '../types/diagnostico';
@@ -103,6 +104,7 @@ const DiagnosticoDashboard: React.FC = () => {
 
     return (
         <div className="space-y-6">
+            <InvitacionRegistro />
             {sinAcceso && <p role="alert" className="p-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-sm">{sinAcceso}</p>}
             {/* Header */}
             <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-8 text-white">

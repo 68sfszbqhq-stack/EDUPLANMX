@@ -1,3 +1,4 @@
+import { obtenerAlmacenCuenta } from '../security/almacenCuenta';
 import { BitacoraEntry, SemaforoNivel } from '../../types';
 import { UsuarioSync, puedeSincronizar, leerCampoUsuario, escribirCampoUsuario } from './nubeSync';
 import { fusionarBitacoras } from './fusionBitacora';
@@ -20,8 +21,9 @@ export const SEMAFORO_INFO: Record<SemaforoNivel, { emoji: string; etiqueta: str
 
 export const bitacoraService = {
     listar(): BitacoraEntry[] {
+        const almacen = obtenerAlmacenCuenta();
         try {
-            const raw = localStorage.getItem(STORAGE_KEY);
+            const raw = almacen.getItem(STORAGE_KEY);
             const parsed = raw ? JSON.parse(raw) : [];
             return Array.isArray(parsed) ? parsed : [];
         } catch {
@@ -30,20 +32,22 @@ export const bitacoraService = {
     },
 
     guardar(entrada: Omit<BitacoraEntry, 'id'>): BitacoraEntry[] {
+        const almacen = obtenerAlmacenCuenta();
         const nueva: BitacoraEntry = { ...entrada, id: `bit_${Date.now()}` };
         // Más reciente primero: es lo que el docente quiere ver al abrir
         const todas = [nueva, ...this.listar()];
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(todas));
+        almacen.setItem(STORAGE_KEY, JSON.stringify(todas));
         return todas;
     },
 
     eliminar(id: string): BitacoraEntry[] {
+        const almacen = obtenerAlmacenCuenta();
         const todas = this.listar().filter(e => e.id !== id);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(todas));
+        almacen.setItem(STORAGE_KEY, JSON.stringify(todas));
         // Recordamos el borrado para que la fusión con la nube no lo resucite
         try {
-            const borrados: string[] = JSON.parse(localStorage.getItem(`${STORAGE_KEY}_borrados`) || '[]');
-            localStorage.setItem(`${STORAGE_KEY}_borrados`, JSON.stringify([...new Set([...borrados, id])]));
+            const borrados: string[] = JSON.parse(almacen.getItem(`${STORAGE_KEY}_borrados`) || '[]');
+            almacen.setItem(`${STORAGE_KEY}_borrados`, JSON.stringify([...new Set([...borrados, id])]));
         } catch {
             // Sin registro de borrados el peor caso es que reaparezca una entrada
         }
@@ -51,8 +55,9 @@ export const bitacoraService = {
     },
 
     idsBorrados(): string[] {
+        const almacen = obtenerAlmacenCuenta();
         try {
-            const v = JSON.parse(localStorage.getItem(`${STORAGE_KEY}_borrados`) || '[]');
+            const v = JSON.parse(almacen.getItem(`${STORAGE_KEY}_borrados`) || '[]');
             return Array.isArray(v) ? v : [];
         } catch {
             return [];
@@ -75,17 +80,19 @@ export const bitacoraService = {
      * registrar sesiones distintas en la escuela y en su casa y ninguna debe perderse.
      */
     async sincronizar(user?: UsuarioSync | null): Promise<BitacoraEntry[]> {
+        const almacen = obtenerAlmacenCuenta();
         const locales = this.listar();
         if (!puedeSincronizar(user)) return locales;
 
         const remotas = await leerCampoUsuario<BitacoraEntry[]>(user.id, CAMPO_NUBE);
+        if (!almacen.vigente()) return locales;
         if (!Array.isArray(remotas)) {
             if (locales.length > 0) await this.respaldar(locales, user);
             return locales;
         }
 
         const fusionadas = fusionarBitacoras(locales, remotas, this.idsBorrados());
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(fusionadas));
+        almacen.setItem(STORAGE_KEY, JSON.stringify(fusionadas));
         await this.respaldar(fusionadas, user);
         return fusionadas;
     },

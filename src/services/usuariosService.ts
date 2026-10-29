@@ -12,7 +12,8 @@ import {
 import { db } from '../config/firebase';
 import type { Usuario, UserRole } from '../../types/auth';
 
-const USUARIOS_COLLECTION = 'usuarios';
+// Misma fuente que Auth y las reglas: desactivar aquí revoca acceso real.
+const USUARIOS_COLLECTION = 'users';
 
 /**
  * Servicio para gestión de usuarios (Super Admin)

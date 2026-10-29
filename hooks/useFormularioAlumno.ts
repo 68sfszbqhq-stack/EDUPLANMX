@@ -5,17 +5,8 @@ const STORAGE_KEY = 'formulario_alumno_progreso';
 
 export const useFormularioAlumno = () => {
     // Cargar datos guardados
-    const loadSavedData = () => {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) {
-            try {
-                return JSON.parse(saved);
-            } catch (e) {
-                return null;
-            }
-        }
-        return null;
-    };
+    // Información de menores: conservar solo en memoria mientras está abierto el formulario.
+    const loadSavedData = (): any => null;
 
     const savedData = loadSavedData();
 
@@ -81,18 +72,10 @@ export const useFormularioAlumno = () => {
     );
 
     // Guardar automáticamente cuando cambian los datos
-    useEffect(() => {
-        const dataToSave = {
-            datosAdmin,
-            redApoyo,
-            datosNEM,
-            lastSaved: new Date().toISOString()
-        };
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
-    }, [datosAdmin, redApoyo, datosNEM]);
+
 
     const limpiarProgreso = () => {
-        localStorage.removeItem(STORAGE_KEY);
+        // No hay copia persistente que pueda recuperar el siguiente alumno.
     };
 
     return {

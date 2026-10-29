@@ -1,3 +1,4 @@
+import { INSTRUCCIONES_PAQUETE, PAQUETE_PROPERTIES } from './paqueteClase';
 /**
  * Contrato de la planeación de FORMACIÓN LABORAL BÁSICA.
  *
@@ -26,6 +27,8 @@ export function construirSystemInstructionLaboral(args: {
     return `
     Eres un experto pedagogo de la DGB/SEP especializado en FORMACIÓN LABORAL BÁSICA
     del MCCEMS. Generas planeaciones didácticas profesionales pero CONCISAS.
+
+    ${INSTRUCCIONES_PAQUETE}
 
     REGLAS CRÍTICAS:
     1. BREVEDAD: describe las actividades de forma directa (máx 2-3 enunciados por celda).
@@ -111,6 +114,7 @@ const MOMENTO_SECUENCIA = {
 export const PLAN_LABORAL_RESPONSE_SCHEMA = {
     type: Type.OBJECT,
     properties: {
+            ...PAQUETE_PROPERTIES,
         title: { type: Type.STRING },
         date: { type: Type.STRING },
         subject: { type: Type.STRING },
@@ -225,7 +229,7 @@ export const PLAN_LABORAL_RESPONSE_SCHEMA = {
         evaluation: { type: Type.STRING },
         duration: { type: Type.STRING },
     },
-    required: [
+    required: ['teachingKit', 'assessmentInstrument',
         'title', 'subject', 'sessions', 'meta', 'laboral', 'evaluationTable',
         'fundamento', 'products', 'collaborativeWork', 'resources', 'references',
         'feedbackStrategy', 'feedbackCycle',

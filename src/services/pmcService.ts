@@ -1,17 +1,19 @@
 import { db } from '../config/firebase';
-import { collection, getDocs, doc, setDoc, addDoc, updateDoc, deleteDoc, getDoc } from 'firebase/firestore';
+import { collection, getDocs, doc, setDoc, addDoc, updateDoc, deleteDoc, getDoc, query, where } from 'firebase/firestore';
 import { PMCDiagnosis, PMCGoal } from '../../types';
 
 const DIAGNOSIS_COLLECTION = 'pmc_diagnosis';
 const GOALS_COLLECTION = 'pmc_metas';
-// Usaremos un ID fijo para la demo, pero esto debería ser el ID del plantel
-const SCHOOL_ID = 'plantel-demo-1';
+const requireSchool = (schoolId: string) => {
+    if (!schoolId || schoolId.includes('/')) throw new Error('Selecciona un plantel válido.');
+    return schoolId;
+};
 
 export const pmcService = {
     // --- DIAGNÓSTICO PMC ---
-    getDiagnosis: async (): Promise<PMCDiagnosis | null> => {
+    getDiagnosis: async (schoolId: string): Promise<PMCDiagnosis | null> => {
         try {
-            const docRef = doc(db, DIAGNOSIS_COLLECTION, SCHOOL_ID);
+            const docRef = doc(db, DIAGNOSIS_COLLECTION, requireSchool(schoolId));
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
                 return docSnap.data() as PMCDiagnosis;
@@ -23,10 +25,10 @@ export const pmcService = {
         }
     },
 
-    saveDiagnosis: async (diagnosis: PMCDiagnosis): Promise<void> => {
+    saveDiagnosis: async (schoolId: string, diagnosis: PMCDiagnosis): Promise<void> => {
         try {
-            const docRef = doc(db, DIAGNOSIS_COLLECTION, SCHOOL_ID);
-            await setDoc(docRef, diagnosis, { merge: true });
+            const docRef = doc(db, DIAGNOSIS_COLLECTION, requireSchool(schoolId));
+            await setDoc(docRef, { ...diagnosis, schoolId }, { merge: true });
         } catch (error) {
             console.error("Error guardando diagnóstico PMC:", error);
             throw error;
@@ -34,9 +36,9 @@ export const pmcService = {
     },
 
     // --- METAS PMC ---
-    getGoals: async (): Promise<PMCGoal[]> => {
+    getGoals: async (schoolId: string): Promise<PMCGoal[]> => {
         try {
-            const querySnapshot = await getDocs(collection(db, GOALS_COLLECTION));
+            const querySnapshot = await getDocs(query(collection(db, GOALS_COLLECTION), where('schoolId', '==', requireSchool(schoolId))));
             if (querySnapshot.empty) return [];
             return querySnapshot.docs.map(doc => ({
                 ...doc.data(),
@@ -48,9 +50,9 @@ export const pmcService = {
         }
     },
 
-    createGoal: async (goal: Omit<PMCGoal, 'id'>): Promise<PMCGoal> => {
+    createGoal: async (schoolId: string, goal: Omit<PMCGoal, 'id'>): Promise<PMCGoal> => {
         try {
-            const docRef = await addDoc(collection(db, GOALS_COLLECTION), goal);
+            const docRef = await addDoc(collection(db, GOALS_COLLECTION), { ...goal, schoolId: requireSchool(schoolId) });
             return { ...goal, id: docRef.id };
         } catch (error) {
             console.error("Error creando meta PMC:", error);

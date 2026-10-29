@@ -1,0 +1,55 @@
+// Prueba con datos ficticios y respuesta IA interceptada; no consume cuota.
+const { chromium } = require('playwright');
+const assert=require('node:assert/strict'); const fs=require('node:fs');
+(async()=>{ const browser=await chromium.launch({headless:true,channel:'chrome'}); try {
+ const page=await browser.newPage({viewport:{width:1280,height:900}}); let requests=[]; let fail=true;
+ await page.route('**/api/ia/terminal', async route=>{requests.push(route.request().postData()); await route.fulfill({status:fail?503:200,contentType:'application/json',body:JSON.stringify(fail?{error:'Fallo de prueba'}:{plan:{...JSON.parse(fs.readFileSync('src/demo/planMuestra.json','utf8')),assessmentInstrument:{name:'Lista de cotejo',instructions:'Marcar una opción',columns:['Sí','No','No observado','Observaciones'],rows:[{criterion:'Usa evidencia',descriptors:['☐','☐','☐','Registrar evidencia']}],scoring:'Criterios observados'}},modelo:'mock'})});});
+ await page.goto(process.env.EDUPLAN_TEST_URL || 'http://127.0.0.1:3012/'); await page.getByText('Probar con datos de muestra',{exact:false}).first().click();
+ await page.getByRole('button',{name:'Generar Planeación',exact:false}).first().click();
+ await page.getByRole('combobox',{name:'Progresión oficial',exact:true}).selectOption({index:2});
+ const original='MARCA_DIAGNOSTICO\nLo que pasó en las últimas clases (diario del docente):\n- 2026-10-20: NOMBRE_FICTICIO\nResultados de Antología del grupo 1A. Cobertura baja.';
+ await page.getByPlaceholder('Pega aquí el resumen',{exact:false}).fill(original);
+ await page.locator('summary').filter({hasText:'Usar fuentes del cuaderno'}).click();
+ await page.getByRole('checkbox',{name:'Usar fuentes revisadas'}).check();
+ await page.getByRole('button',{name:'Revisar información antes de generar'}).click();
+ await page.getByRole('heading',{name:'Revisa qué compartes'}).waitFor();
+ assert.equal(requests.length,0);
+ await page.getByRole('button',{name:'Volver',exact:true}).click();
+ assert.equal(await page.getByPlaceholder('Pega aquí el resumen',{exact:false}).inputValue(),original);
+ assert.equal(await page.getByRole('checkbox',{name:'Usar fuentes revisadas'}).isChecked(),true);
+ await page.getByRole('button',{name:'Revisar información antes de generar'}).click();
+ await page.getByRole('heading',{name:'Revisa qué compartes'}).waitFor();
+ assert.equal(await page.getByRole('textbox',{name:'Diagnóstico del grupo',exact:true}).isVisible(),false);
+ await page.getByRole('button',{name:'Editar: Diagnóstico del grupo',exact:true}).click();
+ await page.getByRole('textbox',{name:'Diagnóstico del grupo',exact:true}).fill('RESUMEN_APROBADO sin nombres.');
+ await page.getByRole('button',{name:'No compartir: Diario de clase',exact:true}).click();
+ // Se puede volver a incluir sin perder el texto.
+ await page.getByRole('button',{name:'Compartir: Diario de clase',exact:true}).click();
+ await page.getByRole('button',{name:'No compartir: Diario de clase',exact:true}).click();
+ const extras=page.locator('details').filter({hasText:'Fuentes y detalles del envío'});
+ assert.equal(await extras.getAttribute('open'),null);
+ await extras.locator('summary').click();
+ const anteriores=page.locator('details').filter({has:page.locator('summary').filter({hasText:'Datos guardados de otras clases'})}); await anteriores.locator('summary').click();
+ for(const name of ['Contexto del grupo y la escuela','Cómo doy clase']) { await page.getByRole('button',{name:`Compartir: ${name}`,exact:true}).click(); await page.getByRole('button',{name:`No compartir: ${name}`,exact:true}).click(); }
+ await anteriores.locator('summary').click();
+ const fuentes=page.getByRole('button',{name:/^No compartir: Fuente /}); assert.ok(await fuentes.count()>0);
+ while(await fuentes.count()) await fuentes.first().click();
+ await extras.locator('summary').click();
+ await page.getByRole('button',{name:'Listo: Diagnóstico del grupo',exact:true}).click();
+ await page.getByRole('heading',{name:'Revisa qué compartes'}).scrollIntoViewIfNeeded();
+ await page.screenshot({path:'/tmp/eduplan-contexto-desktop.png'});
+ await page.getByRole('button',{name:'Generar planeación',exact:true}).click();
+ await page.getByRole('alert').filter({hasText:'Fallo de prueba'}).waitFor();
+ assert.equal(requests.length,1); assert.ok(requests[0].includes('RESUMEN_APROBADO'));
+ for(const marker of ['MARCA_DIAGNOSTICO','NOMBRE_FICTICIO','CONTEXTO CAPTURADO EN EL FLUJO','PERFIL DEL DOCENTE QUE VA A DAR','muestra-diagnostico:1']) assert.ok(!requests[0].includes(marker),marker);
+ await page.getByRole('button',{name:'Editar: Diagnóstico del grupo',exact:true}).click();
+ assert.equal(await page.getByRole('textbox',{name:'Diagnóstico del grupo',exact:true}).inputValue(),'RESUMEN_APROBADO sin nombres.');
+ await page.getByRole('button',{name:'Listo: Diagnóstico del grupo',exact:true}).click();
+ assert.equal(await page.evaluate(()=>localStorage.getItem('diagnosticoGrupo')),original);
+ await page.setViewportSize({width:390,height:844}); await page.getByRole('heading',{name:'Revisa qué compartes'}).scrollIntoViewIfNeeded(); await page.screenshot({path:'/tmp/eduplan-contexto-mobile.png'});
+ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth));
+ fail=false; await page.getByRole('button',{name:'Generar planeación',exact:true}).click();
+ await page.getByRole('heading',{name:'Revisa qué compartes'}).waitFor({state:'detached'});
+ assert.equal(requests.length,2); assert.equal(requests[0],requests[1]);
+ console.log('OK navegador: cancelar conserva campos/cuaderno; no hay envío previo; exclusiones comprobadas en petición; error conserva edición; reintento idéntico; respuesta completa renderizada; móvil sin desbordamiento.');
+ }finally{await browser.close();}})().catch(e=>{console.error(e);process.exit(1)});

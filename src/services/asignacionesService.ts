@@ -45,13 +45,14 @@ class AsignacionesService {
     /**
      * Obtener asignaciones por maestro
      */
-    async obtenerPorMaestro(maestroId: string): Promise<AsignacionMateria[]> {
+    async obtenerPorMaestro(maestroId: string, schoolId: string): Promise<AsignacionMateria[]> {
         try {
             const asignacionesRef = collection(db, ASIGNACIONES_COLLECTION);
             const q = query(
                 asignacionesRef,
                 where('maestroId', '==', maestroId),
-                where('activa', '==', true)
+                where('activa', '==', true),
+                where('schoolId', '==', schoolId)
             );
             const snapshot = await getDocs(q);
 
@@ -68,13 +69,14 @@ class AsignacionesService {
     /**
      * Obtener asignaciones por materia
      */
-    async obtenerPorMateria(materiaId: string): Promise<AsignacionMateria[]> {
+    async obtenerPorMateria(materiaId: string, schoolId: string): Promise<AsignacionMateria[]> {
         try {
             const asignacionesRef = collection(db, ASIGNACIONES_COLLECTION);
             const q = query(
                 asignacionesRef,
                 where('materiaId', '==', materiaId),
-                where('activa', '==', true)
+                where('activa', '==', true),
+                where('schoolId', '==', schoolId)
             );
             const snapshot = await getDocs(q);
 
@@ -99,6 +101,8 @@ class AsignacionesService {
                 throw new Error('Maestro no encontrado');
             }
 
+            if (!data.schoolId || maestro.schoolId !== data.schoolId) throw new Error('El docente debe pertenecer al plantel de la asignación.');
+
             // Obtener datos de la materia
             const materia = await materiasService.obtenerPorId(data.materiaId);
             if (!materia) {
@@ -110,11 +114,13 @@ class AsignacionesService {
             for (const grupoId of data.gruposIds) {
                 const grupoDoc = await getDoc(doc(db, GRUPOS_COLLECTION, grupoId));
                 if (grupoDoc.exists()) {
+                    if (grupoDoc.data().schoolId !== data.schoolId) throw new Error('El grupo pertenece a otro plantel.');
                     gruposNombres.push(grupoDoc.data().nombre);
                 }
             }
 
             const asignacionData: Omit<AsignacionMateria, 'id'> = {
+                schoolId: data.schoolId,
                 maestroId: data.maestroId,
                 maestroNombre: `${maestro.nombre} ${maestro.apellidoPaterno}`,
                 materiaId: data.materiaId,
@@ -155,14 +161,14 @@ class AsignacionesService {
     /**
      * Obtener horario de maestro
      */
-    async obtenerHorarioMaestro(maestroId: string): Promise<HorarioMaestro> {
+    async obtenerHorarioMaestro(maestroId: string, schoolId: string): Promise<HorarioMaestro> {
         try {
             const maestro = await usuariosService.obtenerPorId(maestroId);
             if (!maestro) {
                 throw new Error('Maestro no encontrado');
             }
 
-            const asignaciones = await this.obtenerPorMaestro(maestroId);
+            const asignaciones = await this.obtenerPorMaestro(maestroId, schoolId);
 
             // Calcular total de horas
             let totalHoras = 0;

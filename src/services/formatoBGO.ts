@@ -1,3 +1,5 @@
+import { fechaPlan, periodoPlan, horasPlan, textoDocente } from '../features/planeacion/presentacionPlan';
+import { estadoPAEC } from '../features/planeacion/decisionesPlan';
 /**
  * Formato de planeación del BGO "Carlos Camacho Espíritu", Turno Vespertino
  * (CCT 21EBH0026G, Supervisión 013).
@@ -149,8 +151,8 @@ const unicos = (xs: (string | undefined)[]) =>
 
 function textoPAEC(plan: LessonPlan): string[] {
     const p = plan.paec;
-    if (!p) return [''];
-    const lineas: string[] = [];
+    if (!p || p.estado === 'sin_vinculo') return [estadoPAEC(p)];
+    const lineas: string[] = [estadoPAEC(p)];
     if (p.pecName) lineas.push(`**${p.pecName}.**`);
     if (p.communityProblem) lineas.push(p.communityProblem);
     if (p.projectTrigger) lineas.push(p.projectTrigger);
@@ -161,12 +163,12 @@ function textoPAEC(plan: LessonPlan): string[] {
 function textoProgresion(plan: LessonPlan, modelo?: string): string[] {
     const ce = plan.curricularElements;
     const voc = vocabularioCurricular(modelo);
-    const lineas: string[] = ['**Progresiones:**'];
+    const lineas: string[] = [`**${voc.progresion}:**`];
     const etiqueta = ce?.progressionId ? `${voc.progresion} ${ce.progressionId}` : voc.progresion;
     lineas.push(`**${etiqueta}:**`);
     lineas.push(ce?.progression || plan.progression || '');
     if (ce?.learningGoals?.length) {
-        lineas.push(`**${voc.modelo === '2025' ? 'Meta educativa' : voc.metas}:** ${ce.learningGoals.join(' ')}`);
+        lineas.push(`**${voc.metas}:** ${ce.learningGoals.join(' ')}`);
     }
     if (ce?.trajectoryLearning?.length) {
         lineas.push(`**${voc.trayectoria}:** ${ce.trajectoryLearning.join(' ')}`);
@@ -180,7 +182,7 @@ function textoContenidos(plan: LessonPlan, modelo?: string): string[] {
     const lineas: string[] = ['**Contenidos:**'];
     if (voc.modelo === '2025') {
         lineas.push(`**${voc.contenidoNivel1}:**`);
-        (ce?.contents || []).forEach(c => lineas.push(`- ${c}`));
+        [...(ce?.contents || []), ...(ce?.categories || []), ...(ce?.subcategories || [])].forEach(c => lineas.push(`- ${c}`));
     } else {
         if (ce?.categories?.length) lineas.push(`**${voc.contenidoNivel1}:** ${ce.categories.join('; ')}`);
         if (ce?.subcategories?.length) lineas.push(`**${voc.contenidoNivel2}:** ${ce.subcategories.join('; ')}`);
@@ -208,8 +210,10 @@ function filaSesion(ses: NonNullable<LessonPlan['sessions']>[number], minutos: s
     const tecnicas = unicos(fases.map(([, f]) => f?.technique));
     if (tecnicas.length === 0 && metodologia) tecnicas.push(metodologia);
 
-    const fase = [`**Sesión ${ses.sessionNumber}**`, `(${minutos})`];
-    if (ses.date) fase.push(ses.date);
+    const tiempos = fases.map(([, f]) => /^(\d+)\s*(?:minutos?|min)\.?$/i.exec(f?.time?.trim() || ''));
+    const duracion = tiempos.every(Boolean) ? `${tiempos.reduce((n,t)=>n+Number(t![1]),0)} minutos` : minutos;
+    const fase = [`**Sesión ${ses.sessionNumber}**`, `(${duracion})`];
+    fase.push(fechaPlan(ses.date));
     if (ses.topic) fase.push('', ses.topic);
 
     return new TableRow({ children: [
@@ -217,7 +221,7 @@ function filaSesion(ses: NonNullable<LessonPlan['sessions']>[number], minutos: s
         celda(actividades, anchos[1]),
         celda(tecnicas.map(t => `- ${t}`), anchos[2]),
         celda(unicos(fases.map(([, f]) => f?.evidence)).map(e => `- ${e}`), anchos[3]),
-        celda(unicos(ses.resources || []).map(r => `- ${r}`), anchos[4]),
+        celda(unicos(ses.resources || []).map(r => `- ${textoDocente(r)}`), anchos[4]),
     ] });
 }
 
@@ -228,13 +232,15 @@ export interface OpcionesFormatoBGO {
     plantel?: FormatoPlantel;
     /** Duración de cada sesión tal como se imprime: "50 minutos" */
     minutosSesion?: string;
+    /** Evaluación completa, recursos y fichas actuales, con la plantilla institucional. */
+    complemento?: (Paragraph | Table)[];
 }
 
 export function construirFormatoBGO(plan: LessonPlan, opciones: OpcionesFormatoBGO): Document {
     const plantel = opciones.plantel ?? FORMATO_BGO_CAMACHO;
-    const minutos = opciones.minutosSesion ?? '50 minutos';
+    const minutos = opciones.minutosSesion ?? 'duración según actividades';
     const m = plan.meta;
-    const modelo = m?.modelo;
+    const modelo = plan.curricularSource?.model || m?.modelo;
     const sesiones = plan.sessions ?? [];
 
     const logo = (bytes: Uint8Array | ArrayBuffer, w: number, h: number) =>
@@ -254,7 +260,7 @@ export function construirFormatoBGO(plan: LessonPlan, opciones: OpcionesFormatoB
     // 1. DATOS GENERALES
     const A1 = [5178, 2728, 2728, 3311, 1867, 1748];
     const componente = m?.componente ? COMPONENTES_FORMACION[m.componente] : '';
-    const periodo = m?.period || [m?.startDate, m?.endDate].filter(Boolean).join(' al ');
+    const periodo = periodoPlan(m);
     const numSesiones = `${m?.totalSessions || sesiones.length} sesiones de ${minutos}`;
     const datos = tabla(A1, [
         new TableRow({ children: [new TableCell({
@@ -264,7 +270,7 @@ export function construirFormatoBGO(plan: LessonPlan, opciones: OpcionesFormatoB
                 new TextRun({ text: '1.   DATOS GENERALES', bold: true, color: 'FFFFFF', font: LETRA, size: 19 })] })],
         })] }),
         new TableRow({ children: [
-            casilla('ESCUELA:', `${plantel.escuela}, ${plantel.turno}. CCT ${plantel.cct}`, A1[0]),
+            casilla('ESCUELA:', `${plantel.escuela}${plantel.turno ? ', ' + plantel.turno : ''}. CCT ${plantel.cct}`, A1[0]),
             casilla('Nombre del Docente:', m?.teacher || '', A1[1]),
             casilla('Asignatura:', plan.subject || '', A1[2]),
             casilla('Componente:', componente, A1[3]),
@@ -277,7 +283,7 @@ export function construirFormatoBGO(plan: LessonPlan, opciones: OpcionesFormatoB
             casilla('Vinculación con otro programa:', plan.fundamento?.socioemotionalLink || '', A1[2]),
             casilla('Periodo de Aplicación:', periodo || '', A1[3]),
             casilla('Semestre:', m?.semester ? SEMESTRES[m.semester] || String(m.semester) : '', A1[4]),
-            casilla('Número de sesiones:', numSesiones, A1[5]),
+            casilla('Número de sesiones:', [numSesiones, horasPlan(m?.hoursPerWeek)], A1[5]),
         ] }),
     ]);
 
@@ -296,8 +302,8 @@ export function construirFormatoBGO(plan: LessonPlan, opciones: OpcionesFormatoB
     const encabezadoSesiones = (t: string, w: number) =>
         celda(`**${t}**`, w, { align: AlignmentType.CENTER, valign: VerticalAlign.CENTER });
     const planeacion = tabla(A2, [
-        new TableRow({ children: [
-            celda('**Diagnostico**', A2[0], { align: AlignmentType.CENTER }),
+        new TableRow({ tableHeader: true, children: [
+            celda('**Diagnóstico**', A2[0], { align: AlignmentType.CENTER }),
             celda(plan.context?.diagnosis || '', A2[1] + A2[2] + A2[3] + A2[4], { span: 4 }),
         ] }),
         new TableRow({ tableHeader: true, children: [
@@ -306,6 +312,10 @@ export function construirFormatoBGO(plan: LessonPlan, opciones: OpcionesFormatoB
             encabezadoSesiones('Materiales/ Recursos', A2[4]),
         ] }),
         ...sesiones.map(s => filaSesion(s, minutos, A2, m?.methodology)),
+        ...(!sesiones.length ? [new TableRow({ children: [
+          celda('Secuencia didáctica', A2[0]),
+          celda(MOMENTOS.map(([key, label]) => `**${label}:** ${plan.sequence?.[key] || ''}`), A2.slice(1).reduce((a,b)=>a+b,0), {span:4}),
+        ] })] : []),
     ]);
 
     // 3. EVALUACIÓN Y RETROALIMENTACIÓN
@@ -321,7 +331,7 @@ export function construirFormatoBGO(plan: LessonPlan, opciones: OpcionesFormatoB
         ] })),
         new TableRow({ children: [
             celda('', A3[0]), celda('', A3[1]), celda('', A3[2]), celda('**Total**', A3[3]),
-            celda(`**${total} %**`, A3[4], { align: AlignmentType.CENTER }),
+            celda(`**${total} %**${total !== 100 ? ' — Revisar ponderación: debe sumar 100%.' : ''}`, A3[4], { align: AlignmentType.CENTER }),
         ] }),
     ]);
 
@@ -391,10 +401,10 @@ export function construirFormatoBGO(plan: LessonPlan, opciones: OpcionesFormatoB
             children: [
                 rotulo(plantel.rotulo), rotulo(`CCT. ${plantel.cct}`),
                 datos, concepto, progresiones,
-                espacio(400), barra('2. PLANEACIÓN'), espacio(200), planeacion,
+                ...(plan.curricularSource ? parrafos(`${plan.curricularSource.status === 'general' ? 'Propuesta general · alineación curricular pendiente de cotejo.' : 'Fuente curricular verificada en el catálogo · planeación generada con apoyo de IA.'} ${plan.curricularSource.subject} · modelo ${plan.curricularSource.model} · generación ${plan.curricularSource.generation}.${plan.curricularSource.url ? ` Fuente: ${plan.curricularSource.url}` : ''}`) : []),
+                new Paragraph({ pageBreakBefore: true, spacing: { before: 0, after: 0, line: 1 }, children: [new TextRun({text: '', size: 1})] }), barra('2. PLANEACIÓN'), planeacion,
                 new Paragraph({ children: [new PageBreak()] }),
-                ...evaluacion,
-                espacio(), barra('REFERENCIAS'), espacio(), ...referencias,
+                ...(opciones.complemento ? [barra('3. EVALUACIÓN Y RETROALIMENTACIÓN'), espacio(), tablaEval, ...opciones.complemento] : [...evaluacion, espacio(), barra('REFERENCIAS'), espacio(), ...referencias]),
                 new Paragraph({ children: [new PageBreak()] }),
                 espacio(400), barra('REVISIÓN Y VISTO BUENO', CAFE), espacio(700), firmas,
             ],

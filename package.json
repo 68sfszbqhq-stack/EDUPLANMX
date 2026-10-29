@@ -21,7 +21,9 @@
     "dev:v2:emulador": "VITE_EMULADOR=1 vite --config vite.v2.config.ts",
     "test:evaluacion": "node --import tsx --test scripts/evaluacion.test.ts",
     "test:clase": "node --import tsx --test scripts/clase.test.ts",
-    "test:pagina": "node --import tsx --test scripts/pagina.test.ts"
+    "test:pagina": "node --import tsx --test scripts/pagina.test.ts",
+    "test:seguridad:local": "node --import tsx --test scripts/seguridad-local.test.ts",
+    "test:seguridad:reglas": "node scripts/combinar-reglas.mjs && PATH=/opt/homebrew/opt/openjdk/bin:$PATH firebase emulators:exec --config firebase.seguridad-emulador.json --only firestore --project demo-eduplan-security 'node --import tsx --test --test-concurrency=1 scripts/auditoria-seguridad.test.ts scripts/reglas.test.ts scripts/reglas-compartidas.test.ts'"
   },
   "dependencies": {
     "@google/genai": "^1.35.0",
@@ -40,13 +42,17 @@
     "@types/node": "^25.0.3",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^5.2.0",
     "autoprefixer": "^10.4.18",
     "pdf-parse": "^2.4.5",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "tsx": "^4.21.0",
     "typescript": "^5.2.2",
-    "vite": "^5.1.4"
+    "vite": "^7.3.7"
+  },
+  "overrides": {
+    "@grpc/grpc-js": "^1.14.6",
+    "postcss-selector-parser": "^7.1.7"
   }
 }

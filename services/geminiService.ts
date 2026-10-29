@@ -1,3 +1,5 @@
+import { fetchTerminalLocal } from './terminalLocal';
+import { SeleccionCurricular, resolverSeleccion, contextoPrograma, generacionPlan } from '../src/features/planeacion/seleccionCurricular';
 import { ContextoCuaderno, bloqueParaPlan } from '../src/features/cuaderno/model';
 
 import { GoogleGenAI } from "@google/genai";
@@ -26,6 +28,9 @@ export { PLAN_RESPONSE_SCHEMA, construirSystemInstruction };
  * colectivo en lugar de concentrarla en una sola cuenta.
  */
 
+import { COLUMNAS_COTEJO, comprobarInstrumento } from './paqueteClase';
+import { textoDocente } from '../src/features/planeacion/presentacionPlan';
+
 export const generateLessonPlan = async (
   prompt: string,
   school: SchoolContext,
@@ -38,7 +43,11 @@ export const generateLessonPlan = async (
    * estructuras distintas y mezclarlas produce planeaciones que la ATP rechaza.
    */
   submoduloLaboralId?: string,
-  cuaderno?: ContextoCuaderno
+  cuaderno?: ContextoCuaderno,
+  /** Texto revisado por el docente; vacío significa excluir, no recargar. */
+  perfilRevisado?: string,
+  seleccionCurricular?: SeleccionCurricular,
+  decisiones?: { instrumento: string }
 ): Promise<LessonPlan> => {
 
   // Versión 2: el modelo vive en la terminal de José (ver scripts/puente-ia.ts).
@@ -56,7 +65,7 @@ export const generateLessonPlan = async (
     );
   }
 
-  const model = porTerminal ? 'claude-opus (terminal)' : 'gemini-2.5-flash';
+  const model = porTerminal ? `${import.meta.env.VITE_TERMINAL_PROVIDER || 'claude-opus'} (terminal)` : 'gemini-2.5-flash';
   console.log('🤖 Motor de IA:', model);
 
   // ¿Esta planeación es de Formación Laboral? Se decide por el submódulo elegido en el
@@ -69,7 +78,8 @@ export const generateLessonPlan = async (
   const programasOficiales = programasSEPService.buscarPorMateria(subject.subjectName);
   // Solo tratamos como "oficial" un programa con progresiones verificadas de la DGB;
   // los borradores (esqueletos provisionales) no deben alimentar a la IA como currículo real.
-  const programaOficial = programasOficiales.find(p => p.estado !== 'borrador') || null;
+  const programaSeleccionado = seleccionCurricular ? resolverSeleccion(programasOficiales, seleccionCurricular) : programasOficiales.find(p => p.estado === 'oficial') || null;
+  const programaOficial = programaSeleccionado?.estado === 'oficial' ? programaSeleccionado : null;
 
   let contextoOficial = "";
   if (ctxLaboral) {
@@ -81,6 +91,8 @@ export const generateLessonPlan = async (
       `📋 "${subject.subjectName}" es de Formación Laboral. Elige el módulo y submódulo ` +
       `que vas a planear: la planeación se construye sobre la Actividad Clave del programa oficial.`
     );
+  } else if (seleccionCurricular) {
+    contextoOficial = contextoPrograma(programaSeleccionado, seleccionCurricular);
   } else if (programaOficial) {
     contextoOficial = programasSEPService.generarContextoIA(programaOficial.materia, programaOficial.semestre);
   } else {
@@ -89,13 +101,16 @@ export const generateLessonPlan = async (
 
   // Perfil del docente: cómo da clase, con qué recursos cuenta y qué le revisan.
   // Si nunca contestó el cuestionario, el bloque va vacío y el prompt queda igual que antes.
-  let bloquePerfil = '';
-  try {
-    const perfil = await perfilDocenteService.obtener(userId);
-    bloquePerfil = perfilDocenteService.generarBloquePrompt(perfil);
-    if (bloquePerfil) console.log('👤 Planeación personalizada con el perfil del docente');
-  } catch (e) {
-    console.warn('No se pudo cargar el perfil docente; se genera sin personalizar.', e);
+  let bloquePerfil = perfilRevisado ?? '';
+  if (perfilRevisado === undefined) {
+    try {
+      const perfil = await perfilDocenteService.obtener(userId);
+      bloquePerfil = perfilDocenteService.generarBloquePrompt(perfil);
+      if (bloquePerfil) console.log('👤 Planeación personalizada con el perfil del docente');
+    } catch (e) {
+      console.warn('No se pudo cargar el perfil docente; se genera sin personalizar.', e);
+    }
+
   }
 
   const baseSystemInstruction = ctxLaboral
@@ -112,13 +127,16 @@ export const generateLessonPlan = async (
   const mensaje = (ctxLaboral
     ? `Genera la planeación completa del submódulo "${ctxLaboral.submodulo.nombre}" desarrollando su Actividad Clave oficial. Respeta el número de sesiones solicitado.`
     : `Genera la planeación completa para ${subject.subjectName} basándote en el prompt estructurado. Respeta el número de sesiones solicitado.`) + (contextoDocumental ? "\n" + contextoDocumental : "");
-  const esquema = ctxLaboral ? PLAN_LABORAL_RESPONSE_SCHEMA : PLAN_RESPONSE_SCHEMA;
+  const esquema: any = structuredClone(ctxLaboral ? PLAN_LABORAL_RESPONSE_SCHEMA : PLAN_RESPONSE_SCHEMA);
+  if (/lista de cotejo/i.test(decisiones?.instrumento || '')) {
+    esquema.properties.assessmentInstrument.properties.columns = { type: 'ARRAY', minItems: 4, maxItems: 4, items: { type: 'STRING', enum: COLUMNAS_COTEJO } };
+  }
   const trazaPrompt = prompt + (contextoDocumental ? "\n" + contextoDocumental : "");
 
   if (porTerminal) {
     let respuesta: Response;
     try {
-      respuesta = await fetch('/api/ia/terminal', {
+      respuesta = await fetchTerminalLocal('/api/ia/terminal', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ systemInstruction, mensaje, esquema, etiqueta: subject.subjectName }),
@@ -128,7 +146,8 @@ export const generateLessonPlan = async (
     }
     const cuerpo = await respuesta.json().catch(() => ({}));
     if (!respuesta.ok) throw new Error(`⚠️ La IA de la terminal no pudo generar la planeación: ${cuerpo.error || respuesta.status}. Tu formulario sigue aquí; vuelve a intentar.`);
-    return construirLessonPlan(cuerpo.plan, { prompt: trazaPrompt, model: cuerpo.modelo || model, subject, programaOficial, ctxLaboral });
+    comprobarInstrumento(decisiones?.instrumento, cuerpo.plan?.assessmentInstrument);
+    return construirLessonPlan(cuerpo.plan, { prompt: trazaPrompt, model: cuerpo.modelo || model, subject, programaOficial, ctxLaboral, seleccionCurricular, programaSeleccionado });
   }
 
   const ai = new GoogleGenAI({ apiKey: effectiveApiKey });
@@ -152,7 +171,8 @@ export const generateLessonPlan = async (
       console.error("Error al procesar JSON (Posible respuesta trunca):", e);
       throw new Error("La planeación es muy extensa y se cortó. Intenta generar menos sesiones (ej. reducir a 3) o ser más específico.");
     }
-    return construirLessonPlan(parsedData, { prompt: trazaPrompt, model, subject, programaOficial, ctxLaboral });
+    comprobarInstrumento(decisiones?.instrumento, parsedData?.assessmentInstrument);
+    return construirLessonPlan(parsedData, { prompt: trazaPrompt, model, subject, programaOficial, ctxLaboral, seleccionCurricular, programaSeleccionado });
 
   } catch (error: any) {
     console.error("Error Gemini:", error);
@@ -191,9 +211,11 @@ function construirLessonPlan(
   ctx: {
     prompt: string; model: string; subject: SubjectContext; programaOficial: any;
     ctxLaboral?: ReturnType<typeof programasLaboralesService.buscarSubmodulo>;
+    seleccionCurricular?: SeleccionCurricular;
+    programaSeleccionado?: ReturnType<typeof resolverSeleccion>;
   }
 ): LessonPlan {
-  const { prompt, model, subject, programaOficial, ctxLaboral } = ctx;
+  const { prompt, model, subject, programaOficial, ctxLaboral, seleccionCurricular, programaSeleccionado } = ctx;
 
     // --- LÓGICA DE NORMALIZACIÓN ---
     if (parsedData.sessions && Array.isArray(parsedData.sessions)) {
@@ -281,8 +303,8 @@ function construirLessonPlan(
       componente,
       areaOrRecurso: ctxLaboral
         ? `Formación Laboral Básica en ${ctxLaboral.programa.nombre}`
-        : (subject.mccemsCategory || parsedData.meta?.areaOrRecurso || ''),
-      modelo: (programaOficial?.modelo === '2025' ? '2025' : '2024'),
+        : (programaOficial?.metadata.area_recurso || subject.mccemsCategory || ''),
+      modelo: seleccionCurricular?.modelo || (programaOficial?.modelo === '2025' ? '2025' : '2024'),
       // El programa oficial da las horas por submódulo; no se le preguntan a la IA.
       ...(ctxLaboral ? { hoursPerWeek: parsedData.meta?.hoursPerWeek } : {}),
     };
@@ -329,6 +351,7 @@ function construirLessonPlan(
     // Compatibilidad con campos legacy
     const lessonPlan: LessonPlan = {
       ...parsedData,
+      resources: parsedData.resources?.map((r: string) => textoDocente(r)),
       date: parsedData.date || new Date().toLocaleDateString('es-MX', { day: '2-digit', month: 'long', year: 'numeric' }),
       learningGoal: parsedData.curricularElements?.learningGoals?.[0] || '',
       progression: parsedData.curricularElements?.progression || '',
@@ -349,10 +372,27 @@ function construirLessonPlan(
       }
     };
 
-    if (programaOficial) {
-      if (!lessonPlan.mccemsAlignment) lessonPlan.mccemsAlignment = { documentUrl: '', validated: false };
-      lessonPlan.mccemsAlignment.documentUrl = programaOficial.url_fuente;
-      lessonPlan.mccemsAlignment.validated = true;
+    // Una fuente oficial no equivale a una planeación validada.
+    lessonPlan.mccemsAlignment = { documentUrl: ctxLaboral?.programa.urlFuente || programaOficial?.url_fuente || '', validated: false };
+    if (seleccionCurricular || ctxLaboral) {
+      lessonPlan.curricularSource = {
+        status: ctxLaboral || programaOficial ? 'oficial' : 'general',
+        model: seleccionCurricular?.modelo || '2024',
+        generation: ctxLaboral?.programa.generacion || generacionPlan(seleccionCurricular?.modelo || '2024'),
+        subject: ctxLaboral?.programa.nombre || programaSeleccionado?.materia || subject.subjectName,
+        semester: programaSeleccionado?.semestre,
+        url: ctxLaboral?.programa.urlFuente || programaSeleccionado?.url_fuente || '',
+        catalogState: programaSeleccionado?.estado || (ctxLaboral ? 'oficial' : 'sin_programa'),
+      };
+      // La selección curricular permanece literal aunque el modelo la reformule.
+      const progresion = programaOficial?.progresiones.find((p: { id: number }) => p.id === seleccionCurricular?.progresionId);
+      if (progresion) {
+        lessonPlan.curricularElements = { categories: [], subcategories: [], ...lessonPlan.curricularElements, progression: progresion.descripcion, progressionId: String(progresion.id), learningGoals: progresion.metas,
+          ...(progresion.categorias ? { categories: progresion.categorias } : {}),
+          ...(progresion.subcategorias ? { subcategories: progresion.subcategorias } : {}),
+          ...(programaOficial?.aprendizajes_trayectoria ? { trajectoryLearning: programaOficial.aprendizajes_trayectoria } : {}) };
+        lessonPlan.progression = progresion.descripcion;
+      }
     }
 
     return lessonPlan;

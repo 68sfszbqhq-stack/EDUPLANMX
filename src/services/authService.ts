@@ -39,10 +39,12 @@ class AuthService {
             const userData = await this.getUserData(userCredential.user.uid);
 
             if (!userData) {
+                await signOut(auth);
                 throw new Error('Usuario no encontrado en la base de datos');
             }
 
-            if (!userData.activo) {
+            if (userData.activo !== true) {
+                await signOut(auth);
                 throw new Error('Usuario inactivo. Contacta al administrador.');
             }
 
@@ -124,8 +126,8 @@ class AuthService {
                 console.log('✅ Nuevo usuario creado desde Google:', userData.email);
             }
 
-            if (userData.activo === false) {
-                console.error('🚫 Acceso denegado: Usuario inactivo en Firestore', userData);
+            if (userData.activo !== true) {
+                await signOut(auth);
                 throw new Error('Usuario inactivo. Contacta al administrador.');
             }
 

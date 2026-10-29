@@ -45,6 +45,24 @@
                     "order": "DESCENDING"
                 }
             ]
+        },
+        {
+            "collectionGroup": "planeaciones",
+            "queryScope": "COLLECTION",
+            "fields": [
+                {
+                    "fieldPath": "schoolId",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "isPublic",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "createdAt",
+                    "order": "DESCENDING"
+                }
+            ]
         }
     ],
     "fieldOverrides": []

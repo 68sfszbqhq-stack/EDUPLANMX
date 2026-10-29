@@ -192,6 +192,7 @@ export const getPlaneacionesEscuela = async (
         let q = query(
             collection(db, 'planeaciones'),
             where('schoolId', '==', schoolId),
+            where('isPublic', '==', true),
             orderBy('createdAt', 'desc')
         );
 

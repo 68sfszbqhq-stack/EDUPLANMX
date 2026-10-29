@@ -1,3 +1,4 @@
+import { obtenerAlmacenCuenta } from '../../src/security/almacenCuenta';
 import React, { useMemo, useState } from 'react';
 import { FileText, Download, AlertTriangle, CalendarCheck, ClipboardList, Stethoscope } from 'lucide-react';
 import { Packer, Document } from 'docx';
@@ -18,15 +19,16 @@ interface Props {
 
 export default function Documentos({ grupo, alumnos, columnas, notas, sesiones, diario, anotaciones, resultados, onError }: Props) {
   const { user } = useAuth();
+  const almacen = obtenerAlmacenCuenta();
   const parciales = grupo.parciales ?? [];
   const [periodo, setPeriodo] = useState<number | null>(null); // null = semestre completo
-  const guardados = (() => { try { return JSON.parse(localStorage.getItem(CLAVE_DATOS) || '{}'); } catch { return {}; } })();
+  const guardados = (() => { try { return JSON.parse(almacen.getItem(CLAVE_DATOS) || '{}'); } catch { return {}; } })();
   const [escuela, setEscuela] = useState<string>(guardados.escuela ?? (user as any)?.schoolName ?? '');
   const [cct, setCct] = useState<string>(guardados.cct ?? (user as any)?.schoolCct ?? '');
   const [docente, setDocente] = useState<string>(guardados.docente ?? [user?.nombre, (user as any)?.apellidoPaterno, (user as any)?.apellidoMaterno].filter(Boolean).join(' '));
   const [generando, setGenerando] = useState('');
 
-  const recordar = () => { try { localStorage.setItem(CLAVE_DATOS, JSON.stringify({ escuela, cct, docente })); } catch { /* sin almacenamiento: no pasa nada */ } };
+  const recordar = () => { try { almacen.setItem(CLAVE_DATOS, JSON.stringify({ escuela, cct, docente })); } catch { /* sin almacenamiento: no pasa nada */ } };
 
   // Todo lo del periodo elegido; la final siempre se calcula con todos los parciales.
   const cols = useMemo(() => enParcial(columnas, parciales, periodo), [columnas, parciales, periodo]);

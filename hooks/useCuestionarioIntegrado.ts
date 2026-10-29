@@ -84,18 +84,8 @@ const DEFAULT_CONTEXTO_COMUNITARIO: ContextoComunitario = {
 
 export const useCuestionarioIntegrado = () => {
     // Cargar datos guardados
-    const loadSavedData = () => {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) {
-            try {
-                return JSON.parse(saved);
-            } catch (e) {
-                console.error('Error al cargar datos guardados:', e);
-                return null;
-            }
-        }
-        return null;
-    };
+    // Información de menores: conservar solo en memoria mientras está abierto el formulario.
+    const loadSavedData = (): any => null;
 
     const savedData = loadSavedData();
 
@@ -121,17 +111,7 @@ export const useCuestionarioIntegrado = () => {
     );
 
     // Auto-guardar cuando cambian los datos
-    useEffect(() => {
-        const dataToSave = {
-            datosGenerales,
-            datosFamiliares,
-            datosEconomicos,
-            datosAlumno,
-            contextoComunitario,
-            lastSaved: new Date().toISOString()
-        };
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
-    }, [datosGenerales, datosFamiliares, datosEconomicos, datosAlumno, contextoComunitario]);
+
 
     // Función para obtener el cuestionario completo
     const getCuestionarioCompleto = (): CuestionarioSocioEducativo => {
@@ -174,7 +154,7 @@ export const useCuestionarioIntegrado = () => {
 
     // Función para limpiar el progreso
     const limpiarProgreso = () => {
-        localStorage.removeItem(STORAGE_KEY);
+        // No hay copia persistente que pueda recuperar el siguiente alumno.
         setDatosGenerales(DEFAULT_DATOS_GENERALES);
         setDatosFamiliares(DEFAULT_DATOS_FAMILIARES);
         setDatosEconomicos(DEFAULT_DATOS_ECONOMICOS);

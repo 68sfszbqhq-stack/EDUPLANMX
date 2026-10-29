@@ -1,3 +1,4 @@
+import { INSTRUCCIONES_PAQUETE, PAQUETE_PROPERTIES } from './paqueteClase';
 /**
  * Contrato de la planeación: qué se le pide al modelo y con qué estructura responde.
  *
@@ -21,9 +22,11 @@ export function construirSystemInstruction(args: {
 }): string {
   const { contextoOficial, school, prompt, bloquePerfil = '' } = args;
   return `
-    Eres un experto pedagogo de la DGB/SEP experto en el MCCEMS 2024.
+    Eres un asistente de planeación didáctica. Usa exclusivamente el modelo y programa seleccionados, sin atribuirte autoridad de la SEP.
     Tu objetivo es generar una planeación didáctica PROFESIONAL, pero CONCISA para evitar cortes de texto.
     
+    ${INSTRUCCIONES_PAQUETE}
+
     REGLAS CRÍTICAS:
     1. BREVEDAD: Describe las actividades de forma directa (máx 2-3 enunciados por celda).
     2. PROGRESIONES: Usa el texto oficial proporcionado.
@@ -31,7 +34,7 @@ export function construirSystemInstruction(args: {
     4. RESPUESTA: Solo devuelve el JSON válido sin texto adicional.
     5. IDIOMA: Español.
 
-    ENFOQUE NEM MODELO 2025 (Ficha 01 — así lo revisa la supervisión escolar):
+    ORIENTACIONES PEDAGÓGICAS (adaptar al tiempo, grupo y modelo elegido):
     6. APERTURA: no es solo introducción, es diagnóstico activo. Debe incluir escucha empática
        y democracia participativa: el estudiantado contextualiza la actividad a su entorno y
        se consensúan el producto esperado y los criterios de evaluación.
@@ -48,8 +51,7 @@ export function construirSystemInstruction(args: {
     11. LENGUAJE INCLUYENTE: usa "el estudiantado", "las y los estudiantes"; evita el
         masculino genérico y los estereotipos de género en los ejemplos.
 
-    LISTA DE COTEJO DE LA ASESORÍA TÉCNICO-PEDAGÓGICA (así se revisa la planeación;
-    si un punto falta, la planeación se regresa al docente):
+    ELEMENTOS PARA LA REVISIÓN DOCENTE (no equivalen a aprobación institucional):
     12. RETROALIMENTACIÓN — independentStudy.feedbackStrategy debe decir SIEMPRE dos
         cosas: si es INDIVIDUAL o GRUPAL, y EN QUÉ MOMENTO ocurre.
         Mal: "se retroalimenta en clase".
@@ -62,8 +64,7 @@ export function construirSystemInstruction(args: {
         - instrument: el instrumento concreto (rúbrica, lista de cotejo, escala…)
         - percentage: la ponderación. LA SUMA DE TODOS DEBE DAR EXACTAMENTE 100.
         - criteria: qué se evalúa
-        Incluye al menos una diagnóstica, varias formativas y al menos una sumativa,
-        y al menos una autoevaluación o coevaluación.
+        Usa pocos momentos viables en el tiempo disponible. La diagnóstica no tiene peso; reutiliza criterios para autoevaluación cuando corresponda.
     14. REFERENCIAS — llena "references" con las fuentes que el docente puede consultar
         y citar (libro con autor y año, programa oficial de la UAC, sitio verificable).
         No inventes libros ni autores: si no tienes una referencia real, cita el programa
@@ -92,7 +93,7 @@ export function construirSystemInstruction(args: {
         "Debate", "Análisis de caso"). Llena "curricularElements.centralConcept" con
         el concepto central de la secuencia en una frase.
 
-    INFORMACIÓN OFICIAL: ${contextoOficial.substring(0, 800)}...
+    INFORMACIÓN OFICIAL: ${contextoOficial}
     CONTEXTO ESCUELA: ${school.schoolName}, ${school.vision}.
     SOLICITUD: "${prompt}"
     ${bloquePerfil}
@@ -109,6 +110,7 @@ export function construirSystemInstruction(args: {
 export const PLAN_RESPONSE_SCHEMA = {
           type: Type.OBJECT,
           properties: {
+            ...PAQUETE_PROPERTIES,
             title: { type: Type.STRING },
             date: { type: Type.STRING },
             subject: { type: Type.STRING },
@@ -240,5 +242,5 @@ export const PLAN_RESPONSE_SCHEMA = {
             evaluation: { type: Type.STRING },
             duration: { type: Type.STRING }
           },
-          required: ["title", "subject", "sessions", "meta", "evaluationTable", "fundamento", "paec", "curricularElements", "resources", "references", "feedbackCycle", "independentStudy"]
+          required: ['teachingKit', 'assessmentInstrument', "title", "subject", "sessions", "meta", "evaluationTable", "fundamento", "paec", "curricularElements", "resources", "references", "feedbackCycle", "independentStudy"]
 } as const;

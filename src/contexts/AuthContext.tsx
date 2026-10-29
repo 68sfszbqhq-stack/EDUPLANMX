@@ -1,5 +1,8 @@
+import { activarAlmacenCuenta } from '../security/almacenCuenta';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { User as FirebaseUser } from 'firebase/auth';
+import { doc, onSnapshot } from 'firebase/firestore';
+import { db } from '../config/firebase';
 import { authService } from '../services/authService';
 import { analyticsService } from '../services/analyticsService';
 import type { Usuario, AuthContextType, LoginCredentials } from '../../types/auth';
@@ -40,90 +43,82 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const [user, setUser] = useState<Usuario | null>(() => hayModoInvitado() ? USUARIO_INVITADO : null);
     const [loading, setLoading] = useState(true);
 
+    const publicarUsuario = (value: Usuario | null) => {
+        activarAlmacenCuenta(value?.id, value?.schoolId || '');
+        setUser(value);
+    };
+
     useEffect(() => {
-        // Observar cambios en el estado de autenticación
-        const unsubscribe = authService.onAuthStateChanged(async (firebaseUser: FirebaseUser | null) => {
-            if (firebaseUser) {
-                // Una cuenta real nunca debe quedar leyendo los datos de muestra
-                try { sessionStorage.removeItem(GUEST_FLAG); } catch { /* sin sessionStorage no hay modo muestra */ }
-                try {
-                    // 1. Obtener datos básicos del usuario desde Firestore
-                    const userData = await authService.getUserData(firebaseUser.uid);
-
-                    // 🚨 Modificación CRÍTICA para SuperAdmin
-                    if (userData?.rol === 'superadmin') {
-                        console.log('👑 SuperAdmin detectado - Saltando onboarding');
-                        setUser({
-                            ...userData,
-                            onboardingCompleto: true,
-                            schoolId: 'system',
-                            schoolName: 'Sistema Central'
-                        } as Usuario);
-                        setLoading(false);
-                        return; // Salir aquí para evitar lógica de escuelas
-                    }
-
-                    // 2. Importar schoolService dinámicamente
-                    const { schoolService } = await import('../services/schoolService');
-
-                    // 3. Verificar si necesita completar onboarding
-                    const needsOnboarding = await schoolService.needsOnboarding(firebaseUser.uid);
-
-                    if (needsOnboarding) {
-                        // Usuario nuevo o sin onboarding completo
-                        console.log('✋ Usuario necesita completar onboarding');
-                        setUser({
-                            ...userData,
-                            onboardingCompleto: false
-                        } as Usuario);
-                    } else {
-                        // Usuario con onboarding completo - cargar perfil completo
-                        const profile = await schoolService.getUserProfile(firebaseUser.uid);
-
-                        if (profile) {
-                            console.log('✅ Usuario con onboarding completo:', profile.schoolName);
-
-                            // 4. Intentar obtener el CCT de la escuela
-                            let schoolCct = '';
-                            try {
-                                const schoolData = await schoolService.getSchoolById(profile.schoolId);
-                                if (schoolData) {
-                                    schoolCct = schoolData.cct;
-                                }
-                            } catch (e) {
-                                console.error('Error al obtener datos de la escuela para CCT:', e);
-                            }
-
-                            setUser({
-                                ...userData,
-                                schoolId: profile.schoolId,
-                                schoolName: profile.schoolName,
-                                schoolCct: schoolCct, // Nuevo campo
-                                puesto: profile.puesto,
-                                onboardingCompleto: true
-                            } as Usuario);
-                        } else {
-                            // Perfil no encontrado, necesita onboarding
-                            setUser({
-                                ...userData,
-                                onboardingCompleto: false
-                            } as Usuario);
-                        }
-                    }
-                } catch (error) {
-                    console.error('Error al cargar datos del usuario:', error);
-                    setUser(null);
-                }
-            } else {
-                // Sin sesión de Firebase. Si la pestaña está en modo demo, conservamos al
-                // invitado: de lo contrario este callback borraría la sesión que acaba de
-                // crear "Probar la demo sin cuenta" y devolvería al visitante al inicio.
-                setUser(hayModoInvitado() ? USUARIO_INVITADO : null);
+        let disposed = false;
+        let version = 0;
+        let previousUid: string | null = null;
+        let mustClearMemory = false;
+        let stopProfile: (() => void) | undefined;
+        const unsubscribe = authService.onAuthStateChanged((firebaseUser: FirebaseUser | null) => {
+            version++;
+            if (previousUid && previousUid !== firebaseUser?.uid) mustClearMemory = true;
+            previousUid = firebaseUser?.uid || null;
+            stopProfile?.();
+            stopProfile = undefined;
+            publicarUsuario(null);
+            if (!firebaseUser) {
+                // Firestore conserva también una caché en memoria. Un documento nuevo
+                // impide que otra cuenta recupere lecturas anteriores en modo offline.
+                if (mustClearMemory) { window.location.reload(); return; }
+                publicarUsuario(hayModoInvitado() ? USUARIO_INVITADO : null);
+                setLoading(false);
+                return;
             }
-            setLoading(false);
+            try { sessionStorage.removeItem(GUEST_FLAG); } catch { /* almacenamiento no disponible */ }
+            setLoading(true);
+            // La desactivación en Firestore debe cerrar también una sesión abierta.
+            stopProfile = onSnapshot(doc(db, 'users', firebaseUser.uid), async snapshot => {
+                const ticket = ++version;
+                const current = () => !disposed && ticket === version && authService.getCurrentUser()?.uid === firebaseUser.uid;
+                try {
+                    if (!snapshot.exists()) {
+                        // Google puede estar creando el perfil; el siguiente snapshot lo cargará.
+                        if (current()) { publicarUsuario(null); setLoading(false); }
+                        return;
+                    }
+                    // Esperar al perfil permite que un primer login con Google termine
+                    // de crearlo antes de reiniciar por un cambio directo de cuenta.
+                    if (mustClearMemory && current()) { window.location.reload(); return; }
+                    const userData = { ...snapshot.data(), id: snapshot.id } as Usuario;
+                    if (userData.activo !== true) {
+                        if (current()) { publicarUsuario(null); await authService.logout(); }
+                        return;
+                    }
+                    if (userData.rol === 'superadmin') {
+                        if (current()) publicarUsuario({ ...userData, onboardingCompleto: true, schoolId: 'system', schoolName: 'Sistema Central' });
+                        return;
+                    }
+                    const { schoolService } = await import('../services/schoolService');
+                    const needsOnboarding = await schoolService.needsOnboarding(firebaseUser.uid);
+                    if (!current()) return;
+                    if (needsOnboarding) {
+                        publicarUsuario({ ...userData, onboardingCompleto: false });
+                        return;
+                    }
+                    const profile = await schoolService.getUserProfile(firebaseUser.uid);
+                    const school = profile?.schoolId ? await schoolService.getSchoolById(profile.schoolId) : null;
+                    if (current()) publicarUsuario(profile ? {
+                        ...userData, schoolId: profile.schoolId, schoolName: profile.schoolName,
+                        schoolCct: school?.cct || '', puesto: profile.puesto, onboardingCompleto: true
+                    } : { ...userData, onboardingCompleto: false });
+                } catch (error) {
+                    console.error('No se pudo verificar la sesión:', error);
+                    if (current()) publicarUsuario(null);
+                } finally {
+                    if (current()) setLoading(false);
+                }
+            }, () => {
+                version++;
+                publicarUsuario(null);
+                setLoading(false);
+            });
         });
-
-        return () => unsubscribe();
+        return () => { disposed = true; version++; stopProfile?.(); unsubscribe(); };
     }, []);
 
     const login = async (email: string, password: string) => {
@@ -153,8 +148,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const logout = async () => {
         try {
             try { sessionStorage.removeItem(GUEST_FLAG); } catch { /* no bloquea el logout */ }
+            publicarUsuario(null);
             await authService.logout();
-            setUser(null);
         } catch (error) {
             throw error;
         }
@@ -165,8 +160,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         } catch {
             // Sin sessionStorage el demo sigue funcionando hasta el próximo refresh
         }
+        activarAlmacenCuenta('guest', 'demo');
         sembrarMuestra();
-        setUser(USUARIO_INVITADO);
+        publicarUsuario(USUARIO_INVITADO);
         setLoading(false);
     };
 

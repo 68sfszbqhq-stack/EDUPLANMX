@@ -1,3 +1,6 @@
+import { fechaPlan, periodoPlan, horasPlan, textoDocente } from '../src/features/planeacion/presentacionPlan';
+import { MaterialesClase } from './MaterialesClase';
+import { estadoPAEC } from '../src/features/planeacion/decisionesPlan';
 import React from 'react';
 import { LessonPlan } from '../types';
 import {
@@ -17,16 +20,21 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
     // Las etiquetas curriculares dependen de la generación del programa y de la familia
     // de la UAC. Ver data/vocabularioCurricular.ts para el porqué.
     const vocab = vocabularioCurricular(
-        plan.meta?.modelo,
+        plan.curricularSource?.model || plan.meta?.modelo,
         familiaDesdeCategoria(plan.meta?.areaOrRecurso)
     );
     const componente = plan.meta?.componente
         ? COMPONENTES_FORMACION[plan.meta.componente]
-        : 'Currículum Fundamental';
+        : 'Por registrar';
 
     return (
         <article ref={ref} className="bg-white border border-slate-200 shadow-2xl rounded-none md:rounded-3xl p-10 print:p-0 print:border-none print:shadow-none font-serif text-sm print:w-full print:m-0 max-w-[216mm] mx-auto">
 
+            {plan.curricularSource && <p className="mb-4 text-xs border border-slate-300 p-3 break-words">
+                {plan.curricularSource.status === 'general' ? 'Propuesta general · alineación curricular pendiente de cotejo.' : 'Fuente curricular verificada en el catálogo · planeación generada con apoyo de IA.'}
+                {' '}{plan.curricularSource.subject} · modelo {plan.curricularSource.model} · generación {plan.curricularSource.generation}.
+                {plan.curricularSource.url && <> Fuente: {plan.curricularSource.url}</>}
+            </p>}
             {/* Encabezado con Logos de Puebla */}
             <div className="flex justify-start items-center gap-6 mb-6 border-b-2 border-slate-900 pb-4">
                 <img
@@ -100,13 +108,13 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                     <div className="p-2">
                         <span className="block font-bold text-slate-500 uppercase text-[9px]">Periodo de Trabajo</span>
                         <span className="font-bold text-slate-900">
-                            {plan.meta?.startDate || 'Inicio'} - {plan.meta?.endDate || 'Fin'}
-                            <span className="text-slate-500 font-normal ml-1">({plan.meta?.hoursPerWeek || 4} hrs/sem)</span>
+                            {periodoPlan(plan.meta)}
+                            <span className="text-slate-500 font-normal ml-1">({horasPlan(plan.meta?.hoursPerWeek)})</span>
                         </span>
                     </div>
                     <div className="p-2">
                         <span className="block font-bold text-slate-500 uppercase text-[9px]">Fecha de Elaboración</span>
-                        <span className="font-bold text-slate-900">{plan.date || 'Por registrar'}</span>
+                        <span className="font-bold text-slate-900">{fechaPlan(plan.date)}</span>
                     </div>
                 </div>
             </div>
@@ -204,12 +212,9 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                 <div className="border border-slate-300 rounded-sm p-3 bg-white">
                     <div className="font-bold text-xs uppercase text-slate-700 mb-2 border-b border-slate-200 pb-1 flex justify-between">
                         III. Vinculación PAEC
-                        {plan.paec?.isLinked ?
-                            <span className="text-green-600">✅ Aplica</span> :
-                            <span className="text-slate-400">⚪ No aplica</span>
-                        }
+                        <span className="text-slate-600 normal-case">{estadoPAEC(plan.paec)}</span>
                     </div>
-                    {plan.paec?.isLinked ? (
+                    {plan.paec && plan.paec.estado !== 'sin_vinculo' && plan.paec.communityProblem ? (
                         <div className="space-y-2 text-xs">
                             <div>
                                 <span className="font-bold text-slate-600 block text-[10px] uppercase">Nombre del Proyecto Escolar Comunitario (PEC):</span>
@@ -296,7 +301,7 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                         <div key={index} className="avoid-break border-b border-slate-400 last:border-b-0">
                             <div className="bg-slate-100 p-2 text-xs font-bold border-b border-slate-300 flex justify-between print:bg-slate-200">
                                 <span>SESIÓN {session.sessionNumber}: {session.topic}</span>
-                                <span>{session.date}</span>
+                                <span>{fechaPlan(session.date)}</span>
                             </div>
                             <table className="w-full text-left text-xs">
                                 <thead>
@@ -364,6 +369,15 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                 </div>
             </div>
 
+            <section className="mb-6 border border-slate-300 p-4" aria-label="Instrumento completo">
+              <h3 className="font-bold mb-2">Evaluación: instrucciones y criterios</h3>
+              <p className="whitespace-pre-wrap text-sm">{plan.evaluation || 'Falta el instrumento desarrollado. Completa sus criterios e instrucciones antes de usarlo.'}</p>
+              {plan.evaluationDetails && <div className="text-sm mt-3 space-y-2">
+                <p>{plan.evaluationDetails.diagnostic}</p><p>{plan.evaluationDetails.formative}</p><p>{plan.evaluationDetails.summative}</p>
+                {plan.evaluationDetails.instruments?.map((t,i)=><p key={i}>{t}</p>)}
+              </div>}
+            </section>
+            <MaterialesClase plan={plan} />
             {/* 8. EVALUACIÓN Y ACREDITACIÓN */}
             {plan.evaluationTable && plan.evaluationTable.length > 0 && (
                 <div className="mb-6 border border-slate-500 rounded-sm avoid-break">
@@ -490,7 +504,7 @@ const PlanDocument = React.forwardRef<HTMLElement, PlanDocumentProps>(({ plan, t
                         </p>
                         <ul className="list-disc list-inside text-slate-800 space-y-0.5">
                             {plan.resources?.length
-                                ? plan.resources.map((r, i) => <li key={i}>{r}</li>)
+                                ? plan.resources.map((r, i) => <li key={i}>{textoDocente(r)}</li>)
                                 : <li className="text-slate-400 italic">Sin recursos registrados</li>}
                         </ul>
                     </div>

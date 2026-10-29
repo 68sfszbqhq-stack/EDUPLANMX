@@ -26,6 +26,7 @@ beforeEach(async () => {
   await env.clearFirestore();
   await env.withSecurityRulesDisabled(async (ctx) => {
     const db = ctx.firestore();
+    for (const uid of ['docente1','docente2']) await setDoc(doc(db,'users',uid), {rol:'maestro',activo:true});
     await setDoc(doc(db, 'misGrupos/g1'), { docenteUid: 'docente1', nombre: '1º A Vesp', asignaturaClave: 'cultura-digital-1', asignaturaNombre: 'Cultura Digital I', ciclo: '2026-2027', creadoEn: 'x', archivado: false });
     await setDoc(doc(db, 'misGrupos/g2'), { docenteUid: 'docente2', nombre: '1º B Mat', asignaturaClave: 'cultura-digital-1', asignaturaNombre: 'Cultura Digital I', ciclo: '2026-2027', creadoEn: 'x', archivado: false });
     await setDoc(doc(db, 'misGrupos/g1/lista/2024001'), fila('2024001', 'Ana'));

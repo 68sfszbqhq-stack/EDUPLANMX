@@ -1,3 +1,4 @@
+import { obtenerAlmacenCuenta } from './src/security/almacenCuenta';
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -50,13 +51,14 @@ const App: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { user, logout } = useAuth();
+  const almacen = obtenerAlmacenCuenta();
 
   const [view, setView] = useState<AppView | 'cuaderno'>(() => {
     // @ts-ignore
     return location.state?.view || 'dashboard';
   });
   const [schoolContext, setSchoolContext] = useState<SchoolContext>(() => {
-    const saved = localStorage.getItem('schoolContext');
+    const saved = almacen.getItem('schoolContext');
     return saved ? JSON.parse(saved) : {
       schoolName: 'Bachillerato General Oficial',
       cct: '',
@@ -70,7 +72,7 @@ const App: React.FC = () => {
   });
 
   const [subjectContext, setSubjectContext] = useState<SubjectContext>(() => {
-    const saved = localStorage.getItem('subjectContext');
+    const saved = almacen.getItem('subjectContext');
     return saved ? JSON.parse(saved) : {
       subjectId: '',
       subjectName: '',
@@ -81,15 +83,14 @@ const App: React.FC = () => {
   });
 
   const [savedPlans, setSavedPlans] = useState<LessonPlan[]>(() => {
-    const saved = localStorage.getItem('savedPlans');
+    const saved = almacen.getItem('savedPlans');
     return saved ? JSON.parse(saved) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem('schoolContext', JSON.stringify(schoolContext));
-    localStorage.setItem('subjectContext', JSON.stringify(subjectContext));
-    localStorage.setItem('savedPlans', JSON.stringify(savedPlans));
-    localStorage.setItem('savedPlans', JSON.stringify(savedPlans));
+    almacen.setItem('schoolContext', JSON.stringify(schoolContext));
+    almacen.setItem('subjectContext', JSON.stringify(subjectContext));
+    almacen.setItem('savedPlans', JSON.stringify(savedPlans));
   }, [schoolContext, subjectContext, savedPlans]);
 
   // Context Hydration from User Profile

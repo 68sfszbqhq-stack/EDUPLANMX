@@ -6,9 +6,13 @@ service cloud.firestore {
     //  FUNCIONES DE APOYO (HELPERS)
     // -------------------------------------------------------------------------
 
-    // Verifica si el usuario ha iniciado sesión
+    // Una sesión de Firebase no basta: la cuenta de EduPlan debe seguir activa.
+    function hasSession() { return request.auth != null; }
     function isAuthenticated() {
-      return request.auth != null;
+      return hasSession()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && getUserData().get('activo', false) == true
+        && getUserData().get('rol', '') in ['maestro', 'directivo', 'superadmin'];
     }
 
     // Obtiene el documento del usuario actual desde la colección 'users'
@@ -28,6 +32,20 @@ service cloud.firestore {
       return isAuthenticated() && resource.data.userId == request.auth.uid;
     }
 
+    function nuevoDocumentoPropio() {
+      return isAuthenticated() && request.resource.data.userId == request.auth.uid;
+    }
+    function escuelaOpcionalValida() {
+      return request.resource.data.get('schoolId', '') == ''
+        || esMiembroAprobado(request.resource.data.schoolId);
+    }
+    function escuelaInmutable() {
+      return request.resource.data.get('schoolId', '') == resource.data.get('schoolId', '');
+    }
+    function identidadInmutable() {
+      return request.resource.data.userId == resource.data.userId && escuelaInmutable();
+    }
+
     // -------------------------------------------------------------------------
     //  1. USUARIOS
     // -------------------------------------------------------------------------
@@ -40,11 +58,11 @@ service cloud.firestore {
 
     match /users/{userId} {
       // Regla de Oro: un usuario SIEMPRE puede leer su propio perfil
-      allow read: if isAuthenticated() && request.auth.uid == userId;
-      allow create: if isAuthenticated() && request.auth.uid == userId
+      allow read: if hasSession() && request.auth.uid == userId;
+      allow create: if hasSession() && request.auth.uid == userId
                     && rolPropioPermitido()
                     && request.resource.data.get('activo', true) == true;
-      allow update: if isAuthenticated() && request.auth.uid == userId
+      allow update: if hasSession() && request.auth.uid == userId
                     && rolPropioPermitido()
                     && request.resource.data.get('activo', true) == resource.data.get('activo', true);
 
@@ -83,11 +101,11 @@ service cloud.firestore {
         && request.resource.data.createdBy == request.auth.uid
         && !('codigoAcceso' in request.resource.data);
 
-      // Actualizar: cualquiera puede mover las estadísticas (contador de docentes);
+      // Actualizar: los miembros aprobados pueden mover el contador del plantel;
       // el resto solo un directivo de la escuela o el SuperAdmin, y nadie cambia
       // al creador ni vuelve a poner un código público.
       allow update: if isAuthenticated() && (
-          request.resource.data.diff(resource.data).affectedKeys().hasOnly(['estadisticas'])
+          (esMiembroAprobado(schoolId) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['estadisticas']))
           || (esDirectivoDe(schoolId)
               && request.resource.data.get('createdBy', '') == resource.data.get('createdBy', '')
               && request.resource.data.get('codigoAcceso', '') == resource.data.get('codigoAcceso', ''))
@@ -154,12 +172,77 @@ service cloud.firestore {
     // -------------------------------------------------------------------------
     //  3. ALUMNOS (datos sensibles de menores: CURP, teléfonos, situación familiar)
     // -------------------------------------------------------------------------
+    function listaTextosRegistro(v) {
+      // La ida y vuelta comprueba que todos los elementos sean textos, sin mapas anidados.
+      let textos = v.concat(['fin']);
+      let joined = textos.join('|');
+      return v is list && v.size() <= 240
+        && (v.size() == 0 || (joined.size() <= 12000 && joined.split('[|]') == textos));
+    }
+    function nemRegistro(d) {
+      return d is map
+        && d.keys().hasOnly(['tipoFamilia', 'gradoEstudioPadre', 'gradoEstudioMadre', 'ocupacionPadre', 'ocupacionMadre', 'situacionLaboral', 'tipoVivienda', 'ingresosMensuales', 'tipoBeca', 'institucionSalud', 'tratamientoEnfermedades', 'frecuenciaDiscusionesComunidad', 'intensidadPeleasComunidad', 'frecuenciaDiscusionesFamilia', 'intensidadPeleasFamilia', 'situacionFamiliar', 'estiloAprendizaje', 'enfermedadesCronicas', 'problemasComunitarios', 'deficienciasServicios', 'consumoSustanciasCuadra', 'consumoSustanciasCasa', 'tradicionesLocales', 'practicasDiscriminatorias', 'materiasPreferidas', 'actividadesInteres', 'barrerasAprendizaje', 'intereses', 'horasTrabajoSemanal', 'personasAportanIngreso', 'cuentaConBeca', 'accesoInternet', 'redApoyo', 'serviciosVivienda'])
+        && listaTextosRegistro([d.get('tipoFamilia', ''), d.get('gradoEstudioPadre', ''), d.get('gradoEstudioMadre', ''), d.get('ocupacionPadre', ''), d.get('ocupacionMadre', ''), d.get('situacionLaboral', ''), d.get('tipoVivienda', ''), d.get('ingresosMensuales', ''), d.get('tipoBeca', ''), d.get('institucionSalud', ''), d.get('tratamientoEnfermedades', ''), d.get('frecuenciaDiscusionesComunidad', ''), d.get('intensidadPeleasComunidad', ''), d.get('frecuenciaDiscusionesFamilia', ''), d.get('intensidadPeleasFamilia', ''), d.get('situacionFamiliar', ''), d.get('estiloAprendizaje', '')].concat(d.get('enfermedadesCronicas', [])).concat(d.get('problemasComunitarios', [])).concat(d.get('deficienciasServicios', [])).concat(d.get('consumoSustanciasCuadra', [])).concat(d.get('consumoSustanciasCasa', [])).concat(d.get('tradicionesLocales', [])).concat(d.get('practicasDiscriminatorias', [])).concat(d.get('materiasPreferidas', [])).concat(d.get('actividadesInteres', [])).concat(d.get('barrerasAprendizaje', [])).concat(d.get('intereses', [])))
+        && (!('horasTrabajoSemanal' in d) || (d.horasTrabajoSemanal is number && d.horasTrabajoSemanal >= 0 && d.horasTrabajoSemanal <= 168))
+        && (!('personasAportanIngreso' in d) || (d.personasAportanIngreso is number && d.personasAportanIngreso >= 0 && d.personasAportanIngreso <= 168))
+        && (!('cuentaConBeca' in d) || d.cuentaConBeca is bool)
+        && (!('accesoInternet' in d) || d.accesoInternet is bool)
+        && redRegistro(d.redApoyo) && serviciosRegistro(d.serviciosVivienda);
+    }
+    function redRegistro(d) {
+      return d is map && d.keys().hasOnly(['nombreTutor', 'parentesco', 'telefonoPadre', 'telefonoMadre', 'telefonoTutor', 'telefonoEmergencia'])
+        && listaTextosRegistro(d.values());
+    }
+    function serviciosRegistro(d) {
+      return d is map && d.keys().hasOnly(['agua', 'luz', 'drenaje', 'internet', 'tvCable', 'aireAcondicionado'])
+        && d.values().hasOnly([true, false]);
+    }
+    function registroBienFormado() {
+      let d = request.resource.data;
+      let a = d.datosAdministrativos;
+      return d.keys().hasOnly(['datosAdministrativos','datosNEM','fechaRegistro','schoolId','schoolCct','invitacion'])
+        && textoCorto(d.fechaRegistro, 40) && textoCorto(d.schoolCct, 20)
+        && a is map
+        && a.keys().hasOnly(['curp', 'nombre', 'apellidoPaterno', 'apellidoMaterno', 'genero', 'promedioSecundaria', 'tipoSecundaria', 'sostenimiento'])
+        && textoCorto(a.get('curp', ''), 18)
+        && textoCorto(a.get('nombre', ''), 120)
+        && textoCorto(a.get('apellidoPaterno', ''), 120)
+        && textoCorto(a.get('apellidoMaterno', ''), 120)
+        && textoCorto(a.get('genero', ''), 120)
+        && textoCorto(a.get('tipoSecundaria', ''), 120)
+        && textoCorto(a.get('sostenimiento', ''), 120)
+        && a.nombre.size() > 0 && a.apellidoPaterno.size() > 0
+        && a.promedioSecundaria is number && a.promedioSecundaria >= 0 && a.promedioSecundaria <= 10
+        && nemRegistro(d.datosNEM);
+    }
+    function invitacionVigente(token, sid) {
+      let i = get(/databases/$(database)/documents/invitacionesRegistro/$(token)).data;
+      return token.matches('^[a-f0-9]{64}$') && request.resource.data.invitacion == token
+        && i.schoolId == sid && i.revocada == false && i.venceEn > request.time
+        && exists(/databases/$(database)/documents/schools/$(sid))
+        && get(/databases/$(database)/documents/users/$(i.createdBy)).data.activo == true
+        && get(/databases/$(database)/documents/schools/$(sid)/miembros/$(i.createdBy)).data.estado == 'aprobado';
+    }
+    match /invitacionesRegistro/{token} {
+      // El enlace contiene 256 bits aleatorios; no se permite enumerarlo sin membresía.
+      allow get: if token.matches('^[a-f0-9]{64}$');
+      allow list: if esMiembroAprobado(resource.data.schoolId) || isSuperAdmin();
+      allow create: if token.matches('^[a-f0-9]{64}$') && esMiembroAprobado(request.resource.data.schoolId)
+        && request.resource.data.keys().hasOnly(['schoolId','createdBy','creadaEn','venceEn','revocada'])
+        && request.resource.data.createdBy == request.auth.uid
+        && request.resource.data.creadaEn == request.time && request.resource.data.revocada == false
+        && request.resource.data.venceEn is timestamp && request.resource.data.venceEn > request.time
+        && request.resource.data.venceEn <= request.time + duration.value(7, 'd');
+      allow update: if (esDirectivoDe(resource.data.schoolId) || (isAuthenticated() && resource.data.createdBy == request.auth.uid))
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['revocada'])
+        && request.resource.data.revocada == true;
+      allow delete: if esDirectivoDe(resource.data.schoolId) || isSuperAdmin();
+    }
+
     match /alumnos/{alumnoId} {
-      // Crear: PÚBLICO — la página /registro la llenan alumnos sin cuenta.
-      // Se exige schoolId para que ningún expediente nazca huérfano: sin dueño,
-      // el registro no pertenece a ninguna escuela y nadie puede resguardarlo.
-      allow create: if request.resource.data.schoolId is string
-                    && request.resource.data.schoolId.size() > 0;
+      // La invitación autoriza exactamente un create con ese ID. No permite leerlo ni repetirlo.
+      allow create: if (isSuperAdmin() || esMiembroAprobado(request.resource.data.schoolId))
+        || (registroBienFormado() && invitacionVigente(alumnoId, request.resource.data.schoolId));
 
       // Leer/editar/borrar: SOLO miembros APROBADOS de esa escuela.
       //
@@ -167,7 +250,8 @@ service cloud.firestore {
       // lo edita su dueño: cualquiera podía escoger una escuela y leer las CURP de
       // sus alumnos. Ahora se exige membresía verificada. Las consultas deben ir
       // acotadas con where('schoolId','==', <escuela>).
-      allow read, update, delete: if isSuperAdmin() || esMiembroAprobado(resource.data.schoolId);
+      allow read, delete: if isSuperAdmin() || esMiembroAprobado(resource.data.schoolId);
+      allow update: if (isSuperAdmin() || esMiembroAprobado(resource.data.schoolId)) && escuelaInmutable();
     }
 
     // -------------------------------------------------------------------------
@@ -177,7 +261,7 @@ service cloud.firestore {
     // no llevan schoolId, así que no hay forma de acotarlos por escuela: solo el
     // SuperAdmin los consulta. Ninguna pantalla activa de la app los lee.
     match /cuestionariosSocioEducativos/{cuestionarioId} {
-      allow create: if true;
+      allow create: if isSuperAdmin();
       allow read, update, delete: if isSuperAdmin();
     }
 
@@ -191,32 +275,30 @@ service cloud.firestore {
     }
 
     match /planeaciones/{planId} {
-      // Leer: cualquier docente autenticado (permite compartir dentro de la escuela)
-      allow read: if isAuthenticated();
-
-      // Crear: cualquier autenticado
-      allow create: if isAuthenticated();
-
-      // Editar/borrar: el dueño de la planeación, o SuperAdmin
-      allow update, delete: if isOwner() || isSuperAdmin();
+      allow read: if isOwner() || isSuperAdmin()
+        || (resource.data.get('isPublic', false) == true && esMiembroAprobado(resource.data.schoolId));
+      allow create: if nuevoDocumentoPropio() && esMiembroAprobado(request.resource.data.schoolId);
+      allow update: if (isOwner() || isSuperAdmin()) && identidadInmutable();
+      allow delete: if isOwner() || isSuperAdmin();
     }
 
     // -------------------------------------------------------------------------
     //  6. FICHAS 12 (taller reflexivo personal del docente)
     // -------------------------------------------------------------------------
     match /fichas12/{fichaId} {
-      allow read, create: if isAuthenticated();
-      allow update, delete: if isOwner() || isSuperAdmin();
+      allow read: if isOwner() || isSuperAdmin();
+      allow create: if nuevoDocumentoPropio() && escuelaOpcionalValida();
+      allow update: if (isOwner() || isSuperAdmin()) && identidadInmutable();
+      allow delete: if isOwner() || isSuperAdmin();
     }
 
     // -------------------------------------------------------------------------
     //  7. GESTIÓN DE USUARIOS (panel de administración)
     // -------------------------------------------------------------------------
     // OJO: colección 'usuarios' (con o) — distinta de 'users' (perfiles de auth).
-    // La consultan las asignaciones para resolver el nombre del maestro, por eso
-    // la lectura es para cualquier autenticado; alta/edición/baja, solo SuperAdmin.
+    // Colección heredada: solo el propio usuario y SuperAdmin. La administración activa usa /users.
     match /usuarios/{usuarioId} {
-      allow read: if isAuthenticated();
+      allow read: if isSuperAdmin() || (isAuthenticated() && request.auth.uid == usuarioId);
       allow write: if isSuperAdmin();
     }
 
@@ -224,15 +306,38 @@ service cloud.firestore {
     //  8. CATÁLOGO E INSUMOS INSTITUCIONALES (no son datos personales de menores)
     // -------------------------------------------------------------------------
     // Materias, grupos, asignaciones de materia, diagnósticos de grupo y la
-    // Planeación de la Mejora Continua. Datos operativos del plantel: cualquier
-    // docente autenticado los usa. No hay lectura pública.
-    match /materias/{id}            { allow read, write: if isAuthenticated(); }
-    match /grupos/{id}              { allow read, write: if isAuthenticated(); }
-    match /asignaciones/{id}        { allow read, write: if isAuthenticated(); }
-    match /diagnosticos_grupo/{id}  { allow read, write: if isAuthenticated(); }
-    match /pmc/{id}                 { allow read, write: if isAuthenticated(); }
-    match /pmc_diagnosis/{id}       { allow read, write: if isAuthenticated(); }
-    match /pmc_metas/{id}           { allow read, write: if isAuthenticated(); }
+    // Planeación de la Mejora Continua. Consulta por membresía del plantel,
+    // gestión institucional por directivos verificados. No hay lectura pública.
+    // Catálogo general: consulta docente, edición exclusiva del administrador.
+    match /materias/{id} {
+      allow read: if isAuthenticated();
+      allow write: if isSuperAdmin();
+    }
+    match /{coleccion}/{id} {
+      allow read: if coleccion in ['grupos', 'asignaciones', 'diagnosticos_grupo', 'pmc_metas']
+        && (isSuperAdmin() || esMiembroAprobado(resource.data.schoolId));
+      allow create: if coleccion in ['grupos', 'asignaciones', 'pmc_metas']
+        && (isSuperAdmin() || esDirectivoDe(request.resource.data.schoolId));
+      allow update: if coleccion in ['grupos', 'asignaciones', 'pmc_metas']
+        && (isSuperAdmin() || esDirectivoDe(resource.data.schoolId)) && escuelaInmutable();
+      allow delete: if coleccion in ['grupos', 'asignaciones', 'pmc_metas']
+        && (isSuperAdmin() || esDirectivoDe(resource.data.schoolId));
+    }
+    match /diagnosticos_grupo/{id} {
+      allow create: if esMiembroAprobado(request.resource.data.schoolId) || isSuperAdmin();
+      allow update: if (esMiembroAprobado(resource.data.schoolId) || isSuperAdmin()) && escuelaInmutable();
+      allow delete: if esDirectivoDe(resource.data.schoolId) || isSuperAdmin();
+    }
+    // Estos documentos están indexados por schoolId, incluso los registros antiguos.
+    match /{coleccion}/{schoolId} {
+      allow read: if coleccion in ['pmc', 'pmc_diagnosis']
+        && (esMiembroAprobado(schoolId) || isSuperAdmin());
+      allow create, update: if coleccion in ['pmc', 'pmc_diagnosis']
+        && (esDirectivoDe(schoolId) || isSuperAdmin())
+        && request.resource.data.get('schoolId', schoolId) == schoolId;
+      allow delete: if coleccion in ['pmc', 'pmc_diagnosis']
+        && (esDirectivoDe(schoolId) || isSuperAdmin());
+    }
 
     // -------------------------------------------------------------------------
     //  9. HERRAMIENTAS GENERADAS (historial personal de cada docente)
@@ -240,8 +345,10 @@ service cloud.firestore {
     // Cada documento lleva userId; la app lee filtrando por él. Editar o borrar,
     // solo el dueño (o SuperAdmin).
     match /herramientas_generadas/{id} {
-      allow read, create: if isAuthenticated();
-      allow update, delete: if isOwner() || isSuperAdmin();
+      allow read: if isOwner() || isSuperAdmin();
+      allow create: if nuevoDocumentoPropio() && escuelaOpcionalValida();
+      allow update: if (isOwner() || isSuperAdmin()) && identidadInmutable();
+      allow delete: if isOwner() || isSuperAdmin();
     }
 
     // -------------------------------------------------------------------------
@@ -319,14 +426,14 @@ service cloud.firestore {
       return get(/databases/$(database)/documents/cuentasAlumno/$(request.auth.uid)).data;
     }
     function esLaMatriculaDelAlumno(matricula) {
-      return isAuthenticated()
+      return hasSession()
         && exists(/databases/$(database)/documents/cuentasAlumno/$(request.auth.uid))
         && cuentaDelAlumno().get('matricula', '') == matricula
         && cuentaDelAlumno().get('activo', false) == true;
     }
     // Alumno con cuenta de Antología que ya reclamó su lugar activo en la lista.
     function alumnoDelGrupo(grupoId) {
-      return isAuthenticated()
+      return hasSession()
         && exists(/databases/$(database)/documents/cuentasAlumno/$(request.auth.uid))
         && cuentaDelAlumno().get('activo', false) == true
         && cuentaDelAlumno().get('matricula', '') != ''

@@ -4,14 +4,6 @@ import { GeneratedTool, ToolUsageStats } from '../tools/_shared/types';
 import { getToolById } from '../tools/_shared/ToolRegistry';
 import { GoogleGenAI } from '@google/genai';
 
-const apiKey = import.meta.env.VITE_API_KEY || '';
-
-if (!apiKey) {
-    console.error("VITE_API_KEY no encontrada. Asegúrate de tener un archivo .env con tu API KEY de Gemini.");
-}
-
-const ai = new GoogleGenAI({ apiKey });
-
 /**
  * Servicio para gestionar herramientas educativas
  */
@@ -66,6 +58,9 @@ export class ToolService {
      */
     private async generateWithAI(prompt: string): Promise<string> {
         try {
+            const apiKey = sessionStorage.getItem('gemini_api_key')?.trim();
+            if (!apiKey) throw new Error('Configura tu clave de Gemini en esta sesión.');
+            const ai = new GoogleGenAI({ apiKey });
             const response = await ai.models.generateContent({
                 model: 'gemini-2.0-flash-exp',
                 contents: prompt,

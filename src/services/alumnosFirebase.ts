@@ -1,3 +1,4 @@
+import { obtenerAlmacenCuenta } from '../security/almacenCuenta';
 import {
     collection,
     addDoc,
@@ -105,7 +106,7 @@ export class AlumnosFirebaseService {
      */
     async sincronizarDesdeLocalStorage(): Promise<void> {
         try {
-            const alumnosLocal = localStorage.getItem('alumnos');
+            const alumnosLocal = obtenerAlmacenCuenta().getItem('alumnos');
             if (!alumnosLocal) return;
 
             const alumnos: Alumno[] = JSON.parse(alumnosLocal);

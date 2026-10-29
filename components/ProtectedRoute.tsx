@@ -76,7 +76,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowedRoles 
     }
 
     // Usuario autenticado y con permisos correctos
-    return <>{children}</>;
+    return <React.Fragment key={`${user.id}:${user.schoolId || ""}`}>{children}</React.Fragment>;
 };
 
 export default ProtectedRoute;

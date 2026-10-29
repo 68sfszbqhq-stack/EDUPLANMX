@@ -31,6 +31,7 @@ beforeEach(async () => {
   await env.clearFirestore();
   await env.withSecurityRulesDisabled(async (ctx) => {
     const db = ctx.firestore();
+    for (const uid of ['intruso','nuevo','pend','fundadora','tarde','rech']) await setDoc(doc(db,'users',uid), {rol:'maestro',activo:true});
     await setDoc(doc(db, 'users/maestraA'), { rol: 'maestro', schoolId: 'escuelaA', activo: true, nombre: 'Ana' });
     await setDoc(doc(db, 'users/inactivo'), { rol: 'maestro', schoolId: 'escuelaA', activo: false });
     await setDoc(doc(db, 'users/jose'), { rol: 'superadmin', schoolId: 'system', activo: true });
@@ -164,8 +165,8 @@ test('uso normal: el superadmin lee cuestionarios', async () => {
   await assertSucceeds(getDoc(doc(como('jose'), 'cuestionariosSocioEducativos/c1')));
 });
 
-test('uso normal: un alumno sin cuenta envía su cuestionario', async () => {
-  await assertSucceeds(addDoc(collection(env.unauthenticatedContext().firestore(), 'cuestionariosSocioEducativos'), { curp: 'X' }));
+test('ataque: un visitante sin invitación no envía cuestionarios arbitrarios', async () => {
+  await assertFails(addDoc(collection(env.unauthenticatedContext().firestore(), 'cuestionariosSocioEducativos'), { curp: 'X' }));
 });
 
 test('uso normal: quien pidió acceso sin código entra después escribiéndolo (y no con uno falso)', async () => {

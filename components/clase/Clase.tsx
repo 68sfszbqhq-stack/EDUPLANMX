@@ -1,3 +1,4 @@
+import { obtenerAlmacenCuenta } from '../../src/security/almacenCuenta';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { ArrowLeft, BookOpenCheck, CalendarCheck, NotebookPen, FileQuestion, Users, Send, RefreshCw, ArrowRight, FileText } from 'lucide-react';
 import { AlumnoLista, Grupo, Resultado, resumirResultados } from '../../src/features/grupos/model';
@@ -144,12 +145,13 @@ export default function Clase({ grupo: inicial, onSalir, onNavigate }: { grupo: 
 }
 
 function LlevarAPlaneacion({ grupo, texto: inicial, onCerrar, onNavigate }: { grupo: Grupo; texto: string; onCerrar: () => void; onNavigate?: (v: string) => void }) {
+  const almacen = obtenerAlmacenCuenta();
   const [texto, setTexto] = useState(inicial);
   const [listo, setListo] = useState(false);
   // El docente decide: el texto se agrega al diagnóstico del grupo y ahí lo puede editar o borrar.
   const usar = () => {
-    const previo = localStorage.getItem('diagnosticoGrupo') || '';
-    localStorage.setItem('diagnosticoGrupo', previo.trim() ? `${previo.trim()}\n\n${texto}` : texto);
+    const previo = almacen.getItem('diagnosticoGrupo') || '';
+    almacen.setItem('diagnosticoGrupo', previo.trim() ? `${previo.trim()}\n\n${texto}` : texto);
     setListo(true);
   };
   return (

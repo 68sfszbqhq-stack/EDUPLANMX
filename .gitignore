@@ -33,3 +33,6 @@ backups/
 planeaciones-generadas/
 firestore-debug.log
 *-debug.log
+.firebase/
+serviceAccountKey.json
+firebase-service-account.json

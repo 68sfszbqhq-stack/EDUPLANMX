@@ -3,6 +3,7 @@
 // ============================================
 
 export interface AsignacionMateria {
+    schoolId: string;
     id: string;
     maestroId: string;
     maestroNombre: string; // Desnormalizado para facilitar consultas
@@ -18,6 +19,7 @@ export interface AsignacionMateria {
 }
 
 export interface CrearAsignacionData {
+    schoolId: string;
     maestroId: string;
     materiaId: string;
     gruposIds: string[];

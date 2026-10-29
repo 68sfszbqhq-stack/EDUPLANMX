@@ -1,3 +1,4 @@
+import { obtenerAlmacenCuenta } from '../security/almacenCuenta';
 import { ContextoFlujo, BAPCategoriaId } from '../../types';
 import { UsuarioSync, puedeSincronizar, leerCampoUsuario, escribirCampoUsuario } from './nubeSync';
 
@@ -62,8 +63,9 @@ const tieneTexto = (...valores: string[]) => valores.some(v => v && v.trim().len
 
 export const flujoContextoService = {
     load(): ContextoFlujo {
+        const almacen = obtenerAlmacenCuenta();
         try {
-            const raw = localStorage.getItem(STORAGE_KEY);
+            const raw = almacen.getItem(STORAGE_KEY);
             if (!raw) return structuredClone(FLUJO_VACIO);
             const parsed = JSON.parse(raw);
             // Merge defensivo por si el esquema creció desde que se guardó
@@ -81,8 +83,9 @@ export const flujoContextoService = {
     },
 
     save(flujo: ContextoFlujo): ContextoFlujo {
+        const almacen = obtenerAlmacenCuenta();
         const sellado = { ...flujo, actualizadoEl: new Date().toISOString() };
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(sellado));
+        almacen.setItem(STORAGE_KEY, JSON.stringify(sellado));
         return sellado;
     },
 
@@ -102,10 +105,12 @@ export const flujoContextoService = {
      * escuela ve ese trabajo al abrir en su casa, y viceversa.
      */
     async sincronizar(user?: UsuarioSync | null): Promise<ContextoFlujo> {
+        const almacen = obtenerAlmacenCuenta();
         const local = this.load();
         if (!puedeSincronizar(user)) return local;
 
         const remoto = await leerCampoUsuario<ContextoFlujo>(user.id, CAMPO_NUBE);
+        if (!almacen.vigente()) return local;
         if (!remoto) {
             // Primera vez en la nube: subimos lo local si tiene algo
             if (this.fasesCompletas(local) > 0) await this.respaldar(local, user);
@@ -117,7 +122,7 @@ export const flujoContextoService = {
 
         if (fechaRemota > fechaLocal) {
             // La nube es más nueva: la adoptamos como copia local
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(remoto));
+            almacen.setItem(STORAGE_KEY, JSON.stringify(remoto));
             return remoto;
         }
 

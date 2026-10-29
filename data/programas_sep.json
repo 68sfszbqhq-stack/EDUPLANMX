@@ -402,8 +402,9 @@
     "metadata": {
       "nombre_uac": "CULTURA DIGITAL I",
       "semestre": 1,
-      "creditos": 4,
-      "horas_semanales": 2
+      "creditos": 6,
+      "horas_semanales": 3,
+      "area_recurso": "Cultura Digital"
     },
     "progresiones": [
       {
@@ -411,17 +412,20 @@
         "descripcion": "Identifica y aplica la normatividad que regula el uso del ciberespacio y servicios digitales; cuida su salud digital y el medio ambiente, reconoce los criterios para la selección de información, la privacidad de la información del usuario, el respeto de los derechos de autor, los tipos de licenciamiento de software y normas del uso de la información a través de diferentes dispositivos tecnológicos según el contexto.",
         "metas": [
           "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
+          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer su Ciudadanía Digital.",
           "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso."
         ],
         "tematicas": [
           "digitales permitiendo una práctica docente ágil, \nactualizada, innovadora y al contexto de nuestros alumnos. \nEl Recurso Sociocognitivo de Cultura Digital se encuentra integrada por tres UAC, a \ndesarrollars e en dos semestres y una tercera sujeta a la posibilidad de cada servicio \neducativo o subsistema de Educación Media Superior (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nAsignatura Semestre Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nCultura Digital I Primero 3 45 \nmin. 3 hrs. \n45 min 48 12 60 6 \nCultura Digital II Segundo 2 30 \nmin. 2 hrs. \n30 \nmin. 32 8 40 4 \nCultura Digital \nIII Sexto* 1 15 min. 1 hr. 15 \nmin. 16 4 20 2 \n \n \n*De acuerdo con el mapa curricular de cada servicio educativo . \nMD: Mediación docente. EI: Estudio Independient e \n \n \n5 \n \nEn el presente documento se describe la UAC correspondiente a Cultura Digital I a \ndesarrollarse durante el primer semestre."
+        ],
+        "categorias": [
+          "Ciudadanía Digital"
+        ],
+        "subcategorias": [
+          "Lectura y Escritura en espacios digitales",
+          "Marco Normativo",
+          "Identidad Digital",
+          "Seguridad"
         ]
       },
       {
@@ -429,17 +433,20 @@
         "descripcion": "Reconoce su identidad como ciudadano en medios digitales con credenciales para acceder al ciberespacio y plataformas para interactuar y colaborar de manera cotidiana conforme a la normatividad, seguridad, recursos disponibles y su contexto.",
         "metas": [
           "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
+          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer su Ciudadanía Digital.",
           "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso."
         ],
         "tematicas": [
           "digitales permitiendo una práctica docente ágil, \nactualizada, innovadora y al contexto de nuestros alumnos. \nEl Recurso Sociocognitivo de Cultura Digital se encuentra integrada por tres UAC, a \ndesarrollars e en dos semestres y una tercera sujeta a la posibilidad de cada servicio \neducativo o subsistema de Educación Media Superior (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nAsignatura Semestre Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nCultura Digital I Primero 3 45 \nmin. 3 hrs. \n45 min 48 12 60 6 \nCultura Digital II Segundo 2 30 \nmin. 2 hrs. \n30 \nmin. 32 8 40 4 \nCultura Digital \nIII Sexto* 1 15 min. 1 hr. 15 \nmin. 16 4 20 2 \n \n \n*De acuerdo con el mapa curricular de cada servicio educativo . \nMD: Mediación docente. EI: Estudio Independient e \n \n \n5 \n \nEn el presente documento se describe la UAC correspondiente a Cultura Digital I a \ndesarrollarse durante el primer semestre."
+        ],
+        "categorias": [
+          "Ciudadanía Digital"
+        ],
+        "subcategorias": [
+          "Lectura y Escritura en espacios digitales",
+          "Marco Normativo",
+          "Identidad Digital",
+          "Seguridad"
         ]
       },
       {
@@ -447,17 +454,20 @@
         "descripcion": "Conoce y utiliza los requerimientos, tipos de licenciamiento del software (navegadores, sistema operativo, niveles de acceso) y hardware (conectividad), así como las unidades de medida, sean de velocidad, procesamiento o almacenamiento de información, para acceder a servicios tecnológicos, al ciberespacio y a los servicios digitales conforme a los lineamientos de uso y gestión de la información digital según el contexto. .",
         "metas": [
           "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
+          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer su Ciudadanía Digital.",
           "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso."
         ],
         "tematicas": [
           "digitales permitiendo una práctica docente ágil, \nactualizada, innovadora y al contexto de nuestros alumnos. \nEl Recurso Sociocognitivo de Cultura Digital se encuentra integrada por tres UAC, a \ndesarrollars e en dos semestres y una tercera sujeta a la posibilidad de cada servicio \neducativo o subsistema de Educación Media Superior (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nAsignatura Semestre Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nCultura Digital I Primero 3 45 \nmin. 3 hrs. \n45 min 48 12 60 6 \nCultura Digital II Segundo 2 30 \nmin. 2 hrs. \n30 \nmin. 32 8 40 4 \nCultura Digital \nIII Sexto* 1 15 min. 1 hr. 15 \nmin. 16 4 20 2 \n \n \n*De acuerdo con el mapa curricular de cada servicio educativo . \nMD: Mediación docente. EI: Estudio Independient e \n \n \n5 \n \nEn el presente documento se describe la UAC correspondiente a Cultura Digital I a \ndesarrollarse durante el primer semestre."
+        ],
+        "categorias": [
+          "Ciudadanía Digital"
+        ],
+        "subcategorias": [
+          "Lectura y Escritura en espacios digitales",
+          "Marco Normativo",
+          "Identidad Digital",
+          "Seguridad"
         ]
       },
       {
@@ -465,146 +475,159 @@
         "descripcion": "Utiliza el ciberespacio y servicios digitales conforme a normatividad y al contexto personal, académico, social y ambiental, para integrarse con seguridad en ambientes virtuales.",
         "metas": [
           "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
+          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer su Ciudadanía Digital.",
           "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso."
         ],
         "tematicas": [
           "digitales permitiendo una práctica docente ágil, \nactualizada, innovadora y al contexto de nuestros alumnos. \nEl Recurso Sociocognitivo de Cultura Digital se encuentra integrada por tres UAC, a \ndesarrollars e en dos semestres y una tercera sujeta a la posibilidad de cada servicio \neducativo o subsistema de Educación Media Superior (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nAsignatura Semestre Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nCultura Digital I Primero 3 45 \nmin. 3 hrs. \n45 min 48 12 60 6 \nCultura Digital II Segundo 2 30 \nmin. 2 hrs. \n30 \nmin. 32 8 40 4 \nCultura Digital \nIII Sexto* 1 15 min. 1 hr. 15 \nmin. 16 4 20 2 \n \n \n*De acuerdo con el mapa curricular de cada servicio educativo . \nMD: Mediación docente. EI: Estudio Independient e \n \n \n5 \n \nEn el presente documento se describe la UAC correspondiente a Cultura Digital I a \ndesarrollarse durante el primer semestre."
+        ],
+        "categorias": [
+          "Ciudadanía Digital"
+        ],
+        "subcategorias": [
+          "Lectura y Escritura en espacios digitales",
+          "Marco Normativo",
+          "Identidad Digital",
+          "Seguridad"
         ]
       },
       {
         "id": 5,
         "descripcion": "Conoce y utiliza herramientas de productividad: procesadores de texto, hojas de cálculo y presentaciones electrónicas para acceder al conocimiento y la experiencia de Ciencias Sociales, Ciencias Naturales, Experimentales y Tecnología, Humanidades, Recursos Sociocognitivos y Socioemocionales según el contexto.",
         "metas": [
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso."
+          "Interactúa de acuerdo a su contexto a través de las Tecnologías de la Información y la Comunicación, conocimiento y aprendizajes digitales, para ampliar su conocimiento y vincularse con su entorno.",
+          "Colabora en Comunidades Virtuales para impulsar el aprendizaje en forma autónoma y colaborativa, innova y eficienta los procesos en el desarrollo de proyectos y actividades de su contexto."
         ],
         "tematicas": [
           "digitales permitiendo una práctica docente ágil, \nactualizada, innovadora y al contexto de nuestros alumnos. \nEl Recurso Sociocognitivo de Cultura Digital se encuentra integrada por tres UAC, a \ndesarrollars e en dos semestres y una tercera sujeta a la posibilidad de cada servicio \neducativo o subsistema de Educación Media Superior (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nAsignatura Semestre Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nCultura Digital I Primero 3 45 \nmin. 3 hrs. \n45 min 48 12 60 6 \nCultura Digital II Segundo 2 30 \nmin. 2 hrs. \n30 \nmin. 32 8 40 4 \nCultura Digital \nIII Sexto* 1 15 min. 1 hr. 15 \nmin. 16 4 20 2 \n \n \n*De acuerdo con el mapa curricular de cada servicio educativo . \nMD: Mediación docente. EI: Estudio Independient e \n \n \n5 \n \nEn el presente documento se describe la UAC correspondiente a Cultura Digital I a \ndesarrollarse durante el primer semestre."
+        ],
+        "categorias": [
+          "Comunicación y Colaboración"
+        ],
+        "subcategorias": [
+          "Comunicación Digital",
+          "Herramientas digitales para el aprendizaje",
+          "Comunidades Virtuales de aprendizaje",
+          "Herramientas de Productividad"
         ]
       },
       {
         "id": 6,
         "descripcion": "Reconoce características de una situación, fenómeno o problemática de las ciencias naturales, experimentales y tecnología, ciencias sociales, humanidades o de su vida cotidiana para establecer alternativas de solución conforme a su contexto y recursos.",
         "metas": [
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso."
+          "Representa la solución de problemas mediante pensamiento algorítmico seleccionando métodos, diagramas o técnicas.",
+          "Aplica lenguaje algorítmico utilizando medios digitales para resolver situaciones o problemas del contexto."
         ],
         "tematicas": [
           "digitales permitiendo una práctica docente ágil, \nactualizada, innovadora y al contexto de nuestros alumnos. \nEl Recurso Sociocognitivo de Cultura Digital se encuentra integrada por tres UAC, a \ndesarrollars e en dos semestres y una tercera sujeta a la posibilidad de cada servicio \neducativo o subsistema de Educación Media Superior (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nAsignatura Semestre Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nCultura Digital I Primero 3 45 \nmin. 3 hrs. \n45 min 48 12 60 6 \nCultura Digital II Segundo 2 30 \nmin. 2 hrs. \n30 \nmin. 32 8 40 4 \nCultura Digital \nIII Sexto* 1 15 min. 1 hr. 15 \nmin. 16 4 20 2 \n \n \n*De acuerdo con el mapa curricular de cada servicio educativo . \nMD: Mediación docente. EI: Estudio Independient e \n \n \n5 \n \nEn el presente documento se describe la UAC correspondiente a Cultura Digital I a \ndesarrollarse durante el primer semestre."
+        ],
+        "categorias": [
+          "Pensamiento Algorítmico"
+        ],
+        "subcategorias": [
+          "Resolución de problemas",
+          "Pensamiento Computacional y lenguaje algorítmico"
         ]
       },
       {
         "id": 7,
         "descripcion": "Computacional y lenguaje algorítmico. Desarrolla una estrategia que consta de una secuencia de pasos finitos, organizados en forma lógica para dar respuesta a una situación, fenómeno o problemática de las ciencias naturales, experimentales y tecnología, ciencias sociales, humanidades o de su vida cotidiana.",
         "metas": [
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso."
+          "Representa la solución de problemas mediante pensamiento algorítmico seleccionando métodos, diagramas o técnicas.",
+          "Aplica lenguaje algorítmico utilizando medios digitales para resolver situaciones o problemas del contexto."
         ],
         "tematicas": [
           "digitales permitiendo una práctica docente ágil, \nactualizada, innovadora y al contexto de nuestros alumnos. \nEl Recurso Sociocognitivo de Cultura Digital se encuentra integrada por tres UAC, a \ndesarrollars e en dos semestres y una tercera sujeta a la posibilidad de cada servicio \neducativo o subsistema de Educación Media Superior (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nAsignatura Semestre Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nCultura Digital I Primero 3 45 \nmin. 3 hrs. \n45 min 48 12 60 6 \nCultura Digital II Segundo 2 30 \nmin. 2 hrs. \n30 \nmin. 32 8 40 4 \nCultura Digital \nIII Sexto* 1 15 min. 1 hr. 15 \nmin. 16 4 20 2 \n \n \n*De acuerdo con el mapa curricular de cada servicio educativo . \nMD: Mediación docente. EI: Estudio Independient e \n \n \n5 \n \nEn el presente documento se describe la UAC correspondiente a Cultura Digital I a \ndesarrollarse durante el primer semestre."
+        ],
+        "categorias": [
+          "Pensamiento Algorítmico"
+        ],
+        "subcategorias": [
+          "Resolución de problemas",
+          "Pensamiento Computacional y lenguaje algorítmico"
         ]
       },
       {
         "id": 8,
         "descripcion": "Computacional y lenguaje algorítmico. Conoce los diferentes métodos, técnicas o diagramas de flujo – 5 E (Enganche, Explorar, Explicar, Elaborar, Evaluar), divide y vencerás, método del caso, método del árbol de causas, método científico, diseño descendente, refinamiento por pasos - y aplica el más pertinente de acuerdo con la situación, fenómeno o problemática para representar la solución.",
         "metas": [
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso."
+          "Representa la solución de problemas mediante pensamiento algorítmico seleccionando métodos, diagramas o técnicas.",
+          "Aplica lenguaje algorítmico utilizando medios digitales para resolver situaciones o problemas del contexto."
         ],
         "tematicas": [
           "digitales permitiendo una práctica docente ágil, \nactualizada, innovadora y al contexto de nuestros alumnos. \nEl Recurso Sociocognitivo de Cultura Digital se encuentra integrada por tres UAC, a \ndesarrollars e en dos semestres y una tercera sujeta a la posibilidad de cada servicio \neducativo o subsistema de Educación Media Superior (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nAsignatura Semestre Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nCultura Digital I Primero 3 45 \nmin. 3 hrs. \n45 min 48 12 60 6 \nCultura Digital II Segundo 2 30 \nmin. 2 hrs. \n30 \nmin. 32 8 40 4 \nCultura Digital \nIII Sexto* 1 15 min. 1 hr. 15 \nmin. 16 4 20 2 \n \n \n*De acuerdo con el mapa curricular de cada servicio educativo . \nMD: Mediación docente. EI: Estudio Independient e \n \n \n5 \n \nEn el presente documento se describe la UAC correspondiente a Cultura Digital I a \ndesarrollarse durante el primer semestre."
+        ],
+        "categorias": [
+          "Pensamiento Algorítmico"
+        ],
+        "subcategorias": [
+          "Resolución de problemas",
+          "Pensamiento Computacional y lenguaje algorítmico"
         ]
       },
       {
         "id": 9,
         "descripcion": "Computacional y lenguaje algorítmico. Utiliza elementos: dato, información, variables, constantes, expresiones, operadores lógicos, operaciones relacionales, operadores aritméticos, estructuras condicionales, selectivas y repetitivas para modelar soluciones de manera algorítmica.",
         "metas": [
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso."
+          "Representa la solución de problemas mediante pensamiento algorítmico seleccionando métodos, diagramas o técnicas.",
+          "Aplica lenguaje algorítmico utilizando medios digitales para resolver situaciones o problemas del contexto."
         ],
         "tematicas": [
           "digitales permitiendo una práctica docente ágil, \nactualizada, innovadora y al contexto de nuestros alumnos. \nEl Recurso Sociocognitivo de Cultura Digital se encuentra integrada por tres UAC, a \ndesarrollars e en dos semestres y una tercera sujeta a la posibilidad de cada servicio \neducativo o subsistema de Educación Media Superior (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nAsignatura Semestre Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nCultura Digital I Primero 3 45 \nmin. 3 hrs. \n45 min 48 12 60 6 \nCultura Digital II Segundo 2 30 \nmin. 2 hrs. \n30 \nmin. 32 8 40 4 \nCultura Digital \nIII Sexto* 1 15 min. 1 hr. 15 \nmin. 16 4 20 2 \n \n \n*De acuerdo con el mapa curricular de cada servicio educativo . \nMD: Mediación docente. EI: Estudio Independient e \n \n \n5 \n \nEn el presente documento se describe la UAC correspondiente a Cultura Digital I a \ndesarrollarse durante el primer semestre."
+        ],
+        "categorias": [
+          "Pensamiento Algorítmico"
+        ],
+        "subcategorias": [
+          "Resolución de problemas",
+          "Pensamiento Computacional y lenguaje algorítmico"
         ]
       },
       {
         "id": 10,
-        "descripcion": "9 Utiliza lenguaje algorítmico y de programación a través de medios digitales para solucionar la situación, fenómeno o problemática.",
+        "descripcion": "Utiliza lenguaje algorítmico y de programación a través de medios digitales para solucionar la situación, fenómeno o problemática.",
         "metas": [
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-          "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-          "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-          "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso."
+          "Representa la solución de problemas mediante pensamiento algorítmico seleccionando métodos, diagramas o técnicas.",
+          "Aplica lenguaje algorítmico utilizando medios digitales para resolver situaciones o problemas del contexto."
         ],
         "tematicas": [
           "digitales permitiendo una práctica docente ágil, \nactualizada, innovadora y al contexto de nuestros alumnos. \nEl Recurso Sociocognitivo de Cultura Digital se encuentra integrada por tres UAC, a \ndesarrollars e en dos semestres y una tercera sujeta a la posibilidad de cada servicio \neducativo o subsistema de Educación Media Superior (ver tabla 1). \nTabla 1. Unidades de Aprendizaje Curricular por semestre, horas y créditos \nAsignatura Semestre Horas semanales Horas semestrales \nCréditos \nMD EI Total MD EI Total \nCultura Digital I Primero 3 45 \nmin. 3 hrs. \n45 min 48 12 60 6 \nCultura Digital II Segundo 2 30 \nmin. 2 hrs. \n30 \nmin. 32 8 40 4 \nCultura Digital \nIII Sexto* 1 15 min. 1 hr. 15 \nmin. 16 4 20 2 \n \n \n*De acuerdo con el mapa curricular de cada servicio educativo . \nMD: Mediación docente. EI: Estudio Independient e \n \n \n5 \n \nEn el presente documento se describe la UAC correspondiente a Cultura Digital I a \ndesarrollarse durante el primer semestre."
+        ],
+        "categorias": [
+          "Pensamiento Algorítmico"
+        ],
+        "subcategorias": [
+          "Resolución de problemas",
+          "Pensamiento Computacional y lenguaje algorítmico"
         ]
       }
     ],
     "organizador_curricular": {
-      "propositos_formativos": [
-        "es que puedan hacer uso de las Tecnologías de la Información, \nComunicación, Conocimientos y Aprendizajes Digitales (TICCAD ) entre otras para \nseleccionar, procesar, analizar y sistematizar la información dentro de un marco \nnormativo y de seguridad y fomenten el uso de dichos recursos de forma responsable en \nel entorno que lo rodea. \n \n \n4 \n \nc Las categorías que componen este Recurso Sociocognitivo son: \n• Ciudadanía Digital \n• Comunicación y colaboración \n• Pensamiento algorítmico \n• Creatividad digital. \nLa Cultura Di gital como cultura endémica de las comunidades de usuarios de sistemas \ndigitales o de interacción en línea, no es solamente un tipo de cultura que se relaciona \ncon el procesamiento de palabras, o con la producción de presentaciones electrónicas. \nLa Cultura Digital que se busca desarrollar en la Nueva Escuela Mexicana de la EMS está \nrelacionada con saberes digitales informáticos de orden operativo e instrumental, pero \ntambién con los saberes digitales informacionales que permite potenciar el desempeño \nde las comunidades académicas, del desarrollo de habilidades para la comunicación y \ncolaboración, la capacidad creativa, el pensamiento algorítmico y la conc"
-      ],
       "categorias": [
         "Ciudadanía Digital",
-        "Pensamiento Computacional"
+        "Comunicación y Colaboración",
+        "Pensamiento Algorítmico"
+      ],
+      "subcategorias": [
+        "Lectura y Escritura en espacios digitales",
+        "Marco Normativo",
+        "Identidad Digital",
+        "Seguridad",
+        "Comunicación Digital",
+        "Herramientas digitales para el aprendizaje",
+        "Comunidades Virtuales de aprendizaje",
+        "Herramientas de Productividad",
+        "Resolución de problemas",
+        "Pensamiento Computacional y lenguaje algorítmico"
       ],
       "metas_aprendizaje": [
         "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-        "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
+        "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer su Ciudadanía Digital.",
         "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-        "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-        "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-        "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso.",
-        "Reconoce el ciberespacio y servicios digitales en diferentes contextos para acceder al conocimiento y la experiencia.",
-        "Utiliza el ciberespacio y los distintos servicios digitales en los diferentes contextos a partir del marco normativo parar ejercer s u Ciudadanía Digital.",
-        "Resguardar su identidad y sus interacciones en el ciberespacio y en los servicios digitales identificando las amenazas, riesgos y consecuencias que conllevan su uso."
+        "Interactúa de acuerdo a su contexto a través de las Tecnologías de la Información y la Comunicación, conocimiento y aprendizajes digitales, para ampliar su conocimiento y vincularse con su entorno.",
+        "Colabora en Comunidades Virtuales para impulsar el aprendizaje en forma autónoma y colaborativa, innova y eficienta los procesos en el desarrollo de proyectos y actividades de su contexto.",
+        "Representa la solución de problemas mediante pensamiento algorítmico seleccionando métodos, diagramas o técnicas.",
+        "Aplica lenguaje algorítmico utilizando medios digitales para resolver situaciones o problemas del contexto."
       ]
     },
     "orientaciones_didacticas": [],
@@ -614,7 +637,18 @@
     "url_fuente": "https://dgb.sep.gob.mx/storage/recursos/2025/09/UbN2iAEhFi-Cultura-Digital-I.pdf",
     "modelo": "2024",
     "estado": "oficial",
-    "extraccion": "automatica-v1 calidad=BUENA (revisar contra PDF)"
+    "extraccion": "automatica-v1 calidad=BUENA (revisar contra PDF)",
+    "aprendizajes_trayectoria": [
+      "Se asume como ciudadano digital con una postura crítica e informada que le permite adaptarse a la disponibilidad de recursos y diversidad de contextos.",
+      "Utiliza herramientas digitales para comunicarse y colaborar en el desarrollo de proyectos y actividades de acuerdo con sus necesidades y contextos.",
+      "Soluciona problemas de su entorno utilizando el pensamiento y lenguaje algorítmico.",
+      "Diseña y elabora contenidos digitales mediante técnicas, métodos, y recursos tecnológicos para fortalecer su creatividad e innovar en su vida cotidiana."
+    ],
+    "cotejo_catalogo": {
+      "fecha": "2026-10-25",
+      "paginas": "3–9",
+      "nota": "Horas de mediación, créditos, categorías y subcategorías por progresión y trayectoria cotejados contra el PDF enlazado, primera edición 2023. Metas asociadas depuradas y cotejadas por progresión."
+    }
   },
   {
     "materia": "La Materia y sus Interacciones",

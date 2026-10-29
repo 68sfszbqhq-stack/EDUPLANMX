@@ -41,6 +41,7 @@ export interface LessonPlan {
   title: string;
   date: string; // Fecha de creación
   subject: string;
+  institution?: { name: string; cct: string };
 
   // 1. Datos Generales Extendidos
   meta?: {
@@ -93,6 +94,7 @@ export interface LessonPlan {
   // 3. Vinculación PAEC
   paec?: {
     isLinked: boolean;
+    estado?: 'sin_vinculo' | 'pendiente' | 'vinculado';
     communityProblem: string; // Problemática comunitaria atendida
     projectTrigger: string; // Vinculo con PEC
     /** Nombre del Proyecto Escolar Comunitario. La lista de cotejo lo pide como
@@ -182,6 +184,8 @@ export interface LessonPlan {
   duaStrategies?: string;
 
   // 9. Evaluación
+  teachingKit?: Array<{ title: string; content: string; teacherNotes: string; preparation: string; sessionNumber?: number; delivery?: string; questions?: Array<{prompt: string; lines: number}> }>;
+  assessmentInstrument?: { name: string; instructions: string; columns: string[]; rows: Array<{ criterion: string; descriptors: string[] }>; scoring: string };
   evaluation: string;
   evaluationDetails?: {
     diagnostic: string;
@@ -234,6 +238,15 @@ export interface LessonPlan {
   resources: string[];
   duration: string;
   transversality?: any; // Compatibilidad legacy
+  curricularSource?: {
+    status: 'oficial' | 'general';
+    model: '2024' | '2025';
+    generation: string;
+    subject: string;
+    semester?: number;
+    url: string;
+    catalogState: 'oficial' | 'borrador' | 'sin_programa';
+  };
   mccemsAlignment: {
     documentUrl: string;
     validated: boolean;

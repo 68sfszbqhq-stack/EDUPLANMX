@@ -1,3 +1,4 @@
+import { obtenerAlmacenCuenta } from '../src/security/almacenCuenta';
 
 import React, { useState } from 'react';
 import { Layout, Settings, Users, PlusCircle, History, GraduationCap, BookOpen, LogOut, TrendingUp, Network, Sparkles, ChevronDown, CheckCircle2, Menu, X, Compass, NotebookPen, ClipboardList, ListChecks, Building2, Globe } from 'lucide-react';
@@ -11,17 +12,18 @@ interface SidebarProps {
 
 // Lee el progreso real del docente desde localStorage (donde App.tsx lo persiste)
 const getStepProgress = () => {
+    const almacen = obtenerAlmacenCuenta();
     let contextoListo = false;
     let tienePlaneaciones = false;
     let flujoCompleto = false;
     let tieneBitacora = false;
     try {
-        const school = JSON.parse(localStorage.getItem('schoolContext') || '{}');
+        const school = JSON.parse(almacen.getItem('schoolContext') || '{}');
         contextoListo = Boolean(school?.vision?.trim() || school?.municipality?.trim() || school?.cct?.trim());
-        const plans = JSON.parse(localStorage.getItem('savedPlans') || '[]');
+        const plans = JSON.parse(almacen.getItem('savedPlans') || '[]');
         tienePlaneaciones = Array.isArray(plans) && plans.length > 0;
         // Flujo de contextualización: completo cuando las 4 fases (plantel, grupo, BAP, PAEC) tienen datos
-        const flujo = JSON.parse(localStorage.getItem('flujoContexto') || '{}');
+        const flujo = JSON.parse(almacen.getItem('flujoContexto') || '{}');
         const hayTexto = (obj: any) => obj && Object.values(obj).some((v: any) => typeof v === 'string' && v.trim());
         flujoCompleto = Boolean(
             hayTexto(flujo?.plantel) &&
@@ -29,7 +31,7 @@ const getStepProgress = () => {
             flujo?.bap && Object.values(flujo.bap).some((c: any) => c?.detectada) &&
             (hayTexto(flujo?.paec) || (Array.isArray(flujo?.paec?.asignaturas) && flujo.paec.asignaturas.length > 0))
         );
-        const bitacora = JSON.parse(localStorage.getItem('bitacoraDocente') || '[]');
+        const bitacora = JSON.parse(almacen.getItem('bitacoraDocente') || '[]');
         tieneBitacora = Array.isArray(bitacora) && bitacora.length > 0;
     } catch {
         // localStorage corrupto: sin palomitas, sin drama
@@ -40,13 +42,14 @@ const getStepProgress = () => {
 const Sidebar: React.FC<SidebarProps> = ({ activeView, onNavigate }) => {
 
     const { logout, user } = useAuth();
+    const almacen = obtenerAlmacenCuenta();
     const [mobileOpen, setMobileOpen] = useState(false);
     const [showMore, setShowMore] = useState(false);
 
     const { contextoListo, tienePlaneaciones, flujoCompleto, tieneBitacora } = getStepProgress();
 
     // Ruta principal del docente, en el orden en que debe recorrerla
-    const tienePerfil = Boolean(localStorage.getItem('perfilDocente'));
+    const tienePerfil = Boolean(almacen.getItem('perfilDocente'));
 
     // Lo de todos los días va arriba; lo que se llena una sola vez, abajo. Cada dato se
     // captura en un solo lugar: lista, asistencia, diario y calificaciones viven en Mis clases.

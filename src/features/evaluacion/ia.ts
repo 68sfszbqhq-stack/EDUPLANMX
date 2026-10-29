@@ -1,3 +1,4 @@
+import { fetchTerminalLocal } from '../../../services/terminalLocal';
 /**
  * Pedidos a la IA de la terminal (scripts/puente-ia.ts) para evaluación.
  *
@@ -10,7 +11,7 @@ import { ClavePregunta, Pregunta, Rubrica, TIPOS_PREGUNTA, TipoPregunta, validar
 async function pedir(tipo: 'examen' | 'rubrica' | 'revision', systemPrompt: string, mensaje: string): Promise<{ datos: any; modelo: string }> {
   let r: Response;
   try {
-    r = await fetch('/api/ia/json', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ tipo, systemPrompt, mensaje }) });
+    r = await fetchTerminalLocal('/api/ia/json', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ tipo, systemPrompt, mensaje }) });
   } catch {
     throw new Error('📡 No hay contacto con la IA de la terminal. Arranca la versión 2 con: npm run dev:v2');
   }

@@ -1,3 +1,10 @@
+import { obtenerAlmacenCuenta } from '../src/security/almacenCuenta';
+import { fechasSesiones } from '../src/features/planeacion/presentacionPlan';
+import { instruccionesEvaluacion, instruccionesPAEC, conservarPAEC, DecisionPAEC } from '../src/features/planeacion/decisionesPlan';
+import { idPrograma, generacionPlan, ModeloPlan, SeleccionCurricular } from '../src/features/planeacion/seleccionCurricular';
+import RevisionContextoIA from './RevisionContextoIA';
+import { crearRevisionContexto, contextoAutorizado, RevisionContexto } from '../src/features/planeacion/revisionContexto';
+import { perfilDocenteService } from '../src/services/perfilDocenteService';
 import { listarFuentes } from '../src/features/cuaderno/storage';
 import { recuperarContexto } from '../src/features/cuaderno/model';
 import React, { useState, useEffect, useRef } from 'react';
@@ -52,6 +59,12 @@ Aquí está el CSV:
 
 const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherName, onSave, onNavigate }) => {
   const { user } = useAuth();
+  const almacen = obtenerAlmacenCuenta();
+  const [pendiente, setPendiente] = useState<{ revision: RevisionContexto; enviar: (contexto: ReturnType<typeof contextoAutorizado>) => Promise<void> } | null>(null);
+  const preparandoRef = useRef(false);
+  const [preparando, setPreparando] = useState(false);
+  const [editarFormulario, setEditarFormulario] = useState(false);
+  const resultadoRef = useRef<HTMLDivElement>(null);
   const [cuaderno, setCuaderno] = useState<SeleccionCuadernoPlan | null>(null);
 
   // Contexto capturado en el Flujo de Contextualización (panel "flujo").
@@ -77,7 +90,18 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
       sessionStorage.removeItem('gemini_api_key');
     }
   };
-  const [progresionesDisponibles, setProgresionesDisponibles] = useState<{ id: number, descripcion: string }[]>([]);
+  const programasDisponibles = React.useMemo(() => programasSEPService.buscarPorMateria(subject.subjectName), [subject.subjectName]);
+  const [modeloPlan, setModeloPlan] = useState<ModeloPlan>('2024');
+  const [programaId, setProgramaId] = useState('');
+  const opcionesPrograma = programasDisponibles.filter(p => p.modelo === modeloPlan);
+  const programaElegido = opcionesPrograma.find(p => idPrograma(p) === programaId) || null;
+  const progresionesDisponibles = programaElegido?.estado === 'oficial' ? programaElegido.progresiones : [];
+  const cambiarModelo = (modelo: ModeloPlan) => {
+    setModeloPlan(modelo);
+    const opciones = programasDisponibles.filter(p => p.modelo === modelo);
+    setProgramaId(opciones.length === 1 ? idPrograma(opciones[0]) : '');
+    setSelectedProgression('');
+  };
   const [selectedProgression, setSelectedProgression] = useState<string>('');
 
   // Formación Laboral: la planeación se construye sobre un submódulo del programa
@@ -99,28 +123,28 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   const [specificTopic, setSpecificTopic] = useState('');
   const [numSessions, setNumSessions] = useState(1);
   const [sessionDuration, setSessionDuration] = useState(50);
-  const [evaluationType, setEvaluationType] = useState('Rúbrica');
+  const [evaluationType, setEvaluationType] = useState('Lista de Cotejo');
   const [semestre, setSemestre] = useState<number | null>(null);
-  const [hoursPerWeek, setHoursPerWeek] = useState(4);
+  const [hoursPerWeek, setHoursPerWeek] = useState(0);
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const [didacticStrategy, setDidacticStrategy] = useState('Aprendizaje Basado en Proyectos (ABP)');
-  const [paecMode, setPaecMode] = useState<'manual' | 'linked'>('manual');
+  const [didacticStrategy, setDidacticStrategy] = useState('Estudio de Casos');
+  const [paecMode, setPaecMode] = useState<'none' | 'manual' | 'linked'>('none');
   // Prellenado desde el Flujo de Contextualización (Fase 3): el docente puede sobrescribirlo
-  const [paecProblem, setPaecProblem] = useState(() => flujoContextoService.load().paec.problematica || '');
+  const [paecProblem, setPaecProblem] = useState('');
   const [activeProjects, setActiveProjects] = useState<PECProject[]>([]);
   const [selectedPecId, setSelectedPecId] = useState('');
   const [pecActivity, setPecActivity] = useState('');
   const [studentContextSummary, setStudentContextSummary] = useState<string>('');
 
   // Diagnóstico del grupo escrito/pegado por el docente (persiste en este navegador)
-  const [diagnosticoGrupo, setDiagnosticoGrupo] = useState(() => localStorage.getItem('diagnosticoGrupo') || '');
+  const [diagnosticoGrupo, setDiagnosticoGrupo] = useState(() => almacen.getItem('diagnosticoGrupo') || '');
   const [showMachote, setShowMachote] = useState(false);
   const [machoteCopiado, setMachoteCopiado] = useState(false);
 
   const handleDiagnosticoChange = (value: string) => {
     setDiagnosticoGrupo(value);
-    localStorage.setItem('diagnosticoGrupo', value);
+    almacen.setItem('diagnosticoGrupo', value);
   };
 
   // Respaldo en la nube del diagnóstico: se guarda al salir del campo y se
@@ -139,13 +163,13 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   useEffect(() => {
     // Si este navegador no tiene diagnóstico pero la nube sí, recuperarlo
     const recuperar = async () => {
-      if (!puedeUsarNube || localStorage.getItem('diagnosticoGrupo')) return;
+      if (!puedeUsarNube || almacen.getItem('diagnosticoGrupo')) return;
       try {
         const snap = await getDoc(doc(db, 'users', user!.id));
         const guardado = snap.data()?.diagnosticoGrupo;
         if (guardado) {
           setDiagnosticoGrupo(guardado);
-          localStorage.setItem('diagnosticoGrupo', guardado);
+          almacen.setItem('diagnosticoGrupo', guardado);
         }
       } catch (e) {
         console.error('No se pudo recuperar el diagnóstico de la nube:', e);
@@ -235,24 +259,18 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     handlePrintOnly();
   };
 
-  // Info del programa cargado: modelo curricular y si es oficial o borrador
-  const [programaInfo, setProgramaInfo] = useState<{ modelo?: string; estado?: string } | null>(null);
-
   useEffect(() => {
-    if (subject.subjectName) {
-      const programas = programasSEPService.buscarPorMateria(subject.subjectName);
-      // Preferir siempre el programa oficial; el borrador solo como último recurso
-      const programa = programas.find(p => p.estado !== 'borrador') || programas[0];
-      if (programa) {
-        setProgresionesDisponibles(programa.estado === 'borrador' ? [] : (programa.progresiones || []));
-        setSemestre(programa.semestre);
-        setProgramaInfo({ modelo: programa.modelo, estado: programa.estado });
-      } else {
-        setProgresionesDisponibles([]);
-        setProgramaInfo(null);
-      }
-    }
-  }, [subject.subjectName]);
+    const modelos = [...new Set(programasDisponibles.map(p => p.modelo).filter(Boolean))];
+    const modelo = modelos.length === 1 && modelos[0] === '2025' ? '2025' : '2024';
+    const opciones = programasDisponibles.filter(p => p.modelo === modelo);
+    setModeloPlan(modelo);
+    setProgramaId(opciones.length === 1 ? idPrograma(opciones[0]) : '');
+    setSelectedProgression('');
+    setSubmoduloLaboralId('');
+    setSpecificTopic('');
+  }, [programasDisponibles]);
+
+  useEffect(() => { setSemestre(programaElegido?.semestre ?? null); setHoursPerWeek(programaElegido?.metadata.horas_semanales || 0); }, [programaElegido]);
 
   useEffect(() => {
     // Depende de schoolId: al inicio puede no estar cargado todavía. El modo muestra no lee Firebase.
@@ -275,6 +293,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   }, [user?.schoolId]);
 
   const handleGenerate = async () => {
+    if (!esLaboral && opcionesPrograma.length > 1 && !programaElegido) { setError('Elige el programa de tu asignatura.'); return; }
     if (cuaderno && !cuaderno.ready) { setError('Completa el grupo, ciclo y carga las fuentes del cuaderno antes de generar.'); return; }
     // En Formación Laboral la planeación se arma sobre la Actividad Clave del
     // submódulo, así que sin submódulo no hay nada que desarrollar.
@@ -293,38 +312,16 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
       return;
     }
 
-    setIsLoading(true);
+    if (preparandoRef.current) return;
+    preparandoRef.current = true;
+    setPreparando(true);
     setError(null);
-    setResult(null);
 
-    // --- LÓGICA PAEC/PEC ---
+    const decisionPAEC: DecisionPAEC = { modo: includeSections.paecLinks ? paecMode : 'none', problema: paecProblem,
+      proyecto: activeProjects.find(p => p.id === selectedPecId), actividad: pecActivity };
     let paecContext = '';
-    let finalPaecData: any = null;
-
-    if (paecMode === 'manual') {
-      paecContext = `PROBLEMÁTICA PAEC: "${paecProblem || 'A sugerencia de la IA basándose en el contexto'}"`;
-      finalPaecData = paecProblem ? {
-        isLinked: true,
-        communityProblem: paecProblem,
-        projectTrigger: 'Proyecto integrador'
-      } : null;
-    } else {
-      const pec = activeProjects.find(p => p.id === selectedPecId);
-      if (pec) {
-        paecContext = `
-           VINCULACIÓN AL PROYECTO ESCOLAR COMUNITARIO (PEC):
-           - Nombre Proyecto: "${pec.name}"
-           - Problemática: "${pec.problemId}"
-           - Objetivo: "${pec.generalObjective}"
-           - ACTIVIDAD VINCULADA: "${pecActivity}"
-         `;
-        finalPaecData = {
-          isLinked: true,
-          communityProblem: pec.name,
-          projectTrigger: pec.generalObjective
-        };
-      }
-    }
+    try { paecContext = instruccionesPAEC(decisionPAEC); }
+    catch (e) { setError((e as Error).message); preparandoRef.current = false; setPreparando(false); return; }
 
     // --- LÓGICA DEL TALLER: INYECCIÓN DE "PERSONA" IA ---
     // Esto reemplaza la necesidad de que el docente cambie de app (Diffit, Canva, etc.)
@@ -365,7 +362,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
         aiPersonaInstruction = `
           ROL: Actúa como especialista en Evaluación Formativa (Estilo Copilot).
           PRIORIDAD: Retroalimentación y metacognición.
-          INSTRUCCIÓN: Desarrolla una Rúbrica Analítica detallada.
+          INSTRUCCIÓN: ${instruccionesEvaluacion(evaluationType)}
           Incluye preguntas detonadoras para la autoevaluación de los alumnos al final de la clase.
         `;
         break;
@@ -416,10 +413,6 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     const contextInstructions = `
       CONTEXTO A CONSIDERAR:
       ${includeContext.schoolVision ? `- VISIÓN ESCOLAR: "${school.vision}" (Alinearse a esto).` : ''}
-      ${includeContext.studentDiagnosis && diagnosticoEfectivo ? `- DIAGNÓSTICO DEL GRUPO: "${diagnosticoEfectivo}"
-        INSTRUCCIÓN OBLIGATORIA: adapta al menos UNA actividad de la secuencia a estas características
-        y decláralo explícitamente dentro de la actividad con la etiqueta "[Adaptación al grupo]".
-        Si el diagnóstico indica poco acceso a internet, NO dejes tareas que lo requieran.` : ''}
       ${includeContext.communityContext ? `- CONTEXTO COMUNIDAD: "${school.municipality}" (Usar ejemplos locales).` : ''}
     `;
 
@@ -427,13 +420,14 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
     const promptEstructurado = `
       ${aiPersonaInstruction}
 
+      Modelo curricular elegido: ${modeloPlan}; generación de referencia: ${generacionPlan(modeloPlan)}.
+      ${!esLaboral && programaElegido?.estado !== 'oficial' ? 'PROPUESTA GENERAL. No presentar como alineación oficial verificada.' : ''}
       Genera una planeación didáctica para "${subject.subjectName}" (Semestre ${semestre || 'General'}).
       
       CONTEXTO Y DIAGNÓSTICO (INPUT HUMANO):
       - Escuela: ${school.schoolName} (${school.municipality})
       ${contextInstructions}
 
-      ${bloqueFlujo}
 
       CONFIGURACIÓN TÉCNICA:
       - Sesiones: ${numSessions} (Duración estricta: ${sessionDuration} min por sesión).
@@ -446,6 +440,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
       - Tema: "${specificTopic}"
       - Estrategia Base: "${didacticStrategy}"
       - Evaluación: "${evaluationType}"
+      ${instruccionesEvaluacion(evaluationType)}
       
       ${paecContext}
       
@@ -459,7 +454,6 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
 
     try {
       // PRESERVADO: Pasamos la apiKey manual (si existe) al servicio
-      const generationStart = Date.now();
       let contextoActual = cuaderno?.context;
       if (cuaderno) {
         const schoolId = user?.schoolId || (user?.rol === 'guest' ? 'demo' : '');
@@ -467,41 +461,60 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
         contextoActual = recuperarContexto(fuentes, { schoolId, cycle: school.cycle, group: cuaderno.group, subject: subject.subjectName, date: startDate || new Date().toLocaleDateString('en-CA') }, specificTopic || selectedProgression);
         if (!contextoActual.fragments.length) throw new Error('No hay fuentes revisadas aplicables al grupo, ciclo y fecha. Revisa el cuaderno o desactiva su uso.');
       }
-      const plan = await generateLessonPlan(
-        promptEstructurado, school, subject, apiKey, user?.id, submoduloLaboralId || undefined, contextoActual
-      );
-      analyticsService.trackPlaneacionGenerada(subject.subjectName, (Date.now() - generationStart) / 1000);
-
-      const finalPlan: LessonPlan = {
-        ...plan,
-        meta: {
-          ...plan.meta,
-          teacher: teacherName || plan.meta?.teacher || '',
-          cycle: school.cycle || plan.meta?.cycle || '',
-          period: plan.meta?.period || 'Semestral',
-          gradeGroup: cuaderno?.group || plan.meta?.gradeGroup || 'General',
-          // El semestre lo sabe el formulario (viene del programa oficial), no la IA.
-          // La lista de cotejo lo pide como dato separado del grupo.
-          semester: semestre ?? plan.meta?.semester,
-          totalSessions: numSessions,
-          hoursPerWeek: hoursPerWeek,
-          startDate: startDate || 'Por definir',
-          endDate: endDate || 'Por definir',
-          methodology: didacticStrategy, // Persistimos la estrategia seleccionada
-        },
-        paec: finalPaecData || plan.paec,
-        pecLinkage: paecMode === 'linked' ? {
-          isLinked: true,
-          pecId: selectedPecId,
-          pecActivity: pecActivity
-        } : undefined
+      const perfil = perfilDocenteService.generarBloquePrompt(await perfilDocenteService.obtener(puedeUsarNube ? user?.id : undefined));
+      const revision = crearRevisionContexto(promptEstructurado,
+        includeContext.studentDiagnosis ? diagnosticoEfectivo : '', bloqueFlujo, perfil, contextoActual);
+      // Capturamos la configuración. Tras confirmar no volvemos a leer los textos originales.
+      const seleccion: SeleccionCurricular | undefined = esLaboral ? undefined : {
+        modelo: modeloPlan, programaId: programaElegido ? idPrograma(programaElegido) : null,
+        progresionId: progresionesDisponibles.find(p => p.descripcion === selectedProgression)?.id,
       };
+      revision.resumen = [subject.subjectName, `Modelo ${modeloPlan}`, selectedProgression || specificTopic || submoduloElegido?.submodulo.nombre || '', `${numSessions} sesiones × ${sessionDuration} minutos`, didacticStrategy, evaluationType, decisionPAEC.modo === 'none' ? 'Solo actividad de aula' : decisionPAEC.modo === 'manual' ? 'Vínculo comunitario por acordar' : `PEC: ${decisionPAEC.proyecto?.name}`];
+      setPendiente({ revision, enviar: async (autorizado) => {
+        const generationStart = Date.now();
+        const plan = await generateLessonPlan(
+          autorizado.prompt, school, subject, apiKey, user?.id, submoduloLaboralId || undefined, autorizado.cuaderno, autorizado.perfil, seleccion, { instrumento: evaluationType }
+        );
+        analyticsService.trackPlaneacionGenerada(subject.subjectName, (Date.now() - generationStart) / 1000);
 
-      setResult(finalPlan);
+        const finalPlan: LessonPlan = {
+          ...plan,
+          date: new Date().toISOString(),
+          institution: { name: school.schoolName, cct: school.cct },
+          meta: {
+            ...plan.meta,
+            teacher: teacherName || plan.meta?.teacher || '',
+            cycle: school.cycle || plan.meta?.cycle || '',
+            period: startDate || endDate ? `${startDate || 'Por asignar'} — ${endDate || 'Por asignar'}` : 'Por asignar',
+            gradeGroup: cuaderno?.group || plan.meta?.gradeGroup || 'General',
+            // El semestre lo sabe el formulario (viene del programa oficial), no la IA.
+            // La lista de cotejo lo pide como dato separado del grupo.
+            semester: semestre ?? plan.meta?.semester,
+            totalSessions: numSessions,
+            hoursPerWeek: hoursPerWeek || 0,
+            startDate: startDate || 'Por definir',
+            endDate: endDate || 'Por definir',
+            methodology: didacticStrategy, // Persistimos la estrategia seleccionada
+          },
+          sessions: fechasSesiones(plan.sessions, startDate, endDate),
+          paec: conservarPAEC(plan.paec, decisionPAEC),
+          pecLinkage: decisionPAEC.modo === 'linked' ? {
+            isLinked: true,
+            pecId: selectedPecId,
+            pecActivity: pecActivity
+          } : undefined
+        };
+
+        setResult(finalPlan);
+        setEditarFormulario(false);
+        setTimeout(() => { resultadoRef.current?.scrollIntoView({block:'start',behavior:'smooth'}); resultadoRef.current?.focus(); }, 100);
+        setPendiente(null);
+      } });
     } catch (err: any) {
       setError(err.message || 'Error al generar la planeación.');
     } finally {
-      setIsLoading(false);
+      preparandoRef.current = false;
+      setPreparando(false);
     }
   };
 
@@ -538,14 +551,17 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
   };
 
   return (
-    <div className="space-y-8 pb-20">
-      <div className="no-print"><ContextoCuadernoPlan cycle={school.cycle} subject={subject.subjectName} topic={specificTopic || selectedProgression} date={startDate} onChange={setCuaderno} onOpen={() => onNavigate?.('cuaderno')} /></div>
+    <>
+    {pendiente && <RevisionContextoIA inicial={pendiente.revision} onCancelar={() => setPendiente(null)} onEnviar={pendiente.enviar} />}
+    <div hidden={!!pendiente} className="space-y-8 pb-20">
+      <div hidden={!!result && !editarFormulario}>
+      <details className="no-print border rounded-xl p-3"><summary className="cursor-pointer text-sm">Usar fuentes del cuaderno (opcional)</summary><ContextoCuadernoPlan cycle={school.cycle} subject={subject.subjectName} topic={specificTopic || selectedProgression} date={startDate} onChange={setCuaderno} onOpen={() => onNavigate?.('cuaderno')} /></details>
 
       {/* --- CUESTIONARIO CONFIGURADOR --- */}
       <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm no-print">
         <h3 className="text-xl font-bold mb-6 text-slate-800 flex items-center gap-2">
           <Sparkles className="w-5 h-5 text-amber-500" />
-          Generador Inteligente NEM (Actividad Taller IA)
+          Prepara tu clase
         </h3>
 
         {/* 0. API KEY DEL DOCENTE — obligatoria: la app no incrusta ninguna clave */}
@@ -553,8 +569,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           <div className="mb-6 p-4 rounded-xl border bg-violet-50 border-violet-200 text-sm text-violet-900 flex items-start gap-2">
             <Sparkles className="w-4 h-4 mt-0.5 flex-shrink-0" />
             <span>
-              <b>Versión 2:</b> la planeación la genera <b>Claude desde la terminal de esta Mac</b>, con tu suscripción.
-              No necesitas clave de Gemini. Tarda de 1 a 5 minutos y se respalda sola en <span className="font-mono">planeaciones-generadas/</span>.
+              <b>IA conectada: {import.meta.env.VITE_TERMINAL_PROVIDER || 'Claude'}.</b> Puedes preparar tu clase sin introducir una clave.
             </span>
           </div>
         ) : (
@@ -606,24 +621,27 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           <div className="col-span-1 md:col-span-2 space-y-2">
             <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-indigo-500" />
-              1. ¿Qué vamos a enseñar? (Contenido Curricular)
-              {programaInfo?.estado === 'oficial' && (
-                <span className={`ml-auto text-[10px] font-bold px-2 py-0.5 rounded-full ${programaInfo.modelo === '2025'
-                  ? 'bg-emerald-100 text-emerald-700 border border-emerald-200'
-                  : 'bg-blue-100 text-blue-700 border border-blue-200'
-                  }`}>
-                  {programaInfo.modelo === '2025' ? '✓ Plan 2025-2028 (nuevo)' : '✓ Plan MCCEMS 2024'}
-                </span>
-              )}
+              ¿Qué vas a enseñar?
             </label>
-
-            {programaInfo?.estado === 'borrador' && (
-              <div className="p-3 bg-amber-50 border border-amber-300 rounded-xl text-xs text-amber-800 leading-relaxed">
-                <span className="font-bold">⚠️ El programa de esta materia aún no está verificado con el documento oficial de la DGB.</span>
-                {' '}Por eso no te mostramos progresiones (serían provisionales). Escribe abajo tu tema o la progresión
-                tal como aparece en tu programa de estudios impreso — la IA la usará textualmente.
+            {!esLaboral && <div className="border rounded-xl p-4 space-y-3 bg-slate-50">
+              <div className="grid sm:grid-cols-2 gap-3">
+                <label className="text-sm font-medium">Modelo del grupo
+                  <select aria-label="Modelo del grupo" value={modeloPlan} onChange={e => cambiarModelo(e.target.value as ModeloPlan)} className="mt-1 w-full border rounded-lg p-2 bg-white">
+                    <option value="2024">MCCEMS 2024</option>
+                    <option value="2025">Modelo 2025</option>
+                  </select>
+                  <span className="block mt-1 text-xs font-normal text-slate-500">Generación de referencia: {generacionPlan(modeloPlan)}</span>
+                </label>
+                {opcionesPrograma.length > 1 ? <label className="text-sm font-medium">Programa
+                  <select aria-label="Programa curricular" value={programaId} onChange={e => { setProgramaId(e.target.value); setSelectedProgression(''); }} className="mt-1 w-full border rounded-lg p-2 bg-white">
+                    <option value="">Elige el programa</option>
+                    {opcionesPrograma.map(p => <option key={idPrograma(p)} value={idPrograma(p)}>{p.materia} · semestre {p.semestre}{p.estado === 'oficial' ? '' : ' · Borrador'}</option>)}
+                  </select>
+                </label> : <div className="text-sm self-center"><strong>{programaElegido?.materia || subject.subjectName}</strong>{programaElegido && <p>Semestre {programaElegido.semestre}</p>}</div>}
               </div>
-            )}
+              {programaElegido?.estado === 'oficial' ? <p className="text-sm text-emerald-700">✓ Programa verificado en el catálogo</p> : <p className="text-sm text-amber-800">{opcionesPrograma.length > 1 && !programaElegido ? 'Elige un programa para ver su contenido.' : programaElegido ? 'Borrador sin verificar. Se generará una propuesta general.' : 'Sin programa verificado para este modelo. Se generará una propuesta general.'}</p>}
+              {programaElegido?.url_fuente?.startsWith('https://') && <a className="text-sm text-blue-700 underline" href={programaElegido.url_fuente} target="_blank" rel="noopener noreferrer">Consultar fuente del programa</a>}
+            </div>}
 
             {esLaboral ? (
               /* FORMACIÓN LABORAL: se planea un submódulo, no una progresión.
@@ -631,10 +649,11 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
               <>
                 <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 leading-relaxed">
                   <span className="font-bold">🔧 Formación Laboral Básica en {programaLaboral!.nombre}.</span>{' '}
-                  Aquí no hay progresiones: la planeación se construye sobre la <strong>Actividad Clave</strong> del
+                  Generación {programaLaboral!.generacion}. La planeación se construye sobre la <strong>Actividad Clave</strong> del
                   submódulo, tal como viene en el programa oficial de la DGB.
                 </div>
 
+                {programaLaboral?.urlFuente?.startsWith('https://') && <a href={programaLaboral.urlFuente} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-700 underline">Consultar fuente del programa laboral</a>}
                 <select
                   value={submoduloLaboralId}
                   onChange={(e) => setSubmoduloLaboralId(e.target.value)}
@@ -690,37 +709,39 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
               </>
             ) : (
               <>
-                <select
+                {programaElegido?.estado === 'oficial' && <select
+                  aria-label={modeloPlan === '2025' ? 'Propósito formativo' : 'Progresión oficial'}
                   value={selectedProgression}
                   onChange={(e) => setSelectedProgression(e.target.value)}
                   className="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:border-indigo-500 text-sm"
                 >
-                  <option value="">-- Selecciona progresión oficial SEP --</option>
+                  <option value="">{modeloPlan === '2025' ? 'Elige un propósito formativo' : 'Elige una progresión oficial'}</option>
                   {progresionesDisponibles.map(p => (
                     <option key={p.id} value={p.descripcion}>
                       {p.id}. {p.descripcion.substring(0, 120)}...
                     </option>
                   ))}
-                </select>
+                </select>}
                 <input
                   type="text"
                   value={specificTopic}
                   onChange={(e) => setSpecificTopic(e.target.value)}
-                  placeholder="O escribe un tema específico..."
+                  placeholder={programaElegido?.estado === 'oficial' ? "O escribe un tema específico..." : "Escribe el tema para tu propuesta general"}
                   className="w-full mt-2 p-3 rounded-xl border border-slate-200 text-sm"
                 />
               </>
             )}
           </div>
 
+<details className="col-span-1 md:col-span-2"><summary className="cursor-pointer font-medium text-sm mb-3">Enfoque especial (opcional)</summary>
           {/* --- NUEVA SECCIÓN: DIAGNÓSTICO DE NECESIDAD (Actividad PDF) --- */}
           <div className="col-span-1 md:col-span-2 bg-indigo-50 p-5 rounded-2xl border border-indigo-100">
-            <label className="text-sm font-bold text-indigo-900 flex items-center gap-2 mb-3">
+            <h4 className="text-sm font-bold text-indigo-900 mb-3">
               <Brain className="w-5 h-5" />
-              2. Diagnóstico de Necesidad Docente (Selección de Función IA)
-            </label>
+              ¿Quieres un enfoque especial?
+            </h4>
             <p className="text-xs text-indigo-700 mb-4">
-              Basado en el Taller de IA: ¿En qué parte del diseño didáctico necesitas más apoyo hoy?
+              Por defecto organizamos una secuencia clara. Puedes cambiar el enfoque.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -780,7 +801,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
                 <div className="p-2 bg-emerald-100 w-fit rounded-lg"><FileText className="w-4 h-4 text-emerald-600" /></div>
                 <div>
                   <div className="font-bold text-sm text-slate-800">Evaluar</div>
-                  <div className="text-[10px] text-slate-500">Rúbricas detalladas y retroalimentación.</div>
+                  <div className="text-[10px] text-slate-500">Instrumento elegido y retroalimentación.</div>
                 </div>
               </button>
             </div>
@@ -849,13 +870,15 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
               />
             </div>
           )}
+        </details>
         </div>
 
+        <details className="border rounded-xl p-3 mb-4"><summary className="cursor-pointer font-medium text-sm">Más opciones de contenido y contexto</summary>
         {/* --- NUEVO: PERSONALIZACIÓN AVANZADA --- */}
         <div className="col-span-1 md:col-span-2 bg-slate-50 p-5 rounded-2xl border border-slate-200">
           <h4 className="text-sm font-bold text-slate-700 flex items-center gap-2 mb-4">
             <List className="w-4 h-4 text-slate-500" />
-            3. Personaliza tu Planeación (Selecciona lo que necesitas)
+            Contenido adicional
           </h4>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -918,12 +941,12 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             <div>
               <p className="text-sm font-bold text-slate-800">
                 {fasesFlujoActivas > 0
-                  ? `Flujo de Contextualización activo: ${fasesFlujoActivas}/4 fases capturadas`
+                  ? `Datos de contexto guardados: ${fasesFlujoActivas}/4 fases capturadas`
                   : 'Aún no has llenado el Flujo de Contextualización'}
               </p>
               <p className="text-xs text-slate-500">
                 {fasesFlujoActivas > 0
-                  ? 'La IA usará tu contexto de plantel, grupo, BAP y PAEC para situar esta planeación.'
+                  ? 'Podrás elegir si compartes estos datos al revisar el envío. No se incorporan automáticamente.'
                   : 'Llénalo una vez por semestre y todas tus planeaciones saldrán contextualizadas a TU grupo.'}
               </p>
             </div>
@@ -941,12 +964,13 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           )}
         </div>
 
+        </details>
         {/* --- DIAGNÓSTICO DE MI GRUPO (contextualización real) --- */}
         <div className="col-span-1 md:col-span-2 bg-emerald-50 p-5 rounded-2xl border border-emerald-200 my-6">
           <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
             <label className="text-sm font-bold text-emerald-900 flex items-center gap-2">
               <Users className="w-4 h-4" />
-              4. Diagnóstico de mi grupo (para contextualizar de verdad)
+              ¿Cómo es tu grupo y con qué cuenta?
             </label>
             <button
               type="button"
@@ -994,7 +1018,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           />
           <p className="text-[10px] text-emerald-700 mt-1.5">
             {diagnosticoGrupo.trim()
-              ? '✅ Guardado en este navegador. La IA adaptará al menos una actividad a tu grupo y lo marcará con la etiqueta [Adaptación al grupo] (mantén activada la casilla "Considerar Diagnóstico de Alumnos" de arriba).'
+              ? 'Guardado. Revisa recursos, apoyos y condiciones actuales del grupo.'
               : 'Opcional pero poderoso: esto es lo que convierte una planeación genérica en una planeación de TU grupo.'}
           </p>
         </div>
@@ -1006,7 +1030,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
               <Target className="w-4 h-4 text-orange-500" />
               Estrategia Didáctica
             </label>
-            <select
+            <select aria-label="Estrategia didáctica"
               value={didacticStrategy}
               onChange={(e) => setDidacticStrategy(e.target.value)}
               className="w-full p-3 rounded-xl border border-slate-200 bg-white focus:border-orange-500 text-sm"
@@ -1033,12 +1057,13 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
                 Vinculación PEC (Comunidad)
               </label>
               <div className="flex bg-slate-100 rounded-lg p-0.5">
-                <button onClick={() => setPaecMode('manual')} className={`px-2 py-0.5 text-[10px] rounded-md font-bold transition-all ${paecMode === 'manual' ? 'bg-white shadow text-slate-800' : 'text-slate-400'}`}>Manual</button>
+                <button type="button" onClick={() => setPaecMode('none')} className="px-2 py-1 text-xs">Solo aula</button>
+                <button onClick={() => setPaecMode('manual')} className={`px-2 py-0.5 text-[10px] rounded-md font-bold transition-all ${paecMode === 'manual' ? 'bg-white shadow text-slate-800' : 'text-slate-400'}`}>Por acordar</button>
                 <button onClick={() => setPaecMode('linked')} className={`px-2 py-0.5 text-[10px] rounded-md font-bold transition-all ${paecMode === 'linked' ? 'bg-pink-500 shadow text-white' : 'text-slate-400'}`}>Vinculado</button>
               </div>
             </div>
 
-            {paecMode === 'manual' ? (
+            {paecMode === 'none' ? <p className="text-sm text-slate-500">Sin proyecto comunitario para esta clase.</p> : paecMode === 'manual' ? (
               <input
                 type="text"
                 value={paecProblem}
@@ -1077,13 +1102,13 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           <div className="space-y-2">
             <label className="text-xs font-bold text-slate-500 uppercase">Duración</label>
             <div className="flex gap-2">
-              <select value={numSessions} onChange={(e) => setNumSessions(Number(e.target.value))} className="w-full p-2 border rounded-lg text-sm">
+              <select aria-label="Número de sesiones" value={numSessions} onChange={(e) => setNumSessions(Number(e.target.value))} className="w-full p-2 border rounded-lg text-sm">
                 {[1, 2, 3, 4, 5].map(n => <option key={n} value={n}>{n} Sesiones</option>)}
               </select>
               <div className="relative w-full">
                 <span className="absolute right-8 top-2 text-xs text-slate-400">min/sesión</span>
                 <input
-                  type="number"
+                  aria-label="Minutos por sesión" type="number"
                   value={sessionDuration}
                   onChange={(e) => {
                     const val = Number(e.target.value);
@@ -1097,7 +1122,10 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             </div>
           </div>
           <div className="space-y-2">
-            <label className="text-xs font-bold text-slate-500 uppercase">Fechas</label>
+            <label className="text-xs font-bold text-slate-500 uppercase">Datos del grupo</label>
+            <label className="block text-xs">Semestre<input aria-label="Semestre del grupo" type="number" min={1} max={6} value={semestre || ''} onChange={e=>setSemestre(Number(e.target.value)||null)} className="w-full border rounded p-2" /></label>
+            <label className="block text-xs">Horas semanales (opcional)<input aria-label="Horas semanales" type="number" min={0} value={hoursPerWeek || ''} onChange={e=>setHoursPerWeek(Number(e.target.value)||0)} className="w-full border rounded p-2" /></label>
+            <span className="text-xs text-slate-500">Fechas opcionales</span>
             <div className="grid grid-cols-2 gap-2">
               <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} className="p-2 border rounded-lg text-xs" />
               <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)} className="p-2 border rounded-lg text-xs" />
@@ -1105,7 +1133,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           </div>
           <div className="space-y-2">
             <label className="text-xs font-bold text-slate-500 uppercase">Evaluación</label>
-            <select value={evaluationType} onChange={(e) => setEvaluationType(e.target.value)} className="w-full p-2 border rounded-lg text-sm">
+            <select aria-label="Instrumento de evaluación" value={evaluationType} onChange={(e) => setEvaluationType(e.target.value)} className="w-full p-2 border rounded-lg text-sm">
               <option value="Rúbrica Detallada">Rúbrica Analítica</option>
               <option value="Rúbrica Holística">Rúbrica Holística</option>
               <option value="Lista de Cotejo">Lista de Cotejo</option>
@@ -1142,12 +1170,12 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             />
           </div>
           <p className="text-[11px] text-indigo-400 mt-2 text-right">
-            {import.meta.env.VITE_MOTOR_IA === 'terminal' ? 'Con Claude por terminal tarda de 1 a 5 minutos' : 'Esto suele tardar entre 20 y 40 segundos'} ({loadingSeconds}s)
+            {import.meta.env.VITE_MOTOR_IA === 'terminal' ? `Con ${import.meta.env.VITE_TERMINAL_PROVIDER || 'Claude'} por terminal puede tardar varios minutos` : 'Esto suele tardar entre 20 y 40 segundos'} ({loadingSeconds}s)
           </p>
         </div>
       ) : (
         <button
-          disabled={!selectedProgression && !specificTopic}
+          disabled={preparando || (esLaboral ? !submoduloLaboralId : !selectedProgression && !specificTopic)}
           onClick={handleGenerate}
           className={`w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 shadow-lg transition-all ${(!selectedProgression && !specificTopic)
             ? 'bg-slate-200 text-slate-400 cursor-not-allowed shadow-none'
@@ -1155,14 +1183,14 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             } `}
         >
           <Sparkles className="w-5 h-5" />
-          Generar Planeación Personalizada
+          {preparando ? 'Preparando vista previa…' : 'Revisar información antes de generar'}
         </button>
       )}
 
       {/* Modo muestra: ver el resultado sin llave de IA, con una planeación hecha antes con estos mismos datos */}
-      {user?.rol === 'guest' && PLAN_MUESTRA && !isLoading && (
+      {user?.rol === 'guest' && PLAN_MUESTRA && !isLoading && !result && (
         <div className="-mt-2 mb-2 p-4 rounded-xl border border-blue-200 bg-blue-50 text-sm text-blue-900 flex flex-wrap items-center gap-3">
-          <span className="flex-1 min-w-[16rem]">¿No tienes llave de IA? Mira una planeación que EduPlan ya generó con los datos de esta escuela de muestra.</span>
+          <span className="flex-1 min-w-[16rem]">También puedes explorar una planeación de ejemplo sin generar una nueva.</span>
           <button
             onClick={() => { setError(null); setResult(PLAN_MUESTRA); }}
             className="px-4 py-2 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700"
@@ -1172,6 +1200,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
         </div>
       )}
 
+      </div>
       {
         error && (
           <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-2xl">
@@ -1183,10 +1212,12 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
 
       {
         result && (
-          <div className="animate-in fade-in slide-in-from-top-4 duration-700">
+          <div ref={resultadoRef} tabIndex={-1} className="animate-in fade-in slide-in-from-top-4 duration-700">
+            <button onClick={()=>setEditarFormulario(!editarFormulario)} className="text-sm text-blue-700 underline mb-4">{editarFormulario ? 'Ocultar formulario' : 'Ajustar otra planeación'}</button>
+            <p className="mb-4 text-sm">{result.sessions?.length || result.meta?.totalSessions} sesiones · {result.assessmentInstrument?.name || evaluationType} · {result.teachingKit?.length || 0} materiales desarrollados</p>
             <div className="flex flex-wrap justify-between items-center mb-6 gap-4 no-print">
               <h4 className="font-bold text-slate-700 uppercase tracking-widest text-xs flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" /> Planeación Lista
+                <CheckCircle2 className="w-4 h-4 text-emerald-500" /> Borrador para revisar
               </h4>
               <div className="flex gap-2">
                 <button onClick={handleSaveToLibrary} className="flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-700 rounded-xl text-sm font-bold hover:bg-indigo-100">
@@ -1220,8 +1251,6 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
             <div className="mb-8 no-print">
               <PedagogicalAuditor
                 plan={result}
-                subjectName={subject.subjectName}
-                semestre={semestre || undefined}
               />
             </div>
 
@@ -1237,6 +1266,7 @@ const PlanGenerator: React.FC<PlanGeneratorProps> = ({ school, subject, teacherN
           </div>
         )}
     </div>
+    </>
   );
 };
 

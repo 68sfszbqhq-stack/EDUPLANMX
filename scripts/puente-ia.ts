@@ -21,7 +21,8 @@ import { tmpdir } from 'node:os';
 import { resolve } from 'node:path';
 import type { Plugin } from 'vite';
 
-const CARPETA_RESPALDOS = resolve(process.cwd(), 'planeaciones-generadas');
+import { protegerPuente, guardarRespaldo } from './seguridad-puente';
+import { randomUUID } from 'node:crypto';
 
 interface Pedido { systemInstruction: string; mensaje: string; esquema: unknown; etiqueta?: string }
 interface Respuesta { plan: any; modelo: string; segundos: number; respaldo: string }
@@ -36,24 +37,26 @@ export function extraerJSON(texto: string): any {
   return JSON.parse(texto.slice(inicio, fin + 1));
 }
 
-function ejecutarClaude(systemPrompt: string, mensaje: string): Promise<{ texto: string; modelo: string }> {
+function ejecutarClaude(systemPrompt: string, mensaje: string, signal?: AbortSignal): Promise<{ texto: string; modelo: string }> {
   return new Promise((cumplir, fallar) => {
     const carpeta = mkdtempSync(resolve(tmpdir(), 'eduplan-v2-ia-'));
-    const limpiar = () => { try { rmSync(carpeta, { recursive: true, force: true }); } catch { /* nada */ } };
+    let timer: ReturnType<typeof setTimeout>;
+    const limpiar = () => { clearTimeout(timer); try { rmSync(carpeta, { recursive: true, force: true }); } catch { /* nada */ } };
     const proceso = spawn('claude', [
       '-p', '--model', 'opus', '--output-format', 'json',
       '--tools', '', '--strict-mcp-config', '--restricted', '--no-session-persistence',
       '--system-prompt', systemPrompt,
-      mensaje,
+      '--', mensaje,
     ], {
-      cwd: carpeta,
+      cwd: carpeta, signal, killSignal: 'SIGKILL',
       // stdin cerrado: si queda abierto, el CLI espera datos que nunca llegan.
       stdio: ['ignore', 'pipe', 'pipe'],
       env: { ...process.env, CLAUDE_CODE_MAX_OUTPUT_TOKENS: '32000' },
     });
+    timer = setTimeout(() => proceso.kill('SIGKILL'), 600_000);
     let salida = '', errores = '';
-    proceso.stdout.on('data', d => { salida += d; });
-    proceso.stderr.on('data', d => { errores += d; });
+    proceso.stdout.on('data', d => { salida += d; if (salida.length > 8_000_000) proceso.kill('SIGKILL'); });
+    proceso.stderr.on('data', d => { errores = (errores + d).slice(-100_000); });
     proceso.on('error', (e: any) => {
       limpiar();
       fallar(new Error(e.code === 'ENOENT' ? 'No encontré el comando `claude` en esta Mac.' : e.message));
@@ -72,7 +75,7 @@ function ejecutarClaude(systemPrompt: string, mensaje: string): Promise<{ texto:
   });
 }
 
-export async function generarPorTerminal(p: Pedido): Promise<Respuesta> {
+export async function generarPorTerminal(p: Pedido, signal?: AbortSignal): Promise<Respuesta> {
   const systemPrompt = `${p.systemInstruction}
 
 FORMATO DE SALIDA OBLIGATORIO: responde ÚNICAMENTE con un objeto JSON válido que siga
@@ -86,17 +89,16 @@ ${JSON.stringify(p.esquema)}`;
   // Hasta 3 intentos: los cortes del servicio y un JSON mal cerrado son pasajeros.
   for (let intento = 1; intento <= 3; intento++) {
     try {
-      const { texto, modelo } = await ejecutarClaude(systemPrompt, p.mensaje);
+      const { texto, modelo } = await ejecutarClaude(systemPrompt, p.mensaje, signal);
       const plan = extraerJSON(texto);
       if (!Array.isArray(plan.sessions) || plan.sessions.length === 0) throw new Error('La planeación llegó sin sesiones.');
 
       // Respaldo en disco: si el navegador se cierra o falla Firestore, el trabajo no se pierde.
-      mkdirSync(CARPETA_RESPALDOS, { recursive: true });
       const sello = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-');
-      const nombre = `${sello}_${String(p.etiqueta || 'planeacion').replace(/[^\wáéíóúñÁÉÍÓÚÑ ]/g, '').slice(0, 40).trim().replace(/\s+/g, '-')}.json`;
-      writeFileSync(resolve(CARPETA_RESPALDOS, nombre), JSON.stringify(plan, null, 2));
+      const nombre = `${sello}_${randomUUID()}_${String(p.etiqueta || 'planeacion').replace(/[^\wáéíóúñÁÉÍÓÚÑ ]/g, '').slice(0, 40).trim().replace(/\s+/g, '-')}.json`;
+      const respaldo = guardarRespaldo(nombre, plan);
 
-      return { plan, modelo, segundos: Math.round((Date.now() - inicio) / 1000), respaldo: `planeaciones-generadas/${nombre}` };
+      return { plan, modelo, segundos: Math.round((Date.now() - inicio) / 1000), respaldo };
     } catch (e: any) {
       ultimo = e;
       const reintentable = e instanceof ErrorPasajero || e instanceof SyntaxError || /JSON|sin sesiones/.test(e.message);
@@ -119,13 +121,13 @@ const FORMA: Record<string, (x: any) => boolean> = {
   revision: x => Array.isArray(x?.revisiones),
 };
 
-export async function generarJSON(tipo: string, systemPrompt: string, mensaje: string): Promise<{ datos: any; modelo: string; segundos: number }> {
+export async function generarJSON(tipo: string, systemPrompt: string, mensaje: string, signal?: AbortSignal): Promise<{ datos: any; modelo: string; segundos: number }> {
   if (!FORMA[tipo]) throw new Error(`Tipo de pedido desconocido: ${tipo}`);
   const inicio = Date.now();
   let ultimo: Error | null = null;
   for (let intento = 1; intento <= 3; intento++) {
     try {
-      const { texto, modelo } = await ejecutarClaude(systemPrompt, mensaje);
+      const { texto, modelo } = await ejecutarClaude(systemPrompt, mensaje, signal);
       const datos = extraerJSON(texto);
       if (!FORMA[tipo](datos)) throw new Error(`La respuesta no trae la forma de ${tipo}.`);
       return { datos, modelo, segundos: Math.round((Date.now() - inicio) / 1000) };
@@ -145,43 +147,9 @@ export function puenteIA(): Plugin {
     name: 'puente-ia-terminal',
     apply: 'serve',
     configureServer(server) {
-      server.middlewares.use('/api/ia/json', (req, res, next) => {
-        if (req.method !== 'POST') return next();
-        let cuerpo = '';
-        req.on('data', c => { cuerpo += c; });
-        req.on('end', async () => {
-          res.setHeader('Content-Type', 'application/json');
-          try {
-            const { tipo, systemPrompt, mensaje } = JSON.parse(cuerpo);
-            console.log(`\n🧠 [IA por terminal] Generando ${tipo} con Claude (tu suscripción)…`);
-            const r = await generarJSON(tipo, String(systemPrompt), String(mensaje));
-            console.log(`✅ [IA por terminal] ${tipo} listo en ${r.segundos}s con ${r.modelo}\n`);
-            res.end(JSON.stringify(r));
-          } catch (e: any) {
-            console.error('❌ [IA por terminal]', e.message);
-            res.statusCode = 500;
-            res.end(JSON.stringify({ error: e.message }));
-          }
-        });
-      });
-      server.middlewares.use('/api/ia/terminal', (req, res, next) => {
-        if (req.method !== 'POST') return next();
-        let cuerpo = '';
-        req.on('data', c => { cuerpo += c; });
-        req.on('end', async () => {
-          res.setHeader('Content-Type', 'application/json');
-          try {
-            const pedido = JSON.parse(cuerpo) as Pedido;
-            console.log(`\n🧠 [IA por terminal] Generando "${pedido.etiqueta || 'planeación'}" con Claude (tu suscripción). Tarda de 1 a 5 minutos…`);
-            const r = await generarPorTerminal(pedido);
-            console.log(`✅ [IA por terminal] Listo en ${r.segundos}s con ${r.modelo} — ${r.plan.sessions.length} sesiones · respaldo: ${r.respaldo}\n`);
-            res.end(JSON.stringify(r));
-          } catch (e: any) {
-            console.error('❌ [IA por terminal]', e.message);
-            res.statusCode = 500;
-            res.end(JSON.stringify({ error: e.message }));
-          }
-        });
+      protegerPuente(server, {
+        '/api/ia/json': (p, signal) => generarJSON(p.tipo, p.systemPrompt, p.mensaje, signal),
+        '/api/ia/terminal': (p, signal) => generarPorTerminal(p, signal),
       });
     },
   };

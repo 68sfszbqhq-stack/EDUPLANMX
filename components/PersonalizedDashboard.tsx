@@ -1,3 +1,4 @@
+import { obtenerAlmacenCuenta } from '../src/security/almacenCuenta';
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../src/contexts/AuthContext';
 import { DashboardHeader } from './dashboard/DashboardHeader';
@@ -12,6 +13,7 @@ interface PersonalizedDashboardProps {
 
 export const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ onNavigate }) => {
     const { user } = useAuth();
+  const almacen = obtenerAlmacenCuenta();
     const [planeaciones, setPlaneaciones] = useState<any[]>([]);
     const [loading, setLoading] = useState(false); // Cambiar a false por defecto
     const [stats, setStats] = useState({
@@ -77,7 +79,7 @@ export const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ on
         } catch (error) {
             console.error('Error al cargar planeaciones:', error);
             // Si hay error, usar datos de localStorage como fallback
-            const savedPlans = localStorage.getItem('savedPlans');
+            const savedPlans = almacen.getItem('savedPlans');
             if (savedPlans) {
                 const plans = JSON.parse(savedPlans);
                 setPlaneaciones(plans);

@@ -10,11 +10,15 @@ export default defineConfig(({ mode }) => {
     base: mode === 'production' ? '/EDUPLANMX/' : '/',
     server: {
       port: 3000,
+      strictPort: true,
+      fs: { deny: ['.env', '.env.*', '*.{crt,pem}', '**/.git/**', '**/planeaciones-generadas/**'] },
       open: false,
-      allowedHosts: true
+      host: '127.0.0.1',
+      allowedHosts: ['localhost', '127.0.0.1']
     },
     preview: {
-      allowedHosts: true
+      host: '127.0.0.1',
+      allowedHosts: ['localhost', '127.0.0.1']
     },
     build: {
       outDir: 'dist',
